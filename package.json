@@ -4,11 +4,11 @@
   "sideEffects": false,
   "scripts": {
     "build": "npm-run-all build:*",
-    "build:scss": "sass styles/:app/styles/ --style=compressed",
+    "build:scss": "sass app/:app/",
     "build:remix": "remix build",
     "sass": "sass --watch app/:app/",
     "dev": "concurrently \"npm run sass\" \"cross-env NODE_ENV=development netlify dev\"",
-    "start": "cross-env NODE_ENV=production netlify build"
+    "start": "sass app/:app/ && cross-env NODE_ENV=production netlify dev"
   },
   "dependencies": {
     "@netlify/functions": "^1.0.0",
