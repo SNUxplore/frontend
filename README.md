@@ -2,32 +2,12 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+## Hosting
 
-## Netlify Setup
+The dev site is hosted at https://snuxplore.netlify.app/ 
 
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b59cef4-1394-4e52-817c-afe7cb24582b/deploy-status)](https://app.netlify.com/sites/snuxplore/deploys)
 
-```sh
-npm i -g netlify-cli
-```
-
-If you have previously installed the Netlify CLI, you should update it to the latest version:
-
-```sh
-npm i -g netlify-cli@latest
-```
-
-2. Sign up and log in to Netlify:
-
-```sh
-netlify login
-```
-
-3. Create a new site:
-
-```sh
-netlify init
-```
 
 ## Development
 
@@ -44,3 +24,53 @@ It is suggested to use VS Code for this project. Remix does not support css pre-
 The compiled CSS files will reside in the same directory as the SCSS files. To avoid confusion, I made a workspace setting for vscode that hides the compiled CSS files within VS Code. So while importing the stylesheets, you'll have to import the file with the extension .css.
 
 If you are using some other IDE, please look for a way to hide the compiled CSS files so you won't have any confusion.
+
+
+## Compiling SCSS
+<hr/>
+
+- The SCSS files are automatically watched and compiled when changes are made in any scss files within the project. 
+
+- When sending it to the server, the compiled CSS files are sent along with the SCSS files(Obsolete: In the final site, we'll set up a script that removes all scss files from the project since after compiling it, there's no need for scss files)
+
+
+## Commit naming conventions
+<hr />
+For now, we'll use just these:
+
+- `fix:` - fixes a bug
+- `feat:` - new feature
+- `chore:` - other changes and cleanups
+
+Example:
+
+- `fix: fixed navigation bar`
+- `feat: added new sign in feature`
+- `chore: Removed all comments and print statements`
+
+If theres a specific file thats changed or a specific sub category of the project has changes, you can specify it like so:
+- `fix(NavBar): fixed overflowing image in nav bar`
+- `feat(SignIn): Added user verification before sign In`
+
+These are just good practices and it'll be easy to revert back if some new merge is breaking the project. 
+
+<br/>
+
+## Pull requests
+<hr />
+Each contributing member should make a separate branch for completing their tasks.
+You can follow these commands to do so:
+
+- `git checkout -b <branch name>`
+- `git add .`
+- `git commit -m "<Meaningful message following the convention>"`
+- `git push origin <branch name>`
+
+Then in the github repo, you can create a new pull request under pull requests tab.
+
+To keep your branch up-to-date with the master branch, you can use the following commands:
+
+- `git merge main`
+- `git push`
+
+<em>Note: Make sure there are no changes in your branch before merging. If there are any, you'll lose the progress.</em>

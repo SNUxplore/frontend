@@ -4,7 +4,6 @@ node_modules
 /public/build
 /.netlify
 .env
-# **/*.css
-# **/*.css.map
+**/*.css.map
 yarn.lock
 package-lock.json
