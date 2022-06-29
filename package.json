@@ -8,7 +8,7 @@
     "build:remix": "remix build",
     "sass": "sass --watch app/:app/",
     "dev": "concurrently \"npm run sass\" \"cross-env NODE_ENV=development netlify dev\"",
-    "start": "sass app/:app/ && cross-env NODE_ENV=production netlify dev"
+    "start": "cross-env NODE_ENV=production netlify dev"
   },
   "dependencies": {
     "@netlify/functions": "^1.0.0",
