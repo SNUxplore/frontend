@@ -1,0 +1,6 @@
+@import "../../root/mixins";
+
+.ResidentialPage {
+  @include box();
+  @include make-flex($just: flex-start);
+}
