@@ -126,6 +126,6 @@ For example:
 @import "../../Components/MockNavigator/MockNavigator.scss";
 ```
 
-<em>Note: Don't name two components with same name. Since all components are styles from same file, we don't want overlaps of style. That'll mess everything up.</em>
+<em>Note: Don't name two components with same name. Since all components are styled from same file, we don't want overlaps of style. That'll mess everything up.</em>
 
 </details>
