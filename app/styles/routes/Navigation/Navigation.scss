@@ -1,0 +1,13 @@
+@import "../../root/mixins";
+
+.NavigationPage {
+  @include box();
+  padding: 30px 30px;
+  @include make-flex($just: space-evenly, $dir: row, $align: flex-start);
+  gap: 30px;
+
+  @include respondAt(860px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
