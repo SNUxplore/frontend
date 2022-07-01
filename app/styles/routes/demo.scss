@@ -1,0 +1,6 @@
+@import "../root/mixins";
+
+.DemoPage {
+  @include box();
+  @include make-flex($just: flex-start);
+}
