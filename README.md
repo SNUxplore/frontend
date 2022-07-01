@@ -87,7 +87,7 @@ To keep your branch up-to-date with the master branch, you can use the following
 
 </details>
 
-<br/>
+
 
 ## New page
 
@@ -109,7 +109,7 @@ For a clean project structure, We'll be adding stylesheets to directories same a
 
 </details>
 
-<br/>
+
 
 ## New Component
 
