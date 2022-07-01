@@ -34,7 +34,7 @@ If you are using some other IDE, please look for a way to hide the compiled CSS 
 - When sending it to the server, the compiled CSS files are sent along with the SCSS files(Obsolete: In the final site, we'll set up a script that removes all scss files from the project since after compiling it, there's no need for scss files)
 
 </details>
-<br />
+
 
 ## Commit naming conventions
 
@@ -61,7 +61,7 @@ If theres a specific file thats changed or a specific sub category of the projec
 These are just good practices and it'll be easy to revert back if some new merge is breaking the project.
 
 </details>
-<br />
+
 
 ## Pull requests
 
