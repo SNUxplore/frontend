@@ -1,0 +1,6 @@
+@import "../../root/mixins";
+
+.FoodPage {
+  @include box();
+  @include make-flex($just: flex-start);
+}
