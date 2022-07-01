@@ -1,0 +1,9 @@
+@import "../../styles/root/mixins";
+
+.MockNavigatorWrapper {
+  @include box(100%, 250px);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  @include make-flex($just: flex-start, $align: flex-start);
+}
