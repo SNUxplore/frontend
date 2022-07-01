@@ -1,0 +1,6 @@
+@import "../../styles/root/mixins";
+
+.LandingPage {
+  @include box();
+  @include make-flex($just: flex-start);
+}
