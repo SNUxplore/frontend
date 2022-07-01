@@ -1,0 +1,13 @@
+@import "./mixins";
+
+html {
+  @include box();
+}
+
+body {
+  background-color: aliceblue;
+  @include box();
+  @include make-flex();
+  font-family: "system-ui", "sans-serif";
+  line-height: 1.4;
+}
