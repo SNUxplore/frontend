@@ -1,0 +1,30 @@
+@import "../../styles/root/mixins";
+
+.ButtonLinkWrapper {
+  @include box(150px, 40px);
+  @include make-flex();
+
+  border-radius: 7px;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+  text-decoration: none;
+  padding: 10px 12px;
+  font-family: "Poppins", sans-serif;
+  line-height: 27px;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  &--fill {
+    background-color: var(--blue);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--transparent);
+      color: var(--blue);
+    }
+  }
+}
