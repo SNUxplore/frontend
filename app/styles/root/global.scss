@@ -1,11 +1,18 @@
+// Main configs
 @import "./mixins";
+@import "./fonts.scss";
+
+// themes
+@import "./theme/light.scss";
+@import "./theme/dark.scss";
+
+@include lightMode();
 
 html {
   @include box();
 }
 
 body {
-  background-color: aliceblue;
   @include box();
   @include make-flex();
   font-family: "system-ui", "sans-serif";
