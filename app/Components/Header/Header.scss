@@ -1,0 +1,44 @@
+@import "../../styles/root/mixins";
+
+.HeaderWrapper {
+  @include box($height: 150px);
+  @include make-flex($dir: row);
+  gap: 170px;
+
+  &__left {
+    &--logo {
+      @include box(47px, 47px);
+    }
+  }
+
+  &__middle {
+    @include box($height: 100px, $width: fit-content);
+    @include make-flex($dir: row);
+    gap: 50px;
+    list-style: none;
+
+    &--option {
+      a {
+        text-decoration: none;
+        color: var(--primaryTextColor);
+        font-size: 17px;
+        font-weight: normal;
+        font-family: "Poppins", sans-serif;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include make-flex($dir: row);
+    gap: 20px;
+
+    a {
+      img {
+        @include box($height: 19px, $width: 19px);
+      }
+    }
+  }
+}
