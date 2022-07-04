@@ -1,0 +1,10 @@
+@mixin lightMode {
+  :root {
+    --pageBackground: #f4f5fc;
+    --primaryTextColor: #363b53;
+    --blue: #308cf8;
+    --white: #ffffff;
+    --transparent: transparent;
+    --pink: #d202f3;
+  }
+}
