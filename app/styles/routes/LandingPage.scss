@@ -3,5 +3,112 @@
 .LandingPage {
   @include box();
   @include make-flex($just: flex-start);
+  background-color: var(--pageBackground);
+
+  &__mainContainer {
+    @include box();
+    @include make-flex($just: flex-start);
+    gap: 50px;
+    max-width: 1585px;
+
+    padding: 0px 170px;
+  }
+
+  .heroSection {
+    @include box();
+    @include make-flex($just: flex-start);
+
+    &__top {
+      @include box($height: 75%);
+      @include make-flex($dir: row);
+      padding: 50px 0;
+
+      &--left,
+      &--right {
+        @include box(50%);
+      }
+
+      &--left {
+        @include make-flex($align: flex-start);
+        gap: 30px;
+        position: relative;
+      }
+      &--right {
+        @include make-flex($align: flex-end, $just: flex-start);
+        padding-top: 115px;
+        gap: 30px;
+      }
+    }
+
+    &__title {
+      h1 {
+        @include box(100%, auto);
+        font-family: "Poppins", sans-serif;
+        font-size: 67px;
+        font-weight: 500;
+        line-height: 82px;
+        color: var(--primaryTextColor);
+      }
+    }
+
+    &__desc {
+      font-family: "Poppins", sans-serif;
+      line-height: 30px;
+      @include box(90%, auto);
+    }
+
+    &__callToAction {
+      @include box(100%, auto);
+      @include make-flex($just: flex-start, $dir: row);
+      gap: 25px;
+    }
+
+    &__bottom {
+      @include box($height: 25%);
+      @include make-flex($dir: row, $just: space-between);
+    }
+
+    &__arrow {
+      @include box(50%, auto);
+      @include make-flex($just: flex-end);
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(50%);
+    }
+
+    &__funFact {
+      @include make-flex($dir: row, $just: flex-start);
+      @include box(80%, auto);
+      span,
+      p {
+        font-weight: 600;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      span {
+        color: var(--primaryTextColor);
+      }
+      p {
+        color: var(--pink);
+      }
+    }
+
+    &__stats {
+      @include box(auto, auto);
+      @include make-flex();
+      gap: 15px;
+      &--title {
+        color: var(--blue);
+        font-weight: 600;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      &--stat {
+        color: var(--primaryTextColor);
+        font-weight: 600;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 50px;
+      }
+    }
+  }
 }
- 
