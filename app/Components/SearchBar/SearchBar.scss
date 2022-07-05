@@ -1,8 +1,13 @@
 @import "../../styles/root/mixins";
 
 .SearchBarWrapper {
-  height: 50px;
+  // height: 50px;
+  @include box(80%, 50px);
   position: relative;
+
+  @include respondAt(1095px) {
+    @include box(100%, 50px);
+  }
 
   &__input {
     @include box();
@@ -23,6 +28,7 @@
     border-radius: 0 7px 7px 0;
     @include make-flex();
     background-color: var(--primaryTextColor);
+    border: none;
     cursor: pointer;
     img {
       @include box(29px, 29px);

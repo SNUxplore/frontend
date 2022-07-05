@@ -9,12 +9,18 @@
 @include lightMode();
 
 html {
-  @include box();
+  height: 100%;
 }
 
 body {
-  @include box();
-  @include make-flex();
+  min-height: 100%;
+
   font-family: "system-ui", "sans-serif";
   line-height: 1.4;
+  background-color: var(--pageBackground);
+
+  @include respondAt(1530px) {
+    height: unset;
+    overflow-x: hidden;
+  }
 }
