@@ -1,31 +1,78 @@
 @import "../../styles/root/mixins";
 
 .LandingPage {
-  @include box();
   @include make-flex($just: flex-start);
-  background-color: var(--pageBackground);
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
 
   &__mainContainer {
-    @include box();
+    // @include box();
+    width: 100%;
+    // height: auto;
     @include make-flex($just: flex-start);
     gap: 50px;
     max-width: 1585px;
-
+    min-height: calc(100% - 110px);
+    // background-color: aqua;
     padding: 0px 170px;
+    transition: padding 0.5s ease-in-out;
+
+    @include respondAt(1525px) {
+      padding: 0 130px;
+    }
+    @include respondAt(1335px) {
+      padding: 0 90px;
+    }
+    @include respondAt(1135px) {
+      padding: 0 40px;
+    }
+
+    @include respondAt(470px) {
+      padding: 0 0;
+    }
   }
 
   .heroSection {
-    @include box();
+    // @include box($height: calc(100vh - 200px));
     @include make-flex($just: flex-start);
+    // max-height: 720px;
+    padding-bottom: 40px;
+    gap: 65px;
 
     &__top {
       @include box($height: 75%);
       @include make-flex($dir: row);
       padding: 50px 0;
 
+      @include respondAt(1135px) {
+        padding: 0 0;
+      }
+
+      @include respondAt(1095px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
       &--left,
       &--right {
         @include box(50%);
+        @include respondAt(1095px) {
+          padding-top: 0;
+          align-items: center;
+        }
+
+        @include respondAt(935px) {
+          @include box(80%);
+        }
+
+        @include respondAt(670px) {
+          @include box();
+        }
+
+        @include respondAt(470px) {
+          padding: 0 30px;
+        }
       }
 
       &--left {
@@ -37,6 +84,10 @@
         @include make-flex($align: flex-end, $just: flex-start);
         padding-top: 115px;
         gap: 30px;
+
+        @include respondAt(1095px) {
+          padding-top: 0;
+        }
       }
     }
 
@@ -48,6 +99,19 @@
         font-weight: 500;
         line-height: 82px;
         color: var(--primaryTextColor);
+        transition: font-size 0.5s ease-in-out;
+
+        @include respondAt(1400px) {
+          font-size: 60px;
+        }
+        @include respondAt(1200px) {
+          font-size: 50px;
+        }
+
+        @include respondAt(505px) {
+          font-size: 9vw;
+          line-height: 60px;
+        }
       }
     }
 
@@ -55,6 +119,10 @@
       font-family: "Poppins", sans-serif;
       line-height: 30px;
       @include box(90%, auto);
+
+      @include respondAt(670px) {
+        @include box(100%, auto);
+      }
     }
 
     &__callToAction {
@@ -66,6 +134,20 @@
     &__bottom {
       @include box($height: 25%);
       @include make-flex($dir: row, $just: space-between);
+
+      @include respondAt(935px) {
+        @include box(80%);
+      }
+
+      @include respondAt(670px) {
+        @include box();
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      @include respondAt(470px) {
+        padding: 0 30px;
+      }
     }
 
     &__arrow {
@@ -75,6 +157,10 @@
       top: 0;
       right: 0;
       transform: translateX(50%);
+
+      @include respondAt(1095px) {
+        display: none;
+      }
     }
 
     &__funFact {
@@ -91,24 +177,43 @@
       p {
         color: var(--pink);
       }
+
+      @include respondAt(1095px) {
+        @include box(100%, auto);
+      }
     }
 
     &__stats {
       @include box(auto, auto);
       @include make-flex();
       gap: 15px;
-      &--title {
-        color: var(--blue);
+      &--title,
+      &--stat {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
+        white-space: nowrap;
+      }
+
+      &--title {
+        color: var(--blue);
       }
 
       &--stat {
         color: var(--primaryTextColor);
-        font-weight: 600;
-        font-family: "Space Grotesk", sans-serif;
         font-size: 50px;
+
+        @include respondAt(935px) {
+          font-size: 35px;
+        }
+
+        @include respondAt(670px) {
+          font-size: 30px;
+        }
       }
+    }
+
+    @include respondAt(1095px) {
+      gap: 80px;
     }
   }
 }

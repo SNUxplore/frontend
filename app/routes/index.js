@@ -4,11 +4,17 @@ import SearchBar from "~/Components/SearchBar/SearchBar";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
+import { useMediaQuery } from "react-responsive";
+
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
 export default function LandingPage() {
+  const callToAction = useMediaQuery({
+    query: "(max-width: 1095px)",
+  });
+
   return (
     <div className="LandingPage">
       <Header />
@@ -32,17 +38,19 @@ export default function LandingPage() {
                   unlock all that Shiv Nadar University has to offer.
                 </p>
               </div>
-              <div className="heroSection__callToAction">
-                <ButtonLink href="/#learn-more" content="Learn More" />
-                <ButtonLink href="/about" content="Contact Us" fill />
-              </div>
+              {!callToAction && (
+                <div className="heroSection__callToAction">
+                  <ButtonLink href="/#learn-more" content="Learn More" />
+                  <ButtonLink href="/about" content="Contact Us" fill />
+                </div>
+              )}
             </div>
             <div className="heroSection__top--right">
               <div className="heroSection__funFact">
                 <span>Fun Fact:&nbsp;</span>
                 <p>Absolutely fixed relatively broken coordinates</p>
               </div>
-              <SearchBar style={{ width: "80%" }} />
+              <SearchBar />
             </div>
           </div>
           <div className="heroSection__bottom">
