@@ -46,6 +46,8 @@
     }
   }
 
+ 
+
   @include respondAt(1530px) {
     z-index: 5;
     @include box($height: 110px);
@@ -107,6 +109,10 @@
     #NavBarInput:checked ~ .hamButton > label > .span.HL3 {
       transform: rotate(-45deg) translate(3px, -1px);
     }
+  }
+
+  @include respondAt(470px){
+    padding: 0 30px;
   }
 
   &__menu {
