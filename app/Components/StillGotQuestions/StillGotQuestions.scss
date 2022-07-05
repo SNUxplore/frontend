@@ -50,3 +50,20 @@
 .spanQuestions {
   color: #363b53;
 }
+
+@media only screen and (max-width: 600px) {
+  .SGQleft {
+    padding: 5px;
+    margin-left: 25px;
+  }
+  .SGQright {
+    padding: 5px;
+    margin-left: 25px;
+  }
+  .SGQcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: max-content;
+  }
+}
