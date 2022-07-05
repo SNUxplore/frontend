@@ -1,7 +1,7 @@
 @import "../../styles/root/mixins";
 
 .ButtonLinkWrapper {
-  @include box(150px, 40px);
+  @include box(200px, 40px);
   @include make-flex();
 
   border-radius: 7px;
@@ -25,6 +25,18 @@
     &:hover {
       background-color: var(--transparent);
       color: var(--blue);
+    }
+  }
+  &--fill2 {
+    border: 1.5px solid var(--black);
+
+    background-color: var(--transparent);
+    color: var(--black);
+
+    &:hover {
+      border: 1.5px solid var(--blue);
+      background-color: var(--blue);
+      color: var(--white);
     }
   }
 }
