@@ -1,69 +1,50 @@
 @import "../../styles/root/mixins";
 
-.QuesBackdrop {
+.FaqRedirect {
   background-color: #61abfe;
-  max-width: 100%;
-}
+  @include box($height: 310px);
+  @include make-flex($dir: row);
 
-.SGQtext {
-  font-family: "Poppins", sans-serif;
-}
-
-.SGQcontainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.SGQleft {
-  padding: 100px 5px 100px 100px;
-  margin-left: 40px;
-}
-
-.SGQright {
-  padding: 100px 70px 100px 100px;
-  margin-right: 110px;
-}
-
-.SmallText {
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 23.15px;
-  width: 370px;
-  height: 80px;
-  color: #211f24;
-  padding-bottom: 100px;
-  padding-top: 25px;
-}
-
-.BigText {
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 96px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.StillHave {
-  color: #ffffff;
-}
-
-.spanQuestions {
-  color: #363b53;
-}
-
-@media only screen and (max-width: 600px) {
-  .SGQleft {
-    padding: 5px;
-    margin-left: 25px;
+  &__left,
+  &__right {
+    @include box(50%);
+    @include make-flex();
   }
-  .SGQright {
-    padding: 5px;
-    margin-left: 25px;
+
+  &__left {
+    padding: 0 45px 0;
   }
-  .SGQcontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-height: max-content;
+
+  &__right {
+    align-items: flex-end;
+    &--container {
+      @include box(85%);
+      @include make-flex($align: flex-start);
+      gap: 25px;
+    }
+  }
+
+  &__title {
+    &--white,
+    &--black {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      line-height: 72px;
+      font-size: 65px;
+      width: 77%;
+    }
+    &--white {
+      color: var(--white);
+    }
+    &--black {
+      color: var(--black);
+    }
+  }
+
+  &--desc {
+    font-family: "Poppins", sans-serif;
+    width: 87%;
+
+    color: var(--secondaryTextColor);
   }
 }
