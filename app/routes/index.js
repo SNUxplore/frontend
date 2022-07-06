@@ -1,6 +1,7 @@
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
+import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
@@ -68,6 +69,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+        <StillGotQuestions />
       </main>
     </div>
   );
