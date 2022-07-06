@@ -5,14 +5,42 @@
   @include box($height: 310px);
   @include make-flex($dir: row);
 
-  &__left,
-  &__right {
-    @include box(50%);
-    @include make-flex();
+  transition: padding, font-size 0.5s ease-in-out;
+
+  @include respondAt(885px) {
+    flex-direction: column;
+    padding: 40px 0;
+    height: 415px;
+    gap: 30px;
+  }
+
+  @include respondAt(595px) {
+    padding: 35px;
+    gap: 0;
   }
 
   &__left {
     padding: 0 45px 0;
+  }
+
+  &__left,
+  &__right {
+    @include box(50%);
+    @include make-flex();
+
+    @include respondAt(1060px) {
+      padding: 0 30px;
+      align-items: flex-start;
+    }
+
+    @include respondAt(885px) {
+      width: 85%;
+    }
+
+    @include respondAt(595px) {
+      padding: 0;
+      width: 100%;
+    }
   }
 
   &__right {
@@ -21,6 +49,10 @@
       @include box(85%);
       @include make-flex($align: flex-start);
       gap: 25px;
+
+      @include respondAt(885px) {
+        width: 100%;
+      }
     }
   }
 
@@ -32,6 +64,16 @@
       line-height: 72px;
       font-size: 65px;
       width: 77%;
+
+      @include respondAt(1060px) {
+        width: 90%;
+      }
+      @include respondAt(885px) {
+        width: 100%;
+      }
+      @include respondAt(525px) {
+        font-size: 50px;
+      }
     }
     &--white {
       color: var(--white);
@@ -46,5 +88,8 @@
     width: 87%;
 
     color: var(--secondaryTextColor);
+    @include respondAt(885px) {
+      width: 100%;
+    }
   }
 }

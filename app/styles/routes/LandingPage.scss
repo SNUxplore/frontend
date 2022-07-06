@@ -82,7 +82,7 @@
       }
       &--right {
         @include make-flex($align: flex-end, $just: flex-start);
-        padding-top: 115px;
+        // padding-top: 115px;
         gap: 30px;
 
         @include respondAt(1095px) {
