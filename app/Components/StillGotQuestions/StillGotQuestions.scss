@@ -2,7 +2,7 @@
 
 .FaqRedirect {
   background-color: #61abfe;
-  @include box($height: 310px);
+  @include box($width: 100vw, $height: 38.75vh);
   @include make-flex($dir: row);
 
   transition: padding, font-size 0.5s ease-in-out;
@@ -12,6 +12,7 @@
     padding: 40px 0;
     height: 415px;
     gap: 30px;
+    width: 100vw;
   }
 
   @include respondAt(595px) {
