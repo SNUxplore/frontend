@@ -87,6 +87,7 @@
   &--desc {
     font-family: "Poppins", sans-serif;
     width: 87%;
+    line-height: 167.5%;
 
     color: var(--secondaryTextColor);
     @include respondAt(885px) {
