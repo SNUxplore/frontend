@@ -1,0 +1,200 @@
+@import "../../styles/root/mixins";
+.FooterBackground {
+  @include make-flex($just: center, $dir: row);
+  @include box(100%, 350px);
+
+  display: flex;
+  padding: 6%;
+
+  background: #242836;
+  @include respondAt(970px) {
+    @include box(100%, 100%);
+    @include make-flex($just: space-evenly, $dir: column);
+    gap: 50px;
+  }
+}
+.LogoandTag {
+  @include box(50%, 200px);
+  @include respondAt(970px) {
+    @include box(100%, 130px);
+    margin-top: 20%;
+    margin-bottom: 5%;
+  }
+}
+.Logo {
+  @include box(29%, 200px);
+  @include respondAt(970px) {
+    @include box(33%, 110px);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}
+.CopyrightTag {
+  @include box(29%, 50px);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 22px;
+  margin-top: 2%;
+  text-align: center;
+
+  @include respondAt(1504px) {
+    @include box(33%, 50px);
+  }
+
+  @include respondAt(1321px) {
+    @include box(35%, 50px);
+  }
+
+  @include respondAt(1246px) {
+    @include box(37%, 50px);
+  }
+
+  @include respondAt(1180px) {
+    @include box(40%, 50px);
+    text-align: left;
+  }
+
+  @include respondAt(1092px) {
+    @include box(42%, 20px);
+    font-size: 8px;
+    text-align: left;
+  }
+
+  @include respondAt(970px) {
+    @include box(100%, 50px);
+    text-align: center;
+    margin-top: 7%;
+
+    font-size: 14px;
+  }
+
+  color: #787777;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li:not(:last-child) {
+  margin-bottom: 18px;
+  @include respondAt(970px) {
+    margin-bottom: 0;
+    line-height: 60px;
+  }
+}
+
+li :last-child {
+  @include respondAt(970px) {
+    line-height: 60px;
+  }
+}
+
+li.RowHeading {
+  font-family: "Poppins";
+  font-style: normal;
+
+  font-size: 20px;
+
+  letter-spacing: 0.02em;
+
+  color: rgba(255, 255, 255, 0.46);
+  @include respondAt(950px) {
+    font-size: 25px;
+    line-height: 80px;
+  }
+}
+
+.Service {
+  @include box(15%, 164.5px);
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+  font-size: 12px;
+
+  color: #ffffff;
+
+  @include respondAt(970px) {
+    @include box(50%, 21%);
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.Resources {
+  @include respondAt(970px) {
+    @include box(50%, 15%);
+  }
+}
+
+.Contacts {
+  img {
+    display: inline;
+    margin-right: 5px;
+  }
+  @include respondAt(1095px) {
+    font-size: 10px;
+  }
+
+  @include respondAt(970px) {
+    font-size: 14px;
+  }
+
+  li.SocialMediaHandles {
+    @include respondAt(970px) {
+      width: 100%;
+    }
+  }
+  .SocialMediaIcons {
+    margin-right: 12px;
+
+    @include respondAt(970px) {
+      margin-top: 35%;
+      height: 21px;
+    }
+  }
+
+  .LinkedIn {
+    @include respondAt(970px) {
+      padding: 0 10%;
+    }
+
+    @include respondAt(376px) {
+      padding: 0 8%;
+    }
+  }
+
+  .mailIcon {
+    @include respondAt(970px) {
+      img {
+        height: 14px;
+      }
+    }
+
+    @include respondAt(392px) {
+      img {
+        height: 10px;
+      }
+    }
+
+    @include respondAt(375px) {
+      font-size: 13px;
+    }
+  }
+
+  .callIcon {
+    @include respondAt(970px) {
+      img {
+        height: 16px;
+      }
+    }
+  }
+}
