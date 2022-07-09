@@ -10,7 +10,7 @@ import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
-}
+} 
 
 export default function LandingPage() {
   const callToAction = useMediaQuery({
