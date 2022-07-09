@@ -1,5 +1,6 @@
 import Header from "~/Components/Header/Header";
 import styleSheet from "~/styles/routes/Faqs/Faqs.css";
+import FaqDropdown from "~/Components/FaqDropdown/FaqDropdown";
 import React from "react";
 
 export function links() {
@@ -88,37 +89,19 @@ export default function Index() {
 						</div>
 						<div className="mainSection__questions">
 							{testFAQs[faqIndex].questions.map((question, index) => (
-								<div className="mainSection__questionBox" key={question.id}>
-									<button
-										className="mainSection__question"
-										onClick={() => {
-											if (questionIndex === index) {
-												setQuestionIndex(-1);
-											} else {
-												setQuestionIndex(index);
-											}
-										}}>
-										<p>{question.question}</p>
-										<div
-											className={`
-											mainSection__questionExpanded
-											${questionIndex === index
-												? "mainSection__questionExpanded--active"
-												: ""}
-											`}>
-											<p>+</p>
-										</div>
-									</button>
-									<div
-										className={
-											"mainSection__answer "
-												+ (index === questionIndex
-												? "mainSection__answer--active"
-												: "")}>
-										<p>{question.answer}</p>
-									</div>
-									<div className="mainSection__borderLine"></div>
-								</div>
+								<FaqDropdown
+									key={question.id}
+									question={question.question}
+									answer={question.answer}
+									isExpanded={index === questionIndex}
+									onClick={() => {
+										if (questionIndex === index) {
+											setQuestionIndex(-1);
+										} else {
+											setQuestionIndex(index);
+										}
+									}}
+								/>
 							))}
 						</div>
 					</div>
