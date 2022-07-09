@@ -1,0 +1,43 @@
+.SearchBarWrapper {
+  width: 80%;
+  height: 50px;
+  position: relative;
+}
+@media (max-width: 1095px) {
+  .SearchBarWrapper {
+    width: 100%;
+    height: 50px;
+  }
+}
+.SearchBarWrapper__input {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background-color: var(--white);
+  color: var(--primaryTextColor);
+  border: none;
+  padding: 6px 70px 6px 20px;
+  box-shadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
+}
+.SearchBarWrapper__submit {
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 7px 7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryTextColor);
+  border: none;
+  cursor: pointer;
+}
+.SearchBarWrapper__submit img {
+  width: 29px;
+  height: 29px;
+  cursor: inherit;
+}
+
+/*# sourceMappingURL=SearchBar.css.map */

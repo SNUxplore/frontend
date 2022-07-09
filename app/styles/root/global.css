@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+:root {
+  --pageBackground: #f4f5fc;
+  --primaryTextColor: #363b53;
+  --blue: #308cf8;
+  --white: #ffffff;
+  --transparent: transparent;
+  --pink: #d202f3;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "system-ui", "sans-serif";
+  line-height: 1.4;
+  background-color: var(--pageBackground);
+}
+@media (max-width: 1530px) {
+  body {
+    height: unset;
+    overflow-x: hidden;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */
