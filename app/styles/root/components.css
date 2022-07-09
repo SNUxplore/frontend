@@ -242,4 +242,234 @@
   cursor: inherit;
 }
 
+.FooterBackground {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  padding: 6%;
+  background: #242836;
+}
+@media (max-width: 970px) {
+  .FooterBackground {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
+}
+
+.LogoandTag {
+  width: 50%;
+  height: 200px;
+}
+@media (max-width: 970px) {
+  .LogoandTag {
+    width: 100%;
+    height: 130px;
+    margin-top: 20%;
+    margin-bottom: 5%;
+  }
+}
+
+.Logo {
+  width: 29%;
+  height: 200px;
+}
+@media (max-width: 970px) {
+  .Logo {
+    width: 33%;
+    height: 110px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}
+
+.CopyrightTag {
+  width: 29%;
+  height: 50px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 22px;
+  margin-top: 2%;
+  text-align: center;
+  color: #787777;
+}
+@media (max-width: 1504px) {
+  .CopyrightTag {
+    width: 33%;
+    height: 50px;
+  }
+}
+@media (max-width: 1321px) {
+  .CopyrightTag {
+    width: 35%;
+    height: 50px;
+  }
+}
+@media (max-width: 1246px) {
+  .CopyrightTag {
+    width: 37%;
+    height: 50px;
+  }
+}
+@media (max-width: 1180px) {
+  .CopyrightTag {
+    width: 40%;
+    height: 50px;
+    text-align: left;
+  }
+}
+@media (max-width: 1092px) {
+  .CopyrightTag {
+    width: 42%;
+    height: 20px;
+    font-size: 8px;
+    text-align: left;
+  }
+}
+@media (max-width: 970px) {
+  .CopyrightTag {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-top: 7%;
+    font-size: 14px;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li:not(:last-child) {
+  margin-bottom: 18px;
+}
+@media (max-width: 970px) {
+  li:not(:last-child) {
+    margin-bottom: 0;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 970px) {
+  li :last-child {
+    line-height: 60px;
+  }
+}
+
+li.RowHeading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.46);
+}
+@media (max-width: 950px) {
+  li.RowHeading {
+    font-size: 25px;
+    line-height: 80px;
+  }
+}
+
+.Service {
+  width: 15%;
+  height: 164.5px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+  color: #ffffff;
+}
+@media (max-width: 970px) {
+  .Service {
+    width: 50%;
+    height: 21%;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 970px) {
+  .Resources {
+    width: 50%;
+    height: 15%;
+  }
+}
+
+.Contacts img {
+  display: inline;
+  margin-right: 5px;
+}
+@media (max-width: 1095px) {
+  .Contacts {
+    font-size: 10px;
+  }
+}
+@media (max-width: 970px) {
+  .Contacts {
+    font-size: 14px;
+  }
+}
+@media (max-width: 970px) {
+  .Contacts li.SocialMediaHandles {
+    width: 100%;
+  }
+}
+.Contacts .SocialMediaIcons {
+  margin-right: 12px;
+}
+@media (max-width: 970px) {
+  .Contacts .SocialMediaIcons {
+    margin-top: 35%;
+    height: 21px;
+  }
+}
+@media (max-width: 970px) {
+  .Contacts .LinkedIn {
+    padding: 0 10%;
+  }
+}
+@media (max-width: 376px) {
+  .Contacts .LinkedIn {
+    padding: 0 8%;
+  }
+}
+@media (max-width: 970px) {
+  .Contacts .mailIcon img {
+    height: 14px;
+  }
+}
+@media (max-width: 392px) {
+  .Contacts .mailIcon img {
+    height: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .Contacts .mailIcon {
+    font-size: 13px;
+  }
+}
+@media (max-width: 970px) {
+  .Contacts .callIcon img {
+    height: 16px;
+  }
+}
+
 /*# sourceMappingURL=components.css.map */
