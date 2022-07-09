@@ -1,6 +1,206 @@
 @import "../../root/mixins";
 
 .FaqsPage {
-  @include box();
   @include make-flex($just: flex-start);
+	overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+	
+	&__mainContainer {
+		@include make-flex($just: flex-start);
+		width: 100%;
+		max-width: 1585px;
+		min-height: calc(100% - 110px);
+		padding: 0px 170px;
+		transition: padding 0.5s ease-in-out;
+		
+		@include respondAt(1525px) {
+			padding: 0 130px;
+		}
+		@include respondAt(1335px) {
+			padding: 0 90px;
+		}
+		@include respondAt(1135px) {
+			padding: 0 40px;
+		}
+		
+		@include respondAt(470px) {
+			padding: 0 0;
+		}
+	}
+	
+	.mainSection {
+		@include make-flex($just: flex-start);
+		padding-bottom: 40px;
+		
+		&__top {
+			@include box($height: 75%);
+			@include make-flex($dir: column);
+			padding: 50px 0;
+			gap: 11px;
+			
+			@include respondAt(1135px) {
+				padding: 0 0;
+			}
+			
+			@include respondAt(1095px) {
+				gap: 20px;
+			}
+		}
+		
+		&__title {
+			h1 {
+				@include box(100%, auto);
+        font-family: "Poppins", sans-serif;
+        font-size: 67px;
+        font-weight: 500;
+        line-height: 82px;
+        color: var(--primaryTextColor);
+        transition: font-size 0.5s ease-in-out;
+
+        @include respondAt(1400px) {
+          font-size: 60px;
+        }
+        @include respondAt(1200px) {
+          font-size: 50px;
+        }
+
+        @include respondAt(505px) {
+          font-size: 9vw;
+          line-height: 60px;
+        }
+			}
+		}
+		
+		&__desc {
+      font-family: "Poppins", sans-serif;
+      line-height: 30px;
+      @include box(60%, auto);
+			text-align: center;
+
+      @include respondAt(670px) {
+        @include box(100%, auto);
+      }
+    }
+		
+		&__bottom {
+			@include box($height: 25%);
+			@include make-flex($dir: column);
+			gap: 60px;
+			
+			@include respondAt(1135px) {
+				padding: 0 0;
+			}
+			
+			@include respondAt(1095px) {
+				flex-direction: column;
+				gap: 20px;
+			}
+			
+			&--left,
+			&--right {
+				@include box(50%);
+				@include respondAt(1095px) {
+					
+				}
+			}
+		}
+		
+		&__categories {
+			@include make-flex($dir: row, $just: center);
+			gap: 85px;
+		}
+		
+		&__categoryName {
+			background-color: transparent;
+			border: none;
+			font-family: "Poppins", sans-serif;
+      line-height: 30px;
+			font-size: 19px;
+			font-weight: 500;
+			opacity: 40%;
+			
+			&:hover {
+				opacity: 100%;
+			}
+			
+			&--active {
+				opacity: 100%;
+			}
+		}
+		
+		&__questions {
+			@include make-flex($dir: column);
+		}
+		
+		&__questionBox {
+			width: 830px;
+		}
+		
+		&__question {
+			width: 100%;
+			padding: 30px 0;
+			@include make-flex($dir: row, $just: space-between);
+			
+			font-family: 'Poppins', sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 167.5%;
+			color: #000000;
+			
+			background-color: transparent;
+			border: none;
+			text-align: left;
+		}
+		
+		&__questionExpanded {
+			// @include make-flex($dir: column, $just: center, $align: center);
+			width: 24px;
+			height: 24px;
+			padding: 0px;
+			border-radius: 30px;
+			background-color: #308CF8;
+			color: #ffffff;
+			position: relative;
+			
+			p {
+				position: absolute;
+				top: -3px;
+				left: 5px;
+				transition: transform 2s ease-in-out;
+			}
+			
+			&--active {
+				background: #F83030;
+				
+				p {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+		
+		&__answer {
+			font-family: 'Poppins';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 19px;
+			line-height: 167.5%;
+			color: #363B53;
+			max-height: 0px;
+			overflow: hidden;
+			transition: max-height 1s ease-out;
+			
+			&--active {
+				max-height: min-content;
+				padding-bottom: 30px;
+			}
+		}
+		
+		&__borderLine {
+			height: 3px;
+			opacity: 0.1;
+			background-color: #363B53;
+		}
+	}
 }
