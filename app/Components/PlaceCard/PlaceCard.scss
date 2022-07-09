@@ -1,0 +1,46 @@
+@import "../../styles/root/mixins";
+
+.PlaceCardWrapper {
+  @include box(265px, auto);
+  @include make-flex($just: flex-start);
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 15px;
+  gap: 10px;
+  &--image {
+    @include box($height: auto);
+    border-radius: 6px;
+  }
+
+  &__content {
+    @include make-flex($align: flex-start);
+    color: var(--primaryTextColor);
+    font-family: "Poppins", sans-serif;
+    gap: 10px;
+
+    &--poc {
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+  @include respondAt(450px) {
+    @include box(100%, auto);
+  }
+
+  &__actions {
+    @include box(100%, 35px);
+    @include make-flex($dir: row, $just: space-between);
+    gap: 10px;
+
+    &--link {
+      @include box(100%, 35px);
+      @include make-flex();
+      border-radius: 6px;
+      color: var(--white);
+      gap: 10px;
+      text-decoration: none;
+      background-color: var(--blue);
+    }
+  }
+}
