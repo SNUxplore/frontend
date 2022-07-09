@@ -47,7 +47,7 @@ function Header() {
             <a href="/admin">Admins & Contact</a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/faqs">FAQs</a>
+            <a href="/faq">FAQs</a>
           </li>
           <li className="HeaderWrapper__middle--option">
             <a href="/about">About Us</a>
