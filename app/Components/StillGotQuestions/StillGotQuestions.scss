@@ -2,7 +2,7 @@
 
 .FaqRedirect {
   background-color: #61abfe;
-  @include box($width: 100vw, $height: 38.75vh);
+  @include box($width: auto, $height: 38.75vh);
   @include make-flex($dir: row);
 
   transition: padding, font-size 0.5s ease-in-out;
@@ -20,7 +20,27 @@
     gap: 0;
   }
 
+  @include respondAtLarge(2000px, 3000px) {
+    height: 16vh;
+    justify-content: space-between;
+  }
+
+  @include respondAtLarge(3000px, 4000px) {
+    height: 14vh;
+    justify-content: space-between;
+  }
+
+  @include respondAtLarge(4000px, 5000px) {
+    height: 12vh;
+    justify-content: space-between;
+  }
+
   &__left {
+    @include respondAtLarge(3000px, 4000px) {
+      padding: 0;
+      margin: 0;
+    }
+
     padding: 0 45px 0;
   }
 
@@ -28,6 +48,16 @@
   &__right {
     @include box(50%);
     @include make-flex();
+
+    @include respondAtLarge(3000px, 4000px) {
+      padding: 2%;
+      width: 37.7%;
+      margin-left: 1.5vw;
+    }
+    @include respondAtLarge(4000px, 6000px) {
+      width: 40.7%;
+      margin-left: 0.5vw;
+    }
 
     @include respondAt(1060px) {
       padding: 0 30px;
@@ -53,6 +83,10 @@
 
       @include respondAt(885px) {
         width: 100%;
+      }
+      @include respondAtLarge(3000px, 4000px) {
+        align-items: center;
+        margin-right: 2.6vw;
       }
     }
   }
