@@ -1,4 +1,4 @@
-import styleSheet from "~/styles/routes/Navigation/Food.css";
+import styleSheet from "~/styles/routes/Navigate/Food.css";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];

@@ -1,0 +1,13 @@
+@import "../../root/mixins";
+
+.NavigatePage {
+  @include make-flex($just: flex-start);
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  @include respondAt(860px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
