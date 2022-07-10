@@ -27,6 +27,18 @@ function InfoComponent({ title, information, button, indicatorState = 1 }) {
             }
           />
         </div>
+        <div className="InfoComponent__content--container__content">
+          <h1 className="InfoComponent__content--container__content__title">
+            Navigate <span>Campus</span>
+          </h1>
+          <p className="InfoComponent__content--container__content__para">
+            Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
+            pretium suspendisse eget.
+          </p>
+          <button className="InfoComponent__content--container__content__button">
+            Explore now
+          </button>
+        </div>
       </div>
     </div>
   );

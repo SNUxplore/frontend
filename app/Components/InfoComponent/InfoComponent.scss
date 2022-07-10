@@ -8,6 +8,8 @@
   }
 
   &__content--container {
+    display: flex;
+    gap: 40px;
     &__indicator--container {
       &__indicator {
         display: flex;
@@ -20,6 +22,20 @@
 
       .active {
         background: var(--blue);
+      }
+    }
+
+    &__content {
+      &__title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: var(--primaryTextColor);
+        font-size: 43px;
+
+        span {
+          border: 2px solid var(--blue);
+          font-weight: 600;
+        }
       }
     }
   }

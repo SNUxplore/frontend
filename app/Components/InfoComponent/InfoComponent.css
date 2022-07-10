@@ -2,6 +2,10 @@
   position: sticky;
   top: 30%;
 }
+.InfoComponent__content--container {
+  display: flex;
+  gap: 40px;
+}
 .InfoComponent__content--container__indicator--container__indicator {
   display: flex;
   margin-bottom: 70px;
@@ -12,6 +16,16 @@
 }
 .InfoComponent__content--container__indicator--container .active {
   background: var(--blue);
+}
+.InfoComponent__content--container__content__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--primaryTextColor);
+  font-size: 43px;
+}
+.InfoComponent__content--container__content__title span {
+  border: 2px solid var(--blue);
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=InfoComponent.css.map */
