@@ -68,6 +68,18 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+        <section className="aboutSection">
+          <div className="aboutSection__PlaceHolder stickyLabel"></div>
+          <section className="aboutSection__View1">
+            <h1>Section 1</h1>
+          </section>
+          <section className="aboutSection__View2">
+            <h1>Section 2</h1>
+          </section>
+          <section className="aboutSection__View3">
+            <h1>Section 3</h1>
+          </section>
+        </section>
       </main>
     </div>
   );

@@ -2,8 +2,8 @@
 
 .LandingPage {
   @include make-flex($just: flex-start);
-  overflow-y: auto;
-  overflow-x: hidden;
+  // overflow-y: auto;
+  // overflow-x: hidden;
   min-height: 100vh;
 
   &__mainContainer {
@@ -214,6 +214,29 @@
 
     @include respondAt(1095px) {
       gap: 80px;
+    }
+  }
+
+  .aboutSection {
+    &__PlaceHolder {
+      height: 300px;
+      width: 400px;
+      background: red;
+    }
+
+    .stickyLabel {
+      position: sticky;
+      top: 0;
+    }
+
+    &__View1 {
+      height: 100vh;
+    }
+    &__View2 {
+      height: 100vh;
+    }
+    &__View3 {
+      height: 100vh;
     }
   }
 }
