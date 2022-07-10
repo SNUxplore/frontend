@@ -1,6 +1,6 @@
 .InfoComponent__Container {
   position: sticky;
-  top: 0;
+  top: 30%;
 }
 .InfoComponent__content--container__indicator--container__indicator {
   display: flex;

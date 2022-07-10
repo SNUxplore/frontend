@@ -34,7 +34,7 @@ export default function LandingPage() {
 
   const references = React.useRef([]);
   references.current = [];
-  const [view, setView] = React.useState("");
+  const [view, setView] = React.useState(Sections[0].className);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
