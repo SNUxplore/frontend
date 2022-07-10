@@ -6,7 +6,7 @@ function ButtonLink({ href, content, fill }) {
       href={href}
       className={`ButtonLinkWrapper ${fill ? "ButtonLinkWrapper--fill" : ""} `}
     >
-      {content}
+      <p>{content}</p>
     </a>
   );
 }

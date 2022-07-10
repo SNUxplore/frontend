@@ -30,7 +30,18 @@ function InfoComponent({ indicatorState = 1 }) {
         </div>
         <div className="InfoComponent__content--container__content">
           <h1 className="InfoComponent__content--container__content__title">
-            Navigate <span>Campus</span>
+            {indicatorState === 1
+              ? "Navigate"
+              : indicatorState === 2
+              ? "Happening"
+              : "Admin &"}{" "}
+            <span>
+              {indicatorState === 1
+                ? "Campus"
+                : indicatorState === 2
+                ? "@SNU"
+                : "Info"}
+            </span>
           </h1>
           <p className="InfoComponent__content--container__content__para">
             Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
