@@ -33,7 +33,9 @@
         font-size: 43px;
 
         span {
-          border: 2px solid var(--titleHighlight);
+          background: var(--titleHighlight);
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
           font-weight: 600;
         }
       }
