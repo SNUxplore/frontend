@@ -1,3 +1,4 @@
+import React from "react";
 import InfoComponent from "~/Components/InfoComponent/InfoComponent";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
@@ -30,6 +31,30 @@ export default function LandingPage() {
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
+
+  const references = React.useRef([]);
+  references.current = [];
+  const [view, setView] = React.useState("");
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.isIntersecting
+          ? setView(entry.target.classList[0].toString())
+          : console.log(`${entry.target.classList[0]} is not intersecting`);
+      });
+    }, {});
+    references.current.forEach((reference) => {
+      observer.observe(reference);
+    });
+    console.log(view);
+  }, []);
+
+  const addRef = (element) => {
+    if (element && !references.current.includes(element)) {
+      references.current.push(element);
+    }
+  };
 
   return (
     <div className="LandingPage">
@@ -85,10 +110,18 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="aboutSection">
-          <InfoComponent />
+          <InfoComponent
+            indicatorState={
+              view === Sections[0].className
+                ? 1
+                : view === Sections[1].className
+                ? 2
+                : 3
+            }
+          />
           {Sections.map((section, index) => {
             return (
-              <section key={index} className={section.className}>
+              <section key={index} className={section.className} ref={addRef}>
                 <h1>{section.title}</h1>
               </section>
             );
