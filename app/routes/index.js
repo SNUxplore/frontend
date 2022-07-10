@@ -8,15 +8,12 @@ import arrow from "../Assets/Img/Arrow.svg";
 
 const Sections = [
   {
-    title: "Section 1",
     className: "aboutSection__View1",
   },
   {
-    title: "Section 2",
     className: "aboutSection__View2",
   },
   {
-    title: "Section 3",
     className: "aboutSection__View3",
   },
 ];
@@ -128,9 +125,11 @@ export default function LandingPage() {
           />
           {Sections.map((section, index) => {
             return (
-              <section key={index} className={section.className} ref={addRef}>
-                <h1>{section.title}</h1>
-              </section>
+              <section
+                key={index}
+                className={section.className}
+                ref={addRef}
+              ></section>
             );
           })}
         </section>
