@@ -86,15 +86,6 @@ export default function LandingPage() {
         </section>
         <section className="aboutSection">
           <InfoComponent />
-          {/* <section className="aboutSection__View1">
-            <h1>Section 1</h1>
-          </section>
-          <section className="aboutSection__View2">
-            <h1>Section 2</h1>
-          </section>
-          <section className="aboutSection__View3">
-            <h1>Section 3</h1>
-          </section> */}
           {Sections.map((section, index) => {
             return (
               <section key={index} className={section.className}>
