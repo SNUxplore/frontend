@@ -1,6 +1,6 @@
 import React from "react";
 
-function InfoComponent({ title, information, button, indicatorState = 1 }) {
+function InfoComponent({ indicatorState = 1 }) {
   return (
     <div className="InfoComponent__Container">
       <div className="InfoComponent__content--container">

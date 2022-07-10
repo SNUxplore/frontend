@@ -14,8 +14,8 @@
       &__indicator {
         display: flex;
         margin-bottom: 70px;
-        width: 13px;
-        height: 13px;
+        width: 11px;
+        height: 11px;
         border-radius: 50%;
         border: 2px solid var(--blue);
       }
@@ -28,7 +28,7 @@
     &__content {
       &__title {
         font-family: "Poppins", sans-serif;
-        font-weight: 500;
+        font-weight: 600;
         color: var(--primaryTextColor);
         font-size: 43px;
 
@@ -36,7 +36,7 @@
           background: var(--titleHighlight);
           padding-left: 0.25rem;
           padding-right: 0.25rem;
-          font-weight: 600;
+          font-weight: 700;
         }
       }
     }
