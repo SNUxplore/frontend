@@ -37,13 +37,20 @@ export default function LandingPage() {
   const [view, setView] = React.useState("");
 
   React.useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting
-          ? setView(entry.target.classList[0].toString())
-          : console.log(`${entry.target.classList[0]} is not intersecting`);
-      });
-    }, {});
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          setView(entry.target.classList[0].toString());
+        });
+      },
+      {
+        root: null,
+        threshold: 0.75,
+      }
+    );
     references.current.forEach((reference) => {
       observer.observe(reference);
     });
