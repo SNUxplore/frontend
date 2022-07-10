@@ -5,6 +5,21 @@ import SearchBar from "~/Components/SearchBar/SearchBar";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
+const Sections = [
+  {
+    title: "Section 1",
+    className: "aboutSection__View1",
+  },
+  {
+    title: "Section 2",
+    className: "aboutSection__View2",
+  },
+  {
+    title: "Section 3",
+    className: "aboutSection__View3",
+  },
+];
+
 import { useMediaQuery } from "react-responsive";
 
 export function links() {
@@ -71,7 +86,7 @@ export default function LandingPage() {
         </section>
         <section className="aboutSection">
           <InfoComponent />
-          <section className="aboutSection__View1">
+          {/* <section className="aboutSection__View1">
             <h1>Section 1</h1>
           </section>
           <section className="aboutSection__View2">
@@ -79,7 +94,14 @@ export default function LandingPage() {
           </section>
           <section className="aboutSection__View3">
             <h1>Section 3</h1>
-          </section>
+          </section> */}
+          {Sections.map((section, index) => {
+            return (
+              <section key={index} className={section.className}>
+                <h1>{section.title}</h1>
+              </section>
+            );
+          })}
         </section>
       </main>
     </div>
