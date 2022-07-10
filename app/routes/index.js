@@ -1,3 +1,4 @@
+import InfoComponent from "~/Components/InfoComponent/InfoComponent";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
@@ -69,7 +70,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="aboutSection">
-          <div className="aboutSection__PlaceHolder stickyLabel"></div>
+          <InfoComponent />
           <section className="aboutSection__View1">
             <h1>Section 1</h1>
           </section>

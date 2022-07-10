@@ -1,0 +1,8 @@
+@import "../../styles/root/mixins";
+
+.InfoComponent {
+  &__Container {
+    position: sticky;
+    top: 0;
+  }
+}
