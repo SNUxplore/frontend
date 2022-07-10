@@ -1,8 +1,26 @@
 @import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
 
 .InfoComponent {
   &__Container {
     position: sticky;
     top: 0;
+  }
+
+  &__content--container {
+    &__indicator--container {
+      &__indicator {
+        display: flex;
+        margin-bottom: 70px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+      }
+
+      .active {
+        background: var(--blue);
+      }
+    }
   }
 }

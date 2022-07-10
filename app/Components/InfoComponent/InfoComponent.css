@@ -2,5 +2,16 @@
   position: sticky;
   top: 0;
 }
+.InfoComponent__content--container__indicator--container__indicator {
+  display: flex;
+  margin-bottom: 70px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+.InfoComponent__content--container__indicator--container .active {
+  background: var(--blue);
+}
 
 /*# sourceMappingURL=InfoComponent.css.map */
