@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 function InfoComponent({ indicatorState = 1 }) {
   return (
@@ -35,9 +36,16 @@ function InfoComponent({ indicatorState = 1 }) {
             Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
             pretium suspendisse eget.
           </p>
-          <button className="InfoComponent__content--container__content__button">
-            Explore now
-          </button>
+          <ButtonLink
+            fill={false}
+            content={
+              indicatorState === 1
+                ? "Explore now"
+                : indicatorState === 2
+                ? "Find an Event"
+                : "Admin & Info"
+            }
+          />
         </div>
       </div>
     </div>

@@ -5,7 +5,8 @@
   @include make-flex();
 
   border-radius: 7px;
-  border: 1.5px solid var(--blue);
+  border: 2px solid var(--blue);
+  cursor: pointer;
   color: var(--blue);
   text-decoration: none;
   padding: 10px 12px;

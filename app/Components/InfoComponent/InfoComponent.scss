@@ -27,10 +27,11 @@
 
     &__content {
       &__title {
+        margin-bottom: 12px;
         font-family: "Poppins", sans-serif;
         font-weight: 600;
         color: var(--primaryTextColor);
-        font-size: 43px;
+        font-size: 50px;
 
         span {
           background: var(--titleHighlight);
@@ -38,6 +39,15 @@
           padding-right: 0.25rem;
           font-weight: 700;
         }
+      }
+
+      &__para {
+        max-width: 500px;
+        font-size: 18px;
+        line-height: 167.5%;
+        color: var(--primaryTextColor);
+        font-weight: 400;
+        margin-bottom: 12px;
       }
     }
   }
