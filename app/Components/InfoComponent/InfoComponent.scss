@@ -2,17 +2,19 @@
 @import "../../styles/root/theme/light.scss";
 
 .InfoComponent {
+  @include make-flex($dir: row, $align: center, $just: space-between);
   &__Container {
     position: sticky;
     top: 30%;
   }
 
   &__content--container {
-    display: flex;
+    @include make-flex($dir: row, $align: flex-start);
     gap: 40px;
     &__indicator--container {
       &__indicator {
-        display: flex;
+        @include make-flex($dir: row);
+        margin-top: 15px;
         margin-bottom: 70px;
         width: 11px;
         height: 11px;
@@ -53,6 +55,13 @@
         font-weight: 400;
         margin-bottom: 12px;
       }
+    }
+  }
+
+  &__image--container {
+    &__image {
+      width: 75%;
+      transition: all 0.3s ease-in-out;
     }
   }
 }

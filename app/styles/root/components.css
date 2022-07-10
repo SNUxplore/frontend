@@ -243,16 +243,29 @@
   cursor: inherit;
 }
 
+.InfoComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .InfoComponent__Container {
   position: sticky;
   top: 30%;
 }
 .InfoComponent__content--container {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
   gap: 40px;
 }
 .InfoComponent__content--container__indicator--container__indicator {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
   margin-bottom: 70px;
   width: 11px;
   height: 11px;
@@ -286,6 +299,10 @@
   color: var(--primaryTextColor);
   font-weight: 400;
   margin-bottom: 12px;
+}
+.InfoComponent__image--container__image {
+  width: 75%;
+  transition: all 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=components.css.map */

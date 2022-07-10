@@ -1,5 +1,8 @@
 import React from "react";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import Feature1 from "../../Assets/Img/Feature-1.svg";
+import Feature2 from "../../Assets/Img/Feature-2.svg";
+import Feature3 from "../../Assets/Img/Feature-3.svg";
 
 function InfoComponent({ indicatorState = 1 }) {
   return (
@@ -58,6 +61,19 @@ function InfoComponent({ indicatorState = 1 }) {
             }
           />
         </div>
+      </div>
+      <div className="InfoComponent__image--container">
+        <img
+          className="InfoComponent__image--container__image"
+          src={
+            indicatorState === 1
+              ? Feature1
+              : indicatorState === 2
+              ? Feature2
+              : Feature3
+          }
+          alt="feature-1Img"
+        />
       </div>
     </div>
   );
