@@ -45,7 +45,7 @@ export default function LandingPage() {
       },
       {
         root: null,
-        threshold: 0.75,
+        threshold: 0.35,
       }
     );
     references.current.forEach((reference) => {

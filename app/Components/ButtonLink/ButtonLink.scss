@@ -12,8 +12,12 @@
   padding: 10px 12px;
   font-family: "Poppins", sans-serif;
   line-height: 27px;
-  font-weight: 500;
+  font-weight: 600;
   transition: background-color 0.3s ease-in-out;
+
+  @include respondAt(780px) {
+    font-size: 14px;
+  }
   &:hover {
     background-color: var(--blue);
     color: var(--white);

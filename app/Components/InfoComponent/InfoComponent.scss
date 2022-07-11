@@ -29,6 +29,12 @@
         border: 2px solid var(--blue);
         opacity: 25%;
         transition: all 0.3s ease-in-out;
+
+        @include respondAt(780px) {
+          width: 8px;
+          height: 8px;
+          margin-bottom: 50px;
+        }
       }
 
       .active {
@@ -46,6 +52,10 @@
         font-size: 50px;
         transition: all 0.3s ease-in-out;
 
+        @include respondAt(780px) {
+          font-size: 40px;
+        }
+
         span {
           background: var(--titleHighlight);
           padding-left: 0.25rem;
@@ -61,6 +71,10 @@
         color: var(--primaryTextColor);
         font-weight: 400;
         margin-bottom: 12px;
+
+        @include respondAt(780px) {
+          font-size: 15px;
+        }
       }
     }
   }
