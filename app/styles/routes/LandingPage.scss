@@ -218,6 +218,7 @@
   }
 
   .aboutSection {
+    @include box();
     &__PlaceHolder {
       height: 300px;
       width: 400px;

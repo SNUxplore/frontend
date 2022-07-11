@@ -5,7 +5,14 @@
   @include make-flex($dir: row, $align: center, $just: space-between);
   &__Container {
     position: sticky;
-    top: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    @include make-flex($dir: row, $just: space-between);
+    gap: 20px;
+
+    @include respondAt(780px) {
+      flex-direction: column;
+    }
   }
 
   &__content--container {
@@ -59,8 +66,10 @@
   }
 
   &__image--container {
+    width: 58%;
+    max-width: 435px;
     &__image {
-      width: 75%;
+      width: 100%;
       transition: all 0.3s ease-in-out;
     }
   }
