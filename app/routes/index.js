@@ -5,6 +5,7 @@ import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
+import useScrollEffect from "~/Hooks/Observer";
 
 const Sections = [
   {
@@ -19,6 +20,7 @@ const Sections = [
 ];
 
 import { useMediaQuery } from "react-responsive";
+import useScrollEffect from "~/Hooks/Observer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -31,28 +33,8 @@ export default function LandingPage() {
 
   const references = React.useRef([]);
   references.current = [];
-  const [view, setView] = React.useState(Sections[0].className);
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-          setView(entry.target.classList[0].toString());
-        });
-      },
-      {
-        root: null,
-        threshold: 0.35,
-      }
-    );
-    references.current.forEach((reference) => {
-      observer.observe(reference);
-    });
-    console.log(view);
-  }, []);
+  const { view } = useScrollEffect(Sections[0].className, references.current);
 
   const addRef = (element) => {
     if (element && !references.current.includes(element)) {
