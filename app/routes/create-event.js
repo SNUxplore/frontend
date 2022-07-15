@@ -1,6 +1,7 @@
 import { json } from "@remix-run/node";
-import { Form, useLoaderData, useSubmit } from "@remix-run/react";
+import { Form, useLoaderData, useTransition } from "@remix-run/react";
 import { authenticator } from "./services/auth.server";
+import { createEvent } from "./services/user.server";
 
 export const loader = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request, {
@@ -10,14 +11,23 @@ export const loader = async ({ request }) => {
 };
 
 export const action = async ({ request }) => {
-  const data = Object.fromEntries(await request.formData());
-
-  return null;
+  const formData = Object.fromEntries(await request.formData());
+  // all your form data is here
+  console.log(formData);
+  const data = createEvent(formData)
+    .then((res) => res)
+    .catch((e) => {
+      throw new Error("Create event error");
+    });
+  return data;
 };
 
 export default function CreateEvent() {
   const data = useLoaderData();
   console.log(data);
+  // use for form submission spinner
+  const transition = useTransition();
+
   return (
     <div>
       <h1>Create Event</h1>
