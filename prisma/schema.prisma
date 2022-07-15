@@ -10,21 +10,22 @@ datasource db {
 }
 
 model User {
-  id          Int     @id @default(autoincrement())
-  email_id    String  @unique(map: "email_id") @db.VarChar(35)
-  website_url String? @db.Text
-  insta_url   String? @db.Text
-  Posts       Post[]
+  id         Int     @id @default(autoincrement())
+  emailId    String  @unique(map: "email_id") @db.VarChar(35)
+  websiteUrl String? @db.Text
+  instaUrl   String? @db.Text
+  Posts      Post[]
 }
 
 model Post {
   id          Int       @id @default(autoincrement())
   title       String?   @db.VarChar(200)
   description String?   @db.Text
-  image_url   String?   @db.Text
-  created_at  DateTime  @default(now()) @db.Timestamp(0)
-  updated_at  DateTime? @db.Timestamp(0)
+  imageUrl    String?   @db.Text
+  createdAt   DateTime  @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime? @db.Timestamp(0)
   location    String?   @db.Text
+  date        String?   @db.Text
   userId      Int
   User        User      @relation(fields: [userId], references: [id])
 }

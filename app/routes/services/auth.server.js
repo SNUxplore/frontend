@@ -18,8 +18,8 @@ let googleStrategy = new GoogleStrategy(
   },
   async ({ profile }) => {
     const email = profile.emails[0].value;
-    const user = await getSessionUserByEmail(email);
-    console.log(user);
-    return user;
+    const data = await getSessionUserByEmail(email);
+    return data;
   }
 );
+authenticator.use(googleStrategy);
