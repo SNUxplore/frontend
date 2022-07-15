@@ -18,7 +18,13 @@ let googleStrategy = new GoogleStrategy(
   },
   async ({ profile }) => {
     const email = profile.emails[0].value;
-    const data = await getSessionUserByEmail(email);
+    const data = await getSessionUserByEmail(email)
+      .then((data) => {
+        return data;
+      })
+      .catch((e) => {
+        throw new Error("Google Oauth Error");
+      });
     return data;
   }
 );
