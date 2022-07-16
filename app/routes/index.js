@@ -1,5 +1,5 @@
 import React from "react";
-import InfoComponent from "~/Components/InfoComponent/InfoComponent";
+import InfoComponent from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
