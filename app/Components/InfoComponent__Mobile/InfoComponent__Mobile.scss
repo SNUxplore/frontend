@@ -2,10 +2,24 @@
 @import "../../styles/root/theme/light.scss";
 
 .MobileContainer {
+  margin-top: 50px;
+  padding-left: 25px;
   @include respondAtAlt(780px) {
     display: none;
   }
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
   font-family: ("poppins");
+
+  &__ImageContainer {
+    &__image {
+      opacity: 100;
+      margin-top: 30px;
+      width: 450px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 
   &__title {
     font-size: 35px;
