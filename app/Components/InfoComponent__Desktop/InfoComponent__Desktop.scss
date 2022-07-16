@@ -4,6 +4,9 @@
 .InfoComponent {
   @include make-flex($dir: row, $align: center, $just: space-between);
   &__Container {
+    @include respondAt(780px) {
+      display: none;
+    }
     position: sticky;
     top: 50%;
     transform: translateY(-50%);

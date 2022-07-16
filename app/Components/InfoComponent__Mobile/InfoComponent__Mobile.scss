@@ -1,0 +1,8 @@
+@import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
+
+.MobileContainer {
+  @include respondAtAlt(780px) {
+    display: none;
+  }
+}

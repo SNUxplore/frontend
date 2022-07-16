@@ -4,6 +4,12 @@
   }
 }
 
+@mixin respondAtAlt($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
 @mixin box($width: 100%, $height: 100%) {
   width: $width;
   height: $height;

@@ -1,5 +1,6 @@
 import React from "react";
-import InfoComponent from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
+import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
+import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
@@ -95,7 +96,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="aboutSection">
-          <InfoComponent
+          <InfoComponent__Desktop
             indicatorState={
               view === Sections[0].className
                 ? 1
@@ -104,6 +105,7 @@ export default function LandingPage() {
                 : 3
             }
           />
+          <InfoComponent__Mobile />
           {Sections.map((section, index) => {
             return (
               <section

@@ -37,8 +37,10 @@
     // @include box($height: calc(100vh - 200px));
     @include make-flex($just: flex-start);
     // max-height: 720px;
-    padding-bottom: 40px;
-    margin-bottom: 350px;
+    @include respondAtAlt(780px) {
+      padding-bottom: 40px;
+      margin-bottom: 350px;
+    }
     gap: 65px;
 
     &__top {
@@ -232,12 +234,21 @@
     }
 
     &__View1 {
+      @include respondAt(780px) {
+        display: none;
+      }
       height: 100vh;
     }
     &__View2 {
+      @include respondAt(780px) {
+        display: none;
+      }
       height: 100vh;
     }
     &__View3 {
+      @include respondAt(780px) {
+        display: none;
+      }
       height: 100vh;
     }
   }
