@@ -1,73 +1,45 @@
 @import "../../styles/root/mixins";
 
 .dropDown {
-	&__questionBox {
-		width: 830px;
-	}
+  min-height: 48px;
+  width: 100%;
+  //   margin-bottom: 100px;
+  position: relative;
+  &__question {
+    @include box($height: 48px);
+    @include make-flex($dir: row, $just: space-between);
+    padding: 0 20px;
+    gap: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--white);
+    }
 
-	&__question {
-		width: 100%;
-		padding: 30px 0;
-		@include make-flex($dir: row, $just: space-between);
-		
-		font-family: 'Poppins', sans-serif;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 20px;
-		line-height: 167.5%;
-		color: #000000;
-		
-		background-color: transparent;
-		border: none;
-		text-align: left;
-	}
+    &--active {
+      background-color: var(--white);
+      border-radius: 5px 5px 0 0;
+    }
+  }
 
-	&__questionExpanded {
-		// @include make-flex($dir: column, $just: center, $align: center);
-		width: 24px;
-		height: 24px;
-		padding: 0px;
-		border-radius: 30px;
-		background-color: #308CF8;
-		color: #ffffff;
-		position: relative;
-		
-		p {
-			position: absolute;
-			top: -3px;
-			left: 5px;
-			transition: transform 2s ease-in-out;
-		}
-		
-		&--active {
-			background: #F83030;
-			
-			p {
-				transform: rotate(-45deg);
-			}
-		}
-	}
+  &__answer {
+    @include box($height: 100%);
+    @include make-flex($align: flex-start);
+    gap: 20px;
+    border-radius: 0 0 5px 5px;
+    p {
+      padding: 20px;
+    }
+    
 
-	&__answer {
-		font-family: 'Poppins';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 19px;
-		line-height: 167.5%;
-		color: #363B53;
-		max-height: 0px;
-		overflow: hidden;
-		transition: all 1s ease-out;
-		
-		&--active {
-			max-height: min-content;
-			padding-bottom: 30px;
-		}
-	}
-
-	&__borderLine {
-		height: 3px;
-		opacity: 0.1;
-		background-color: #363B53;
-	}
+    background-color: var(--white);
+  }
+ 
+    &__borderLine {
+      height: 1px;
+      opacity: 0.1;
+      background-color: #363b53;
+    }
 }

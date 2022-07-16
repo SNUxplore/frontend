@@ -32,14 +32,13 @@
   .mainSection {
     @include make-flex($just: flex-start);
     padding-bottom: 40px;
-	width: 100%;
+    width: 100%;
 
     &__top {
       @include box($height: 75%);
       @include make-flex($dir: column);
       padding: 50px 0;
       gap: 20px;
-
     }
 
     &__title {
@@ -126,6 +125,11 @@
 
     &__questions {
       @include make-flex($dir: column);
+      width: 80%;
+
+      @include respondAt(800px) {
+        width: 100%;
+      }
     }
   }
 }
