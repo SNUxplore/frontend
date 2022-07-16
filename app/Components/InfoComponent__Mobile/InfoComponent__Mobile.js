@@ -2,6 +2,7 @@ import Feature1Img from "../../Assets/Img/Feature-1.svg";
 import arrowLeft from "../../Assets/Img/arrowLeft.svg";
 import arrowRight from "../../Assets/Img/arrowRight.svg";
 import React from "react";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 export default function InfoComponent__Mobile() {
   const [infoIndex, setInfoIndex] = React.useState(0);
@@ -25,6 +26,7 @@ export default function InfoComponent__Mobile() {
         worries, We can connect you to resourses that will unlock all that Shiv
         Nadar University has to offer.
       </p>
+      <ButtonLink content="Explore now" />
       <div className="MobileContainer__ImageContainer">
         <img src={Feature1Img}></img>
       </div>

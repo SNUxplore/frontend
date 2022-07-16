@@ -17,6 +17,7 @@
 
   @include respondAt(780px) {
     font-size: 14px;
+    padding: 6px 8px;
   }
   &:hover {
     background-color: var(--blue);
