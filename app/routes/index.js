@@ -5,7 +5,6 @@ import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
-import useScrollEffect from "~/Hooks/Observer";
 
 const Sections = [
   {
