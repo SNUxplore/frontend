@@ -31,22 +31,85 @@
         &:hover {
           text-decoration: underline;
         }
+        @include respondAt(1530px) {
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 500;
+        }
       }
+      p {
+        margin-top: 15%;
+        font-size: 10px;
+        font-weight: 100;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff59;
+        padding-bottom: 1.75%;
+      }
+      @include respondAt(1530px) {
+        &:hover {
+          img {
+            filter: brightness(0) saturate(100%) invert(43%) sepia(80%)
+              saturate(1755%) hue-rotate(194deg) brightness(98%) contrast(99%);
+          }
+
+          a {
+            color: #308cf8;
+            text-decoration: none;
+          }
+        }
+      }
+      img {
+        display: inline;
+        margin-right: 15px;
+        @include box($height: 15px, $width: 15px);
+      }
+    }
+    &--lineSep {
+      @include box(242px, 0.25px);
+      background-color: #ffffff59;
     }
   }
 
   &__right {
     @include make-flex($dir: row);
+    @include respondAt(1530px) {
+      justify-content: space-evenly;
+      column-gap: 29px;
+    }
+
     gap: 20px;
+
+    flex-wrap: wrap;
 
     a {
       img {
         @include box($height: 19px, $width: 19px);
+
+        @include respondAt(1530px) {
+          filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
+            saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);
+          &:hover {
+            filter: none;
+          }
+        }
       }
     }
+    &--paragraph {
+      font-size: 10px;
+      font-weight: 100;
+      font-family: "Poppins", sans-serif;
+      color: #ffffff59;
+      padding-bottom: 1.75%;
+      width: 250px;
+    }
+    &--lineSep {
+      align-items: center;
+      width: 242px;
+      height: 0.5px;
+      background-color: #ffffff59;
+    }
   }
-
- 
 
   @include respondAt(1530px) {
     z-index: 5;
@@ -55,7 +118,9 @@
     @include make-flex($dir: row, $just: space-between);
     padding: 0 45px;
     &__middle {
-      @include make-flex($dir: column);
+      @include make-flex($dir: column, $align: flex-start, $just: center);
+      margin-top: 15%;
+
       gap: 20px;
     }
     #NavBarInput {
@@ -101,17 +166,20 @@
     #NavBarInput:checked ~ .hamButton > label > .span.HL1 {
       opacity: 1;
       transform: rotate(45deg) translate(3px, -5px);
+      background-color: white;
     }
     #NavBarInput:checked ~ .hamButton > label > .span.HL2 {
       opacity: 0;
       transform: rotate(0deg) scale(0.2, 0.2);
+      background-color: white;
     }
     #NavBarInput:checked ~ .hamButton > label > .span.HL3 {
       transform: rotate(-45deg) translate(3px, -1px);
+      background-color: white;
     }
   }
 
-  @include respondAt(470px){
+  @include respondAt(470px) {
     padding: 0 30px;
   }
 
@@ -123,17 +191,20 @@
     @include respondAt(1530px) {
       position: absolute;
       @include make-flex();
+
       right: 0;
       top: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
       width: 100%;
       max-width: 290px;
       height: 100vh;
-      border-left: 4px solid #a66874;
-      background-color: #ffffff;
+      background-color: #242836;
       transform: translateX(100%);
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       &--open {
         transform: translateX(0%);
+        align-items: center;
       }
 
       &__Hamburger {
