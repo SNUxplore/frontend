@@ -158,7 +158,14 @@ function Header() {
           </div>
         )}
       </div>
-      <div className="HeaderWrapper__Hamburger">
+      <div
+        className="HeaderWrapper__Hamburger"
+        style={{
+          position: navState ? "fixed" : "",
+          top: "41px",
+          right: "30px",
+        }}
+      >
         <input
           type="checkbox"
           id="NavBarInput"
