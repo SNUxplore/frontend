@@ -17,10 +17,7 @@ function Header() {
     query: "(max-width: 1530px)",
   });
 
-  
-
   return (
-    
     <nav className="HeaderWrapper">
       {dropdown && (
         <img
@@ -46,63 +43,91 @@ function Header() {
 
         <ul className="HeaderWrapper__middle">
           {dropdown && (
-            <div>
-              <li className="HeaderWrapper__middle--option"><p>Features</p></li>
-              <div className = "HeaderWrapper__middle--lineSep"></div>
-            
-
+            <div style={{ width: "100%" }}>
+              <li className="HeaderWrapper__middle--option">
+                <p>Features</p>
+              </li>
+              <div className="HeaderWrapper__middle--lineSep"></div>
             </div>
-            
           )}
           <li className="HeaderWrapper__middle--option">
-            <a href="/navigate">{dropdown && (<img className = "HeaderWrapper__middle--option"
-              src={locationIcon}
-              alt="snu explore Logo"/>)}Navigate Campus</a>
+            <a href="/navigate">
+              {dropdown && (
+                <img
+                  className="HeaderWrapper__middle--option"
+                  src={locationIcon}
+                  alt="snu explore Logo"
+                />
+              )}
+              Navigate Campus
+            </a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/events">{dropdown && (<img className = "HeaderWrapper__middle--option fire"
-              src={fireIcon}
-              alt="snu explore Logo"/>)}Happening@SNU</a>
+            <a href="/events">
+              {dropdown && (
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={fireIcon}
+                  alt="snu explore Logo"
+                />
+              )}
+              Happening@SNU
+            </a>
           </li>
           {dropdown && (
-            <div>
-              <li className="HeaderWrapper__middle--option"><p>Help and more</p></li>
-              <div className = "HeaderWrapper__middle--lineSep"></div>
-            
-
+            <div style={{ marginTop: "35px", width: "100%" }}>
+              <li className="HeaderWrapper__middle--option">
+                <p>Help and more</p>
+              </li>
+              <div className="HeaderWrapper__middle--lineSep"></div>
             </div>
-            
           )}
           <li className="HeaderWrapper__middle--option">
-            <a href="/admin">{dropdown && (<img className = "HeaderWrapper__middle--option fire"
-              src={infoIcon}
-              alt="snu explore Logo"/>)}Admins & Contact</a>
+            <a href="/admin">
+              {dropdown && (
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={infoIcon}
+                  alt="snu explore Logo"
+                />
+              )}
+              Admins & Contact
+            </a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/faq">{dropdown && (<img className = "HeaderWrapper__middle--option fire"
-              src={questionIcon}
-              alt="snu explore Logo"/>)}FAQs</a>
+            <a href="/faq">
+              {dropdown && (
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={questionIcon}
+                  alt="snu explore Logo"
+                />
+              )}
+              FAQs
+            </a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/about">{dropdown && (<img className = "HeaderWrapper__middle--option fire"
-              src={usersIcon}
-              alt="snu explore Logo"/>)}About Us</a>
+            <a href="/about">
+              {dropdown && (
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={usersIcon}
+                  alt="snu explore Logo"
+                />
+              )}
+              About Us
+            </a>
           </li>
         </ul>
-        
 
         <div className="HeaderWrapper__right">
-        
-        {dropdown && (
-            <div >
-              <p className = "HeaderWrapper__right--paragraph">Social Medias</p>
-              <div className = "HeaderWrapper__right--lineSep"></div>
+          {dropdown && (
+            <div style={{ width: "100%" }}>
+              <p className="HeaderWrapper__right--paragraph">Social Medias</p>
+              <div className="HeaderWrapper__right--lineSep"></div>
             </div>
-
-            
-            
           )}
-         
+
           <a href="https://www.instagram.com/snu.xplore/">
             <img
               className="HeaderWrapper__right--logo"
@@ -124,19 +149,22 @@ function Header() {
               alt="snu explore Logo"
             />
           </a>
-          
         </div>
+        {dropdown && (
+          <div className="HeaderWrapper__dots">
+            <span className="HeaderWrapper__dots--dot"></span>
+            <span className="HeaderWrapper__dots--dot"></span>
+            <span className="HeaderWrapper__dots--dot"></span>
+          </div>
+        )}
       </div>
       <div className="HeaderWrapper__Hamburger">
         <input
           type="checkbox"
           id="NavBarInput"
           onChange={() => {
-            
-            
             setNavState(!navState);
             console.log(navState);
-            
           }}
         />
         <div className="hamButton">

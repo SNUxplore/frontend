@@ -13,6 +13,10 @@
     &--logo {
       @include box(47px, 47px);
     }
+
+    @include respondAt(1530px) {
+      display: none;
+    }
   }
 
   &__middle {
@@ -39,7 +43,7 @@
         }
       }
       p {
-        margin-top: 15%;
+        // margin-top: 15%;
         font-size: 10px;
         font-weight: 100;
         font-family: "Poppins", sans-serif;
@@ -66,7 +70,7 @@
       }
     }
     &--lineSep {
-      @include box(242px, 0.25px);
+      @include box(100%, 0.25px);
       background-color: #ffffff59;
     }
   }
@@ -76,16 +80,13 @@
     @include respondAt(1530px) {
       justify-content: space-evenly;
       column-gap: 29px;
+      width: 100%;
     }
-
-    gap: 20px;
-
+    gap: 30px;
     flex-wrap: wrap;
-
     a {
       img {
         @include box($height: 19px, $width: 19px);
-
         @include respondAt(1530px) {
           filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
             saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);
@@ -101,11 +102,11 @@
       font-family: "Poppins", sans-serif;
       color: #ffffff59;
       padding-bottom: 1.75%;
-      width: 250px;
+      width: 100%;
     }
     &--lineSep {
       align-items: center;
-      width: 242px;
+      width: 100%;
       height: 0.5px;
       background-color: #ffffff59;
     }
@@ -119,8 +120,8 @@
     padding: 0 45px;
     &__middle {
       @include make-flex($dir: column, $align: flex-start, $just: center);
-      margin-top: 15%;
-
+      height: fit-content;
+      width: 100%;
       gap: 20px;
     }
     #NavBarInput {
@@ -185,17 +186,17 @@
 
   &__menu {
     @include box();
-    @include make-flex($dir: row);
-    gap: 170px;
+    @include make-flex($dir: row, $just: space-evenly);
+    padding: 0 25px;
 
     @include respondAt(1530px) {
-      position: absolute;
-      @include make-flex();
-
+      top: 0;
+      position: fixed;
+      @include make-flex($just: flex-start);
+      padding-top: 140px;
+      gap: 50px;
       right: 0;
       top: 0;
-      align-items: flex-start;
-      justify-content: flex-start;
       width: 100%;
       max-width: 290px;
       height: 100vh;
@@ -204,7 +205,6 @@
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       &--open {
         transform: translateX(0%);
-        align-items: center;
       }
 
       &__Hamburger {
@@ -217,6 +217,21 @@
 
         transform: translate(-50%, -50%);
       }
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 33px;
+    left: 0;
+    @include make-flex($dir: row, $just: space-evenly);
+    gap: 20px;
+    width: 100%;
+    &--dot {
+      @include box(15px, 15px);
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      display: inline-block;
     }
   }
 }
