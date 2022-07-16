@@ -44,7 +44,7 @@ export default function LandingPage() {
 
   return (
     <div className="LandingPage">
-      <Header />
+      {/* <Header /> */}
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
