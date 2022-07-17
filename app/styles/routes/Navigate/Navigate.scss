@@ -1,5 +1,8 @@
 @import "../../root/mixins";
 
+html {
+  height: unset !important;
+}
 .NavigatePage {
   @include make-flex($just: flex-start);
   // overflow-y: auto;
@@ -111,16 +114,16 @@
       }
     }
     &--panel {
-      @include box(220px, 440px);
+      @include box(220px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
       border-radius: 7px;
-      top: 22%;
+      top: 26%;
       padding: 15px;
       gap: 15px;
       position: sticky;
 
-      box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
+      // box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
 
       @include respondAt(590px) {
         @include box(100%, 54px);
