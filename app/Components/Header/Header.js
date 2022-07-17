@@ -20,11 +20,13 @@ function Header() {
   return (
     <nav className="HeaderWrapper">
       {dropdown && (
-        <img
-          className="HeaderWrapper__left--logo"
-          src={appLogo}
-          alt="snu explore Logo"
-        />
+        <a href="/">
+          <img
+            className="HeaderWrapper__left--logo"
+            src={appLogo}
+            alt="snu explore Logo"
+          />
+        </a>
       )}
       <div
         className={`HeaderWrapper__menu ${
@@ -33,11 +35,13 @@ function Header() {
       >
         <div className="HeaderWrapper__left">
           {!dropdown && (
-            <img
-              className="HeaderWrapper__left--logo"
-              src={appLogo}
-              alt="snu explore Logo"
-            />
+            <a href="/">
+              <img
+                className="HeaderWrapper__left--logo"
+                src={appLogo}
+                alt="snu explore Logo"
+              />
+            </a>
           )}
         </div>
 

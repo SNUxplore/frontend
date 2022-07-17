@@ -19,10 +19,10 @@
     transition: padding 0.5s ease-in-out;
 
     @include respondAt(1525px) {
-      padding: 0 130px;
+      padding: 0 130px 50px;
     }
     @include respondAt(1335px) {
-      padding: 0 90px;
+      padding: 0 90px 50px;
     }
     @include respondAt(1135px) {
       padding: 0 40px;
