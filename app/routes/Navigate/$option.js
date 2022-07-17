@@ -15,17 +15,58 @@ export default function NavOption() {
       const contentContainer = document.querySelector(
         "body > div > main > section.NavigatePage__main--content"
       );
-      window.scrollTo({
-        top: contentContainer.offsetTop - 220,
-        behavior: "smooth",
-      });
+      if (window.innerWidth >= 590) {
+        window.scrollTo({
+          top: contentContainer.offsetTop - 220,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo({
+          top: contentContainer.offsetTop,
+          behavior: "smooth",
+        });
+      }
     }
   }, [option]);
+
+  function generateActionLinks(entry) {
+    let actionLinks = [];
+    if (entry.callWarden) {
+      actionLinks.push({
+        title: "Call",
+        href: `tel:${entry.callWarden}`,
+      });
+    }
+    if (entry.mailWarden) {
+      actionLinks.push({
+        title: "Mail",
+        href: `mailto:${entry.mailWarden}`,
+      });
+    }
+    if (entry.location) {
+      actionLinks.push({
+        title: "Map",
+        href: entry.location,
+      });
+    }
+    if (entry.menu) {
+      actionLinks.push({
+        title: "Menu",
+        href: entry.menu,
+      });
+    }
+
+    return actionLinks;
+  }
 
   return (
     <div className="NavigatePage__content--right">
       {contextData[option].map((i, index) => (
-        <PlaceCard key={index} />
+        <PlaceCard
+          key={index}
+          name={i.name}
+          actionLists={generateActionLinks(contextData[option][index])}
+        />
       ))}
     </div>
   );

@@ -107,7 +107,7 @@ html {
       overflow: visible;
 
       @include respondAt(590px) {
-        @include box(100%, auto);
+        @include box(100vw, auto);
         position: absolute;
         top: 0;
         // left: 0;
@@ -130,6 +130,7 @@ html {
         padding: 0 10px;
         flex-direction: row;
         scrollbar-width: none;
+        border-radius: 0;
         overflow-x: auto;
         z-index: 2;
         gap: 8px;
@@ -138,6 +139,18 @@ html {
         &::-webkit-scrollbar {
           display: none;
         }
+
+        background-image: linear-gradient(to right, white, white),
+          linear-gradient(to right, white, white),
+          linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+          linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+
+        background-position: left center, right center, left center,
+          right center;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+        background-attachment: local, local, scroll, scroll;
       }
 
       a {
