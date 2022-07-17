@@ -99,7 +99,7 @@ function Header() {
             </a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/faq">
+            <a href="/faqs">
               {dropdown && (
                 <img
                   className="HeaderWrapper__middle--option fire"
