@@ -2,8 +2,8 @@
 
 .LandingPage {
   @include make-flex($just: flex-start);
-  overflow-y: auto;
-  overflow-x: hidden;
+  // overflow-y: auto;
+  // overflow-x: hidden;
   min-height: 100vh;
 
   &__mainContainer {
@@ -36,7 +36,10 @@
     // @include box($height: calc(100vh - 200px));
     @include make-flex($just: flex-start);
     // max-height: 720px;
-    padding-bottom: 40px;
+    @include respondAtAlt(780px) {
+      padding-bottom: 40px;
+      margin-bottom: 350px;
+    }
     gap: 65px;
 
     &__top {
@@ -213,6 +216,39 @@
 
     @include respondAt(1095px) {
       gap: 80px;
+    }
+  }
+
+  .aboutSection {
+    @include box();
+    &__PlaceHolder {
+      height: 300px;
+      width: 400px;
+      background: red;
+    }
+
+    .stickyLabel {
+      position: sticky;
+      top: 0;
+    }
+
+    &__View1 {
+      @include respondAt(780px) {
+        display: none;
+      }
+      height: 100vh;
+    }
+    &__View2 {
+      @include respondAt(780px) {
+        display: none;
+      }
+      height: 100vh;
+    }
+    &__View3 {
+      @include respondAt(780px) {
+        display: none;
+      }
+      height: 100vh;
     }
   }
 }
