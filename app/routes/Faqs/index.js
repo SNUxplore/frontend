@@ -12,7 +12,7 @@ export default function Index() {
         <a href="/">Home</a>
         <a href="/admin">Admin</a>
         <a href="/events">Events</a>
-        <a href="/navigation">Navigation</a>
+        <a href="/navigate">Navigation</a>
       </MockNavigator>
     </div>
   );

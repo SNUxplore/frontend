@@ -10,7 +10,7 @@ export default function Index() {
     <div className="AdminPage">
       <MockNavigator title="Admin">
         <a href="/">Home</a>
-        <a href="/navigation">Navigation</a>
+        <a href="/navigate">Navigation</a>
         <a href="/events">Events</a>
         <a href="/faqs">FAQs</a>
       </MockNavigator>

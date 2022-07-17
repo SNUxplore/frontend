@@ -15,7 +15,7 @@
     max-width: 1585px;
     min-height: calc(100% - 110px);
     // background-color: aqua;
-    padding: 0px 170px;
+    padding: 0px 170px 60px;
     transition: padding 0.5s ease-in-out;
 
     @include respondAt(1525px) {
@@ -27,7 +27,6 @@
     @include respondAt(1135px) {
       padding: 0 40px;
     }
-
     @include respondAt(470px) {
       padding: 0 0;
     }
@@ -85,7 +84,7 @@
       }
       &--right {
         @include make-flex($align: flex-end, $just: flex-start);
-        padding-top: 115px;
+        // padding-top: 115px;
         gap: 30px;
 
         @include respondAt(1095px) {

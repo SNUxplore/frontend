@@ -4,6 +4,7 @@ import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoCompon
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
+import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
@@ -21,10 +22,11 @@ const Sections = [
 
 import { useMediaQuery } from "react-responsive";
 import useScrollEffect from "~/Hooks/Observer";
+import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
-}
+} 
 
 export default function LandingPage() {
   const callToAction = useMediaQuery({
@@ -116,7 +118,9 @@ export default function LandingPage() {
             );
           })}
         </section>
+        <StillGotQuestions />
       </main>
+      <Footer />
     </div>
   );
 }
