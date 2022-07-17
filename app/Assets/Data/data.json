@@ -1,5 +1,5 @@
 {
-  "Residentials": [
+  "Residential": [
     {
       "name": "Hostel 1-A",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+1A/@28.5244496,77.573215,19.42z/data=!4m5!3m4!1s0x390c94d7553aabc9:0xd09ad60822f3d32e!8m2!3d28.5249758!4d77.5730025",
@@ -117,7 +117,6 @@
       "location": "https://www.google.co.uk/maps/place/28%C2%B031'41.8%22N+77%C2%B034'40.6%22E/@28.528534,77.5777165,241m/data=!3m1!1e3!4m6!3m5!1s0x0:0x68ca9250c3fd28f2!7e2!8m2!3d28.5282795!4d77.5779324"
     }
   ],
-
   "Academics": [
     {
       "name": "A Block",
