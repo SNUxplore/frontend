@@ -1,17 +1,23 @@
+import React from "react";
 import styleSheet from "~/styles/routes/Navigate/Navigate.css";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import Footer from "~/Components/Footer/Footer";
 import { Outlet } from "@remix-run/react";
+import data from "~/Assets/Data/data.json";
+import { Link } from "@remix-run/react";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
+
 export default function Navigate() {
+  const [currentOption, setCurrentOption] = React.useState(
+    Object.keys(data)[0]
+  );
   React.useEffect(() => {
     // Dynamically change left container's height
-
     const changeHeight = () => {
       const height = document
         .querySelector(".NavigatePage__content--right")
@@ -21,7 +27,6 @@ export default function Navigate() {
     };
 
     const resize_ob = new ResizeObserver(function (entries) {
-      console.log(entries);
       let rect = entries[0].contentRect;
       let height = rect.height;
       document.querySelector(".NavigatePage__content--left").style.height =
@@ -53,19 +58,20 @@ export default function Navigate() {
         <section className="NavigatePage__main--content">
           <div className="NavigatePage__content--left">
             <div className="NavigatePage__content--panel">
-              <a className="activeTab" href="/navigate/academic">
-                Academic
-              </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
-              <a href="/navigate/food"> Food </a>
+              {Object.keys(data).map((key, index) => (
+                <Link
+                  replace
+                  className={`${currentOption === key ? "activeTab" : ""}`}
+                  key={index}
+                  to={`/navigate/${key}`}
+                  onClick={() => setCurrentOption(key)}
+                >
+                  {key}
+                </Link>
+              ))}
             </div>
           </div>
-          <Outlet />
+          <Outlet context={data} />
         </section>
       </main>
 
