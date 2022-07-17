@@ -1,4 +1,4 @@
-import styleSheet from "~/styles/routes/Navigation/Residential.css";
+import styleSheet from "~/styles/routes/Navigate/Residential.css";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];

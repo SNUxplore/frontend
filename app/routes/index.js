@@ -1,23 +1,52 @@
+import React from "react";
+import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
+import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
+import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
+const Sections = [
+  {
+    className: "aboutSection__View1",
+  },
+  {
+    className: "aboutSection__View2",
+  },
+  {
+    className: "aboutSection__View3",
+  },
+];
+
 import { useMediaQuery } from "react-responsive";
+import useScrollEffect from "~/Hooks/Observer";
+import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
-}
+} 
 
 export default function LandingPage() {
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
 
+  const references = React.useRef([]);
+  references.current = [];
+
+  const { view } = useScrollEffect(Sections[0].className, references.current);
+
+  const addRef = (element) => {
+    if (element && !references.current.includes(element)) {
+      references.current.push(element);
+    }
+  };
+
   return (
     <div className="LandingPage">
-      <Header />
+      {/* <Header /> */}
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
@@ -68,7 +97,30 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+        <section className="aboutSection">
+          <InfoComponent__Desktop
+            indicatorState={
+              view === Sections[0].className
+                ? 1
+                : view === Sections[1].className
+                ? 2
+                : 3
+            }
+          />
+          <InfoComponent__Mobile />
+          {Sections.map((section, index) => {
+            return (
+              <section
+                key={index}
+                className={section.className}
+                ref={addRef}
+              ></section>
+            );
+          })}
+        </section>
+        <StillGotQuestions />
       </main>
+      <Footer />
     </div>
   );
 }

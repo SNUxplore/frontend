@@ -1,12 +1,12 @@
 import React from "react";
 
-function ButtonLink({ href, content, fill }) {
+function ButtonLink({ className, href, content, fill, fill2 }) {
   return (
     <a
       href={href}
       className={`ButtonLinkWrapper ${fill ? "ButtonLinkWrapper--fill" : ""} `}
     >
-      {content}
+      <p>{content}</p>
     </a>
   );
 }

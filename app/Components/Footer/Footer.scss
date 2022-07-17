@@ -1,0 +1,128 @@
+@import "../../styles/root/mixins";
+
+.FooterWrapper {
+  @include make-flex();
+  @include box(100%, 350px);
+  background: #242836;
+  @include respondAt(840px) {
+    height: auto;
+  }
+
+  &__container {
+    @include make-flex($dir: row, $just: space-between);
+    @include box();
+    max-width: 1585px;
+    padding: 0px 170px;
+
+    @include respondAt(1525px) {
+      padding: 0 130px;
+    }
+    @include respondAt(1335px) {
+      padding: 0 90px;
+    }
+    @include respondAt(1135px) {
+      padding: 0 40px;
+    }
+
+    @include respondAt(840px) {
+      flex-direction: column;
+    }
+
+    @include respondAt(470px) {
+      padding: 0 0;
+    }
+  }
+
+  &__left {
+    @include box(40%);
+    @include make-flex($align: flex-start);
+    gap: 20px;
+
+    @include respondAt(1095px) {
+      width: 250px;
+    }
+    @include respondAt(610px) {
+      width: 100%;
+      align-items: center;
+    }
+
+    &--logo {
+      @include box(250px, auto);
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+
+    &--Copyright {
+      @include box(auto, auto);
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: center;
+      color: #787777;
+    }
+  }
+
+  &__right {
+    @include make-flex($dir: row, $just: space-between, $align: flex-start);
+    gap: 30px;
+    @include box(50%);
+    padding: 70px 0;
+
+    @include respondAt(1095px) {
+      width: 69%;
+      padding: 70px 0 70px 20px;
+    }
+    @include respondAt(840px) {
+      width: 100%;
+      padding: 40px 25px 55px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    &--Service {
+      font-family: "Poppins", sans-serif;
+      list-style-type: none;
+      @include make-flex($align: flex-start);
+      gap: 8px;
+      a {
+        font-size: 15px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .mailIcon,
+      .callIcon,
+      .SocialMediaHandles {
+        @include make-flex($dir: row);
+        gap: 5px;
+        a {
+          &:hover {
+            color: #ffc107;
+          }
+        }
+      }
+
+      .SocialMediaHandles {
+        @include make-flex($dir: row, $just: flex-start);
+        @include box(100%, auto);
+        gap: 5px;
+        margin-top: 20px;
+
+        a {
+          img {
+            width: 45px;
+          }
+        }
+      }
+    }
+    &--rowHeading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.46);
+    }
+  }
+}
