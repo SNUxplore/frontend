@@ -158,7 +158,7 @@ html {
         @include box(100%, 40px);
         @include make-flex();
         padding: 7px 8px;
-        color: var(--black);
+        color: var(--primaryTextColor);
         border-radius: 5px;
         @include respondAt(590px) {
           @include box(auto, auto);
