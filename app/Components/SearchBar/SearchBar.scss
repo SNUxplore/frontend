@@ -19,7 +19,7 @@
 		height: 100%;
 		background-color: rgba(101, 108, 133, 0.8);
 		z-index: 99;
-	}
+	}	
 	
 	&__modal--active {
 	 	width: 550px;
@@ -32,12 +32,26 @@
 		
 		@include respondAt(750px){
 			@include box(100%, 100%);
-			
+			margin: 0;
+		}
+	}
+	
+	&__searchContainer {
+		@include box(100%, 50px);
+		display: flex;
+		justify-content: space-between;
+
+		@include respondAt(1095px) {
+			@include box(100%, 50px);
+		}
+		
+		&--active {
+			@include box(100%, 50px);
 		}
 	}
 	
 	&__searchBox {
-		@include box(80%, 50px);
+		@include box(100%, 50px);
 		position: relative;
 
 		@include respondAt(1095px) {
@@ -76,6 +90,21 @@
     }
   }
 	
+	&__cancel {
+		display: none;
+		
+		&--active {
+			@include respondAt(750px) {
+				display: block;
+				border: none;
+				background-color: transparent;
+				color: #3884FF;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	
 	&__searchResults {
 		width: 100%;
 		height: fit-content;
@@ -86,6 +115,7 @@
 		
 		&--active {
 			display: block;
+			max-height: 700px;
 		}		
 	}
 	
