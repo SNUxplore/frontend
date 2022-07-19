@@ -55,50 +55,42 @@ function SearchBar() {
 			onClick={() => { setIsFocused(false) }}>
 			<div
 				className={activeClassName("SearchBarWrapper__modal", isFocused)}>
-				<div className="SearchBarWrapper__searchContainer">
-					<div
-						className={activeClassName("SearchBarWrapper__searchBox", isFocused)}>
-						<input
-							className="SearchBarWrapper__input"
-							type="text"
-							placeholder={"Search"}
-							value={search}
-							onChange={(e) => { setSearch(e.target.value) }}
-							// onFocus={() => { setIsFocused(true); }}
-							onClick={(e) => {
-								e.stopPropagation();
-								setIsFocused(true);
-							}}
-						/>
-						<button type="button" className="SearchBarWrapper__submit">
-							<img src={SearchIcon} alt="Search Icon" />
-						</button>
-					</div>
-					<button
-						type="button"
-						className={activeClassName("SearchBarWrapper__cancel", isFocused)}
-						onClick={() => setIsFocused(false)}>
-						Cancel
+				<div
+					className={activeClassName("SearchBarWrapper__searchBox", isFocused)}>
+					<input
+						className="SearchBarWrapper__input"
+						type="text"
+						placeholder={"Search"}
+						value={search}
+						onChange={(e) => { setSearch(e.target.value) }}
+						// onFocus={() => { setIsFocused(true); }}
+						onClick={(e) => {
+							e.stopPropagation();
+							setIsFocused(true);
+						}}
+					/>
+					<button type="button" className={activeClassName("SearchBarWrapper__submit", isFocused)}>
+						<img src={SearchIcon} alt="Search Icon" />
 					</button>
 				</div>
 				<div className={activeClassName("SearchBarWrapper__searchResults", isFocused)}>
-					{search === ""
-						? <div className="SearchBarWrapper__noSearchResult">
-							<p>No search results</p>
-						</div>
-						: results.map((result) => {
-								return (
-									<a
-										className="SearchBarWrapper__searchResult"
-										href={"/navigate/" + result.item.category + "?name=" + result.item.name}
-										key={result.refIndex}>
-										<p>
-											{result.item.name}
-										</p>
-									</a>
-								);
-							})
-						}
+					{
+						results.map((result) => {
+							return (
+								<a
+									className="SearchBarWrapper__searchResult"
+									href={"/navigate/" + result.item.category + "?name=" + result.item.name}
+									key={result.refIndex}>
+									<div className="SearchBarWrapper__resultCategory">
+										{result.item.category}
+									</div>
+									<div className="SearchBarWrapper__resultName">
+										{result.item.name}
+									</div>
+								</a>
+							);
+						})
+					}
 				</div>
 			</div>
 		</div>
