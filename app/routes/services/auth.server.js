@@ -7,7 +7,7 @@ export let authenticator = new Authenticator(sessionStorage);
 
 const callbackURL =
   process.env.NODE_ENV === "production"
-    ? ""
+    ? process.env.URL + "/auth/google-callback"
     : "http://localhost:3000/auth/google-callback";
 
 let googleStrategy = new GoogleStrategy(
