@@ -6,6 +6,7 @@ import Footer from "~/Components/Footer/Footer";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
+import map from "../Assets/Img/mapIcon.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -57,6 +58,7 @@ export default function Navigate() {
             worries, We can connect you to resources that will unlock all that
             Shiv Nadar University has to offer.
           </p>
+
           <div className="NavigatePage__main--searchContainer">
             <SearchBar />
           </div>
