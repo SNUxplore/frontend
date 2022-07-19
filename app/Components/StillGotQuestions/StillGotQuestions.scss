@@ -93,7 +93,7 @@
 
   &__title {
     &--white,
-    &--black {
+    &--primaryTextColor {
       font-family: "Poppins", sans-serif;
       font-weight: 600;
       line-height: 72px;
@@ -113,8 +113,8 @@
     &--white {
       color: var(--white);
     }
-    &--black {
-      color: var(--black);
+    &--primaryTextColor {
+      color: var(--primaryTextColor);
     }
   }
 
