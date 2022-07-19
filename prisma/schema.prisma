@@ -11,6 +11,7 @@ datasource db {
 
 model User {
   id         Int     @id @default(autoincrement())
+  name       String? @db.Text
   emailId    String  @unique(map: "email_id") @db.VarChar(35)
   websiteUrl String? @db.Text
   instaUrl   String? @db.Text

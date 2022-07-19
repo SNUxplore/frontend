@@ -21,3 +21,15 @@ export const createEvent = async ({
       title,
     },
   });
+
+export const editInfo = async ({ instaUrl, websiteUrl, name, emailId }) =>
+  db.user.update({
+    where: {
+      emailId: emailId,
+    },
+    data: {
+      name: name,
+      websiteUrl: websiteUrl,
+      instaUrl: instaUrl,
+    },
+  });
