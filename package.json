@@ -8,7 +8,7 @@
     "build:remix": "remix build",
     "sass": "sass --watch app/:app/",
     "dev": "concurrently \"npm run sass\" \"cross-env NODE_ENV=development netlify dev\"",
-    "start": "cross-env NODE_ENV=production netlify dev"
+    "start": "cross-env NODE_ENV=production remix dev"
   },
   "dependencies": {
     "@netlify/functions": "^1.0.0",
@@ -24,6 +24,8 @@
     "react-responsive": "^9.0.0-beta.10",
     "remix-auth": "^3.2.2",
     "remix-auth-google": "^1.1.0"
+    "react-intersection-observer": "^9.3.5",
+    "react-responsive": "^9.0.0-beta.10"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.5.1",

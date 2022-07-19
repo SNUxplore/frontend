@@ -1,5 +1,8 @@
 @import "../../root/mixins";
 
+html {
+  height: unset !important;
+}
 .NavigatePage {
   @include make-flex($just: flex-start);
   // overflow-y: auto;
@@ -104,29 +107,30 @@
       overflow: visible;
 
       @include respondAt(590px) {
-        @include box(100%, auto);
+        @include box(100vw, auto);
         position: absolute;
         top: 0;
         // left: 0;
       }
     }
     &--panel {
-      @include box(220px, 440px);
+      @include box(220px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
       border-radius: 7px;
-      top: 22%;
+      top: 26%;
       padding: 15px;
       gap: 15px;
       position: sticky;
 
-      box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
+      // box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
 
       @include respondAt(590px) {
         @include box(100%, 54px);
         padding: 0 10px;
         flex-direction: row;
         scrollbar-width: none;
+        border-radius: 0;
         overflow-x: auto;
         z-index: 2;
         gap: 8px;
@@ -135,6 +139,18 @@
         &::-webkit-scrollbar {
           display: none;
         }
+
+        background-image: linear-gradient(to right, white, white),
+          linear-gradient(to right, white, white),
+          linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+          linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+
+        background-position: left center, right center, left center,
+          right center;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+        background-attachment: local, local, scroll, scroll;
       }
 
       a {
@@ -142,7 +158,7 @@
         @include box(100%, 40px);
         @include make-flex();
         padding: 7px 8px;
-        color: var(--black);
+        color: var(--primaryTextColor);
         border-radius: 5px;
         @include respondAt(590px) {
           @include box(auto, auto);

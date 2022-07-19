@@ -1,0 +1,75 @@
+@import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
+
+.InfoComponent {
+  @include make-flex($dir: row, $align: center, $just: space-between);
+  &__Container {
+    @include respondAt(780px) {
+      display: none;
+    }
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    @include make-flex($dir: row, $just: space-between);
+    gap: 20px;
+  }
+
+  &__content--container {
+    @include make-flex($dir: row, $align: flex-start);
+    gap: 40px;
+    &__indicator--container {
+      &__indicator {
+        @include make-flex($dir: row);
+        margin-top: 15px;
+        margin-bottom: 70px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+        opacity: 25%;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .active {
+        opacity: 100%;
+        background: var(--blue);
+      }
+    }
+
+    &__content {
+      &__title {
+        margin-bottom: 12px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: var(--primaryTextColor);
+        font-size: 50px;
+        transition: all 0.3s ease-in-out;
+
+        span {
+          background: var(--titleHighlight);
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+          font-weight: 700;
+        }
+      }
+
+      &__para {
+        max-width: 500px;
+        font-size: 18px;
+        line-height: 167.5%;
+        color: var(--primaryTextColor);
+        font-weight: 400;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__image--container {
+    width: 58%;
+    max-width: 435px;
+    &__image {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
