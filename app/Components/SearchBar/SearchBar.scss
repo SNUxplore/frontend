@@ -1,13 +1,53 @@
 @import "../../styles/root/mixins";
 
 .SearchBarWrapper {
-  // height: 50px;
-  @include box(80%, 50px);
-  position: relative;
+	@include box(80%, 50px);
+	position: relative;
+	transition: all 2s ease;
 
-  @include respondAt(1095px) {
-    @include box(100%, 50px);
-  }
+	@include respondAt(1095px) {
+		@include box(100%, 50px);
+	}
+	
+	&--active {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(101, 108, 133, 0.8);
+		z-index: 99;
+	}
+	
+	&__modal--active {
+	 	width: 550px;
+		height: fit-content;
+		position: relative;
+		margin: 60px auto;
+		background-color: #f5f6f7;
+		border-radius: 5px;
+		padding: 12px;
+		
+		@include respondAt(750px){
+			@include box(100%, 100%);
+			
+		}
+	}
+	
+	&__searchBox {
+		@include box(80%, 50px);
+		position: relative;
+
+		@include respondAt(1095px) {
+			@include box(100%, 50px);
+		}
+		
+		&--active {
+			@include box(100%, 50px);
+		}
+	}
 
   &__input {
     @include box();
@@ -35,4 +75,39 @@
       cursor: inherit;
     }
   }
+	
+	&__searchResults {
+		width: 100%;
+		height: fit-content;
+		max-height: 600px;
+		padding: 12px 12px 0;
+		overflow-y: auto;
+		display: none;
+		
+		&--active {
+			display: block;
+		}		
+	}
+	
+	&__noSearchResult {
+		@include box(100%, 100%);
+		display: flex;
+		justify-content: center;
+		padding: 20px;
+	}
+	
+	&__searchResult {
+		width: 100%;
+		display: flex;
+		@include make-flex(row, space-between, center);
+		padding: 12px;
+		border-radius: 4px;
+		text-decoration: none;
+		color: #000;
+	}
+	
+	&__searchResult:hover {
+		background-color: #3884FF;
+		color: #fff;
+	}
 }
