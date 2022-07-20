@@ -66,6 +66,8 @@ export default function NavOption() {
           key={index}
           name={i.name}
           actionLists={generateActionLinks(contextData[option][index])}
+          desc={i.description}
+          src={i.image}
         />
       ))}
     </div>

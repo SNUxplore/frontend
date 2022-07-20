@@ -1,21 +1,19 @@
 import React from "react";
 import placeholder from "~/Assets/Img/PlaceCard.png";
 import ButtonLink from "../ButtonLink/ButtonLink";
-import map from "../../Assets/Img/mapIcon2.svg";
+import mapLogo from "../../Assets/Img/mapIcon2.svg";
 
-function PlaceCard({ name, actionLists }) {
+function PlaceCard({ name, actionLists, desc, src }) {
   return (
     <div className="PlaceCardWrapper">
       <div className="PlaceCardWrapper__content">
         <img
           className="PlaceCardWrapper--image"
-          src={placeholder}
+          src={src != "" ? src : placeholder}
           alt="Placeholder"
         />
         <h2 className="PlaceCardWrapper__content--title">{name}</h2>
-        <p className="PlaceCardWrapper__content--desc">
-          This is where everyone comes to study and pass time...
-        </p>
+        <p className="PlaceCardWrapper__content--desc">{desc}</p>
 
         {/* <p className="PlaceCardWrapper__content--poc">
           <span>Receptionist: </span>Gravida Mouna
@@ -34,7 +32,7 @@ function PlaceCard({ name, actionLists }) {
                 return (
                   <img
                     className="PlaceCardWrapper__actions--icon"
-                    src={map}
+                    src={mapLogo}
                     alt="map"
                   />
                 );
@@ -43,12 +41,6 @@ function PlaceCard({ name, actionLists }) {
             {action.title}
           </a>
         ))}
-        {/* <a className="PlaceCardWrapper__actions--link" href="#">
-          Call
-        </a>
-        <a className="PlaceCardWrapper__actions--link" href="#">
-          Mail
-        </a> */}
       </div>
     </div>
   );
