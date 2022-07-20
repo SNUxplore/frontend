@@ -19,21 +19,17 @@
 		height: 100%;
 		background-color: rgba(101, 108, 133, 0.8);
 		z-index: 99;
-	}
+	}	
 	
 	&__modal--active {
-	 	width: 550px;
+		width: 80%;
+	 	max-width: 550px;
 		height: fit-content;
+		max-height: 500px;
 		position: relative;
 		margin: 60px auto;
 		background-color: #f5f6f7;
 		border-radius: 5px;
-		padding: 12px;
-		
-		@include respondAt(750px){
-			@include box(100%, 100%);
-			
-		}
 	}
 	
 	&__searchBox {
@@ -56,8 +52,11 @@
     color: var(--primaryTextColor);
     border: none;
     padding: 6px 70px 6px 20px;
-
-    box-shadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
+		
+		&:focus-visible {
+			outline: none;
+		}
+    // box-shadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
   }
 
   &__submit {
@@ -74,12 +73,16 @@
       @include box(29px, 29px);
       cursor: inherit;
     }
+		
+		&--active {
+			display: none;
+		}
   }
 	
 	&__searchResults {
 		width: 100%;
 		height: fit-content;
-		max-height: 600px;
+		max-height: 450px;
 		padding: 12px 12px 0;
 		overflow-y: auto;
 		display: none;
@@ -89,25 +92,33 @@
 		}		
 	}
 	
-	&__noSearchResult {
-		@include box(100%, 100%);
-		display: flex;
-		justify-content: center;
-		padding: 20px;
-	}
-	
 	&__searchResult {
 		width: 100%;
 		display: flex;
-		@include make-flex(row, space-between, center);
-		padding: 12px;
+		@include make-flex(column, space-between, start);
+		padding: 6px 12px;
 		border-radius: 4px;
 		text-decoration: none;
 		color: #000;
+		
+		&:hover {
+			background-color: #3884FF;
+			color: #fff;
+		}
 	}
 	
-	&__searchResult:hover {
-		background-color: #3884FF;
-		color: #fff;
+	&__resultCategory {
+		width: fit-content;
+		
+		white-space: nowrap;	
+		font-size: 0.75rem;
+		font-weight: 500;
+		opacity: 0.5;
+	}
+	
+	&__resultName {
+		width: fit-content;
+		
+		white-space: nowrap;
 	}
 }
