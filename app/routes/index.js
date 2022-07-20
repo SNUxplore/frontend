@@ -44,9 +44,20 @@ export default function LandingPage() {
     }
   };
 
+  
+  // const [navState, setNavState] = React.useState(false);
+
+  // const setSideNavState = (navstate) => {
+  //   setNavState(navstate);
+  // };
+  // className= {`LandingPage__mainContainer ${
+  //   navState ? "LandingPage__mainContainer--blur" : ""
+  // }`}>
+
+
   return (
     <div className="LandingPage">
-      <Header />
+      <Header/>
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">

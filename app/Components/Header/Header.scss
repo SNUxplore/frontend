@@ -12,6 +12,11 @@
   &__left {
     &--logo {
       @include box(47px, 47px);
+      transition: 0.5s linear;
+
+      &--blur {
+        filter: blur(3.5px);
+      }
     }
 
     @include respondAt(1530px) {
@@ -20,7 +25,7 @@
   }
 
   &__middle {
-    @include box($height: 100px, $width: fit-content);
+    @include box($height: 150px, $width: fit-content);
     @include make-flex($dir: row);
     gap: 50px;
     list-style: none;
@@ -66,6 +71,7 @@
       img {
         display: inline;
         margin-right: 15px;
+        vertical-align: middle;
         @include box($height: 15px, $width: 15px);
       }
     }
@@ -81,6 +87,7 @@
       justify-content: space-evenly;
       column-gap: 29px;
       width: 100%;
+      padding-bottom: 50px;
     }
     gap: 30px;
     flex-wrap: wrap;
@@ -122,7 +129,7 @@
       @include make-flex($dir: column, $align: flex-start, $just: center);
       height: fit-content;
       width: 100%;
-      gap: 20px;
+      gap: 17px;
     }
     #NavBarInput {
       position: absolute;
@@ -193,13 +200,14 @@
       top: 0;
       position: fixed;
       @include make-flex($just: flex-start);
-      padding-top: 140px;
-      gap: 50px;
+      padding-top: 125px;
+      gap: 15px;
       right: 0;
       top: 0;
       width: 100%;
       max-width: 290px;
       height: 100vh;
+      overflow: auto;
       background-color: #242836;
       transform: translateX(100%);
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -222,11 +230,12 @@
 
   &__dots {
     position: absolute;
-    bottom: 33px;
+    bottom: 28px;
     left: 0;
     @include make-flex($dir: row, $just: space-evenly);
     gap: 20px;
     width: 100%;
+
     &--dot {
       @include box(15px, 15px);
       background-color: rgb(255, 255, 255);
