@@ -52,11 +52,11 @@
     color: var(--primaryTextColor);
     border: none;
     padding: 6px 70px 6px 20px;
-		
-		&:focus-visible {
+    box-shadow: var(--boxShadow);
+	
+    &:focus-visible {
 			outline: none;
 		}
-    // box-shadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
   }
 
   &__submit {
@@ -66,7 +66,7 @@
     top: 0;
     border-radius: 0 7px 7px 0;
     @include make-flex();
-    background-color: var(--primaryTextColor);
+    background-color: var(--blue);
     border: none;
     cursor: pointer;
     img {

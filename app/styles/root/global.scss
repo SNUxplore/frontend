@@ -5,8 +5,18 @@
 // themes
 @import "./theme/light.scss";
 @import "./theme/dark.scss";
+@import "./theme/pink.scss";
 
+.light {
+}
+//kept it here so that there's design visible
 @include lightMode();
+.dark {
+  @include darkMode();
+}
+.pink {
+  @include pinkMode();
+}
 
 html {
   height: 100%;

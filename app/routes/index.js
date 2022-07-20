@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
 import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
@@ -6,6 +6,7 @@ import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
 import styleSheet from "~/styles/routes/LandingPage.css";
+import '~/styles/root/global.css'
 import arrow from "../Assets/Img/Arrow.svg";
 
 const Sections = [
@@ -29,6 +30,10 @@ export function links() {
 }
 
 export default function LandingPage() {
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = (value) => {
+    setTheme(value);
+  }
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
@@ -56,8 +61,13 @@ export default function LandingPage() {
 
 
   return (
+
+  //  <div className={`LandingPage dark`}>
+     // <Header theme={theme} setTheme={toggleTheme}/>
+
     <div className="LandingPage">
       <Header/>
+
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
@@ -114,8 +124,8 @@ export default function LandingPage() {
               view === Sections[0].className
                 ? 1
                 : view === Sections[1].className
-                ? 2
-                : 3
+                  ? 2
+                  : 3
             }
           />
           <InfoComponent__Mobile />

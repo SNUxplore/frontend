@@ -15,7 +15,7 @@ function StillGotQuestions() {
             lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
             metus sem.
           </p>
-          <ButtonLink href="/faq" content="Checkout the FAQ" fill2 />
+          <ButtonLink className="FaqRedirect--button" href="/faq" content="Checkout the FAQ" fill2/>
         </div>
       </div>
     </div>
