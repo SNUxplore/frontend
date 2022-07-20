@@ -1,4 +1,5 @@
 @import "../../styles/root/mixins";
+@import "../../styles/global.css";
 
 .LandingPage {
   @include make-flex($just: flex-start);
@@ -119,6 +120,7 @@
 
     &__desc {
       font-family: "Poppins", sans-serif;
+      color: var(--primaryTextColor);
       line-height: 30px;
       @include box(90%, auto);
 
@@ -159,6 +161,8 @@
       top: 0;
       right: 0;
       transform: translateX(50%);
+      // color: var(--blue);
+      fill: var(--blue);
 
       @include respondAt(1095px) {
         display: none;

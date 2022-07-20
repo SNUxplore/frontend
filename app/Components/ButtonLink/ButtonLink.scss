@@ -34,9 +34,9 @@
     }
   }
   &--fill2 {
-    border: 1.5px solid var(--primaryTextColor);
+    border: 1.5px solid var(--questions);
     background-color: var(--transparent);
-    color: var(--primaryTextColor);
+    color: var(--questions);
 
     &:hover {
       border: 1.5px solid var(--blue);

@@ -1,7 +1,7 @@
 @import "../../styles/root/mixins";
 
 .FaqRedirect {
-  background-color: #61abfe;
+  background-color: var(--blue);
   @include box($width: auto, $height: 38.75vh);
   @include make-flex($dir: row);
 
@@ -114,7 +114,7 @@
       color: var(--white);
     }
     &--primaryTextColor {
-      color: var(--primaryTextColor);
+      color: var(--questions);
     }
   }
 
@@ -127,5 +127,8 @@
     @include respondAt(885px) {
       width: 100%;
     }
+  }
+  &--button{
+    color: white;
   }
 }

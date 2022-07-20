@@ -11,7 +11,7 @@ import usersIcon from "../../Assets/Img/usersIcon.svg";
 
 import { useMediaQuery } from "react-responsive";
 
-function Header() {
+function Header({theme , setTheme}) {
   const [navState, setNavState] = React.useState(false);
   const dropdown = useMediaQuery({
     query: "(max-width: 1530px)",
@@ -156,9 +156,9 @@ function Header() {
         </div>
         {dropdown && (
           <div className="HeaderWrapper__dots">
-            <span className="HeaderWrapper__dots--dot"></span>
-            <span className="HeaderWrapper__dots--dot"></span>
-            <span className="HeaderWrapper__dots--dot"></span>
+            <span className="HeaderWrapper__dots--dot" onClick={setTheme('light')}></span>
+            <span className="HeaderWrapper__dots--dot" onClick={setTheme('dark')}></span>
+            <span className="HeaderWrapper__dots--dot" onClick={setTheme('pink')}></span>
           </div>
         )}
       </div>
