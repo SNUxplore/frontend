@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
-import Fuse from "fuse.js";
+import Fuse from "fuse.js";	
 import data from "~/Assets/Data/data.json";
 
 function activeClassName(className, isActive) {

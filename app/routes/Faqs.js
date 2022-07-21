@@ -1,4 +1,5 @@
 import Header from "~/Components/Header/Header";
+import Footer from "~/Components/Footer/Footer";
 import styleSheet from "~/styles/routes/Faqs/Faqs.css";
 import React from "react";
 import { Link, Outlet } from "@remix-run/react";
@@ -92,6 +93,7 @@ export default function Index() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

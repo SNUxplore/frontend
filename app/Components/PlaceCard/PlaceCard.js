@@ -1,33 +1,46 @@
 import React from "react";
 import placeholder from "~/Assets/Img/PlaceCard.png";
 import ButtonLink from "../ButtonLink/ButtonLink";
-function PlaceCard(props) {
+import mapLogo from "../../Assets/Img/mapIcon2.svg";
+
+function PlaceCard({ name, actionLists, desc, src }) {
   return (
     <div className="PlaceCardWrapper">
-      <img
-        className="PlaceCardWrapper--image"
-        src={placeholder}
-        alt="Placeholder"
-      />
       <div className="PlaceCardWrapper__content">
-        <h2 className="PlaceCardWrapper__content--title">Library</h2>
-        <p className="PlaceCardWrapper__content--desc">
-          This is where everyone comes to study and pass time...
-          <a className="PlaceCardWrapper__content--viewMore" href="#">
-            View More
-          </a>
-        </p>
-        <p className="PlaceCardWrapper__content--poc">
+        <img
+          className="PlaceCardWrapper--image"
+          src={src != "" ? src : placeholder}
+          alt="Placeholder"
+        />
+        <h2 className="PlaceCardWrapper__content--title">{name}</h2>
+        <p className="PlaceCardWrapper__content--desc">{desc}</p>
+
+        {/* <p className="PlaceCardWrapper__content--poc">
           <span>Receptionist: </span>Gravida Mouna
-        </p>
-        <div className="PlaceCardWrapper__actions">
-          <a className="PlaceCardWrapper__actions--link" href="#">
-            Call
+        </p> */}
+      </div>
+      <div className="PlaceCardWrapper__actions">
+        {actionLists.map((action, index) => (
+          <a
+            key={index}
+            className="PlaceCardWrapper__actions--link"
+            href={action.href}
+            target="_blank"
+          >
+            {(() => {
+              if (action.title == "Map") {
+                return (
+                  <img
+                    className="PlaceCardWrapper__actions--icon"
+                    src={mapLogo}
+                    alt="map"
+                  />
+                );
+              }
+            })()}
+            {action.title}
           </a>
-          <a className="PlaceCardWrapper__actions--link" href="#">
-            Mail
-          </a>
-        </div>
+        ))}
       </div>
     </div>
   );

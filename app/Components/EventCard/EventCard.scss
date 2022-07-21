@@ -1,0 +1,35 @@
+@import "../../styles/root/mixins";
+
+.EventCardWrapper {
+  h2, h3, h4 {
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  width: 38vw;
+  font-family: "Poppins";
+
+  &__card {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    border-radius: 1rem;
+    padding: 1.6rem 1rem;
+    border-left: 1rem solid #EBFFF2;
+    @include make-flex($dir: row, $just: space-between);
+    margin-bottom: 3vh;
+
+    &__left {
+      h2 {
+        margin-bottom: 0.4vh;
+      }
+    }
+    &__left__club {
+      @include make-flex($dir: row, $just: flex-start);
+      gap: 0.6rem;
+      margin-bottom: 1vh;
+    }
+  }
+
+}

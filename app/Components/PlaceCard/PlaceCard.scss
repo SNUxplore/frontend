@@ -5,8 +5,8 @@
   @include make-flex($just: flex-start);
   background-color: var(--white);
   border-radius: 8px;
-  padding: 15px;
   gap: 10px;
+
   &--image {
     @include box($height: auto);
     border-radius: 6px;
@@ -17,6 +17,7 @@
     color: var(--primaryTextColor);
     font-family: "Poppins", sans-serif;
     gap: 10px;
+    padding: 15px 15px 0;
 
     &--poc {
       span {
@@ -31,16 +32,34 @@
   &__actions {
     @include box(100%, 35px);
     @include make-flex($dir: row, $just: space-between);
-    gap: 10px;
+    // gap: 10px;
 
     &--link {
       @include box(100%, 35px);
-      @include make-flex();
-      border-radius: 6px;
-      color: var(--white);
+      @include make-flex($dir: row);
+      color: var(--primaryTextColor);
       gap: 10px;
       text-decoration: none;
-      background-color: var(--blue);
+      background-color: var(--white);
+      border-top: 1px solid #e4e4e4;
+      border-right: 1px solid #e4e4e4;
+
+      &:first-child {
+        border-bottom-left-radius: 6px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 6px;
+        border-right: none;
+      }
+
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+    &--icon {
+      @include box(17px, 17px);
     }
   }
 }

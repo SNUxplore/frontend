@@ -31,8 +31,9 @@
 
   .mainSection {
     @include make-flex($just: flex-start);
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
     width: 100%;
+    min-height: calc(100vh - 110px);
 
     &__top {
       @include box($height: 75%);

@@ -1,7 +1,7 @@
 @import "../../styles/root/mixins";
 
 .FaqRedirect {
-  background-color: #61abfe;
+  background-color: var(--blue);
   @include box($width: auto, $height: 38.75vh);
   @include make-flex($dir: row);
 
@@ -93,7 +93,7 @@
 
   &__title {
     &--white,
-    &--black {
+    &--primaryTextColor {
       font-family: "Poppins", sans-serif;
       font-weight: 600;
       line-height: 72px;
@@ -113,8 +113,8 @@
     &--white {
       color: var(--white);
     }
-    &--black {
-      color: var(--black);
+    &--primaryTextColor {
+      color: var(--questions);
     }
   }
 
@@ -127,5 +127,8 @@
     @include respondAt(885px) {
       width: 100%;
     }
+  }
+  &--button{
+    color: white;
   }
 }
