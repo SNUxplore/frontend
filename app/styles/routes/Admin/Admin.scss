@@ -3,4 +3,60 @@
 .AdminPage {
   @include box();
   @include make-flex($just: flex-start);
+
+  @include respondAt(900px) {
+  }
+
+  &__title {
+    @include make-flex($dir: row);
+    margin-top: 6vh;
+    @include respondAt(900px) {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &--normal,
+    &--bold {
+      font-family: Poppins, sans-serif;
+      padding: 8px;
+      font-size: 5.2rem;
+      line-height: 109px;
+      color: var(--primaryTextColor);
+      @include respondAt(900px) {
+        font-size: 3rem;
+        line-height: 40px;
+        padding: 15px;
+      }
+    }
+
+    &--normal {
+      font-weight: 550;
+    }
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    width: 880px;
+
+    text-align: center;
+    padding: 10px;
+    line-height: 25px;
+    margin-top: 25px;
+    margin-bottom: 70px;
+    @include respondAt(900px) {
+      width: 90%;
+      margin-top: 17px;
+      margin-bottom: 32px;
+      text-align: left;
+      font-size: 0.7rem;
+      padding: 0px;
+      line-height: 18px;
+    }
+  }
 }
