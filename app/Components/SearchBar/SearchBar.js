@@ -73,6 +73,7 @@ function SearchBar() {
 						<img src={SearchIcon} alt="Search Icon" />
 					</button>
 				</div>
+				{ results.length > 0 &&
 				<div className={activeClassName("SearchBarWrapper__searchResults", isFocused)}>
 					{
 						results.map((result) => {
@@ -92,6 +93,7 @@ function SearchBar() {
 						})
 					}
 				</div>
+				}
 			</div>
 		</div>
   );
