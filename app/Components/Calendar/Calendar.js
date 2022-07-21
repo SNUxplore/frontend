@@ -1,4 +1,5 @@
 import React from "react";
+import useCalendar from "~/Hooks/useCalendar";
 
 const Calendar = () => {
   let [navigation, setNavigation] = React.useState(0); //sets month index local machine month index --> 0
@@ -25,19 +26,25 @@ const Calendar = () => {
   const month = date.getMonth();
   const year = date.getFullYear();
 
+  const firstDay = new Date(year, month, 1);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
   const monthString = date.toLocaleDateString("en-us", {
     month: "long",
     year: "numeric",
   });
 
-  const dateString = date.toLocaleDateString("en-us", {
+  const dateString = firstDay.toLocaleDateString("en-us", {
     weekday: "long",
     year: "numeric",
     month: "numeric",
     day: "numeric",
-  });
+  }); // tracks what day month starts
 
-  const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
+  const paddingDays = weekdayArray.indexOf(dateString.split(", ")[0]); //extra days to maintain grid
+
+  const { dayArray } = useCalendar(paddingDays, daysInMonth);
+  console.log(dayArray);
 
   const ChangeMonth = (direction) => {
     direction === "left"
