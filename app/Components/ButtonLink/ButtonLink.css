@@ -1,0 +1,48 @@
+.ButtonLinkWrapper {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  color: var(--blue);
+  text-decoration: none;
+  padding: 10px 12px;
+  font-family: "Poppins", sans-serif;
+  line-height: 27px;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 780px) {
+  .ButtonLinkWrapper {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+}
+.ButtonLinkWrapper:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.ButtonLinkWrapper--fill {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.ButtonLinkWrapper--fill:hover {
+  background-color: var(--transparent);
+  color: var(--blue);
+}
+.ButtonLinkWrapper--fill2 {
+  border: 1.5px solid var(--questions);
+  background-color: var(--transparent);
+  color: var(--questions);
+}
+.ButtonLinkWrapper--fill2:hover {
+  border: 1.5px solid var(--blue);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/*# sourceMappingURL=ButtonLink.css.map */

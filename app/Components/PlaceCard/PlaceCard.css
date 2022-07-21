@@ -1,0 +1,78 @@
+.PlaceCardWrapper {
+  width: 265px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--white);
+  border-radius: 8px;
+  gap: 10px;
+  transition: background-color 1000ms linear;
+}
+.PlaceCardWrapper--highlighted {
+  background-color: #a9a9a9;
+}
+.PlaceCardWrapper--image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.PlaceCardWrapper__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--primaryTextColor);
+  font-family: "Poppins", sans-serif;
+  gap: 10px;
+  padding: 15px 15px 0;
+}
+.PlaceCardWrapper__content--poc span {
+  font-weight: 500;
+}
+@media (max-width: 450px) {
+  .PlaceCardWrapper {
+    width: 100%;
+    height: auto;
+  }
+}
+.PlaceCardWrapper__actions {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.PlaceCardWrapper__actions--link {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--primaryTextColor);
+  gap: 10px;
+  text-decoration: none;
+  background-color: var(--white);
+  border-top: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+}
+.PlaceCardWrapper__actions--link:first-child {
+  border-bottom-left-radius: 6px;
+}
+.PlaceCardWrapper__actions--link:last-child {
+  border-bottom-right-radius: 6px;
+  border-right: none;
+}
+.PlaceCardWrapper__actions--link:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.PlaceCardWrapper__actions--icon {
+  width: 17px;
+  height: 17px;
+}
+
+/*# sourceMappingURL=PlaceCard.css.map */
