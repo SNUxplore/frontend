@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
-const weekDays = [];
+const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const Calendar = () => {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
@@ -42,18 +42,19 @@ const Calendar = () => {
         </button>
       </div>
       <div className="calendar-container__daynames">
-        <p className="calendar-container__daynames__day">Sun</p>
-        <p className="calendar-container__daynames__day">Mon</p>
-        <p className="calendar-container__daynames__day">Tue</p>
-        <p className="calendar-container__daynames__day">Wed</p>
-        <p className="calendar-container__daynames__day">Thu</p>
-        <p className="calendar-container__daynames__day">Fri</p>
-        <p className="calendar-container__daynames__day">Sat</p>
+        {weekDays.map((day, index) => {
+          return (
+            <p key={index} className="calendar-container__daynames__day">
+              {day}
+            </p>
+          );
+        })}
       </div>
-      {calendarData.map((week) => (
-        <div className="calendar-container__week-container">
-          {week.map((day) => (
+      {calendarData.map((week, index) => (
+        <div key={index} className="calendar-container__week-container">
+          {week.map((day, index) => (
             <div
+              key={index}
               className={
                 day.isBefore(monthFirstDay, "day") ||
                 day.isAfter(monthLastDay, "day")
