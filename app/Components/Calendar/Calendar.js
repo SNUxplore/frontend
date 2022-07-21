@@ -8,6 +8,7 @@ const Calendar = () => {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
+  const monthLastDay = value.clone().endOf("month");
   const currentMonth = value.format("MMMM");
   const currentYear = value.format("YYYY");
 
@@ -54,7 +55,8 @@ const Calendar = () => {
           {week.map((day) => (
             <div
               className={
-                day.isBefore(monthFirstDay, "day")
+                day.isBefore(monthFirstDay, "day") ||
+                day.isAfter(monthLastDay, "day")
                   ? "calendar-container__day-container-fadded"
                   : "calendar-container__day-container"
               }
