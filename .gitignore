@@ -5,7 +5,7 @@ node_modules
 /.netlify
 .env
 **/*.css.map
-**/*.scss
+**/*.css
 yarn.lock
 package-lock.json
 build
