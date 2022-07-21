@@ -3,9 +3,20 @@ import placeholder from "~/Assets/Img/PlaceCard.png";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import mapLogo from "../../Assets/Img/mapIcon2.svg";
 
-function PlaceCard({ name, actionLists, desc, src }) {
+function PlaceCard({
+	name,
+	actionLists,
+	desc,
+	src,
+	highlighted,
+}) {
   return (
-    <div className="PlaceCardWrapper">
+		<div
+			id={name}
+			className={`
+			PlaceCardWrapper
+			${highlighted ? "PlaceCardWrapper--highlighted" : ""}
+			`}>
       <div className="PlaceCardWrapper__content">
         <img
           className="PlaceCardWrapper--image"
