@@ -1,0 +1,27 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  padding: 1.5rem;
+
+  &__daynames {
+    display: flex;
+
+    &__day {
+      font-size: 25px;
+      width: 114.5px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  &__week-container {
+    display: flex;
+  }
+
+  &__day-container {
+    background: yellow;
+    border: red 2px solid;
+    width: 114.5px;
+    padding: 2rem;
+  }
+}
