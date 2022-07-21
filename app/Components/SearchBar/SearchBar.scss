@@ -1,13 +1,49 @@
 @import "../../styles/root/mixins";
 
 .SearchBarWrapper {
-  // height: 50px;
-  @include box(80%, 50px);
-  position: relative;
+	@include box(80%, 50px);
+	position: relative;
+	transition: all 2s ease;
 
-  @include respondAt(1095px) {
-    @include box(100%, 50px);
-  }
+	@include respondAt(1095px) {
+		@include box(100%, 50px);
+	}
+	
+	&--active {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(101, 108, 133, 0.8);
+		z-index: 99;
+	}	
+	
+	&__modal--active {
+		width: 80%;
+	 	max-width: 550px;
+		height: fit-content;
+		max-height: 500px;
+		position: relative;
+		margin: 60px auto;
+		background-color: #f5f6f7;
+		border-radius: 5px;
+	}
+	
+	&__searchBox {
+		@include box(100%, 50px);
+		position: relative;
+
+		@include respondAt(1095px) {
+			@include box(100%, 50px);
+		}
+		
+		&--active {
+			@include box(100%, 50px);
+		}
+	}
 
   &__input {
     @include box();
@@ -16,8 +52,11 @@
     color: var(--primaryTextColor);
     border: none;
     padding: 6px 70px 6px 20px;
-
-    box-shadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
+    box-shadow: var(--boxShadow);
+	
+    &:focus-visible {
+			outline: none;
+		}
   }
 
   &__submit {
@@ -27,12 +66,59 @@
     top: 0;
     border-radius: 0 7px 7px 0;
     @include make-flex();
-    background-color: var(--primaryTextColor);
+    background-color: var(--blue);
     border: none;
     cursor: pointer;
     img {
       @include box(29px, 29px);
       cursor: inherit;
     }
+		
+		&--active {
+			display: none;
+		}
   }
+	
+	&__searchResults {
+		width: 100%;
+		height: fit-content;
+		max-height: 450px;
+		padding: 12px 12px 0;
+		overflow-y: auto;
+		display: none;
+		
+		&--active {
+			display: block;
+		}		
+	}
+	
+	&__searchResult {
+		width: 100%;
+		display: flex;
+		@include make-flex(column, space-between, start);
+		padding: 6px 12px;
+		border-radius: 4px;
+		text-decoration: none;
+		color: #000;
+		
+		&:hover {
+			background-color: #3884FF;
+			color: #fff;
+		}
+	}
+	
+	&__resultCategory {
+		width: fit-content;
+		
+		white-space: nowrap;	
+		font-size: 0.75rem;
+		font-weight: 500;
+		opacity: 0.5;
+	}
+	
+	&__resultName {
+		width: fit-content;
+		
+		white-space: nowrap;
+	}
 }

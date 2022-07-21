@@ -36,7 +36,7 @@
 
     &--link {
       @include box(100%, 35px);
-      @include make-flex();
+      @include make-flex($dir: row);
       color: var(--primaryTextColor);
       gap: 10px;
       text-decoration: none;
@@ -57,6 +57,9 @@
         background-color: var(--blue);
         color: var(--white);
       }
+    }
+    &--icon {
+      @include box(17px, 17px);
     }
   }
 }

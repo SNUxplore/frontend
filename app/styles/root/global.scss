@@ -5,8 +5,18 @@
 // themes
 @import "./theme/light.scss";
 @import "./theme/dark.scss";
+@import "./theme/pink.scss";
 
+.light {
+}
+//kept it here so that there's design visible
 @include lightMode();
+.dark {
+  @include darkMode();
+}
+.pink {
+  @include pinkMode();
+}
 
 html {
   height: 100%;
@@ -24,3 +34,24 @@ body {
     overflow-x: hidden;
   }
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 4px;
+	background: #f1f1f1;
+}
+
