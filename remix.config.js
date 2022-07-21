@@ -6,5 +6,5 @@ module.exports = {
   // appDirectory: "app",
   assetsBuildDirectory: "./build",
   // serverBuildPath: ".netlify/functions-internal/server.js",
-  // publicPath: "/build/",
+  publicPath: "./build",
 };
