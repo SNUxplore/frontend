@@ -15,12 +15,12 @@ import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
 
-function Header({theme , setTheme}) {
+function Header({ theme, setTheme }) {
   const [navState, setNavState] = React.useState(false);
   const dropdown = useMediaQuery({
     query: "(max-width: 1530px)",
   });
-  
+
   return (
     <nav className="HeaderWrapper">
       {dropdown && (
@@ -159,7 +159,7 @@ function Header({theme , setTheme}) {
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={darkModeOneTheme}
-                  style={{ marginLeft: '15px'}}
+                  style={{ marginLeft: "15px" }}
                   alt="snu explore Logo"
                 />
               </a>
@@ -177,7 +177,7 @@ function Header({theme , setTheme}) {
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={darkModeTwoTheme}
-                  style={{ marginLeft: '15px', filter: 'none' }}
+                  style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
               </a>
@@ -214,12 +214,14 @@ function Header({theme , setTheme}) {
           </a>
         </div>
         {dropdown && (
-          <div style={{ position: 'relative', width: "100%", height : "1000px" }}>
-          <div className="HeaderWrapper__dots">
-            <span className="HeaderWrapper__dots--dot" onClick={setTheme('light')}></span>
-            <span className="HeaderWrapper__dots--dot" onClick={setTheme('dark')}></span>
-            <span className="HeaderWrapper__dots--dot" onClick={setTheme('pink')}></span>
-          </div>
+          <div
+            style={{ position: "relative", width: "100%", height: "1000px" }}
+          >
+            <div className="HeaderWrapper__dots">
+              <span className="HeaderWrapper__dots--dot"></span>
+              <span className="HeaderWrapper__dots--dot"></span>
+              <span className="HeaderWrapper__dots--dot"></span>
+            </div>
           </div>
         )}
       </div>
@@ -236,12 +238,16 @@ function Header({theme , setTheme}) {
           id="NavBarInput"
           onChange={() => {
             setNavState(!navState);
-            document.querySelector('nav ~ div').style.filter = `${
+
+            const nodeList = document.querySelectorAll("nav ~ div");
+            for (let i = 0; i < nodeList.length; i++) {
+              nodeList[i].style.filter = `${
+                !navState ? "blur(3.5px)" : "none"
+              }`;
+            }
+            document.querySelector("nav ~ main").style.filter = `${
               !navState ? "blur(3.5px)" : "none"
-            }`
-            document.querySelector('nav ~ main').style.filter = `${
-              !navState ? "blur(3.5px)" : "none"
-            }`
+            }`;
             console.log(navState);
           }}
         />
