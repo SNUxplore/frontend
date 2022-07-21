@@ -1,5 +1,4 @@
 import React from "react";
-import useCalendar from "~/Hooks/useCalendar";
 
 const Calendar = () => {
   let [navigation, setNavigation] = React.useState(0); //sets month index local machine month index --> 0
@@ -14,6 +13,31 @@ const Calendar = () => {
     "Saturday",
     "Sunday",
   ];
+
+  const date = new Date();
+
+  if (navigation !== 0) {
+    console.log("Condition hit");
+    date.setMonth(new Date().getMonth() + navigation);
+    console.log(date);
+  }
+
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
+  const monthString = date.toLocaleDateString("en-us", {
+    month: "long",
+    year: "numeric",
+  });
+
+  const dateString = date.toLocaleDateString("en-us", {
+    weekday: "long",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  });
+
+  const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
 
   const ChangeMonth = (direction) => {
     direction === "left"
@@ -32,7 +56,7 @@ const Calendar = () => {
       >
         left
       </button>
-      Calendar component
+      {monthString}
       <button
         onClick={() => {
           ChangeMonth("right");
