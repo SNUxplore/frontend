@@ -124,7 +124,7 @@
     @include box($height: 110px);
 
     @include make-flex($dir: row, $just: space-between);
-    padding: 0 45px;
+    padding: 0 130px;
     &__middle {
       @include make-flex($dir: column, $align: flex-start, $just: center);
       height: fit-content;
@@ -185,6 +185,14 @@
       transform: rotate(-45deg) translate(3px, -1px);
       background-color: var(--navBarCross);
     }
+  }
+
+  @include respondAt(1335px) {
+    padding: 0 90px;
+  }
+
+  @include respondAt(1135px) {
+    padding: 0 40px;
   }
 
   @include respondAt(470px) {

@@ -27,17 +27,13 @@ function PlaceCard({ name, actionLists, desc, src }) {
             href={action.href}
             target="_blank"
           >
-            {(() => {
-              if (action.title == "Map") {
-                return (
-                  <img
-                    className="PlaceCardWrapper__actions--icon"
-                    src={mapLogo}
-                    alt="map"
-                  />
-                );
-              }
-            })()}
+            {action.title == "Map" && (
+              <img
+                className="PlaceCardWrapper__actions--icon"
+                src={mapLogo}
+                alt="map"
+              />
+            )}
             {action.title}
           </a>
         ))}
