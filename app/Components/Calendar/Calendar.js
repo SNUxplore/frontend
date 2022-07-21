@@ -22,11 +22,23 @@ const Calendar = () => {
   return (
     <div className="calendar-container">
       <div className="calendar-container__header">
-        <button className="calendar-container__header__leftBtn"> &larr;</button>
+        <button
+          onClick={() => monthChange("left")}
+          className="calendar-container__header__leftBtn"
+        >
+          {" "}
+          &larr;
+        </button>
         <div className="calendar-container__header__monthNames">
           {currentMonth} {currentYear}
         </div>
-        <button className="calendar-container__header__leftBtn"> &rarr;</button>
+        <button
+          onClick={() => monthChange("right")}
+          className="calendar-container__header__leftBtn"
+        >
+          {" "}
+          &rarr;
+        </button>
       </div>
       <div className="calendar-container__daynames">
         <p className="calendar-container__daynames__day">Sun</p>
