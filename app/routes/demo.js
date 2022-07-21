@@ -14,8 +14,8 @@ export default function DemoPage() {
     <div className="DemoPage">
       This is a demo page template.
       <Footer />
-      {colors.map((element) => (
-        <EventCard />
+      {colors.map((element, index) => (
+        <EventCard key={index} />
       ))}
       <Calendar />
     </div>
