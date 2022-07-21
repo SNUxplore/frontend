@@ -137,19 +137,33 @@ function Header() {
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("light");
+                  document.body.classList.remove("dark");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "light");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={lightModeIcon}
                   alt="snu explore Logo"
                 />
                 Light Mode
-              </a>
+              </button>
             </li>
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={darkModeIcon}
@@ -162,12 +176,19 @@ function Header() {
                   style={{ marginLeft: "15px" }}
                   alt="snu explore Logo"
                 />
-              </a>
+              </button>
             </li>
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.add("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={darkModeIcon}
@@ -180,7 +201,7 @@ function Header() {
                   style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
-              </a>
+              </button>
             </li>
           )}
         </ul>

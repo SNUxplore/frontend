@@ -1,27 +1,25 @@
-@mixin darkMode {
-  :root {
-    --pageBackground: #242836;
-    --primaryTextColor: #d0d0d0;
-    --blue: #00badd;
-    --white: #ffffff;
-    --titleHighlight: #00badd;
-    --transparent: transparent;
-    --pink: #d202f3;
-    --secondaryTextColor: #211f24;
-    --darkBlue: #00badd;
-    --footerBackground: #242836;
-    --copyrightText: #787777;
-    --contactHover: #ffc107;
-    --navMenuBorder: #a66874;
-    --searchBarShadow: #cdced4;
-    --faqRedirectBackground: #61abfe;
-    --navigatePanelShadow: #d9d9d9;
-    --navbarBackground: #ffffff;
-    --navbarOption: #363b53;
-    --navbarLineSep: #363b5327;
-    --navBarCross: #363b53;
-    --navbarItems: #363b53;
-    --boxShadow: 6px 6px 23px #d1d1d1;
-    --questions: #242836;
-  }
+@mixin darkMode() {
+  --pageBackground: #242836;
+  --primaryTextColor: #d0d0d0;
+  --blue: #00badd;
+  --white: #ffffff;
+  --titleHighlight: #00badd;
+  --transparent: transparent;
+  --pink: #d202f3;
+  --secondaryTextColor: #211f24;
+  --darkBlue: #00badd;
+  --footerBackground: #242836;
+  --copyrightText: #787777;
+  --contactHover: #ffc107;
+  --navMenuBorder: #a66874;
+  --searchBarShadow: #cdced4;
+  --faqRedirectBackground: #61abfe;
+  --navigatePanelShadow: #d9d9d9;
+  --navbarBackground: #ffffff;
+  --navbarOption: #363b53;
+  --navbarLineSep: #363b5327;
+  --navBarCross: #363b53;
+  --navbarItems: #363b53;
+  --boxShadow: -27px -27px 63px #14161e, 27px 27px 63px #343a4e;
+  --questions: #242836;
 }
