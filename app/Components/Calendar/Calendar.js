@@ -1,12 +1,17 @@
 import React from "react";
 import moment from "moment";
 
+const weekDays = [];
+
 const Calendar = () => {
   const [calendarData, setCalendarData] = React.useState([]); //contains weeks , weeks contain days
-  const [value, setValue] = React.useState(moment()); //gets the local machine date
 
+  const value = moment(); //gets the local machine date
   const firstDay = value.clone().startOf("month").startOf("week"); //first day on calendar grid
+  const monthFirstDay = value.clone().startOf("month");
   const lastDay = value.clone().endOf("month").endOf("week"); //last day on calendar grid
+  const currentMonth = value.format("MMMM");
+  const currentYear = value.format("YYYY");
 
   React.useEffect(() => {
     const effectArray = [];
@@ -24,6 +29,9 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
+      <div className="calendar-container__monthNames">
+        {currentMonth} {currentYear}
+      </div>
       <div className="calendar-container__daynames">
         <p className="calendar-container__daynames__day">Sun</p>
         <p className="calendar-container__daynames__day">Mon</p>
@@ -36,7 +44,13 @@ const Calendar = () => {
       {calendarData.map((week) => (
         <div className="calendar-container__week-container">
           {week.map((day) => (
-            <div className="calendar-container__day-container">
+            <div
+              className={
+                day.isBefore(monthFirstDay, "day")
+                  ? "calendar-container__day-container-fadded"
+                  : "calendar-container__day-container"
+              }
+            >
               {day.format("D").toString()}
             </div>
           ))}

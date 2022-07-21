@@ -1,17 +1,28 @@
+@import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
+
 .calendar-container {
+  font-family: ("poppins");
   display: flex;
   flex-direction: column;
   width: 800px;
   padding: 1.5rem;
 
+  &__monthNames {
+    font-weight: 700;
+    font-size: 21px;
+  }
+
   &__daynames {
+    margin-top: 30px;
     display: flex;
 
     &__day {
-      font-size: 25px;
+      font-size: 15px;
       width: 114.5px;
       text-align: center;
       font-weight: 600;
+      margin-bottom: 15px;
     }
   }
   &__week-container {
@@ -19,9 +30,18 @@
   }
 
   &__day-container {
-    background: yellow;
-    border: red 2px solid;
+    background: white;
+    border: rgba(164, 160, 160, 0.178) 2px solid;
     width: 114.5px;
     padding: 2rem;
+  }
+
+  &__day-container-fadded {
+    background: white;
+    border: rgba(164, 160, 160, 0.178) 2px solid;
+    width: 114.5px;
+    padding: 2rem;
+    color: red;
+    font-weight: 700;
   }
 }
