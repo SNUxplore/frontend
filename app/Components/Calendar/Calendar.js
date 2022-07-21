@@ -1,36 +1,22 @@
 import React from "react";
 import moment from "moment";
+import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
 const weekDays = [];
 
 const Calendar = () => {
-  const [calendarData, setCalendarData] = React.useState([]); //contains weeks , weeks contain days
-
-  const value = moment(); //gets the local machine date
-  const firstDay = value.clone().startOf("month").startOf("week"); //first day on calendar grid
+  const [value, setValue] = React.useState(moment()); //gets the local machine date
+  const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
-  const lastDay = value.clone().endOf("month").endOf("week"); //last day on calendar grid
   const currentMonth = value.format("MMMM");
   const currentYear = value.format("YYYY");
 
-  React.useEffect(() => {
-    const effectArray = [];
-    const day = firstDay.clone().subtract(1, "day"); //starts at a prev index for looping purposes [iterator]
-    while (day.isBefore(lastDay, "day")) {
-      effectArray.push(
-        //array contains weeks
-        Array(7) //array for week
-          .fill(0)
-          .map(() => day.add(1, "day").clone()) //days cloned and iterated for weeks
-      );
-    }
-    setCalendarData(effectArray);
-  }, [value]);
-
   const monthChange = (dir) => {
     dir === "left"
-      ? value.clone().subtract(1, "month")
-      : value.clone().add(1, "month");
+      ? setValue(value.clone().subtract(1, "month"))
+      : dir === "right"
+      ? setValue(value.clone().add(1, "month"))
+      : console.log("invalid btn direction");
   };
 
   return (
