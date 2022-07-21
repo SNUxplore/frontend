@@ -3,7 +3,6 @@
 .SearchBarWrapper {
 	@include box(80%, 50px);
 	position: relative;
-	transition: all 2s ease;
 
 	@include respondAt(1095px) {
 		@include box(100%, 50px);
