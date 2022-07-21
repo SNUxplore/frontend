@@ -8,9 +8,20 @@
   width: 800px;
   padding: 1.5rem;
 
-  &__monthNames {
-    font-weight: 700;
-    font-size: 21px;
+  &__header {
+    display: flex;
+    gap: 30px;
+
+    button {
+      border: none;
+      border-radius: 20%;
+      background: var(--primaryTextColor);
+      color: white;
+    }
+    &__monthNames {
+      font-weight: 700;
+      font-size: 21px;
+    }
   }
 
   &__daynames {

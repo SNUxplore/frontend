@@ -27,10 +27,20 @@ const Calendar = () => {
     setCalendarData(effectArray);
   }, [value]);
 
+  const monthChange = (dir) => {
+    dir === "left"
+      ? value.clone().subtract(1, "month")
+      : value.clone().add(1, "month");
+  };
+
   return (
     <div className="calendar-container">
-      <div className="calendar-container__monthNames">
-        {currentMonth} {currentYear}
+      <div className="calendar-container__header">
+        <button className="calendar-container__header__leftBtn"> &larr;</button>
+        <div className="calendar-container__header__monthNames">
+          {currentMonth} {currentYear}
+        </div>
+        <button className="calendar-container__header__leftBtn"> &rarr;</button>
       </div>
       <div className="calendar-container__daynames">
         <p className="calendar-container__daynames__day">Sun</p>
