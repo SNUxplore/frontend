@@ -3,6 +3,7 @@
 .HeaderWrapper {
   @include box($height: 150px);
   position: relative;
+  max-width: 1585px;
 
   #NavBarInput,
   .hamButton {
