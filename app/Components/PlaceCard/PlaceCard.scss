@@ -6,7 +6,12 @@
   background-color: var(--white);
   border-radius: 8px;
   gap: 10px;
-
+	transition: background-color 1000ms linear;
+	
+	&--highlighted {
+		background-color: #a9a9a9;
+	}
+	
   &--image {
     @include box($height: auto);
     border-radius: 6px;

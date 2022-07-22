@@ -7,10 +7,10 @@
 @import "./theme/dark.scss";
 @import "./theme/pink.scss";
 
-.light {
-}
 //kept it here so that there's design visible
-@include lightMode();
+.light {
+  @include lightMode();
+}
 .dark {
   @include darkMode();
 }
@@ -36,22 +36,21 @@ body {
 }
 
 ::-webkit-scrollbar {
-	width: 8px;
-	height: 8px;
-	background: #f1f1f1;
+  width: 8px;
+  height: 8px;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #888;
-	border-radius: 4px;
+  background: #888;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+  background: #555;
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 4px;
-	background: #f1f1f1;
+  border-radius: 4px;
+  background: #f1f1f1;
 }
-

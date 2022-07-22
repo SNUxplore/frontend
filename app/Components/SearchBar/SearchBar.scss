@@ -3,7 +3,6 @@
 .SearchBarWrapper {
 	@include box(80%, 50px);
 	position: relative;
-	transition: all 2s ease;
 
 	@include respondAt(1095px) {
 		@include box(100%, 50px);
@@ -52,7 +51,6 @@
     color: var(--primaryTextColor);
     border: none;
     padding: 6px 70px 6px 20px;
-    box-shadow: var(--boxShadow);
 	
     &:focus-visible {
 			outline: none;

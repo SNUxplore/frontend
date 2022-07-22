@@ -6,7 +6,7 @@ import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
 import styleSheet from "~/styles/routes/LandingPage.css";
-import '~/styles/root/global.css'
+import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
 
 const Sections = [
@@ -30,10 +30,10 @@ export function links() {
 }
 
 export default function LandingPage() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState("light");
   const toggleTheme = (value) => {
     setTheme(value);
-  }
+  };
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
@@ -49,7 +49,6 @@ export default function LandingPage() {
     }
   };
 
-  
   // const [navState, setNavState] = React.useState(false);
 
   // const setSideNavState = (navstate) => {
@@ -59,11 +58,9 @@ export default function LandingPage() {
   //   navState ? "LandingPage__mainContainer--blur" : ""
   // }`}>
 
-
   return (
-
-  //  <div className={`LandingPage dark`}>
-     // <Header theme={theme} setTheme={toggleTheme}/>
+    //  <div className={`LandingPage dark`}>
+    // <Header theme={theme} setTheme={toggleTheme}/>
 
     <div className="LandingPage">
       <Header/>
@@ -124,8 +121,8 @@ export default function LandingPage() {
               view === Sections[0].className
                 ? 1
                 : view === Sections[1].className
-                  ? 2
-                  : 3
+                ? 2
+                : 3
             }
           />
           <InfoComponent__Mobile />
