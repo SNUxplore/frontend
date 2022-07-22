@@ -76,6 +76,7 @@ const Calendar = () => {
     let eventName = [];
     events.forEach((event) => {
       if (event.eventDate === date) {
+        /* todo fix logic error repititive condition*/
         event.eventDate === date
           ? (classToggle = "calendar-container__eventShow")
           : (classToggle = "calendar-container__eventHide");
@@ -91,11 +92,6 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
-      <div className="calendar-container__modal">
-        <div className="calendar-container__modal__inputs">
-          <button onClick={() => {}}>Hi</button>
-        </div>
-      </div>
       <div className="calendar-container__header">
         <div className="calendar-container__header__navigator">
           <button
@@ -118,7 +114,7 @@ const Calendar = () => {
         </div>
         <button
           onClick={() => {
-            setToggleState(!toggleState);
+            setToggleState((prevState) => !prevState);
           }}
           className="calendar-container__header__addEventCTA"
         >
@@ -135,6 +131,20 @@ const Calendar = () => {
         })}
       </div>
       {calendarData.map((week, index) => {
+        // 30 days * eventCheckAmount
+        /* 
+					Event -> starting date
+					calenderData = [1, 2, 3, 4, 5]
+					const mp = Map(number(date), number[]);
+					Event.foreach(e => {
+						e.currentDate === sameMonth as calender
+							const arr = mp.get(date);
+							arr.push(e.id);
+							mp.set(date, arr);
+					})	
+					const arr = mp.get(date)
+					arr.
+				*/
         return (
           <div key={index} className="calendar-container__week-container">
             {week.map((day, index) => {
