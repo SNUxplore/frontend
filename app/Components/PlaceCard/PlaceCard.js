@@ -8,7 +8,13 @@ import foodMenuLogo from "../../Assets/Img/foodMenu.svg";
 
 import { useMediaQuery } from "react-responsive";
 
-function PlaceCard({ name, actionLists, desc, src }) {
+function PlaceCard({
+	name,
+	actionLists,
+	desc,
+	src,
+	highlighted,
+}) {
   const iconShow = useMediaQuery({
     query: "(max-width: 450px)",
   });
@@ -32,9 +38,13 @@ function PlaceCard({ name, actionLists, desc, src }) {
   // } else {
   //   styles = { width: "100%", height: "auto" };
   // }
-
   return (
-    <div className="PlaceCardWrapper">
+		<div
+			id={name}
+			className={`
+			PlaceCardWrapper
+			${highlighted ? "PlaceCardWrapper--highlighted" : ""}
+			`}>
       <div className="PlaceCardWrapper__content">
         <img
           className="PlaceCardWrapper--image"

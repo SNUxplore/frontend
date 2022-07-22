@@ -41,7 +41,7 @@ function Header({ theme, setTheme }) {
     };
   }, [navState]);
   const dropdown = useMediaQuery({
-    query: "(max-width: 1530px)",
+    query: "(max-width: 1230px)",
   });
 
   return (
@@ -49,9 +49,9 @@ function Header({ theme, setTheme }) {
       {dropdown && (
         <a href="/">
           <img
-            className={`HeaderWrapper__left--logo ${
-              navState ? "HeaderWrapper__left--logo--blur" : ""
-            }`}
+            className={`
+              HeaderWrapper__left--logo 
+              ${navState ? "HeaderWrapper__left--logo--blur" : ""}`}
             src={appLogo}
             alt="snu explore Logo"
           />
@@ -160,19 +160,33 @@ function Header({ theme, setTheme }) {
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("light");
+                  document.body.classList.remove("dark");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "light");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={lightModeIcon}
                   alt="snu explore Logo"
                 />
                 Light Mode
-              </a>
+              </button>
             </li>
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option"
                   src={darkModeIcon}
@@ -185,12 +199,19 @@ function Header({ theme, setTheme }) {
                   style={{ marginLeft: "15px" }}
                   alt="snu explore Logo"
                 />
-              </a>
+              </button>
             </li>
           )}
           {dropdown && (
             <li className="HeaderWrapper__middle--option">
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.add("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
                 <img
                   className="HeaderWrapper__middle--option fire"
                   src={darkModeIcon}
@@ -203,7 +224,7 @@ function Header({ theme, setTheme }) {
                   style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
-              </a>
+              </button>
             </li>
           )}
         </ul>
@@ -296,7 +317,6 @@ function Header({ theme, setTheme }) {
           id="NavBarInput"
           onChange={() => {
             setNavState(!navState);
-
             const nodeList = document.querySelectorAll("nav ~ div");
             for (let i = 0; i < nodeList.length; i++) {
               nodeList[i].style.filter = `${
@@ -305,6 +325,7 @@ function Header({ theme, setTheme }) {
               nodeList[i].style.transition =
                 "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
             }
+
             document.querySelector("nav ~ main").style.filter = `${
               !navState ? "blur(3.5px)" : "none"
             }`;
