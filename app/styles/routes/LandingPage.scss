@@ -16,7 +16,7 @@
     min-height: calc(100% - 110px);
     // background-color: aqua;
     padding: 0px 170px 60px;
-    transition: padding 0.5s ease-in-out;
+    transition: padding 0.5s ease-in-out, filter 0.5s;
 
     @include respondAt(1525px) {
       padding: 0 130px 50px;
@@ -119,6 +119,7 @@
 
     &__desc {
       font-family: "Poppins", sans-serif;
+      color: var(--primaryTextColor);
       line-height: 30px;
       @include box(90%, auto);
 
@@ -159,6 +160,8 @@
       top: 0;
       right: 0;
       transform: translateX(50%);
+      // color: var(--blue);
+      fill: var(--blue);
 
       @include respondAt(1095px) {
         display: none;

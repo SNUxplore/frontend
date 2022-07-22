@@ -8,6 +8,10 @@ import fireIcon from "../../Assets/Img/fireIcon.svg";
 import infoIcon from "../../Assets/Img/infoIcon.svg";
 import questionIcon from "../../Assets/Img/questionIcon.svg";
 import usersIcon from "../../Assets/Img/usersIcon.svg";
+import lightModeIcon from "../../Assets/Img/lightModeIcon.svg";
+import darkModeIcon from "../../Assets/Img/darkModeIcon.svg";
+import darkModeOneTheme from "../../Assets/Img/darkModeOneTheme.svg";
+import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -22,7 +26,9 @@ function Header() {
       {dropdown && (
         <a href="/">
           <img
-            className="HeaderWrapper__left--logo"
+            className={`
+              HeaderWrapper__left--logo 
+              ${navState ? "HeaderWrapper__left--logo--blur" : ""}`}
             src={appLogo}
             alt="snu explore Logo"
           />
@@ -44,7 +50,6 @@ function Header() {
             </a>
           )}
         </div>
-
         <ul className="HeaderWrapper__middle">
           {dropdown && (
             <div style={{ width: "100%" }}>
@@ -79,7 +84,7 @@ function Header() {
             </a>
           </li>
           {dropdown && (
-            <div style={{ marginTop: "35px", width: "100%" }}>
+            <div style={{ marginTop: "17px", width: "100%" }}>
               <li className="HeaderWrapper__middle--option">
                 <p>Help and more</p>
               </li>
@@ -122,8 +127,84 @@ function Header() {
               About Us
             </a>
           </li>
+          {dropdown && (
+            <div style={{ marginTop: "17px", width: "100%" }}>
+              <li className="HeaderWrapper__middle--option">
+                <p>Themes</p>
+              </li>
+              <div className="HeaderWrapper__middle--lineSep"></div>
+            </div>
+          )}
+          {dropdown && (
+            <li className="HeaderWrapper__middle--option">
+              <button
+                onClick={() => {
+                  document.body.classList.add("light");
+                  document.body.classList.remove("dark");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "light");
+                }}
+              >
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={lightModeIcon}
+                  alt="snu explore Logo"
+                />
+                Light Mode
+              </button>
+            </li>
+          )}
+          {dropdown && (
+            <li className="HeaderWrapper__middle--option">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={darkModeIcon}
+                  alt="snu explore Logo"
+                />
+                Dark Mode #1
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={darkModeOneTheme}
+                  style={{ marginLeft: "15px" }}
+                  alt="snu explore Logo"
+                />
+              </button>
+            </li>
+          )}
+          {dropdown && (
+            <li className="HeaderWrapper__middle--option">
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.add("pink");
+                  localStorage.setItem("theme", "dark");
+                }}
+              >
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={darkModeIcon}
+                  alt="snu explore Logo"
+                />
+                Dark Mode #2
+                <img
+                  className="HeaderWrapper__middle--option fire"
+                  src={darkModeTwoTheme}
+                  style={{ marginLeft: "15px", filter: "none" }}
+                  alt="snu explore Logo"
+                />
+              </button>
+            </li>
+          )}
         </ul>
-
         <div className="HeaderWrapper__right">
           {dropdown && (
             <div style={{ width: "100%" }}>
@@ -131,7 +212,6 @@ function Header() {
               <div className="HeaderWrapper__right--lineSep"></div>
             </div>
           )}
-
           <a href="https://www.instagram.com/snu.xplore/">
             <img
               className="HeaderWrapper__right--logo"
@@ -155,10 +235,14 @@ function Header() {
           </a>
         </div>
         {dropdown && (
-          <div className="HeaderWrapper__dots">
-            <span className="HeaderWrapper__dots--dot"></span>
-            <span className="HeaderWrapper__dots--dot"></span>
-            <span className="HeaderWrapper__dots--dot"></span>
+          <div
+            style={{ position: "relative", width: "100%", height: "1000px" }}
+          >
+            <div className="HeaderWrapper__dots">
+              <span className="HeaderWrapper__dots--dot"></span>
+              <span className="HeaderWrapper__dots--dot"></span>
+              <span className="HeaderWrapper__dots--dot"></span>
+            </div>
           </div>
         )}
       </div>
@@ -175,6 +259,12 @@ function Header() {
           id="NavBarInput"
           onChange={() => {
             setNavState(!navState);
+            document.querySelector("nav ~ div").style.filter = `${
+              !navState ? "blur(3.5px)" : "none"
+            }`;
+            document.querySelector("nav ~ main").style.filter = `${
+              !navState ? "blur(3.5px)" : "none"
+            }`;
             console.log(navState);
           }}
         />
@@ -189,5 +279,4 @@ function Header() {
     </nav>
   );
 }
-
 export default Header;

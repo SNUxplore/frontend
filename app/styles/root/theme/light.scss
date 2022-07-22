@@ -1,20 +1,26 @@
-@mixin lightMode {
-  :root {
-    --pageBackground: #f4f5fc;
-    --primaryTextColor: #363b53;
-    --blue: #308cf8;
-    --white: #ffffff;
-    --titleHighlight: #d0eeff;
-    --transparent: transparent;
-    --pink: #d202f3;
-    --secondaryTextColor: #211f24;
-    --lightBlue: #d0eeff;
-    --footerBackground: #242836;
-    --copyrightText: #787777;
-    --contactHover: #ffc107;
-    --navMenuBorder: #a66874;
-    --searchBarShadow: #cdced4;
-    --faqRedirectBackground: #61abfe;
-    --navigatePanelShadow: #d9d9d9;
-  }
+@mixin lightMode() {
+  --pageBackground: #f4f5fc;
+  --primaryTextColor: #363b53;
+  --blue: #308cf8;
+  --white: #ffffff;
+  --titleHighlight: #d0eeff;
+  --transparent: transparent;
+  --pink: #d202f3;
+  --secondaryTextColor: #211f24;
+  --lightBlue: #d0eeff;
+  --footerBackground: #242836;
+  --copyrightText: #787777;
+  --contactHover: #ffc107;
+  --navMenuBorder: #a66874;
+  --searchBarShadow: #cdced4;
+  --faqRedirectBackground: #61abfe;
+  --navigatePanelShadow: #d9d9d9;
+  --navbarBackground: #242836;
+  --navbarOption: #ffffff;
+  --navbarHover: #00badd;
+  --navbarLineSep: #ffffff59;
+  --navBarCross: #ffffff;
+  --navbarItems: #ffffff;
+  --boxShadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
+  --questions: #363b53;
 }

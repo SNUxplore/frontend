@@ -6,7 +6,12 @@
   background-color: var(--white);
   border-radius: 8px;
   gap: 10px;
-
+	transition: background-color 1000ms linear;
+	
+	&--highlighted {
+		background-color: #a9a9a9;
+	}
+	
   &--image {
     @include box($height: auto);
     border-radius: 6px;
@@ -36,7 +41,7 @@
 
     &--link {
       @include box(100%, 35px);
-      @include make-flex();
+      @include make-flex($dir: row);
       color: var(--primaryTextColor);
       gap: 10px;
       text-decoration: none;
@@ -57,6 +62,9 @@
         background-color: var(--blue);
         color: var(--white);
       }
+    }
+    &--icon {
+      @include box(17px, 17px);
     }
   }
 }
