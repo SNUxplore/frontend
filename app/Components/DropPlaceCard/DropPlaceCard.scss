@@ -18,21 +18,24 @@
       border-radius: 6px;
     }
 
-    &--details {
-      @include box();
-      @include make-flex($just: space-between, $dir: row);
-    }
-
     &--text {
-      @include box(90%);
-      @include make-flex($align: flex-start, $just: flex-start);
+      @include box(62%);
+      @include make-flex($align: flex-start, $just: space-between);
+      max-width: 80%;
 
+      @include respondAt(480px) {
+        width: 58%;
+      }
+      @include respondAt(404px) {
+        width: 50%;
+      }
       h3,
       p {
         text-align: start;
       }
 
       h3 {
+        font-size: 20px;
         @include respondAt(500px) {
           font-size: 4vw;
         }
@@ -41,7 +44,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 80%;
+        width: 100%;
       }
     }
     span {
@@ -56,22 +59,27 @@
   &__content {
     @include box($height: 100%);
     @include make-flex($align: flex-start, $just: space-between);
-    gap: 20px;
+    gap: 15px;
     border-radius: 0 0 5px 5px;
     p {
-      padding: 20px;
+      // padding: 20px;
+    }
+    &--top {
+      padding: 0 15px;
+      @include make-flex($just: flex-start, $align: flex-start);
+      gap: 10px;
     }
 
     background-color: var(--white);
   }
 
   &__actions {
-    @include box(100%, 35px);
+    @include box(100%, 40px);
     @include make-flex($dir: row, $just: space-between);
     // gap: 10px;
 
     &--link {
-      @include box(100%, 35px);
+      @include box(100%, 40px);
       @include make-flex($dir: row);
       color: var(--primaryTextColor);
       gap: 10px;

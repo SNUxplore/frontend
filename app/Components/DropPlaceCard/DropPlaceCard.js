@@ -19,6 +19,12 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
   });
 
   React.useEffect(() => {
+    if (dropDownRef.current.scrollHeight != 0) {
+      setScrollHeight(dropDownRef.current.scrollHeight);
+    }
+  });
+
+  React.useEffect(() => {
     if (isOpen) {
       setStyle({
         transitionDuration: "300ms",
@@ -60,7 +66,9 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
   return (
     <div className="DropPlaceCardWrapper">
       <button
-        className={`DropPlaceCardWrapper__face ${isOpen ? "DropPlaceCardWrapper__face--active" : ""}`}
+        className={`DropPlaceCardWrapper__face ${
+          isOpen ? "DropPlaceCardWrapper__face--active" : ""
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <img
@@ -68,22 +76,24 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
           src={src != "" ? src : placeholder}
           alt="Placeholder"
         />
-        <div className="DropPlaceCardWrapper__face--details">
-          <div className="DropPlaceCardWrapper__face--text">
-            <h3>{name}</h3>
-            <p>{desc}</p>
-          </div>
-          <span>+</span>
+        <div className="DropPlaceCardWrapper__face--text">
+          <h3>{name}</h3>
+          <p>{desc}</p>
         </div>
+        <span>+</span>
       </button>
       <div
         className="DropPlaceCardWrapper__content"
         style={style}
         ref={dropDownRef}
       >
-        <p className="PlaceCardWrapper__content--poc">
-          <span>Receptionist: </span>Gravida Mouna
-        </p>
+        <div className="DropPlaceCardWrapper__content--top">
+          <p>{desc}</p>
+
+          <p className="PlaceCardWrapper__content--poc">
+            <span>Receptionist: </span>Gravida Mouna
+          </p>
+        </div>
         <div className="DropPlaceCardWrapper__actions">
           {actionLists.map((action, index) => (
             <a
