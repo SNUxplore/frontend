@@ -1,0 +1,262 @@
+@import "../../root/mixins";
+html {
+  height: unset !important;
+}
+.AboutUsPage {
+  @include make-flex($just: flex-start);
+  min-height: 100vh;
+
+  &__main {
+    gap: 50px;
+    width: 100%;
+    max-width: 1585px;
+    padding: 0px 170px 60px;
+    min-height: calc(100% - 110px);
+    transition: padding 0.5s ease-in-out;
+    @include make-flex($just: flex-start);
+
+    @include respondAt(1525px) {
+      padding: 0 130px;
+    }
+    @include respondAt(1335px) {
+      padding: 0 90px;
+    }
+    @include respondAt(1135px) {
+      padding: 0 40px;
+    }
+    &--hero {
+      @include make-flex();
+      gap: 27px;
+      padding-top: 68px;
+      color: var(--primaryTextColor);
+      font-family: "Poppins", sans-serif;
+
+      h1 {
+        b {
+          background-color: var(--titleHighlight);
+        }
+        font-size: 75px;
+        font-weight: 500;
+        span {
+          font-weight: 600;
+        }
+
+        @include respondAt(775px) {
+          font-size: 60px;
+        }
+        @include respondAt(635px) {
+          font-size: 50px;
+        }
+      }
+      p {
+        color: var(--primaryTextColor);
+        width: 60%;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        @include respondAt(770px) {
+          width: 70%;
+        }
+        @include respondAt(545px) {
+          width: 100%;
+        }
+        @include respondAt(545px) {
+          text-align: start;
+        }
+      }
+
+      @include respondAt(635px) {
+        padding-top: 0;
+      }
+    }
+    &--mission {
+      margin-bottom: 10px;
+      @include make-flex($dir: row, $align: center, $just: space-between);
+      @include respondAt(775px) {
+        @include make-flex($dir: column, $align: center, $just: space-between);
+      }
+      @include respondAt(545px) {
+        @include make-flex($dir: column, $align: center, $just: space-between);
+      }
+      &__image--container {
+        @include respondAt(775px) {
+          width: 405px;
+          height: 250px;
+        }
+        @include respondAt(635px) {
+          width: 380px;
+          height: 250px;
+        }
+      }
+      &__content {
+        padding-left: 97px;
+        @include respondAt(775px) {
+          padding-top: 20px;
+          padding-left: 70px;
+        }
+        @include respondAt(635px) {
+          padding-left: 19px;
+        }
+        h1 {
+          b {
+            background-color: var(--titleHighlight);
+          }
+          color: var(--primaryTextColor);
+          font-size: 50px;
+          font-weight: 500;
+          span {
+            font-weight: 600;
+          }
+
+          @include respondAt(775px) {
+            font-size: 40px;
+          }
+          @include respondAt(635px) {
+            font-size: 30px;
+          }
+        }
+        p {
+          color: var(--primaryTextColor);
+          padding-top: 14px;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 25px;
+          text-align: start;
+          @include respondAt(770px) {
+            width: 70%;
+          }
+          @include respondAt(545px) {
+            width: 100%;
+          }
+          @include respondAt(545px) {
+            text-align: start;
+          }
+        }
+      }
+    }
+    &--story {
+      margin-bottom: 10px;
+
+      @include make-flex($dir: row, $align: center, $just: space-between);
+      @include respondAt(775px) {
+        @include make-flex(
+          $dir: column-reverse,
+          $align: center,
+          $just: space-between
+        );
+      }
+      @include respondAt(545px) {
+        @include make-flex(
+          $dir: column-reverse,
+          $align: center,
+          $just: space-between
+        );
+      }
+      &__image--container {
+        @include respondAt(775px) {
+          width: 405px;
+          height: 250px;
+        }
+        @include respondAt(635px) {
+          width: 380px;
+          height: 250px;
+        }
+      }
+      &__content {
+        @include respondAt(775px) {
+          padding-right: 0;
+          padding-top: 20px;
+          padding-left: 70px;
+        }
+        @include respondAt(635px) {
+          padding-right: 0;
+          padding-left: 19px;
+        }
+        padding-left: 30px;
+        padding-right: 30px;
+        h1 {
+          b {
+            background-color: var(--titleHighlight);
+          }
+          color: var(--primaryTextColor);
+          font-size: 50px;
+          font-weight: 500;
+          span {
+            font-weight: 600;
+          }
+
+          @include respondAt(775px) {
+            font-size: 40px;
+          }
+          @include respondAt(635px) {
+            font-size: 30px;
+          }
+        }
+        p {
+          color: var(--primaryTextColor);
+          padding-top: 14px;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 25px;
+          text-align: start;
+          @include respondAt(770px) {
+            width: 70%;
+          }
+          @include respondAt(545px) {
+            width: 100%;
+          }
+          @include respondAt(545px) {
+            text-align: start;
+          }
+        }
+      }
+    }
+    &--team {
+        margin-bottom: 10px;
+        &__title {
+          h1 {
+            text-align: center;
+            b {
+              background-color: var(--titleHighlight);
+            }
+            color: var(--primaryTextColor);
+            font-size: 50px;
+            font-weight: 500;
+            span {
+              font-weight: 600;
+            }
+  
+            @include respondAt(775px) {
+              font-size: 40px;
+            }
+            @include respondAt(635px) {
+              font-size: 30px;
+            }
+          }
+          p {
+            color: var(--primaryTextColor);
+            padding-top: 14px;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 72px;
+            text-align: center;
+            @include respondAt(770px) {
+              width: 70%;
+            }
+            @include respondAt(545px) {
+              width: 100%;
+            }
+            @include respondAt(545px) {
+              text-align: start;
+            }
+          }
+        }
+        &__teams {
+            div {
+                color: black;
+            }
+        }
+      }
+  }
+}
