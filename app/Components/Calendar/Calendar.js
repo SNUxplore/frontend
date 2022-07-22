@@ -10,6 +10,11 @@ const events = [
     eventTimings: "7:00 - 10:00 pm",
   },
   {
+    eventName: "Genesis",
+    eventDate: "26/06/22",
+    eventTimings: "7:00 - 10:00 pm",
+  },
+  {
     eventName: "FinQuest",
     eventDate: "11/07/22",
     eventTimings: "7:00 - 10:00 pm",
@@ -134,11 +139,16 @@ const Calendar = () => {
                       : "calendar-container__day-container"
                   }
                 >
-                  <p className={classToggle}>
-                    {eventName.length > 1
-                      ? `+ ${eventName.length} events`
-                      : eventName[0]}
-                  </p>
+                  {day.isBefore(monthFirstDay, "day") ||
+                  day.isAfter(monthLastDay, "day") ? (
+                    <p></p>
+                  ) : (
+                    <p className={classToggle}>
+                      {eventName.length > 1
+                        ? `+ ${eventName.length} events`
+                        : eventName[0]}
+                    </p>
+                  )}
                   {day.format("D").toString()}
                 </div>
               );
