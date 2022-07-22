@@ -2,8 +2,8 @@ import React from "react";
 
 const useCalendarGrid = (value) => {
   const [calendarData, setCalendarData] = React.useState([]); //contains weeks , weeks contain days
-  const firstDay = value.clone().startOf("month").startOf("week"); //first day on calendar grid
-  const lastDay = value.clone().endOf("month").endOf("week"); //last day on calendar grid
+  const firstDay = value.clone().startOf("month").startOf("isoWeek"); //first day on calendar grid
+  const lastDay = value.clone().endOf("month").endOf("isoWeek"); //last day on calendar grid
 
   React.useEffect(() => {
     const effectArray = [];

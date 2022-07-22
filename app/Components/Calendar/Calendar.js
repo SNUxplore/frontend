@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
-const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const events = [
   {
     eventName: "Ragnarok",
@@ -91,18 +91,9 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
-      <div
-        className={
-          toggleState
-            ? "calendar-container__modal"
-            : "calendar-container__modal hide"
-        }
-      >
+      <div className="calendar-container__modal">
         <div className="calendar-container__modal__inputs">
-          <input placeholder="eventname" />
-          <input placeholder="timings" />
-          <input placeholder="date" />
-          <button onClick={() => setToggleState(false)}>Add event</button>
+          <button onClick={() => {}}>Hi</button>
         </div>
       </div>
       <div className="calendar-container__header">
