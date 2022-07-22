@@ -33,7 +33,6 @@ function SearchBar() {
 	const fuseOptions = {
 		shouldSort: true,
 		keys: ["name"],
-		limit: 5,
 	};
 	const fuse = new Fuse(testData, fuseOptions);
 	
