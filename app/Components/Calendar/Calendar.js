@@ -54,6 +54,7 @@ const events = [
 const Calendar = () => {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const [date, setDate] = React.useState(null);
+  const [toggleState, setToggleState] = React.useState(false);
 
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
@@ -90,7 +91,15 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
-      <div className="calendar-container__modal">This is the model</div>
+      <div
+        className={
+          toggleState
+            ? "calendar-container__modal"
+            : "calendar-container__modal hide"
+        }
+      >
+        This is the model
+      </div>
       <div className="calendar-container__header">
         <div className="calendar-container__header__navigator">
           <button
@@ -111,7 +120,12 @@ const Calendar = () => {
             &rarr;
           </button>
         </div>
-        <button className="calendar-container__header__addEventCTA">
+        <button
+          onClick={() => {
+            setToggleState(!toggleState);
+          }}
+          className="calendar-container__header__addEventCTA"
+        >
           &#x2B;
         </button>
       </div>
