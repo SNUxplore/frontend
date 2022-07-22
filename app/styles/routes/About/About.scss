@@ -213,50 +213,55 @@ html {
       }
     }
     &--team {
-        margin-bottom: 10px;
-        &__title {
-          h1 {
-            text-align: center;
-            b {
-              background-color: var(--titleHighlight);
-            }
-            color: var(--primaryTextColor);
-            font-size: 50px;
-            font-weight: 500;
-            span {
-              font-weight: 600;
-            }
-  
-            @include respondAt(775px) {
-              font-size: 40px;
-            }
-            @include respondAt(635px) {
-              font-size: 30px;
-            }
+      margin-bottom: 10px;
+      &__title {
+        h1 {
+          text-align: center;
+          b {
+            background-color: var(--titleHighlight);
           }
-          p {
-            color: var(--primaryTextColor);
-            padding-top: 14px;
-            font-weight: 400;
-            font-size: 22px;
-            line-height: 72px;
-            text-align: center;
-            @include respondAt(770px) {
-              width: 70%;
-            }
-            @include respondAt(545px) {
-              width: 100%;
-            }
-            @include respondAt(545px) {
-              text-align: start;
-            }
+          color: var(--primaryTextColor);
+          font-size: 50px;
+          font-weight: 500;
+          span {
+            font-weight: 600;
+          }
+
+          @include respondAt(775px) {
+            font-size: 40px;
+          }
+          @include respondAt(635px) {
+            font-size: 30px;
           }
         }
-        &__teams {
-            div {
-                color: black;
-            }
+        p {
+          color: var(--primaryTextColor);
+          padding-top: 14px;
+          font-weight: 400;
+          font-size: 22px;
+          line-height: 72px;
+          text-align: center;
+          @include respondAt(770px) {
+            width: 70%;
+          }
+          @include respondAt(545px) {
+            width: 100%;
+          }
+          @include respondAt(545px) {
+            text-align: start;
+          }
         }
       }
+      &__teams {
+        @include make-flex($dir: row, $align: center, $just: space-evenly);
+        &--data {
+          padding-right: 20px;
+          padding: 10px 20px 10px 20px;
+          margin: 0 30px 0 30px;
+          background-color: var(--blue);
+          color: white;
+        }
+      }
+    }
   }
 }

@@ -172,10 +172,7 @@ export default function About() {
             <p>These are the people that make the magic happen.</p>
           </div>
           <div className="AboutUsPage__main--team__teams">
-            {teamData.map((item) => {
-              console.log(item.name);
-              <div>{item.name}</div>
-            }) }
+            {teams.map(item => <div className="AboutUsPage__main--team__teams--data">{item}</div>)}
           </div>
         </section>
       </main>
