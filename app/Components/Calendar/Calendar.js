@@ -98,7 +98,12 @@ const Calendar = () => {
             : "calendar-container__modal hide"
         }
       >
-        This is the model
+        <div className="calendar-container__modal__inputs">
+          <input placeholder="eventname" />
+          <input placeholder="timings" />
+          <input placeholder="date" />
+          <button onClick={() => setToggleState(false)}>Add event</button>
+        </div>
       </div>
       <div className="calendar-container__header">
         <div className="calendar-container__header__navigator">
