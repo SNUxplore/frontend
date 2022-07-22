@@ -1,0 +1,36 @@
+@import "../../styles/root/mixins";
+
+.AcademicInfo {
+  @include box();
+  @include make-flex($dir: row, $just: space-around);
+
+  &__details {
+    @include make-flex($dir: row);
+    gap: 30px;
+    &--icon {
+      background: gray;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    &--image {
+      width: 68%;
+    }
+    &__text {
+      &--name,
+      &--dept {
+        font-family: Poppins, sans-serif;
+      }
+    }
+  }
+
+  &__button {
+    border-radius: 10px;
+    &--button {
+      border-radius: 10px;
+    }
+  }
+}

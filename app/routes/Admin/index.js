@@ -5,14 +5,24 @@ import Footer from "~/Components/Footer/Footer";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import React from "react";
 import { Outlet, useLoaderData } from "@remix-run/react";
-import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
+import admin from "~/Assets/Data/admin.json";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
+export const loader = async ({ request }) => {
+  return request.url;
+};
+
 export default function Index() {
+  const url = useLoaderData();
+  const path = new URL(url).pathname.replace("/navigate/", "");
+  const [currentOption, setCurrentOption] = React.useState(
+    path ? path : Object.keys(admin)[0]
+  );
+
   return (
     <div className="AdminPage">
       <Header />
@@ -25,16 +35,27 @@ export default function Index() {
         worries, We can connect you to resourses that will unlock all that Shiv
         Nadar University has to offer.
       </p>
-      <SearchBar />
-
-      <div className="AdminPage__content--left">
-        <div className="AdminPage__content--panel"></div>
+      <div className="AdminPage__main--searchContainer">
+        <SearchBar />
       </div>
-      <section className="NavigatePage__main--content">
-        <div className="NavigatePage__content--left">
-          <div className="NavigatePage__content--panel"></div>
+
+      <section className="AdminPage__main--content">
+        <div className="AdminPage__content--left">
+          <div className="AdminPage__content--panel">
+            {Object.keys(admin).map((key, index) => (
+              <Link
+                replace
+                className={`${currentOption === key ? "activeTab" : ""}`}
+                key={index}
+                to={`/navigate/${key}`}
+                onClick={() => setCurrentOption(key)}
+              >
+                {key}
+              </Link>
+            ))}
+          </div>
         </div>
-        <Outlet context={data} />
+        <Outlet context={admin} />
       </section>
     </div>
   );
