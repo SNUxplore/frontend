@@ -6,35 +6,43 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const events = [
   {
     eventName: "Ragnarok",
-    Date: "01/07/22",
+    eventDate: "01/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "FinQuest",
-    Date: "11/07/22",
+    eventDate: "11/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "Renegade",
-    Date: "21/07/22",
+    eventDate: "21/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "Cenegade",
-    Date: "21/07/22",
+    eventDate: "21/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "Venegade",
-    Date: "21/07/22",
+    eventDate: "21/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "Surge",
-    Date: "12/07/22",
+    eventDate: "12/07/22",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "E Summit",
-    Date: "13/01/23",
+    eventDate: "13/01/23",
+    eventTimings: "7:00 - 10:00 pm",
   },
   {
     eventName: "E Summit",
-    Date: "14/01/23",
+    eventDate: "14/01/23",
+    eventTimings: "7:00 - 10:00 pm",
   },
 ];
 
@@ -58,14 +66,16 @@ const Calendar = () => {
 
   const eventCheck = (date) => {
     let classToggle;
+    let eventTimings;
     let eventName = [];
     events.forEach((event) => {
-      if (event.Date === date) {
-        event.Date === date
+      if (event.eventDate === date) {
+        event.eventDate === date
           ? (classToggle = "calendar-container__eventShow")
           : (classToggle = "calendar-container__eventHide");
 
-        event.Date === date ? eventName.push(event.eventName) : "";
+        event.eventDate === date ? eventName.push(event.eventName) : "";
+        eventTimings = event.eventTimings; // stores the event timings
         return;
       }
     });
