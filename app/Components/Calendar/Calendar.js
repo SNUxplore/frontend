@@ -8,6 +8,34 @@ const events = [
     eventName: "Ragnarok",
     Date: "01/07/22",
   },
+  {
+    eventName: "FinQuest",
+    Date: "11/07/22",
+  },
+  {
+    eventName: "Renegade",
+    Date: "21/07/22",
+  },
+  {
+    eventName: "Cenegade",
+    Date: "21/07/22",
+  },
+  {
+    eventName: "Venegade",
+    Date: "21/07/22",
+  },
+  {
+    eventName: "Surge",
+    Date: "12/07/22",
+  },
+  {
+    eventName: "E Summit",
+    Date: "13/01/23",
+  },
+  {
+    eventName: "E Summit",
+    Date: "14/01/23",
+  },
 ];
 
 const Calendar = () => {
@@ -29,13 +57,20 @@ const Calendar = () => {
   };
 
   const eventCheck = (date) => {
+    let classToggle;
+    let eventName = [];
     events.forEach((event) => {
       if (event.Date === date) {
-        return true;
-      } else {
-        return false;
+        event.Date === date
+          ? (classToggle = "calendar-container__eventShow")
+          : (classToggle = "calendar-container__eventHide");
+
+        event.Date === date ? eventName.push(event.eventName) : "";
+        return;
       }
     });
+
+    return { classToggle, eventName };
   };
 
   return (
@@ -68,38 +103,39 @@ const Calendar = () => {
           );
         })}
       </div>
-      {calendarData.map((week, index) => (
-        <div key={index} className="calendar-container__week-container">
-          {week.map((day, index) => (
-            <div
-              onClick={(e) => {
-                setDate(day.format("DD/MM/YY").toString());
-                console.log(date);
-              }}
-              key={index}
-              className={
-                day.isBefore(monthFirstDay, "day") ||
-                day.isAfter(monthLastDay, "day")
-                  ? "calendar-container__day-container-fadded"
-                  : "calendar-container__day-container"
-              }
-            >
-              <p
-                className={
-                  eventCheck(day.format("DD/MM/YY").toString())
-                    ? "calendar-container__eventHide"
-                    : "calendar-container__eventShow"
-                }
-              >
-                {day.format("DD/MM/YY").toString() === events[0].Date
-                  ? "event"
-                  : "no event"}
-              </p>
-              {day.format("D").toString()}
-            </div>
-          ))}
-        </div>
-      ))}
+      {calendarData.map((week, index) => {
+        return (
+          <div key={index} className="calendar-container__week-container">
+            {week.map((day, index) => {
+              const { classToggle, eventName } = eventCheck(
+                day.format("DD/MM/YY").toString()
+              );
+              return (
+                <div
+                  onClick={(e) => {
+                    setDate(day.format("DD/MM/YY").toString());
+                    console.log(date);
+                  }}
+                  key={index}
+                  className={
+                    day.isBefore(monthFirstDay, "day") ||
+                    day.isAfter(monthLastDay, "day")
+                      ? "calendar-container__day-container-fadded"
+                      : "calendar-container__day-container"
+                  }
+                >
+                  <p className={classToggle}>
+                    {eventName.length > 1
+                      ? `+ ${eventName.length} events`
+                      : eventName[0]}
+                  </p>
+                  {day.format("D").toString()}
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 };
