@@ -1,6 +1,12 @@
 @import "../../styles/root/mixins";
 
 .dropDown {
+  p{
+    color: var(--textColor);
+    &:hover{
+      color: var(--blue);
+    }
+  }
   min-height: 48px;
   width: 100%;
   //   margin-bottom: 100px;
@@ -15,11 +21,11 @@
     border-radius: 5px;
     cursor: pointer;
     &:hover {
-      background-color: var(--white);
+      // background-color: var(--white);
     }
 
     &--active {
-      background-color: var(--white);
+      // background-color: var(--white);
       border-radius: 5px 5px 0 0;
     }
   }
@@ -33,7 +39,7 @@
       padding: 20px;
     }
 
-    background-color: var(--white);
+    // background-color: var(--white);
   }
 
   &__borderLine {

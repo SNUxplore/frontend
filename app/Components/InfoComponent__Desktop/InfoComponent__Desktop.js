@@ -3,8 +3,20 @@ import ButtonLink from "../ButtonLink/ButtonLink";
 import Feature1 from "../../Assets/Img/Feature-1.svg";
 import Feature2 from "../../Assets/Img/Feature-2.svg";
 import Feature3 from "../../Assets/Img/Feature-3.svg";
+import Feature1Blue from "../../Assets/Img/navigateCampus_Blue.svg";
+import Feature1Pink from "../../Assets/Img/navigateCampus_Pink.svg";
+import Feature2Blue from "../../Assets/Img/happeningSnu_Blue.svg";
+import Feature2Pink from "../../Assets/Img/happeningSnu_Pink.svg";
+import Feature3Blue from "../../Assets/Img/adminContact_Blue.svg";
+import Feature3Pink from "../../Assets/Img/adminContact_pink.svg";
+
 
 function InfoComponent({ indicatorState = 1 }) {
+  const [theme, setTheme] = React.useState("");
+  React.useEffect(() => {
+    setTheme(localStorage.getItem("theme"));
+  });
+
   return (
     <div className="InfoComponent__Container">
       <div className="InfoComponent__content--container">
@@ -67,10 +79,10 @@ function InfoComponent({ indicatorState = 1 }) {
           className="InfoComponent__image--container__image"
           src={
             indicatorState === 1
-              ? Feature1
+              ? (theme == "light") ? Feature1 : (theme == "dark") ? Feature1Blue : Feature1Pink
               : indicatorState === 2
-              ? Feature2
-              : Feature3
+              ? (theme == "light") ? Feature2 : (theme == "dark") ? Feature2Blue : Feature2Pink
+              : (theme == "light") ? Feature3 : (theme == "dark") ? Feature3Blue : Feature3Pink
           }
           alt="feature-1Img"
         />

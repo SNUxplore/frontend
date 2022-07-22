@@ -8,6 +8,7 @@ import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions"
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
+import darkModeArrow from "../Assets/Img/darkModeArrow.svg"
 
 const Sections = [
   {
@@ -30,12 +31,16 @@ export function links() {
 }
 
 export default function LandingPage() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
   const toggleTheme = (value) => {
     setTheme(value);
   };
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
+  });
+
+  React.useEffect(() => {
+    setTheme(localStorage.getItem("theme"));
   });
 
   const references = React.useRef([]);
@@ -63,19 +68,19 @@ export default function LandingPage() {
     // <Header theme={theme} setTheme={toggleTheme}/>
 
     <div className="LandingPage">
-      <Header/>
+      <Header />
 
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
             <div className="heroSection__top--left">
-              <img className="heroSection__arrow" src={arrow} alt="Arrow" />
+              <img className="heroSection__arrow" src={(theme == "light") ? arrow : darkModeArrow} alt="Arrow" />
               <div className="heroSection__title">
                 <h1>
-                  Your <b>guide</b>,
+                  Your <b className="heroSection__title--unhighlight">guide</b>,
                 </h1>
                 <h1>
-                  To all <b>things SNU</b>
+                  To all <b className="heroSection__title--unhighlight">things</b> <b className="heroSection__title--highlight">SNU</b>
                 </h1>
               </div>
               <div className="heroSection__desc">
@@ -121,8 +126,8 @@ export default function LandingPage() {
               view === Sections[0].className
                 ? 1
                 : view === Sections[1].className
-                ? 2
-                : 3
+                  ? 2
+                  : 3
             }
           />
           <InfoComponent__Mobile />

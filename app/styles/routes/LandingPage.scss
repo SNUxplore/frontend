@@ -94,13 +94,23 @@
     }
 
     &__title {
+      &--highlight{
+        padding: 0 5px 0 5px;
+        color: var(--highlightTextColor);
+        background-color: var(--blue);
+      }
+      &--unhighlight {
+        color: var( --unhighlightTextColor);
+      }
       h1 {
+        margin: 30px 0 0px 0;
+        
         @include box(100%, auto);
         font-family: "Poppins", sans-serif;
         font-size: 67px;
         font-weight: 500;
         line-height: 82px;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         transition: font-size 0.5s ease-in-out;
 
         @include respondAt(1400px) {
@@ -204,7 +214,7 @@
       }
 
       &--stat {
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-size: 50px;
 
         @include respondAt(935px) {

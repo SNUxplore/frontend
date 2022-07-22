@@ -14,6 +14,8 @@ import darkModeDesktop from "../../Assets/Img/darkModeThemeDesktop.svg";
 import darkModeIcon from "../../Assets/Img/darkModeIcon.svg";
 import darkModeOneTheme from "../../Assets/Img/darkModeOneTheme.svg";
 import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
+import logoBlue from "../../Assets/Img/logoBlue.svg";
+import logoPink from "../../Assets/Img/logoPink.svg";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -63,9 +65,8 @@ function Header() {
         </a>
       )}
       <div
-        className={`HeaderWrapper__menu ${
-          navState ? "HeaderWrapper__menu--open" : ""
-        }`}
+        className={`HeaderWrapper__menu ${navState ? "HeaderWrapper__menu--open" : ""
+          }`}
       >
         <div className="HeaderWrapper__left">
           {!dropdown && (
@@ -246,9 +247,8 @@ function Header() {
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "light" ? "--active" : ""
-                  }`}
+                  className={`HeaderWrapper__right--themeButtons--option${currentTheme === "light" ? "--active" : ""
+                    }`}
                   src={lightModeDesktop}
                   alt="snu explore Logo"
                 />
@@ -263,9 +263,8 @@ function Header() {
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "dark" ? "--active" : ""
-                  }`}
+                  className={`HeaderWrapper__right--themeButtons--option${currentTheme === "dark" ? "--active" : ""
+                    }`}
                   src={darkModeDesktop}
                   alt="snu explore Logo"
                 />
@@ -280,9 +279,8 @@ function Header() {
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${
-                    currentTheme === "pink" ? "--active" : ""
-                  }`}
+                  className={`HeaderWrapper__right--themeButtons--option--pink${currentTheme === "pink" ? "--active" : ""
+                    }`}
                   src={darkModeDesktop}
                   alt="snu explore Logo"
                 />

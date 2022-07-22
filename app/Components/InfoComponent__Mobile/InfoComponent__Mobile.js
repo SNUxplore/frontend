@@ -1,6 +1,12 @@
 import Feature3Img from "../../Assets/Img/Feature-3.svg";
 import Feature2Img from "../../Assets/Img/Feature-2.svg";
 import Feature1Img from "../../Assets/Img/Feature-1.svg";
+import Feature1Blue from "../../Assets/Img/navigateCampus_Blue.svg";
+import Feature1Pink from "../../Assets/Img/navigateCampus_Pink.svg";
+import Feature2Blue from "../../Assets/Img/happeningSnu_Blue.svg";
+import Feature2Pink from "../../Assets/Img/happeningSnu_Pink.svg";
+import Feature3Blue from "../../Assets/Img/adminContact_Blue.svg";
+import Feature3Pink from "../../Assets/Img/adminContact_pink.svg";
 import arrowLeft from "../../Assets/Img/arrowLeft.svg";
 import arrowRight from "../../Assets/Img/arrowRight.svg";
 import React from "react";
@@ -8,6 +14,10 @@ import ButtonLink from "../ButtonLink/ButtonLink";
 
 export default function InfoComponent__Mobile() {
   const [infoIndex, setInfoIndex] = React.useState(0);
+  const [theme, setTheme] = React.useState("");
+  React.useEffect(() => {
+    setTheme(localStorage.getItem("theme"));
+  });
 
   const indicatorScrollRight = () => {
     infoIndex < 2 ? setInfoIndex(infoIndex + 1) : 2;
@@ -49,10 +59,10 @@ export default function InfoComponent__Mobile() {
           className="MobileContainer__ImageContainer__image"
           src={
             infoIndex === 0
-              ? Feature1Img
+              ? (theme == "light") ? Feature1Img : (theme == "dark") ? Feature1Blue : Feature1Pink
               : infoIndex === 1
-              ? Feature2Img
-              : Feature3Img
+              ? (theme == "light") ? Feature2Img : (theme == "dark") ? Feature2Blue : Feature2Pink
+              : (theme == "light") ? Feature3Img : (theme == "dark") ? Feature3Blue : Feature3Pink
           }
         ></img>
       </div>
