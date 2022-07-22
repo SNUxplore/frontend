@@ -33,11 +33,12 @@ function SearchBar() {
 	const fuseOptions = {
 		shouldSort: true,
 		keys: ["name"],
+		limit: 5,
 	};
 	const fuse = new Fuse(testData, fuseOptions);
 	
 	useEffect(() => {
-		setResults(fuse.search(search));
+		setResults(fuse.search(search, { limit: 5 }));
 	}, [search]);
 	
 	useEffect(() => {
