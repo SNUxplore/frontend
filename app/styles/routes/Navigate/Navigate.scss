@@ -97,7 +97,6 @@ html {
         margin-top: 50px;
         flex-direction: column;
         position: relative;
-        width: unset;
       }
     }
   }
@@ -198,6 +197,20 @@ html {
         flex-wrap: nowrap;
         flex-direction: column;
         gap: 12px;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      @include respondAt(585px) {
+        display: flex;
+      }
+    }
+    &--desktop {
+      display: flex;
+      align-items: stretch;
+      @include respondAt(585px) {
+        display: none;
       }
     }
   }

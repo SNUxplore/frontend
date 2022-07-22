@@ -90,30 +90,31 @@ export default function NavOption() {
   }
 
   return (
-    <div className="NavigatePage__content--right">
-      {contextData[option].map((i, index) => (
-        <>
-          {!mobile ? (
-            <DropPlaceCard
-              key={index}
-              name={i.name}
-              highlighted={urlParams.name == i.name && highlighted}
-              actionLists={generateActionLinks(contextData[option][index])}
-              desc={i.description}
-              src={i.image}
-            />
-          ) : (
-            <PlaceCard
-              key={index}
-              name={i.name}
-              highlighted={urlParams.name == i.name && highlighted}
-              actionLists={generateActionLinks(contextData[option][index])}
-              desc={i.description}
-              src={i.image}
-            />
-          )}
-        </>
-      ))}
-    </div>
+    <>
+      <div className="NavigatePage__content--right NavigatePage__content--desktop">
+        {mobile && contextData[option].map((i, index) => (
+          <PlaceCard
+            key={index}
+            name={i.name}
+            highlighted={urlParams.name == i.name && highlighted}
+            actionLists={generateActionLinks(contextData[option][index])}
+            desc={i.description}
+            src={i.image}
+          />
+        ))}
+      </div>
+      <div className="NavigatePage__content--right NavigatePage__content--mobile">
+        {!mobile && contextData[option].map((i, index) => (
+          <DropPlaceCard
+            key={index}
+            name={i.name}
+            highlighted={urlParams.name == i.name && highlighted}
+            actionLists={generateActionLinks(contextData[option][index])}
+            desc={i.description}
+            src={i.image}
+          />
+        ))}
+      </div>
+    </>
   );
 }

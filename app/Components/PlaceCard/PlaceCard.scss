@@ -2,7 +2,7 @@
 
 .PlaceCardWrapper {
   @include box(265px, auto);
-  @include make-flex($just: flex-start);
+  @include make-flex($just: space-between);
   background-color: var(--white);
   border-radius: 8px;
   gap: 10px;
