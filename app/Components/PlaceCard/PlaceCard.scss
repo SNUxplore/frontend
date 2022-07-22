@@ -6,26 +6,20 @@
   background-color: var(--white);
   border-radius: 8px;
   gap: 10px;
-  @include respondAt(450px) {
-    @include box(100%, auto);
+
+  transition: background-color 1000ms linear;
+
+  &--highlighted {
+    background-color: #a9a9a9;
   }
 
-	transition: background-color 1000ms linear;
-	
-	&--highlighted {
-		background-color: #a9a9a9;
-	}
-	
   &--image {
     @include box($height: auto);
     border-radius: 6px;
+    // padding: 15px 15px 0;
     @include respondAt(450px) {
       @include box($width: 50%, $height: 100%);
     }
-  }
-
-  &__conAndActions {
-    @include box(100%, auto);
   }
 
   &__content {
@@ -109,5 +103,12 @@
         border: none;
       }
     }
+  }
+
+  @include respondAt(450px) {
+    @include box(100%, auto);
+  }
+  @include respondAt(590px) {
+    justify-content: space-between;
   }
 }
