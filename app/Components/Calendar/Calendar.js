@@ -6,7 +6,7 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const events = [
   {
     eventName: "Ragnarok",
-    Date: "12/10/2022",
+    Date: "01/07/22",
   },
 ];
 
@@ -26,6 +26,16 @@ const Calendar = () => {
       : dir === "right"
       ? setValue(value.clone().add(1, "month"))
       : console.log("invalid btn direction");
+  };
+
+  const eventCheck = (date) => {
+    events.forEach((event) => {
+      if (event.Date === date) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   };
 
   return (
@@ -74,7 +84,17 @@ const Calendar = () => {
                   : "calendar-container__day-container"
               }
             >
-              <p className="calendar-container__eventShow">event</p>
+              <p
+                className={
+                  eventCheck(day.format("DD/MM/YY").toString())
+                    ? "calendar-container__eventHide"
+                    : "calendar-container__eventShow"
+                }
+              >
+                {day.format("DD/MM/YY").toString() === events[0].Date
+                  ? "event"
+                  : "no event"}
+              </p>
               {day.format("D").toString()}
             </div>
           ))}
