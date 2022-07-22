@@ -97,6 +97,7 @@ html {
         margin-top: 50px;
         flex-direction: column;
         position: relative;
+        width: unset;
       }
     }
   }
@@ -185,9 +186,18 @@ html {
       }
       @include respondAt(590px) {
         padding: 0;
-        @include box(100%, auto);
+        @include box(100vw, auto);
         margin-top: 70px;
+        justify-content: center;
         z-index: 1;
+        padding: 0 15px;
+        align-items: stretch;
+      }
+
+      @include respondAt(565px) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 12px;
       }
     }
   }
