@@ -10,11 +10,13 @@ function EventCard() {
           <h4>Club Name</h4>
           </div>
           <h2>Event Name</h2>
-          <a href="#">Read More &#8594;</a>
+          <p>A&B Atrium</p>
+          
         </div>
         <div className="EventCardWrapper__right">
           <p>20th July, 7:00 - 10:00 pm</p>
-          <p>A&B Atrium</p>
+          
+          <button>Read More &rarr;</button>
         </div>
       </div>
     </div>

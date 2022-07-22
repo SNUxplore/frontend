@@ -1,5 +1,4 @@
 @import "../../styles/root/mixins";
-@import "../../styles/global.css";
 
 .LandingPage {
   @include make-flex($just: flex-start);

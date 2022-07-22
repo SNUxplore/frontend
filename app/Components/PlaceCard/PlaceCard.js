@@ -3,9 +3,20 @@ import placeholder from "~/Assets/Img/PlaceCard.png";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import mapLogo from "../../Assets/Img/mapIcon2.svg";
 
-function PlaceCard({ name, actionLists, desc, src }) {
+function PlaceCard({
+	name,
+	actionLists,
+	desc,
+	src,
+	highlighted,
+}) {
   return (
-    <div className="PlaceCardWrapper">
+		<div
+			id={name}
+			className={`
+			PlaceCardWrapper
+			${highlighted ? "PlaceCardWrapper--highlighted" : ""}
+			`}>
       <div className="PlaceCardWrapper__content">
         <img
           className="PlaceCardWrapper--image"
@@ -27,17 +38,13 @@ function PlaceCard({ name, actionLists, desc, src }) {
             href={action.href}
             target="_blank"
           >
-            {(() => {
-              if (action.title == "Map") {
-                return (
-                  <img
-                    className="PlaceCardWrapper__actions--icon"
-                    src={mapLogo}
-                    alt="map"
-                  />
-                );
-              }
-            })()}
+            {action.title == "Map" && (
+              <img
+                className="PlaceCardWrapper__actions--icon"
+                src={mapLogo}
+                alt="map"
+              />
+            )}
             {action.title}
           </a>
         ))}
