@@ -18,7 +18,7 @@ import { useMediaQuery } from "react-responsive";
 function Header() {
   const [navState, setNavState] = React.useState(false);
   const dropdown = useMediaQuery({
-    query: "(max-width: 1530px)",
+    query: "(max-width: 1230px)",
   });
 
   return (
