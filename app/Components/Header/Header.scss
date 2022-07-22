@@ -46,6 +46,8 @@
         padding: 7px 0;
         border-style: none;
         cursor: pointer;
+
+        white-space: nowrap;
         &:hover {
           text-decoration: underline;
         }
@@ -106,34 +108,33 @@
       cursor: pointer;
     }
     &--themeButtons {
-      @include respondAt(1530px) {
-        @include box($width: auto, $height: 36px);
-        background: rgba(54, 59, 83, 0.09);
-        @include make-flex($dir: row);
-        column-gap: 13px;
-        border-radius: 9px;
-        align-items: center;
-        padding: 6px;
-        &--option {
-          @include box(25px, 25px);
-          display: inline;
+      background: rgba(54, 59, 83, 0.09);
+      @include box($width: auto, $height: 36px);
+      @include make-flex($dir: row);
+      column-gap: 13px;
+      border-radius: 9px;
+      align-items: center;
+      padding: 6px;
+      // @include respondAt(1530px) {
+      &--option {
+        @include box(25px, 25px);
+        display: inline;
 
-          vertical-align: top;
+        vertical-align: top;
 
-          &--pink {
-            &--active {
-              filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
-                saturate(6336%) hue-rotate(321deg) brightness(103%)
-                contrast(95%);
-            }
-          }
-
+        &--pink {
           &--active {
-            filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
-              saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
+            filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
+              saturate(6336%) hue-rotate(321deg) brightness(103%) contrast(95%);
           }
         }
+
+        &--active {
+          filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
+            saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
+        }
       }
+      // }
       @include respondAt(1530px) {
         width: 100%;
       }
@@ -143,7 +144,7 @@
     &--not {
       background-color: antiquewhite;
     }
-    a {
+    button {
       img {
         @include box($height: 19px, $width: 19px);
         @include respondAt(1230px) {
