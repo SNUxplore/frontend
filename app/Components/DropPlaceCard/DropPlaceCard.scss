@@ -1,0 +1,106 @@
+@import "../../styles/root/mixins";
+
+.DropPlaceCardWrapper {
+  @include box($height: unset);
+  min-height: 90px;
+
+  &__face {
+    @include box($height: 90px);
+    background-color: var(--white);
+    border-radius: 8px;
+    @include make-flex($just: space-between, $dir: row);
+    padding: 15px;
+    border-style: none;
+    cursor: pointer;
+    gap: 15px;
+    &--image {
+      width: 90px;
+      border-radius: 6px;
+    }
+
+    &--details {
+      @include box();
+      @include make-flex($just: space-between, $dir: row);
+    }
+
+    &--text {
+      @include box(90%);
+      @include make-flex($align: flex-start, $just: flex-start);
+
+      h3,
+      p {
+        text-align: start;
+      }
+
+      h3 {
+        @include respondAt(500px) {
+          font-size: 4vw;
+        }
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 80%;
+      }
+    }
+    span {
+      width: 10%;
+      font-size: 20px;
+    }
+    &--active {
+      border-radius: 5px 5px 0 0;
+    }
+  }
+
+  &__content {
+    @include box($height: 100%);
+    @include make-flex($align: flex-start, $just: space-between);
+    gap: 20px;
+    border-radius: 0 0 5px 5px;
+    p {
+      padding: 20px;
+    }
+
+    background-color: var(--white);
+  }
+
+  &__actions {
+    @include box(100%, 35px);
+    @include make-flex($dir: row, $just: space-between);
+    // gap: 10px;
+
+    &--link {
+      @include box(100%, 35px);
+      @include make-flex($dir: row);
+      color: var(--primaryTextColor);
+      gap: 10px;
+      text-decoration: none;
+      background-color: var(--white);
+      border-top: 1px solid #e4e4e4;
+      border-right: 1px solid #e4e4e4;
+
+      &:first-child {
+        border-bottom-left-radius: 6px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 6px;
+        border-right: none;
+      }
+
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+    &--icon {
+      @include box(17px, 17px);
+      filter: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(7469%)
+        hue-rotate(300deg) brightness(90%) contrast(110%);
+      @include respondAt(450px) {
+        @include box(12px, 12px);
+      }
+    }
+  }
+}
