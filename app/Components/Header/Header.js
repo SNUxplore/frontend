@@ -17,19 +17,23 @@ import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
 
-function Header({ theme, setTheme }) {
+function Header() {
   const node = React.useRef();
   const [navState, setNavState] = React.useState(false);
+  const [currentTheme, setCurrentTheme] = React.useState("light");
   const handleClickOutside = (e) => {
     console.log("clicking anywhere");
     if (node.current.contains(e.target)) {
-      // inside click
       return;
     }
-    // outside click
-    //setNavState(false);
+
     document.getElementById("NavBarInput").click();
   };
+
+  React.useEffect(() => {
+    setCurrentTheme(localStorage.getItem("theme"));
+  });
+
   React.useEffect(() => {
     if (navState) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -40,6 +44,7 @@ function Header({ theme, setTheme }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [navState]);
+
   const dropdown = useMediaQuery({
     query: "(max-width: 1230px)",
   });
@@ -231,28 +236,57 @@ function Header({ theme, setTheme }) {
         <div className="HeaderWrapper__right">
           {!dropdown && (
             <div className="HeaderWrapper__right--themeButtons">
-              {/* active tag will change according to the theme button clicked */}
-              <a href="#">
+              <button
+                onClick={() => {
+                  document.body.classList.add("light");
+                  document.body.classList.remove("dark");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "light");
+                  setCurrentTheme("light");
+                }}
+              >
                 <img
-                  className="HeaderWrapper__right--themeButtons--option--active"
+                  className={`HeaderWrapper__right--themeButtons--option${
+                    currentTheme === "light" ? "--active" : ""
+                  }`}
                   src={lightModeDesktop}
                   alt="snu explore Logo"
                 />
-              </a>
-              <a href="#">
+              </button>
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.remove("pink");
+                  localStorage.setItem("theme", "dark");
+                  setCurrentTheme("dark");
+                }}
+              >
                 <img
-                  className="HeaderWrapper__right--themeButtons--option--active"
+                  className={`HeaderWrapper__right--themeButtons--option${
+                    currentTheme === "dark" ? "--active" : ""
+                  }`}
                   src={darkModeDesktop}
                   alt="snu explore Logo"
                 />
-              </a>
-              <a href="#">
+              </button>
+              <button
+                onClick={() => {
+                  document.body.classList.add("dark");
+                  document.body.classList.remove("light");
+                  document.body.classList.add("pink");
+                  localStorage.setItem("theme", "pink");
+                  setCurrentTheme("pink");
+                }}
+              >
                 <img
-                  className="HeaderWrapper__right--themeButtons--option--pink--active"
+                  className={`HeaderWrapper__right--themeButtons--option--pink${
+                    currentTheme === "pink" ? "--active" : ""
+                  }`}
                   src={darkModeDesktop}
                   alt="snu explore Logo"
                 />
-              </a>
+              </button>
             </div>
           )}
           {dropdown && (
@@ -315,22 +349,7 @@ function Header({ theme, setTheme }) {
         <input
           type="checkbox"
           id="NavBarInput"
-          onChange={() => {
-            setNavState(!navState);
-            const nodeList = document.querySelectorAll("nav ~ div");
-            for (let i = 0; i < nodeList.length; i++) {
-              nodeList[i].style.filter = `${
-                !navState ? "blur(3.5px)" : "none"
-              }`;
-              nodeList[i].style.transition =
-                "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
-            }
-
-            document.querySelector("nav ~ main").style.filter = `${
-              !navState ? "blur(3.5px)" : "none"
-            }`;
-            console.log(navState);
-          }}
+          onChange={() => setNavState(!navState)}
         />
         <div className="hamButton">
           <label className="HamMenu" htmlFor="NavBarInput">
@@ -340,6 +359,20 @@ function Header({ theme, setTheme }) {
           </label>
         </div>
       </div>
+      <div
+        className="HeaderWrapper--blur"
+        style={{
+          position: "fixed",
+          top: "0",
+          left: "0",
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "rgb(0 0 0 / 19%)",
+          zIndex: "1",
+          display: navState ? "block" : "none",
+          backdropFilter: "blur(8.5px)",
+        }}
+      ></div>
     </nav>
   );
 }

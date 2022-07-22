@@ -32,12 +32,20 @@
     list-style: none;
 
     &--option {
-      a {
+      width: 100%;
+      a,
+      button {
         text-decoration: none;
+        background-color: transparent;
+        width: 100%;
+        text-align: left;
         color: var(--primaryTextColor);
         font-size: 17px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;
+        padding: 7px 0;
+        border-style: none;
+        cursor: pointer;
         &:hover {
           text-decoration: underline;
         }
@@ -90,15 +98,22 @@
       width: 100%;
       padding-bottom: 50px;
     }
+    button {
+      @include box(36px, 36px);
+      border: none;
+      border-style: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
     &--themeButtons {
-      @include respondAtAlt(1530px) {
-        @include box($width: auto, $height: 30px);
+      @include respondAt(1530px) {
+        @include box($width: auto, $height: 36px);
         background: rgba(54, 59, 83, 0.09);
         @include make-flex($dir: row);
         column-gap: 13px;
         border-radius: 9px;
         align-items: center;
-        padding: 20px;
+        padding: 6px;
         &--option {
           @include box(25px, 25px);
           display: inline;
@@ -190,6 +205,7 @@
         @include make-flex($just: space-around);
         height: 100%;
         margin: unset;
+        cursor: pointer;
         span {
           display: block;
           width: 28px;
@@ -241,6 +257,7 @@
     @include box();
     @include make-flex($dir: row, $just: space-evenly);
     padding: 0 25px;
+    z-index: 3;
 
     @include respondAt(1230px) {
       top: 0;
@@ -258,7 +275,7 @@
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       &--open {
         transform: translateX(0%);
-        overflow-y: scroll;
+        overflow-y: auto;
       }
 
       &__Hamburger {
@@ -266,7 +283,7 @@
         height: 28px;
         width: 28px;
         top: 55%;
-        z-index: 2;
+        z-index: 3;
         left: 90%;
 
         transform: translate(-50%, -50%);
@@ -274,6 +291,9 @@
     }
   }
 
+  &__Hamburger {
+    z-index: 3;
+  }
   &__dots {
     position: absolute;
     bottom: 28px;
