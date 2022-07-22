@@ -37,7 +37,7 @@ function SearchBar() {
 	const fuse = new Fuse(testData, fuseOptions);
 	
 	useEffect(() => {
-		setResults(fuse.search(search));
+		setResults(fuse.search(search, { limit: 5 }));
 	}, [search]);
 	
 	useEffect(() => {
