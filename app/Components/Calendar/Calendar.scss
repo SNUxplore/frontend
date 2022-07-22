@@ -42,6 +42,7 @@
   }
 
   &__day-container {
+    position: relative;
     background: white;
     border: rgba(164, 160, 160, 0.178) 2px solid;
     width: 114.5px;
@@ -49,11 +50,23 @@
   }
 
   &__day-container-fadded {
+    position: relative;
     background: white;
     border: rgba(164, 160, 160, 0.178) 2px solid;
     width: 114.5px;
     padding: 2rem;
     color: red;
     font-weight: 700;
+  }
+
+  &__eventShow {
+    position: absolute;
+    z-index: 1;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    box-shadow: 1px 3px;
+    right: -15%;
+    bottom: -5%;
+    background: var(--contactHover);
   }
 }

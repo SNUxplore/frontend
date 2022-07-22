@@ -3,9 +3,17 @@ import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const events = [
+  {
+    eventName: "Ragnarok",
+    Date: "12/10/2022",
+  },
+];
 
 const Calendar = () => {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
+  const [date, setDate] = React.useState(null);
+
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
   const monthLastDay = value.clone().endOf("month");
@@ -54,6 +62,10 @@ const Calendar = () => {
         <div key={index} className="calendar-container__week-container">
           {week.map((day, index) => (
             <div
+              onClick={(e) => {
+                setDate(day.format("DD/MM/YY").toString());
+                console.log(date);
+              }}
               key={index}
               className={
                 day.isBefore(monthFirstDay, "day") ||
@@ -62,6 +74,7 @@ const Calendar = () => {
                   : "calendar-container__day-container"
               }
             >
+              <p className="calendar-container__eventShow">event</p>
               {day.format("D").toString()}
             </div>
           ))}
