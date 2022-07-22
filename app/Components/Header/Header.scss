@@ -20,7 +20,7 @@
       }
     }
 
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       display: none;
     }
   }
@@ -41,7 +41,7 @@
         &:hover {
           text-decoration: underline;
         }
-        @include respondAt(1530px) {
+        @include respondAt(1230px) {
           color: var(--navbarItems);
           text-decoration: none;
           font-size: 15px;
@@ -56,7 +56,7 @@
         color: var(--navbarOption);
         padding-bottom: 1.75%;
       }
-      @include respondAt(1530px) {
+      @include respondAt(1230px) {
         &:hover {
           img {
             filter: brightness(0) saturate(100%) invert(43%) sepia(80%)
@@ -84,7 +84,7 @@
 
   &__right {
     @include make-flex($dir: row);
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       justify-content: space-evenly;
       column-gap: 29px;
       width: 100%;
@@ -95,7 +95,7 @@
     a {
       img {
         @include box($height: 19px, $width: 19px);
-        @include respondAt(1530px) {
+        @include respondAt(1230px) {
           filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
             saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);
           &:hover {
@@ -120,7 +120,7 @@
     }
   }
 
-  @include respondAt(1530px) {
+  @include respondAt(1230px) {
     z-index: 5;
     @include box($height: 110px);
 
@@ -205,7 +205,7 @@
     @include make-flex($dir: row, $just: space-evenly);
     padding: 0 25px;
 
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       top: 0;
       position: fixed;
       @include make-flex($just: flex-start);

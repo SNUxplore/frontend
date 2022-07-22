@@ -29,7 +29,7 @@ body {
   line-height: 1.4;
   background-color: var(--pageBackground);
 
-  @include respondAt(1530px) {
+  @include respondAt(1230px) {
     height: unset;
     overflow-x: hidden;
   }
