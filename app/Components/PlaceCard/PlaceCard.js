@@ -16,9 +16,22 @@ function PlaceCard({ name, actionLists, desc, src }) {
   const toggling = () => setIsOpen(!isOpen);
   const names = "content";
 
-  const styles = {
-    backgroundColor: "blue",
-  };
+  // var styles;
+
+  // if (iconShow) {
+  //   if (isOpen) {
+  //     styles = {
+  //       height: "fit-content",
+  //     };
+  //   } else {
+  //     styles = {
+  //       overflow: "hidden",
+  //       height: "0",
+  //     };
+  //   }
+  // } else {
+  //   styles = { width: "100%", height: "auto" };
+  // }
 
   return (
     <div className="PlaceCardWrapper">
@@ -29,11 +42,15 @@ function PlaceCard({ name, actionLists, desc, src }) {
           alt="Placeholder"
         />
         <div className="PlaceCardWrapper__conAndActions ">
-          {!iconShow && (
-            <div>
-              <h2 className="PlaceCardWrapper__content--title">{name}</h2>
-              <p className="PlaceCardWrapper__content--desc">{desc}</p>
+          <div className="PlaceCardWrapper__content--text">
+            <h2 className="PlaceCardWrapper__content--title" onClick={toggling}>
+              {name}
+            </h2>
 
+            <div id={names}>
+              {" "}
+              {/* style={styles}*/}
+              <p className="PlaceCardWrapper__content--desc">{desc}</p>
               {/* <p className="PlaceCardWrapper__content--poc">
           <span>Receptionist: </span>Gravida Mouna
         </p> */}
@@ -55,84 +72,42 @@ function PlaceCard({ name, actionLists, desc, src }) {
                           />
                         );
                       }
+
+                      if (iconShow && action.title == "Call") {
+                        return (
+                          <img
+                            className="PlaceCardWrapper__actions--icon"
+                            src={callLogo}
+                            alt="call"
+                          />
+                        );
+                      }
+
+                      if (iconShow && action.title == "Mail") {
+                        return (
+                          <img
+                            className="PlaceCardWrapper__actions--icon"
+                            src={mailLogo}
+                            alt="mail"
+                          />
+                        );
+                      }
+                      if (iconShow && action.title == "Menu") {
+                        return (
+                          <img
+                            className="PlaceCardWrapper__actions--icon"
+                            src={foodMenuLogo}
+                            alt="mail"
+                          />
+                        );
+                      }
                     })()}
                     {action.title}
                   </a>
                 ))}
               </div>
             </div>
-          )}
-
-          {iconShow && (
-            <div>
-              <h2
-                className="PlaceCardWrapper__content--title"
-                onClick={toggling}
-              >
-                {name}
-              </h2>
-
-              <div id={names} style={styles}>
-                <p className="PlaceCardWrapper__content--desc">{desc}</p>
-
-                {/* <p className="PlaceCardWrapper__content--poc">
-          <span>Receptionist: </span>Gravida Mouna
-        </p> */}
-                <div className="PlaceCardWrapper__actions">
-                  {actionLists.map((action, index) => (
-                    <a
-                      key={index}
-                      className="PlaceCardWrapper__actions--link"
-                      href={action.href}
-                      target="_blank"
-                    >
-                      {(() => {
-                        if (action.title == "Map") {
-                          return (
-                            <img
-                              className="PlaceCardWrapper__actions--icon"
-                              src={mapLogo}
-                              alt="map"
-                            />
-                          );
-                        }
-
-                        if (iconShow && action.title == "Call") {
-                          return (
-                            <img
-                              className="PlaceCardWrapper__actions--icon"
-                              src={callLogo}
-                              alt="call"
-                            />
-                          );
-                        }
-
-                        if (iconShow && action.title == "Mail") {
-                          return (
-                            <img
-                              className="PlaceCardWrapper__actions--icon"
-                              src={mailLogo}
-                              alt="mail"
-                            />
-                          );
-                        }
-                        if (iconShow && action.title == "Menu") {
-                          return (
-                            <img
-                              className="PlaceCardWrapper__actions--icon"
-                              src={foodMenuLogo}
-                              alt="mail"
-                            />
-                          );
-                        }
-                      })()}
-                      {action.title}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

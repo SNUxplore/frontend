@@ -36,13 +36,16 @@
     @include respondAt(450px) {
       flex-direction: row;
       font-size: smaller;
+      &--text {
+        border-bottom: 1px solid black;
+      }
       &--title {
         font-weight: 500;
       }
-      #content {
-        height: 0;
-        overflow: hidden;
-      }
+      // #content {
+      //   height: 0;
+      //   overflow: hidden;
+      // }
 
       padding-bottom: 15px;
     }
