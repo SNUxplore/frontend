@@ -7,10 +7,10 @@
 @import "./theme/dark.scss";
 @import "./theme/pink.scss";
 
-.light {
-}
 //kept it here so that there's design visible
-@include lightMode();
+.light {
+  @include lightMode();
+}
 .dark {
   @include darkMode();
 }
@@ -29,7 +29,7 @@ body {
   line-height: 1.4;
   background-color: var(--pageBackground);
 
-  @include respondAt(1530px) {
+  @include respondAt(1230px) {
     height: unset;
     overflow-x: hidden;
   }
@@ -51,7 +51,6 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 4px;
-	background: #f1f1f1;
+  border-radius: 4px;
+  background: #f1f1f1;
 }
-
