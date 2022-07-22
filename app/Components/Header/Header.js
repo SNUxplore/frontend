@@ -349,7 +349,22 @@ function Header() {
         <input
           type="checkbox"
           id="NavBarInput"
-          onChange={() => setNavState(!navState)}
+          onChange={() => {
+            setNavState(!navState);
+            const nodeList = document.querySelectorAll("nav ~ div");
+            for (let i = 0; i < nodeList.length; i++) {
+              nodeList[i].style.filter = `${
+                !navState ? "blur(3.5px)" : "none"
+              }`;
+              nodeList[i].style.transition =
+                "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
+            }
+
+            document.querySelector("nav ~ main").style.filter = `${
+              !navState ? "blur(3.5px)" : "none"
+            }`;
+            console.log(navState);
+          }}
         />
         <div className="hamButton">
           <label className="HamMenu" htmlFor="NavBarInput">
@@ -359,20 +374,7 @@ function Header() {
           </label>
         </div>
       </div>
-      <div
-        className="HeaderWrapper--blur"
-        style={{
-          position: "fixed",
-          top: "0",
-          left: "0",
-          width: "100vw",
-          height: "100vh",
-          backgroundColor: "rgb(0 0 0 / 19%)",
-          zIndex: "1",
-          display: navState ? "block" : "none",
-          backdropFilter: "blur(8.5px)",
-        }}
-      ></div>
+     
     </nav>
   );
 }

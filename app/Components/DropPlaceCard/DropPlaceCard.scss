@@ -61,9 +61,7 @@
     @include make-flex($align: flex-start, $just: space-between);
     gap: 15px;
     border-radius: 0 0 5px 5px;
-    p {
-      // padding: 20px;
-    }
+
     &--top {
       padding: 0 15px;
       @include make-flex($just: flex-start, $align: flex-start);
