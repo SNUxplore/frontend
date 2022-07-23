@@ -73,7 +73,6 @@ export default function Index() {
               {testFAQs.map((category, index) => (
                 <Link
                   to={`/faqs/${index + 1}`}
-                  style={{ width: `calc(100% / ${testFAQs.length})` }}
                   className={
                     "mainSection__categoryName " +
                     (index === faqIndex

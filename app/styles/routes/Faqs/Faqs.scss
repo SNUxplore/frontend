@@ -74,7 +74,7 @@
 
     &__bottom {
       @include box($height: 25%);
-      @include make-flex($dir: column);
+      @include make-flex($dir: row, $align: flex-start);
       gap: 60px;
 
       @include respondAt(1135px) {
@@ -82,7 +82,6 @@
       }
 
       @include respondAt(1095px) {
-        flex-direction: column;
         gap: 20px;
       }
 
@@ -95,13 +94,21 @@
     }
 
     &__categories {
-      @include make-flex($dir: row);
-      gap: 25px;
-      width: 100%;
+      @include make-flex($dir: column);
+      gap: 32.5px;
+      width: fit-content;
     }
 
     &__categoryName {
       @include make-flex();
+			box-sizing: content-box;
+			height: 40px;
+			width: 100px;
+      max-width: 220px;
+			padding: 0 10px;
+      background-color: var(--white);
+      color: var(--primaryTextColor);
+      border-radius: 8px;
       background-color: transparent;
       border: none;
       font-family: "Poppins", sans-serif;
@@ -109,11 +116,7 @@
       font-size: 19px;
       font-weight: 500;
       text-decoration: none;
-      height: 40px;
-      max-width: 220px;
-      background-color: var(--white);
-      color: var(--primaryTextColor);
-      border-radius: 8px;
+			white-space: nowrap;
       &:hover {
         opacity: 100%;
       }
