@@ -1,0 +1,42 @@
+@import "../../styles/root/mixins";
+
+.InfoContainer {
+  @include box($width: 381px, $height: auto);
+  box-shadow: 1px 1px 8px var(--navigatePanelShadow);
+  border-radius: 15px;
+  background-color: var(--white);
+  padding: 3px 6px 3px 6px;
+
+  @include respondAt(900px) {
+    width: 300px;
+  }
+
+  &__head {
+    &__header {
+      padding: 10px 10px 10px 10px;
+      &--block,
+      &--school {
+        font-family: Poppins, sans-serif;
+        // color: var(--primaryTextColor);
+        font-weight: 600;
+      }
+      &--block {
+        font-size: 12px;
+      }
+      &--school {
+        font-size: 16px;
+      }
+    }
+  }
+  &__body {
+    &__header {
+      padding: 3px 3px 3px 13px;
+
+      &--title {
+        font-family: Poppins, sans-serif;
+        // color: var(--primaryTextColor);
+        font-weight: 600;
+      }
+    }
+  }
+}

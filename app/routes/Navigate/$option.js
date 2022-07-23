@@ -18,7 +18,7 @@ export const loader = async ({ request }) => {
 
 export default function NavOption() {
   const urlParams = useLoaderData();
-  const contextData = useOutletContext();
+  const [contextData] = useOutletContext();
 	const { option } = useParams();
 	const [highlighted, setHighlighted] = React.useState(false);
 	
@@ -29,7 +29,7 @@ export default function NavOption() {
 			}, 1500);
 		}
 	}, [highlighted]);
-	
+	 
 	React.useEffect(() => {
 		let scrollToElement;
 		if (urlParams.name) {

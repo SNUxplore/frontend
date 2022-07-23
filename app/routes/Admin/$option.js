@@ -1,75 +1,78 @@
+import { redirect } from "@remix-run/node";
 import { useLoaderData, useOutletContext, useParams } from "@remix-run/react";
 import PlaceCard from "~/Components/PlaceCard/PlaceCard";
+import InfoContainer from "~/Components/InfoContainer/InfoContainer";
+import AcademicInfo from "~/Components/AcademicInfo/AcademicInfo";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  return url.searchParams.get("redirect");
+  // return url.searchParams.get("redirect");
+  // return a json of all the searchParams
+  let paramJson = {};
+  url.searchParams.forEach((value, key) => {
+    paramJson[key] = value;
+  });
+
+  return paramJson;
+
+  return url;
 };
 
-export default function NavOption() {
-  const redirect = useLoaderData();
-  const contextData = useOutletContext();
+export default function AdminDetails() {
+  const urlParams = useLoaderData();
+  const [admin] = useOutletContext();
   const { option } = useParams();
+  const [highlighted, setHighlighted] = React.useState(false);
+
   React.useEffect(() => {
-    if (redirect === null) {
-      const contentContainer = document.querySelector(
-        "body > div > main > section.NavigatePage__main--content"
+    if (highlighted) {
+      setTimeout(() => {
+        setHighlighted(false);
+      }, 1500);
+    }
+  }, [highlighted]);
+
+  React.useEffect(() => {
+    let scrollToElement;
+    if (urlParams.name) {
+      scrollToElement = document.getElementById(urlParams.name);
+      setHighlighted(true);
+    } else if (!urlParams.redirect) {
+      scrollToElement = document.querySelector(
+        "body > div > div.InfoContainer__head__header"
       );
+    }
+    if (scrollToElement) {
       if (window.innerWidth >= 590) {
         window.scrollTo({
-          top: contentContainer.offsetTop - 220,
+          top: scrollToElement.offsetTop - 220,
           behavior: "smooth",
         });
       } else {
         window.scrollTo({
-          top: contentContainer.offsetTop,
+          top: scrollToElement.offsetTop,
           behavior: "smooth",
         });
       }
     }
-  }, [option]);
+  }, [option, urlParams]);
 
   function generateActionLinks(entry) {
     let actionLinks = [];
-    if (entry.callWarden) {
+    if (entry.DeansEmail) {
       actionLinks.push({
-        title: "Call",
-        href: `tel:${entry.callWarden}`,
+        title: "Contact",
+        href: `mailto:${entry.DeansEmail}`,
       });
     }
-    if (entry.mailWarden) {
+    if (entry.Departments.HodsEmail) {
       actionLinks.push({
-        title: "Mail",
-        href: `mailto:${entry.mailWarden}`,
+        title: "Contact",
+        href: `mailto:${entry.Departments.HodsEmail}`,
       });
     }
-    if (entry.location) {
-      actionLinks.push({
-        title: "Map",
-        href: entry.location,
-      });
-    }
-    if (entry.menu) {
-      actionLinks.push({
-        title: "Menu",
-        href: entry.menu,
-      });
-    }
-
     return actionLinks;
   }
 
-  return (
-    <div className="NavigatePage__content--right">
-      {contextData[option].map((i, index) => (
-        <PlaceCard
-          key={index}
-          name={i.name}
-          actionLists={generateActionLinks(contextData[option][index])}
-          desc={i.description}
-          src={i.image}
-        />
-      ))}
-    </div>
-  );
+  return <div className="AdminPage__content--right">x</div>;
 }

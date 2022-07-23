@@ -1,36 +1,63 @@
 @import "../../styles/root/mixins";
 
 .AcademicInfo {
-  @include box();
-  @include make-flex($dir: row, $just: space-around);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
 
-  &__details {
-    @include make-flex($dir: row);
-    gap: 30px;
-    &--icon {
-      background: gray;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-    &--image {
-      width: 68%;
+  &:hover {
+    background-color: #e3eeff;
+    border-radius: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+    @include respondAt(900px) {
+      gap: 5px;
     }
     &__text {
-      &--name,
+      &--name {
+        font-size: 8.9px;
+        font-weight: 400;
+      }
       &--dept {
-        font-family: Poppins, sans-serif;
+        font-size: 9.6px;
+        font-weight: 600;
       }
     }
   }
+  &__action {
+    padding: 10px;
+    &__link {
+      @include box(60px, 30px);
+      @include make-flex();
+      font-size: 10px;
+      border-radius: 17px;
 
-  &__button {
-    border-radius: 10px;
-    &--button {
-      border-radius: 10px;
+      cursor: pointer;
+      color: var(--white);
+      background-color: var(--primaryTextColor);
+      text-decoration: none;
+      padding: 10px 12px;
+      font-family: "Poppins", sans-serif;
+      line-height: 27px;
+      font-weight: 600;
+      transition: background-color 0.3s ease-in-out;
+
+      @include respondAt(780px) {
+        padding: 6px 8px;
+      }
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
     }
   }
 }
