@@ -1,0 +1,121 @@
+@import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
+
+.hide {
+  display: none;
+  transform: translateY(-10%);
+  transition: all 0.5s;
+}
+
+.overlay {
+  filter: blur(2px);
+}
+
+.calendar-container {
+  position: relative;
+  font-family: ("poppins");
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  padding: 1.5rem;
+
+  &__modal {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    background-color: var(--primaryTextColor);
+    transition: all 0.5s;
+
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto;
+      margin-left: auto;
+      width: 400px;
+      gap: 25px;
+      margin-top: 50px;
+
+      input {
+        height: 40px;
+        width: 100%;
+        padding: 0.6rem;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__navigator {
+      display: flex;
+      gap: 30px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 20%;
+      background: var(--primaryTextColor);
+      color: white;
+    }
+    &__monthNames {
+      font-weight: 700;
+      font-size: 21px;
+    }
+  }
+
+  &__daynames {
+    margin-top: 30px;
+    display: flex;
+
+    &__day {
+      font-size: 15px;
+      width: 114.5px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+  &__week-container {
+    display: flex;
+  }
+
+  &__day-container {
+    position: relative;
+    background: white;
+    border: rgba(164, 160, 160, 0.178) 2px solid;
+    width: 114.5px;
+    padding: 2rem;
+  }
+
+  &__day-container-fadded {
+    position: relative;
+    background: white;
+    border: rgba(164, 160, 160, 0.178) 2px solid;
+    width: 114.5px;
+    padding: 2rem;
+    color: rgba(255, 0, 0, 0.538);
+    font-weight: 700;
+  }
+
+  &__eventShow {
+    position: absolute;
+    z-index: 1;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    box-shadow: 1px 3px;
+    right: -15%;
+    bottom: -5%;
+    background: var(--contactHover);
+  }
+
+  &__eventHide {
+    display: none;
+  }
+}
