@@ -99,17 +99,34 @@
       width: fit-content;
     }
 
-    &__categoryName {
-      @include make-flex();
+    &__categoryBox {
+      @include make-flex($dir: row);
 			box-sizing: content-box;
 			height: 40px;
-			width: 100px;
+			width: fit-content;
       max-width: 220px;
-			padding: 0 10px;
+			padding: 0 20px;
       background-color: var(--white);
-      color: var(--primaryTextColor);
       border-radius: 8px;
       background-color: transparent;
+      &:hover {
+        opacity: 100%;
+      }
+
+      &--active {
+        background-color: var(--blue);
+      }
+    }
+		
+		&__categoryIcon {
+			display: inline;
+			margin-right: 15px;
+			vertical-align: middle;
+			@include box($height: 15px, $width: 15px);
+		}
+		
+		&__categoryName {
+			color: var(--primaryTextColor);
       border: none;
       font-family: "Poppins", sans-serif;
       line-height: 30px;
@@ -117,15 +134,11 @@
       font-weight: 500;
       text-decoration: none;
 			white-space: nowrap;
-      &:hover {
-        opacity: 100%;
-      }
-
-      &--active {
-        background-color: var(--blue);
-        color: var(--white);
-      }
-    }
+			
+			&--active {
+				color: var(--white);
+			}
+		}
 
     &__questions {
       @include make-flex($dir: column);

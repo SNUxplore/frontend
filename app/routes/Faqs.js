@@ -3,6 +3,7 @@ import Footer from "~/Components/Footer/Footer";
 import styleSheet from "~/styles/routes/Faqs/Faqs.css";
 import React from "react";
 import { Link, Outlet } from "@remix-run/react";
+import questionIcon from "~/Assets/Img/questionIcon.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -70,22 +71,38 @@ export default function Index() {
           </div>
           <div className="mainSection__bottom">
             <div className="mainSection__categories">
-              {testFAQs.map((category, index) => (
-                <Link
-                  to={`/faqs/${index + 1}`}
-                  className={
-                    "mainSection__categoryName " +
-                    (index === faqIndex
-                      ? "mainSection__categoryName--active"
-                      : "")
-                  }
-                  key={category.id}
-                  onClick={() => {
-                    setFaqIndex(index);
-                  }}
-                >
-                  {category.name}
-                </Link>
+							{testFAQs.map((category, index) => (
+								<div
+									key={category.id}
+									className={
+											"mainSection__categoryBox " +
+											(index === faqIndex
+												? "mainSection__categoryBox--active"
+												: "")
+										}>
+									<img
+										className="mainSection__categoryIcon"
+										src={(index === faqIndex)
+											? questionIcon
+											: questionIcon	//change to inactive icon asset
+										}
+										alt="snu explore Logo"
+									/>
+									<Link
+										to={`/faqs/${index + 1}`}
+										className={
+											"mainSection__categoryName " +
+											(index === faqIndex
+												? "mainSection__categoryName--active"
+												: "")
+										}
+										onClick={() => {
+											setFaqIndex(index);
+										}}
+									>
+										{category.name}
+									</Link>
+								</div>
               ))}
             </div>
             <Outlet context={[testFAQs]} />
