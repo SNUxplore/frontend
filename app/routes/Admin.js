@@ -56,7 +56,7 @@ export default function Admin() {
             ))}
           </div>
         </div>
-        <Outlet context={[admin]} />
+        <Outlet context={admin} />
       </section>
     </div>
   );

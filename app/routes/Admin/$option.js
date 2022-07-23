@@ -20,7 +20,7 @@ export const loader = async ({ request }) => {
 
 export default function AdminDetails() {
   const urlParams = useLoaderData();
-  const [admin] = useOutletContext();
+  const admin = useOutletContext();
   const { option } = useParams();
   const [highlighted, setHighlighted] = React.useState(false);
 
@@ -74,5 +74,16 @@ export default function AdminDetails() {
     return actionLinks;
   }
 
-  return <div className="AdminPage__content--right">x</div>;
+	return <div className="AdminPage__content--right">
+		{option}
+		<pre>
+			{	
+				admin[option].map((entry, index) => (
+					<pre>
+						{JSON.stringify(entry, null, 2)}
+					</pre>
+				))
+			}
+		</pre>
+	</div>;
 }
