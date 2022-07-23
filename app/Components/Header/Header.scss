@@ -13,14 +13,14 @@
   &__left {
     &--logo {
       @include box(47px, 47px);
-      transition: 0.5s linear;
+      transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
       &--blur {
         filter: blur(3.5px);
       }
     }
 
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       display: none;
     }
   }
@@ -32,16 +32,26 @@
     list-style: none;
 
     &--option {
-      a {
+      width: 100%;
+      a,
+      button {
         text-decoration: none;
+        background-color: transparent;
+        width: 100%;
+        text-align: left;
         color: var(--primaryTextColor);
         font-size: 17px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;
+        padding: 7px 0;
+        border-style: none;
+        cursor: pointer;
+
+        white-space: nowrap;
         &:hover {
           text-decoration: underline;
         }
-        @include respondAt(1530px) {
+        @include respondAt(1230px) {
           color: var(--navbarItems);
           text-decoration: none;
           font-size: 15px;
@@ -56,7 +66,7 @@
         color: var(--navbarOption);
         padding-bottom: 1.75%;
       }
-      @include respondAt(1530px) {
+      @include respondAt(1230px) {
         &:hover {
           img {
             filter: brightness(0) saturate(100%) invert(43%) sepia(80%)
@@ -84,18 +94,60 @@
 
   &__right {
     @include make-flex($dir: row);
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       justify-content: space-evenly;
       column-gap: 29px;
       width: 100%;
       padding-bottom: 50px;
     }
+    button {
+      @include box(36px, 36px);
+      border: none;
+      border-style: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    &--themeButtons {
+      background: rgba(54, 59, 83, 0.09);
+      @include box($width: auto, $height: 36px);
+      @include make-flex($dir: row);
+      column-gap: 13px;
+      border-radius: 9px;
+      align-items: center;
+      padding: 6px;
+      // @include respondAt(1530px) {
+      &--option {
+        @include box(25px, 25px);
+        display: inline;
+
+        vertical-align: top;
+
+        &--pink {
+          &--active {
+            filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
+              saturate(6336%) hue-rotate(321deg) brightness(103%) contrast(95%);
+          }
+        }
+
+        &--active {
+          filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
+            saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
+        }
+      }
+      // }
+      @include respondAt(1530px) {
+        width: 100%;
+      }
+    }
     gap: 30px;
     flex-wrap: wrap;
-    a {
+    &--not {
+      background-color: antiquewhite;
+    }
+    button {
       img {
         @include box($height: 19px, $width: 19px);
-        @include respondAt(1530px) {
+        @include respondAt(1230px) {
           filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
             saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);
           &:hover {
@@ -116,11 +168,12 @@
       align-items: center;
       width: 100%;
       height: 0.5px;
+      margin-bottom: 15px;
       background-color: var(--navbarLineSep);
     }
   }
 
-  @include respondAt(1530px) {
+  @include respondAt(1230px) {
     z-index: 5;
     @include box($height: 110px);
 
@@ -153,6 +206,7 @@
         @include make-flex($just: space-around);
         height: 100%;
         margin: unset;
+        cursor: pointer;
         span {
           display: block;
           width: 28px;
@@ -204,8 +258,9 @@
     @include box();
     @include make-flex($dir: row, $just: space-evenly);
     padding: 0 25px;
+    z-index: 3;
 
-    @include respondAt(1530px) {
+    @include respondAt(1230px) {
       top: 0;
       position: fixed;
       @include make-flex($just: flex-start);
@@ -221,6 +276,7 @@
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       &--open {
         transform: translateX(0%);
+        overflow-y: auto;
       }
 
       &__Hamburger {
@@ -228,7 +284,7 @@
         height: 28px;
         width: 28px;
         top: 55%;
-        z-index: 2;
+        z-index: 3;
         left: 90%;
 
         transform: translate(-50%, -50%);
@@ -236,6 +292,9 @@
     }
   }
 
+  &__Hamburger {
+    z-index: 3;
+  }
   &__dots {
     position: absolute;
     bottom: 28px;

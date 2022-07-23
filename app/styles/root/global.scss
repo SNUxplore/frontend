@@ -29,25 +29,25 @@ body {
   line-height: 1.4;
   background-color: var(--pageBackground);
 
-  @include respondAt(1530px) {
+  @include respondAt(1230px) {
     height: unset;
     overflow-x: hidden;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background: #f1f1f1;
+	width: 4px;
+	height: 8px;
+	background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+	background: rgb(151, 151, 151);
+	border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+	background: #888;
 }
 
 ::-webkit-scrollbar-track {

@@ -26,7 +26,7 @@ export default function Navigate() {
     // Dynamically change left container's height
     const changeHeight = () => {
       const height = document
-        .querySelector(".NavigatePage__content--right")
+        .querySelector(".NavigatePage__main--content")
         .getBoundingClientRect().height;
       document.querySelector(".NavigatePage__content--left").style.height =
         height + "px";
