@@ -2,7 +2,7 @@
 
 .FaqRedirect {
   background-color: var(--blue);
-  @include box($width: auto, $height: 38.75vh);
+  @include box($width: 100vw, $height: 38.75vh);
   @include make-flex($dir: row);
 
   transition: padding, font-size 0.5s ease-in-out;
@@ -128,7 +128,7 @@
       width: 100%;
     }
   }
-  &--button{
+  &--button {
     color: white;
   }
 }

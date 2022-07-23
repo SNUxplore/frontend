@@ -12,13 +12,15 @@
     @include make-flex($dir: row, $just: space-between);
     @include box();
     max-width: 1585px;
-    padding: 0px 170px;
-
+    padding: 0px 40px;
+    gap: 550px;
     @include respondAt(1525px) {
-      padding: 0 130px;
+      padding: 0 60px;
+      gap: 100px;
     }
     @include respondAt(1335px) {
       padding: 0 90px;
+      gap: 150px;
     }
     @include respondAt(1135px) {
       padding: 0 40px;
@@ -35,11 +37,12 @@
 
   &__left {
     @include box(40%);
-    @include make-flex($align: flex-start);
+    @include make-flex($align: center);
     gap: 20px;
 
     @include respondAt(1095px) {
       width: 250px;
+      margin-top: 30px;
     }
     @include respondAt(610px) {
       width: 100%;
@@ -47,9 +50,17 @@
     }
 
     &--logo {
-      @include box(250px, auto);
-      margin-top: 30px;
+      @include box(450px, auto);
+      margin-bottom: 30px;
       padding: 0 10px;
+      @include respondAt(1095px) {
+        width: 250px;
+        margin-top: 30px;
+      }
+      @include respondAt(610px) {
+        width: 250px;
+        align-items: center;
+      }
     }
 
     &--Copyright {
