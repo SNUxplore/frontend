@@ -201,7 +201,7 @@ function Header() {
                 <img
                   className="HeaderWrapper__middle--option"
                   src={darkModeOneTheme}
-                  style={{ marginLeft: "15px" }}
+                  style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
               </button>
