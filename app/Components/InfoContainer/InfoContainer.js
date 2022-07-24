@@ -11,7 +11,7 @@ function InfoContainer(dept, name, actionLists, block, school) {
           <p className="InfoContainer__head__header--school">{school}</p>
         </div>
 
-        <AcademicInfo />
+        <AcademicInfo dept={dept} name={name} actionLists={actionLists} />
       </div>
       <hr />
       <div className="InfoContainer__body">
@@ -21,13 +21,7 @@ function InfoContainer(dept, name, actionLists, block, school) {
           </p>
         </div>
         <div className="InfoContainer__body__component">
-          <AcademicInfo dept name actionLists />
-        </div>
-        <div className="InfoContainer__body__component">
-          <AcademicInfo dept name actionLists />
-        </div>
-        <div className="InfoContainer__body__component">
-          <AcademicInfo dept name actionLists />
+          <AcademicInfo dept={dept} name={name} actionLists={actionLists} />
         </div>
       </div>
     </div>

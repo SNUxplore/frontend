@@ -74,16 +74,26 @@ export default function AdminDetails() {
     return actionLinks;
   }
 
-	return <div className="AdminPage__content--right">
-		{option}
-		<pre>
-			{	
-				admin[option].map((entry, index) => (
-					<pre>
-						{JSON.stringify(entry, null, 2)}
-					</pre>
-				))
-			}
-		</pre>
-	</div>;
+  return (
+    <div className="AdminPage__content--right">
+      {option}
+      <pre>
+        {admin[option].map((entry, index) => (
+          <pre>
+            {/* {JSON.stringify(entry, null, 2)} */}
+            {entry["Departments"]}
+          </pre>
+        ))}
+      </pre>
+
+      {admin[option].map((entry, index) => (
+        <AcademicInfo
+        // key={index}
+        // name={entry.Academics.Dean}
+        // dept={entry["School"]}
+        // actionLists={generateActionLinks(admin[option][index])}
+        />
+      ))}
+    </div>
+  );
 }

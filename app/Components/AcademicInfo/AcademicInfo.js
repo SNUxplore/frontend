@@ -20,19 +20,16 @@ function AcademicInfo(dept, name, actionLists) {
         </div>
       </div>
       <div className="AcademicInfo__action">
-        <a href={href} target="_blank" className="AcademicInfo__action__link">
-          Contact
-        </a>
-        {actionLists.map((action, index) => (
+        {/* {actionLists.map((action, index) => (
           <a
             key={index}
             className="AcademicInfo__actions__link"
             href={action.href}
             target="_blank"
           >
-            {action.title}
+            Contact
           </a>
-        ))}
+        ))} */}
       </div>
     </div>
   );
