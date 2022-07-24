@@ -1,0 +1,85 @@
+@import "../../styles/root/mixins";
+
+.NavCardContainer {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.6rem;
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+  @include respondAt(1135px) {
+    width: 365px;
+  }
+
+  @include respondAt(470px) {
+    width: 100%;
+  }
+
+  &__picture {
+    img{
+      border-radius: 0.6rem;
+    }
+  }
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+    h2 {
+      color: rgb(15, 15, 15);
+      margin-bottom: 1vh;
+    }
+
+    &__desc {
+      max-width: 35ch;
+      font-size: 13px;
+      font-weight: 400;
+      color: #797979;
+      line-height: 1.2;
+      letter-spacing: 0.8px;
+      margin-bottom: 2vh;
+    }
+
+    &__ctas {
+      display: flex;
+      gap: 1rem;
+      font-weight: 500;
+      
+      .location-button {
+        padding: 0.6rem 1.5rem;
+        border-radius: 0.4rem;
+        border: 1.4px #363b5300 solid ;
+        background-color: #363B53;
+        color: white;
+      }
+
+      .location-button:hover {
+        background-color: white;
+        color: #363B53;
+        border: 1.4px #363B53 solid ;
+        transition: 0.3s;
+      }
+
+      .menu-button {
+        border-radius: 0.4rem;
+        padding: 0.3rem 1rem;
+        border: 1px #363B53 solid;
+        background-color: transparent;
+      }
+
+    }
+    
+  }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-right: 1vw;
+  }
+}
