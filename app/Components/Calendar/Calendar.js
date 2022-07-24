@@ -3,55 +3,55 @@ import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-const events = [
-  {
-    eventName: "Ragnarok",
-    eventDate: "01/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "Genesis",
-    eventDate: "26/06/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "FinQuest",
-    eventDate: "11/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "Renegade",
-    eventDate: "21/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "Cenegade",
-    eventDate: "21/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "Venegade",
-    eventDate: "21/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "Surge",
-    eventDate: "12/07/22",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "E Summit",
-    eventDate: "13/01/23",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-  {
-    eventName: "E Summit",
-    eventDate: "14/01/23",
-    eventTimings: "7:00 - 10:00 pm",
-  },
-];
+// const events = [
+//   {
+//     eventName: "Ragnarok",
+//     eventDate: "01/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "Genesis",
+//     eventDate: "26/06/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "FinQuest",
+//     eventDate: "11/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "Renegade",
+//     eventDate: "21/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "Cenegade",
+//     eventDate: "21/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "Venegade",
+//     eventDate: "21/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "Surge",
+//     eventDate: "12/07/22",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "E Summit",
+//     eventDate: "13/01/23",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+//   {
+//     eventName: "E Summit",
+//     eventDate: "14/01/23",
+//     eventTimings: "7:00 - 10:00 pm",
+//   },
+// ];
 
-const Calendar = () => {
+function Calendar({ events = [], setSelectedDate }) {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const [date, setDate] = React.useState(null);
   const [toggleState, setToggleState] = React.useState(false);
@@ -98,7 +98,6 @@ const Calendar = () => {
             onClick={() => monthChange("left")}
             className="calendar-container__header__leftBtn"
           >
-            {" "}
             &larr;
           </button>
           <div className="calendar-container__header__monthNames">
@@ -108,7 +107,6 @@ const Calendar = () => {
             onClick={() => monthChange("right")}
             className="calendar-container__header__leftBtn"
           >
-            {" "}
             &rarr;
           </button>
         </div>
@@ -132,19 +130,19 @@ const Calendar = () => {
       </div>
       {calendarData.map((week, index) => {
         // 30 days * eventCheckAmount
-        /* 
-					Event -> starting date
-					calenderData = [1, 2, 3, 4, 5]
-					const mp = Map(number(date), number[]);
-					Event.foreach(e => {
-						e.currentDate === sameMonth as calender
-							const arr = mp.get(date);
-							arr.push(e.id);
-							mp.set(date, arr);
-					})	
-					const arr = mp.get(date)
-					arr.
-				*/
+        /*
+                    Event -> starting date
+                    calenderData = [1, 2, 3, 4, 5]
+                    const mp = Map(number(date), number[]);
+                    Event.foreach(e => {
+                        e.currentDate === sameMonth as calender
+                            const arr = mp.get(date);
+                            arr.push(e.id);
+                            mp.set(date, arr);
+                    })
+                    const arr = mp.get(date)
+                    arr.
+                */
         return (
           <div key={index} className="calendar-container__week-container">
             {week.map((day, index) => {
@@ -155,7 +153,7 @@ const Calendar = () => {
                 <div
                   onClick={(e) => {
                     setDate(day.format("DD/MM/YY").toString());
-                    console.log(date);
+                    setSelectedDate(day.format("DD/MM/YY").toString());
                   }}
                   key={index}
                   className={
@@ -175,7 +173,7 @@ const Calendar = () => {
                         : eventName[0]}
                     </p>
                   )}
-                  {day.format("D").toString()}
+                  <span>{day.format("D").toString()}</span>
                 </div>
               );
             })}
@@ -184,6 +182,6 @@ const Calendar = () => {
       })}
     </div>
   );
-};
+}
 
 export default Calendar;
