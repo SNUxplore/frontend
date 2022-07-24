@@ -11,7 +11,6 @@ export default function InfoComponent__Mobile() {
 
   const indicatorScrollRight = () => {
     infoIndex < 2 ? setInfoIndex(infoIndex + 1) : 2;
-    console.log(infoIndex);
   };
 
   const indicatorScrollLeft = () => {

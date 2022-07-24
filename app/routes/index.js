@@ -92,7 +92,7 @@ export default function LandingPage() {
                   Don’t forget to follow our instagram for regular updates!
                 </p>
                 <div className="heroSection__instagramDiv--instaHandle">
-                  <a href="https://www.instagram.com/snu.xplore/">
+                  <a target= "_blank" href="https://www.instagram.com/snu.xplore/">
                     <img
                       className="heroSection__instagramDiv--instaHandle--instaLogo"
                       src={instagramLogo}
@@ -111,16 +111,16 @@ export default function LandingPage() {
           </div>
           <div className="heroSection__bottom">
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Faculty on Board</p>
-              <p className="heroSection__stats--stat">1,500 +</p>
+              <p className="heroSection__stats--title">Clubs on our Platform</p>
+              <p className="heroSection__stats--stat">60+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Students enrolled '22</p>
-              <p className="heroSection__stats--stat">29,000 +</p>
+              <p className="heroSection__stats--title">Locations on SNUxplore</p>
+              <p className="heroSection__stats--stat">50+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Events held '22</p>
-              <p className="heroSection__stats--stat">143 +</p>
+              <p className="heroSection__stats--title">Number of Members</p>
+              <p className="heroSection__stats--stat">14</p>
             </div>
           </div>
         </section>

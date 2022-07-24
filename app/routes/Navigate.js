@@ -53,9 +53,9 @@ export default function Navigate() {
             Navigate <span>Campus</span>
           </h1>
           <p>
-            We get it, navigating the university can be challenging! But have no
-            worries, We can connect you to resources that will unlock all that
-            Shiv Nadar University has to offer.
+          <i>"I don’t know much about campus, but I want to explore and see it all!"</i>
+          <br /> <br />
+          Find detailed information on all buildings and locations on campus here!
           </p>
 
           <div className="NavigatePage__main--searchContainer">

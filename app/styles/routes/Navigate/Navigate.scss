@@ -66,9 +66,12 @@ html {
         // }
       }
       p {
-        width: 60%;
+
+        i {
+          font-weight: 400;
+        }
         font-weight: 300;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 25px;
         text-align: center;
         @include respondAt(770px) {

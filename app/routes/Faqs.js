@@ -64,8 +64,9 @@ export default function Index() {
           <div className="mainSection__top">
             <h1 className="mainSection__title">Frequently Asked Questions</h1>
             <p className="mainSection__desc">
-              Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
-              pretium suspendisse eget.
+            Still confused? We’ve been there
+<br />We’ve compiled a few of the most asked questions right here.
+
             </p>
           </div>
           <div className="mainSection__bottom">

@@ -12,7 +12,6 @@ export function links() {
 }
 
 export const loader = async ({ request }) => {
-  console.log({ request });
   const data = getEvents()
     .then((data) => data)
     .catch((err) => console.log(err));
@@ -39,7 +38,6 @@ export default function Index() {
   React.useEffect(() => {
     window.addEventListener("load", () => {
       const height = document.querySelector(".EventsPage__right").clientHeight;
-      console.log(height);
       document.querySelector(".EventsPage__left").style.height = `${height}px`;
     });
     window.addEventListener("resize", () => {
