@@ -148,9 +148,8 @@ export default function LandingPage() {
         <Banner
           title1="Still have"
           title2="Questions?"
-          desc="Dignissim morbi scelerisque a mauris nec tellus orci, fringilla. Leo
-            lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
-            metus sem."
+          desc='"This navigate and event features are cool and all, but I have another question about campus and the credit system"
+          Feels like you? Click below!'
           href="/faqs"
           fillType="fill2"
           redirectContent="Checkout the FAQ"
