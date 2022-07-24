@@ -4,6 +4,8 @@ import styleSheet from "~/styles/routes/Faqs/Faqs.css";
 import React from "react";
 import { Link, Outlet } from "@remix-run/react";
 import questionIcon from "~/Assets/Img/questionIcon.svg";
+import dropDownArrow from "~/Assets/Img/dropDownArrow.svg";
+import { useMediaQuery } from "react-responsive";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -12,7 +14,14 @@ export function links() {
 export default function Index() {
   // current response structure for questions
   // Can be modified if the need arises, jsx will have to be modified as well
-  const [faqIndex, setFaqIndex] = React.useState(0);
+	const [faqIndex, setFaqIndex] = React.useState(0);
+	
+	const dropdown = useMediaQuery({
+    query: "(max-width: 750px)",
+	});
+	
+	const ConditionalWrapper = ({ condition, wrapper, children }) => 
+  condition ? wrapper(children) : children;
 
   const testFAQs = [
     {
@@ -69,42 +78,73 @@ export default function Index() {
 <br />We’ve compiled a few of the most asked questions right here.
 
             </p>
-          </div>
+					</div>
+					{/* <div className="mainSection__dropDownWrapper">
+						<div className="mainSection__dropDown">
+							<p>Question types</p>
+							<img
+								className="mainSection__dropDownArrow"
+								src={dropDownArrow}
+								alt="dropDownArrow"
+							/>
+						</div>
+					</div> */}
           <div className="mainSection__bottom">
             <div className="mainSection__categories">
-							{testFAQs.map((category, index) => (
-								<div
-									key={category.id}
-									className={
-											"mainSection__categoryBox " +
-											(index === faqIndex
-												? "mainSection__categoryBox--active"
-												: "")
-										}>
-									<img
-										className="mainSection__categoryIcon"
-										src={(index === faqIndex)
-											? questionIcon
-											: questionIcon	//change to inactive icon asset
-										}
-										alt="snu explore Logo"
-									/>
-									<Link
-										to={`/faqs/${index + 1}`}
-										className={
-											"mainSection__categoryName " +
-											(index === faqIndex
-												? "mainSection__categoryName--active"
-												: "")
-										}
-										onClick={() => {
-											setFaqIndex(index);
-										}}
-									>
-										{category.name}
-									</Link>
-								</div>
-              ))}
+							<ConditionalWrapper
+								condition={dropdown}
+								wrapper={(children) => (
+									<select
+										name="category"
+										id="category"
+										className="mainSection__dropDown"
+										onChange={(e) => setFaqIndex(e.target.value)}
+									>{children}</select>)}
+							>
+								{testFAQs.map((category, index) => {
+									if (dropdown)
+										return (
+											<option
+												key={category.id}
+												value={index}>
+												{category.name}</option>
+										);
+									else
+										return (
+											<div
+												key={category.id}
+												className={
+													"mainSection__categoryBox " +
+													(index === faqIndex
+														? "mainSection__categoryBox--active"
+														: "")
+												}>
+												<img
+													className="mainSection__categoryIcon"
+													src={(index === faqIndex)
+														? questionIcon
+														: questionIcon	//change to inactive icon asset
+													}
+													alt="snu explore Logo"
+												/>
+												<Link
+													to={`/faqs/${index + 1}`}
+													className={
+														"mainSection__categoryName " +
+														(index === faqIndex
+															? "mainSection__categoryName--active"
+															: "")
+													}
+													onClick={() => {
+														// setFaqIndex(index);
+													}}
+												>
+													{category.name}
+												</Link>
+											</div>
+										);
+								})}
+							</ConditionalWrapper>
             </div>
             <Outlet context={[testFAQs]} />
           </div>
