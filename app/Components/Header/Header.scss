@@ -66,11 +66,16 @@
         color: var(--navbarOption);
         padding-bottom: 1.75%;
       }
+
+      img {
+        @include respondAt(1230px) {
+          filter: var(--headerSvgFilter);
+        }
+      }
       @include respondAt(1230px) {
         &:hover {
           img {
-            filter: brightness(0) saturate(100%) invert(43%) sepia(80%)
-              saturate(1755%) hue-rotate(194deg) brightness(98%) contrast(99%);
+            filter: var(--svgfilter);
           }
 
           a {
