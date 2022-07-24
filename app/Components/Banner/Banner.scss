@@ -1,0 +1,134 @@
+@import "../../styles/root/mixins";
+
+.Banner {
+  background-color: var(--blue);
+  @include box($width: auto, $height: 38.75vh);
+  @include make-flex($dir: row);
+
+  transition: padding, font-size 0.5s ease-in-out;
+
+  @include respondAt(885px) {
+    flex-direction: column;
+    padding: 40px 0;
+    height: 415px;
+    gap: 30px;
+    width: 100vw;
+  }
+
+  @include respondAt(595px) {
+    padding: 35px;
+    gap: 0;
+  }
+
+  @include respondAtLarge(2000px, 3000px) {
+    height: 16vh;
+    justify-content: space-between;
+  }
+
+  @include respondAtLarge(3000px, 4000px) {
+    height: 14vh;
+    justify-content: space-between;
+  }
+
+  @include respondAtLarge(4000px, 5000px) {
+    height: 12vh;
+    justify-content: space-between;
+  }
+
+  &__left {
+    @include respondAtLarge(3000px, 4000px) {
+      padding: 0;
+      margin: 0;
+    }
+
+    padding: 0 45px 0;
+  }
+
+  &__left,
+  &__right {
+    @include box(50%);
+    @include make-flex();
+
+    @include respondAtLarge(3000px, 4000px) {
+      padding: 2%;
+      width: 37.7%;
+      margin-left: 1.5vw;
+    }
+    @include respondAtLarge(4000px, 6000px) {
+      width: 40.7%;
+      margin-left: 0.5vw;
+    }
+
+    @include respondAt(1060px) {
+      padding: 0 30px;
+      align-items: flex-start;
+    }
+
+    @include respondAt(885px) {
+      width: 85%;
+    }
+
+    @include respondAt(595px) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    align-items: flex-end;
+    &--container {
+      @include box(85%);
+      @include make-flex($align: flex-start);
+      gap: 25px;
+
+      @include respondAt(885px) {
+        width: 100%;
+      }
+      @include respondAtLarge(3000px, 4000px) {
+        align-items: center;
+        margin-right: 2.6vw;
+      }
+    }
+  }
+
+  &__title {
+    &--white,
+    &--primaryTextColor {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      line-height: 72px;
+      font-size: 65px;
+      width: 77%;
+
+      @include respondAt(1060px) {
+        width: 90%;
+      }
+      @include respondAt(885px) {
+        width: 100%;
+      }
+      @include respondAt(525px) {
+        font-size: 50px;
+      }
+    }
+    &--white {
+      color: var(--white);
+    }
+    &--primaryTextColor {
+      color: var(--questions);
+    }
+  }
+
+  &--desc {
+    font-family: "Poppins", sans-serif;
+    width: 87%;
+    line-height: 167.5%;
+
+    color: var(--secondaryTextColor);
+    @include respondAt(885px) {
+      width: 100%;
+    }
+  }
+  &--button{
+    color: white;
+  }
+}
