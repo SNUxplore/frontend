@@ -16,7 +16,7 @@ function Footer() {
             className="FooterWrapper__left--logo"
           />
           <p className="FooterWrapper__left--Copyright">
-            © 2022 SnuExplore, All Rights Reserved
+            © 2022 SNUxplore, All Rights Reserved
           </p>
         </div>
 
@@ -52,20 +52,13 @@ function Footer() {
             <li className="FooterWrapper__right--rowHeading">Contacts</li>
             <li className="mailIcon">
               <img src={Mail} alt="Mail Icon" />
-              <a href="mailto:"> Xplore@snu.edu.in</a>
+              <a href="mailto:">snuxplore@gmail.com</a>
             </li>
             <li className="callIcon">
               <img src={Call} alt="Call" />
               <a href="tel:">+91 9838834210</a>
             </li>
             <li className="SocialMediaHandles">
-              <a href="https://www.facebook.com/snu.explore/">
-                <img
-                  src={facebookLogoWhite}
-                  alt="Facebook logo"
-                  className="SocialMediaIcons"
-                />
-              </a>
               <a href="https://www.linkedin.com/snu.xplore/">
                 <img
                   src={linkedInLogo}
@@ -73,7 +66,7 @@ function Footer() {
                   className="SocialMediaIcons LinkedIn"
                 />
               </a>
-              <a href="https://www.instagram.com/snu.xplore/">
+              <a target="_blank" href="https://www.instagram.com/snu.xplore/">
                 <img
                   src={instagramLogoWhite}
                   alt="Instagram logo"
