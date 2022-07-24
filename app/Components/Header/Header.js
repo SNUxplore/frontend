@@ -22,7 +22,6 @@ function Header() {
   const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
   const handleClickOutside = (e) => {
-    console.log("clicking anywhere");
     if (node.current.contains(e.target)) {
       return;
     }
@@ -201,7 +200,7 @@ function Header() {
                 <img
                   className="HeaderWrapper__middle--option"
                   src={darkModeOneTheme}
-                  style={{ marginLeft: "15px" }}
+                  style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
               </button>
@@ -351,7 +350,9 @@ function Header() {
           id="NavBarInput"
           onChange={() => {
             setNavState(!navState);
-            const nodeList = document.querySelectorAll("nav ~ div");
+
+            // changed "nav ~ div" to "nav ~ *"
+            const nodeList = document.querySelectorAll("nav ~ *");
             for (let i = 0; i < nodeList.length; i++) {
               nodeList[i].style.filter = `${
                 !navState ? "blur(3.5px)" : "none"
@@ -360,10 +361,12 @@ function Header() {
                 "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
             }
 
-            document.querySelector("nav ~ main").style.filter = `${
-              !navState ? "blur(3.5px)" : "none"
-            }`;
-            console.log(navState);
+            // document.querySelector("nav ~ main").style.filter = `${
+            //   !navState ? "blur(3.5px)" : "none"
+            // }`;
+            // document.querySelector("nav ~ main").style.trans = `${
+            //   !navState ? "blur(3.5px)" : "none"
+            // }`;
           }}
         />
         <div className="hamButton">
@@ -374,7 +377,6 @@ function Header() {
           </label>
         </div>
       </div>
-     
     </nav>
   );
 }

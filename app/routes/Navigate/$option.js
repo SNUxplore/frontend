@@ -6,8 +6,6 @@ import PlaceCard from "~/Components/PlaceCard/PlaceCard";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  // return url.searchParams.get("redirect");
-  // return a json of all the searchParams
   let paramJson = {};
   url.searchParams.forEach((value, key) => {
     paramJson[key] = value;
