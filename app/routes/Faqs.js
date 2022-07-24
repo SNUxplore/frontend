@@ -6,6 +6,7 @@ import { Link, Outlet } from "@remix-run/react";
 import questionIcon from "~/Assets/Img/questionIcon.svg";
 import dropDownArrow from "~/Assets/Img/dropDownArrow.svg";
 import { useMediaQuery } from "react-responsive";
+import { useHistory } from "react-router-dom";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -14,11 +15,17 @@ export function links() {
 export default function Index() {
   // current response structure for questions
   // Can be modified if the need arises, jsx will have to be modified as well
-	const [faqIndex, setFaqIndex] = React.useState(0);
+	const history = useHistory();
+	const categoryId = history.location.pathname.split("/")[2];
 	
 	const dropdown = useMediaQuery({
     query: "(max-width: 750px)",
 	});
+	
+	React.useEffect(() => {
+		console.log(dropdown);
+		console.log(categoryId);
+	}, [dropdown, categoryId]);
 	
 	const ConditionalWrapper = ({ condition, wrapper, children }) => 
   condition ? wrapper(children) : children;
@@ -90,61 +97,59 @@ export default function Index() {
 						</div>
 					</div> */}
           <div className="mainSection__bottom">
-            <div className="mainSection__categories">
-							<ConditionalWrapper
-								condition={dropdown}
-								wrapper={(children) => (
-									<select
-										name="category"
-										id="category"
-										className="mainSection__dropDown"
-										onChange={(e) => setFaqIndex(e.target.value)}
-									>{children}</select>)}
-							>
-								{testFAQs.map((category, index) => {
-									if (dropdown)
-										return (
-											<option
-												key={category.id}
-												value={index}>
-												{category.name}</option>
-										);
-									else
-										return (
-											<div
-												key={category.id}
-												className={
-													"mainSection__categoryBox " +
-													(index === faqIndex
-														? "mainSection__categoryBox--active"
-														: "")
-												}>
-												<img
-													className="mainSection__categoryIcon"
-													src={(index === faqIndex)
-														? questionIcon
-														: questionIcon	//change to inactive icon asset
-													}
-													alt="snu explore Logo"
-												/>
-												<Link
-													to={`/faqs/${index + 1}`}
-													className={
-														"mainSection__categoryName " +
-														(index === faqIndex
-															? "mainSection__categoryName--active"
-															: "")
-													}
-													onClick={() => {
-														// setFaqIndex(index);
-													}}
-												>
-													{category.name}
-												</Link>
-											</div>
-										);
-								})}
-							</ConditionalWrapper>
+						<div className="mainSection__categories">
+							{dropdown && 
+								<select
+									name="category"
+									id="category"
+									className="mainSection__dropDown"
+									value={categoryId}
+									onChange={(e) => {
+										console.log(e.target.value);
+										history.push(`/faqs/${e.target.value}`);
+									}}
+								>
+									{testFAQs.map((category) => (
+										<option
+											key={category.id}
+											value={category.id}>
+											{category.name}</option>
+									))}
+									</select>
+							}
+							{!dropdown && testFAQs.map((category, index) => (
+								<div
+									key={category.id}
+									className={
+										"mainSection__categoryBox " +
+										(index === categoryId
+											? "mainSection__categoryBox--active"
+											: "")
+									}>
+									<img
+										className="mainSection__categoryIcon"
+										src={(index === categoryId)
+											? questionIcon
+											: questionIcon	//change to inactive icon asset
+										}
+										alt="snu explore Logo"
+									/>
+									<Link
+										to={`/faqs/${index + 1}`}
+										className={
+											"mainSection__categoryName " +
+											(index === categoryId
+												? "mainSection__categoryName--active"
+												: "")
+										}
+										onClick={() => {
+											// setcategoryId(index);
+										}}
+									>
+										{category.name}
+									</Link>
+								</div>
+							))}
             </div>
             <Outlet context={[testFAQs]} />
           </div>

@@ -84,6 +84,11 @@
       @include respondAt(1095px) {
         gap: 20px;
       }
+			
+			@include respondAt(750px) {
+				@include make-flex($dir: column, $align: flex-start);
+				gap: 20px;
+			}
 
       &--left,
       &--right {
