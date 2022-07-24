@@ -6,6 +6,7 @@ import Footer from "~/Components/Footer/Footer";
 import Header from "~/Components/Header/Header";
 import styleSheet from "~/styles/routes/Events/Events.css";
 import { getEvents } from "../services/club.server";
+import InfoModal from "../../Components/infoModal/InfoModal";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -47,6 +48,7 @@ export default function Index() {
   }, []);
   return (
     <div className="EventsPage">
+      <InfoModal />
       <Header />
       <main className="EventsPage__mainContainer">
         {/* <div className="EventsPage__top">

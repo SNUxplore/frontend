@@ -1,5 +1,5 @@
 import logoPreview from "../../Assets/Img/twitterLogo.svg";
-import InfoModal from "../../Components/infoModal/InfoModal";
+import moreDetailsCTA from "../../Components/moreDetailsCTA/moreDetailsCTA";
 
 function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
   return (
@@ -15,10 +15,8 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
       <div className="EventCardWrapper__right">
         <p>{date}</p>
         <p>{location}</p>
-        <button className="EventCardWrapper__right--button">
-          More Details
-        </button>
       </div>
+      <moreDetailsCTA />
     </div>
   );
 }
