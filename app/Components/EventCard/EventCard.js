@@ -1,4 +1,5 @@
 import logoPreview from "../../Assets/Img/twitterLogo.svg";
+import InfoModal from "../../Components/infoModal/InfoModal";
 
 function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
   return (
