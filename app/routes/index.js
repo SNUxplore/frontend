@@ -4,7 +4,7 @@ import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoCompon
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
-import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
+import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
@@ -51,22 +51,9 @@ export default function LandingPage() {
     }
   };
 
-  // const [navState, setNavState] = React.useState(false);
-
-  // const setSideNavState = (navstate) => {
-  //   setNavState(navstate);
-  // };
-  // className= {`LandingPage__mainContainer ${
-  //   navState ? "LandingPage__mainContainer--blur" : ""
-  // }`}>
-
   return (
-    //  <div className={`LandingPage dark`}>
-    // <Header theme={theme} setTheme={toggleTheme}/>
-
     <div className="LandingPage">
       <Header />
-
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
@@ -158,7 +145,16 @@ export default function LandingPage() {
             );
           })}
         </section>
-        <StillGotQuestions />
+        <Banner
+          title1="Still have"
+          title2="Questions?"
+          desc="Dignissim morbi scelerisque a mauris nec tellus orci, fringilla. Leo
+            lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
+            metus sem."
+          href="/faqs"
+          fillType="fill2"
+          redirectContent="Checkout the FAQ"
+        />
       </main>
       <Footer />
     </div>

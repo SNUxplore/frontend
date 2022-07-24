@@ -2,19 +2,16 @@
 
 .LandingPage {
   @include make-flex($just: flex-start);
-  // overflow-y: auto;
-  // overflow-x: hidden;
   min-height: 100vh;
 
   &__mainContainer {
     // @include box();
-    width: 100%;
     // height: auto;
+    width: 100%;
     @include make-flex($just: flex-start);
     gap: 50px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
-    // background-color: aqua;
     padding: 0px 170px 60px;
     transition: padding 0.5s ease-in-out, filter 0.5s;
 
