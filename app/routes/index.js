@@ -69,9 +69,7 @@ export default function LandingPage() {
               </div>
               <div className="heroSection__desc">
                 <p>
-                  We get it, navigating the university can be challenging! But
-                  have no worries, We can connect you to resourses that will
-                  unlock all that Shiv Nadar University has to offer.
+                We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. Unlock everything SNU has to offer. All just a search away!
                 </p>
               </div>
               {!callToAction && (
@@ -148,7 +146,7 @@ export default function LandingPage() {
         <Banner
           title1="Still have"
           title2="Questions?"
-          desc='"This navigate and event features are cool and all, but I have another question about campus and the credit system"
+          desc='"These features are cool and all, but I have another question about campus and the credit system"
           Feels like you? Click below!'
           href="/faqs"
           fillType="fill2"
