@@ -64,13 +64,20 @@
         color: #363B53;
         border: 1.4px #363B53 solid ;
         transition: 0.3s;
+        cursor: pointer;
       }
+
+
 
       .menu-button {
         border-radius: 0.4rem;
         padding: 0.3rem 1rem;
         border: 1px #363B53 solid;
         background-color: transparent;
+      }
+
+      .menu-button:hover {
+        cursor: pointer;
       }
 
     }
