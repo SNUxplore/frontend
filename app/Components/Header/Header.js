@@ -22,7 +22,6 @@ function Header() {
   const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
   const handleClickOutside = (e) => {
-    console.log("clicking anywhere");
     if (node.current.contains(e.target)) {
       return;
     }
@@ -368,7 +367,6 @@ function Header() {
             // document.querySelector("nav ~ main").style.trans = `${
             //   !navState ? "blur(3.5px)" : "none"
             // }`;
-            console.log(navState);
           }}
         />
         <div className="hamButton">
