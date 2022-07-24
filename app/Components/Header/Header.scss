@@ -113,7 +113,6 @@
       cursor: pointer;
     }
     &--themeButtons {
-      background: rgba(54, 59, 83, 0.09);
       @include box($width: auto, $height: 36px);
       @include make-flex($dir: row);
       column-gap: 13px;
@@ -124,8 +123,6 @@
       &--option {
         @include box(25px, 25px);
         display: inline;
-
-        vertical-align: top;
 
         &--pink {
           &--active {
@@ -140,7 +137,7 @@
         }
       }
       // }
-      @include respondAt(1530px) {
+      @include respondAt(1230px) {
         width: 100%;
       }
     }
