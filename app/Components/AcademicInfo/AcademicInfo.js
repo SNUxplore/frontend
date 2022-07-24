@@ -2,7 +2,10 @@ import React from "react";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import profile from "../../Assets/Img/profile.svg";
 
-function AcademicInfo(dept, name, actionLists) {
+function AcademicInfo({
+	data,
+	actionLists
+}) {
   return (
     <div className="AcademicInfo">
       <div className="AcademicInfo__content">
@@ -14,9 +17,9 @@ function AcademicInfo(dept, name, actionLists) {
           />
         </div>
         <div className="AcademicInfo__content__text">
-          <p className="AcademicInfo__content__text--dept">{dept}</p>
+          <p className="AcademicInfo__content__text--dept">{data["School"]}</p>
 
-          <p className="AcademicInfo__content__text--name">{name}</p>
+          <p className="AcademicInfo__content__text--name">{data["Dean"]}</p>
         </div>
       </div>
       <div className="AcademicInfo__action">
