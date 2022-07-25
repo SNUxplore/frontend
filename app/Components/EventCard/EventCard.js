@@ -1,9 +1,13 @@
 import logoPreview from "../../Assets/Img/twitterLogo.svg";
-import moreDetailsCTA from "../../Components/moreDetailsCTA/moreDetailsCTA";
+import InfoModal from "../infoModal/InfoModal";
 
 function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
+  const [isModalOpen, setModalOpen] = React.useState(false);
   return (
     <div className="EventCardWrapper">
+      {isModalOpen && (
+        <InfoModal data={eventName} setModalOpen={setModalOpen} />
+      )}
       <div className="EventCardWrapper__left">
         <div className="EventCardWrapper__left--top">
           <img src={logoPreview} alt="logo" />
@@ -15,8 +19,13 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
       <div className="EventCardWrapper__right">
         <p>{date}</p>
         <p>{location}</p>
+        <button
+          onClick={() => setModalOpen(true)}
+          className="EventCardWrapper__right--button"
+        >
+          More Details
+        </button>
       </div>
-      <moreDetailsCTA />
     </div>
   );
 }
