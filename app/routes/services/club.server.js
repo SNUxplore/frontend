@@ -6,3 +6,14 @@ export const getEvents = () =>
       User: true,
     },
   });
+
+export const getClubs = () => db.user.findMany();
+export const getEventsByClub = (emailId) =>
+  db.user.findUnique({
+    where: {
+      emailId,
+    },
+    include: {
+      Posts: true,
+    },
+  });

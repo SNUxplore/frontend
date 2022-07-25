@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
 import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
@@ -32,6 +32,19 @@ export function links() {
 }
 
 export default function LandingPage() {
+  useEffect(() => {
+    const getClubs = async () =>
+      console.log(await (await fetch("/get-clubs")).json());
+    const getEventsByClub = async () =>
+      console.log(
+        await (
+          await fetch("/get-events-by-club?emailId=pa749@snu.edu.in")
+        ).json()
+      );
+
+    getClubs();
+    getEventsByClub();
+  }, []);
   const [theme, setTheme] = useState("light");
   const toggleTheme = (value) => {
     setTheme(value);
@@ -90,7 +103,10 @@ export default function LandingPage() {
                   Don’t forget to follow our instagram for regular updates!
                 </p>
                 <div className="heroSection__instagramDiv--instaHandle">
-                  <a target= "_blank" href="https://www.instagram.com/snu.xplore/">
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/snu.xplore/"
+                  >
                     <img
                       className="heroSection__instagramDiv--instaHandle--instaLogo"
                       src={instagramLogo}
@@ -113,7 +129,9 @@ export default function LandingPage() {
               <p className="heroSection__stats--stat">60+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Locations on SNUxplore</p>
+              <p className="heroSection__stats--title">
+                Locations on SNUxplore
+              </p>
               <p className="heroSection__stats--stat">50+</p>
             </div>
             <div className="heroSection__stats">
