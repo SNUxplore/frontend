@@ -45,13 +45,15 @@ html {
       @include make-flex();
       gap: 27px;
       padding-top: 68px;
-      color: var(--primaryTextColor);
+      color: var(--textColor);
       font-family: "Poppins", sans-serif;
 
       h1 {
         font-size: 75px;
         font-weight: 500;
         span {
+          background-color: var(--titleHighlight);
+          color: var(--highlightTextColor);
           font-weight: 600;
         }
 
@@ -66,9 +68,12 @@ html {
         // }
       }
       p {
-        width: 60%;
+
+        i {
+          font-weight: 400;
+        }
         font-weight: 300;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 25px;
         text-align: center;
         @include respondAt(770px) {
@@ -185,9 +190,32 @@ html {
       }
       @include respondAt(590px) {
         padding: 0;
-        @include box(100%, auto);
+        @include box(100vw, auto);
         margin-top: 70px;
+        justify-content: center;
         z-index: 1;
+        padding: 0 15px;
+        align-items: stretch;
+      }
+
+      @include respondAt(565px) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      @include respondAt(585px) {
+        display: flex;
+      }
+    }
+    &--desktop {
+      display: flex;
+      align-items: stretch;
+      @include respondAt(585px) {
+        display: none;
       }
     }
   }

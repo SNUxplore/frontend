@@ -35,7 +35,6 @@ export const meta = () => ({
 export const ThemeScript = () => {
   const clientCode = `
   const theme = localStorage.getItem("theme");
-  console.log(theme);
   if (theme) {
     document.getElementsByTagName("html").item(0).classList.add(theme);
   } else {

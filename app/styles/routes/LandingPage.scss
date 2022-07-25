@@ -2,19 +2,16 @@
 
 .LandingPage {
   @include make-flex($just: flex-start);
-  // overflow-y: auto;
-  // overflow-x: hidden;
   min-height: 100vh;
 
   &__mainContainer {
     // @include box();
-    width: 100%;
     // height: auto;
+    width: 100%;
     @include make-flex($just: flex-start);
     gap: 50px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
-    // background-color: aqua;
     padding: 0px 170px 60px;
     transition: padding 0.5s ease-in-out, filter 0.5s;
 
@@ -172,6 +169,7 @@
       transform: translateX(50%);
       // color: var(--blue);
       fill: var(--blue);
+      filter: var(--svgfilter);
 
       @include respondAt(1095px) {
         display: none;
@@ -181,10 +179,12 @@
     &__funFact {
       @include make-flex($dir: row, $just: flex-start);
       @include box(80%, auto);
+      flex-wrap: wrap;
       span,
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
+        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);
@@ -195,6 +195,61 @@
 
       @include respondAt(1095px) {
         @include box(100%, auto);
+      }
+    }
+
+    &__instagramDiv {
+      @include make-flex($just: flex-start, $align: flex-start);
+      @include box(80%, 15px);
+      margin-bottom: 20px;
+      color: var(--textColor);
+      @include respondAt(1095px) {
+        @include box(100%, 15px);
+      }
+      &--instaHandle {
+        @include box();
+        padding-top: 5%;
+        @include make-flex($dir: row, $just: flex-start);
+        flex-basis: baseline;
+        @include respondAt(1095px) {
+          padding-top: 0;
+          height: 30px;
+        }
+        a {
+          padding-top: 5.5%;
+          font-family: "Poppins";
+          font-style: normal;
+          text-decoration: none;
+          color: var(--blue);
+          font-weight: 450;
+          font-size: 20px;
+          margin-right: 15px;
+          @include respondAt(1095px) {
+            padding-top: 7.5%;
+          }
+          @include respondAt(520px) {
+            padding-top: 10.5%;
+          }
+        }
+        &--instaLogo {
+          display: inline;
+          width: 21px;
+          vertical-align: middle;
+          margin-right: 10px;
+          filter: var(--svgfilter);
+        }
+      }
+      &--text {
+        display: inline;
+        font-family: "Poppins", sans-serif;
+        color: var(--primaryTextColor);
+      }
+      &--blueArrow {
+        @include respondAt(1095px) {
+          padding-top: 2.5%;
+        }
+
+        filter: var(--svgfilter);
       }
     }
 

@@ -16,6 +16,9 @@ import darkModeOneTheme from "../../Assets/Img/darkModeOneTheme.svg";
 import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
 import logoBlue from "../../Assets/Img/logoBlue.svg";
 import logoPink from "../../Assets/Img/logoPink.svg";
+import darkModeFillTheme from "../../Assets/Img/darkModeFillTheme.svg";
+import darkModeNotActive from "../../Assets/Img/darkModeNotActive.svg";
+import pinkModeFillTheme from "../../Assets/Img/pinkModeFillTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -24,7 +27,6 @@ function Header() {
   const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
   const handleClickOutside = (e) => {
-    console.log("clicking anywhere");
     if (node.current.contains(e.target)) {
       return;
     }
@@ -50,6 +52,24 @@ function Header() {
   const dropdown = useMediaQuery({
     query: "(max-width: 1230px)",
   });
+
+  let themeIconsrc = {
+    light: darkModeDesktop,
+    dark: darkModeFillTheme,
+    pink: darkModeNotActive,
+  };
+
+  let themeStyle = {
+    light: "rgba(54, 59, 83, 0.09)",
+    dark: "rgba(217, 217, 217, 0.05)",
+    pink: "rgba(217, 217, 217, 0.05)",
+  };
+
+  let pinkThemeIconsrc = {
+    light: darkModeDesktop,
+    dark: darkModeNotActive,
+    pink: pinkModeFillTheme,
+  };
 
   return (
     <nav ref={node} className="HeaderWrapper">
@@ -202,7 +222,7 @@ function Header() {
                 <img
                   className="HeaderWrapper__middle--option"
                   src={darkModeOneTheme}
-                  style={{ marginLeft: "15px" }}
+                  style={{ marginLeft: "15px", filter: "none" }}
                   alt="snu explore Logo"
                 />
               </button>
@@ -236,7 +256,10 @@ function Header() {
         </ul>
         <div className="HeaderWrapper__right">
           {!dropdown && (
-            <div className="HeaderWrapper__right--themeButtons">
+            <div
+              className="HeaderWrapper__right--themeButtons"
+              style={{ background: themeStyle[currentTheme] }}
+            >
               <button
                 onClick={() => {
                   document.body.classList.add("light");
@@ -263,9 +286,10 @@ function Header() {
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option${currentTheme === "dark" ? "--active" : ""
-                    }`}
-                  src={darkModeDesktop}
+                  className={`HeaderWrapper__right--themeButtons--option${
+                    currentTheme === "dark" ? "--active" : ""
+                  }`}
+                  src={themeIconsrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -279,9 +303,10 @@ function Header() {
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${currentTheme === "pink" ? "--active" : ""
-                    }`}
-                  src={darkModeDesktop}
+                  className={`HeaderWrapper__right--themeButtons--option--pink${
+                    currentTheme === "pink" ? "--active" : ""
+                  }`}
+                  src={pinkThemeIconsrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -347,7 +372,26 @@ function Header() {
         <input
           type="checkbox"
           id="NavBarInput"
-          onChange={() => setNavState(!navState)}
+          onChange={() => {
+            setNavState(!navState);
+
+            // changed "nav ~ div" to "nav ~ *"
+            const nodeList = document.querySelectorAll("nav ~ *");
+            for (let i = 0; i < nodeList.length; i++) {
+              nodeList[i].style.filter = `${
+                !navState ? "blur(3.5px)" : "none"
+              }`;
+              nodeList[i].style.transition =
+                "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
+            }
+
+            // document.querySelector("nav ~ main").style.filter = `${
+            //   !navState ? "blur(3.5px)" : "none"
+            // }`;
+            // document.querySelector("nav ~ main").style.trans = `${
+            //   !navState ? "blur(3.5px)" : "none"
+            // }`;
+          }}
         />
         <div className="hamButton">
           <label className="HamMenu" htmlFor="NavBarInput">
@@ -357,20 +401,6 @@ function Header() {
           </label>
         </div>
       </div>
-      <div
-        className="HeaderWrapper--blur"
-        style={{
-          position: "fixed",
-          top: "0",
-          left: "0",
-          width: "100vw",
-          height: "100vh",
-          backgroundColor: "rgb(0 0 0 / 19%)",
-          zIndex: "1",
-          display: navState ? "block" : "none",
-          backdropFilter: "blur(8.5px)",
-        }}
-      ></div>
     </nav>
   );
 }

@@ -14,7 +14,7 @@
     &--logo {
       @include box(47px, 47px);
       transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-
+      filter: var(--svgfilter);
       &--blur {
         filter: blur(3.5px);
       }
@@ -39,13 +39,15 @@
         background-color: transparent;
         width: 100%;
         text-align: left;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-size: 17px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;
         padding: 7px 0;
         border-style: none;
         cursor: pointer;
+
+        white-space: nowrap;
         &:hover {
           text-decoration: underline;
         }
@@ -64,11 +66,16 @@
         color: var(--navbarOption);
         padding-bottom: 1.75%;
       }
+
+      img {
+        @include respondAt(1230px) {
+          filter: var(--headerSvgFilter);
+        }
+      }
       @include respondAt(1230px) {
         &:hover {
           img {
-            filter: brightness(0) saturate(100%) invert(43%) sepia(80%)
-              saturate(1755%) hue-rotate(194deg) brightness(98%) contrast(99%);
+            filter: var(--svgfilter);
           }
 
           a {
@@ -106,35 +113,36 @@
       cursor: pointer;
     }
     &--themeButtons {
-      @include respondAt(1530px) {
-        @include box($width: auto, $height: 36px);
-        background: rgba(54, 59, 83, 0.09);
-        @include make-flex($dir: row);
-        column-gap: 13px;
-        border-radius: 9px;
-        align-items: center;
-        padding: 6px;
-        &--option {
-          @include box(25px, 25px);
-          display: inline;
+      @include box($width: auto, $height: 36px);
+      @include make-flex($dir: row);
+      column-gap: 13px;
+      border-radius: 9px;
+      align-items: center;
+      padding: 6px;
+      // @include respondAt(1530px) {
 
-          vertical-align: top;
+      button {
+        @include make-flex();
+      }
 
-          &--pink {
-            &--active {
-              filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
-                saturate(6336%) hue-rotate(321deg) brightness(103%)
-                contrast(95%);
-            }
-          }
+      &--option {
+        @include box(25px, 25px);
+        display: inline;
 
+        &--pink {
           &--active {
-            filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
-              saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
+            filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
+              saturate(6336%) hue-rotate(321deg) brightness(103%) contrast(95%);
           }
         }
+
+        &--active {
+          filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
+            saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
+        }
       }
-      @include respondAt(1530px) {
+      // }
+      @include respondAt(1230px) {
         width: 100%;
       }
     }
@@ -143,7 +151,7 @@
     &--not {
       background-color: antiquewhite;
     }
-    a {
+    button {
       img {
         @include box($height: 19px, $width: 19px);
         @include respondAt(1230px) {
@@ -242,7 +250,7 @@
   }
 
   @include respondAt(1335px) {
-    padding: 0 90px;
+    padding: 0 65px;
   }
 
   @include respondAt(1135px) {
@@ -255,9 +263,10 @@
 
   &__menu {
     @include box();
-    @include make-flex($dir: row, $just: space-evenly);
+    @include make-flex($dir: row, $just: space-between);
     padding: 0 25px;
     z-index: 3;
+    gap: 10px;
 
     @include respondAt(1230px) {
       top: 0;

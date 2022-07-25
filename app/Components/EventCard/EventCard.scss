@@ -1,47 +1,68 @@
 @import "../../styles/root/mixins";
 
 .EventCardWrapper {
-  h2, h3, h4 {
-    font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  @include make-flex($dir: row);
+  @include box(100%, 105px);
+  border-radius: 8px;
+  padding: 13px;
+
+  border-left: 8px solid #e5c3ff;
+
+  @include respondAt(1135px) {
+    width: 365px;
+    flex-grow: 1;
+  }
+
+  @include respondAt(470px) {
+    width: 100%;
+  }
+
+  &__left {
+    @include box(50%);
+    @include make-flex($just: space-between, $align: flex-start);
+    &--title {
+      color: var(--primaryTextColor);
+      font-weight: 500;
+      font-size: 23px;
+    }
+    &--top {
+      @include make-flex($dir: row, $just: flex-start);
+      width: 100%;
+      gap: 10px;
+      h4 {
+        font-weight: 400;
+        font-size: 13px;
+      }
+      img {
+        height: 15px;
+      }
+    }
+    &--desc {
+      font-size: 15px;
+      font-weight: 300;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 
   &__right {
-    button {
-      margin-top: 1.6rem;
-    }
-  }
-
-  button {
-    border-radius: 0.4em;
-    border: 2px solid #00BADD;
-    padding: 0.4em 1em;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #00BADD;
-  }
-
-  width: 38vw;
-  font-family: "Poppins";
-
-  &__card {
-    width: 100%;
-    background-color: rgb(240, 240, 240);
-    border-radius: 1rem;
-    padding: 1.6rem 1rem;
-    border-left: 1rem solid #EBFFF2;
-    @include make-flex($dir: row, $just: space-between);
-    margin-bottom: 3vh;
-
-    &__left {
-      h2 {
-        margin-bottom: 0.4vh;
+    @include box(50%);
+    @include make-flex($just: space-between, $align: flex-end);
+    &--button {
+      border: 1px solid #e5c3ff;
+      color: #e5c3ff;
+      border-radius: 5px;
+      background-color: var(--transparent);
+      cursor: pointer;
+      transition: background-color 0.25s ease-in-out;
+      &:hover {
+        background-color: #e5c3ff;
+        color: white;
       }
     }
-    &__left__club {
-      @include make-flex($dir: row, $just: flex-start);
-      gap: 0.6rem;
-      margin-bottom: 1vh;
-    }
+    font-weight: 300;
   }
-
 }
