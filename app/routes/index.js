@@ -159,16 +159,16 @@ export default function LandingPage() {
             );
           })}
         </section>
-        <Banner
-          title1="Still have"
-          title2="Questions?"
-          desc='"These features are cool and all, but I have another question about campus and the credit system"
-          Feels like you? Click below!'
-          href="/faqs"
-          fillType="fill2"
-          redirectContent="Checkout the FAQ"
-        />
       </main>
+      <Banner
+        title1="Still have"
+        title2="Questions?"
+        desc='"These features are cool and all, but I have another question about campus and the credit system"
+          Feels like you? Click below!'
+        href="/faqs"
+        fillType="fill2"
+        redirectContent="Checkout the FAQ"
+      />
       <Footer />
     </div>
   );
