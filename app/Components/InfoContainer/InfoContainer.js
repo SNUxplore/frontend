@@ -2,26 +2,81 @@ import React from "react";
 import AcademicInfo from "../AcademicInfo/AcademicInfo";
 import profile from "../../Assets/Img/profile.svg";
 
-function InfoContainer(dept, name, actionLists, block, school) {
+function InfoContainer({
+	data,
+	isAdmin
+}) {
+	const innerData = isAdmin ? data[Object.keys(data)[0]] : data["Departments"];
+	
+	function generateActionLinks(entry) {
+    let actionLinks = [];
+    if (entry["DeansEmail"]) {
+      actionLinks.push({
+        title: "Contact",
+        href: `mailto:${entry["DeansEmail"]}`,
+      });
+    }
+    if (entry["HodsEmail"]) {
+      actionLinks.push({
+        title: "Contact",
+        href: `mailto:${entry["HodsEmail"]}`,
+      });
+		}
+		if (entry["Office"]) {
+			actionLinks.push({
+				title: "Office",
+				value: entry["Office"],
+			});
+		}
+		if (entry["Email"]) {
+			actionLinks.push({
+				title: "Email",
+				value: entry["Email"],
+			});
+		}
+		if (entry["Ext"]) {
+			actionLinks.push({
+				title: "Ext",
+				value: entry["Ext"],
+			});
+		}
+    return actionLinks;
+  }
+	
   return (
     <div className="InfoContainer">
       <div className="InfoContainer__head">
         <div className="InfoContainer__head__header">
-          <p className="InfoContainer__head__header--block">{block}</p>
-          <p className="InfoContainer__head__header--school">{school}</p>
+          <p className="InfoContainer__head__header--block">{(isAdmin) ? "Department" : (data["Block"] + " Block")}</p>
+          <p className="InfoContainer__head__header--school">{(isAdmin) ? Object.keys(data)[0] : data["School"]}</p>
         </div>
 
-        <AcademicInfo dept={dept} name={name} actionLists={actionLists} />
+				{!isAdmin &&
+					<AcademicInfo
+						dept={"Dean of School"}
+						name={data["Dean"]}
+						isDean={true}
+						actionLists={generateActionLinks(data)}
+					/>
+				}
       </div>
       <hr />
       <div className="InfoContainer__body">
         <div className="InfoContainer__body__header">
           <p className="InfoContainer__body__header--title">
-            Departments & HODs
+            {(isAdmin) ? "Roles, Functions & SPOCs" : "Departments & HODs"}
           </p>
         </div>
-        <div className="InfoContainer__body__component">
-          <AcademicInfo dept={dept} name={name} actionLists={actionLists} />
+				<div className="InfoContainer__body__component">
+					{innerData.map((entry, index) => (
+						<AcademicInfo
+							key={index}
+							dept={(isAdmin) ? entry["Function"] : entry["Department"]}
+							name={(isAdmin) ? entry["SPOC"] : entry["Hod"]}
+							isAdmin={isAdmin}
+							actionLists={generateActionLinks(entry)}
+						/>
+					))}
         </div>
       </div>
     </div>

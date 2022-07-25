@@ -57,31 +57,15 @@ export default function AdminDetails() {
     }
   }, [option, urlParams]);
 
-  function generateActionLinks(entry) {
-    let actionLinks = [];
-    if (entry.DeansEmail) {
-      actionLinks.push({
-        title: "Contact",
-        href: `mailto:${entry.DeansEmail}`,
-      });
-    }
-    if (entry.Departments.HodsEmail) {
-      actionLinks.push({
-        title: "Contact",
-        href: `mailto:${entry.Departments.HodsEmail}`,
-      });
-    }
-    return actionLinks;
-  }
-
   return (
     <div className="AdminPage__content--right">
       {admin[option].map((entry, index) => (
-        <AcademicInfo
+				<InfoContainer
 					key={index}
 					data={entry}
-        // actionLists={generateActionLinks(admin[option][index])}
+					isAdmin={option === "Admin Info"}
         />
+				// <pre>{JSON.stringify(entry, null, 2)}</pre>
       ))}
     </div>
   );

@@ -60,6 +60,18 @@
     }
   }
   &__main {
+		gap: 50px;
+    width: 100%;
+    max-width: 1585px;
+    padding: 0px 40px;
+    min-height: calc(100% - 110px);
+    transition: padding 0.5s ease-in-out;
+    @include make-flex($just: flex-start);
+		
+		@include respondAt(590px) {
+			padding: 0 10px;
+		}
+		
     &--searchContainer {
       margin-top: 35px;
       @include make-flex();
@@ -90,7 +102,6 @@
   &__content {
     &--left {
       @include box(220px, auto);
-      overflow: visible;
 
       @include respondAt(590px) {
         @include box(100vw, auto);
@@ -109,15 +120,16 @@
       gap: 15px;
       position: sticky;
 
-      // box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
-
+			
       @include respondAt(590px) {
-        @include box(100%, 54px);
+				@include box(300px, 54px);
+				margin: 0 auto;
         padding: 0 10px;
         flex-direction: row;
+				justify-content: space-evenly;
         scrollbar-width: none;
-        border-radius: 0;
         overflow-x: auto;
+				box-shadow: 10px 10px 30px #d9d9d9, 10px 10px 30px #ffffff;
         z-index: 2;
         gap: 8px;
         top: 0;
@@ -160,12 +172,17 @@
     }
 
     &--right {
-      @include box(calc(100% - 220px), fit-content);
-      @include make-flex($dir: row, $just: space-evenly, $align: flex-start);
+      @include box(calc(100% - 220px), 1000px);
+			max-width: 900px;
+      @include make-flex($dir: column, $just: flex, $align: center);
       flex-wrap: wrap;
       gap: 25px;
       padding: 0 25px;
-
+			
+			@include respondAt(1150px) {
+				height: fit-content;
+			}			
+			
       @include respondAt(680px) {
         padding: 0 0 0 25px;
       }
