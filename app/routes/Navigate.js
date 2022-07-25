@@ -6,6 +6,7 @@ import Footer from "~/Components/Footer/Footer";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
+import xploreLogo from "../Assets/Img/xploreLogo.svg"
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -46,7 +47,19 @@ export default function Navigate() {
   return (
     <div className="NavigatePage">
       <div className="NavigatePage__left">
-      <Outlet context={data} />
+        <container>
+        <div className="NavigatePage__left__header">
+          <img src={xploreLogo} />
+          <a href="#">&larr;Back to home</a>
+        </div>
+        <div className="NavigatePage__left__content">
+        <p className="NavigatePage__left__content--title">Navigate<span>Campus</span></p>
+        <p>Having an issue finding your way around campus?
+          Don't worry we got you covered!</p>
+        </div>
+        <SearchBar />
+      <Outlet context={data}/>
+      </container>
       </div>
       <div className="NavigatePage__right">
       <iframe

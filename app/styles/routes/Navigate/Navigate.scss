@@ -4,19 +4,56 @@ html {
   height: unset !important;
 }
 .NavigatePage {
+  font-family: "Poppins";
   display: flex;
   min-height: 100vh;
-  gap: 4vw;
 
   &__left {
-    width: 35vw;
+    width: 40vw;
+    padding-top: 4vh;
+
+    container {
+      width: 35vw;
+      margin: 0 auto;
+    }
+    
     background-color: #F4F5FC;
     display: flex;
     flex-direction: column;
+
+    &__header {
+      width: 30vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__content {
+      width: 30vw;
+      margin-top: 8vh;
+      margin-bottom: 4vh;
+      color: #787E96;
+
+      &--title {
+        font-size: 2.4rem;
+        color: #363B53;
+        font-weight: 500;
+        margin-bottom: 1vh;
+      }
+      span {
+        background: var(--titleHighlight);
+        padding-left: 0.45rem;
+        padding-right: 0.45rem;
+        font-weight: 700;
+        margin-left: 5px;
+      }
+    }
+
+
   }
 
   &__right {
-    width: 65vw;
+    width: 60vw;
 
     iframe {
       width: inherit;
