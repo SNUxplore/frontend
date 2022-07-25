@@ -168,10 +168,12 @@
     &__funFact {
       @include make-flex($dir: row, $just: flex-start);
       @include box(80%, auto);
+      flex-wrap: wrap;
       span,
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
+        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);
