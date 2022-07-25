@@ -4,6 +4,7 @@ export const getSessionUserByEmail = async (emailId) =>
   db.user.findUnique({ where: { emailId } });
 
 export const createEvent = async ({
+  instaUrl,
   userId,
   imageUrl,
   location,
@@ -19,6 +20,7 @@ export const createEvent = async ({
       date,
       description,
       title,
+      instaUrl,
     },
   });
 
