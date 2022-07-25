@@ -2,14 +2,14 @@
 
 .EventCardWrapper {
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background-color: var(--white);
   @include make-flex($dir: row);
   @include box(100%, 110px);
   min-height: 110px;
   border-radius: 8px;
   padding: 13px;
 
-  border-left: 8px solid #e5c3ff;
+  border-left: 8px solid var(--eventCardWrapperBorder);
 
   @include respondAt(1135px) {
     width: 365px;
@@ -58,16 +58,18 @@
     }
 
     &--button {
-      border: 1px solid #e5c3ff;
-      color: var(--primaryTextColor);
+      border: 1px solid var(--eventCardButton);
+      // color: var(--eventCardButton);
       border-radius: 5px;
       padding: 4px 6px;
       background-color: var(--transparent);
       cursor: pointer;
+      color: var(--primaryTextColor);
       transition: background-color 0.25s ease-in-out;
       font-size: 13px;
+      font-weight: 400;
       &:hover {
-        background-color: #e5c3ff;
+        background-color: var(--eventCardButton);
       }
     }
     font-weight: 300;
