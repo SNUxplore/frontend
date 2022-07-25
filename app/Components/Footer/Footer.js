@@ -30,16 +30,13 @@ function Footer() {
               <a href="/navigate">Navigate Campus</a>
             </li>
             <li>
-              <a href="/events">Happening @SNU</a>
-            </li>
-            <li>
-              <a href="/events">Events</a>
+              <a href="/events">Happenings@SNU</a>
             </li>
           </ul>
           <ul className="FooterWrapper__right--Service">
             <li className="FooterWrapper__right--rowHeading">Resources</li>
             <li>
-              <a href="/faq">FAQ</a>
+              <a href="/faqs">FAQ</a>
             </li>
             <li>
               <a href="/admin">Admin</a>
