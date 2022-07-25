@@ -89,7 +89,7 @@ export default function Index() {
         desc="Dignissim morbi scelerisque a mauris nec tellus orci, fringilla. Leo
             lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
             metus sem."
-        href="/faqs"
+        href="/login"
         fillType="fill2"
         redirectContent="Club Login"
       />

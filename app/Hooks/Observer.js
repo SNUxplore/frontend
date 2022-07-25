@@ -15,7 +15,7 @@ const useScrollEffect = (defaultState, refArray) => {
       },
       {
         root: null,
-        threshold: 0.35,
+        threshold: 0.75,
       }
     );
 

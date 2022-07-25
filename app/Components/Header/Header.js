@@ -14,6 +14,9 @@ import darkModeDesktop from "../../Assets/Img/darkModeThemeDesktop.svg";
 import darkModeIcon from "../../Assets/Img/darkModeIcon.svg";
 import darkModeOneTheme from "../../Assets/Img/darkModeOneTheme.svg";
 import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
+import darkModeFillTheme from "../../Assets/Img/darkModeFillTheme.svg";
+import darkModeNotActive from "../../Assets/Img/darkModeNotActive.svg";
+import pinkModeFillTheme from "../../Assets/Img/pinkModeFillTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -47,6 +50,24 @@ function Header() {
   const dropdown = useMediaQuery({
     query: "(max-width: 1230px)",
   });
+
+  let themeIconsrc = {
+    light: darkModeDesktop,
+    dark: darkModeFillTheme,
+    pink: darkModeNotActive,
+  };
+
+  let themeStyle = {
+    light: "rgba(54, 59, 83, 0.09)",
+    dark: "rgba(217, 217, 217, 0.05)",
+    pink: "rgba(217, 217, 217, 0.05)",
+  };
+
+  let pinkThemeIconsrc = {
+    light: darkModeDesktop,
+    dark: darkModeNotActive,
+    pink: pinkModeFillTheme,
+  };
 
   return (
     <nav ref={node} className="HeaderWrapper">
@@ -234,7 +255,10 @@ function Header() {
         </ul>
         <div className="HeaderWrapper__right">
           {!dropdown && (
-            <div className="HeaderWrapper__right--themeButtons">
+            <div
+              className="HeaderWrapper__right--themeButtons"
+              style={{ background: themeStyle[currentTheme] }}
+            >
               <button
                 onClick={() => {
                   document.body.classList.add("light");
@@ -265,7 +289,7 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option${
                     currentTheme === "dark" ? "--active" : ""
                   }`}
-                  src={darkModeDesktop}
+                  src={themeIconsrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -282,7 +306,7 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option--pink${
                     currentTheme === "pink" ? "--active" : ""
                   }`}
-                  src={darkModeDesktop}
+                  src={pinkThemeIconsrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>

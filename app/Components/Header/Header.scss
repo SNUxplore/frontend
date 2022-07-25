@@ -113,7 +113,6 @@
       cursor: pointer;
     }
     &--themeButtons {
-      background: rgba(54, 59, 83, 0.09);
       @include box($width: auto, $height: 36px);
       @include make-flex($dir: row);
       column-gap: 13px;
@@ -121,11 +120,14 @@
       align-items: center;
       padding: 6px;
       // @include respondAt(1530px) {
+
+      button {
+        @include make-flex();
+      }
+
       &--option {
         @include box(25px, 25px);
         display: inline;
-
-        vertical-align: top;
 
         &--pink {
           &--active {
@@ -140,7 +142,7 @@
         }
       }
       // }
-      @include respondAt(1530px) {
+      @include respondAt(1230px) {
         width: 100%;
       }
     }
@@ -248,7 +250,7 @@
   }
 
   @include respondAt(1335px) {
-    padding: 0 90px;
+    padding: 0 65px;
   }
 
   @include respondAt(1135px) {
@@ -261,9 +263,10 @@
 
   &__menu {
     @include box();
-    @include make-flex($dir: row, $just: space-evenly);
+    @include make-flex($dir: row, $just: space-between);
     padding: 0 25px;
     z-index: 3;
+    gap: 10px;
 
     @include respondAt(1230px) {
       top: 0;
