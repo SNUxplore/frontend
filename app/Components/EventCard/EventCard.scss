@@ -4,7 +4,8 @@
   font-family: "Poppins", sans-serif;
   background-color: white;
   @include make-flex($dir: row);
-  @include box(100%, 105px);
+  @include box(100%, 110px);
+  min-height: 110px;
   border-radius: 8px;
   padding: 13px;
 
@@ -39,8 +40,8 @@
         height: 15px;
       }
     }
-    &--desc {
-      font-size: 15px;
+    &--location {
+      font-size: 12px;
       font-weight: 300;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -51,16 +52,22 @@
   &__right {
     @include box(50%);
     @include make-flex($just: space-between, $align: flex-end);
+
+    &--date {
+      font-size: 12px;
+    }
+
     &--button {
       border: 1px solid #e5c3ff;
-      color: #e5c3ff;
+      color: var(--primaryTextColor);
       border-radius: 5px;
+      padding: 4px 6px;
       background-color: var(--transparent);
       cursor: pointer;
       transition: background-color 0.25s ease-in-out;
+      font-size: 13px;
       &:hover {
         background-color: #e5c3ff;
-        color: white;
       }
     }
     font-weight: 300;
