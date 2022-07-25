@@ -36,7 +36,7 @@ function InfoComponent({ indicatorState = 1 }) {
             {indicatorState === 1
               ? "Navigate"
               : indicatorState === 2
-              ? "Happening"
+              ? "Happenings"
               : "Admin &"}{" "}
             <span>
               {indicatorState === 1
@@ -47,8 +47,11 @@ function InfoComponent({ indicatorState = 1 }) {
             </span>
           </h1>
           <p className="InfoComponent__content--container__content__para">
-            Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
-            pretium suspendisse eget.
+            {indicatorState === 1
+            ? "Find detailed information on all buildings and locations on campus. Locate the Dargaah, call your warden. All of it is here, just for you."
+            : indicatorState === 2
+            ? "No more stalking club insta handles for event info. Recent, ongoing and upcoming events. Stalls, competitions and fests. All posted right here."
+            : "The information bridge between the admin and student bodies. Deans, HoD's and PoC's contact details all in one place. No more confusion on who to contact for what."}
           </p>
           <ButtonLink
             fill={false}

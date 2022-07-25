@@ -12,6 +12,7 @@
 
   @include respondAt(1135px) {
     width: 365px;
+    flex-grow: 1;
   }
 
   @include respondAt(470px) {
@@ -44,7 +45,6 @@
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      
     }
   }
 

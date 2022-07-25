@@ -168,10 +168,12 @@
     &__funFact {
       @include make-flex($dir: row, $just: flex-start);
       @include box(80%, auto);
+      flex-wrap: wrap;
       span,
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
+        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);
@@ -212,6 +214,9 @@
           margin-right: 15px;
           @include respondAt(1095px) {
             padding-top: 7.5%;
+          }
+          @include respondAt(520px) {
+            padding-top: 10.5%;
           }
         }
         &--instaLogo {
