@@ -1,8 +1,7 @@
 import styleSheet from "~/styles/routes/demo.css";
 import Footer from "~/Components/Footer/Footer";
 import EventCard from "~/Components/EventCard/EventCard";
-import AcademicInfo from "~/Components/AcademicInfo/AcademicInfo";
-import InfoContainer from "~/Components/InfoContainer/InfoContainer";
+import Calendar from "~/Components/Calendar/Calendar";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -15,12 +14,10 @@ export default function DemoPage() {
     <div className="DemoPage">
       This is a demo page template.
       <Footer />
-      {colors.map((element) => (
-        <EventCard />
+      {colors.map((element, index) => (
+        <EventCard key={index} />
       ))}
-      <InfoContainer />
-      <hr />
-      <AcademicInfo />
+      <Calendar />
     </div>
   );
 }

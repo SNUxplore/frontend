@@ -4,10 +4,12 @@ import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoCompon
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
-import StillGotQuestions from "~/Components/StillGotQuestions/StillGotQuestions";
+import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
+import blueArrow from "../Assets/Img/blueArrow.svg";
+import instagramLogo from "../Assets/Img/instagramLogo.svg";
 
 const Sections = [
   {
@@ -49,22 +51,9 @@ export default function LandingPage() {
     }
   };
 
-  // const [navState, setNavState] = React.useState(false);
-
-  // const setSideNavState = (navstate) => {
-  //   setNavState(navstate);
-  // };
-  // className= {`LandingPage__mainContainer ${
-  //   navState ? "LandingPage__mainContainer--blur" : ""
-  // }`}>
-
   return (
-    //  <div className={`LandingPage dark`}>
-    // <Header theme={theme} setTheme={toggleTheme}/>
-
     <div className="LandingPage">
-      <Header/>
-
+      <Header />
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
@@ -80,9 +69,7 @@ export default function LandingPage() {
               </div>
               <div className="heroSection__desc">
                 <p>
-                  We get it, navigating the university can be challenging! But
-                  have no worries, We can connect you to resourses that will
-                  unlock all that Shiv Nadar University has to offer.
+                We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. Unlock everything SNU has to offer. All just a search away!
                 </p>
               </div>
               {!callToAction && (
@@ -98,20 +85,40 @@ export default function LandingPage() {
                 <p>Absolutely fixed relatively broken coordinates</p>
               </div>
               <SearchBar />
+              <div className="heroSection__instagramDiv">
+                <p className="heroSection__instagramDiv--text">
+                  Don’t forget to follow our instagram for regular updates!
+                </p>
+                <div className="heroSection__instagramDiv--instaHandle">
+                  <a target= "_blank" href="https://www.instagram.com/snu.xplore/">
+                    <img
+                      className="heroSection__instagramDiv--instaHandle--instaLogo"
+                      src={instagramLogo}
+                      alt="instagram icon"
+                    />
+                    @snu.xplore
+                  </a>
+                  <img
+                    className="heroSection__instagramDiv--blueArrow"
+                    src={blueArrow}
+                    alt="blueArrow"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="heroSection__bottom">
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Faculty on Board</p>
-              <p className="heroSection__stats--stat">1,500 +</p>
+              <p className="heroSection__stats--title">Clubs on our Platform</p>
+              <p className="heroSection__stats--stat">60+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Students enrolled '22</p>
-              <p className="heroSection__stats--stat">29,000 +</p>
+              <p className="heroSection__stats--title">Locations on SNUxplore</p>
+              <p className="heroSection__stats--stat">50+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Events held '22</p>
-              <p className="heroSection__stats--stat">143 +</p>
+              <p className="heroSection__stats--title">Number of Members</p>
+              <p className="heroSection__stats--stat">14</p>
             </div>
           </div>
         </section>
@@ -136,7 +143,15 @@ export default function LandingPage() {
             );
           })}
         </section>
-        <StillGotQuestions />
+        <Banner
+          title1="Still have"
+          title2="Questions?"
+          desc='"These features are cool and all, but I have another question about campus and the credit system"
+          Feels like you? Click below!'
+          href="/faqs"
+          fillType="fill2"
+          redirectContent="Checkout the FAQ"
+        />
       </main>
       <Footer />
     </div>

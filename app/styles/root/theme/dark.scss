@@ -22,4 +22,8 @@
   --navbarItems: #363b53;
   --boxShadow: -27px -27px 63px #14161e, 27px 27px 63px #343a4e;
   --questions: #242836;
+  --svgfilter: brightness(0) saturate(100%) invert(61%) sepia(36%)
+    saturate(5661%) hue-rotate(151deg) brightness(97%) contrast(105%);
+  --headerSvgFilter: brightness(0) saturate(100%) invert(20%) sepia(11%)
+    saturate(1773%) hue-rotate(192deg) brightness(93%) contrast(86%);
 }

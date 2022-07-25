@@ -1,6 +1,6 @@
 @import "../../styles/root/mixins";
 
-.FaqRedirect {
+.Banner {
   background-color: var(--blue);
   @include box($width: auto, $height: 38.75vh);
   @include make-flex($dir: row);

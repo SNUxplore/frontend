@@ -3,24 +3,29 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "npm-run-all build:*",
-    "build:scss": "sass app/:app/",
-    "build:remix": "remix build",
+    "build": "npm run build:sass && remix build",
     "sass": "sass --watch app/:app/",
-    "dev": "concurrently \"npm run sass\" \"cross-env NODE_ENV=development netlify dev\"",
-    "start": "cross-env NODE_ENV=production netlify dev"
+    "build:sass": "sass app/:app/",
+    "dev": "concurrently \"npm run sass\" \"remix dev\"",
+    "start": "remix-serve build"
   },
   "dependencies": {
     "@netlify/functions": "^1.0.0",
+    "@prisma/client": "^4.0.0",
+		"@remix-run/node": "^1.6.5",
+    "@remix-run/react": "^1.6.5",
+    "@remix-run/serve": "^1.6.5",
     "@remix-run/netlify": "^1.5.1",
-    "@remix-run/node": "^1.5.1",
-    "@remix-run/react": "^1.5.1",
     "cross-env": "^7.0.3",
+    "fuse": "^0.4.0",
     "fuse.js": "^6.6.2",
+    "moment": "^2.29.4",
     "netlify-cli": "^8.14.1",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "remix-auth": "^3.2.2",
+    "remix-auth-google": "^1.1.0",
     "react-intersection-observer": "^9.3.5",
     "react-responsive": "^9.0.0-beta.10"
   },
@@ -29,9 +34,12 @@
     "@remix-run/eslint-config": "^1.5.1",
     "concurrently": "^7.2.1",
     "eslint": "^8.15.0",
+    "prisma": "^4.0.0",
     "sass": "^1.52.1"
   },
   "engines": {
     "node": ">=14"
   }
 }
+
+
