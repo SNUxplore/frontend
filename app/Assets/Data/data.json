@@ -22,7 +22,7 @@
       "name": "Hostel 1-C",
       "location": "https://www.google.co.uk/maps/place/Hostel-1c,+NH+91,+Greater+Noida,+Uttar+Pradesh+203207/@28.5244585,77.5732597,19.26z/data=!4m5!3m4!1s0x390c94d74c29a3db:0xf9b01ab14fada71d!8m2!3d28.5242294!4d77.5724645",
       "description": "Known as Eagles Nest .",
-      "image": ""
+      "image": "https://media.giphy.com/media/3otPoBnTKMSXegX2fK/giphy.gif"
     },
 
     {
@@ -421,13 +421,13 @@
       "name": "Medical Store",
       "location": "https://www.google.co.in/maps/@28.5276063,77.5726312,19.31z",
       "description": "need medication or band aids?Located in the arcade, this is the go to place for every SNU student.",
-      "image": ""
+      "image": "https://media.giphy.com/media/tGDu0IXodqS4EDrgv4/giphy.gif"
     },
     {
       "name": "Books and Stationary",
       "location": "https://www.google.co.in/maps/place/NH+91,+Greater+Noida,+Uttar+Pradesh+203207/@28.5276063,77.5726312,19.31z/data=!4m5!3m4!1s0x390c94d07df591cf:0x9597e95fec617bcc!8m2!3d28.5276157!4d77.5729347",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/102BuJXrPwyckE/giphy.gif"
     }
   ],
   "Sports": [
@@ -435,19 +435,19 @@
       "name": "Badminton Court (Outdoor)",
       "location": "https://www.google.com/maps/place/SNU+Badminton+Court/@28.5249742,77.5718354,19.12z/data=!4m5!3m4!1s0x390c94d0b0dcecb5:0x8817703b05e2769b!8m2!3d28.5251713!4d77.5722183",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/PkWQsSnYDeqWjaWpoo/giphy.gif"
     },
     {
       "name": "Badminton Court (Indoor)",
       "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/TjAA9nsULA3NHco0dI/giphy.gif"
     },
     {
       "name": "Basketball Court-1",
       "location": "https://www.google.com/maps/place/SNU+Badminton+Court/@28.5249742,77.5718354,19.12z/data=!4m5!3m4!1s0x390c94d0b0dcecb5:0x8817703b05e2769b!8m2!3d28.5251713!4d77.5722183",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/26BRyD3KiIvaRPluM/giphy.gif"
     },
     {
       "name": "Basketball Court-2",
@@ -459,55 +459,55 @@
       "name": "Football Field",
       "location": "https://www.google.com/maps/place/SNU+Football+Field/@28.5233855,77.5713738,18z/data=!3m1!4b1!4m5!3m4!1s0x390c94d74065430d:0x5c06333745fb65c7!8m2!3d28.5233841!4d77.5720214",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"
     },
     {
       "name": "Tennis Court",
       "location": "https://www.google.com/maps/place/Tennis+Court/@28.5237367,77.5692795,17.72z/data=!4m9!1m2!2m1!1ssnu+tennis+court!3m5!1s0x390c94d7304dbfc1:0x20c793f34b3b9e8f!8m2!3d28.5240682!4d77.571384!15sChBzbnUgdGVubmlzIGNvdXJ0kgEMdGVubmlzX2NvdXJ0",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/3ormFEYnZ1Mf71p5Uf/giphy.gif"
     },
     {
       "name": "Volleyball Court",
       "location": "https://www.google.com/maps/place/SNU+Volleyball+Court/@28.5244348,77.5706511,18z/data=!3m1!4b1!4m5!3m4!1s0x390c94d0b999ead5:0x29e1febf964a8f9a!8m2!3d28.5244324!4d77.5717481",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/Xd3xIZ9XHO5uE/giphy.gif"
     },
     {
       "name": "Cricket Ground",
       "location": "https://www.google.com/maps/place/SNU+Cricket+Ground,+Gautam+Buddha+Nagar,+Uttar+Pradesh+203207/@28.526007,77.5709629,17z/data=!3m1!4b1!4m5!3m4!1s0x390c94d0a17353b3:0x1bb8938d69c0a718!8m2!3d28.5260497!4d77.5732257",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/jsTgk136sV71K/giphy.gif"
     },
     {
       "name": "Squash Court",
       "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/TdcwbYCzHOluE/giphy.gif"
     },
     {
       "name": "Table Tennis Court",
       "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/fvA1ieS8rEV8Y/giphy.gif"
     },
     {
       "name": "Horseback Riding",
       "location": "https://www.google.com/maps/place/Greater+Noida,+Uttar+Pradesh+203207/@28.518782,77.57357,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x390ceb4eaaaaaaab:0x321412756718874c!2sShiv+Nadar+University!8m2!3d28.5267298!4d77.575363!3m4!1s0x390c94d8756793eb:0xc605950461bcc5ed!8m2!3d28.5192457!4d77.574931",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/YSGsgBkBI41a3gJePZ/giphy.gif"
     },
     {
       "name": "Golf Course",
       "location": "https://www.google.co.in/maps/@28.5282225,77.572396,18.02z",
       "description": "Hit ‘Em Long And Straight.",
-      "image": ""
+      "image": "https://media.giphy.com/media/2t8jyWKydrHcQ/giphy.gif"
     },
     {
       "name": "Indoor Sports Complex",
       "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
       "description": "",
-      "image": ""
+      "image": "https://media.giphy.com/media/NigtAENyEYguafPXJX/giphy.gif"
     }
   ]
 }
