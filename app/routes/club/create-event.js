@@ -37,7 +37,6 @@ export default function CreateEvent() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
 
-
   return (
     <>
       <Form
@@ -83,6 +82,18 @@ export default function CreateEvent() {
             placeholder="date"
             id="date"
             name="date"
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div
+          className="ClubInfoPage__InfoForm--row"
+          style={{ minHeight: "61px", height: "auto" }}
+        >
+          <label htmlFor="instaUrl">Description</label>
+          <input
+            placeholder="Instagram Post URL"
+            id="instaUrl"
+            name="instaUrl"
             onChange={(e) => updateFormData(e)}
           />
         </div>

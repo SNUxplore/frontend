@@ -30,9 +30,7 @@ export default function InfoComponent__Mobile() {
         </span>
       </h1>
       <p className="MobileContainer__desc">
-        We get it, navigating the university can be challenging! But have no
-        worries, We can connect you to resourses that will unlock all that Shiv
-        Nadar University has to offer.
+        We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. All resources to unlock everything SNU has to offer all in one place. Just a search away.
       </p>
       <ButtonLink
         content={

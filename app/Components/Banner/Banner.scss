@@ -4,35 +4,46 @@
   background-color: var(--blue);
   @include box($width: 100vw, $height: 38.75vh);
   @include make-flex($dir: row);
+  max-height: 336px;
 
   transition: padding, font-size 0.5s ease-in-out;
 
+  &__Container {
+    @include box();
+    max-width: 1585px;
+    @include make-flex($dir: row);
+    @include respondAt(885px) {
+      flex-direction: column;
+      padding: 40px 0;
+      height: 415px;
+      gap: 30px;
+      width: 100vw;
+    }
+  }
+
   @include respondAt(885px) {
-    flex-direction: column;
-    padding: 40px 0;
-    height: 415px;
-    gap: 30px;
-    width: 100vw;
+    max-height: unset;
+    height: unset;
   }
 
   @include respondAt(595px) {
-    padding: 35px;
+    padding: 0 35px;
     gap: 0;
   }
 
   @include respondAtLarge(2000px, 3000px) {
     height: 16vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   @include respondAtLarge(3000px, 4000px) {
     height: 14vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   @include respondAtLarge(4000px, 5000px) {
     height: 12vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   &__left {
@@ -98,7 +109,7 @@
       font-weight: 600;
       line-height: 72px;
       font-size: 65px;
-      width: 77%;
+      // width: 77%;
 
       @include respondAt(1060px) {
         width: 90%;
