@@ -21,7 +21,7 @@
     form {
       width: 350px;
       height: 500px;
-      background-color: white;
+      background-color: var(--white);
       padding: 30px;
       border-radius: 10px;
       border: 1px solid var(--copyrightText);
@@ -54,7 +54,7 @@
         }
         &:hover {
           background-color: var(--blue);
-          color: #fff;
+          color: var(--white);
         }
       }
     }

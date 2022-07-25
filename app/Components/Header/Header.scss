@@ -4,7 +4,7 @@
   @include box($height: 150px);
   position: relative;
   max-width: 1585px;
-
+  padding: 0 145px;
   #NavBarInput,
   .hamButton {
     display: none;
@@ -36,7 +36,7 @@
       a,
       button {
         text-decoration: none;
-        background-color: transparent;
+        background-color: var(--transparent);
         width: 100%;
         text-align: left;
         color: var(--primaryTextColor);
@@ -149,7 +149,7 @@
     gap: 30px;
     flex-wrap: wrap;
     &--not {
-      background-color: antiquewhite;
+      background-color: var(--antiqueWhite);
     }
     button {
       img {

@@ -1,4 +1,4 @@
-import xploreLogo from "app/Assets/Img/xploreLogo.svg";
+import xploreLogo from "app/Assets/Img/logo_blue.svg";
 import Mail from "app/Assets/Img/Mail.svg";
 import Call from "app/Assets/Img/Call.svg";
 import facebookLogoWhite from "app/Assets/Img/facebookLogoWhite.svg";

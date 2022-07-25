@@ -8,7 +8,7 @@
     @include box(100%, 70px);
     @include make-flex($just: space-between, $dir: row);
     padding: 15px 25px;
-    background-color: #36344d;
+    background-color: var(--clubInfoHeaderBG);
     img {
       height: 100%;
     }
@@ -37,7 +37,7 @@
     gap: 15px;
     padding: 75px 25px;
     background-color: var(--white);
-    border-right: 1px solid #dad9da;
+    border-right: 1px solid;
     color: var(--navbarItems);
 
     a {
@@ -72,9 +72,9 @@
     max-width: 1110px;
     border-radius: 8px;
     background-color: var(--white);
-    border: 1px solid #dad9da;
+    border: 1px solid var(--infoFormBorder);
     span {
-      color: #727586;
+      color: var(--infoFormSpam);
       font-style: italic;
     }
     &--row {
@@ -82,7 +82,7 @@
       @include make-flex($just: space-between, $dir: row);
       flex-wrap: nowrap;
       padding: 10px 24px;
-      border-bottom: 1px solid #dad9da;
+      border-bottom: 1px solid var(--infoFormBorder);
 
       input {
         height: 100%;
@@ -90,14 +90,14 @@
         padding: 0 10px;
         border-radius: 5px;
         outline-width: 1px;
-        outline-color: #b8b8b8;
+        outline-color: var(--infoFormInputOutline);
       }
       textarea {
         height: 100%;
         border: none;
         padding: 10px;
         border-radius: 5px;
-        outline-color: #b8b8b8;
+        outline-color: var(--infoFormInputOutline);
         outline-width: 1px;
         min-width: 272px;
       }
@@ -105,7 +105,7 @@
         width: 100%;
         font-size: 14px;
         font-weight: 500;
-        color: #727586;
+        color: var(--infoFormSpam);
         text-align: left;
       }
 
@@ -114,7 +114,7 @@
         border: none;
         padding: 0 10px;
         border-radius: 5px;
-        outline-color: #eeeeee;
+        outline-color: var(--buttonOutline);
         background-color: var(--blue);
         color: var(--white);
         text-align: center;
@@ -127,8 +127,8 @@
       }
     }
     &--disabled {
-      background-color: #e7e8ef !important;
-      color: #838383 !important;
+      background-color: var(--infoFormDisabledBG) !important;
+      color: var(--infoFormDisabledText) !important;
       cursor: not-allowed;
     }
   }
