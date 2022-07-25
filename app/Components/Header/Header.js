@@ -291,9 +291,6 @@ function Header() {
                   }`}
                   src={themeIconsrc[currentTheme]}
                   alt="snu explore Logo"
-                  style={{
-                    marginTop: `${currentTheme === "dark" ? 0 : "4.75px"}`,
-                  }}
                 />
               </button>
               <button
