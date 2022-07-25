@@ -4,7 +4,7 @@
   @include box($height: 150px);
   position: relative;
   max-width: 1585px;
-
+  padding: 0 145px;
   #NavBarInput,
   .hamButton {
     display: none;
