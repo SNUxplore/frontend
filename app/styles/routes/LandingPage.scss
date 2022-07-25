@@ -213,6 +213,9 @@
           @include respondAt(1095px) {
             padding-top: 7.5%;
           }
+          @include respondAt(520px) {
+            padding-top: 10.5%;
+          }
         }
         &--instaLogo {
           display: inline;
