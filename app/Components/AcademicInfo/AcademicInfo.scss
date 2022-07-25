@@ -47,19 +47,28 @@
     }
   }
   &__action {
+		// @include box(fit-content);
+		max-width: calc(100% - 40px);
 		@include make-flex($dir: row, $just: space-between);
 		gap: 10px;
     padding: 10px;
+		overflow: hidden;
 		
 		// @include respondAt(590px) {
 		// }
 		margin-left: 30px;
+		
+		#openLink {
+			width: 150px;
+		}
 		
     &__link {
       @include box(60px, 20px);
       @include make-flex();
       font-size: 10px;
       border-radius: 17px;
+			white-space: nowrap;
+			overflow: hidden;
 
       cursor: pointer;
       color: var(--white);

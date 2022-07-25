@@ -8,6 +8,8 @@ function AcademicInfo({
 	isAdmin,
 	actionLists
 }) {
+	const [openIndex, setOpenIndex] = React.useState(null);
+	
   return (
 		<div className={`
 		AcademicInfo
@@ -26,24 +28,43 @@ function AcademicInfo({
 					<p className="AcademicInfo__content__text--name">{name}</p>
 				</div>
 			</div>
-      <div className="AcademicInfo__action">
-        {actionLists.map((action, index) => (
-          <a
-            key={index}
-            className="AcademicInfo__action__link"
-						href={action.href}
-						onClick={() => {
-							if (action.title === "Ext") {
-								navigator.clipboard.writeText(action.value);
-							}
-						}}
-						target="_blank"
-						rel="noopener noreferrer"
-          >
-            {!(action.title == "Office") ? action.title : action.value}
-          </a>
-        ))}
-      </div>
+			<div className="AcademicInfo__action">
+							{actionLists.map((action, index) => (
+					<a
+						key={index}
+									className="AcademicInfo__action__link"
+									id={(index == openIndex) ? "openLink" : ""}
+									style={{
+										// transition: "all 0.3s ease-in-out",
+										display: (openIndex === null || index === openIndex) ? "flex" : "none"
+									}}
+									href={action.href}
+									onClick={() => {
+										if (
+											!((action.title == "Office"
+											|| action.title == "Ext")
+											&& action.value.length > 7)
+										) {
+											return;
+										}
+										if (index == openIndex) {
+											setOpenIndex(null);
+										} else {
+											setOpenIndex(index);
+										}
+									}}
+									target="_blank"
+									rel="noopener noreferrer"
+					>
+									{!(action.title == "Office" || (action.title == "Ext" && index == openIndex))
+										? action.title
+										: (action.value.length > 7 && index != openIndex)
+											? action.value.substring(0, 7) + "..."
+											: action.value
+									}
+					</a>
+				))}
+			</div>
     </div>
   );
 }
