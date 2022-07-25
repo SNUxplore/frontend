@@ -6,13 +6,17 @@ html {
 .NavigatePage {
   display: flex;
   min-height: 100vh;
+  gap: 4vw;
 
   &__left {
-    width: 40vw;
+    width: 35vw;
+    background-color: #F4F5FC;
+    display: flex;
+    flex-direction: column;
   }
 
   &__right {
-    width: 60vw;
+    width: 65vw;
 
     iframe {
       width: inherit;

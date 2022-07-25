@@ -6,7 +6,6 @@ import Footer from "~/Components/Footer/Footer";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
-// import map from "../Assets/Img/mapIcon.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
