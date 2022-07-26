@@ -144,7 +144,7 @@ const teamData = [
 ]
 
 export default function About() {
-  const [selectedValue, setSelectedValue] = React.useState("");
+  const [selectedValue, setSelectedValue] = React.useState("Core");
 
   const filteredCards = [];
   const handleSelect = (event) => {
