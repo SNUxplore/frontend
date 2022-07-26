@@ -1,0 +1,35 @@
+@import "../../styles/root/mixins";
+
+.ModalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  @include make-flex();
+  // backdrop-filter: blur(48px);
+
+  &__container {
+    background-color: var(--white);
+    width: 600px;
+    border-radius: 12px;
+    height: 350px;
+  }
+}
+
+.InfoModalContainer {
+  opacity: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 600px;
+  border-radius: 12px;
+  height: 350px;
+  z-index: 1;
+  background: white;
+}
+
+.hide {
+  opacity: 0%;
+}
