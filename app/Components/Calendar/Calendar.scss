@@ -83,7 +83,7 @@
     border-radius: 21px 21px 0 0;
     padding: 16px 0;
     display: flex;
-    background-color: #D0EEFF;
+    background-color: #d0eeff;
 
     &__day {
       font-size: 15px;
@@ -117,15 +117,15 @@
       border-left: unset;
     }
 
-    @include respondAt(685px){
+    @include respondAt(685px) {
       height: 70px;
     }
-    @include respondAt(505px){
+    @include respondAt(505px) {
       height: 45px;
     }
   }
 
-  &__day-container-fadded {
+  &__day-container-faded {
     position: relative;
     background: white;
     border-top: rgba(164, 160, 160, 0.178) 1px solid;
@@ -141,24 +141,56 @@
     &:first-child {
       border-left: unset;
     }
-    @include respondAt(685px){
+    @include respondAt(685px) {
       height: 70px;
     }
-    @include respondAt(505px){
+    @include respondAt(505px) {
       height: 45px;
     }
   }
 
   &__eventShow {
+    @include make-flex($align: flex-start, $just: flex-start);
+    row-gap: 10%;
+    padding: 7% 0.7rem;
+    flex-wrap: wrap;
+    border-radius: 5px;
     position: absolute;
     z-index: 1;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-    box-shadow: 1px 3px;
+    margin: 2px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
     right: -15%;
     bottom: -5%;
     background: var(--contactHover);
     color: var(--textColor);
+    &--eventName {
+      font-size: 13px;
+      @include respondAt(685px) {
+        font-size: xx-small;
+      }
+    }
+    &--eventTime {
+      font-size: 10px;
+      @include respondAt(685px) {
+        font-size: xx-small;
+      }
+    }
+
+    @include respondAt(616px) {
+      padding: 4% 0.2rem;
+      row-gap: 0;
+    }
+
+    @include respondAt(506px) {
+      p {
+        display: none;
+      }
+      background: var(--textColor);
+      padding: 5%;
+      margin: 0;
+      right: 75%;
+      bottom: 15%;
+    }
   }
 
   &__eventHide {
