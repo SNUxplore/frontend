@@ -7,6 +7,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 5;
+  backdrop-filter: blur(4px);
   @include make-flex();
   // backdrop-filter: blur(48px);
 
@@ -15,6 +16,16 @@
     width: 600px;
     border-radius: 12px;
     height: 350px;
+
+    &__infoContainer {
+      &--title {
+        @include make-flex($dir: row, $just: flex-start);
+        font-weight: 600;
+        font-size: 30px;
+        gap: 15px;
+        background: red;
+      }
+    }
   }
 }
 

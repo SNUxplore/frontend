@@ -1,3 +1,4 @@
+import logoPreview from "../../Assets/Img/twitterLogo.svg";
 import React from "react";
 
 function InfoModal({ setModalOpen, data }) {
@@ -13,7 +14,7 @@ function InfoModal({ setModalOpen, data }) {
         </button>
         <div className="ModalWrapper__container__infoContainer">
           <h1 className="ModalWrapper__container__infoContainer--title">
-            <img src="" alt="CLUB LOGO" />
+            <img src={logoPreview} alt="CLUB LOGO" />
             {data[2]}
           </h1>
           <p className="ModalWrapper__container__infoContainer--details">
