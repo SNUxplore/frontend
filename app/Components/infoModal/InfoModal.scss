@@ -13,11 +13,15 @@
   // backdrop-filter: blur(48px);
 
   &__container {
+    box-shadow: 8px 8px;
     position: relative;
     padding-top: 3.5rem;
     padding-left: 3rem;
     background-color: var(--white);
     width: 800px;
+    @include respondAt(800px) {
+      width: 400px;
+    }
     border-radius: 12px;
     height: 500px;
     color: var(--primaryTextColor);
@@ -27,8 +31,11 @@
     &--closebtn {
       cursor: pointer;
       position: absolute;
-      top: 5%;
+      top: 4%;
       left: 90%;
+      @include respondAt(800px) {
+        left: 85%;
+      }
       border: none;
       background: none;
       width: 40px;
