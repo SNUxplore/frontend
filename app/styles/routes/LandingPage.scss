@@ -12,14 +12,15 @@
     gap: 50px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
-    padding: 0px 170px 60px;
+    // background-color: aqua;
+    padding: 0px 170px 0px;
     transition: padding 0.5s ease-in-out, filter 0.5s;
 
     @include respondAt(1525px) {
-      padding: 0 130px 50px;
+      padding: 0 130px 0px;
     }
     @include respondAt(1335px) {
-      padding: 0 90px 50px;
+      padding: 0 90px 0px;
     }
     @include respondAt(1135px) {
       padding: 0 40px;
@@ -168,10 +169,12 @@
     &__funFact {
       @include make-flex($dir: row, $just: flex-start);
       @include box(80%, auto);
+      flex-wrap: wrap;
       span,
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
+        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);

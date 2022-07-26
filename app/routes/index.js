@@ -69,12 +69,23 @@ export default function LandingPage() {
               </div>
               <div className="heroSection__desc">
                 <p>
-                We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. Unlock everything SNU has to offer. All just a search away!
+                  We get it, life is hard. Navigating through campus and keeping
+                  track of events and info shouldn't be. Unlock everything SNU
+                  has to offer. All just a search away!
                 </p>
               </div>
               {!callToAction && (
                 <div className="heroSection__callToAction">
-                  <ButtonLink href="/#learn-more" content="Learn More" />
+                  <ButtonLink
+                    href="/#learn-more"
+                    content="Learn More"
+                    onClick={() => {
+                      window.scrollTo({
+                        top: document.querySelector(".aboutSection").offsetTop,
+                        behavior: "smooth",
+                      });
+                    }}
+                  />
                   <ButtonLink href="/about" content="Contact Us" fill />
                 </div>
               )}
@@ -90,7 +101,10 @@ export default function LandingPage() {
                   Don’t forget to follow our instagram for regular updates!
                 </p>
                 <div className="heroSection__instagramDiv--instaHandle">
-                  <a target= "_blank" href="https://www.instagram.com/snu.xplore/">
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/snu.xplore/"
+                  >
                     <img
                       className="heroSection__instagramDiv--instaHandle--instaLogo"
                       src={instagramLogo}
@@ -113,7 +127,9 @@ export default function LandingPage() {
               <p className="heroSection__stats--stat">60+</p>
             </div>
             <div className="heroSection__stats">
-              <p className="heroSection__stats--title">Locations on SNUxplore</p>
+              <p className="heroSection__stats--title">
+                Locations on SNUxplore
+              </p>
               <p className="heroSection__stats--stat">50+</p>
             </div>
             <div className="heroSection__stats">
@@ -143,16 +159,16 @@ export default function LandingPage() {
             );
           })}
         </section>
-        <Banner
-          title1="Still have"
-          title2="Questions?"
-          desc='"These features are cool and all, but I have another question about campus and the credit system"
-          Feels like you? Click below!'
-          href="/faqs"
-          fillType="fill2"
-          redirectContent="Checkout the FAQ"
-        />
       </main>
+      <Banner
+        title1="Still have"
+        title2="Questions?"
+        desc='"These features are cool and all, but I have another question about campus and the credit system"
+          Feels like you? Click below!'
+        href="/faqs"
+        fillType="fill2"
+        redirectContent="Checkout the FAQ"
+      />
       <Footer />
     </div>
   );

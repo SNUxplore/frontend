@@ -66,7 +66,7 @@
       border: none;
       border-radius: 20%;
       background: var(--primaryTextColor);
-      color: white;
+      color: var(--white);
     }
     &__monthNames {
       font-weight: 700;
@@ -110,10 +110,10 @@
       border-left: unset;
     }
 
-    @include respondAt(685px){
+    @include respondAt(685px) {
       height: 70px;
     }
-    @include respondAt(505px){
+    @include respondAt(505px) {
       height: 45px;
     }
   }
@@ -127,16 +127,16 @@
     height: 88px;
     padding: 7px;
     @include make-flex($just: flex-start, $align: flex-end); // padding: 2rem;
-    color: rgba(255, 0, 0, 0.538);
+    color: var(--fadedDayContainer);
     font-weight: 700;
     cursor: pointer;
     &:first-child {
       border-left: unset;
     }
-    @include respondAt(685px){
+    @include respondAt(685px) {
       height: 70px;
     }
-    @include respondAt(505px){
+    @include respondAt(505px) {
       height: 45px;
     }
   }
