@@ -21,7 +21,7 @@ export const action = async ({ request }) => {
   const data = createEvent(formData)
     .then((res) => res)
     .catch((e) => {
-      throw new Error("Create event error" + e.toString());
+      console.error("Create-event error" + e);
     });
   return data;
 };

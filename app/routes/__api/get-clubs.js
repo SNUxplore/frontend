@@ -4,5 +4,5 @@ export const loader = () =>
   getClubs()
     .then((data) => data)
     .catch((e) => {
-      throw new Error("Get Clubs Error" + e);
+      console.error("Get clubs db error" + e);
     });

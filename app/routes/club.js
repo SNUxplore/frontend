@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import styleSheet from "~/styles/routes/Club/EditInfo.css";
 import { authenticator } from "./services/auth.server";
-import { editInfo } from "./services/user.server";
-
 import { Link, useLocation } from "react-router-dom";
 import FullLogo from "../Assets/Img/FullLogo.svg";
 
@@ -19,7 +17,6 @@ export const loader = async ({ request }) => {
 
 export default function EditInfo() {
   const pathname = useLocation().pathname.replace("/club/", "");
-  console.log(pathname);
   return (
     <div className="ClubInfoPage">
       <header>

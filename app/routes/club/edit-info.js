@@ -14,17 +14,14 @@ export const loader = async ({ request }) => {
 
 export const action = async ({ request }) => {
   const formData = Object.fromEntries(await request.formData());
-  console.log(formData);
-  const data = await editInfo(formData)
+  await editInfo(formData)
     .then((res) => res)
-    .catch((e) => console.log(e));
-  console.log(data);
+    .catch((e) => console.error("Edit info DB error" + e));
   return null;
 };
 
 export default function EditInfo() {
   const data = useLoaderData();
-  console.log(data);
   const [formData, setFormData] = React.useState(data.user);
 
   function updateFormData(e) {

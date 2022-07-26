@@ -10,6 +10,6 @@ export const loader = async ({ request }) => {
   return await getEventsByClub(emailId)
     .then((data) => data)
     .catch((e) => {
-      throw new Error("Get events by club error" + e);
+      console.error("Get events by a club error" + e);
     });
 };

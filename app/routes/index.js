@@ -10,6 +10,9 @@ import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
 import blueArrow from "../Assets/Img/blueArrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
+import { useMediaQuery } from "react-responsive";
+import useScrollEffect from "~/Hooks/Observer";
+import Footer from "~/Components/Footer/Footer";
 
 const Sections = [
   {
@@ -22,10 +25,6 @@ const Sections = [
     className: "aboutSection__View3",
   },
 ];
-
-import { useMediaQuery } from "react-responsive";
-import useScrollEffect from "~/Hooks/Observer";
-import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -115,6 +114,7 @@ export default function LandingPage() {
                 <div className="heroSection__instagramDiv--instaHandle">
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     href="https://www.instagram.com/snu.xplore/"
                   >
                     <img
