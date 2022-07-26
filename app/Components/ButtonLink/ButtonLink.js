@@ -1,12 +1,16 @@
 import React from "react";
 
-function ButtonLink({ className, href, content, fill, fill2 }) {
+function ButtonLink({ className, href, content, fill, fill2, onClick }) {
   return (
     <a
       href={href}
-      className={`ButtonLinkWrapper ${fill ? "ButtonLinkWrapper--fill" : ""} `}
+      onClick={onClick}
+      className={`ButtonLinkWrapper 
+        ${className}
+        ${fill ? "ButtonLinkWrapper--fill" : ""} 
+        ${fill2 ? "ButtonLinkWrapper--fill2" : ""}`}
     >
-      <p>{content}</p>
+      {content}
     </a>
   );
 }
