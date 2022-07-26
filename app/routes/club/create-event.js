@@ -34,6 +34,7 @@ export default function CreateEvent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  // eslint-disable-next-line no-unused-vars
   function isFormChanged() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
