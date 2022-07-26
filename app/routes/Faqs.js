@@ -6,7 +6,7 @@ import { Link, Outlet } from "@remix-run/react";
 import questionIcon from "~/Assets/Img/questionIcon.svg";
 import dropDownArrow from "~/Assets/Img/dropDownArrow.svg";
 import { useMediaQuery } from "react-responsive";
-import { useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -15,17 +15,13 @@ export function links() {
 export default function Index() {
   // current response structure for questions
   // Can be modified if the need arises, jsx will have to be modified as well
-	const history = useHistory();
-	const categoryId = history.location.pathname.split("/")[2];
+	const navigate = useNavigate();
+	const location = useLocation();
+	const categoryId = location.pathname.split("/")[2];
 	
 	const dropdown = useMediaQuery({
     query: "(max-width: 750px)",
 	});
-	
-	React.useEffect(() => {
-		console.log(dropdown);
-		console.log(categoryId);
-	}, [dropdown, categoryId]);
 	
 	const ConditionalWrapper = ({ condition, wrapper, children }) => 
   condition ? wrapper(children) : children;
@@ -98,15 +94,14 @@ export default function Index() {
 					</div> */}
           <div className="mainSection__bottom">
 						<div className="mainSection__categories">
-							{dropdown && 
+							{/* {dropdown && 
 								<select
 									name="category"
 									id="category"
 									className="mainSection__dropDown"
 									value={categoryId}
 									onChange={(e) => {
-										console.log(e.target.value);
-										history.push(`/faqs/${e.target.value}`);
+										navigate(`/faqs/${e.target.value}`);
 									}}
 								>
 									{testFAQs.map((category) => (
@@ -116,29 +111,29 @@ export default function Index() {
 											{category.name}</option>
 									))}
 									</select>
-							}
-							{!dropdown && testFAQs.map((category, index) => (
+							} */}
+							{testFAQs.map((category) => (
 								<div
 									key={category.id}
 									className={
 										"mainSection__categoryBox " +
-										(index === categoryId
+										(category.id == categoryId
 											? "mainSection__categoryBox--active"
 											: "")
 									}>
 									<img
 										className="mainSection__categoryIcon"
-										src={(index === categoryId)
+										src={(category.id == categoryId)
 											? questionIcon
 											: questionIcon	//change to inactive icon asset
 										}
 										alt="snu explore Logo"
 									/>
 									<Link
-										to={`/faqs/${index + 1}`}
+										to={`/faqs/${category.id}`}
 										className={
 											"mainSection__categoryName " +
-											(index === categoryId
+											(category.id == categoryId
 												? "mainSection__categoryName--active"
 												: "")
 										}

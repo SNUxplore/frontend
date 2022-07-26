@@ -98,36 +98,36 @@
       }
     }
 		
-		&__dropDownWrapper {
-			width: 100%;
-			margin-left: 10%;
-			margin-bottom: 5%;
-			align-items: flex-start;
+		// &__dropDownWrapper {
+		// 	width: 100%;
+		// 	margin-left: 10%;
+		// 	margin-bottom: 5%;
+		// 	align-items: flex-start;
 			
-			@include respondAtAlt(750px) {
-				display: none;
-			}
-		}
+		// 	@include respondAtAlt(750px) {
+		// 		display: none;
+		// 	}
+		// }
 		
-		&__dropDown {
-			// @include make-flex($dir: row, $just: flex-start);
-			width: fit-content;
-			padding: 10px;
-			border-radius: 4px;
-			background-color: #fff;
-			// gap: 10px;
-			font-family: 'Poppins';
-			font-style: normal;
-			font-weight: 500;
+		// &__dropDown {
+		// 	// @include make-flex($dir: row, $just: flex-start);
+		// 	width: fit-content;
+		// 	padding: 10px;
+		// 	border-radius: 4px;
+		// 	background-color: #fff;
+		// 	// gap: 10px;
+		// 	font-family: 'Poppins';
+		// 	font-style: normal;
+		// 	font-weight: 500;
 			
-			// p {
-			// }
-		}
+		// 	// p {
+		// 	// }
+		// }
 		
-		&__dropDownArrow {
-			width: 15px;
-			height: 15px;
-		}
+		// &__dropDownArrow {
+		// 	width: 15px;
+		// 	height: 15px;
+		// }
 
     &__categories {
       @include make-flex($dir: column);
@@ -135,8 +135,10 @@
       width: fit-content;
 			
 			@include respondAt(750px) {
-				// display: none;
-				gap: 0px;
+				@include make-flex($dir: row, $just: space-between);
+				gap: 5px;
+				background-color: #fff;
+				padding: 10px;
 			}
     }
 
@@ -151,9 +153,9 @@
       border-radius: 8px;
       background-color: transparent;
 			
-			@include respondAt(750px) {
-				border-radius: 0px;
-			}
+			// @include respondAt(750px) {
+			// 	border-radius: 0px;
+			// }
 			
       &:hover {
         opacity: 100%;
