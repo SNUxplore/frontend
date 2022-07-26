@@ -3,12 +3,13 @@ import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
 import EventCard from "~/Components/EventCard/EventCard";
 import { authenticator } from "../services/auth.server";
-import { createEvent } from "../services/user.server";
+import { createEvent, getSessionUserByEmail } from "../services/user.server";
 
 export const loader = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request, {
+  const email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
+  const user = await getSessionUserByEmail(email);
   return json(user);
 };
 
