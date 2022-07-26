@@ -1,5 +1,9 @@
 import logoPreview from "../../Assets/Img/twitterLogo.svg";
 import React from "react";
+import fireIcon from "../../Assets/Img/modalFireIcon_lightTheme.svg";
+import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
+import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
+import locationIcon from "../../Assets/Img/modalLocationIcon_lightTheme.svg";
 
 function InfoModal({ setModalOpen, data }) {
   return (
