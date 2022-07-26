@@ -77,7 +77,6 @@ export default function LandingPage() {
               {!callToAction && (
                 <div className="heroSection__callToAction">
                   <ButtonLink
-                    href="/#learn-more"
                     content="Learn More"
                     onClick={() => {
                       window.scrollTo({
