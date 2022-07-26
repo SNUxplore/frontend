@@ -11,23 +11,15 @@ export function links() {
 }
 
 export const loader = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request, {
+  await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
   return null;
 };
 
-export const action = async ({ request }) => {
-  const formData = Object.fromEntries(await request.formData());
-  editInfo(formData)
-    .then((res) => console.log(res))
-    .catch((e) => console.log(e));
-  return null;
-};
-
 export default function EditInfo() {
-  const data = useLocation();
-  data.pathname = data.pathname.replace("/club/", "");
+  const pathname = useLocation().pathname.replace("/club/", "");
+  console.log(pathname);
   return (
     <div className="ClubInfoPage">
       <header>
@@ -38,9 +30,7 @@ export default function EditInfo() {
         <nav className="ClubInfoPage__navBar">
           <Link
             className={
-              data.pathname === "edit-info"
-                ? "ClubInfoPage__navBar--active"
-                : ""
+              pathname === "edit-info" ? "ClubInfoPage__navBar--active" : ""
             }
             to="/club/edit-info"
           >
@@ -48,9 +38,7 @@ export default function EditInfo() {
           </Link>
           <Link
             className={
-              data.pathname === "create-event"
-                ? "ClubInfoPage__navBar--active"
-                : ""
+              pathname === "create-event" ? "ClubInfoPage__navBar--active" : ""
             }
             to="/club/create-event"
           >

@@ -9,7 +9,6 @@ export const loader = async ({ request }) => {
   const user = await getSessionUserByEmail(email);
   return {
     user: user,
-    path: new URL(request.url).pathname.replace("/club/", ""),
   };
 };
 
