@@ -215,6 +215,9 @@ html {
     &--team {
       margin-bottom: 10px;
       &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h1 {
           text-align: center;
           b {
@@ -243,24 +246,63 @@ html {
           text-align: center;
           @include respondAt(770px) {
             width: 70%;
+            line-height: 24.02px;
+            text-align: center;
+
+            font-size: 15px;
           }
           @include respondAt(545px) {
             width: 100%;
-          }
-          @include respondAt(545px) {
-            text-align: start;
+            text-align: center;
+            line-height: 24.02px;
+            font-size: 15px;
           }
         }
       }
       &__teams {
         @include make-flex($dir: row, $align: center, $just: space-evenly);
+        cursor: pointer;
         &--data {
           padding-right: 20px;
           padding: 10px 20px 10px 20px;
-          margin: 0 30px 0 30px;
+          margin: 0 40px 0 40px;
+          border-radius: 40px;
           background-color: var(--blue);
-          color: white;
+          color: #ffffff;
+          @include respondAt(770px) {
+            display: none;
+          }
+          @include respondAt(545px) {
+            display: none;
+          }
         }
+
+        select {
+          margin-top: 20px;
+          display: none;
+          padding: 10px 50px 10px 50px;
+          font-size: 25px;
+          text-align: center;
+          border-radius: 10px;
+          @include respondAt(770px) {
+            display: inline-block;
+            background-color: var(--blue);
+            color: #ffffff;
+          }
+          @include respondAt(545px) {
+            display: inline-block;
+            background-color: var(--blue);
+            color: #ffffff;
+          }
+        }
+      }
+      &__people {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        // @include make-flex($dir: row, $align: center, $just: space-evenly);
       }
     }
   }
