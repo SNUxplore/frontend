@@ -17,3 +17,20 @@ export const getEventsByClub = (emailId) =>
       Posts: true,
     },
   });
+
+export const deleteEvent = (id) =>
+  db.post.delete({
+    where: {
+      id: id,
+    },
+  });
+
+export const editEvent = (data) =>
+  db.post.update({
+    where: {
+      id: data.id,
+      data: {
+        ...data,
+      },
+    },
+  });
