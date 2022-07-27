@@ -34,10 +34,7 @@
     // @include box($height: calc(100vh - 200px));
     @include make-flex($just: flex-start);
     // max-height: 720px;
-    @include respondAtAlt(780px) {
-      padding-bottom: 40px;
-      margin-bottom: 350px;
-    }
+
     gap: 65px;
 
     &__top {
@@ -72,6 +69,10 @@
 
         @include respondAt(470px) {
           padding: 0 30px;
+        }
+
+        @include respondAt(335px) {
+          padding: 15px;
         }
       }
 
@@ -174,7 +175,6 @@
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
-        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);
@@ -273,6 +273,14 @@
 
     @include respondAt(1095px) {
       gap: 80px;
+      width: 100%;
+    }
+    @include respondAtAlt(780px) {
+      padding-bottom: 40px;
+      margin-bottom: 350px;
+    }
+    @include respondAt(335px) {
+      gap: 115px;
     }
   }
 

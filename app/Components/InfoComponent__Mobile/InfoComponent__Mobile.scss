@@ -8,6 +8,9 @@
   @include respondAtAlt(780px) {
     display: none;
   }
+  @include respondAt(335px) {
+    padding: 15px;
+  }
   font-family: ("poppins");
 
   &__ImageContainer {

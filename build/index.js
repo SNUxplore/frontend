@@ -48,7 +48,7 @@ function handleRequest(request, responseStatusCode, responseHeaders, remixContex
   });
 }
 
-// route:E:\ReactJS\frontend\app\root.jsx
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/root.jsx
 var root_exports = {};
 __export(root_exports, {
   ThemeScript: () => ThemeScript,
@@ -65,12 +65,12 @@ var reset_default = "/build/_assets/reset-FZH4QENV.css";
 var global_default = "/build/_assets/global-OPJC2HX7.css";
 
 // app/styles/root/components.css
-var components_default = "/build/_assets/components-NQ6EVLGF.css";
+var components_default = "/build/_assets/components-TG5L7N5S.css";
 
 // app/Assets/Img/xploreLogo.svg
 var xploreLogo_default = "/build/_assets/xploreLogo-PUZHES4Z.svg";
 
-// route:E:\ReactJS\frontend\app\root.jsx
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/root.jsx
 function links() {
   return [
     { rel: "stylesheet", href: reset_default },
@@ -106,7 +106,7 @@ function App() {
   }, /* @__PURE__ */ React.createElement("head", null, /* @__PURE__ */ React.createElement(import_react2.Meta, null), /* @__PURE__ */ React.createElement(ThemeScript, null), /* @__PURE__ */ React.createElement(import_react2.Links, null)), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement(import_react2.Outlet, null), /* @__PURE__ */ React.createElement(import_react2.ScrollRestoration, null), /* @__PURE__ */ React.createElement(import_react2.Scripts, null), /* @__PURE__ */ React.createElement(import_react2.LiveReload, null)));
 }
 
-// route:E:\ReactJS\frontend\app\routes\__api\get-events-by-club.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/__api/get-events-by-club.js
 var get_events_by_club_exports = {};
 __export(get_events_by_club_exports, {
   loader: () => loader
@@ -138,7 +138,7 @@ var getEvents = () => db.post.findMany({
   }
 });
 
-// route:E:\ReactJS\frontend\app\routes\__api\get-events-by-club.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/__api/get-events-by-club.js
 var loader = async ({ request }) => {
   let emailId = new URL(request.url).searchParams.get("emailId");
   return emailId == null ? (0, import_node.json)({ success: !1, error: "Didn't give valid email ID" }) : await getEventsByClub(emailId).then((data) => data).catch((e) => {
@@ -146,7 +146,7 @@ var loader = async ({ request }) => {
   });
 };
 
-// route:E:\ReactJS\frontend\app\routes\services\session.server.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/services/session.server.js
 var session_server_exports = {};
 __export(session_server_exports, {
   commitSession: () => commitSession,
@@ -165,7 +165,7 @@ var import_node2 = require("@remix-run/node"), sessionStorage = (0, import_node2
   }
 }), { getSession, commitSession, destroySession } = sessionStorage;
 
-// route:E:\ReactJS\frontend\app\routes\auth\google-callback.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/auth/google-callback.js
 var google_callback_exports = {};
 __export(google_callback_exports, {
   loader: () => loader2
@@ -195,7 +195,7 @@ var authenticator = new import_remix_auth.Authenticator(sessionStorage2), callba
 }, async ({ profile }) => profile.emails[0].value);
 authenticator.use(googleStrategy);
 
-// route:E:\ReactJS\frontend\app\routes\auth\google-callback.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/auth/google-callback.js
 var loader2 = async ({ request }) => {
   let user = await authenticator.authenticate("google", request, {
     failureRedirect: "/"
@@ -205,7 +205,7 @@ var loader2 = async ({ request }) => {
   return (0, import_node4.redirect)("/club/edit-info", { headers });
 };
 
-// route:E:\ReactJS\frontend\app\routes\services\auth.server.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/services/auth.server.js
 var auth_server_exports = {};
 __export(auth_server_exports, {
   authenticator: () => authenticator2
@@ -218,7 +218,7 @@ var authenticator2 = new import_remix_auth2.Authenticator(sessionStorage2), call
 }, async ({ profile }) => profile.emails[0].value);
 authenticator2.use(googleStrategy2);
 
-// route:E:\ReactJS\frontend\app\routes\services\club.server.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/services/club.server.js
 var club_server_exports = {};
 __export(club_server_exports, {
   deleteEvent: () => deleteEvent2,
@@ -249,7 +249,7 @@ var getEvents2 = () => db.post.findMany({
   }
 });
 
-// route:E:\ReactJS\frontend\app\routes\services\user.server.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/services/user.server.js
 var user_server_exports = {};
 __export(user_server_exports, {
   createEvent: () => createEvent,
@@ -285,7 +285,17 @@ var getSessionUserByEmail = async (emailId) => db.user.findUnique({ where: { ema
   }
 });
 
-// route:E:\ReactJS\frontend\app\routes\services\db.server.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/__api/delete-event.js
+var delete_event_exports = {};
+__export(delete_event_exports, {
+  loader: () => loader3
+});
+var loader3 = async ({ request }) => {
+  let url = new URL(request.url), id = parseInt(url.searchParams.get("id")), data = await deleteEvent(id);
+  return console.log(data), null;
+};
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/services/db.server.js
 var db_server_exports = {};
 __export(db_server_exports, {
   db: () => db2
@@ -296,17 +306,7 @@ db2.$connect().catch((err) => {
   console.error(err);
 });
 
-// route:E:\ReactJS\frontend\app\routes\__api\delete-event.js
-var delete_event_exports = {};
-__export(delete_event_exports, {
-  loader: () => loader3
-});
-var loader3 = async ({ request }) => {
-  let url = new URL(request.url), id = parseInt(url.searchParams.get("id")), data = await deleteEvent(id);
-  return console.log(data), null;
-};
-
-// route:E:\ReactJS\frontend\app\routes\__api\get-clubs.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/__api/get-clubs.js
 var get_clubs_exports = {};
 __export(get_clubs_exports, {
   loader: () => loader4
@@ -315,7 +315,7 @@ var loader4 = () => getClubs().then((data) => data).catch((e) => {
   console.error("Get clubs db error" + e);
 });
 
-// route:E:\ReactJS\frontend\app\routes\Events\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Events/index.js
 var Events_exports = {};
 __export(Events_exports, {
   default: () => Index,
@@ -619,7 +619,7 @@ function Header() {
   }), [navState]);
   let dropdown = (0, import_react_responsive.useMediaQuery)({
     query: "(max-width: 1230px)"
-  }), themeIconsrc = {
+  }), themeIconSrc = {
     light: darkModeThemeDesktop_default,
     dark: darkModeFillTheme_default,
     pink: darkModeNotActive_default
@@ -627,7 +627,7 @@ function Header() {
     light: "rgba(54, 59, 83, 0.09)",
     dark: "rgba(217, 217, 217, 0.05)",
     pink: "rgba(217, 217, 217, 0.05)"
-  }, pinkThemeIconsrc = {
+  }, pinkThemeIconSrc = {
     light: darkModeThemeDesktop_default,
     dark: darkModeNotActive_default,
     pink: pinkModeFillTheme_default
@@ -772,7 +772,7 @@ function Header() {
     }
   }, /* @__PURE__ */ import_react7.default.createElement("img", {
     className: `HeaderWrapper__right--themeButtons--option${currentTheme === "dark" ? "--active" : ""}`,
-    src: themeIconsrc[currentTheme],
+    src: themeIconSrc[currentTheme],
     alt: "snu explore Logo"
   })), /* @__PURE__ */ import_react7.default.createElement("button", {
     onClick: () => {
@@ -780,7 +780,7 @@ function Header() {
     }
   }, /* @__PURE__ */ import_react7.default.createElement("img", {
     className: `HeaderWrapper__right--themeButtons--option--pink${currentTheme === "pink" ? "--active" : ""}`,
-    src: pinkThemeIconsrc[currentTheme],
+    src: pinkThemeIconSrc[currentTheme],
     alt: "snu explore Logo"
   }))), dropdown && /* @__PURE__ */ import_react7.default.createElement("div", {
     className: "HeaderWrapper__right--themeButtons"
@@ -857,7 +857,7 @@ var Header_default = Header;
 // app/styles/routes/Events/Events.css
 var Events_default = "/build/_assets/Events-BTLIQ6TR.css";
 
-// route:E:\ReactJS\frontend\app\routes\Events\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Events/index.js
 function links2() {
   return [{ rel: "stylesheet", href: Events_default }];
 }
@@ -915,7 +915,7 @@ function Index() {
   }), /* @__PURE__ */ React.createElement(Footer_default, null));
 }
 
-// route:E:\ReactJS\frontend\app\routes\auth\google.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/auth/google.js
 var google_exports = {};
 __export(google_exports, {
   action: () => action,
@@ -924,7 +924,7 @@ __export(google_exports, {
 var import_node5 = require("@remix-run/node");
 var loader6 = () => (0, import_node5.redirect)("/login"), action = ({ request }) => authenticator.authenticate("google", request);
 
-// route:E:\ReactJS\frontend\app\routes\auth\logout.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/auth/logout.js
 var logout_exports = {};
 __export(logout_exports, {
   action: () => action2
@@ -935,7 +935,7 @@ var action2 = async ({ request }) => {
   });
 };
 
-// route:E:\ReactJS\frontend\app\routes\Navigate.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Navigate.js
 var Navigate_exports = {};
 __export(Navigate_exports, {
   default: () => Navigate,
@@ -1504,7 +1504,7 @@ function SearchBar() {
 }
 var SearchBar_default = SearchBar;
 
-// route:E:\ReactJS\frontend\app\routes\Navigate.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Navigate.js
 var import_react11 = require("@remix-run/react");
 var import_react12 = require("@remix-run/react");
 function links3() {
@@ -1539,7 +1539,7 @@ function Navigate() {
   })));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Navigate\$option.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Navigate/$option.js
 var option_exports = {};
 __export(option_exports, {
   default: () => NavOption,
@@ -1676,7 +1676,7 @@ function NavigateCard() {
   })));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Navigate\$option.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Navigate/$option.js
 var loader8 = async ({ request }) => {
   let url = new URL(request.url), paramJson = {};
   return url.searchParams.forEach((value, key) => {
@@ -1737,14 +1737,14 @@ function NavOption() {
   }))));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Navigate\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Navigate/index.js
 var Navigate_exports2 = {};
 __export(Navigate_exports2, {
   loader: () => loader9
 });
 var import_node6 = require("@remix-run/node"), loader9 = () => (0, import_node6.redirect)("/navigate/Residential?redirect=true");
 
-// route:E:\ReactJS\frontend\app\routes\Admin.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin.js
 var Admin_exports = {};
 __export(Admin_exports, {
   default: () => Admin,
@@ -1755,7 +1755,7 @@ __export(Admin_exports, {
 // app/styles/routes/Admin/Admin.css
 var Admin_default = "/build/_assets/Admin-M27RBYIR.css";
 
-// route:E:\ReactJS\frontend\app\routes\Admin.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin.js
 var import_react16 = __toESM(require("react")), import_react17 = require("@remix-run/react"), import_react_router_dom = require("react-router-dom");
 
 // app/Assets/Data/admin.json
@@ -1987,7 +1987,7 @@ var Academics2 = [
   "Admin Info": Admin_Info
 };
 
-// route:E:\ReactJS\frontend\app\routes\Admin.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin.js
 function links4() {
   return [{ rel: "stylesheet", href: Admin_default }];
 }
@@ -2034,7 +2034,7 @@ function Admin() {
   }))), /* @__PURE__ */ import_react16.default.createElement(Footer_default, null));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Admin\$option.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin/$option.js
 var option_exports2 = {};
 __export(option_exports2, {
   default: () => AdminDetails,
@@ -2155,7 +2155,7 @@ function InfoContainer({
 }
 var InfoContainer_default = InfoContainer;
 
-// route:E:\ReactJS\frontend\app\routes\Admin\$option.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin/$option.js
 var loader11 = async ({ request }) => {
   let url = new URL(request.url), paramJson = {};
   return url.searchParams.forEach((value, key) => {
@@ -2187,14 +2187,14 @@ function AdminDetails() {
   })));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Admin\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Admin/index.js
 var Admin_exports2 = {};
 __export(Admin_exports2, {
   loader: () => loader12
 });
 var import_node8 = require("@remix-run/node"), loader12 = () => (0, import_node8.redirect)("/admin/Academics?redirect=true");
 
-// route:E:\ReactJS\frontend\app\routes\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/index.js
 var routes_exports = {};
 __export(routes_exports, {
   default: () => LandingPage,
@@ -2296,7 +2296,7 @@ function InfoComponent__Mobile() {
 }
 
 // app/styles/routes/LandingPage.css
-var LandingPage_default = "/build/_assets/LandingPage-MIBXRZKY.css";
+var LandingPage_default = "/build/_assets/LandingPage-7XLXHUPT.css";
 
 // app/Assets/Img/Arrow.svg
 var Arrow_default = "/build/_assets/Arrow-4GQEQLUV.svg";
@@ -2304,7 +2304,7 @@ var Arrow_default = "/build/_assets/Arrow-4GQEQLUV.svg";
 // app/Assets/Img/blueArrow.svg
 var blueArrow_default = "/build/_assets/blueArrow-M2O2JUGM.svg";
 
-// route:E:\ReactJS\frontend\app\routes\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/index.js
 var import_react_responsive3 = require("react-responsive");
 
 // app/Hooks/Observer.js
@@ -2325,7 +2325,7 @@ var import_react23 = __toESM(require("react")), useScrollEffect = (defaultState,
   }), { view };
 }, Observer_default = useScrollEffect;
 
-// route:E:\ReactJS\frontend\app\routes\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/index.js
 var Sections = [
   {
     className: "aboutSection__View1"
@@ -2447,7 +2447,7 @@ function LandingPage() {
   }), /* @__PURE__ */ import_react24.default.createElement(Footer_default, null));
 }
 
-// route:E:\ReactJS\frontend\app\routes\login.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/login.js
 var login_exports = {};
 __export(login_exports, {
   default: () => login_default,
@@ -2468,7 +2468,7 @@ var Google_default = "/build/_assets/Google-BSH23VXB.png";
 // app/Assets/Img/LoginPageImg.png
 var LoginPageImg_default = "/build/_assets/LoginPageImg-Y3ZFMRMD.png";
 
-// route:E:\ReactJS\frontend\app\routes\login.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/login.js
 function links6() {
   return [{ rel: "stylesheet", href: Login_default }];
 }
@@ -2505,28 +2505,210 @@ function Login() {
 }
 var login_default = Login;
 
-// route:E:\ReactJS\frontend\app\routes\club.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Faqs.js
+var Faqs_exports = {};
+__export(Faqs_exports, {
+  default: () => Index2,
+  links: () => links7
+});
+var import_react26 = __toESM(require("react"));
+
+// app/styles/routes/Faqs/Faqs.css
+var Faqs_default = "/build/_assets/Faqs-T46SF24J.css";
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Faqs.js
+var import_react27 = require("@remix-run/react");
+var import_react_responsive4 = require("react-responsive"), import_react_router_dom2 = require("react-router-dom");
+function links7() {
+  return [{ rel: "stylesheet", href: Faqs_default }];
+}
+function Index2() {
+  let navigate = (0, import_react_router_dom2.useNavigate)(), categoryId = (0, import_react_router_dom2.useLocation)().pathname.split("/")[2], dropdown = (0, import_react_responsive4.useMediaQuery)({
+    query: "(max-width: 750px)"
+  }), ConditionalWrapper = ({ condition, wrapper, children }) => condition ? wrapper(children) : children, testFAQs = [
+    {
+      id: 1,
+      name: "Category 1",
+      questions: [
+        {
+          id: 1,
+          question: "How big is the Campus?",
+          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
+        },
+        {
+          id: 2,
+          question: "How many Academic blocks?",
+          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
+        },
+        {
+          id: 3,
+          question: "How many professors reside within?",
+          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: "Category 2",
+      questions: [
+        {
+          id: 1,
+          question: "Question 1",
+          answer: "Answer 1"
+        },
+        {
+          id: 2,
+          question: "Question 2",
+          answer: "Answer 2"
+        }
+      ]
+    }
+  ];
+  return /* @__PURE__ */ import_react26.default.createElement("div", {
+    className: "FaqsPage"
+  }, /* @__PURE__ */ import_react26.default.createElement(Header_default, null), /* @__PURE__ */ import_react26.default.createElement("div", {
+    className: "FaqsPage__mainContainer"
+  }, /* @__PURE__ */ import_react26.default.createElement("section", {
+    className: "mainSection"
+  }, /* @__PURE__ */ import_react26.default.createElement("div", {
+    className: "mainSection__top"
+  }, /* @__PURE__ */ import_react26.default.createElement("h1", {
+    className: "mainSection__title"
+  }, "Frequently Asked Questions"), /* @__PURE__ */ import_react26.default.createElement("p", {
+    className: "mainSection__desc"
+  }, "Still confused? We\u2019ve been there", /* @__PURE__ */ import_react26.default.createElement("br", null), "We\u2019ve compiled a few of the most asked questions right here.")), /* @__PURE__ */ import_react26.default.createElement("div", {
+    className: "mainSection__bottom"
+  }, /* @__PURE__ */ import_react26.default.createElement("div", {
+    className: "mainSection__categories"
+  }, testFAQs.map((category2) => /* @__PURE__ */ import_react26.default.createElement("div", {
+    key: category2.id,
+    className: "mainSection__categoryBox " + (category2.id == categoryId ? "mainSection__categoryBox--active" : "")
+  }, /* @__PURE__ */ import_react26.default.createElement("img", {
+    className: "mainSection__categoryIcon",
+    src: category2.id == categoryId ? questionIcon_default : questionIcon_default,
+    alt: "snu explore Logo"
+  }), /* @__PURE__ */ import_react26.default.createElement(import_react27.Link, {
+    to: `/faqs/${category2.id}`,
+    className: "mainSection__categoryName " + (category2.id == categoryId ? "mainSection__categoryName--active" : ""),
+    onClick: () => {
+    }
+  }, category2.name)))), /* @__PURE__ */ import_react26.default.createElement(import_react27.Outlet, {
+    context: [testFAQs]
+  })))), /* @__PURE__ */ import_react26.default.createElement(Footer_default, null));
+}
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Faqs/$categoryId.js
+var categoryId_exports = {};
+__export(categoryId_exports, {
+  default: () => category
+});
+var import_react29 = require("@remix-run/react"), import_react30 = require("@remix-run/react");
+
+// app/Components/FaqDropdown/FaqDropdown.js
+var import_react28 = __toESM(require("react"));
+function FaqDropdown({ question, answer, isExpanded, onClick }) {
+  let dropDownRef = import_react28.default.useRef(), [scrollHeight, setScrollHeight] = import_react28.default.useState(0), [style, setStyle] = import_react28.default.useState({
+    transitionDuration: "500ms",
+    transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    transitionProperty: "height",
+    height: "0px",
+    overflow: "hidden"
+  });
+  return import_react28.default.useEffect(() => {
+    dropDownRef.current.scrollHeight != 0 && setScrollHeight(dropDownRef.current.scrollHeight);
+  }), import_react28.default.useEffect(() => {
+    isExpanded ? (setStyle({
+      transitionDuration: "300ms",
+      transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      transitionProperty: "height",
+      overflow: "hidden",
+      height: "0"
+    }), setTimeout(() => {
+      setStyle({
+        transitionDuration: "500ms",
+        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        transitionProperty: "height",
+        overflow: "hidden",
+        height: `${scrollHeight}px`
+      });
+    }, 50)) : (setStyle({
+      transitionDuration: "300ms",
+      transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      transitionProperty: "height",
+      overflow: "hidden",
+      height: "0"
+    }), setTimeout(() => {
+      setStyle({
+        transitionDuration: "500ms",
+        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        transitionProperty: "height",
+        overflow: "hidden",
+        display: "none"
+      });
+    }, 290));
+  }, [isExpanded]), /* @__PURE__ */ import_react28.default.createElement("div", {
+    className: `dropDown ${isExpanded ? "dropDown--active" : ""} `
+  }, /* @__PURE__ */ import_react28.default.createElement("button", {
+    className: `dropDown__question ${isExpanded ? "dropDown__question--active" : ""} `,
+    onClick
+  }, /* @__PURE__ */ import_react28.default.createElement("p", null, question), /* @__PURE__ */ import_react28.default.createElement("div", {
+    className: `dropDown__questionExpanded ${isExpanded ? "dropDown__questionExpanded--active" : ""}`
+  }, /* @__PURE__ */ import_react28.default.createElement("p", null, "+"))), /* @__PURE__ */ import_react28.default.createElement("div", {
+    className: `dropDown__answer ${isExpanded ? "dropDown__answer--active" : ""} `,
+    style
+  }, /* @__PURE__ */ import_react28.default.createElement("p", {
+    ref: dropDownRef
+  }, answer)), /* @__PURE__ */ import_react28.default.createElement("div", {
+    className: "dropDown__borderLine"
+  }));
+}
+var FaqDropdown_default = FaqDropdown;
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Faqs/$categoryId.js
+function category() {
+  let { categoryId } = (0, import_react29.useParams)(), [questionIndex, setQuestionIndex] = React.useState(-1), [testFAQs] = (0, import_react30.useOutletContext)();
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
+    className: "mainSection__questions"
+  }, testFAQs[parseInt(categoryId) - 1].questions.map((question, index) => /* @__PURE__ */ React.createElement(FaqDropdown_default, {
+    key: question.id,
+    question: question.question,
+    answer: question.answer,
+    isExpanded: index === questionIndex,
+    onClick: () => {
+      setQuestionIndex(questionIndex === index ? -1 : index);
+    }
+  }))));
+}
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/Faqs/index.js
+var Faqs_exports2 = {};
+__export(Faqs_exports2, {
+  loader: () => loader14
+});
+var import_node9 = require("@remix-run/node"), loader14 = () => (0, import_node9.redirect)("/faqs/1");
+
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club.js
 var club_exports = {};
 __export(club_exports, {
   default: () => EditInfo,
-  links: () => links7,
-  loader: () => loader14
+  links: () => links8,
+  loader: () => loader15
 });
-var import_react_router_dom2 = require("react-router-dom");
+var import_react_router_dom3 = require("react-router-dom");
 
 // app/styles/routes/Club/EditInfo.css
 var EditInfo_default = "/build/_assets/EditInfo-J24NMRWN.css";
 
-// route:E:\ReactJS\frontend\app\routes\club.js
-var import_react_router_dom3 = require("react-router-dom");
-function links7() {
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club.js
+var import_react_router_dom4 = require("react-router-dom");
+function links8() {
   return [{ rel: "stylesheet", href: EditInfo_default }];
 }
-var loader14 = async ({ request }) => (await authenticator.isAuthenticated(request, {
+var loader15 = async ({ request }) => (await authenticator.isAuthenticated(request, {
   failureRedirect: "/login"
 }), null);
 function EditInfo() {
-  let pathname = (0, import_react_router_dom3.useLocation)().pathname.replace("/club/", "");
+  let pathname = (0, import_react_router_dom4.useLocation)().pathname.replace("/club/", "");
   return /* @__PURE__ */ React.createElement("div", {
     className: "ClubInfoPage"
   }, /* @__PURE__ */ React.createElement("header", null, /* @__PURE__ */ React.createElement("img", {
@@ -2536,25 +2718,25 @@ function EditInfo() {
     className: "ClubInfoPage__mainContainer"
   }, /* @__PURE__ */ React.createElement("nav", {
     className: "ClubInfoPage__navBar"
-  }, /* @__PURE__ */ React.createElement(import_react_router_dom3.Link, {
+  }, /* @__PURE__ */ React.createElement(import_react_router_dom4.Link, {
     className: pathname === "edit-info" ? "ClubInfoPage__navBar--active" : "",
     to: "/club/edit-info"
-  }, "Account Information"), /* @__PURE__ */ React.createElement(import_react_router_dom3.Link, {
+  }, "Account Information"), /* @__PURE__ */ React.createElement(import_react_router_dom4.Link, {
     className: pathname === "create-event" ? "ClubInfoPage__navBar--active" : "",
     to: "/club/create-event"
   }, "Create Event")), /* @__PURE__ */ React.createElement("div", {
     className: "ClubInfoPage__contentContainer"
-  }, /* @__PURE__ */ React.createElement(import_react_router_dom2.Outlet, null))));
+  }, /* @__PURE__ */ React.createElement(import_react_router_dom3.Outlet, null))));
 }
 
-// route:E:\ReactJS\frontend\app\routes\club\create-event.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club/create-event.js
 var create_event_exports = {};
 __export(create_event_exports, {
   action: () => action3,
   default: () => CreateEvent,
-  loader: () => loader15
+  loader: () => loader16
 });
-var import_node9 = require("@remix-run/node"), import_react26 = require("@remix-run/react"), import_react27 = __toESM(require("react"));
+var import_node10 = require("@remix-run/node"), import_react31 = require("@remix-run/react"), import_react32 = __toESM(require("react"));
 
 // app/routes/services/user.server.js
 var getSessionUserByEmail2 = async (emailId) => db.user.findUnique({ where: { emailId } }), createEvent2 = async ({
@@ -2586,12 +2768,12 @@ var getSessionUserByEmail2 = async (emailId) => db.user.findUnique({ where: { em
   }
 });
 
-// route:E:\ReactJS\frontend\app\routes\club\create-event.js
-var loader15 = async ({ request }) => {
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club/create-event.js
+var loader16 = async ({ request }) => {
   let email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login"
   }), user = await getSessionUserByEmail2(email);
-  return (0, import_node9.json)(user);
+  return (0, import_node10.json)(user);
 }, action3 = async ({ request }) => {
   let formData = Object.fromEntries(await request.formData());
   return formData.userId = parseInt(formData.userId), createEvent2(formData).then((res) => res).catch((e) => {
@@ -2599,90 +2781,90 @@ var loader15 = async ({ request }) => {
   });
 };
 function CreateEvent() {
-  let data = (0, import_react26.useLoaderData)(), [formData, setFormData] = import_react27.default.useState(data);
+  let data = (0, import_react31.useLoaderData)(), [formData, setFormData] = import_react32.default.useState(data);
   function updateFormData(e) {
     setFormData(__spreadProps(__spreadValues({}, formData), { [e.target.name]: e.target.value }));
   }
   function isFormChanged() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
-  return /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, /* @__PURE__ */ import_react27.default.createElement(import_react26.Form, {
+  return /* @__PURE__ */ import_react32.default.createElement(import_react32.default.Fragment, null, /* @__PURE__ */ import_react32.default.createElement(import_react31.Form, {
     action: "/club/create-event",
     method: "post",
     className: "ClubInfoPage__InfoForm"
-  }, /* @__PURE__ */ import_react27.default.createElement("div", {
+  }, /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("h3", null, "Create event")), /* @__PURE__ */ import_react27.default.createElement("div", {
+  }, /* @__PURE__ */ import_react32.default.createElement("h3", null, "Create event")), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "title"
-  }, "title"), /* @__PURE__ */ import_react27.default.createElement("input", {
+  }, "title"), /* @__PURE__ */ import_react32.default.createElement("input", {
     placeholder: "title",
     id: "title",
     name: "title",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("div", {
+  })), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "location"
-  }, "location"), /* @__PURE__ */ import_react27.default.createElement("input", {
+  }, "location"), /* @__PURE__ */ import_react32.default.createElement("input", {
     placeholder: "location",
     id: "location",
     name: "location",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("div", {
+  })), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "imageUrl"
-  }, "image"), /* @__PURE__ */ import_react27.default.createElement("input", {
+  }, "image"), /* @__PURE__ */ import_react32.default.createElement("input", {
     placeholder: "imageUrl",
     id: "imageUrl",
     name: "imageUrl",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("div", {
+  })), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "date"
-  }, "Date"), /* @__PURE__ */ import_react27.default.createElement("input", {
+  }, "Date"), /* @__PURE__ */ import_react32.default.createElement("input", {
     placeholder: "date",
     id: "date",
     name: "date",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("div", {
+  })), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row",
     style: { minHeight: "61px", height: "auto" }
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "instaUrl"
-  }, "Description"), /* @__PURE__ */ import_react27.default.createElement("input", {
+  }, "Description"), /* @__PURE__ */ import_react32.default.createElement("input", {
     placeholder: "Instagram Post URL",
     id: "instaUrl",
     name: "instaUrl",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("div", {
+  })), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row",
     style: { minHeight: "61px", height: "auto" }
-  }, /* @__PURE__ */ import_react27.default.createElement("label", {
+  }, /* @__PURE__ */ import_react32.default.createElement("label", {
     htmlFor: "description"
-  }, "Description"), /* @__PURE__ */ import_react27.default.createElement("textarea", {
+  }, "Description"), /* @__PURE__ */ import_react32.default.createElement("textarea", {
     placeholder: "description",
     id: "description",
     name: "description",
     onChange: (e) => updateFormData(e)
-  })), /* @__PURE__ */ import_react27.default.createElement("input", {
+  })), /* @__PURE__ */ import_react32.default.createElement("input", {
     id: "userId",
     name: "userId",
     style: { visibility: "hidden", display: "none" },
     type: "number",
     defaultValue: data.id
-  }), /* @__PURE__ */ import_react27.default.createElement("div", {
+  }), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__InfoForm--row"
-  }, /* @__PURE__ */ import_react27.default.createElement("button", {
+  }, /* @__PURE__ */ import_react32.default.createElement("button", {
     type: "submit"
-  }, "Create Event"))), /* @__PURE__ */ import_react27.default.createElement("section", {
+  }, "Create Event"))), /* @__PURE__ */ import_react32.default.createElement("section", {
     className: "ClubInfoPage__preview"
-  }, /* @__PURE__ */ import_react27.default.createElement("h3", null, "Preview"), /* @__PURE__ */ import_react27.default.createElement("div", {
+  }, /* @__PURE__ */ import_react32.default.createElement("h3", null, "Preview"), /* @__PURE__ */ import_react32.default.createElement("div", {
     className: "ClubInfoPage__preview--cardHolder"
-  }, /* @__PURE__ */ import_react27.default.createElement(EventCard_default, {
+  }, /* @__PURE__ */ import_react32.default.createElement(EventCard_default, {
     clubName: data.name,
     desc: formData.description,
     date: formData.date,
@@ -2691,15 +2873,15 @@ function CreateEvent() {
   }))));
 }
 
-// route:E:\ReactJS\frontend\app\routes\club\edit-info.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club/edit-info.js
 var edit_info_exports = {};
 __export(edit_info_exports, {
   action: () => action4,
   default: () => EditInfo2,
-  loader: () => loader16
+  loader: () => loader17
 });
-var import_react28 = require("@remix-run/react");
-var loader16 = async ({ request }) => {
+var import_react33 = require("@remix-run/react");
+var loader17 = async ({ request }) => {
   let email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login"
   });
@@ -2711,14 +2893,14 @@ var loader16 = async ({ request }) => {
   return await editInfo2(formData).then((res) => res).catch((e) => console.error("Edit info DB error" + e)), null;
 };
 function EditInfo2() {
-  let data = (0, import_react28.useLoaderData)(), [formData, setFormData] = React.useState(data.user);
+  let data = (0, import_react33.useLoaderData)(), [formData, setFormData] = React.useState(data.user);
   function updateFormData(e) {
     setFormData(__spreadProps(__spreadValues({}, formData), { [e.target.name]: e.target.value }));
   }
   function isFormChanged() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
-  return /* @__PURE__ */ React.createElement(import_react28.Form, {
+  return /* @__PURE__ */ React.createElement(import_react33.Form, {
     className: "ClubInfoPage__InfoForm",
     action: "/club/edit-info",
     method: "POST"
@@ -2776,25 +2958,25 @@ function EditInfo2() {
   }, "Save")));
 }
 
-// route:E:\ReactJS\frontend\app\routes\club\index.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/club/index.js
 var club_exports2 = {};
 __export(club_exports2, {
-  loader: () => loader17
+  loader: () => loader18
 });
-var import_node10 = require("@remix-run/node"), loader17 = () => (0, import_node10.redirect)("/club/edit-info");
+var import_node11 = require("@remix-run/node"), loader18 = () => (0, import_node11.redirect)("/club/edit-info");
 
-// route:E:\ReactJS\frontend\app\routes\demo.js
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/demo.js
 var demo_exports = {};
 __export(demo_exports, {
   default: () => DemoPage,
-  links: () => links8
+  links: () => links9
 });
 
 // app/styles/routes/demo.css
 var demo_default = "/build/_assets/demo-TEG4IWUJ.css";
 
-// route:E:\ReactJS\frontend\app\routes\demo.js
-function links8() {
+// route:/home/santhosh/Desktop/Projects/JavaScript/2022/13_SNUXplore/frontend/app/routes/demo.js
+function links9() {
   return [{ rel: "stylesheet", href: demo_default }];
 }
 function DemoPage() {
@@ -2803,192 +2985,11 @@ function DemoPage() {
   }, /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement(NavigateCard, null));
 }
 
-// route:E:\ReactJS\frontend\app\routes\Faqs.js
-var Faqs_exports = {};
-__export(Faqs_exports, {
-  default: () => Index2,
-  links: () => links9
-});
-
-// app/styles/routes/Faqs/Faqs.css
-var Faqs_default = "/build/_assets/Faqs-T46SF24J.css";
-
-// route:E:\ReactJS\frontend\app\routes\Faqs.js
-var import_react29 = __toESM(require("react")), import_react30 = require("@remix-run/react");
-var import_react_responsive4 = require("react-responsive"), import_react_router_dom4 = require("react-router-dom");
-function links9() {
-  return [{ rel: "stylesheet", href: Faqs_default }];
-}
-function Index2() {
-  let navigate = (0, import_react_router_dom4.useNavigate)(), categoryId = (0, import_react_router_dom4.useLocation)().pathname.split("/")[2], dropdown = (0, import_react_responsive4.useMediaQuery)({
-    query: "(max-width: 750px)"
-  }), ConditionalWrapper = ({ condition, wrapper, children }) => condition ? wrapper(children) : children, testFAQs = [
-    {
-      id: 1,
-      name: "Category 1",
-      questions: [
-        {
-          id: 1,
-          question: "How big is the Campus?",
-          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
-        },
-        {
-          id: 2,
-          question: "How many Academic blocks?",
-          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
-        },
-        {
-          id: 3,
-          question: "How many professors reside within?",
-          answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros."
-        }
-      ]
-    },
-    {
-      id: 2,
-      name: "Category 2",
-      questions: [
-        {
-          id: 1,
-          question: "Question 1",
-          answer: "Answer 1"
-        },
-        {
-          id: 2,
-          question: "Question 2",
-          answer: "Answer 2"
-        }
-      ]
-    }
-  ];
-  return /* @__PURE__ */ import_react29.default.createElement("div", {
-    className: "FaqsPage"
-  }, /* @__PURE__ */ import_react29.default.createElement(Header_default, null), /* @__PURE__ */ import_react29.default.createElement("div", {
-    className: "FaqsPage__mainContainer"
-  }, /* @__PURE__ */ import_react29.default.createElement("section", {
-    className: "mainSection"
-  }, /* @__PURE__ */ import_react29.default.createElement("div", {
-    className: "mainSection__top"
-  }, /* @__PURE__ */ import_react29.default.createElement("h1", {
-    className: "mainSection__title"
-  }, "Frequently Asked Questions"), /* @__PURE__ */ import_react29.default.createElement("p", {
-    className: "mainSection__desc"
-  }, "Still confused? We\u2019ve been there", /* @__PURE__ */ import_react29.default.createElement("br", null), "We\u2019ve compiled a few of the most asked questions right here.")), /* @__PURE__ */ import_react29.default.createElement("div", {
-    className: "mainSection__bottom"
-  }, /* @__PURE__ */ import_react29.default.createElement("div", {
-    className: "mainSection__categories"
-  }, testFAQs.map((category2) => /* @__PURE__ */ import_react29.default.createElement("div", {
-    key: category2.id,
-    className: "mainSection__categoryBox " + (category2.id == categoryId ? "mainSection__categoryBox--active" : "")
-  }, /* @__PURE__ */ import_react29.default.createElement("img", {
-    className: "mainSection__categoryIcon",
-    src: category2.id == categoryId ? questionIcon_default : questionIcon_default,
-    alt: "snu explore Logo"
-  }), /* @__PURE__ */ import_react29.default.createElement(import_react30.Link, {
-    to: `/faqs/${category2.id}`,
-    className: "mainSection__categoryName " + (category2.id == categoryId ? "mainSection__categoryName--active" : ""),
-    onClick: () => {
-    }
-  }, category2.name)))), /* @__PURE__ */ import_react29.default.createElement(import_react30.Outlet, {
-    context: [testFAQs]
-  })))), /* @__PURE__ */ import_react29.default.createElement(Footer_default, null));
-}
-
-// route:E:\ReactJS\frontend\app\routes\Faqs\$categoryId.js
-var categoryId_exports = {};
-__export(categoryId_exports, {
-  default: () => category
-});
-var import_react32 = require("@remix-run/react"), import_react33 = require("@remix-run/react");
-
-// app/Components/FaqDropdown/FaqDropdown.js
-var import_react31 = __toESM(require("react"));
-function FaqDropdown({ question, answer, isExpanded, onClick }) {
-  let dropDownRef = import_react31.default.useRef(), [scrollHeight, setScrollHeight] = import_react31.default.useState(0), [style, setStyle] = import_react31.default.useState({
-    transitionDuration: "500ms",
-    transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-    transitionProperty: "height",
-    height: "0px",
-    overflow: "hidden"
-  });
-  return import_react31.default.useEffect(() => {
-    dropDownRef.current.scrollHeight != 0 && setScrollHeight(dropDownRef.current.scrollHeight);
-  }), import_react31.default.useEffect(() => {
-    isExpanded ? (setStyle({
-      transitionDuration: "300ms",
-      transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      transitionProperty: "height",
-      overflow: "hidden",
-      height: "0"
-    }), setTimeout(() => {
-      setStyle({
-        transitionDuration: "500ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        height: `${scrollHeight}px`
-      });
-    }, 50)) : (setStyle({
-      transitionDuration: "300ms",
-      transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      transitionProperty: "height",
-      overflow: "hidden",
-      height: "0"
-    }), setTimeout(() => {
-      setStyle({
-        transitionDuration: "500ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        display: "none"
-      });
-    }, 290));
-  }, [isExpanded]), /* @__PURE__ */ import_react31.default.createElement("div", {
-    className: `dropDown ${isExpanded ? "dropDown--active" : ""} `
-  }, /* @__PURE__ */ import_react31.default.createElement("button", {
-    className: `dropDown__question ${isExpanded ? "dropDown__question--active" : ""} `,
-    onClick
-  }, /* @__PURE__ */ import_react31.default.createElement("p", null, question), /* @__PURE__ */ import_react31.default.createElement("div", {
-    className: `dropDown__questionExpanded ${isExpanded ? "dropDown__questionExpanded--active" : ""}`
-  }, /* @__PURE__ */ import_react31.default.createElement("p", null, "+"))), /* @__PURE__ */ import_react31.default.createElement("div", {
-    className: `dropDown__answer ${isExpanded ? "dropDown__answer--active" : ""} `,
-    style
-  }, /* @__PURE__ */ import_react31.default.createElement("p", {
-    ref: dropDownRef
-  }, answer)), /* @__PURE__ */ import_react31.default.createElement("div", {
-    className: "dropDown__borderLine"
-  }));
-}
-var FaqDropdown_default = FaqDropdown;
-
-// route:E:\ReactJS\frontend\app\routes\Faqs\$categoryId.js
-function category() {
-  let { categoryId } = (0, import_react32.useParams)(), [questionIndex, setQuestionIndex] = React.useState(-1), [testFAQs] = (0, import_react33.useOutletContext)();
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
-    className: "mainSection__questions"
-  }, testFAQs[parseInt(categoryId) - 1].questions.map((question, index) => /* @__PURE__ */ React.createElement(FaqDropdown_default, {
-    key: question.id,
-    question: question.question,
-    answer: question.answer,
-    isExpanded: index === questionIndex,
-    onClick: () => {
-      setQuestionIndex(questionIndex === index ? -1 : index);
-    }
-  }))));
-}
-
-// route:E:\ReactJS\frontend\app\routes\Faqs\index.js
-var Faqs_exports2 = {};
-__export(Faqs_exports2, {
-  loader: () => loader18
-});
-var import_node11 = require("@remix-run/node"), loader18 = () => (0, import_node11.redirect)("/faqs/1");
-
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "9eebb559", entry: { module: "/build/entry.client-4D2YWT4H.js", imports: ["/build/_shared/chunk-K3QIBHPU.js", "/build/_shared/chunk-2YDJDJTP.js", "/build/_shared/chunk-VVYZPGJC.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-7PJ7GTUD.js", imports: ["/build/_shared/chunk-XSZYCONE.js", "/build/_shared/chunk-M4OQM6OJ.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin": { id: "routes/Admin", parentId: "root", path: "Admin", index: void 0, caseSensitive: void 0, module: "/build/routes/Admin-IAP7YXMS.js", imports: ["/build/_shared/chunk-XHBVGSGJ.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin/$option": { id: "routes/Admin/$option", parentId: "routes/Admin", path: ":option", index: void 0, caseSensitive: void 0, module: "/build/routes/Admin/$option-KOG7JYBT.js", imports: ["/build/_shared/chunk-FZJ5S4UR.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin/index": { id: "routes/Admin/index", parentId: "routes/Admin", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Admin/index-CGE6UHXD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Events/index": { id: "routes/Events/index", parentId: "root", path: "Events", index: !0, caseSensitive: void 0, module: "/build/routes/Events/index-43JCQWBZ.js", imports: ["/build/_shared/chunk-MIXOC7WH.js", "/build/_shared/chunk-LQCPNJS5.js", "/build/_shared/chunk-FZJ5S4UR.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-XHBVGSGJ.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs": { id: "routes/Faqs", parentId: "root", path: "Faqs", index: void 0, caseSensitive: void 0, module: "/build/routes/Faqs-CJGXKZKP.js", imports: ["/build/_shared/chunk-XHBVGSGJ.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs/$categoryId": { id: "routes/Faqs/$categoryId", parentId: "routes/Faqs", path: ":categoryId", index: void 0, caseSensitive: void 0, module: "/build/routes/Faqs/$categoryId-BVXI7YB6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs/index": { id: "routes/Faqs/index", parentId: "routes/Faqs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Faqs/index-SBM4BLSD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate": { id: "routes/Navigate", parentId: "root", path: "Navigate", index: void 0, caseSensitive: void 0, module: "/build/routes/Navigate-7UVIFRTF.js", imports: ["/build/_shared/chunk-XHBVGSGJ.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate/$option": { id: "routes/Navigate/$option", parentId: "routes/Navigate", path: ":option", index: void 0, caseSensitive: void 0, module: "/build/routes/Navigate/$option-DNGJKIMU.js", imports: ["/build/_shared/chunk-FRP4QZ6R.js", "/build/_shared/chunk-M4OQM6OJ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate/index": { id: "routes/Navigate/index", parentId: "routes/Navigate", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Navigate/index-C6TLXHZW.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/delete-event": { id: "routes/__api/delete-event", parentId: "root", path: "delete-event", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/delete-event-7D2HGUHB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/get-clubs": { id: "routes/__api/get-clubs", parentId: "root", path: "get-clubs", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/get-clubs-P2BB2TVA.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/get-events-by-club": { id: "routes/__api/get-events-by-club", parentId: "root", path: "get-events-by-club", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/get-events-by-club-3EURBU4O.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/google": { id: "routes/auth/google", parentId: "root", path: "auth/google", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/google-HB2TKSAF.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/google-callback": { id: "routes/auth/google-callback", parentId: "root", path: "auth/google-callback", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/google-callback-624SDI4K.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/logout": { id: "routes/auth/logout", parentId: "root", path: "auth/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/logout-DNI3Q4HF.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club": { id: "routes/club", parentId: "root", path: "club", index: void 0, caseSensitive: void 0, module: "/build/routes/club-Q7MB2XVT.js", imports: ["/build/_shared/chunk-236QQL3U.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/create-event": { id: "routes/club/create-event", parentId: "routes/club", path: "create-event", index: void 0, caseSensitive: void 0, module: "/build/routes/club/create-event-BR7SYBFZ.js", imports: ["/build/_shared/chunk-7BTUFTKW.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-URNN47UV.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/edit-info": { id: "routes/club/edit-info", parentId: "routes/club", path: "edit-info", index: void 0, caseSensitive: void 0, module: "/build/routes/club/edit-info-GAWZ6CS7.js", imports: ["/build/_shared/chunk-7BTUFTKW.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/index": { id: "routes/club/index", parentId: "routes/club", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/club/index-4ZCPQ5SB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/demo": { id: "routes/demo", parentId: "root", path: "demo", index: void 0, caseSensitive: void 0, module: "/build/routes/demo-7XWBCG2F.js", imports: ["/build/_shared/chunk-MIXOC7WH.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-FRP4QZ6R.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-PJXWD7UC.js", imports: ["/build/_shared/chunk-LQCPNJS5.js", "/build/_shared/chunk-FZJ5S4UR.js", "/build/_shared/chunk-XHBVGSGJ.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-OLCB7C2T.js", imports: ["/build/_shared/chunk-236QQL3U.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/auth.server": { id: "routes/services/auth.server", parentId: "root", path: "services/auth/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/auth.server-GNVSY23O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/club.server": { id: "routes/services/club.server", parentId: "root", path: "services/club/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/club.server-YGAB4ZCV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/db.server": { id: "routes/services/db.server", parentId: "root", path: "services/db/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/db.server-63OBMUEK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/session.server": { id: "routes/services/session.server", parentId: "root", path: "services/session/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/session.server-Y34UWYL4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/user.server": { id: "routes/services/user.server", parentId: "root", path: "services/user/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/user.server-7ANAXBZY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-9EEBB559.js" };
+var assets_manifest_default = { version: "fa1dfa2d", entry: { module: "/build/entry.client-4D2YWT4H.js", imports: ["/build/_shared/chunk-K3QIBHPU.js", "/build/_shared/chunk-2YDJDJTP.js", "/build/_shared/chunk-VVYZPGJC.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-JZRZOZRG.js", imports: ["/build/_shared/chunk-XSZYCONE.js", "/build/_shared/chunk-M4OQM6OJ.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin": { id: "routes/Admin", parentId: "root", path: "Admin", index: void 0, caseSensitive: void 0, module: "/build/routes/Admin-7NV5DEY2.js", imports: ["/build/_shared/chunk-HPYHOPE2.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin/$option": { id: "routes/Admin/$option", parentId: "routes/Admin", path: ":option", index: void 0, caseSensitive: void 0, module: "/build/routes/Admin/$option-UGEVPV7U.js", imports: ["/build/_shared/chunk-FZJ5S4UR.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Admin/index": { id: "routes/Admin/index", parentId: "routes/Admin", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Admin/index-6DRQTD5Q.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Events/index": { id: "routes/Events/index", parentId: "root", path: "Events", index: !0, caseSensitive: void 0, module: "/build/routes/Events/index-IVU34XGV.js", imports: ["/build/_shared/chunk-MIXOC7WH.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-LQCPNJS5.js", "/build/_shared/chunk-FZJ5S4UR.js", "/build/_shared/chunk-HPYHOPE2.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs": { id: "routes/Faqs", parentId: "root", path: "Faqs", index: void 0, caseSensitive: void 0, module: "/build/routes/Faqs-EFXTNE2I.js", imports: ["/build/_shared/chunk-HPYHOPE2.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs/$categoryId": { id: "routes/Faqs/$categoryId", parentId: "routes/Faqs", path: ":categoryId", index: void 0, caseSensitive: void 0, module: "/build/routes/Faqs/$categoryId-W6CDOFQH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Faqs/index": { id: "routes/Faqs/index", parentId: "routes/Faqs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Faqs/index-VVXAG7ZO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate": { id: "routes/Navigate", parentId: "root", path: "Navigate", index: void 0, caseSensitive: void 0, module: "/build/routes/Navigate-XAY3YPPI.js", imports: ["/build/_shared/chunk-HPYHOPE2.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate/$option": { id: "routes/Navigate/$option", parentId: "routes/Navigate", path: ":option", index: void 0, caseSensitive: void 0, module: "/build/routes/Navigate/$option-GPHV6W4T.js", imports: ["/build/_shared/chunk-FRP4QZ6R.js", "/build/_shared/chunk-M4OQM6OJ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Navigate/index": { id: "routes/Navigate/index", parentId: "routes/Navigate", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Navigate/index-LEY3OMTH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/delete-event": { id: "routes/__api/delete-event", parentId: "root", path: "delete-event", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/delete-event-IGLEQEL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/get-clubs": { id: "routes/__api/get-clubs", parentId: "root", path: "get-clubs", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/get-clubs-NZFZTHMB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__api/get-events-by-club": { id: "routes/__api/get-events-by-club", parentId: "root", path: "get-events-by-club", index: void 0, caseSensitive: void 0, module: "/build/routes/__api/get-events-by-club-32SNZXYE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/google": { id: "routes/auth/google", parentId: "root", path: "auth/google", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/google-EVJULZBR.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/google-callback": { id: "routes/auth/google-callback", parentId: "root", path: "auth/google-callback", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/google-callback-OHFDBBMY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/auth/logout": { id: "routes/auth/logout", parentId: "root", path: "auth/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/auth/logout-WXRKQDZO.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club": { id: "routes/club", parentId: "root", path: "club", index: void 0, caseSensitive: void 0, module: "/build/routes/club-4I5YNARO.js", imports: ["/build/_shared/chunk-236QQL3U.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/create-event": { id: "routes/club/create-event", parentId: "routes/club", path: "create-event", index: void 0, caseSensitive: void 0, module: "/build/routes/club/create-event-AOZP6OGM.js", imports: ["/build/_shared/chunk-7BTUFTKW.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-URNN47UV.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/edit-info": { id: "routes/club/edit-info", parentId: "routes/club", path: "edit-info", index: void 0, caseSensitive: void 0, module: "/build/routes/club/edit-info-BQYS3FJB.js", imports: ["/build/_shared/chunk-7BTUFTKW.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/club/index": { id: "routes/club/index", parentId: "routes/club", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/club/index-R3L6UC6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/demo": { id: "routes/demo", parentId: "root", path: "demo", index: void 0, caseSensitive: void 0, module: "/build/routes/demo-M6O3SLWJ.js", imports: ["/build/_shared/chunk-MIXOC7WH.js", "/build/_shared/chunk-Q3HY3KQW.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-FRP4QZ6R.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-UEEH63HU.js", imports: ["/build/_shared/chunk-LQCPNJS5.js", "/build/_shared/chunk-FZJ5S4UR.js", "/build/_shared/chunk-HPYHOPE2.js", "/build/_shared/chunk-UGRORRN5.js", "/build/_shared/chunk-URNN47UV.js", "/build/_shared/chunk-UM5RQDWJ.js", "/build/_shared/chunk-MCKA7TKC.js", "/build/_shared/chunk-3LM7Q3B6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-DJFENDT4.js", imports: ["/build/_shared/chunk-236QQL3U.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/auth.server": { id: "routes/services/auth.server", parentId: "root", path: "services/auth/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/auth.server-MFNLZ6CF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/club.server": { id: "routes/services/club.server", parentId: "root", path: "services/club/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/club.server-2APBFFKR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/db.server": { id: "routes/services/db.server", parentId: "root", path: "services/db/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/db.server-Q4GAENP7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/session.server": { id: "routes/services/session.server", parentId: "root", path: "services/session/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/session.server-JC3RWHWO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/services/user.server": { id: "routes/services/user.server", parentId: "root", path: "services/user/server", index: void 0, caseSensitive: void 0, module: "/build/routes/services/user.server-VQ46D7GM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-FA1DFA2D.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public\\build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
+var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -3045,14 +3046,6 @@ var assetsBuildDirectory = "public\\build", publicPath = "/build/", entry = { mo
     caseSensitive: void 0,
     module: user_server_exports
   },
-  "routes/services/db.server": {
-    id: "routes/services/db.server",
-    parentId: "root",
-    path: "services/db/server",
-    index: void 0,
-    caseSensitive: void 0,
-    module: db_server_exports
-  },
   "routes/__api/delete-event": {
     id: "routes/__api/delete-event",
     parentId: "root",
@@ -3060,6 +3053,14 @@ var assetsBuildDirectory = "public\\build", publicPath = "/build/", entry = { mo
     index: void 0,
     caseSensitive: void 0,
     module: delete_event_exports
+  },
+  "routes/services/db.server": {
+    id: "routes/services/db.server",
+    parentId: "root",
+    path: "services/db/server",
+    index: void 0,
+    caseSensitive: void 0,
+    module: db_server_exports
   },
   "routes/__api/get-clubs": {
     id: "routes/__api/get-clubs",
@@ -3157,6 +3158,30 @@ var assetsBuildDirectory = "public\\build", publicPath = "/build/", entry = { mo
     caseSensitive: void 0,
     module: login_exports
   },
+  "routes/Faqs": {
+    id: "routes/Faqs",
+    parentId: "root",
+    path: "Faqs",
+    index: void 0,
+    caseSensitive: void 0,
+    module: Faqs_exports
+  },
+  "routes/Faqs/$categoryId": {
+    id: "routes/Faqs/$categoryId",
+    parentId: "routes/Faqs",
+    path: ":categoryId",
+    index: void 0,
+    caseSensitive: void 0,
+    module: categoryId_exports
+  },
+  "routes/Faqs/index": {
+    id: "routes/Faqs/index",
+    parentId: "routes/Faqs",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: Faqs_exports2
+  },
   "routes/club": {
     id: "routes/club",
     parentId: "root",
@@ -3196,30 +3221,6 @@ var assetsBuildDirectory = "public\\build", publicPath = "/build/", entry = { mo
     index: void 0,
     caseSensitive: void 0,
     module: demo_exports
-  },
-  "routes/Faqs": {
-    id: "routes/Faqs",
-    parentId: "root",
-    path: "Faqs",
-    index: void 0,
-    caseSensitive: void 0,
-    module: Faqs_exports
-  },
-  "routes/Faqs/$categoryId": {
-    id: "routes/Faqs/$categoryId",
-    parentId: "routes/Faqs",
-    path: ":categoryId",
-    index: void 0,
-    caseSensitive: void 0,
-    module: categoryId_exports
-  },
-  "routes/Faqs/index": {
-    id: "routes/Faqs/index",
-    parentId: "routes/Faqs",
-    path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: Faqs_exports2
   }
 };
 module.exports = __toCommonJS(stdin_exports);
