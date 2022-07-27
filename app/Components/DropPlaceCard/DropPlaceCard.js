@@ -64,7 +64,12 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
   }, [isOpen]);
 
   return (
-    <div className="DropPlaceCardWrapper">
+    <div
+      className={`DropPlaceCardWrapper ${
+        highlighted ? "DropPlaceCardWrapper--highlighted" : ""
+      }`}
+      id={name}
+    >
       <button
         className={`DropPlaceCardWrapper__face ${
           isOpen ? "DropPlaceCardWrapper__face--active" : ""

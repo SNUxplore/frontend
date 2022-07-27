@@ -139,7 +139,7 @@ export default function Navigate() {
   return (
     <div className="NavigatePage">
       <div className="NavigatePage__left">
-        <container>
+        <container id="container">
           <div className="NavigatePage__left--header">
             <a href="/">
               <img

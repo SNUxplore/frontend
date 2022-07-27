@@ -8,7 +8,7 @@
   padding: 1.4rem;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
+
   gap: 1.4rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: background-color 1000ms linear;
@@ -25,15 +25,27 @@
     width: 324px;
   }
 
-  @include respondAt(628px) {
-    width: 100%;
+  @include respondAt(990px) {
+    width: 300px;
+  }
+
+  @include respondAt(900px) {
+    width: 280px;
+  }
+
+  @include respondAt(845px) {
+    width: 240px;
+  }
+
+  @include respondAt(750px) {
+    width: 210px;
   }
 
   &__picture {
     img {
       @include box();
       max-width: 573px;
-      border-radius: 0.6rem;
+      border-radius: 0.6em;
     }
   }
 
@@ -42,7 +54,7 @@
 
     &__name {
       color: var(--navigateCardTitle);
-      font-size: 21px;
+      font-size: 1.2em;
       margin-bottom: 1vh;
     }
 
@@ -83,6 +95,30 @@
         border: 1px var(--navigateCardButton) solid;
         background-color: transparent;
         color: var(--navigateCardButton);
+      }
+
+      .location-button,
+      .menu-button {
+        @include respondAt(1135px) {
+          padding: 0.4rem 1.1rem;
+          font-size: small;
+        }
+
+        @include respondAt(1080px) {
+          padding: 0.2rem 1rem;
+        }
+
+        @include respondAt(990px) {
+          padding: 0.2rem 0.8rem;
+        }
+
+        @include respondAt(900px) {
+          padding: 0.2rem 0.5rem;
+        }
+
+        @include respondAt(845px) {
+          padding: 0.2rem 0.4rem;
+        }
       }
 
       .menu-button:hover {

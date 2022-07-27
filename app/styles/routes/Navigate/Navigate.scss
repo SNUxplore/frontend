@@ -10,10 +10,11 @@ html {
 
   &__left {
     width: 40vw;
-    @include respondAt(628px) {
-      height: 100%;
+    @include respondAt(585px) {
       width: 100%;
+      height: 100%;
     }
+
     padding-top: 4vh;
 
     &--header {
@@ -42,7 +43,7 @@ html {
         height: 100%;
         width: 100%;
       }
-      overflow-x: auto;
+
       padding: 3% 6%;
       margin: 0 auto;
     }
@@ -67,6 +68,24 @@ html {
           font-size: 2.2rem;
         }
         @include respondAt(1080px) {
+          font-size: 2.1rem;
+        }
+        @include respondAt(970px) {
+          font-size: 1.9rem;
+        }
+        @include respondAt(890px) {
+          font-size: 1.7rem;
+        }
+        @include respondAt(800px) {
+          font-size: 1.4rem;
+        }
+        @include respondAt(670px) {
+          font-size: 1.2rem;
+        }
+        @include respondAt(585px) {
+          font-size: 2.4rem;
+        }
+        @include respondAt(420px) {
           font-size: 2.1rem;
         }
         @include respondAt(360px) {
@@ -100,31 +119,31 @@ html {
           padding: 7px 8px;
           color: #343a4e;
           border-radius: 5px;
-          @include respondAt(590px) {
+          @include respondAt(585px) {
             @include box(auto, auto);
             color: var(--black);
           }
           img {
             @include box(12px, 12px);
             display: inline;
-            @include respondAt(590px) {
+            @include respondAt(585px) {
               display: none;
             }
           }
         }
         a:hover {
-          @include respondAtAlt(590px) {
+          @include respondAtAlt(585px) {
             border: 1px solid #898989;
           }
-          @include respondAt(590px) {
+          @include respondAt(585px) {
             border: 1px solid var(--blue);
           }
         }
         .activeTab {
-          @include respondAtAlt(590px) {
+          @include respondAtAlt(585px) {
             font-weight: bolder;
           }
-          @include respondAt(590px) {
+          @include respondAt(585px) {
             color: var(--white);
             background-color: var(--blue);
           }
@@ -159,7 +178,7 @@ html {
 
       // box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
 
-      @include respondAt(590px) {
+      @include respondAt(585px) {
         @include box(100%, 54px);
         padding: 0 10px;
         flex-direction: row;
@@ -169,7 +188,7 @@ html {
         position: relative;
         top: 0;
         right: 0;
-        margin-bottom: 12%;
+        margin-bottom: 9%;
 
         z-index: 2;
 

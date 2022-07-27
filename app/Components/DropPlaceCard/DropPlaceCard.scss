@@ -5,9 +5,16 @@
   min-height: 90px;
   margin-bottom: 10px;
 
+  &--highlighted {
+    .DropPlaceCardWrapper__face {
+      background: var(--placecardHighlighted);
+    }
+  }
+
   &__face {
     @include box($height: 90px);
     background-color: var(--navigateCardColor);
+    transition: background-color 1000ms linear;
     border-radius: 8px;
     @include make-flex($just: space-between, $dir: row);
     padding: 15px;

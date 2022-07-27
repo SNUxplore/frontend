@@ -35,8 +35,10 @@ export default function NavOption() {
 
   React.useEffect(() => {
     let scrollToElement;
+    let container;
     if (urlParams.name) {
       scrollToElement = document.getElementById(urlParams.name);
+      container = document.getElementById("container");
       setHighlighted(true);
     } else if (!urlParams.redirect) {
       scrollToElement = document.querySelector(
@@ -44,14 +46,14 @@ export default function NavOption() {
       );
     }
     if (scrollToElement) {
-      if (window.innerWidth >= 590) {
+      if (window.innerWidth >= 585) {
         window.scrollTo({
-          top: scrollToElement.offsetTop - 220,
+          top: scrollToElement.offsetTop - 50,
           behavior: "smooth",
         });
       } else {
         window.scrollTo({
-          top: scrollToElement.offsetTop,
+          top: scrollToElement.offsetTop - 20,
           behavior: "smooth",
         });
       }
