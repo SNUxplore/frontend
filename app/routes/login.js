@@ -33,8 +33,23 @@ function Login() {
           </div>
         </Form> */}
 
-        <div className="LoginPage__content__left"></div>
-        <div className="LoginPage__content__right"></div>
+        <div className="LoginPage__content__left">
+          <h1 className="LoginPage__content__left--title">
+            Welcome to, <span>SNUxplore</span>
+          </h1>
+          <p className="LoginPage__content__left--para">
+            One of the core features of snuXplore is to allow all clubs to
+            schedule their event when they want it. Need to change an event
+            timing and date last minute ? dont worry we got you covered
+          </p>
+        </div>
+        <div className="LoginPage__content__right">
+          <h1 className="LoginPage__content__right--title">Club Login</h1>
+          <p className="LoginPage__content__right--para">
+            Before we begin sign in to the dashboard using the clubs google
+            account below
+          </p>
+        </div>
       </div>
     </div>
   );

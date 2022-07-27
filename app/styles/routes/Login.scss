@@ -1,22 +1,47 @@
 @import "../root/mixins";
 
 .LoginPage {
+  font-family: "poppins";
   @include make-flex();
   &__content {
     max-width: 950px;
     @include make-flex($just: space-between, $align: center, $dir: row);
     &__left {
+      padding-left: 6rem;
+      padding-top: 6rem;
       // background: url(../../Assets/Img/dottedBg.jpg);
       // background-size: auto;
-      height: 400px;
-      width: 445px;
+      height: 465px;
+      width: 490px;
       background: red;
       border-radius: 30px 0px 0px 30px;
       background: #13111f;
+
+      &--title {
+        color: white;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 129.7%;
+
+        span {
+          color: #308cf8;
+        }
+      }
+
+      &--para {
+        line-height: 195.5%;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.834);
+        font-weight: 300;
+        width: 300px;
+        margin-top: 15px;
+      }
     }
     &__right {
-      height: 400px;
-      width: 445px;
+      padding-left: 6rem;
+      padding-top: 6rem;
+      height: 465px;
+      width: 490px;
       background: white;
       border: 2px solid rgba(0, 0, 0, 0.18);
       border-radius: 0px 30px 30px 0px;
