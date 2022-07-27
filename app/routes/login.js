@@ -49,6 +49,14 @@ function Login() {
             Before we begin sign in to the dashboard using the clubs google
             account below
           </p>
+          <button className="LoginPage__content__right--btn">
+            <img
+              className="LoginPage__content__right--btnIcon"
+              src={Google}
+              alt="Google Logo"
+            />
+            Sign in with google
+          </button>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@
       &--para {
         line-height: 195.5%;
         font-size: 10px;
-        color: rgba(255, 255, 255, 0.834);
+        color: rgba(255, 255, 255, 0.945);
         font-weight: 300;
         width: 300px;
         margin-top: 15px;
@@ -39,12 +39,55 @@
     }
     &__right {
       padding-left: 6rem;
-      padding-top: 6rem;
+      padding-top: 8rem;
       height: 465px;
       width: 490px;
       background: white;
       border: 2px solid rgba(0, 0, 0, 0.18);
       border-radius: 0px 30px 30px 0px;
+
+      &--title {
+        color: #211f24;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 129.7%;
+      }
+
+      &--para {
+        line-height: 195.5%;
+        font-size: 10px;
+        color: #211f24;
+        font-weight: 400;
+        width: 300px;
+        margin-top: 15px;
+      }
+
+      &--btn {
+        transition: all 0.3s;
+        @include make-flex($dir: row, $align: center);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border: 1px solid #252231;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0);
+        gap: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      &--btn:hover {
+        background: #252231;
+        color: white;
+      }
+
+      &--btnIcon {
+        width: 20px;
+        background: rgba(255, 255, 255, 0);
+      }
     }
   }
 }
