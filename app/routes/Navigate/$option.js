@@ -5,7 +5,6 @@ import DropPlaceCard from "~/Components/DropPlaceCard/DropPlaceCard";
 import PlaceCard from "~/Components/PlaceCard/PlaceCard";
 import NavigateCard from "~/Components/NavigateCard/NavigateCard";
 
-
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
   let paramJson = {};
@@ -92,8 +91,17 @@ export default function NavOption() {
   return (
     <>
       <div className="NavigatePage__content--right NavigatePage__content--desktop">
-        <NavigateCard />
-
+        {mobile &&
+          contextData[option].map((i, index) => (
+            <NavigateCard
+              key={index}
+              name={i.name}
+              highlighted={urlParams.name == i.name && highlighted}
+              actionLists={generateActionLinks(contextData[option][index])}
+              desc={i.description}
+              src={i.image}
+            />
+          ))}
 
         {/* {mobile && contextData[option].map((i, index) => (
           <PlaceCard
@@ -107,16 +115,17 @@ export default function NavOption() {
         ))} */}
       </div>
       <div className="NavigatePage__content--right NavigatePage__content--mobile">
-        {!mobile && contextData[option].map((i, index) => (
-          <DropPlaceCard
-            key={index}
-            name={i.name}
-            highlighted={urlParams.name == i.name && highlighted}
-            actionLists={generateActionLinks(contextData[option][index])}
-            desc={i.description}
-            src={i.image}
-          />
-        ))}
+        {!mobile &&
+          contextData[option].map((i, index) => (
+            <DropPlaceCard
+              key={index}
+              name={i.name}
+              highlighted={urlParams.name == i.name && highlighted}
+              actionLists={generateActionLinks(contextData[option][index])}
+              desc={i.description}
+              src={i.image}
+            />
+          ))}
       </div>
     </>
   );
