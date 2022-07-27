@@ -34,14 +34,14 @@
     }
   }
   &--fill2 {
-    border: 1.5px solid var(--primaryTextColor);
+    border: 1.5px solid var(--white);
     background-color: var(--transparent);
-    color: var(--primaryTextColor) !important;
+    color: var(--primaryTextColor);
 
     &:hover {
       border: 1.5px solid var(--blue);
       background-color: var(--white);
-      color: var(--white);
+      color: var(--calenderColor);
     }
   }
 }

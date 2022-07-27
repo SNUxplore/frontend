@@ -1,11 +1,7 @@
 import React from "react";
 import styleSheet from "~/styles/routes/Navigate/Navigate.css";
-import Header from "~/Components/Header/Header";
-import SearchBar from "~/Components/SearchBar/SearchBar";
-import Footer from "~/Components/Footer/Footer";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import data from "~/Assets/Data/data.json";
-import { Link } from "@remix-run/react";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];

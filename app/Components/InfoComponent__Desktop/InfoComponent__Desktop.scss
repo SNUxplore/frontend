@@ -18,10 +18,13 @@
     @include make-flex($dir: row, $align: flex-start);
     gap: 40px;
     &__indicator--container {
+      height: 225px;
+      padding: 20px 0;
+      @include make-flex($just: space-between);
       &__indicator {
         @include make-flex($dir: row);
-        margin-top: 15px;
-        margin-bottom: 70px;
+        // margin-top: 15px;
+        // margin-bottom: 70px;
         width: 11px;
         height: 11px;
         border-radius: 50%;

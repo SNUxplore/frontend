@@ -2,8 +2,7 @@
 
 .FaqsPage {
   @include make-flex($just: flex-start);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 100vh;
 
   &__mainContainer {
@@ -68,7 +67,7 @@
       line-height: 30px;
       @include box(60%, auto);
       text-align: center;
-			color: var(--primaryTextColor);
+      color: var(--primaryTextColor);
 
       @include respondAt(670px) {
         @include box(100%, auto);
@@ -87,11 +86,11 @@
       @include respondAt(1095px) {
         gap: 20px;
       }
-			
-			@include respondAt(750px) {
-				@include make-flex($dir: column, $align: flex-start);
-				gap: 20px;
-			}
+
+      @include respondAt(750px) {
+        @include make-flex($dir: column, $align: flex-start);
+        gap: 20px;
+      }
 
       &--left,
       &--right {
@@ -100,66 +99,66 @@
         }
       }
     }
-		
-		// &__dropDownWrapper {
-		// 	width: 100%;
-		// 	margin-left: 10%;
-		// 	margin-bottom: 5%;
-		// 	align-items: flex-start;
-			
-		// 	@include respondAtAlt(750px) {
-		// 		display: none;
-		// 	}
-		// }
-		
-		// &__dropDown {
-		// 	// @include make-flex($dir: row, $just: flex-start);
-		// 	width: fit-content;
-		// 	padding: 10px;
-		// 	border-radius: 4px;
-		// 	background-color: #fff;
-		// 	// gap: 10px;
-		// 	font-family: 'Poppins';
-		// 	font-style: normal;
-		// 	font-weight: 500;
-			
-		// 	// p {
-		// 	// }
-		// }
-		
-		// &__dropDownArrow {
-		// 	width: 15px;
-		// 	height: 15px;
-		// }
+
+    // &__dropDownWrapper {
+    // 	width: 100%;
+    // 	margin-left: 10%;
+    // 	margin-bottom: 5%;
+    // 	align-items: flex-start;
+
+    // 	@include respondAtAlt(750px) {
+    // 		display: none;
+    // 	}
+    // }
+
+    // &__dropDown {
+    // 	// @include make-flex($dir: row, $just: flex-start);
+    // 	width: fit-content;
+    // 	padding: 10px;
+    // 	border-radius: 4px;
+    // 	background-color: #fff;
+    // 	// gap: 10px;
+    // 	font-family: 'Poppins';
+    // 	font-style: normal;
+    // 	font-weight: 500;
+
+    // 	// p {
+    // 	// }
+    // }
+
+    // &__dropDownArrow {
+    // 	width: 15px;
+    // 	height: 15px;
+    // }
 
     &__categories {
-      @include make-flex($dir: column);
+      @include make-flex($dir: column, $align: stretch);
       gap: 32.5px;
-      width: fit-content;
-			
-			@include respondAt(750px) {
-				@include make-flex($dir: row, $just: space-between);
-				gap: 5px;
-				background-color: #fff;
-				padding: 10px;
-			}
+      width: 192px;
+
+      @include respondAt(750px) {
+        @include make-flex($dir: row, $just: space-between);
+        gap: 5px;
+        background-color: #fff;
+        padding: 10px;
+      }
     }
 
     &__categoryBox {
       @include make-flex($dir: row);
-			box-sizing: content-box;
-			height: 40px;
-			width: fit-content;
+      box-sizing: content-box;
+      height: 40px;
+      // width: 100%;
       max-width: 220px;
-			padding: 0 20px;
+      padding: 0 20px;
       background-color: var(--white);
       border-radius: 8px;
       background-color: transparent;
-			
-			// @include respondAt(750px) {
-			// 	border-radius: 0px;
-			// }
-			
+
+      // @include respondAt(750px) {
+      // 	border-radius: 0px;
+      // }
+
       &:hover {
         opacity: 100%;
       }
@@ -168,28 +167,28 @@
         background-color: var(--blue);
       }
     }
-		
-		&__categoryIcon {
-			display: inline;
-			margin-right: 15px;
-			vertical-align: middle;
-			@include box($height: 15px, $width: 15px);
-		}
-		
-		&__categoryName {
-			color: var(--primaryTextColor);
+
+    &__categoryIcon {
+      display: inline;
+      margin-right: 15px;
+      vertical-align: middle;
+      @include box($height: 15px, $width: 15px);
+    }
+
+    &__categoryName {
+      color: var(--primaryTextColor);
       border: none;
       font-family: "Poppins", sans-serif;
       line-height: 30px;
       font-size: 19px;
       font-weight: 500;
       text-decoration: none;
-			white-space: nowrap;
-			
-			&--active {
-				color: var(--white);
-			}
-		}
+      white-space: nowrap;
+
+      &--active {
+        color: var(--white);
+      }
+    }
 
     &__questions {
       @include make-flex($dir: column);

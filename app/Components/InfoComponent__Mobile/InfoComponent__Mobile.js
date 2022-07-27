@@ -18,7 +18,7 @@ export default function InfoComponent__Mobile() {
   React.useEffect(() => {
     setTheme(localStorage.getItem("theme"));
   });
-
+``
   const indicatorScrollRight = () => {
     infoIndex < 2 ? setInfoIndex(infoIndex + 1) : 2;
   };
