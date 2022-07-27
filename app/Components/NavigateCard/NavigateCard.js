@@ -5,7 +5,6 @@ function getLongLat(url) {
   var regex = new RegExp("@(.*),(.*),");
   const latLongMatch = url.match(regex);
   console.log(latLongMatch);
-
   return latLongMatch;
 }
 

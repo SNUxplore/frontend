@@ -66,7 +66,7 @@ export default function Navigate() {
 
   const [isOpen, setIsOpen] = React.useState(false);
   const filterRef = React.useRef();
-  const [scrollHeight, setScrollHeight] = React.useState(115);
+  const [scrollHeight, setScrollHeight] = React.useState(0);
 
   const [styles, setStyle] = React.useState({
     transitionDuration: "500ms",
@@ -77,7 +77,6 @@ export default function Navigate() {
   });
 
   const styleOnMobile = {
-    backroundColor: "blue",
     display: "flex",
     height: "fit-content",
     width: "100%",
@@ -198,11 +197,10 @@ export default function Navigate() {
       </div>
 
       {mobile && (
-        <div className="NavigatePage__right">
+        <div className="NavigatePage__right" id="map">
           <iframe
             frameBorder="0"
             styles="border:0"
-            id="map"
             referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAWWT0hia4MlZlReCvmoWB4PiOdxAy6elI &q=Shiv+nadar+university+delhi+noida"
             allowfullscreen
