@@ -90,12 +90,17 @@
       @include make-flex($dir: row);
       margin-top: 100px;
       margin-bottom: 50px;
+			
       @include respondAt(590px) {
         gap: 20px;
         margin-top: 50px;
         flex-direction: column;
         position: relative;
       }
+			
+			// @include respondAt(1150px) {
+			// 	align-content: flex-start;
+			// }
     }
   }
 
@@ -158,6 +163,8 @@
         padding: 7px 8px;
         color: var(--primaryTextColor);
         border-radius: 5px;
+				font-weight: 700;
+				
         @include respondAt(590px) {
           @include box(auto, auto);
         }
@@ -172,15 +179,16 @@
     }
 
     &--right {
-      @include box(calc(100% - 220px), 1000px);
+      @include box(calc(100% - 220px), 1100px);
 			max-width: 900px;
-      @include make-flex($dir: column, $just: flex, $align: center);
+      @include make-flex($dir: column, $just: flex-start, $align: center);
       flex-wrap: wrap;
       gap: 25px;
       padding: 0 25px;
 			
 			@include respondAt(1150px) {
 				height: fit-content;
+				align-content: flex-start;
 			}			
 			
       @include respondAt(680px) {
@@ -191,6 +199,7 @@
         @include box(100%, auto);
         margin-top: 70px;
         z-index: 1;
+				align-content: center;
       }
     }
   }
