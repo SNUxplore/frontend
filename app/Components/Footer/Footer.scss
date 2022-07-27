@@ -12,10 +12,10 @@
     @include make-flex($dir: row, $just: space-between);
     @include box();
     max-width: 1585px;
-    padding: 0px 40px;
-    gap: 550px;
+    padding: 0px 40px 0 125px;
+    gap: 300px;
     @include respondAt(1525px) {
-      padding: 0 60px;
+      padding: 0 60px 0 100px;
       gap: 100px;
     }
     @include respondAt(1335px) {
@@ -28,6 +28,7 @@
 
     @include respondAt(840px) {
       flex-direction: column;
+			gap: 20px;
     }
 
     @include respondAt(470px) {
