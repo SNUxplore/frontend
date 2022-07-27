@@ -67,8 +67,8 @@
       cursor: pointer;
       border: none;
       border-radius: 20%;
-      background: var(--calenderColor);
-      color: var(--titleHighlight);
+      background: var(--primaryTextColor);
+      color: var(--white);
     }
     &__monthNames {
       color: var(--textColor);
@@ -135,7 +135,7 @@
     padding: 7px;
     background-color: var(--calenderColor);
     @include make-flex($just: flex-start, $align: flex-end); // padding: 2rem;
-    color: var(--fadedTextColor);
+    color: var(--fadedDayContainer);
     font-weight: 700;
     cursor: pointer;
     &:first-child {

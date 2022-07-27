@@ -3,7 +3,7 @@
 .FooterWrapper {
   @include make-flex();
   @include box(100%, 350px);
-  background: #242836;
+  background: var(--footerBackground);
   @include respondAt(840px) {
     height: auto;
   }
@@ -12,13 +12,15 @@
     @include make-flex($dir: row, $just: space-between);
     @include box();
     max-width: 1585px;
-    padding: 0px 170px;
-
+    padding: 0px 40px 0 125px;
+    gap: 300px;
     @include respondAt(1525px) {
-      padding: 0 130px;
+      padding: 0 60px 0 100px;
+      gap: 100px;
     }
     @include respondAt(1335px) {
       padding: 0 90px;
+      gap: 150px;
     }
     @include respondAt(1135px) {
       padding: 0 40px;
@@ -26,6 +28,7 @@
 
     @include respondAt(840px) {
       flex-direction: column;
+			gap: 20px;
     }
 
     @include respondAt(470px) {
@@ -35,22 +38,32 @@
 
   &__left {
     @include box(40%);
-    @include make-flex($align: flex-start);
+    @include make-flex($align: center);
     gap: 20px;
 
     @include respondAt(1095px) {
       width: 250px;
+      margin-top: 30px;
     }
     @include respondAt(610px) {
       width: 100%;
       align-items: center;
+      padding: 0 10px
     }
 
     &--logo {
-      @include box(250px, auto);
-      margin-top: 30px;
+      @include box(450px, auto);
+      margin-bottom: 30px;
       padding: 0 10px;
       filter: var(--svgfilter);
+      @include respondAt(1095px) {
+        width: 250px;
+        margin-top: 30px;
+      }
+      @include respondAt(610px) {
+        width: 250px;
+        align-items: center;
+      }
     }
 
     &--Copyright {
@@ -61,7 +74,7 @@
       font-size: 14px;
       line-height: 22px;
       text-align: center;
-      color: #787777;
+      color: var(--copyrightText);
     }
   }
 
@@ -89,7 +102,7 @@
       a {
         font-size: 15px;
         text-decoration: none;
-        color: white;
+        color: var(--white);
       }
 
       .mailIcon,
@@ -99,7 +112,7 @@
         gap: 5px;
         a {
           &:hover {
-            color: #ffc107;
+            color: var(--contactHover);
           }
         }
       }
@@ -123,7 +136,7 @@
       font-size: 21px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: rgba(255, 255, 255, 0.46);
+      color: var(--footerRowHeadings);
     }
   }
 }

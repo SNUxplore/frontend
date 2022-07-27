@@ -53,7 +53,7 @@ function Header() {
     query: "(max-width: 1230px)",
   });
 
-  let themeIconsrc = {
+  let themeIconSrc = {
     light: darkModeDesktop,
     dark: darkModeFillTheme,
     pink: darkModeNotActive,
@@ -65,7 +65,7 @@ function Header() {
     pink: "rgba(217, 217, 217, 0.05)",
   };
 
-  let pinkThemeIconsrc = {
+  let pinkThemeIconSrc = {
     light: darkModeDesktop,
     dark: darkModeNotActive,
     pink: pinkModeFillTheme,
@@ -289,7 +289,7 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option${
                     currentTheme === "dark" ? "--active" : ""
                   }`}
-                  src={themeIconsrc[currentTheme]}
+                  src={themeIconSrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -306,7 +306,7 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option--pink${
                     currentTheme === "pink" ? "--active" : ""
                   }`}
-                  src={pinkThemeIconsrc[currentTheme]}
+                  src={pinkThemeIconSrc[currentTheme]}
                   alt="snu explore Logo"
                 />
               </button>

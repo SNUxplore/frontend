@@ -16,7 +16,7 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
           <h4>{clubName}</h4>
         </div>
         <h2 className="EventCardWrapper__left--title">{eventName}</h2>
-        <p className="EventCardWrapper__left--desc">{desc}</p>
+        <p className="EventCardWrapper__left--location">{location}</p>
       </div>
       <div className="EventCardWrapper__right">
         <p>{date}</p>

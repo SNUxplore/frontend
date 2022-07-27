@@ -46,7 +46,7 @@
     &__title {
       text-align: center;
       @include box(100%, auto);
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins, sans-serif;
       font-size: 67px;
       font-weight: 500;
       line-height: 82px;
@@ -68,6 +68,7 @@
       line-height: 30px;
       @include box(60%, auto);
       text-align: center;
+			color: var(--primaryTextColor);
 
       @include respondAt(670px) {
         @include box(100%, auto);
@@ -76,7 +77,7 @@
 
     &__bottom {
       @include box($height: 25%);
-      @include make-flex($dir: column);
+      @include make-flex($dir: row, $align: flex-start);
       gap: 60px;
 
       @include respondAt(1135px) {
@@ -84,9 +85,13 @@
       }
 
       @include respondAt(1095px) {
-        flex-direction: column;
         gap: 20px;
       }
+			
+			@include respondAt(750px) {
+				@include make-flex($dir: column, $align: flex-start);
+				gap: 20px;
+			}
 
       &--left,
       &--right {
@@ -95,36 +100,96 @@
         }
       }
     }
+		
+		// &__dropDownWrapper {
+		// 	width: 100%;
+		// 	margin-left: 10%;
+		// 	margin-bottom: 5%;
+		// 	align-items: flex-start;
+			
+		// 	@include respondAtAlt(750px) {
+		// 		display: none;
+		// 	}
+		// }
+		
+		// &__dropDown {
+		// 	// @include make-flex($dir: row, $just: flex-start);
+		// 	width: fit-content;
+		// 	padding: 10px;
+		// 	border-radius: 4px;
+		// 	background-color: #fff;
+		// 	// gap: 10px;
+		// 	font-family: 'Poppins';
+		// 	font-style: normal;
+		// 	font-weight: 500;
+			
+		// 	// p {
+		// 	// }
+		// }
+		
+		// &__dropDownArrow {
+		// 	width: 15px;
+		// 	height: 15px;
+		// }
 
     &__categories {
-      @include make-flex($dir: row);
-      gap: 25px;
-      width: 100%;
+      @include make-flex($dir: column);
+      gap: 32.5px;
+      width: fit-content;
+			
+			@include respondAt(750px) {
+				@include make-flex($dir: row, $just: space-between);
+				gap: 5px;
+				background-color: #fff;
+				padding: 10px;
+			}
     }
 
-    &__categoryName {
-      @include make-flex();
-      background-color: transparent;
-      border: none;
-      font-family: "Poppins", sans-serif;
-      line-height: 30px;
-      font-size: 19px;
-      font-weight: 500;
-      text-decoration: none;
-      height: 40px;
+    &__categoryBox {
+      @include make-flex($dir: row);
+			box-sizing: content-box;
+			height: 40px;
+			width: fit-content;
       max-width: 220px;
+			padding: 0 20px;
       background-color: var(--white);
-      color: var(--primaryTextColor);
       border-radius: 8px;
+      background-color: transparent;
+			
+			// @include respondAt(750px) {
+			// 	border-radius: 0px;
+			// }
+			
       &:hover {
         opacity: 100%;
       }
 
       &--active {
         background-color: var(--blue);
-        color: var(--white);
       }
     }
+		
+		&__categoryIcon {
+			display: inline;
+			margin-right: 15px;
+			vertical-align: middle;
+			@include box($height: 15px, $width: 15px);
+		}
+		
+		&__categoryName {
+			color: var(--primaryTextColor);
+      border: none;
+      font-family: "Poppins", sans-serif;
+      line-height: 30px;
+      font-size: 19px;
+      font-weight: 500;
+      text-decoration: none;
+			white-space: nowrap;
+			
+			&--active {
+				color: var(--white);
+			}
+		}
 
     &__questions {
       @include make-flex($dir: column);
