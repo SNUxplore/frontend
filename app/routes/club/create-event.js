@@ -3,12 +3,13 @@ import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
 import EventCard from "~/Components/EventCard/EventCard";
 import { authenticator } from "../services/auth.server";
-import { createEvent } from "../services/user.server";
+import { createEvent, getSessionUserByEmail } from "../services/user.server";
 
 export const loader = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request, {
+  const email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
+  const user = await getSessionUserByEmail(email);
   return json(user);
 };
 
@@ -20,7 +21,7 @@ export const action = async ({ request }) => {
   const data = createEvent(formData)
     .then((res) => res)
     .catch((e) => {
-      throw new Error("Create event error" + e.toString());
+      console.error("Create-event error" + e);
     });
   return data;
 };
@@ -33,6 +34,7 @@ export default function CreateEvent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  // eslint-disable-next-line no-unused-vars
   function isFormChanged() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
