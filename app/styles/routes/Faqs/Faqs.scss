@@ -30,6 +30,7 @@
   }
 
   .mainSection {
+    color: var(--textColor);
     @include make-flex($just: flex-start);
     // padding-bottom: 40px;
     width: 100%;
@@ -49,7 +50,7 @@
       font-size: 67px;
       font-weight: 500;
       line-height: 82px;
-      color: var(--primaryTextColor);
+      color: var(--textColor);
 
       @include respondAt(664px) {
         font-size: 50px;
@@ -62,7 +63,8 @@
     }
 
     &__desc {
-      font-family: Poppins, sans-serif;
+      color: var(--textColor);
+      font-family: "Poppins", sans-serif;
       line-height: 30px;
       @include box(60%, auto);
       text-align: center;

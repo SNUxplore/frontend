@@ -1,0 +1,117 @@
+@import "../../styles/root/mixins";
+@import "../../styles/root/theme/light.scss";
+
+.ModalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  @include make-flex();
+  // backdrop-filter: blur(48px);
+
+  &__container {
+    box-shadow: 8px 8px;
+    position: relative;
+    padding-top: 3.5rem;
+    padding-left: 3rem;
+    background-color: var(--white);
+    width: 800px;
+    @include respondAt(800px) {
+      width: 400px;
+    }
+    border-radius: 12px;
+    height: 500px;
+    color: var(--primaryTextColor);
+    background: var(--pageBackground);
+    border: 1px solid rgba(0, 0, 0, 0.216);
+
+    &--closebtn {
+      cursor: pointer;
+      position: absolute;
+      top: 4%;
+      left: 90%;
+      @include respondAt(800px) {
+        left: 85%;
+      }
+      border: none;
+      background: none;
+      width: 40px;
+    }
+
+    &__infoContainer {
+      &--title {
+        @include make-flex($dir: row, $just: flex-start);
+        font-weight: 600;
+        font-size: 35px;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      &--details {
+        @include make-flex($dir: row, $just: flex-start, $align: center);
+        gap: 15px;
+        margin-bottom: 15px;
+
+        span {
+          font-size: 16px;
+          font-weight: 600;
+          color: var(--primaryTextColor);
+        }
+      }
+      &--icon {
+        width: 13px;
+      }
+
+      &--titleSecondary {
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      &--eventDesc {
+        margin-top: 5px;
+        font-size: 15px;
+      }
+
+      &--socialsWrapper {
+        @include make-flex($dir: row, $just: flex-start, $align: center);
+        gap: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+
+      &--Socialsicon {
+        width: 16px;
+      }
+
+      &--SocialsiconTW {
+        width: 18px;
+      }
+
+      &--linkHighlight {
+        font-weight: 400;
+        font-size: 15px;
+        color: var(--pink);
+      }
+    }
+  }
+}
+
+.InfoModalContainer {
+  opacity: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 600px;
+  border-radius: 12px;
+  height: 350px;
+  z-index: 1;
+  background: white;
+}
+
+.hide {
+  opacity: 0%;
+}

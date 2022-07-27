@@ -25,10 +25,11 @@
   &__title {
     font-size: 33px;
     font-weight: 600;
-    color: var(--primaryTextColor);
+    color: var(--textColor);
     margin-bottom: 25px;
 
     span {
+      color: var(--highlightTextColor);
       background: var(--titleHighlight);
       padding-left: 0.25rem;
       padding-right: 0.25rem;

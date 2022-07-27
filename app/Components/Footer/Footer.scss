@@ -55,6 +55,7 @@
       @include box(450px, auto);
       margin-bottom: 30px;
       padding: 0 10px;
+      filter: var(--svgfilter);
       @include respondAt(1095px) {
         width: 250px;
         margin-top: 30px;
