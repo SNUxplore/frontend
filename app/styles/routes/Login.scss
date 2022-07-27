@@ -2,8 +2,12 @@
 
 .LoginPage {
   font-family: "poppins";
-  @include make-flex();
+  position: relative;
   &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
     max-width: 950px;
     @include make-flex($just: space-between, $align: center, $dir: row);
     &__left {
