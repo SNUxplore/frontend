@@ -28,41 +28,41 @@ export default function Index() {
   const testFAQs = [
     {
       id: 1,
-      name: "Category 1",
+      name: "Campus",
       questions: [
         {
           id: 1,
-          question: "How big is the Campus?",
+          question: "What is a minor degree exactly?",
           answer:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros.",
+            "Minor degrees are offered separately from the Major degrees, are not compulsory to do. You can simply take courses from different departments and complete the credits.",
         },
         {
           id: 2,
-          question: "How many Academic blocks?",
+          question: "How do I avail the shuttle service?",
           answer:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros.",
+            "The Shuttle service can be booked from the SNU app under TRANSPORT POOLING. Or, the second option is to send your name, contact number, and ticket details to 9150232364 (Agaash, Campus Affairs Secretary).",
         },
         {
           id: 3,
-          question: "How many professors reside within?",
+          question: "What are the university timings? Process to go out?",
           answer:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in vestibulum odio, nec tristique eros.",
+            "You can leave the campus grounds at 6am and have to return by 9pm otherwise you will have to explain to the DSA how you were not out committing cardinal sins but because that one Marvel movie had both a mid-credit and an end-credit scene and you were naive enough to book an evening show. You just need your ID card and get the biometric done from the IT bay at the library.",
         },
       ],
     },
     {
       id: 2,
-      name: "Category 2",
+      name: "Miscellaneous",
       questions: [
         {
           id: 1,
-          question: "Question 1",
-          answer: "Answer 1",
+          question: "What do our ID cards help us do?",
+          answer: "Our college ID cards are our proof of identity during entry in the main gate and can help us issue sports equipment from the ISC (Indoor Sports Complex) and books from the library.",
         },
         {
           id: 2,
-          question: "Question 2",
-          answer: "Answer 2",
+          question: "What is the purpose of clubs?",
+          answer: "Clubs are student run student led organizations that venture and explore their interests in different fields like entrepreneurship, music, debating and pretty much everything under the sun. They help you network, gain experience, work in a team and conduct large scale events. For example, the E-Summit, TEDx Conference and so on.",
         },
       ],
     },
