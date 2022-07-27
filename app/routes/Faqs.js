@@ -3,6 +3,10 @@ import Footer from "~/Components/Footer/Footer";
 import styleSheet from "~/styles/routes/Faqs/Faqs.css";
 import React from "react";
 import { Link, Outlet } from "@remix-run/react";
+import questionIcon from "~/Assets/Img/questionIcon.svg";
+import dropDownArrow from "~/Assets/Img/dropDownArrow.svg";
+import { useMediaQuery } from "react-responsive";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -11,7 +15,16 @@ export function links() {
 export default function Index() {
   // current response structure for questions
   // Can be modified if the need arises, jsx will have to be modified as well
-  const [faqIndex, setFaqIndex] = React.useState(0);
+	const navigate = useNavigate();
+	const location = useLocation();
+	const categoryId = location.pathname.split("/")[2];
+	
+	const dropdown = useMediaQuery({
+    query: "(max-width: 750px)",
+	});
+	
+	const ConditionalWrapper = ({ condition, wrapper, children }) => 
+  condition ? wrapper(children) : children;
 
   const testFAQs = [
     {
@@ -68,27 +81,70 @@ export default function Index() {
 <br />We’ve compiled a few of the most asked questions right here.
 
             </p>
-          </div>
+					</div>
+					{/* <div className="mainSection__dropDownWrapper">
+						<div className="mainSection__dropDown">
+							<p>Question types</p>
+							<img
+								className="mainSection__dropDownArrow"
+								src={dropDownArrow}
+								alt="dropDownArrow"
+							/>
+						</div>
+					</div> */}
           <div className="mainSection__bottom">
-            <div className="mainSection__categories">
-              {testFAQs.map((category, index) => (
-                <Link
-                  to={`/faqs/${index + 1}`}
-                  style={{ width: `calc(100% / ${testFAQs.length})` }}
-                  className={
-                    "mainSection__categoryName " +
-                    (index === faqIndex
-                      ? "mainSection__categoryName--active"
-                      : "")
-                  }
-                  key={category.id}
-                  onClick={() => {
-                    setFaqIndex(index);
-                  }}
-                >
-                  {category.name}
-                </Link>
-              ))}
+						<div className="mainSection__categories">
+							{/* {dropdown && 
+								<select
+									name="category"
+									id="category"
+									className="mainSection__dropDown"
+									value={categoryId}
+									onChange={(e) => {
+										navigate(`/faqs/${e.target.value}`);
+									}}
+								>
+									{testFAQs.map((category) => (
+										<option
+											key={category.id}
+											value={category.id}>
+											{category.name}</option>
+									))}
+									</select>
+							} */}
+							{testFAQs.map((category) => (
+								<div
+									key={category.id}
+									className={
+										"mainSection__categoryBox " +
+										(category.id == categoryId
+											? "mainSection__categoryBox--active"
+											: "")
+									}>
+									<img
+										className="mainSection__categoryIcon"
+										src={(category.id == categoryId)
+											? questionIcon
+											: questionIcon	//change to inactive icon asset
+										}
+										alt="snu explore Logo"
+									/>
+									<Link
+										to={`/faqs/${category.id}`}
+										className={
+											"mainSection__categoryName " +
+											(category.id == categoryId
+												? "mainSection__categoryName--active"
+												: "")
+										}
+										onClick={() => {
+											// setcategoryId(index);
+										}}
+									>
+										{category.name}
+									</Link>
+								</div>
+							))}
             </div>
             <Outlet context={[testFAQs]} />
           </div>

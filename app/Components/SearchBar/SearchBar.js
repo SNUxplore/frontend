@@ -22,6 +22,7 @@ function SearchBar() {
 			const temp = data[key].map((obj) => {
 				return {
 					...obj,
+					searchString: obj.name.replace(/[^a-zA-Z0-9]/ig, ""),
 					category: key,
 				};
 			});
@@ -32,7 +33,8 @@ function SearchBar() {
 	
 	const fuseOptions = {
 		shouldSort: true,
-		keys: ["name"],
+		keys: ["name", "searchString"],
+		ignoreLocation: true,
 	};
 	const fuse = new Fuse(testData, fuseOptions);
 	
