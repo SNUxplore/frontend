@@ -5,7 +5,7 @@ import React from "react";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import { Link } from "react-router-dom";
 import admin from "~/Assets/Data/admin.json";
-import Banner from "~/Components/Banner/Banner";
+import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -81,15 +81,7 @@ export default function Admin() {
 					<Outlet context={admin} />
 				</section>
 			</main>
-			<Banner
-        title1="Still have"
-        title2="Questions?"
-        desc='"These features are cool and all, but I have another question about campus and the credit system"
-          Feels like you? Click below!'
-        href="/faqs"
-        fillType="fill2"
-        redirectContent="Checkout the FAQ"
-      />
+			<Footer />
     </div>
   );
 }

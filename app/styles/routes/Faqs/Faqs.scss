@@ -45,7 +45,7 @@
     &__title {
       text-align: center;
       @include box(100%, auto);
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins, sans-serif;
       font-size: 67px;
       font-weight: 500;
       line-height: 82px;
@@ -62,10 +62,11 @@
     }
 
     &__desc {
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins, sans-serif;
       line-height: 30px;
       @include box(60%, auto);
       text-align: center;
+			color: var(--primaryTextColor);
 
       @include respondAt(670px) {
         @include box(100%, auto);

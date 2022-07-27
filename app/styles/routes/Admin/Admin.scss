@@ -134,7 +134,6 @@
 				justify-content: space-evenly;
         scrollbar-width: none;
         overflow-x: auto;
-				box-shadow: 10px 10px 30px #d9d9d9, 10px 10px 30px #ffffff;
         z-index: 2;
         gap: 8px;
         top: 0;
@@ -161,7 +160,7 @@
         @include box(100%, 40px);
         @include make-flex();
         padding: 7px 8px;
-        color: var(--primaryTextColor);
+        color: var(--secondaryTextColor);
         border-radius: 5px;
 				font-weight: 700;
 				
