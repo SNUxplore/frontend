@@ -18,10 +18,9 @@ export const loader = async ({ request }) => {
 function Login() {
   return (
     <div className="LoginPage">
-      <header></header>
       <main className="LoginPage__content">
-        <Form action="/auth/google" method="POST">
-          {/* <div className="LoginPage__content--top">
+        {/* <Form action="/auth/google" method="POST">
+          <div className="LoginPage__content--top">
             <img src={FullLogo} alt="Xplore Logo" />
             <h3>Get your event a better reach!</h3>
           </div>
@@ -31,8 +30,11 @@ function Login() {
               <img src={Google} alt="Google Logo" />
               Sign in with Google
             </button>
-          </div> */}
-        </Form>
+          </div>
+        </Form> */}
+
+        <div className="loginPage__content__left">div1</div>
+        <div className="loginPage__content__right">div2</div>
       </main>
     </div>
   );
