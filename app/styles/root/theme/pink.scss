@@ -25,4 +25,8 @@
   --questions: #242836;
   --nameTitle: #ffffff;
   --teamText: #ffffff;
+  --svgfilter: brightness(0) saturate(100%) invert(41%) sepia(45%)
+    saturate(4918%) hue-rotate(319deg) brightness(99%) contrast(98%);
+  --headerSvgFilter: brightness(0) saturate(100%) invert(20%) sepia(11%)
+    saturate(1773%) hue-rotate(192deg) brightness(93%) contrast(86%);
 }

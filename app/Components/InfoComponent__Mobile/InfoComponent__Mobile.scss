@@ -2,11 +2,14 @@
 @import "../../styles/root/theme/light.scss";
 
 .MobileContainer {
-  margin-top: 50px;
+  margin: 50px 0;
   padding: 0 30px;
   width: 100%;
   @include respondAtAlt(780px) {
     display: none;
+  }
+  @include respondAt(335px) {
+    padding: 15px;
   }
   font-family: ("poppins");
 

@@ -6,7 +6,6 @@ import Footer from "~/Components/Footer/Footer";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
-// import map from "../Assets/Img/mapIcon.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -26,7 +25,7 @@ export default function Navigate() {
     // Dynamically change left container's height
     const changeHeight = () => {
       const height = document
-        .querySelector(".NavigatePage__content--right")
+        .querySelector(".NavigatePage__main--content")
         .getBoundingClientRect().height;
       document.querySelector(".NavigatePage__content--left").style.height =
         height + "px";
@@ -46,43 +45,17 @@ export default function Navigate() {
 
   return (
     <div className="NavigatePage">
-      <Header />
-      <main className="NavigatePage__main">
-        <section className="NavigatePage__main--hero">
-          <h1>
-            Navigate <span>Campus</span>
-          </h1>
-          <p>
-            We get it, navigating the university can be challenging! But have no
-            worries, We can connect you to resources that will unlock all that
-            Shiv Nadar University has to offer.
-          </p>
-
-          <div className="NavigatePage__main--searchContainer">
-            <SearchBar />
-          </div>
-        </section>
-        <section className="NavigatePage__main--content">
-          <div className="NavigatePage__content--left">
-            <div className="NavigatePage__content--panel">
-              {Object.keys(data).map((key, index) => (
-                <Link
-                  replace
-                  className={`${currentOption === key ? "activeTab" : ""}`}
-                  key={index}
-                  to={`/navigate/${key}`}
-                  onClick={() => setCurrentOption(key)}
-                >
-                  {key}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <Outlet context={data} />
-        </section>
-      </main>
-
-      <Footer />
+      <div className="NavigatePage__left">
+      <Outlet context={data} />
+      </div>
+      <div className="NavigatePage__right">
+      <iframe
+        frameBorder="0" styles="border:0"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAWWT0hia4MlZlReCvmoWB4PiOdxAy6elI &q=Shiv+nadar+university+delhi+noida"
+        allowfullscreen>
+      </iframe>
+      </div>
     </div>
   );
 }

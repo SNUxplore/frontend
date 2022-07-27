@@ -1,38 +1,58 @@
 @import "../../styles/root/mixins";
 
-.FaqRedirect {
+.Banner {
   background-color: var(--blue);
-  @include box($width: auto, $height: 38.75vh);
+  @include box($width: 100vw, $height: 38.75vh);
   @include make-flex($dir: row);
+  max-height: 336px;
 
   transition: padding, font-size 0.5s ease-in-out;
 
+  &__Container {
+    @include box();
+    max-width: 1585px;
+    @include make-flex($dir: row);
+    @include respondAt(885px) {
+      flex-direction: column;
+      padding: 40px 15px;
+      height: 415px;
+      gap: 30px;
+      width: 100vw;
+      justify-content: flex-start;
+    }
+    @include respondAt(335px) {
+      padding: 7px 0;
+      height: unset;
+    }
+  }
+
   @include respondAt(885px) {
-    flex-direction: column;
-    padding: 40px 0;
-    height: 415px;
-    gap: 30px;
-    width: 100vw;
+    max-height: unset;
+    height: unset;
   }
 
   @include respondAt(595px) {
-    padding: 35px;
+    padding: 0 35px;
     gap: 0;
+  }
+
+  @include respondAt(335px) {
+    padding: 15px;
   }
 
   @include respondAtLarge(2000px, 3000px) {
     height: 16vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   @include respondAtLarge(3000px, 4000px) {
     height: 14vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   @include respondAtLarge(4000px, 5000px) {
     height: 12vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   &__left {
@@ -41,7 +61,7 @@
       margin: 0;
     }
 
-    padding: 0 45px 0;
+    padding: 0 45px 0 0;
   }
 
   &__left,
@@ -72,6 +92,9 @@
       padding: 0;
       width: 100%;
     }
+    @include respondAt(335px) {
+      height: unset;
+    }
   }
 
   &__right {
@@ -98,7 +121,7 @@
       font-weight: 600;
       line-height: 72px;
       font-size: 65px;
-      width: 77%;
+      // width: 77%;
 
       @include respondAt(1060px) {
         width: 90%;
@@ -108,6 +131,13 @@
       }
       @include respondAt(525px) {
         font-size: 50px;
+      }
+      @include respondAt(335px) {
+        font-size: 15vw;
+      }
+      @include respondAt(315px) {
+        line-height: 50px;
+        font-size: 12vw;
       }
     }
     &--white {
@@ -128,7 +158,7 @@
       width: 100%;
     }
   }
-  &--button{
-    color: white;
+  &--button {
+    color: var(--white);
   }
 }

@@ -1,0 +1,73 @@
+@import "../root/mixins";
+
+.LoginPage {
+  @include box(100vw, 100vh);
+  header {
+    @include box(100%, 100px);
+    padding: 20px 38px;
+    position: fixed;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    // @include box(100%, calc(100% - 100px));
+    @include box();
+    padding: 20px;
+    @include make-flex();
+
+    form {
+      width: 350px;
+      height: 500px;
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid var(--copyrightText);
+      @include make-flex($just: flex-start);
+      gap: 20px;
+
+      h3 {
+        font-size: 24px;
+        color: var(--primaryTextColor);
+        text-align: center;
+      }
+
+      button {
+        // background-color: var(--blue);
+        border: 1px solid var(--blue);
+        border-radius: 4px;
+        font-size: 14px;
+        @include box(100%, 52px);
+        // border-style: none;
+        background-color: var(--transparent);
+        color: var(--blue);
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        @include make-flex($dir: row);
+        gap: 10px;
+        cursor: pointer;
+        padding: 15px;
+        img {
+          height: 100%;
+        }
+        &:hover {
+          background-color: var(--blue);
+          color: var(--white);
+        }
+      }
+    }
+
+    &--top {
+      @include make-flex($just: flex-end);
+      gap: 20px;
+    }
+    &--bottom {
+      @include box();
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+}

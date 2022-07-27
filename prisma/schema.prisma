@@ -1,0 +1,38 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity", "interactiveTransactions", "fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+  id         Int     @id @default(autoincrement())
+  name       String? @db.Text
+  emailId    String  @unique(map: "email_id") @db.VarChar(35)
+  websiteUrl String? @db.Text
+  instaUrl   String? @db.Text
+  Posts      Post[]
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime  @default(now()) @db.Timestamp(0)
+  updatedAt DateTime? @db.Timestamp(0)
+
+  // Descriptive info
+  date        String? @db.Text
+  location    String? @db.Text
+  title       String? @db.VarChar(200)
+  description String? @db.Text
+  instaUrl    String? @db.Text
+  imageUrl    String? @db.Text
+  // websiteEventLink String? @db.Text
+
+  userId Int
+  User   User @relation(fields: [userId], references: [id])
+}
