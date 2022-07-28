@@ -28,12 +28,22 @@ export const loader = async ({ request }) => {
 
 function Dashboard() {
   const data = useLoaderData();
-  console.log(data);
   const [eventsArray, setEventsArray] = React.useState([]);
+
+  React.useEffect(() => {
+    console.log(data);
+    const postsArray = [];
+    data.Posts.forEach((post) => {
+      postsArray.push(post);
+    });
+    setEventsArray(postsArray);
+  }, []);
+
+  console.log(eventsArray);
   return (
     <div className="dashboard__container">
       <h1 className="dashboard__container--header">
-        Welcome back, <span>Ecell Snioe</span>
+        Welcome back, <span>{data.name}</span>
       </h1>
       <div className="dashboard__container__metrics">
         <h3 className="dashboard__container__metrics--title">
@@ -71,7 +81,13 @@ function Dashboard() {
                 Have no events ? Add now to schedule
               </div>
             ) : (
-              <p>no</p>
+              eventsArray.map((event, index) => {
+                return (
+                  <div key={index}>
+                    <p></p>
+                  </div>
+                );
+              })
             )}
           </div>
         </div>
