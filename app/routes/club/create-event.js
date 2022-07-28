@@ -86,6 +86,26 @@ export default function CreateEvent() {
             name="date"
             onChange={(e) => updateFormData(e)}
           />
+          
+        </div>
+        <div className="ClubInfoPage__InfoForm--row">
+          <label htmlFor="time">Time</label>
+          <input
+            placeholder="Start time"
+            id="date"
+            name="date"
+            type="time"
+            onChange={(e) => updateFormData(e)}
+          />
+          <p>to</p>
+          <input
+            placeholder="End time"
+            id="date"
+            name="date"
+            type="time"
+            onChange={(e) => updateFormData(e)}
+          />
+          
         </div>
         <div
           className="ClubInfoPage__InfoForm--row"

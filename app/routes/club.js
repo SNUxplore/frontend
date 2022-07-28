@@ -41,6 +41,14 @@ export default function EditInfo() {
           >
             Create Event
           </Link>
+          <Link
+            className={
+              pathname === "dashboard" ? "ClubInfoPage__navBar--active" : ""
+            }
+            to="/club/dashboard"
+          >
+            Event History
+          </Link>
         </nav>
         <div className="ClubInfoPage__contentContainer">
           <Outlet />

@@ -21,12 +21,9 @@ export const loader = async ({ request }) => {
   });
   if (emailId === null || emailId === undefined)
     return json({ success: false, error: "Didn't give valid email ID" });
-
-  return await getEventsByClub(emailId)
-    .then((data) => data)
-    .catch((e) => {
-      console.error("Get events by a club error" + e);
-    });
+  const events = await getEventsByClub(emailId.emailId)
+   
+  return events;
 };
 
 function Dashboard() {
