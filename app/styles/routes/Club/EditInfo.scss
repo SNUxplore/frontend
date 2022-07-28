@@ -9,7 +9,8 @@
     @include make-flex($just: space-between, $dir: row);
     padding: 15px 25px;
     background-color: var(--clubInfoHeaderBG);
-    img {
+    img,
+    a {
       height: 100%;
     }
     button {

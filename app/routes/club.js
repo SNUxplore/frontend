@@ -20,7 +20,9 @@ export default function EditInfo() {
   return (
     <div className="ClubInfoPage">
       <header>
-        <img src={FullLogo} alt="Full Logo" />
+        <a href="/">
+          <img src={FullLogo} alt="Full Logo" />
+        </a>
         <button>Log Out</button>
       </header>
       <main className="ClubInfoPage__mainContainer">
