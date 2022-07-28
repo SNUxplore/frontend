@@ -2,7 +2,7 @@
 
 .dashboard {
   &__container {
-    margin-top: 70px;
+    padding-top: 70px;
     font-family: "poppins";
     max-width: 1080px;
     margin-left: auto;
@@ -21,7 +21,7 @@
     &__metrics {
       &--title {
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         font-size: 20px;
       }
 
@@ -29,10 +29,19 @@
         list-style: none;
         @include make-flex($dir: row, $align: center, $just: flex-start);
         gap: 50px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
 
         &--stat {
           @include make-flex($dir: row, $align: center);
+          gap: 15px;
+
+          img {
+            width: 28px;
+          }
+          p {
+            font-size: 16px;
+            font-weight: 500;
+          }
         }
       }
     }
@@ -40,23 +49,26 @@
     &__ETA {
       &--title {
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         font-size: 20px;
       }
 
       &--ETA {
         font-weight: 500;
-        font-size: 18px;
-        margin-bottom: 30px;
+        font-size: 23px;
+        margin-bottom: 35px;
       }
     }
 
     &__eventLog {
-      &--title {
-        font-weight: 600;
-        margin-bottom: 15px;
-        font-size: 20px;
-        margin-bottom: 15px;
+      &__header {
+        @include make-flex($dir: row, $just: space-between);
+        &--title {
+          font-weight: 600;
+          margin-bottom: 15px;
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
       }
 
       &__events {

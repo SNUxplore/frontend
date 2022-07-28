@@ -21,7 +21,7 @@ function Dashboard() {
         </h3>
         <ul className="dashboard__container__metrics__list">
           <li className="dashboard__container__metrics__list--stat">
-            <img src={membersIcon} alt="membersIcon" /> <p>x active members</p>
+            <img src={membersIcon} alt="membersIcon" /> <p>74 active members</p>
           </li>
           <li className="dashboard__container__metrics__list--stat">
             <img src={eventsIcon} alt="fireIcon" />{" "}
@@ -39,9 +39,12 @@ function Dashboard() {
           </p>
         </div>
         <div className="dashboard__container__eventLog">
-          <h3 className="dashboard__container__eventLog--title">
-            Scheduled List
-          </h3>
+          <div className="dashboard__container__eventLog__header">
+            <h3 className="dashboard__container__eventLog__header--title">
+              Scheduled List
+            </h3>
+            <button>Add Event </button>
+          </div>
           <div className="dashboard__container__eventLog__events">
             {eventsArray.length === 0 ? (
               <div className="dashboard__container__eventLog__events--warningMessage">
