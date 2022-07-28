@@ -35,7 +35,7 @@ function Dashboard() {
         </div>
         <div className="dashboard__container__eventLog">
           <h3 className="dashboard__container__eventLog--title">
-            Scheduled Events
+            Scheduled List
           </h3>
           <div className="dashboard__container__eventLog__events">
             {eventsArray.length === 0 ? (
