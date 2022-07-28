@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
 import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
@@ -8,8 +8,12 @@ import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
+import darkModeArrow from "../Assets/Img/darkModeArrow.svg";
 import blueArrow from "../Assets/Img/blueArrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
+import { useMediaQuery } from "react-responsive";
+import useScrollEffect from "~/Hooks/Observer";
+import Footer from "~/Components/Footer/Footer";
 
 const Sections = [
   {
@@ -23,22 +27,29 @@ const Sections = [
   },
 ];
 
-import { useMediaQuery } from "react-responsive";
-import useScrollEffect from "~/Hooks/Observer";
-import Footer from "~/Components/Footer/Footer";
-
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
 export default function LandingPage() {
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = (value) => {
-    setTheme(value);
-  };
+  useEffect(() => {
+    const getClubs = async () =>
+      console.log(await (await fetch("/get-clubs")).json());
+    const getEventsByClub = async () =>
+      console.log(
+        await (
+          await fetch("/get-events-by-club?emailId=pa749@snu.edu.in")
+        ).json()
+      );
+
+    getClubs();
+    getEventsByClub();
+  }, []);
+
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
+
 
   const references = React.useRef([]);
   references.current = [];
@@ -61,10 +72,12 @@ export default function LandingPage() {
               <img className="heroSection__arrow" src={arrow} alt="Arrow" />
               <div className="heroSection__title">
                 <h1>
-                  Your <b>guide</b>,
+                  Your <b className="heroSection__title--unhighlight">guide</b>,
                 </h1>
                 <h1>
-                  To all <b>things SNU</b>
+                  To all{" "}
+                  <b className="heroSection__title--unhighlight">things</b>{" "}
+                  <b className="heroSection__title--highlight">SNU</b>
                 </h1>
               </div>
               <div className="heroSection__desc">
@@ -77,7 +90,6 @@ export default function LandingPage() {
               {!callToAction && (
                 <div className="heroSection__callToAction">
                   <ButtonLink
-                    href="/#learn-more"
                     content="Learn More"
                     onClick={() => {
                       window.scrollTo({
@@ -103,6 +115,7 @@ export default function LandingPage() {
                 <div className="heroSection__instagramDiv--instaHandle">
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     href="https://www.instagram.com/snu.xplore/"
                   >
                     <img

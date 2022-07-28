@@ -1,14 +1,23 @@
 import { authenticator } from "../services/auth.server";
 import { Form, useLoaderData } from "@remix-run/react";
+import { editInfo, getSessionUserByEmail } from "../services/user.server";
 
 export const loader = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request, {
+  const email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
+  const user = await getSessionUserByEmail(email);
   return {
     user: user,
-    path: new URL(request.url).pathname.replace("/club/", ""),
   };
+};
+
+export const action = async ({ request }) => {
+  const formData = Object.fromEntries(await request.formData());
+  await editInfo(formData)
+    .then((res) => res)
+    .catch((e) => console.error("Edit info DB error" + e));
+  return null;
 };
 
 export default function EditInfo() {
@@ -26,7 +35,7 @@ export default function EditInfo() {
     <Form
       className="ClubInfoPage__InfoForm"
       action="/club/edit-info"
-      method="post"
+      method="POST"
     >
       <h3 className="ClubInfoPage__InfoForm--row">Club Information</h3>
       <span className="ClubInfoPage__InfoForm--row">

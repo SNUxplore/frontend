@@ -1,7 +1,7 @@
 import { db } from "./db.server";
 
 export const getSessionUserByEmail = async (emailId) =>
-  db.user.findUnique({ where: { emailId } });
+db.user.findUnique({ where: { emailId: emailId["emailId"] } });
 
 export const createEvent = async ({
   instaUrl,

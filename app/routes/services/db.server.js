@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 db.$connect().catch((err) => {
-  console.log(err);
+  console.error(err);
   // process.exit(1);
 });
 

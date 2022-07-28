@@ -1,0 +1,230 @@
+{
+  "Academics": [
+    {
+      "Block": "A",
+      "School": "School of Natural Sciences",
+      "Dean": "Dr Sanjeev Galande",
+      "DeansEmail": "sanjeev.galande@snu.edu.in",
+      "Departments": [
+        {
+          "Department": "Life Sciences",
+          "Hod": "Dr Sanjeev Galande",
+          "HodsEmail": "sanjeev.galande@snu.edu.in"
+        },
+
+        {
+          "Department": "Chemistry",
+          "Hod": "Dr Parthapratim Munshi",
+          "HodsEmail": "parthapratim.munshi@snu.edu.in"
+        },
+        {
+          "Department": "Physics",
+          "Hod": "Dr Sankar Dhar",
+          "HodsEmail": "sankar.dhar@snu.edu.in"
+        },
+        {
+          "Department": "Mathematics",
+          "Hod": "Dr Amber Habib",
+          "HodsEmail": "amber.habib@snu.edu.in"
+        }
+      ]
+    },
+    {
+      "Block": "B",
+      "School": "School of Management & Entrepreneurship",
+      "Dean": "Dr Bibek Bannerjee",
+      "DeansEmail": "bibek.banerjee@snu.edu.in",
+      "Departments": [
+        {
+          "Department": "Bachelor of Management Studies",
+          "Hod": "Dr Shalu Kalra",
+          "HodsEmail": "shalu.kalra@snu.edu.in"
+        }
+      ]
+    },
+
+    {
+      "Block": "C",
+      "School": "School of Engineering",
+      "Dean": "Dr Sandeep Sen",
+      "DeansEmail": "ssen@snu.edu.in",
+      "Departments": [
+        {
+          "Department": "Chemical Engineering",
+          "Hod": "JP Gupta",
+          "HodsEmail": "jpg@snu.edu.in"
+        },
+        {
+          "Department": "Civil Engineering",
+          "Hod": "Ghanshyam Pal",
+          "HodsEmail": "ghanshyam.pal@snu.edu.in"
+        },
+        {
+          "Department": "Computer Science and Engineering",
+          "Hod": "Saroj Kaushik",
+          "HodsEmail": "saroj.kaushik@snu.edu.in"
+        },
+        {
+          "Department": "Electrical Engineering",
+          "Hod": "Dr Dinkar Prasad",
+          "HodsEmail": "dp362@snu.edu.in"
+        },
+        {
+          "Department": "Mechnaical Engineering",
+          "Hod": "Dr Harpreet Singh",
+          "HodsEmail": "harpreet.arora@snu.edu.in"
+        }
+      ]
+    },
+    {
+      "Block": "D",
+      "School": "School of Humanities & Social Sciences",
+      "Dean": "Dr Rajat Kathuria",
+      "DeansEmail": "rajat.kathuria@snu.edu.in",
+      "Departments": [
+        {
+          "Department": "Art & Performing Arts",
+          "Hod": "Atul Bhalla",
+          "HodsEmail": "atul.bhalla@snu.edu.in"
+        },
+        {
+          "Department": "Design",
+          "Hod": "Amit Ray",
+          "HodsEmail": "amit.ray@snu.edu.in"
+        },
+        {
+          "Department": "Economics",
+          "Hod": "Dr Partha Chatterjee",
+          "HodsEmail": "partha.chatterjee@snu.edu.in"
+        },
+        {
+          "Department": "English",
+          "Hod": "Sambudha Sen",
+          "HodsEmail": "sambudha.sen@snu.edu.in"
+        },
+        {
+          "Department": "History & Archeology",
+          "Hod": "Dr Anubhuti Maurya",
+          "HodsEmail": "anubhauti.maurya@snu.edu.in"
+        },
+        {
+          "Department": "IR & Governance Studies",
+          "Hod": "Dr Shibashis Chatterjee",
+          "HodsEmail": "shibashis.chatterji@snu.edu.in"
+        },
+        {
+          "Department": "Sociology",
+          "Hod": "Dr Yasmeen Arif",
+          "HodsEmail": "yasmeen.arif@snu.edu.in"
+        }
+      ]
+    }
+  ],
+  "Admin Info": [
+    {
+      "Administration": [
+        {
+          "Function": "Admin Helpdesk",
+          "SPOC": "Admin Helpdesk",
+          "Office": "D032",
+          "Email": "adminhelpdesk@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 104"
+        },
+        {
+          "Function": "Security",
+          "SPOC": "Anil Kumar Yadav",
+          "Office": "D036",
+          "Email": "anil.kumar@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 197"
+        },
+        {
+          "Function": "Transport & ID card related",
+          "SPOC": "Gaurav Paliwal",
+          "Office": "D032",
+          "Email": "gp887@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 872"
+        },
+        {
+          "Function": "Event management",
+          "SPOC": "Admin Helpdesk",
+          "Office": "D032",
+          "Email": "adminhelpdesk@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 104"
+        }
+      ]
+    },
+
+    {
+      "DSA": [
+        {
+          "Function": "Hostels",
+          "SPOC": "Respective wardens",
+          "Office": "",
+          "Email": "",
+          "Ext": ""
+        },
+        {
+          "Function": "Sports",
+          "SPOC": "Kanduri Veda Samhitha",
+          "Office": "Indoor Sports Centre",
+          "Email": "kanduri.samhitha@snu.edu.in",
+          "Ext": ""
+        },
+        {
+          "Function": "Clubs & Societies",
+          "SPOC": "Dr Sandeep Kumar Gupta",
+          "Office": "B122",
+          "Email": "sandeep.gupta@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 413"
+        },
+        {
+          "Function": "Mentoring/Mental Health",
+          "SPOC": "Dr Jitendra Prajapati",
+          "Office": "C216",
+          "Email": "jitentra.prajapati@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 663"
+        },
+        {
+          "Function": "OCJ",
+          "SPOC": "Sudhir Kumar",
+          "Office": "D010",
+          "Email": "sudhir.kumar@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 837"
+        }
+      ]
+    },
+    {
+      "CDC": [
+        {
+          "Function": "Placements/Trainings/Internships",
+          "SPOC": "Kamal Arora",
+          "Office": "E334",
+          "Email": "kamal.arora@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 761"
+        }
+      ]
+    },
+    {
+      "IT": [
+        {
+          "Function": "IT Helpdesk",
+          "SPOC": "IT Helpdesk",
+          "Office": "E Block, 2nd floor, IT bay",
+          "Email": "ithelpdesk@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 105"
+        }
+      ]
+    },
+    {
+      "Library": [
+        {
+          "Function": "Newspaper/magazine subscription",
+          "SPOC": "Library Helpdesk",
+          "Office": "E Block",
+          "Email": "libraryhelpdesk@snu.edu.in",
+          "Ext": "91-120-7170100 Extn. 889"
+        }
+      ]
+    }
+  ]
+}

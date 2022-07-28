@@ -18,10 +18,13 @@
     @include make-flex($dir: row, $align: flex-start);
     gap: 40px;
     &__indicator--container {
+      height: 225px;
+      padding: 20px 0;
+      @include make-flex($just: space-between);
       &__indicator {
         @include make-flex($dir: row);
-        margin-top: 15px;
-        margin-bottom: 70px;
+        // margin-top: 15px;
+        // margin-bottom: 70px;
         width: 11px;
         height: 11px;
         border-radius: 50%;
@@ -41,12 +44,13 @@
         margin-bottom: 12px;
         font-family: "Poppins", sans-serif;
         font-weight: 600;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-size: 50px;
         transition: all 0.3s ease-in-out;
 
         span {
           background: var(--titleHighlight);
+          color: var(--highlightTextColor);
           padding-left: 0.25rem;
           padding-right: 0.25rem;
           font-weight: 700;
@@ -57,7 +61,7 @@
         max-width: 500px;
         font-size: 18px;
         line-height: 167.5%;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-weight: 400;
         margin-bottom: 12px;
       }
@@ -70,6 +74,7 @@
     &__image {
       width: 100%;
       transition: all 0.3s ease-in-out;
+      filter: var(--svgfilter);
     }
   }
 }

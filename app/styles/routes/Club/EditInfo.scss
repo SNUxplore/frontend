@@ -9,7 +9,8 @@
     @include make-flex($just: space-between, $dir: row);
     padding: 15px 25px;
     background-color: var(--clubInfoHeaderBG);
-    img {
+    img,
+    a {
       height: 100%;
     }
     button {
@@ -29,6 +30,10 @@
   &__mainContainer {
     @include box(100%, calc(100% - 70px));
     @include make-flex($dir: row, $align: flex-start);
+
+    @include respondAt(805px) {
+      flex-direction: column;
+    }
   }
 
   &__navBar {
@@ -53,10 +58,23 @@
         background-color: var(--blue);
         color: var(--white);
       }
+
+      @include respondAt(805px) {
+        height: 100%;
+        min-width: 191px;
+      }
     }
     &--active {
       background-color: var(--blue);
       color: var(--white) !important;
+    }
+
+    @include respondAt(805px) {
+      height: 75px;
+      width: 100vw;
+      flex-direction: row;
+      padding: 8px 8px;
+      overflow-x: auto;
     }
   }
   &__contentContainer {
@@ -66,6 +84,14 @@
     padding: 32px 32px 0;
     gap: 20px;
     overflow-y: auto;
+
+    @include respondAt(800px) {
+      width: 100%;
+    }
+
+    @include respondAt(370px) {
+      padding: 10px;
+    }
   }
   &__InfoForm {
     width: 100%;
@@ -84,6 +110,11 @@
       padding: 10px 24px;
       border-bottom: 1px solid var(--infoFormBorder);
 
+      @include respondAt(505px) {
+        flex-direction: column;
+        height: unset;
+        padding: 20px;
+      }
       input {
         height: 100%;
         border: none;
@@ -91,6 +122,11 @@
         border-radius: 5px;
         outline-width: 1px;
         outline-color: var(--infoFormInputOutline);
+        @include respondAt(505px) {
+          width: 100%;
+          height: 50px;
+          border: 1px solid #e4e4e4;
+        }
       }
       textarea {
         height: 100%;
@@ -100,6 +136,15 @@
         outline-color: var(--infoFormInputOutline);
         outline-width: 1px;
         min-width: 272px;
+        min-height: 50px;
+
+        @include respondAt(505px) {
+          width: 100%;
+          height: 150px;
+          border: 1px solid #e4e4e4;
+          min-width: 100%;
+          max-width: 100%;
+        }
       }
       label {
         width: 100%;
@@ -107,6 +152,10 @@
         font-weight: 500;
         color: var(--infoFormSpam);
         text-align: left;
+
+        @include respondAt(505px) {
+          height: 45px;
+        }
       }
 
       button {
@@ -123,6 +172,10 @@
         &:hover {
           background-color: var(--blue);
           color: var(--white);
+        }
+
+        @include respondAt(505px) {
+          height: 45px;
         }
       }
     }
@@ -142,6 +195,10 @@
 
     &--cardHolder {
       width: 365px;
+    }
+
+    @include respondAt(430px) {
+      display: none;
     }
   }
 }

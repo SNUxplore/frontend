@@ -1,7 +1,6 @@
 import { Authenticator } from "remix-auth";
 import { GoogleStrategy } from "remix-auth-google";
 import { sessionStorage } from "./session.server";
-import { getSessionUserByEmail } from "./user.server";
 
 export let authenticator = new Authenticator(sessionStorage);
 
@@ -18,12 +17,7 @@ let googleStrategy = new GoogleStrategy(
   },
   async ({ profile }) => {
     const email = profile.emails[0].value;
-    const data = await getSessionUserByEmail(email)
-      .then((data) => data)
-      .catch((e) => {
-        throw new Error("Google Oauth Error");
-      });
-    return data;
+    return email;
   }
 );
 authenticator.use(googleStrategy);

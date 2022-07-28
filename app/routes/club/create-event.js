@@ -3,12 +3,13 @@ import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
 import EventCard from "~/Components/EventCard/EventCard";
 import { authenticator } from "../services/auth.server";
-import { createEvent } from "../services/user.server";
+import { createEvent, getSessionUserByEmail } from "../services/user.server";
 
 export const loader = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request, {
+  const email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
+  const user = await getSessionUserByEmail(email);
   return json(user);
 };
 
@@ -20,7 +21,7 @@ export const action = async ({ request }) => {
   const data = createEvent(formData)
     .then((res) => res)
     .catch((e) => {
-      throw new Error("Create event error" + e.toString());
+      console.error("Create-event error" + e);
     });
   return data;
 };
@@ -33,6 +34,7 @@ export default function CreateEvent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  // eslint-disable-next-line no-unused-vars
   function isFormChanged() {
     return JSON.stringify(formData) === JSON.stringify(data.user);
   }
@@ -50,18 +52,18 @@ export default function CreateEvent() {
 
         {/* Cap title to max 200 character, i.e. make this a controlled component */}
         <div className="ClubInfoPage__InfoForm--row">
-          <label htmlFor="title">title</label>
+          <label htmlFor="title">Name of the Event</label>
           <input
-            placeholder="title"
+            placeholder="eg: E-Summit"
             id="title"
             name="title"
             onChange={(e) => updateFormData(e)}
           />
         </div>
         <div className="ClubInfoPage__InfoForm--row">
-          <label htmlFor="location">location</label>
+          <label htmlFor="location">Venue</label>
           <input
-            placeholder="location"
+            placeholder="eg: B315"
             id="location"
             name="location"
             onChange={(e) => updateFormData(e)}
@@ -79,19 +81,39 @@ export default function CreateEvent() {
         <div className="ClubInfoPage__InfoForm--row">
           <label htmlFor="date">Date</label>
           <input
-            placeholder="date"
+            placeholder="eg: 30/07/22"
             id="date"
             name="date"
             onChange={(e) => updateFormData(e)}
           />
+          
+        </div>
+        <div className="ClubInfoPage__InfoForm--row">
+          <label htmlFor="time">Time</label>
+          <input
+            placeholder="Start time"
+            id="startTime"
+            name="startTime"
+            type="time"
+            onChange={(e) => updateFormData(e)}
+          />
+          <p>to</p>
+          <input
+            placeholder="End time"
+            id="endTime"
+            name="endTime"
+            type="time"
+            onChange={(e) => updateFormData(e)}
+          />
+          
         </div>
         <div
           className="ClubInfoPage__InfoForm--row"
           style={{ minHeight: "61px", height: "auto" }}
         >
-          <label htmlFor="instaUrl">Description</label>
+          <label htmlFor="instaUrl">Instagram</label>
           <input
-            placeholder="Instagram Post URL"
+            placeholder="Instagram Handle URL"
             id="instaUrl"
             name="instaUrl"
             onChange={(e) => updateFormData(e)}
@@ -103,7 +125,7 @@ export default function CreateEvent() {
         >
           <label htmlFor="description">Description</label>
           <textarea
-            placeholder="description"
+            placeholder="Description for your event"
             id="description"
             name="description"
             onChange={(e) => updateFormData(e)}

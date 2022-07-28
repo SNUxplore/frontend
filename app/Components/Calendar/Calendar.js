@@ -87,7 +87,7 @@ function Calendar({ events = [], setSelectedDate }) {
       }
     });
 
-    return { classToggle, eventName };
+    return { classToggle, eventName, eventTimings };
   };
 
   return (
@@ -110,14 +110,6 @@ function Calendar({ events = [], setSelectedDate }) {
             &rarr;
           </button>
         </div>
-        <button
-          onClick={() => {
-            setToggleState((prevState) => !prevState);
-          }}
-          className="calendar-container__header__addEventCTA"
-        >
-          &#x2B;
-        </button>
       </div>
       <div className="calendar-container__daynames">
         {weekDays.map((day, index) => {
@@ -146,7 +138,7 @@ function Calendar({ events = [], setSelectedDate }) {
         return (
           <div key={index} className="calendar-container__week-container">
             {week.map((day, index) => {
-              const { classToggle, eventName } = eventCheck(
+              const { classToggle, eventName, eventTimings } = eventCheck(
                 day.format("DD/MM/YY").toString()
               );
               return (
@@ -159,7 +151,7 @@ function Calendar({ events = [], setSelectedDate }) {
                   className={
                     day.isBefore(monthFirstDay, "day") ||
                     day.isAfter(monthLastDay, "day")
-                      ? "calendar-container__day-container-fadded"
+                      ? "calendar-container__day-container-faded"
                       : "calendar-container__day-container"
                   }
                 >
@@ -167,11 +159,16 @@ function Calendar({ events = [], setSelectedDate }) {
                   day.isAfter(monthLastDay, "day") ? (
                     <p></p>
                   ) : (
-                    <p className={classToggle}>
-                      {eventName.length > 1
-                        ? `+ ${eventName.length} events`
-                        : eventName[0]}
-                    </p>
+                    <div className={classToggle}>
+                      <p className="calendar-container__eventShow--eventName">
+                        {eventName.length > 1
+                          ? `Events (${eventName.length} +)`
+                          : eventName[0]}
+                      </p>
+                      <p className="calendar-container__eventShow--eventTime">
+                        {eventName.length > 1 ? "Click to view " : eventTimings}
+                      </p>
+                    </div>
                   )}
                   <span>{day.format("D").toString()}</span>
                 </div>
