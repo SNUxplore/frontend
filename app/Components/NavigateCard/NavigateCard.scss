@@ -1,38 +1,62 @@
 @import "../../styles/root/mixins";
 
 .NavCardContainer {
+  margin-bottom: 5%;
   font-family: "Poppins", sans-serif;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--navigateCardColor);
   border-radius: 0.6rem;
   padding: 1.4rem;
   display: flex;
   align-items: center;
+
   gap: 1.4rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transition: background-color 1000ms linear;
 
-  @include respondAt(1135px) {
-    width: 365px;
+  &--highlighted {
+    background-color: var(--placecardHighlighted);
   }
 
-  @include respondAt(470px) {
-    width: 100%;
+  @include respondAt(1135px) {
+    width: 338px;
+  }
+
+  @include respondAt(1080px) {
+    width: 324px;
+  }
+
+  @include respondAt(990px) {
+    width: 300px;
+  }
+
+  @include respondAt(900px) {
+    width: 280px;
+  }
+
+  @include respondAt(845px) {
+    width: 240px;
+  }
+
+  @include respondAt(750px) {
+    width: 210px;
   }
 
   &__picture {
-    img{
-      border-radius: 0.6rem;
+    img {
+      @include box();
+      max-width: 573px;
+      max-height: 95px;
+      border-radius: 0.6em;
     }
   }
 
   &__content {
+    @include make-flex($just: flex-start, $align: flex-start);
+    flex-grow: 2;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-
-    h2 {
-      color: rgb(15, 15, 15);
+    &__name {
+      color: var(--navigateCardTitle);
+      font-size: 1.2em;
       margin-bottom: 1vh;
     }
 
@@ -40,53 +64,77 @@
       max-width: 35ch;
       font-size: 13px;
       font-weight: 400;
-      color: #797979;
+      color: var(--navigateCardDesc);
       line-height: 1.2;
       letter-spacing: 0.8px;
       margin-bottom: 2vh;
     }
 
     &__ctas {
-      display: flex;
+      @include make-flex($dir: row, $align: flex-start, $just: flex-start);
       gap: 1rem;
       font-weight: 500;
-      
+
       .location-button {
         padding: 0.6rem 1.5rem;
         border-radius: 0.4rem;
-        border: 1.4px #363b5300 solid ;
-        background-color: #363B53;
-        color: white;
+        border: 1.4px #363b5300 solid;
+        background-color: var(--navigateCardButton);
+        color: var(--navigateCardColor);
       }
 
       .location-button:hover {
-        background-color: white;
-        color: #363B53;
-        border: 1.4px #363B53 solid ;
+        background-color: var(--navigateCardColor);
+        color: var(--navigateCardButton);
+        border: 1.4px var(--navigateCardButton) solid;
         transition: 0.3s;
         cursor: pointer;
       }
 
-
-
       .menu-button {
         border-radius: 0.4rem;
-        padding: 0.3rem 1rem;
-        border: 1px #363B53 solid;
+        padding: 0.6rem 1.5rem;
+        border: 1px var(--navigateCardButton) solid;
         background-color: transparent;
+        color: var(--navigateCardButton);
+      }
+
+      .location-button,
+      .menu-button {
+        @include respondAt(1135px) {
+          padding: 0.4rem 1.1rem;
+          font-size: small;
+        }
+
+        @include respondAt(1080px) {
+          padding: 0.2rem 1rem;
+        }
+
+        @include respondAt(990px) {
+          padding: 0.2rem 0.8rem;
+        }
+
+        @include respondAt(900px) {
+          padding: 0.2rem 0.5rem;
+        }
+
+        @include respondAt(845px) {
+          padding: 0.2rem 0.4rem;
+        }
       }
 
       .menu-button:hover {
         cursor: pointer;
+        background-color: var(--navigateCardButton);
+        color: var(--navigateCardColor);
+        transition: 0.3s;
       }
-
     }
-    
   }
   &__contact {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-right: 1vw;
+    justify-self: flex-end;
+    @include make-flex($dir: column);
+    gap: 12px;
+    filter: var(--navigateCardFilter);
   }
 }
