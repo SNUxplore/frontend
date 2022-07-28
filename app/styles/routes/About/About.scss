@@ -1,7 +1,5 @@
 @import "../../root/mixins";
-html {
-  height: unset !important;
-}
+
 .AboutUsPage {
   @include make-flex($just: flex-start);
   min-height: 100vh;
@@ -45,12 +43,24 @@ html {
         background-color: var(--lightBlue);
         padding: 0 15px;
       }
+
+      @include respondAt(730px) {
+        font-size: 60px;
+      }
+      @include respondAt(565px) {
+        font-size: 10vw;
+        text-align: center;
+      }
     }
     &--desc {
       width: 60%;
       @include make-flex();
       text-align: center;
       color: var(--primaryTextColor);
+
+      @include respondAt(430px) {
+        width: 100%;
+      }
     }
   }
 
