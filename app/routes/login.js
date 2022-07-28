@@ -1,9 +1,7 @@
 import { Form } from "@remix-run/react";
 import { authenticator } from "./services/auth.server";
 import styleSheet from "~/styles/routes/Login.css";
-import FullLogo from "../Assets/Img/FullLogo.svg";
 import Google from "../Assets/Img/Google.png";
-import LoginPageImg from "../Assets/Img/LoginPageImg.png";
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
@@ -18,22 +16,35 @@ export const loader = async ({ request }) => {
 function Login() {
   return (
     <div className="LoginPage">
-      <header></header>
-      <main className="LoginPage__content">
-        <Form action="/auth/google" method="POST">
-          <div className="LoginPage__content--top">
-            <img src={FullLogo} alt="Xplore Logo" />
-            <h3>Get your event a better reach!</h3>
-          </div>
-          <div className="LoginPage__content--bottom">
-            <img src={LoginPageImg} alt="Login Page" />
-            <button type="submit">
-              <img src={Google} alt="Google Logo" />
-              Sign in with Google
+      <div className="LoginPage__content">
+        <div className="LoginPage__content__left">
+          <h1 className="LoginPage__content__left--title">
+            Welcome to, <span>SNUxplore</span>
+          </h1>
+          <p className="LoginPage__content__left--para">
+            One of the core features of snuXplore is to allow all clubs to
+            schedule their event when they want it. Need to change an event
+            timing and date last minute ? dont worry we got you covered
+          </p>
+        </div>
+        <div className="LoginPage__content__right">
+          <Form action="/auth/google" method="POST">
+            <h1 className="LoginPage__content__right--title">Club Login</h1>
+            <p className="LoginPage__content__right--para">
+              Before we begin sign in to the dashboard using the clubs google
+              account below
+            </p>
+            <button type="submit" className="LoginPage__content__right--btn">
+              <img
+                className="LoginPage__content__right--btnIcon"
+                src={Google}
+                alt="Google Logo"
+              />
+              Sign in with google
             </button>
-          </div>
-        </Form>
-      </main>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 }

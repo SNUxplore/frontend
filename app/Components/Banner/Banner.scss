@@ -14,10 +14,15 @@
     @include make-flex($dir: row);
     @include respondAt(885px) {
       flex-direction: column;
-      padding: 40px 0;
+      padding: 40px 15px;
       height: 415px;
       gap: 30px;
       width: 100vw;
+      justify-content: flex-start;
+    }
+    @include respondAt(335px) {
+      padding: 7px 0;
+      height: unset;
     }
   }
 
@@ -29,6 +34,10 @@
   @include respondAt(595px) {
     padding: 0 35px;
     gap: 0;
+  }
+
+  @include respondAt(335px) {
+    padding: 15px;
   }
 
   @include respondAtLarge(2000px, 3000px) {
@@ -52,7 +61,7 @@
       margin: 0;
     }
 
-    padding: 0 45px 0;
+    padding: 0 45px 0 0;
   }
 
   &__left,
@@ -82,6 +91,9 @@
     @include respondAt(595px) {
       padding: 0;
       width: 100%;
+    }
+    @include respondAt(335px) {
+      height: unset;
     }
   }
 
@@ -119,6 +131,13 @@
       }
       @include respondAt(525px) {
         font-size: 50px;
+      }
+      @include respondAt(335px) {
+        font-size: 15vw;
+      }
+      @include respondAt(315px) {
+        line-height: 50px;
+        font-size: 12vw;
       }
     }
     &--white {

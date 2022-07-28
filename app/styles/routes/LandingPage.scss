@@ -34,10 +34,7 @@
     // @include box($height: calc(100vh - 200px));
     @include make-flex($just: flex-start);
     // max-height: 720px;
-    @include respondAtAlt(780px) {
-      padding-bottom: 40px;
-      margin-bottom: 350px;
-    }
+
     gap: 65px;
 
     &__top {
@@ -73,6 +70,10 @@
         @include respondAt(470px) {
           padding: 0 30px;
         }
+
+        @include respondAt(335px) {
+          padding: 15px;
+        }
       }
 
       &--left {
@@ -92,13 +93,23 @@
     }
 
     &__title {
+      &--highlight{
+        padding: 0 5px 0 5px;
+        color: var(--highlightTextColor);
+        background-color: var(--titleHighlight);
+      }
+      &--unhighlight {
+        color: var( --unhighlightTextColor);
+      }
       h1 {
+        margin: 30px 0 0px 0;
+        
         @include box(100%, auto);
         font-family: "Poppins", sans-serif;
         font-size: 67px;
         font-weight: 500;
         line-height: 82px;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         transition: font-size 0.5s ease-in-out;
 
         @include respondAt(1400px) {
@@ -160,6 +171,7 @@
       transform: translateX(50%);
       // color: var(--blue);
       fill: var(--blue);
+      filter: var(--svgfilter);
 
       @include respondAt(1095px) {
         display: none;
@@ -174,7 +186,6 @@
       p {
         font-weight: 600;
         font-family: "Space Grotesk", sans-serif;
-        white-space: nowrap;
       }
       span {
         color: var(--primaryTextColor);
@@ -192,6 +203,7 @@
       @include make-flex($just: flex-start, $align: flex-start);
       @include box(80%, 15px);
       margin-bottom: 20px;
+      color: var(--textColor);
       @include respondAt(1095px) {
         @include box(100%, 15px);
       }
@@ -258,7 +270,7 @@
       }
 
       &--stat {
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-size: 50px;
 
         @include respondAt(935px) {
@@ -273,6 +285,14 @@
 
     @include respondAt(1095px) {
       gap: 80px;
+      width: 100%;
+    }
+    @include respondAtAlt(780px) {
+      padding-bottom: 40px;
+      margin-bottom: 350px;
+    }
+    @include respondAt(335px) {
+      gap: 115px;
     }
   }
 

@@ -3,8 +3,19 @@ import ButtonLink from "../ButtonLink/ButtonLink";
 import Feature1 from "../../Assets/Img/Feature-1.svg";
 import Feature2 from "../../Assets/Img/Feature-2.svg";
 import Feature3 from "../../Assets/Img/Feature-3.svg";
+import Feature1Blue from "../../Assets/Img/navigateCampus_Blue.svg";
+import Feature1Pink from "../../Assets/Img/navigateCampus_Pink.svg";
+import Feature2Blue from "../../Assets/Img/happeningSnu_Blue.svg";
+import Feature2Pink from "../../Assets/Img/happeningSnu_Pink.svg";
+import Feature3Blue from "../../Assets/Img/adminContact_Blue.svg";
+import Feature3Pink from "../../Assets/Img/adminContact_pink.svg";
 
 function InfoComponent({ indicatorState = 1 }) {
+  const [theme, setTheme] = React.useState("");
+  React.useEffect(() => {
+    setTheme(localStorage.getItem("theme"));
+  });
+
   return (
     <div className="InfoComponent__Container">
       <div className="InfoComponent__content--container">
@@ -37,7 +48,7 @@ function InfoComponent({ indicatorState = 1 }) {
               ? "Navigate"
               : indicatorState === 2
               ? "Happenings"
-              : "Admin &"}{" "}
+              : "Admin &"}
             <span>
               {indicatorState === 1
                 ? "Campus"
@@ -48,13 +59,18 @@ function InfoComponent({ indicatorState = 1 }) {
           </h1>
           <p className="InfoComponent__content--container__content__para">
             {indicatorState === 1
-            ? "Find detailed information on all buildings and locations on campus. Locate the Dargaah, call your warden. All of it is here, just for you."
-            : indicatorState === 2
-            ? "No more stalking club insta handles for event info. Recent, ongoing and upcoming events. Stalls, competitions and fests. All posted right here."
-            : "The information bridge between the admin and student bodies. Deans, HoD's and PoC's contact details all in one place. No more confusion on who to contact for what."}
+              ? "Find detailed information on all buildings and locations on campus. Locate the Dargaah, call your warden. All of it is here, just for you."
+              : indicatorState === 2
+              ? "No more stalking club insta handles for event info. Recent, ongoing and upcoming events. Stalls, competitions and fests. All posted right here."
+              : "The information bridge between the admin and student bodies. Deans, HoD's and PoC's contact details all in one place. No more confusion on who to contact for what."}
           </p>
           <ButtonLink
             fill={false}
+            href={`
+            ${indicatorState === 1 ? "/navigate" : ""} 
+            ${indicatorState === 2 ? "/events" : ""}
+            ${indicatorState === 3 ? "/admin" : ""}
+            `}
             content={
               indicatorState === 1
                 ? "Explore now"

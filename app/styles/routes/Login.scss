@@ -1,72 +1,125 @@
 @import "../root/mixins";
 
 .LoginPage {
-  @include box(100vw, 100vh);
-  header {
-    @include box(100%, 100px);
-    padding: 20px 38px;
-    position: fixed;
-
-    img {
-      height: 100%;
-    }
-  }
-
+  font-family: "poppins";
+  position: relative;
   &__content {
-    // @include box(100%, calc(100% - 100px));
-    @include box();
-    padding: 20px;
-    @include make-flex();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    max-width: 950px;
+    @include make-flex($just: space-between, $align: center, $dir: row);
 
-    form {
-      width: 350px;
-      height: 500px;
-      background-color: var(--white);
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid var(--copyrightText);
-      @include make-flex($just: flex-start);
-      gap: 20px;
+    @include respondAt(800px) {
+      @include make-flex($dir: column);
+    }
+    &__left {
+      //background dots need to be added
+      padding-left: 6rem;
+      padding-top: 6rem;
+      // background: url(../../Assets/Img/dottedBg.jpg);
+      // background-size: auto;
+      height: 465px;
+      width: 490px;
+      background: red;
+      border-radius: 30px 0px 0px 30px;
+      background: #13111f;
 
-      h3 {
-        font-size: 24px;
-        color: var(--primaryTextColor);
-        text-align: center;
+      @include respondAt(800px) {
+        border-radius: 30px 30px 0px 0px;
+        padding-left: 5rem;
+        padding-top: 5rem;
+        height: 420px;
+        width: 450px;
       }
 
-      button {
-        // background-color: var(--blue);
-        border: 1px solid var(--blue);
-        border-radius: 4px;
-        font-size: 14px;
-        @include box(100%, 52px);
-        // border-style: none;
-        background-color: var(--transparent);
-        color: var(--blue);
-        font-family: Poppins, sans-serif;
+      &--title {
+        color: white;
         font-weight: 600;
-        @include make-flex($dir: row);
-        gap: 10px;
-        cursor: pointer;
-        padding: 15px;
-        img {
-          height: 100%;
+        font-size: 45px;
+        line-height: 129.7%;
+
+        @include respondAt(800px) {
+          font-size: 35px;
         }
-        &:hover {
-          background-color: var(--blue);
-          color: var(--white);
+
+        span {
+          color: #308cf8;
+        }
+      }
+
+      &--para {
+        line-height: 195.5%;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.945);
+        font-weight: 300;
+        width: 300px;
+        margin-top: 15px;
+
+        @include respondAt(800px) {
+          font-size: 2px;
         }
       }
     }
+    &__right {
+      padding-left: 6rem;
+      padding-top: 8rem;
+      height: 465px;
+      width: 490px;
+      background: white;
+      border: 2px solid rgba(0, 0, 0, 0.18);
+      border-radius: 0px 30px 30px 0px;
 
-    &--top {
-      @include make-flex($just: flex-end);
-      gap: 20px;
-    }
-    &--bottom {
-      @include box();
-      & > img {
-        width: 100%;
+      @include respondAt(800px) {
+        border-radius: 0px 0px 30px 30px;
+        padding-left: 5rem;
+        padding-top: 5rem;
+        height: 420px;
+        width: 450px;
+      }
+
+      &--title {
+        color: #13111f;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 129.7%;
+      }
+
+      &--para {
+        line-height: 195.5%;
+        font-size: 10px;
+        color: #13111f;
+        font-weight: 400;
+        width: 300px;
+        margin-top: 15px;
+      }
+
+      &--btn {
+        transition: all 0.3s;
+        @include make-flex($dir: row, $align: center);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border: 1.5px solid #13111f;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0);
+        gap: 10px;
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      &--btn:hover {
+        background: #252231;
+        color: white;
+      }
+
+      &--btnIcon {
+        width: 20px;
+        background: rgba(255, 255, 255, 0);
       }
     }
   }

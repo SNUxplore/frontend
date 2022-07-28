@@ -64,7 +64,7 @@ function FaqDropdown({ question, answer, isExpanded, onClick }) {
         } `}
         onClick={onClick}
       >
-        <p>{question}</p>
+        <p className="dropdown--questionTitle">{question}</p>
         <div
           className={`dropDown__questionExpanded ${
             isExpanded ? "dropDown__questionExpanded--active" : ""
