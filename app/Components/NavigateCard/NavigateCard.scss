@@ -45,6 +45,7 @@
     img {
       @include box();
       max-width: 573px;
+      max-height: 95px;
       border-radius: 0.6em;
     }
   }

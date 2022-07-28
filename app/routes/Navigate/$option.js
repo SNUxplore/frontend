@@ -48,7 +48,7 @@ export default function NavOption() {
     if (scrollToElement) {
       if (window.innerWidth >= 585) {
         window.scrollTo({
-          top: scrollToElement.offsetTop - 50,
+          top: scrollToElement.offsetTop - 10,
           behavior: "smooth",
         });
       } else {
