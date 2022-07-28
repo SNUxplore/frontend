@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 import { useLoaderData } from "@remix-run/react";
 import { authenticator } from "../services/auth.server";
@@ -33,6 +34,18 @@ export const loader = async ({ request }) => {
 function Dashboard() {
   const data = useLoaderData();
   const [eventsArray, setEventsArray] = React.useState([]);
+  const [eta, setEta] = React.useState([]);
+
+  setInterval(() => {
+    const now = moment();
+    const ETA = [
+      now.format("d"),
+      now.format("hh"),
+      now.format("mm"),
+      now.format("ss"),
+    ];
+    setEta(ETA);
+  }, 1000);
 
   React.useEffect(() => {
     console.log(data);
@@ -70,9 +83,7 @@ function Dashboard() {
           </ul>
           <div className="dashboard__container__ETA">
             <h3 className="dashboard__container__ETA--title">Upcoming Event</h3>
-            <p className="dashboard__container__ETA--ETA">
-              127 days : 19 hours : 54 minutes
-            </p>
+            <p className="dashboard__container__ETA--ETA">{`${eta[0]} days ${eta[1]} hours ${eta[2]} minutes ${eta[3]} seconds`}</p>
           </div>
           <div className="dashboard__container__eventLog">
             <div className="dashboard__container__eventLog__header">
