@@ -52,6 +52,7 @@
 
   &__content {
     @include make-flex($just: flex-start, $align: flex-start);
+    flex-grow: 2;
 
     &__name {
       color: var(--navigateCardTitle);
