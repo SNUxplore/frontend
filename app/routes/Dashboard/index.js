@@ -1,14 +1,34 @@
 import React from "react";
+import { useLoaderData } from "@remix-run/react";
+import { authenticator } from "../services/auth.server";
+import { getEventsByClub } from "../services/club.server";
 import membersIcon from "../../Assets/Img/membersIcon__dashBoard.svg";
 import eventsIcon from "../../Assets/Img/fireIcon__dashBoard.svg";
 import comitteIcon from "../../Assets/Img/comitteIcon__dashBoard.svg";
 import styleSheet from "~/styles/routes/Dashboard/Dashboard.css";
+import { json } from "@remix-run/node";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
+export const loader = async ({ request }) => {
+  const emailId = await authenticator.isAuthenticated(request, {
+    failureRedirect: "/login",
+  });
+  if (emailId === null || emailId === undefined)
+    return json({ success: false, error: "Didn't give valid email ID" });
+
+  return await getEventsByClub(emailId)
+    .then((data) => data)
+    .catch((e) => {
+      console.error("Get events by a club error" + e);
+    });
+};
+
 function Dashboard() {
+  const data = useLoaderData();
+  console.log(data);
   const [eventsArray, setEventsArray] = React.useState([]);
   return (
     <div className="dashboard__container">
