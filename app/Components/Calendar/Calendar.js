@@ -110,14 +110,6 @@ function Calendar({ events = [], setSelectedDate }) {
             &rarr;
           </button>
         </div>
-        <button
-          onClick={() => {
-            setToggleState((prevState) => !prevState);
-          }}
-          className="calendar-container__header__addEventCTA"
-        >
-          &#x2B;
-        </button>
       </div>
       <div className="calendar-container__daynames">
         {weekDays.map((day, index) => {
