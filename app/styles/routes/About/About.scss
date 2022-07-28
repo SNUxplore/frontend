@@ -55,8 +55,10 @@
     &--desc {
       width: 60%;
       @include make-flex();
+      line-height: 1.4;
       text-align: center;
       color: var(--primaryTextColor);
+      font-family: "Poppins";
 
       @include respondAt(430px) {
         width: 100%;
@@ -69,6 +71,13 @@
     @include box($height: 315px);
 
     &--left {
+      img {
+        transition: transform .4s ease-in-out;
+      }
+
+      img:hover {
+        transform: rotate(-3deg);
+      }
       @include box(50%);
       @include make-flex();
       img {
@@ -82,6 +91,7 @@
       }
     }
     &--right {
+
       @include box(45%);
       @include make-flex($align: flex-start);
       gap: 30px;
@@ -97,11 +107,17 @@
         width: 100%;
       }
     }
+
+
     &--title {
       font-family: "Poppins", sans-serif;
       font-size: 45px;
       font-weight: 500;
       color: var(--primaryTextColor);
+
+      @include respondAt(560px) {
+        font-size: 35px;
+      }
 
       span {
         font-weight: 600;
@@ -115,6 +131,10 @@
       font-family: "Poppins", sans-serif;
       font-weight: 400;
       color: var(--primaryTextColor);
+
+      @include respondAt(560px) {
+        font-size: 16px;
+      }
 
       @include respondAt(1020px) {
         width: 100%;
@@ -138,6 +158,13 @@
     }
 
     &--right {
+      img {
+        transition: transform .4s ease-in-out;
+      }
+
+      img:hover {
+        transform: rotate(3deg);
+      }
       @include box(50%);
       @include make-flex();
       img {
@@ -177,6 +204,10 @@
       font-weight: 500;
       color: var(--primaryTextColor);
 
+      @include respondAt(560px) {
+        font-size: 35px;
+      }
+
       span {
         font-weight: 600;
         background-color: var(--lightBlue);
@@ -189,6 +220,10 @@
       font-family: "Poppins", sans-serif;
       font-weight: 400;
       color: var(--primaryTextColor);
+
+      @include respondAt(560px) {
+        font-size: 16px;
+      }
 
       @include respondAt(1020px) {
         width: 100%;
@@ -214,6 +249,11 @@
       color: var(--primaryTextColor);
       width: 100%;
       text-align: center;
+
+      @include respondAt(560px) {
+        font-size: 40px;
+      }
+
     }
     &--subTitle {
       font-family: "Poppins", sans-serif;
@@ -222,6 +262,9 @@
       color: var(--primaryTextColor);
       width: 100%;
       text-align: center;
+      @include respondAt(560px) {
+        font-size: 16px;
+      }
     }
     &--middle {
       margin-top: 20px;
@@ -241,7 +284,7 @@
       padding: 0 15px;
       white-space: nowrap;
       font-weight: 400;
-      color: var(--primaryTextColor);
+      color: var(--white);
       width: 100%;
       height: 45px;
       border-style: none;
@@ -250,6 +293,7 @@
       text-decoration: none;
       max-width: 235px;
       text-align: center;
+      cursor: pointer;
     }
 
     &--members {
@@ -264,6 +308,7 @@
     }
 
     &--memberCard {
+      font-family: "Poppins";
       width: 270px;
       height: 434px;
       @include make-flex();

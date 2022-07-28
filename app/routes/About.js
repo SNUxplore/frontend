@@ -17,15 +17,13 @@ import Pratham from "../Assets/Img/Pratham.png";
 import RishiB from "../Assets/Img/RishiB.png";
 import Riya from "../Assets/Img/Riya.jpg";
 import Yathansh from "../Assets/Img/Yathansh.jpg";
-import TeamCard from "~/Components/TeamCard/TeamCard";
-import Select from "react-select";
-import { Link, Outlet, useNavigate } from "@remix-run/react";
+import { useNavigate } from "@remix-run/react";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
-const teams = ["Core", "Web Development", "Design", "Content"];
+const teams = ["Core", "Web Dev", "Design", "Content"];
 const teamData = [
   {
     id: "1",
@@ -51,7 +49,7 @@ const teamData = [
     title: "Dev Lead",
     gif: "https://media3.giphy.com/media/Y34mR8Pr58um3A7RR6/giphy.gif?",
     pic: ABSantosh,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "right",
   },
   {
@@ -60,7 +58,7 @@ const teamData = [
     title: "Developer",
     gif: "https://cdn.discordapp.com/attachments/846575266545664014/998296836936826880/me.gif",
     pic: Yathansh,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -69,7 +67,7 @@ const teamData = [
     title: "Developer & Designer",
     gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
     pic: AkshatSabavat,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -78,7 +76,7 @@ const teamData = [
     title: "Developer",
     gif: "https://media.giphy.com/media/pCJcExvbKdSeyyv8zP/giphy.gif",
     pic: Aryan,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -87,7 +85,7 @@ const teamData = [
     title: "Lead",
     gif: "https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif",
     pic: Riya,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -96,7 +94,7 @@ const teamData = [
     title: "Developer",
     gif: "https://media.giphy.com/media/qbsXf9HsBk1RFXuoxi/giphy.gif",
     pic: RishiB,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -105,7 +103,7 @@ const teamData = [
     title: "Dev Advisor",
     gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
     pic: Pratham,
-    team: "Web Development",
+    team: "Web Dev",
     direction: "center",
   },
   {
@@ -180,7 +178,7 @@ export default function About() {
             Meet the <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
-            Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
+          Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
             pretium suspendisse eget.it, navigating the university can be
             challenging!
           </p>
@@ -194,9 +192,7 @@ export default function About() {
               Our <span>Mission</span>
             </h2>
             <p className="AboutUsPage__mission--desc">
-              We get it, navigating the university can be challenging! But have
-              no worries, We can connect you to resourses that will unlock all
-              that Shiv Nadar University has to offer.
+            We at team SNUXplore are a group of passionate and driven individuals, who have come together for the sole purpose of making a comprehensive repository of all student related information available anytime, anywhere. 
             </p>
           </div>
         </section>
@@ -207,9 +203,7 @@ export default function About() {
               <br /> has <b>been</b> <span>crazy</span>
             </h2>
             <p className="AboutUsPage__story--desc">
-              We get it, navigating the university can be challenging! But have
-              no worries, We can connect you to resourses that will unlock all
-              that Shiv Nadar University has to offer.
+              What started as an idea in the library, is now finally a reality. The Student Council. DSA. Admin. We've faced them all and with their support, have reached here, serving to you the features, we feel, make your campus life better.
             </p>
           </div>
           <div className="AboutUsPage__story--right">
@@ -222,7 +216,7 @@ export default function About() {
               Who <b>are we?</b>
             </h2>
             <p className="AboutUsPage__team--subTitle">
-              These are the people that make the magic happen.
+              These are the people that make the magic happen. <br /> (hover over our pictures to see our true personalities xD)
             </p>
           </div>
           <div className="AboutUsPage__team--middle">

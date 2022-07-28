@@ -102,7 +102,7 @@
       a {
         font-size: 15px;
         text-decoration: none;
-        color: var(--white);
+        color: var(--pageBackground);
       }
 
       .mailIcon,
@@ -131,12 +131,13 @@
       }
     }
     &--rowHeading {
+
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-size: 21px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--footerRowHeadings);
+      color: var(--pageBackground);
     }
   }
 }
