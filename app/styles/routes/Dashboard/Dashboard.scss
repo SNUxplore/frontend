@@ -68,10 +68,9 @@
         @include make-flex($dir: row, $just: space-between);
         &--title {
           font-weight: 600;
-          margin-bottom: 15px;
           font-size: 20px;
-          margin-bottom: 15px;
         }
+        margin-bottom: 50px;
       }
 
       &__events {
@@ -83,27 +82,29 @@
         }
 
         &__eventDisplay {
+          margin-bottom: 50px;
           @include make-flex($dir: row, $align: center, $just: space-between);
 
           &__btnContainer {
             @include make-flex($dir: row, $align: center);
+            gap: 20px;
             &--button {
               background: rgba(255, 255, 255, 0);
               border: none;
             }
 
             &--change {
-              width: 20px;
+              width: 19px;
             }
 
             &--close {
-              width: 30px;
+              width: 29px;
             }
           }
 
           &__titleDisplay {
             @include make-flex($dir: row, $align: center);
-            gap: 10px;
+            gap: 15px;
             &--indicator {
               height: 13px;
               width: 13px;
