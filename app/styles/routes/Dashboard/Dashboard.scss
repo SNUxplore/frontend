@@ -3,7 +3,6 @@
 .dashboard {
   height: 100vh;
   width: 100vw;
-  background: white;
   &__container {
     padding-top: 70px;
     font-family: "poppins";
@@ -11,10 +10,20 @@
     margin-left: auto;
     margin-right: auto;
 
+    @include respondAt(450px) {
+      max-width: 90vw;
+    }
+
     &--header {
       font-weight: 500;
       margin-bottom: 35px;
       font-size: 45px;
+
+      @include respondAt(450px) {
+        font-size: 30px;
+      }
+
+
 
       span {
         font-weight: 600;
@@ -60,6 +69,10 @@
         font-weight: 500;
         font-size: 23px;
         margin-bottom: 35px;
+        @include respondAt(450px) {
+          font-size: 16px;
+          color: var(--blue);
+        }
       }
     }
 
@@ -71,6 +84,8 @@
           font-size: 18px;
         }
         margin-bottom: 50px;
+
+
 
         &__button {
           @include make-flex($dir: row, $align: center);
@@ -91,14 +106,24 @@
       }
 
       &__events {
+
         &--warningMessage {
           text-align: center;
           font-weight: 600;
           font-size: 22px;
           padding-top: 6rem;
+          @include respondAt(450px) {
+            font-size: 18px;
+          }
         }
 
         &__eventDisplay {
+          @include respondAt(450px) {
+            display: flex;
+            flex-direction: column;
+            border: 1px black solid;
+            padding: 1.4em;
+          }
           margin-bottom: 50px;
           @include make-flex($dir: row, $align: center, $just: space-between);
 
