@@ -1,4 +1,7 @@
 import React from "react";
+import membersIcon from "../../Assets/Img/membersIcon__dashBoard.svg";
+import eventsIcon from "../../Assets/Img/fireIcon__dashBoard.svg";
+import comitteIcon from "../../Assets/Img/comitteIcon__dashBoard.svg";
 import styleSheet from "~/styles/routes/Dashboard/Dashboard.css";
 
 export function links() {
@@ -18,13 +21,15 @@ function Dashboard() {
         </h3>
         <ul className="dashboard__container__metrics__list">
           <li className="dashboard__container__metrics__list--stat">
-            <img alt="membersIcon" /> <p>x active members</p>
+            <img src={membersIcon} alt="membersIcon" /> <p>x active members</p>
           </li>
           <li className="dashboard__container__metrics__list--stat">
-            <img alt="fireIcon" /> <p>x events planned</p>
+            <img src={eventsIcon} alt="fireIcon" />{" "}
+            <p>{`${eventsArray.length} events planned`}</p>
           </li>
           <li className="dashboard__container__metrics__list--stat">
-            <img alt="commiteeIcon" /> <p>x committe</p>
+            <img src={comitteIcon} alt="commiteeIcon" />{" "}
+            <p>Technical committe</p>
           </li>
         </ul>
         <div className="dashboard__container__ETA">
