@@ -1,309 +1,299 @@
 @import "../../root/mixins";
-html {
-  height: unset !important;
-}
+
 .AboutUsPage {
   @include make-flex($just: flex-start);
   min-height: 100vh;
 
-  &__main {
-    font-family: "Poppins", sans-serif;
-    gap: 50px;
-    width: 100%;
-    max-width: 1585px;
-    padding: 0px 170px 60px;
-    min-height: calc(100% - 110px);
-    transition: padding 0.5s ease-in-out;
+  &__mainContainer {
     @include make-flex($just: flex-start);
+    width: 100%;
+    gap: 135px;
+    max-width: 1585px;
+    min-height: calc(100% - 110px);
+    padding: 0px 170px 0px;
+    transition: padding 0.5s ease-in-out, filter 0.5s;
 
     @include respondAt(1525px) {
-      padding: 0 130px;
+      padding: 0 130px 0px;
     }
     @include respondAt(1335px) {
-      padding: 0 90px;
+      padding: 0 90px 0px;
     }
     @include respondAt(1135px) {
       padding: 0 40px;
     }
-    &--hero {
-      @include make-flex();
-      gap: 27px;
-      padding-top: 68px;
-      color: var(--primaryTextColor);
+    @include respondAt(470px) {
+      padding: 0 20px;
+      gap: 70px;
+    }
+  }
+  &__hero {
+    @include box($height: 250px);
+    @include make-flex();
+    gap: 35px;
+
+    &--title {
       font-family: "Poppins", sans-serif;
+      font-size: 80px;
+      font-weight: 500;
+      color: var(--primaryTextColor);
 
-      h1 {
-        b {
-          background-color: var(--titleHighlight);
-        }
-        font-size: 75px;
-        font-weight: 500;
-        span {
-          font-weight: 600;
-        }
-
-        @include respondAt(775px) {
-          font-size: 60px;
-        }
-        @include respondAt(635px) {
-          font-size: 50px;
-        }
+      span {
+        font-weight: 600;
+        background-color: var(--lightBlue);
+        padding: 0 15px;
       }
-      p {
-        color: var(--primaryTextColor);
-        width: 60%;
-        font-weight: 300;
-        font-size: 15px;
-        line-height: 25px;
+
+      @include respondAt(730px) {
+        font-size: 60px;
+      }
+      @include respondAt(565px) {
+        font-size: 10vw;
         text-align: center;
-        @include respondAt(770px) {
-          width: 70%;
-        }
-        @include respondAt(545px) {
-          width: 100%;
-        }
-        @include respondAt(545px) {
-          text-align: start;
-        }
-      }
-
-      @include respondAt(635px) {
-        padding-top: 0;
       }
     }
-    &--mission {
-      margin-bottom: 10px;
-      @include make-flex($dir: row, $align: center, $just: space-between);
-      @include respondAt(775px) {
-        @include make-flex($dir: column, $align: center, $just: space-between);
-      }
-      @include respondAt(545px) {
-        @include make-flex($dir: column, $align: center, $just: space-between);
-      }
-      &__image--container {
-        @include respondAt(775px) {
-          width: 405px;
-          height: 250px;
-        }
-        @include respondAt(635px) {
-          width: 380px;
-          height: 250px;
-        }
-      }
-      &__content {
-        padding-left: 97px;
-        @include respondAt(775px) {
-          padding-top: 20px;
-          padding-left: 70px;
-        }
-        @include respondAt(635px) {
-          padding-left: 19px;
-        }
-        h1 {
-          b {
-            background-color: var(--titleHighlight);
-          }
-          color: var(--primaryTextColor);
-          font-size: 50px;
-          font-weight: 500;
-          span {
-            font-weight: 600;
-          }
+    &--desc {
+      width: 60%;
+      @include make-flex();
+      text-align: center;
+      color: var(--primaryTextColor);
 
-          @include respondAt(775px) {
-            font-size: 40px;
-          }
-          @include respondAt(635px) {
-            font-size: 30px;
-          }
-        }
-        p {
-          color: var(--primaryTextColor);
-          padding-top: 14px;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 25px;
-          text-align: start;
-          @include respondAt(770px) {
-            width: 70%;
-          }
-          @include respondAt(545px) {
-            width: 100%;
-          }
-          @include respondAt(545px) {
-            text-align: start;
-          }
-        }
+      @include respondAt(430px) {
+        width: 100%;
       }
     }
-    &--story {
-      margin-bottom: 10px;
+  }
 
-      @include make-flex($dir: row, $align: center, $just: space-between);
-      @include respondAt(775px) {
-        @include make-flex(
-          $dir: column-reverse,
-          $align: center,
-          $just: space-between
-        );
-      }
-      @include respondAt(545px) {
-        @include make-flex(
-          $dir: column-reverse,
-          $align: center,
-          $just: space-between
-        );
-      }
-      &__image--container {
-        @include respondAt(775px) {
-          width: 405px;
-          height: 250px;
-        }
-        @include respondAt(635px) {
-          width: 380px;
-          height: 250px;
-        }
-      }
-      &__content {
-        @include respondAt(775px) {
-          padding-right: 0;
-          padding-top: 20px;
-          padding-left: 70px;
-        }
-        @include respondAt(635px) {
-          padding-right: 0;
-          padding-left: 19px;
-        }
-        padding-left: 30px;
-        padding-right: 30px;
-        h1 {
-          b {
-            background-color: var(--titleHighlight);
-          }
-          color: var(--primaryTextColor);
-          font-size: 50px;
-          font-weight: 500;
-          span {
-            font-weight: 600;
-          }
+  &__mission {
+    @include make-flex($dir: row, $just: space-between);
+    @include box($height: 315px);
 
-          @include respondAt(775px) {
-            font-size: 40px;
-          }
-          @include respondAt(635px) {
-            font-size: 30px;
-          }
-        }
-        p {
-          color: var(--primaryTextColor);
-          padding-top: 14px;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 25px;
-          text-align: start;
-          @include respondAt(770px) {
-            width: 70%;
-          }
-          @include respondAt(545px) {
-            width: 100%;
-          }
-          @include respondAt(545px) {
-            text-align: start;
-          }
-        }
+    &--left {
+      @include box(50%);
+      @include make-flex();
+      img {
+        height: 100%;
+        border-radius: 7px;
+      }
+
+      @include respondAt(1000px) {
+        height: auto;
+        min-width: 315px;
       }
     }
-    &--team {
-      margin-bottom: 10px;
-      &__title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h1 {
-          text-align: center;
-          b {
-            background-color: var(--titleHighlight);
-          }
-          color: var(--primaryTextColor);
-          font-size: 50px;
-          font-weight: 500;
-          span {
-            font-weight: 600;
-          }
+    &--right {
+      @include box(45%);
+      @include make-flex($align: flex-start);
+      gap: 30px;
 
-          @include respondAt(775px) {
-            font-size: 40px;
-          }
-          @include respondAt(635px) {
-            font-size: 30px;
-          }
-        }
-        p {
-          color: var(--primaryTextColor);
-          padding-top: 14px;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 72px;
-          text-align: center;
-          @include respondAt(770px) {
-            width: 70%;
-            line-height: 24.02px;
-            text-align: center;
-
-            font-size: 15px;
-          }
-          @include respondAt(545px) {
-            width: 100%;
-            text-align: center;
-            line-height: 24.02px;
-            font-size: 15px;
-          }
-        }
+      @include respondAt(905px) {
+        width: 50%;
+        gap: 20px;
       }
-      &__teams {
-        @include make-flex($dir: row, $align: center, $just: space-evenly);
-        cursor: pointer;
-        &--data {
-          padding-right: 20px;
-          padding: 10px 20px 10px 20px;
-          margin: 0 40px 0 40px;
-          border-radius: 40px;
-          background-color: var(--blue);
-          color: #ffffff;
-          @include respondAt(770px) {
-            display: none;
-          }
-          @include respondAt(545px) {
-            display: none;
-          }
-        }
-
-        select {
-          margin-top: 20px;
-          display: none;
-          padding: 10px 50px 10px 50px;
-          font-size: 25px;
-          text-align: center;
-          border-radius: 10px;
-          @include respondAt(770px) {
-            display: inline-block;
-            background-color: var(--blue);
-            color: #ffffff;
-          }
-          @include respondAt(545px) {
-            display: inline-block;
-            background-color: var(--blue);
-            color: #ffffff;
-          }
-        }
+      @include respondAt(700px) {
+        width: 80%;
       }
-      &__people {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+      @include respondAt(500px) {
+        width: 100%;
+      }
+    }
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-size: 45px;
+      font-weight: 500;
+      color: var(--primaryTextColor);
+
+      span {
+        font-weight: 600;
+        background-color: var(--lightBlue);
+        padding: 0 15px;
+      }
+    }
+    &--desc {
+      width: 80%;
+      line-height: 2;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      color: var(--primaryTextColor);
+
+      @include respondAt(1020px) {
+        width: 100%;
+      }
+    }
+
+    @include respondAt(905px) {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+    }
+  }
+
+  &__story {
+    @include make-flex($dir: row, $just: space-between);
+    @include box($height: 315px);
+
+    @include respondAt(1000px) {
+      height: auto;
+      min-width: 315px;
+    }
+
+    &--right {
+      @include box(50%);
+      @include make-flex();
+      img {
+        height: 100%;
+        border-radius: 7px;
+      }
+      @include respondAt(1000px) {
+        height: auto;
+        min-width: 315px;
+      }
+    }
+
+    &--left {
+      @include box(45%);
+      @include make-flex($align: flex-start);
+      gap: 30px;
+      padding-left: 65px;
+
+      @include respondAt(1050px) {
+        padding-left: 0;
+      }
+      @include respondAt(905px) {
+        width: 50%;
+        gap: 20px;
+      }
+      @include respondAt(700px) {
+        width: 80%;
+      }
+      @include respondAt(500px) {
+        width: 100%;
+      }
+    }
+
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-size: 45px;
+      font-weight: 500;
+      color: var(--primaryTextColor);
+
+      span {
+        font-weight: 600;
+        background-color: var(--lightBlue);
+        padding: 0 15px;
+      }
+    }
+    &--desc {
+      width: 90%;
+      line-height: 2;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      color: var(--primaryTextColor);
+
+      @include respondAt(1020px) {
+        width: 100%;
+      }
+    }
+
+    @include respondAt(905px) {
+      flex-direction: column-reverse;
+      height: auto;
+      gap: 20px;
+    }
+  }
+
+  &__team {
+    @include make-flex();
+    @include box();
+    gap: 15px;
+
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-size: 52px;
+      font-weight: 500;
+      color: var(--primaryTextColor);
+      width: 100%;
+      text-align: center;
+    }
+    &--subTitle {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--primaryTextColor);
+      width: 100%;
+      text-align: center;
+    }
+    &--middle {
+      margin-top: 20px;
+      width: 100%;
+      @include make-flex($dir: row, $just: space-between);
+      gap: 30px;
+
+      @include respondAt(780px) {
         flex-wrap: wrap;
-        align-items: center;
-        // @include make-flex($dir: row, $align: center, $just: space-evenly);
+        justify-content: center;
+      }
+    }
+    &--link {
+      font-family: "Poppins", sans-serif;
+      @include make-flex();
+      font-size: 20px;
+      padding: 0 15px;
+      white-space: nowrap;
+      font-weight: 400;
+      color: var(--primaryTextColor);
+      width: 100%;
+      height: 45px;
+      border-style: none;
+      border-radius: 7px;
+      background-color: var(--blue);
+      text-decoration: none;
+      max-width: 235px;
+      text-align: center;
+    }
+
+    &--members {
+      width: 100%;
+      height: auto;
+      @include make-flex($dir: row, $just: space-evenly);
+      flex-wrap: wrap;
+      column-gap: 20px;
+      row-gap: 35px;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    &--memberCard {
+      width: 270px;
+      height: 434px;
+      @include make-flex();
+      gap: 15px;
+      &__imageBox {
+        height: 350px;
+        width: 100%;
+        position: relative;
+      }
+      &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: var(--white);
+      }
+
+      &__name {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--primaryTextColor);
+      }
+      &__title {
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 400;
+        opacity: 0.8;
+        color: var(--primaryTextColor);
       }
     }
   }
