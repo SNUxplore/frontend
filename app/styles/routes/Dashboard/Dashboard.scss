@@ -1,0 +1,64 @@
+@import "../../root/mixins";
+
+.dashboard {
+  &__container {
+    margin-top: 70px;
+    font-family: "poppins";
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--header {
+      font-weight: 500;
+      margin-bottom: 35px;
+      font-size: 45px;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &__metrics {
+      &--title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      &__list {
+        list-style: none;
+        @include make-flex($dir: row, $align: center, $just: flex-start);
+        gap: 50px;
+        margin-bottom: 30px;
+
+        &--stat {
+          @include make-flex($dir: row, $align: center);
+        }
+      }
+    }
+
+    &__ETA {
+      &--title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      &--ETA {
+        font-weight: 400;
+        font-family: monospace;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__eventLog {
+      &--title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
