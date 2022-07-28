@@ -16,6 +16,9 @@
   &--highlighted {
     background-color: var(--placecardHighlighted);
   }
+  &__picture {
+    width: 40%;
+  }
 
   @include respondAt(1135px) {
     width: 338px;

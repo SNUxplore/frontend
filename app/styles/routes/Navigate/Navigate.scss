@@ -1,15 +1,12 @@
 @import "../../root/mixins";
 
-html {
-  height: unset !important;
-}
 .NavigatePage {
   font-family: "Poppins";
   display: flex;
   min-height: 100vh;
 
   &__left {
-    width: 40vw;
+    width: 30%;
     @include respondAt(585px) {
       width: 100%;
       height: 100%;
@@ -36,8 +33,8 @@ html {
       }
     }
 
-    container {
-      width: 35vw;
+    &--container {
+      width: 100%;
       height: 100vw;
       @include respondAt(628px) {
         height: 100%;
@@ -214,7 +211,7 @@ html {
         display: inline;
       }
     }
-    width: 60vw;
+    width: 70%;
     iframe {
       position: fixed;
       width: inherit;

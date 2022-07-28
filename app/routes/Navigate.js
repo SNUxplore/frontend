@@ -13,6 +13,7 @@ import cartIcon from "../Assets/Img/cartIcon.svg";
 import poiIcon from "../Assets/Img/poiIcon.svg";
 import basketBallIcon from "../Assets/Img/basketBallIcon.svg";
 import MapContainer from "~/Components/MapContainer/MapContainer";
+import SearchBar from "../Components/SearchBar/SearchBar";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -137,7 +138,7 @@ export default function Navigate() {
   return (
     <div className="NavigatePage">
       <div className="NavigatePage__left">
-        <container id="container">
+        <div className="NavigatePage__left--container" id="container">
           <div className="NavigatePage__left--header">
             <a href="/">
               <img
@@ -191,7 +192,7 @@ export default function Navigate() {
           </div>
 
           <Outlet context={data} />
-        </container>
+        </div>
       </div>
 
       {mobile && (
