@@ -21,6 +21,13 @@ export default function NavOption() {
   const { option } = useParams();
   const [highlighted, setHighlighted] = React.useState(false);
 
+  // contextData[option].map((place, index) => {
+  //   console.log(index);
+  //   console.log(place);
+  //   console.log(place.name);
+  //   console.log(getLongLat(place.location));
+  // });
+
   const mobile = useMediaQuery({
     query: "(min-width: 585px)",
   });
