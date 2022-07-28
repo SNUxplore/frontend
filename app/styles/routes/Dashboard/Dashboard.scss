@@ -25,7 +25,7 @@
       &--title {
         font-weight: 600;
         margin-bottom: 30px;
-        font-size: 20px;
+        font-size: 18px;
       }
 
       &__list {
@@ -53,7 +53,7 @@
       &--title {
         font-weight: 600;
         margin-bottom: 25px;
-        font-size: 20px;
+        font-size: 18px;
       }
 
       &--ETA {
@@ -68,9 +68,26 @@
         @include make-flex($dir: row, $just: space-between);
         &--title {
           font-weight: 600;
-          font-size: 20px;
+          font-size: 18px;
         }
         margin-bottom: 50px;
+
+        &__button {
+          @include make-flex($dir: row, $align: center);
+          gap: 20px;
+          padding-right: 0.5rem;
+
+          button {
+            background: none;
+            border: none;
+            font-weight: 600;
+            font-size: 18px;
+          }
+
+          img {
+            width: 22px;
+          }
+        }
       }
 
       &__events {
