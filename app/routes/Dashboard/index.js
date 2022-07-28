@@ -1,4 +1,7 @@
+import React from "react";
+
 function Dashboard() {
+  const [eventsArray, setEventsArray] = React.useState([]);
   return (
     <div className="dashboard__container">
       <h1 className="dashboard__container--header">
@@ -25,6 +28,15 @@ function Dashboard() {
         </div>
         <div className="dashboard__container__eventLog">
           <h3 className="dashboard__container__eventLog--title">Event ETA</h3>
+          <div className="dashboard__container__eventLog__events">
+            {eventsArray.length === 0 ? (
+              <div className="dashboard__container__eventLog__events--warningMessage">
+                Have no events ? Add now to schedule
+              </div>
+            ) : (
+              <p>no</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
