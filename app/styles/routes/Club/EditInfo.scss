@@ -60,9 +60,15 @@
 
       img {
         width: 20px;
+        @include respondAt(800px) {
+          width: 18px;
+        }
       }
       p {
         font-size: 17px;
+        @include respondAt(800px) {
+          font-size: 15px;
+        }
       }
       &:hover {
         opacity: 100%;
@@ -104,6 +110,7 @@
       width: 100%;
 
       &__userDetails {
+        padding-left: 10px;
         &--userName {
           font-size: 30px;
           font-weight: 600;
@@ -251,4 +258,12 @@
 
 .logout {
   color: #e12d3a;
+}
+
+.logoutBTNContianer {
+  margin-left: -5px;
+
+  @include respondAt(800px) {
+    margin-top: 10px;
+  }
 }

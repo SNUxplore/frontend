@@ -84,7 +84,7 @@ export default function EditInfo() {
             <p>Event History</p>
           </Link>
 
-          <form method="post" action="/logout">
+          <form method="post" action="/logout" className="logoutBTNContianer">
             <button className="ClubInfoPage__navBar--navBtn" type="submit">
               <img
                 className="ClubInfoPage__navBar--navImg"
