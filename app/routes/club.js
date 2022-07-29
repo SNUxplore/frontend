@@ -1,32 +1,78 @@
-import { Outlet } from "react-router-dom";
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import styleSheet from "~/styles/routes/Club/EditInfo.css";
 import { authenticator } from "./services/auth.server";
-import { Link, useLocation } from "react-router-dom";
-import { redirect } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { getEventsByClub } from "./services/club.server";
+
+export const loader = async ({ request }) => {
+  const emailId = await authenticator.isAuthenticated(request, {
+    failureRedirect: "/login",
+  });
+  if (emailId === null || emailId === undefined)
+    return json({ success: false, error: "Didn't give valid email ID" });
+  const events = await getEventsByClub(emailId);
+
+  return events;
+};
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
-export const loader = async ({ request }) => {
-  await authenticator.isAuthenticated(request, {
-    failureRedirect: "/login",
-  });
-  return null;
-};
-
 export default function EditInfo() {
-  const pathname = useLocation().pathname.replace("/club/", "");
+  const data = useLoaderData();
+  const [userInfo, setUserInfo] = React.useState({});
+
+  React.useEffect(() => {
+    let infoPointer = {
+      emailId: data.emailId,
+      name: data.name,
+    };
+
+    setUserInfo((userInfo) => ({
+      ...userInfo,
+      ...infoPointer,
+    }));
+  }, []);
+
+  console.log(userInfo.name);
+
+  // const pathname = useLocation().pathname.replace("/club/", "");
   return (
     <div className="ClubInfoPage">
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
-          <Link to="/club/edit-info">Account Information</Link>
-          <Link to="/club/create-event">Create Event</Link>
-          <Link to="/club/dashboard">Event History</Link>
+          <div className="ClubInforPage__navBar__userHolder">
+            <img
+              className="ClubInforPage__navBar__userHolder--userDP"
+              alt="userDP"
+            />
+            <div className="ClubInforPage__navBar__userHolder__userDetails">
+              <p className="ClubInforPage__navBar__userHolder__userDetails--userName">
+                {userInfo.name}
+              </p>
+              <p className="ClubInfoPage__navBar__userHolder__userDetails--userEmail">
+                {userInfo.emailId}
+              </p>
+            </div>
+          </div>
+          <Link className="ClubInfoPage__navBar--navBtn" to="/club/edit-info">
+            Account Information
+          </Link>
+          <Link
+            className="ClubInfoPage__navBar--navBtn"
+            to="/club/create-event"
+          >
+            Create Event
+          </Link>
+          <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
+            Event History
+          </Link>
 
           <form method="post" action="/logout">
-            <button className="ClubInfoPage__navBar--active" type="submit">
+            <button className="ClubInfoPage__navBar--navBtn" type="submit">
               Log Out
             </button>
           </form>

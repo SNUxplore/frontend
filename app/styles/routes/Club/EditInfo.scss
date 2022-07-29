@@ -1,6 +1,7 @@
 @import "../../root/mixins";
 
 .ClubInfoPage {
+  font-family: "poppins";
   @include box(100vw, 100vh);
   transition: background-color 0.2s ease-in-out;
 
@@ -20,21 +21,26 @@
     padding: 75px 25px;
     height: 100vh;
     background-color: var(--white);
-    border-right: 1px solid;
-    color: var(--navbarItems);
+    border-right: 1px solid white;
 
-    a {
+    &__userHolder {
+      &__userDetails {
+        &--userName {
+          color: black;
+        }
+      }
+    }
+
+    &--navBtn {
       width: 100%;
-      text-align: center;
       height: 50px;
       border-radius: 7px;
-      border: 1px solid var(--blue);
       color: var(--primaryTextColor);
       text-decoration: none;
-      @include make-flex();
+      background: none;
+      border: none;
       &:hover {
-        background-color: var(--blue);
-        color: var(--white);
+        font-weight: 600;
       }
 
       @include respondAt(805px) {
