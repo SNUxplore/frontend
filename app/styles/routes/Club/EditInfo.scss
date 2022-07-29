@@ -15,7 +15,8 @@
   }
 
   &__navBar {
-    @include box(330px);
+    padding-left: 1rem;
+    @include box(320px);
     @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
     padding: 75px 25px;
@@ -30,22 +31,35 @@
       }
 
       &--text {
+        line-height: 167.5%;
         margin-top: 10px;
         font-size: 15px;
         color: rgba(0, 0, 0, 0.575);
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
     }
 
     &--navBtn {
-      width: 100%;
+      @include make-flex($dir: row);
+      gap: 13px;
       height: 50px;
       border-radius: 7px;
       color: var(--primaryTextColor);
       text-decoration: none;
       background: none;
       border: none;
+      opacity: 80%;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+      }
+      p {
+        font-size: 17px;
+      }
       &:hover {
+        opacity: 100%;
         font-weight: 600;
       }
 
@@ -191,4 +205,8 @@
       display: none;
     }
   }
+}
+
+.logout {
+  color: #e12d3a;
 }

@@ -1,6 +1,12 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
 import styleSheet from "~/styles/routes/Club/EditInfo.css";
+
+import addIcon from "../Assets/Img/addIcon.svg";
+import keyIcon from "../Assets/Img/keyIcon.svg";
+import exitIcon from "../Assets/Img/logoutIcon.svg";
+import timeIcon from "../Assets/Img/timeIcon.svg";
+
+import { Outlet, Link } from "react-router-dom";
 import { authenticator } from "./services/auth.server";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -37,8 +43,6 @@ export default function EditInfo() {
     }));
   }, []);
 
-  console.log(userInfo.name);
-
   // const pathname = useLocation().pathname.replace("/club/", "");
   return (
     <div className="ClubInfoPage">
@@ -49,25 +53,45 @@ export default function EditInfo() {
               {`Hello there 👋 ${userInfo.name}`}
             </p>
             <p className="ClubInfoPage__navBar__userDetails--text">
-              Here's how we are looking today
+              Here's how we are looking today. Start by adding an event !
             </p>
           </div>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/edit-info">
-            Account Information
+            <img
+              className="ClubInfoPage__navBar--navImg"
+              src={keyIcon}
+              alt="keyIcon"
+            />{" "}
+            <p>Account information</p>
           </Link>
           <Link
             className="ClubInfoPage__navBar--navBtn"
             to="/club/create-event"
           >
-            Create Event
+            <img
+              className="ClubInfoPage__navBar--navImg"
+              src={addIcon}
+              alt="addIcon"
+            />{" "}
+            <p>Create Event</p>
           </Link>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
-            Event History
+            <img
+              className="ClubInfoPage__navBar--navImg"
+              src={timeIcon}
+              alt="timeIcon"
+            />{" "}
+            <p>Event History</p>
           </Link>
 
           <form method="post" action="/logout">
             <button className="ClubInfoPage__navBar--navBtn" type="submit">
-              Log Out
+              <img
+                className="ClubInfoPage__navBar--navImg"
+                src={exitIcon}
+                alt="exitIcon"
+              />{" "}
+              <p className="logout">Log out</p>
             </button>
           </form>
         </nav>
