@@ -19,7 +19,7 @@
     @include box(320px);
     @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
-    padding: 75px 25px;
+    padding: 60px 25px;
     height: 100vh;
     background-color: var(--white);
     border-right: 1px solid white;
@@ -107,6 +107,10 @@
       color: var(--infoFormSpam);
       font-style: italic;
     }
+
+    &--title {
+      font-weight: 600;
+    }
     &--row {
       height: 61px;
       @include make-flex($just: space-between, $dir: row);
@@ -124,13 +128,19 @@
         border: none;
         padding: 0 10px;
         border-radius: 5px;
-        outline-width: 1px;
         outline-color: var(--infoFormInputOutline);
         @include respondAt(505px) {
           width: 100%;
           height: 50px;
           border: 1px solid #e4e4e4;
         }
+        transition: all 0.3s ease-in-out;
+      }
+
+      input:focus {
+        outline-color: #308cf8;
+        outline-width: 1px;
+        background: #bed9f7;
       }
       textarea {
         height: 100%;
@@ -150,9 +160,15 @@
           max-width: 100%;
         }
       }
+
+      textarea:focus {
+        outline-color: #308cf8;
+        outline-width: 1px;
+        background: #bed9f7;
+      }
       label {
         width: 100%;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
         color: var(--infoFormSpam);
         text-align: left;
@@ -163,20 +179,20 @@
       }
 
       button {
-        height: 85%;
+        font-size: 15px;
         border: none;
-        padding: 0 10px;
-        border-radius: 5px;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        border-radius: 8px;
         outline-color: var(--buttonOutline);
-        background-color: var(--blue);
+        background-color: #363b53;
         color: var(--white);
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        &:hover {
-          background-color: var(--blue);
-          color: var(--white);
-        }
+        transform: all 0.3s ease-in-out;
 
         @include respondAt(505px) {
           height: 45px;

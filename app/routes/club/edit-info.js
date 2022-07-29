@@ -38,7 +38,9 @@ export default function EditInfo() {
       action="/club/edit-info"
       method="POST"
     >
-      <h3 className="ClubInfoPage__InfoForm--row">Club Information</h3>
+      <h3 className="ClubInfoPage__InfoForm--title ClubInfoPage__InfoForm--row">
+        Club Information
+      </h3>
       <span className="ClubInfoPage__InfoForm--row">
         The information provided will reflect in your events
       </span>
