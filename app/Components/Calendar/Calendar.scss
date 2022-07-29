@@ -67,8 +67,8 @@
       cursor: pointer;
       border: none;
       border-radius: 20%;
-      background: var(--primaryTextColor);
-      color: var(--white);
+      background: transparent;
+      color: var(--calendarSwitchButton);
     }
     &__monthNames {
       color: var(--textColor);

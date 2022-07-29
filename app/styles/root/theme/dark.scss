@@ -27,6 +27,7 @@
   --unhighlightTextColor: #ffffff;
   --calenderColor: #232e3d;
   --fadedTextColor: #f4f5fc84;
+  --fadedDayContainer: #027278;
   --nameTitle: #ffffff;
   --teamText: #ffffff;
   --svgfilter: brightness(0) saturate(100%) invert(61%) sepia(36%)
@@ -41,4 +42,5 @@
     saturate(250%) hue-rotate(230deg) brightness(113%) contrast(100%);
   --dropPlaceCardText: #ffffff;
   --calendarCardText: #363b53;
+  --calendarSwitchButton: #00badd;
 }
