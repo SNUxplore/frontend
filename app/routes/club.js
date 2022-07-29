@@ -44,19 +44,13 @@ export default function EditInfo() {
     <div className="ClubInfoPage">
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
-          <div className="ClubInforPage__navBar__userHolder">
-            <img
-              className="ClubInforPage__navBar__userHolder--userDP"
-              alt="userDP"
-            />
-            <div className="ClubInforPage__navBar__userHolder__userDetails">
-              <p className="ClubInforPage__navBar__userHolder__userDetails--userName">
-                {userInfo.name}
-              </p>
-              <p className="ClubInfoPage__navBar__userHolder__userDetails--userEmail">
-                {userInfo.emailId}
-              </p>
-            </div>
+          <div className="ClubInforPage__navBar__userDetails">
+            <p className="ClubInfoPage__navBar__userDetails--userName">
+              {`Hello there 👋 ${userInfo.name}`}
+            </p>
+            <p className="ClubInfoPage__navBar__userDetails--text">
+              Here's how we are looking today
+            </p>
           </div>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/edit-info">
             Account Information

@@ -15,19 +15,25 @@
   }
 
   &__navBar {
-    @include box(280px);
-    @include make-flex($just: flex-start);
+    @include box(330px);
+    @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
     padding: 75px 25px;
     height: 100vh;
     background-color: var(--white);
     border-right: 1px solid white;
 
-    &__userHolder {
-      &__userDetails {
-        &--userName {
-          color: black;
-        }
+    &__userDetails {
+      &--userName {
+        font-size: 30px;
+        font-weight: 600;
+      }
+
+      &--text {
+        margin-top: 10px;
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.575);
+        margin-bottom: 30px;
       }
     }
 
