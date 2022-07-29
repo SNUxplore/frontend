@@ -23,7 +23,7 @@ export default function EditInfo() {
         <a href="/">
           <img src={FullLogo} alt="Full Logo" />
         </a>
-        <button>Log Out</button>
+        <button onClick={() => fetch("/logout")}>Log Out</button>
       </header>
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
