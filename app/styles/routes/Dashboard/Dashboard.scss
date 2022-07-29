@@ -1,0 +1,161 @@
+@import "../../root/mixins";
+
+.dashboard {
+  height: 100vh;
+  width: 100vw;
+  &__container {
+    padding-top: 70px;
+    font-family: "poppins";
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respondAt(450px) {
+      max-width: 90vw;
+    }
+
+    &--header {
+      font-weight: 500;
+      margin-bottom: 35px;
+      font-size: 45px;
+
+      @include respondAt(450px) {
+        font-size: 30px;
+      }
+
+
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &__metrics {
+      &--title {
+        font-weight: 600;
+        margin-bottom: 30px;
+        font-size: 18px;
+      }
+
+      &__list {
+        list-style: none;
+        @include make-flex($dir: row, $align: center, $just: flex-start);
+        gap: 100px;
+        margin-bottom: 35px;
+
+        &--stat {
+          @include make-flex($dir: row, $align: center);
+          gap: 15px;
+
+          img {
+            width: 28px;
+          }
+          p {
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &__ETA {
+      &--title {
+        font-weight: 600;
+        margin-bottom: 25px;
+        font-size: 18px;
+      }
+
+      &--ETA {
+        font-weight: 500;
+        font-size: 23px;
+        margin-bottom: 35px;
+        @include respondAt(450px) {
+          font-size: 16px;
+          color: var(--blue);
+        }
+      }
+    }
+
+    &__eventLog {
+      &__header {
+        @include make-flex($dir: row, $just: space-between);
+        &--title {
+          font-weight: 600;
+          font-size: 18px;
+        }
+        margin-bottom: 50px;
+
+
+
+        &__button {
+          @include make-flex($dir: row, $align: center);
+          gap: 20px;
+          padding-right: 0.5rem;
+
+          button {
+            background: none;
+            border: none;
+            font-weight: 600;
+            font-size: 18px;
+          }
+
+          img {
+            width: 22px;
+          }
+        }
+      }
+
+      &__events {
+
+        &--warningMessage {
+          text-align: center;
+          font-weight: 600;
+          font-size: 22px;
+          padding-top: 6rem;
+          @include respondAt(450px) {
+            font-size: 18px;
+          }
+        }
+
+        &__eventDisplay {
+          @include respondAt(450px) {
+            display: flex;
+            flex-direction: column;
+            border: 1px black solid;
+            padding: 1.4em;
+          }
+          margin-bottom: 50px;
+          @include make-flex($dir: row, $align: center, $just: space-between);
+
+          &__btnContainer {
+            @include make-flex($dir: row, $align: center);
+            gap: 20px;
+            &--button {
+              background: rgba(255, 255, 255, 0);
+              border: none;
+            }
+
+            &--change {
+              width: 19px;
+            }
+
+            &--close {
+              width: 29px;
+            }
+          }
+
+          &__titleDisplay {
+            @include make-flex($dir: row, $align: center);
+            gap: 15px;
+            &--indicator {
+              height: 13px;
+              width: 13px;
+              border-radius: 50%;
+              background: green;
+            }
+          }
+        }
+      }
+    }
+  }
+}

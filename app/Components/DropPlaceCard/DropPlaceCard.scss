@@ -3,10 +3,18 @@
 .DropPlaceCardWrapper {
   @include box($height: unset);
   min-height: 90px;
+  margin-bottom: 10px;
+
+  &--highlighted {
+    .DropPlaceCardWrapper__face {
+      background: var(--placecardHighlighted);
+    }
+  }
 
   &__face {
     @include box($height: 90px);
-    background-color: var(--white);
+    background-color: var(--navigateCardColor);
+    transition: background-color 1000ms linear;
     border-radius: 8px;
     @include make-flex($just: space-between, $dir: row);
     padding: 15px;
@@ -39,15 +47,18 @@
         @include respondAt(500px) {
           font-size: 4vw;
         }
+        color: var(--dropPlaceCardText);
       }
       p {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
+        color: var(--navigateCardDesc);
       }
     }
     span {
+      color: var(--navbarBackground);
       width: 10%;
       font-size: 20px;
     }
@@ -61,6 +72,7 @@
     @include make-flex($align: flex-start, $just: space-between);
     gap: 15px;
     border-radius: 0 0 5px 5px;
+    color: var(--navigateCardDesc);
 
     &--top {
       padding: 0 15px;
@@ -68,7 +80,7 @@
       gap: 10px;
     }
 
-    background-color: var(--white);
+    background-color: var(--navigateCardColor);
   }
 
   &__actions {
@@ -79,10 +91,10 @@
     &--link {
       @include box(100%, 40px);
       @include make-flex($dir: row);
-      color: var(--primaryTextColor);
+      color: var(--navigateCardDesc);
       gap: 10px;
       text-decoration: none;
-      background-color: var(--white);
+      background-color: var(--navigateCardColor);
       border-top: 1px solid var(--placeCardWrapperBorder);
       border-right: 1px solid var(--placeCardWrapperBorder);
 
@@ -97,13 +109,17 @@
 
       &:hover {
         background-color: var(--blue);
+        img {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(8%)
+            saturate(2%) hue-rotate(5deg) brightness(111%) contrast(101%);
+        }
         color: var(--white);
       }
     }
     &--icon {
       @include box(17px, 17px);
-      filter: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(7469%)
-        hue-rotate(300deg) brightness(90%) contrast(110%);
+      filter: var(--svgfilter);
+
       @include respondAt(450px) {
         @include box(12px, 12px);
       }

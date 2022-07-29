@@ -12,10 +12,10 @@
     @include make-flex($dir: row, $just: space-between);
     @include box();
     max-width: 1585px;
-    padding: 0px 40px;
-    gap: 550px;
+    padding: 0px 40px 0 125px;
+    gap: 300px;
     @include respondAt(1525px) {
-      padding: 0 60px;
+      padding: 0 60px 0 100px;
       gap: 100px;
     }
     @include respondAt(1335px) {
@@ -28,6 +28,7 @@
 
     @include respondAt(840px) {
       flex-direction: column;
+			gap: 20px;
     }
 
     @include respondAt(470px) {
@@ -47,12 +48,14 @@
     @include respondAt(610px) {
       width: 100%;
       align-items: center;
+      padding: 0 10px
     }
 
     &--logo {
       @include box(450px, auto);
       margin-bottom: 30px;
       padding: 0 10px;
+      filter: var(--svgfilter);
       @include respondAt(1095px) {
         width: 250px;
         margin-top: 30px;
@@ -99,7 +102,7 @@
       a {
         font-size: 15px;
         text-decoration: none;
-        color: var(--white);
+        color: var(--pageBackground);
       }
 
       .mailIcon,
@@ -128,12 +131,13 @@
       }
     }
     &--rowHeading {
+
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-size: 21px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--footerRowHeadings);
+      color: var(--pageBackground);
     }
   }
 }

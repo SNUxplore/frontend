@@ -8,6 +8,7 @@ import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
+import darkModeArrow from "../Assets/Img/darkModeArrow.svg";
 import blueArrow from "../Assets/Img/blueArrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
 import { useMediaQuery } from "react-responsive";
@@ -44,13 +45,11 @@ export default function LandingPage() {
     getClubs();
     getEventsByClub();
   }, []);
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = (value) => {
-    setTheme(value);
-  };
+
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
+
 
   const references = React.useRef([]);
   references.current = [];
@@ -73,10 +72,12 @@ export default function LandingPage() {
               <img className="heroSection__arrow" src={arrow} alt="Arrow" />
               <div className="heroSection__title">
                 <h1>
-                  Your <b>guide</b>,
+                  Your <b className="heroSection__title--unhighlight">guide</b>,
                 </h1>
                 <h1>
-                  To all <b>things SNU</b>
+                  To all{" "}
+                  <b className="heroSection__title--unhighlight">things</b>{" "}
+                  <b className="heroSection__title--highlight">SNU</b>
                 </h1>
               </div>
               <div className="heroSection__desc">

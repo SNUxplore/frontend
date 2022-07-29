@@ -14,23 +14,36 @@ import darkModeDesktop from "../../Assets/Img/darkModeThemeDesktop.svg";
 import darkModeIcon from "../../Assets/Img/darkModeIcon.svg";
 import darkModeOneTheme from "../../Assets/Img/darkModeOneTheme.svg";
 import darkModeTwoTheme from "../../Assets/Img/darkModeTwoTheme.svg";
+import logoBlue from "../../Assets/Img/logoBlue.svg";
+import logoPink from "../../Assets/Img/logoPink.svg";
 import darkModeFillTheme from "../../Assets/Img/darkModeFillTheme.svg";
 import darkModeNotActive from "../../Assets/Img/darkModeNotActive.svg";
 import pinkModeFillTheme from "../../Assets/Img/pinkModeFillTheme.svg";
 
 import { useMediaQuery } from "react-responsive";
+import { useLoaderData } from "@remix-run/react";
 
 function Header() {
   const node = React.useRef();
+  const url = useLoaderData();
   const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
   const handleClickOutside = (e) => {
+    const hamButton = document.getElementById("NavBarInput");
     if (node.current.contains(e.target)) {
       return;
     }
 
-    document.getElementById("NavBarInput").click();
+    hamButton.click();
   };
+
+  React.useEffect(() => {
+    const hamButton = document.getElementById("NavBarInput");
+
+    if (hamButton.checked && !navState) {
+      hamButton.click();
+    }
+  }, []);
 
   React.useEffect(() => {
     setCurrentTheme(localStorage.getItem("theme"));
@@ -51,7 +64,7 @@ function Header() {
     query: "(max-width: 1230px)",
   });
 
-  let themeIconsrc = {
+  let themeIconSrc = {
     light: darkModeDesktop,
     dark: darkModeFillTheme,
     pink: darkModeNotActive,
@@ -63,7 +76,7 @@ function Header() {
     pink: "rgba(217, 217, 217, 0.05)",
   };
 
-  let pinkThemeIconsrc = {
+  let pinkThemeIconSrc = {
     light: darkModeDesktop,
     dark: darkModeNotActive,
     pink: pinkModeFillTheme,
@@ -187,9 +200,18 @@ function Header() {
             <li className="HeaderWrapper__middle--option">
               <button
                 onClick={() => {
-                  document.body.classList.add("light");
-                  document.body.classList.remove("dark");
-                  document.body.classList.remove("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("pink");
                   localStorage.setItem("theme", "light");
                 }}
               >
@@ -206,9 +228,18 @@ function Header() {
             <li className="HeaderWrapper__middle--option">
               <button
                 onClick={() => {
-                  document.body.classList.add("dark");
-                  document.body.classList.remove("light");
-                  document.body.classList.remove("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("pink");
                   localStorage.setItem("theme", "dark");
                 }}
               >
@@ -231,9 +262,18 @@ function Header() {
             <li className="HeaderWrapper__middle--option">
               <button
                 onClick={() => {
-                  document.body.classList.add("dark");
-                  document.body.classList.remove("light");
-                  document.body.classList.add("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("pink");
                   localStorage.setItem("theme", "dark");
                 }}
               >
@@ -257,13 +297,24 @@ function Header() {
           {!dropdown && (
             <div
               className="HeaderWrapper__right--themeButtons"
-              style={{ background: themeStyle[currentTheme] }}
+              style={{
+                background: themeStyle[currentTheme ? currentTheme : "light"],
+              }}
             >
               <button
                 onClick={() => {
-                  document.body.classList.add("light");
-                  document.body.classList.remove("dark");
-                  document.body.classList.remove("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("pink");
                   localStorage.setItem("theme", "light");
                   setCurrentTheme("light");
                 }}
@@ -278,9 +329,18 @@ function Header() {
               </button>
               <button
                 onClick={() => {
-                  document.body.classList.add("dark");
-                  document.body.classList.remove("light");
-                  document.body.classList.remove("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("pink");
                   localStorage.setItem("theme", "dark");
                   setCurrentTheme("dark");
                 }}
@@ -289,15 +349,24 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option${
                     currentTheme === "dark" ? "--active" : ""
                   }`}
-                  src={themeIconsrc[currentTheme]}
+                  src={themeIconSrc[currentTheme ? currentTheme : "light"]}
                   alt="snu explore Logo"
                 />
               </button>
               <button
                 onClick={() => {
-                  document.body.classList.add("dark");
-                  document.body.classList.remove("light");
-                  document.body.classList.add("pink");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("pink");
                   localStorage.setItem("theme", "pink");
                   setCurrentTheme("pink");
                 }}
@@ -306,7 +375,7 @@ function Header() {
                   className={`HeaderWrapper__right--themeButtons--option--pink${
                     currentTheme === "pink" ? "--active" : ""
                   }`}
-                  src={pinkThemeIconsrc[currentTheme]}
+                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -384,13 +453,6 @@ function Header() {
               nodeList[i].style.transition =
                 "0.5s filter cubic-bezier(0.77, 0.2, 0.05, 1)";
             }
-
-            // document.querySelector("nav ~ main").style.filter = `${
-            //   !navState ? "blur(3.5px)" : "none"
-            // }`;
-            // document.querySelector("nav ~ main").style.trans = `${
-            //   !navState ? "blur(3.5px)" : "none"
-            // }`;
           }}
         />
         <div className="hamButton">

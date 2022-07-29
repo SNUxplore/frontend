@@ -4,8 +4,6 @@ import { useMediaQuery } from "react-responsive";
 import DropPlaceCard from "~/Components/DropPlaceCard/DropPlaceCard";
 import PlaceCard from "~/Components/PlaceCard/PlaceCard";
 import NavigateCard from "~/Components/NavigateCard/NavigateCard";
-import SearchBar from "~/Components/SearchBar/SearchBar";
-import xploreLogo from "../../Assets/Img/xploreLogo.svg";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
@@ -23,6 +21,13 @@ export default function NavOption() {
   const { option } = useParams();
   const [highlighted, setHighlighted] = React.useState(false);
 
+  // contextData[option].map((place, index) => {
+  //   console.log(index);
+  //   console.log(place);
+  //   console.log(place.name);
+  //   console.log(getLongLat(place.location));
+  // });
+
   const mobile = useMediaQuery({
     query: "(min-width: 585px)",
   });
@@ -37,8 +42,10 @@ export default function NavOption() {
 
   React.useEffect(() => {
     let scrollToElement;
+    let container;
     if (urlParams.name) {
       scrollToElement = document.getElementById(urlParams.name);
+      container = document.getElementById("container");
       setHighlighted(true);
     } else if (!urlParams.redirect) {
       scrollToElement = document.querySelector(
@@ -46,14 +53,14 @@ export default function NavOption() {
       );
     }
     if (scrollToElement) {
-      if (window.innerWidth >= 590) {
+      if (window.innerWidth >= 585) {
         window.scrollTo({
-          top: scrollToElement.offsetTop - 220,
+          top: scrollToElement.offsetTop - 10,
           behavior: "smooth",
         });
       } else {
         window.scrollTo({
-          top: scrollToElement.offsetTop,
+          top: scrollToElement.offsetTop - 20,
           behavior: "smooth",
         });
       }
@@ -93,16 +100,17 @@ export default function NavOption() {
   return (
     <>
       <div className="NavigatePage__content--right NavigatePage__content--desktop">
-        <div className="NavPage__header">
-          <img src={xploreLogo} />
-          <a href="#">&larr;Back to home</a>
-        </div>
-        <h1>Navigate <span>Campus</span></h1>
-        <p>Having an issue finding your way around campus?
-          Don't worry we got you covered!</p>
-        <SearchBar />
-        <NavigateCard />
-
+        {mobile &&
+          contextData[option].map((i, index) => (
+            <NavigateCard
+              key={index}
+              name={i.name}
+              highlighted={urlParams.name == i.name && highlighted}
+              actionLists={generateActionLinks(contextData[option][index])}
+              desc={i.description}
+              src={i.image}
+            />
+          ))}
 
         {/* {mobile && contextData[option].map((i, index) => (
           <PlaceCard
@@ -116,16 +124,17 @@ export default function NavOption() {
         ))} */}
       </div>
       <div className="NavigatePage__content--right NavigatePage__content--mobile">
-        {!mobile && contextData[option].map((i, index) => (
-          <DropPlaceCard
-            key={index}
-            name={i.name}
-            highlighted={urlParams.name == i.name && highlighted}
-            actionLists={generateActionLinks(contextData[option][index])}
-            desc={i.description}
-            src={i.image}
-          />
-        ))}
+        {!mobile &&
+          contextData[option].map((i, index) => (
+            <DropPlaceCard
+              key={index}
+              name={i.name}
+              highlighted={urlParams.name == i.name && highlighted}
+              actionLists={generateActionLinks(contextData[option][index])}
+              desc={i.description}
+              src={i.image}
+            />
+          ))}
       </div>
     </>
   );

@@ -14,7 +14,7 @@
     &--logo {
       @include box(47px, 47px);
       transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-
+      filter: var(--svgfilter);
       &--blur {
         filter: blur(3.5px);
       }
@@ -39,7 +39,7 @@
         background-color: var(--transparent);
         width: 100%;
         text-align: left;
-        color: var(--primaryTextColor);
+        color: var(--textColor);
         font-size: 17px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;

@@ -46,14 +46,17 @@
     gap: 15px;
 
     &--title {
-      color: var(--primaryTextColor);
+      color: var(--textColor);
       font-size: 37px;
       font-weight: 400;
       span {
+        background-color: var(--titleHighlight);
+        color: var(--highlightTextColor);
         font-weight: 600;
       }
     }
     &--subTitle {
+      color: var(--textColor);
       font-size: 18px;
       font-weight: 300;
     }
@@ -82,7 +85,7 @@
     @include box(fit-content);
     max-width: calc(100% - 365px);
     &--calender {
-      background-color: var(--white);
+      background-color: var(--calenderColor);
       border-radius: 19px;
       padding: 10px;
       width: 100%;

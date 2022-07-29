@@ -41,6 +41,8 @@ export const ThemeScript = () => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.getElementsByTagName("html").item(0).classList.add("dark");
       localStorage.setItem("theme", "dark");
+    }else{
+      document.getElementsByTagName("html").item(0).classList.add("light");
     }
   }`;
   return <script dangerouslySetInnerHTML={{ __html: clientCode }} />;
@@ -48,7 +50,7 @@ export const ThemeScript = () => {
 
 export default function App() {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <head>
         <Meta />
         <ThemeScript />
