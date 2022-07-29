@@ -1,24 +1,219 @@
 @import "../../root/mixins";
 
-html {
-  height: unset !important;
-}
 .NavigatePage {
+  font-family: "Poppins";
   display: flex;
   min-height: 100vh;
-  gap: 4vw;
 
   &__left {
-    width: 35vw;
-    background-color: #f4f5fc;
+    width: 30%;
+    @include respondAt(585px) {
+      width: 100%;
+      height: 100%;
+    }
+
+    padding-top: 4vh;
+
+    &--header {
+      @include make-flex($dir: row, $just: flex-start);
+      column-gap: 57%;
+
+      &--logo {
+        filter: var(--svgfilter);
+      }
+
+      &--back {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: none;
+        text-align: end;
+        color: var(--primaryTextColor);
+      }
+    }
+
+    &--container {
+      width: 100%;
+      height: 100vw;
+      @include respondAt(628px) {
+        height: 100%;
+        width: 100%;
+      }
+
+      padding: 3% 6%;
+      margin: 0 auto;
+    }
+
+    background-color: var(--pageBackground);
     display: flex;
     flex-direction: column;
+
+    &__content {
+      width: 90%;
+      margin-top: 8vh;
+      margin-bottom: 4vh;
+      color: var(--primaryTextColor);
+
+      &--title {
+        @include box();
+        font-size: 2.4rem;
+        color: var(--primaryTextColor);
+        font-weight: 500;
+        margin-bottom: 1vh;
+        @include respondAt(1170px) {
+          font-size: 2.2rem;
+        }
+        @include respondAt(1080px) {
+          font-size: 2.1rem;
+        }
+        @include respondAt(970px) {
+          font-size: 1.9rem;
+        }
+        @include respondAt(890px) {
+          font-size: 1.7rem;
+        }
+        @include respondAt(800px) {
+          font-size: 1.4rem;
+        }
+        @include respondAt(670px) {
+          font-size: 1.2rem;
+        }
+        @include respondAt(585px) {
+          font-size: 2.4rem;
+        }
+        @include respondAt(420px) {
+          font-size: 2.1rem;
+        }
+        @include respondAt(360px) {
+          font-size: 1.9rem;
+        }
+      }
+      span {
+        color: var(--secondaryTextColor);
+        background: var(--titleHighlight);
+        padding-left: 0.45rem;
+        padding-right: 0.45rem;
+        font-weight: 700;
+        margin-left: 5px;
+      }
+    }
   }
 
   &__right {
-    width: 65vw;
+    &--panel {
+      &--ac {
+        @include box($height: 100%);
+        background-color: #d0d0d0;
+        @include respondAt(1530px) {
+          background-color: white;
+        }
+        overflow: hidden;
+        a {
+          text-decoration: none;
 
+          @include make-flex();
+          padding: 7px 8px;
+          color: #343a4e;
+          border-radius: 5px;
+          @include respondAt(585px) {
+            @include box(auto, auto);
+            color: var(--black);
+          }
+          img {
+            @include box(12px, 12px);
+            display: inline;
+            @include respondAt(585px) {
+              display: none;
+            }
+          }
+        }
+        a:hover {
+          @include respondAtAlt(585px) {
+            border: 1px solid #898989;
+          }
+          @include respondAt(585px) {
+            border: 1px solid var(--blue);
+          }
+        }
+        .activeTab {
+          @include respondAtAlt(585px) {
+            font-weight: bolder;
+          }
+          @include respondAt(585px) {
+            color: var(--white);
+            background-color: var(--blue);
+          }
+        }
+      }
+      button {
+        @include box(100%, auto);
+        background-color: #d0d0d0;
+        border: 0;
+        padding: 1.2rem 2rem;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 26px;
+        border-bottom: 2px solid black;
+      }
+
+      @include box(19%, auto);
+      @include make-flex($just: flex-start);
+      scrollbar-width: none;
+
+      overflow-x: auto;
+      border-radius: 7px;
+
+      z-index: 33;
+      position: fixed;
+      top: 6.5%;
+      right: 7%;
+
+      gap: 8px;
+
+      // box-shadow: -10px -10px 30px #d9d9d9, 10px 10px 30px #ffffff;
+
+      @include respondAt(585px) {
+        @include box(100%, 54px);
+        padding: 0 10px;
+        flex-direction: row;
+        button {
+          display: none;
+        }
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 9%;
+
+        z-index: 2;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        background-image: linear-gradient(to right, white, white),
+          linear-gradient(to right, white, white),
+          linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+          linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+
+        background-position: left center, right center, left center,
+          right center;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+        background-attachment: local, local, scroll, scroll;
+      }
+
+      img {
+        @include box(12px, 12px);
+        display: inline;
+      }
+    }
+    width: 70%;
     iframe {
+      position: fixed;
       width: inherit;
       height: 100vh;
     }

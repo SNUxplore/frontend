@@ -23,12 +23,6 @@ import pinkModeFillTheme from "../../Assets/Img/pinkModeFillTheme.svg";
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData } from "@remix-run/react";
 
-export const loader = async ({ request }) => {
-  const url = new URL(request.url);
-
-  return url;
-};
-
 function Header() {
   const node = React.useRef();
   const url = useLoaderData();
@@ -46,10 +40,10 @@ function Header() {
   React.useEffect(() => {
     const hamButton = document.getElementById("NavBarInput");
 
-    if (hamButton.checked) {
+    if (hamButton.checked && !navState) {
       hamButton.click();
     }
-  }, [url]);
+  }, []);
 
   React.useEffect(() => {
     setCurrentTheme(localStorage.getItem("theme"));

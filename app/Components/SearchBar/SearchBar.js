@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
-import Fuse from "fuse.js";	
+import Fuse from "fuse.js";
 import data from "~/Assets/Data/data.json";
 import admin from "~/Assets/Data/admin.json";
 
 function activeClassName(className, isActive) {
-	return `${className} ${isActive ? className + "--active" : ""}`;
+  return `${className} ${isActive ? className + "--active" : ""}`;
 }
 
 function SearchBar() {
