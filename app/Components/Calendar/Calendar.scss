@@ -162,7 +162,7 @@
     right: -15%;
     bottom: -5%;
     background: var(--contactHover);
-    color: var(--textColor);
+    color: var(--calendarCardText);
     &--eventName {
       font-size: 13px;
       @include respondAt(685px) {
