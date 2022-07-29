@@ -4,29 +4,6 @@
   @include box(100vw, 100vh);
   transition: background-color 0.2s ease-in-out;
 
-  header {
-    @include box(100%, 70px);
-    @include make-flex($just: space-between, $dir: row);
-    padding: 15px 25px;
-    background-color: var(--clubInfoHeaderBG);
-    img,
-    a {
-      height: 100%;
-    }
-    button {
-      height: 100%;
-      padding: 0 15px;
-      background-color: transparent;
-      color: var(--white);
-      border: 1px solid var(--blue);
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        background-color: var(--blue);
-      }
-    }
-  }
-
   &__mainContainer {
     @include box(100%, calc(100% - 70px));
     @include make-flex($dir: row, $align: flex-start);
@@ -41,6 +18,7 @@
     @include make-flex($just: flex-start);
     gap: 15px;
     padding: 75px 25px;
+    height: 100vh;
     background-color: var(--white);
     border-right: 1px solid;
     color: var(--navbarItems);
