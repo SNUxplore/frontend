@@ -63,6 +63,7 @@
       }
       &--icon {
         width: 13px;
+        filter: var(--modalSVGFilter);
       }
 
       &--titleSecondary {
@@ -85,10 +86,12 @@
 
       &--Socialsicon {
         width: 16px;
+        filter: var(--modalSVGFilter);
       }
 
       &--SocialsiconTW {
         width: 18px;
+        filter: var(--modalSVGFilter);
       }
 
       &--linkHighlight {

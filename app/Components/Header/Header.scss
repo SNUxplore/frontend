@@ -1,5 +1,13 @@
 @import "../../styles/root/mixins";
 
+.activePage {
+  background-color: var(--blue);
+  @include respondAt(1230px) {
+    background-color: var(--transparent);
+    filter: var(--svgfilter);
+  }
+}
+
 .HeaderWrapper {
   @include box($height: 150px);
   position: relative;
@@ -33,20 +41,22 @@
 
     &--option {
       width: 100%;
+      button {
+        background-color: var(--transparent);
+      }
+
       a,
       button {
         text-decoration: none;
-        background-color: var(--transparent);
         width: 100%;
         text-align: left;
         color: var(--textColor);
         font-size: 17px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;
-        padding: 7px 0;
+        padding: 7px 9px;
         border-style: none;
         cursor: pointer;
-
         white-space: nowrap;
         &:hover {
           text-decoration: underline;

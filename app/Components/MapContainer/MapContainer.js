@@ -15,7 +15,7 @@ export default function MapContainer() {
     return latLongMatch;
   }
 
-  const center = { lat: 28.523807, lng: 77.575904 };
+  const center = { lat: 28.524944, lng: 77.581242 };
   const zoom = 16;
 
   return (
