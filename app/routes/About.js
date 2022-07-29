@@ -82,7 +82,7 @@ const teamData = [
   {
     id: "7",
     name: "Riya Srivastava",
-    title: "Lead",
+    title: "Developer",
     gif: "https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif",
     pic: Riya,
     team: "Web Dev",
@@ -178,7 +178,7 @@ export default function About() {
             Meet the <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
-          Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
+            Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
             pretium suspendisse eget.it, navigating the university can be
             challenging!
           </p>
@@ -192,7 +192,10 @@ export default function About() {
               Our <span>Mission</span>
             </h2>
             <p className="AboutUsPage__mission--desc">
-            We at team SNUXplore are a group of passionate and driven individuals, who have come together for the sole purpose of making a comprehensive repository of all student related information available anytime, anywhere. 
+              We at team SNUXplore are a group of passionate and driven
+              individuals, who have come together for the sole purpose of making
+              a comprehensive repository of all student related information
+              available anytime, anywhere.
             </p>
           </div>
         </section>
@@ -203,7 +206,10 @@ export default function About() {
               <br /> has <b>been</b> <span>crazy</span>
             </h2>
             <p className="AboutUsPage__story--desc">
-              What started as an idea in the library, is now finally a reality. The Student Council. DSA. Admin. We've faced them all and with their support, have reached here, serving to you the features, we feel, make your campus life better.
+              What started as an idea in the library, is now finally a reality.
+              The Student Council. DSA. Admin. We've faced them all and with
+              their support, have reached here, serving to you the features, we
+              feel, make your campus life better.
             </p>
           </div>
           <div className="AboutUsPage__story--right">
@@ -216,7 +222,8 @@ export default function About() {
               Who <b>are we?</b>
             </h2>
             <p className="AboutUsPage__team--subTitle">
-              These are the people that make the magic happen. <br /> (hover over our pictures to see our true personalities xD)
+              These are the people that make the magic happen. <br /> (hover
+              over our pictures to see our true personalities xD)
             </p>
           </div>
           <div className="AboutUsPage__team--middle">

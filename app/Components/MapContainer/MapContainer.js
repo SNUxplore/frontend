@@ -1,14 +1,20 @@
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import data from "~/Assets/Data/data.json";
+
 import { useParams } from "@remix-run/react";
+
 export default function MapContainer() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAWWT0hia4MlZlReCvmoWB4PiOdxAy6elI",
   });
-
   if (!isLoaded) return <div>Loading...</div>;
 
   const { option } = useParams();
+
+  const url = window.location.href;
+  const word = url.split("=")[1];
+  const currentPlace = word ? decodeURIComponent(word) : "";
+
   function getLongLat(url) {
     var regex = new RegExp("@(.*),(.*),");
     const latLongMatch = url.match(regex);
@@ -36,6 +42,8 @@ export default function MapContainer() {
               <Marker
                 key={index}
                 title={place.name}
+                animation={place.name == currentPlace ? 1 : 2}
+                zIndex={place.name == currentPlace ? 2 : 1}
                 position={{
                   lat: parseFloat(getLongLat(place.location)[1]),
                   lng: parseFloat(getLongLat(place.location)[2]),
