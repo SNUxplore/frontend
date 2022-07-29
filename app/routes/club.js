@@ -96,6 +96,14 @@ export default function EditInfo() {
           </form>
         </nav>
         <div className="ClubInfoPage__contentContainer">
+          <div className="ClubInfoPage__contentContainer__userDetails">
+            <p className="ClubInfoPage__contentContainer__userDetails--userName">
+              {`Hello there 👋 ${userInfo.name}`}
+            </p>
+            <p className="ClubInfoPage__contentContainer__userDetails--text">
+              Here's how we are looking today. Start by adding an event !
+            </p>
+          </div>
           <Outlet />
         </div>
       </main>
