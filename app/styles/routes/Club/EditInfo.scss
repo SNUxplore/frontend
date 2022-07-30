@@ -12,6 +12,12 @@
     @include respondAt(805px) {
       flex-direction: column;
     }
+
+    @include respondAt(720px) {
+      height: unset;
+      min-height: 100%;
+      justify-content: flex-start;
+    }
   }
 
   &__navBar {
@@ -19,10 +25,16 @@
     @include box(320px);
     @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
-    padding: 60px 25px;
+    padding: 20px 25px;
     height: 100vh;
     background-color: var(--white);
     border-right: 1px solid white;
+
+    &--homeImage {
+      @include respondAt(805px) {
+        display: none;
+      }
+    }
 
     &__userDetails {
       &--userName {
@@ -45,9 +57,24 @@
       }
     }
 
+    &--form {
+      width: 100%;
+      @include make-flex($dir: row, $just: flex-start);
+      height: 50px;
+
+      @include respondAt(805px) {
+        min-width: 191px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+    }
+
     &--navBtn {
-      @include make-flex($dir: row);
+      @include make-flex($dir: row, $just: flex-start);
       gap: 13px;
+      width: 100%;
+      padding: 10px;
       height: 50px;
       border-radius: 7px;
       color: var(--primaryTextColor);
@@ -57,7 +84,6 @@
       opacity: 80%;
       transition: all 0.1s ease-in-out;
       cursor: pointer;
-
       img {
         width: 20px;
         @include respondAt(800px) {
@@ -66,6 +92,7 @@
       }
       p {
         font-size: 17px;
+        white-space: nowrap;
         @include respondAt(800px) {
           font-size: 15px;
         }
@@ -73,11 +100,15 @@
       &:hover {
         opacity: 100%;
         font-weight: 600;
+        border: 1px solid #e4e4e4;
       }
 
       @include respondAt(805px) {
-        height: 100%;
+        height: 75%;
         min-width: 191px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
       }
     }
     &--active {
@@ -89,41 +120,36 @@
       height: 75px;
       width: 100vw;
       flex-direction: row;
-      padding: 8px 8px;
+      align-items: center;
+      padding: 4px 8px;
       overflow-x: auto;
     }
   }
   &__contentContainer {
     @include box(calc(100% - 280px));
     @include make-flex($just: flex-start);
-    overflow-y: auto;
+    overflow-x: hidden;
     padding: 32px;
     gap: 20px;
-    overflow-y: auto;
 
-    @include respondAtAlt(800px) {
-      &__userDetails {
-        display: none;
-      }
-    }
     @include respondAt(800px) {
       width: 100%;
+      padding: 16px;
+      // &__userDetails {
+      //   padding-left: 10px;
+      //   &--userName {
+      //     font-size: 30px;
+      //     font-weight: 600;
+      //   }
 
-      &__userDetails {
-        padding-left: 10px;
-        &--userName {
-          font-size: 30px;
-          font-weight: 600;
-        }
-
-        &--text {
-          line-height: 167.5%;
-          margin-top: 10px;
-          font-size: 15px;
-          color: rgba(0, 0, 0, 0.575);
-          margin-bottom: 20px;
-        }
-      }
+      //   &--text {
+      //     line-height: 167.5%;
+      //     margin-top: 10px;
+      //     font-size: 15px;
+      //     color: rgba(0, 0, 0, 0.575);
+      //     margin-bottom: 20px;
+      //   }
+      // }
     }
 
     @include respondAt(370px) {
@@ -144,6 +170,17 @@
     &--title {
       font-weight: 600;
     }
+    &--subRow {
+      height: 100%;
+      width: 328px;
+      @include make-flex($dir: row);
+      gap: 10px;
+
+      input {
+        width: 100%;
+        height: 100%;
+      }
+    }
     &--row {
       height: 61px;
       @include make-flex($just: space-between, $dir: row);
@@ -151,10 +188,18 @@
       padding: 10px 24px;
       border-bottom: 1px solid var(--infoFormBorder);
 
+      @include respondAt(800px) {
+        align-items: flex-start;
+      }
+
       @include respondAt(505px) {
         flex-direction: column;
         height: unset;
         padding: 20px;
+      }
+
+      input[type="date"] {
+        width: 328px;
       }
       input {
         height: 100%;
@@ -162,12 +207,24 @@
         padding: 0 10px;
         border-radius: 5px;
         outline-color: var(--infoFormInputOutline);
+        position: relative;
         @include respondAt(505px) {
           width: 100%;
           height: 50px;
           border: 1px solid #e4e4e4;
         }
         transition: all 0.3s ease-in-out;
+
+        // &:required {
+        //   &::after {
+        //     content: " *";
+        //     color: #e32;
+        //     position: absolute;
+        //     margin: 0px 0px 0px -20px;
+        //     font-size: xx-large;
+        //     padding: 0 5px 0 0;
+        //   }
+        // }
       }
 
       input:focus {
@@ -200,12 +257,15 @@
         background: #bed9f7;
       }
       label {
-        width: 100%;
+        width: 50%;
         font-size: 15px;
         font-weight: 500;
         color: var(--infoFormSpam);
         text-align: left;
 
+        @include respondAt(800px) {
+          width: 100%;
+        }
         @include respondAt(505px) {
           height: 45px;
         }
