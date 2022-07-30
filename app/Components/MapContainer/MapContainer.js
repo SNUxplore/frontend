@@ -26,7 +26,7 @@ export default function MapContainer() {
     return latLongMatch;
   }
 
-  const center = { lat: 28.524944, lng: 77.581242 };
+  const center = { lat: 28.525421, lng: 77.574452 };
   const zoom = 16;
 
   return (
@@ -41,7 +41,6 @@ export default function MapContainer() {
             width: "100%",
           }}
         >
-          {/*<Marker title="Hostel 1C" position={center} />)*/}
           {data[option].map((place, index) => {
             return (
               <Marker

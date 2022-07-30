@@ -1,21 +1,21 @@
 import React from "react";
-import styleSheet from "~/styles/routes/Navigate/Navigate.css";
-import { Outlet, useLoaderData } from "@remix-run/react";
-import data from "~/Assets/Data/data.json";
 import { Link } from "@remix-run/react";
-import xploreLogo from "../Assets/Img/xploreLogo.svg";
-import upDropDown from "../Assets/Img/upDropDown.svg";
-import downDropDown from "../Assets/Img/downDropDown.svg";
-import residentialsIcons from "../Assets/Img/residentialsIcon.svg";
-import foodIcon from "../Assets/Img/foodIcon.svg";
+import data from "~/Assets/Data/data.json";
+import { useMediaQuery } from "react-responsive";
+import { Outlet, useLoaderData } from "@remix-run/react";
+import SearchBar from "../Components/SearchBar/SearchBar";
+import styleSheet from "~/styles/routes/Navigate/Navigate.css";
+import MapContainer from "~/Components/MapContainer/MapContainer";
+
+import poiIcon from "../Assets/Img/poiIcon.svg";
 import penIcon from "../Assets/Img/penIcon.svg";
 import cartIcon from "../Assets/Img/cartIcon.svg";
-import poiIcon from "../Assets/Img/poiIcon.svg";
+import foodIcon from "../Assets/Img/foodIcon.svg";
+import upDropDown from "../Assets/Img/upDropDown.svg";
+import xploreLogo from "../Assets/Img/xploreLogo.svg";
+import downDropDown from "../Assets/Img/downDropDown.svg";
 import basketBallIcon from "../Assets/Img/basketBallIcon.svg";
-import MapContainer from "~/Components/MapContainer/MapContainer";
-import SearchBar from "../Components/SearchBar/SearchBar";
-
-import { useMediaQuery } from "react-responsive";
+import residentialIcons from "../Assets/Img/residentialsIcon.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -24,42 +24,44 @@ export function links() {
 export const loader = async ({ request }) => {
   return request.url;
 };
+
 export default function Navigate() {
+  const url = useLoaderData();
+  const path = new URL(url).pathname.replace("/navigate/", "");
+
+  const [currentOption, setCurrentOption] = React.useState(
+    path ? path : Object.keys(data)[0]
+  );
+  const filterRef = React.useRef();
+  const [styles, setStyle] = React.useState({
+    height: "0px",
+    overflow: "hidden",
+    transitionDuration: "500ms",
+    transitionProperty: "height",
+    transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+  });
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [scrollHeight, setScrollHeight] = React.useState(0);
+
   const mobile = useMediaQuery({
     query: "(min-width: 585px)",
   });
+
   let iconSrcPanel = {
-    Residential: residentialsIcons,
+    Residential: residentialIcons,
     Food: foodIcon,
     Academics: penIcon,
     Essentials: cartIcon,
     POI: poiIcon,
     Sports: basketBallIcon,
   };
-  const url = useLoaderData();
-  const path = new URL(url).pathname.replace("/navigate/", "");
-  const [currentOption, setCurrentOption] = React.useState(
-    path ? path : Object.keys(data)[0]
-  );
-
-  const [isOpen, setIsOpen] = React.useState(false);
-  const filterRef = React.useRef();
-  const [scrollHeight, setScrollHeight] = React.useState(0);
-
-  const [styles, setStyle] = React.useState({
-    transitionDuration: "500ms",
-    transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-    transitionProperty: "height",
-    height: "0px",
-    overflow: "hidden",
-  });
 
   const styleOnMobile = {
     display: "flex",
     height: "fit-content",
   };
 
-  var style;
+  let style;
 
   if (mobile) {
     style = styles;
@@ -89,8 +91,7 @@ export default function Navigate() {
           transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           transitionProperty: "height",
           overflow: "hidden",
-          height: `${scrollHeight}px`,
-          paddingBottom: "1.5rem",
+          height: `${scrollHeight + 10}px`,
         });
       }, 50);
     } else {
@@ -137,10 +138,10 @@ export default function Navigate() {
               you covered!
             </p>
           </div>
-          <SearchBar style={{ width: "100%", marginBottom: "12%" }} />
+          <SearchBar style={{ width: "100%", marginBottom: "20px" }} />
           <div className="NavigatePage__right--panel">
             <button
-              className={`NavigatePage__right--panel" ${
+              className={`NavigatePage__right--panel ${
                 isOpen ? "NavigatePage__right--panel--active" : ""
               }`}
               onClick={() => setIsOpen(!isOpen)}
@@ -173,11 +174,9 @@ export default function Navigate() {
         </div>
       </div>
 
-      {mobile && (
-        <div className="NavigatePage__right" id="map">
-          <MapContainer />
-        </div>
-      )}
+      <div className="NavigatePage__right" id="map">
+        <MapContainer />
+      </div>
     </div>
   );
 }
