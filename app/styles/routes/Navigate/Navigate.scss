@@ -2,8 +2,15 @@
 
 .NavigatePage {
   font-family: "Poppins";
-  display: flex;
+  // @include make-flex();
   min-height: 100vh;
+
+  &__content {
+    &--right {
+      @include make-flex($align: stretch);
+      gap: 20px;
+    }
+  }
 
   &__left {
     width: 30%;
@@ -15,8 +22,7 @@
     padding-top: 4vh;
 
     &--header {
-      @include make-flex($dir: row, $just: flex-start);
-      column-gap: 57%;
+      @include make-flex($dir: row, $just: space-between);
 
       &--logo {
         filter: var(--svgfilter);
@@ -24,6 +30,7 @@
 
       &--back {
         font-family: "Poppins";
+        white-space: nowrap;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -102,16 +109,15 @@
 
   &__right {
     &--panel {
+      overflow: hidden;
       &--ac {
         @include box($height: 100%);
-        background-color: #d0d0d0;
-        @include respondAt(1530px) {
-          background-color: white;
-        }
-        overflow: hidden;
+        background-color: var(--pageBackground);
+        padding: 10px;
+        border-radius: 8px;
         a {
           text-decoration: none;
-
+          height: 35px;
           @include make-flex();
           padding: 7px 8px;
           color: #343a4e;
@@ -145,18 +151,31 @@
             background-color: var(--blue);
           }
         }
+
+        @include respondAt(585px) {
+          background-color: transparent;
+          width: unset;
+          height: unset;
+          padding: unset;
+        }
       }
       button {
         @include box(100%, auto);
-        background-color: #d0d0d0;
-        border: 0;
-        padding: 1.2rem 2rem;
+        background-color: var(--pageBackground);
+        padding: 10px;
         font-family: "Poppins";
         font-style: normal;
         font-weight: 600;
         font-size: 17px;
         line-height: 26px;
-        border-bottom: 2px solid black;
+        border-radius: 7px;
+        border: 1px solid black;
+        @include make-flex($dir: row);
+        gap: 20px;
+        cursor: pointer;
+        img {
+          width: 16px;
+        }
       }
 
       @include box(19%, auto);
@@ -204,11 +223,6 @@
         background-color: white;
         background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
         background-attachment: local, local, scroll, scroll;
-      }
-
-      img {
-        @include box(12px, 12px);
-        display: inline;
       }
     }
     width: 70%;

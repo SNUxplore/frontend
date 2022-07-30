@@ -1,13 +1,11 @@
 @import "../../styles/root/mixins";
 
 .NavCardContainer {
-  margin-bottom: 5%;
   font-family: "Poppins", sans-serif;
   background-color: var(--navigateCardColor);
-  border-radius: 0.6rem;
-  padding: 1.4rem;
-  display: flex;
-  align-items: center;
+  border-radius: 9px;
+  padding: 17px;
+  @include make-flex($dir: row);
 
   gap: 1.4rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -18,6 +16,7 @@
   }
   &__picture {
     width: 40%;
+    height: 100%;
   }
 
   @include respondAt(1135px) {
@@ -55,12 +54,12 @@
 
   &__content {
     @include make-flex($just: flex-start, $align: flex-start);
-    flex-grow: 2;
+    width: 54%;
+    gap: 5px;
 
     &__name {
       color: var(--navigateCardTitle);
       font-size: 1.2em;
-      margin-bottom: 1vh;
     }
 
     &__desc {
@@ -70,7 +69,6 @@
       color: var(--navigateCardDesc);
       line-height: 1.2;
       letter-spacing: 0.8px;
-      margin-bottom: 2vh;
     }
 
     &__ctas {
@@ -79,10 +77,11 @@
       font-weight: 500;
 
       .location-button {
-        padding: 0.6rem 1.5rem;
+        font-size: 15px;
         border-radius: 0.4rem;
         border: 1.4px #363b5300 solid;
         background-color: var(--navigateCardButton);
+        padding: 5px 18px;
         color: var(--navigateCardColor);
       }
 
@@ -95,8 +94,9 @@
       }
 
       .menu-button {
+        font-size: 15px;
+        padding: 5px 18px;
         border-radius: 0.4rem;
-        padding: 0.6rem 1.5rem;
         border: 1px var(--navigateCardButton) solid;
         background-color: transparent;
         color: var(--navigateCardButton);

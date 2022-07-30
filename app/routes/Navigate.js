@@ -41,27 +41,6 @@ export default function Navigate() {
   const [currentOption, setCurrentOption] = React.useState(
     path ? path : Object.keys(data)[0]
   );
-  React.useEffect(() => {
-    // Dynamically change left container's height
-    const changeHeight = () => {
-      const height = document
-        .querySelector(".NavigatePage__main--content")
-        .getBoundingClientRect().height;
-      document.querySelector(".NavigatePage__content--left").style.height =
-        height + "px";
-    };
-
-    const resize_ob = new ResizeObserver(function (entries) {
-      let rect = entries[0].contentRect;
-      let height = rect.height;
-      document.querySelector(".NavigatePage__content--left").style.height =
-        height + "px";
-    });
-
-    window.onload = changeHeight;
-    window.onresize = changeHeight;
-    resize_ob.observe(document.querySelector(".NavigatePage__content--right"));
-  });
 
   const [isOpen, setIsOpen] = React.useState(false);
   const filterRef = React.useRef();
@@ -78,7 +57,6 @@ export default function Navigate() {
   const styleOnMobile = {
     display: "flex",
     height: "fit-content",
-    width: "100%",
   };
 
   var style;
@@ -197,13 +175,6 @@ export default function Navigate() {
 
       {mobile && (
         <div className="NavigatePage__right" id="map">
-          {/* <iframe
-            frameBorder="0"
-            styles="border:0"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAWWT0hia4MlZlReCvmoWB4PiOdxAy6elI &q=Shiv+nadar+university+delhi+noida"
-            allowfullscreen
-          ></iframe> */}
           <MapContainer />
         </div>
       )}
