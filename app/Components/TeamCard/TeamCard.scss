@@ -1,44 +1,45 @@
+@import "../../styles/root/mixins";
+
 .AboutUsCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px 10px 0 10px;
-    &--image {
-      border-radius: 10px;
-      width: 278px;
-      height: 352px;
-      @include respondAt(770px) {
-        width: 140px;
-        height: 190px;
-      }
-      @include respondAt(545px) {
-        width: 138px;
-        height: 180px;
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 10px 0 10px;
+  &--image {
+    border-radius: 10px;
+    width: 278px;
+    height: 352px;
+    @include respondAt(770px) {
+      width: 140px;
+      height: 190px;
     }
-    &--name {
-      color: var(--nameTitle);
-      font-family: "Poppins";
-      font-weight: 500;
-      font-size: 20px;
-      @include respondAt(775px) {
-        font-size: 14px;
-      }
-      @include respondAt(635px) {
-        font-size: 13px;
-      }
-    }
-    &--title {
-      color: var(--teamText);
-      font-family: "Poppins";
-      font-weight: 500;
-      font-size: 20px;
-      @include respondAt(775px) {
-        font-size: 11px;
-      }
-      @include respondAt(635px) {
-        font-size: 10px;
-      }
+    @include respondAt(545px) {
+      width: 138px;
+      height: 180px;
     }
   }
-  
+  &--name {
+    color: var(--nameTitle);
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 20px;
+    @include respondAt(775px) {
+      font-size: 14px;
+    }
+    @include respondAt(635px) {
+      font-size: 13px;
+    }
+  }
+  &--title {
+    color: var(--teamText);
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 20px;
+    @include respondAt(775px) {
+      font-size: 11px;
+    }
+    @include respondAt(635px) {
+      font-size: 10px;
+    }
+  }
+}
