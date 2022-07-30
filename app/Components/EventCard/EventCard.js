@@ -21,7 +21,6 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
       </div>
       <div className="EventCardWrapper__right">
         <p>{date}</p>
-        <p>{location}</p>
         <button
           onClick={() => {
             setEventData([

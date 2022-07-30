@@ -57,6 +57,8 @@
     @include make-flex($just: space-between, $align: flex-end);
     p {
       color: var(--textColor);
+      font-size: 12px;
+      white-space: nowrap;
     }
     &--date {
       font-size: 12px;
