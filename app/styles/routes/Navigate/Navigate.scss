@@ -2,7 +2,7 @@
 
 .NavigatePage {
   font-family: "Poppins";
-  // @include make-flex();
+  display: flex;
   min-height: 100vh;
 
   &__content {
