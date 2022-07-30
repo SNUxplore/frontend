@@ -2,124 +2,113 @@
 
 .LoginPage {
   font-family: "poppins";
-  position: relative;
-  &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    max-width: 950px;
-    @include make-flex($just: space-between, $align: center, $dir: row);
+  @include box($height: 100vh);
+  @include make-flex();
 
-    @include respondAt(800px) {
-      @include make-flex($dir: column);
+  &__container {
+    @include make-flex($dir: row);
+    @include box(800px, 455px);
+
+    @include respondAt(807px) {
+      flex-direction: column;
+      height: 670px;
+      width: 100%;
     }
-    &__left {
-      //background dots need to be added
-      padding-left: 6rem;
-      padding-top: 6rem;
-      // background: url(../../Assets/Img/dottedBg.jpg);
-      // background-size: auto;
-      height: 465px;
-      width: 490px;
-      background: red;
-      border-radius: 30px 0px 0px 30px;
-      background: #13111f;
+    @include respondAt(480px) {
+      height: 100%;
+    }
 
-      @include respondAt(800px) {
-        border-radius: 30px 30px 0px 0px;
-        padding-left: 5rem;
-        padding-top: 5rem;
-        height: 420px;
-        width: 450px;
+    &--left {
+      @include make-flex();
+      @include box(50%);
+      background-color: #13111f;
+      border-radius: 20px 0 0 20px;
+      gap: 15px;
+
+      @include respondAt(807px) {
+        border-radius: 20px 20px 0 0;
+        width: 455px;
       }
-
-      &--title {
-        color: white;
-        font-weight: 600;
+      @include respondAt(480px) {
+        width: 100%;
+        height: 100%;
+      }
+      h1 {
+        width: 75%;
+        @include make-flex($align: flex-start);
         font-size: 45px;
-        line-height: 129.7%;
-
-        @include respondAt(800px) {
-          font-size: 35px;
-        }
-
+        color: white;
         span {
           color: #308cf8;
         }
+        @include respondAt(400px) {
+          width: 90%;
+        }
       }
-
-      &--para {
-        line-height: 195.5%;
-        font-size: 10px;
-        color: rgba(255, 255, 255, 0.945);
-        font-weight: 300;
-        width: 300px;
-        margin-top: 15px;
-
-        @include respondAt(800px) {
-          font-size: 2px;
+      p {
+        width: 75%;
+        color: whitesmoke;
+        font-size: 14px;
+        @include respondAt(400px) {
+          width: 90%;
         }
       }
     }
-    &__right {
-      padding-left: 6rem;
-      padding-top: 8rem;
-      height: 465px;
-      width: 490px;
-      background: white;
-      border: 2px solid rgba(0, 0, 0, 0.18);
-      border-radius: 0px 30px 30px 0px;
+    &--right {
+      @include make-flex();
+      @include box(50%);
+      background-color: #ffffff;
+      border-radius: 0 20px 20px 0;
+      border-top: 1px solid #e6e6e6;
+      border-right: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      gap: 15px;
 
-      @include respondAt(800px) {
-        border-radius: 0px 0px 30px 30px;
-        padding-left: 5rem;
-        padding-top: 5rem;
-        height: 420px;
-        width: 450px;
+      @include respondAt(807px) {
+        width: 455px;
+        border-radius: 0 0 20px 20px;
       }
-
-      &--title {
-        color: #13111f;
-        font-weight: 600;
+      @include respondAt(480px) {
+        height: 100%;
+        width: 100%;
+      }
+      h1 {
+        width: 75%;
         font-size: 45px;
-        line-height: 129.7%;
+        color: rgb(43, 43, 43);
+        @include respondAt(400px) {
+          width: 90%;
+        }
+      }
+      p {
+        width: 75%;
+        font-size: 14px;
+        color: rgb(43, 43, 43);
+        @include respondAt(400px) {
+          width: 90%;
+        }
       }
 
-      &--para {
-        line-height: 195.5%;
-        font-size: 10px;
-        color: #13111f;
-        font-weight: 400;
-        width: 300px;
-        margin-top: 15px;
+      form {
+        @include box(75%, 23%);
+        @include make-flex();
       }
+    }
+    &--button {
+      @include box(100%, 50px);
+      transition: all 0.3s;
+      @include make-flex($dir: row, $align: center);
+      border-radius: 6px;
+      background-color: #ffffff;
+      border: 1.5px solid #e6e6e6;
+      padding: 10px;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
 
-      &--btn {
-        transition: all 0.3s;
-        @include make-flex($dir: row, $align: center);
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border: 1.5px solid #13111f;
-        border-radius: 6px;
-        background: rgba(255, 255, 255, 0);
-        gap: 10px;
-        margin-top: 15px;
-        font-weight: 600;
-        font-size: 12px;
-        cursor: pointer;
-      }
-
-      &--btn:hover {
-        background: #252231;
-        color: white;
-      }
-
-      &--btnIcon {
-        width: 20px;
-        background: rgba(255, 255, 255, 0);
+      img {
+        height: 100%;
       }
     }
   }
