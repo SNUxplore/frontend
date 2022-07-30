@@ -13,7 +13,6 @@ import modalCloseIcon from "../../Assets/Img/modalClose__LightTheme.svg";
 function InfoModal({ setModalOpen, data }) {
   return (
     <div className="ModalWrapper">
-      {console.log(data)}
       <div className="ModalWrapper__container">
         <button
           className="ModalWrapper__container--closebtn"
@@ -40,7 +39,8 @@ function InfoModal({ setModalOpen, data }) {
               src={timeIcon}
               alt="time icon"
             />
-            <span>Timings :</span> --
+            <span>Timings :</span> 
+            {data[3].split(" ")[1]} - {data[3].split(" ")[3]}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -49,7 +49,7 @@ function InfoModal({ setModalOpen, data }) {
               alt="date icon"
             />
             <span>Date :</span>
-            {data[3]}
+            {data[3].split(" ")[0]}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
