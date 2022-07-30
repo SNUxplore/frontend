@@ -3,6 +3,7 @@ import styleSheet from "~/styles/routes/Club/EditInfo.css";
 import { authenticator } from "./services/auth.server";
 import { Link, useLocation } from "react-router-dom";
 import FullLogo from "../Assets/Img/FullLogo.svg";
+import { redirect } from "@remix-run/node";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -23,7 +24,9 @@ export default function EditInfo() {
         <a href="/">
           <img src={FullLogo} alt="Full Logo" />
         </a>
-        <button>Log Out</button>
+        <form method="post" action="/logout">
+          <button type="submit">Log Out</button>
+        </form>
       </header>
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
