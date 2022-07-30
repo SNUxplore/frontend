@@ -2,7 +2,7 @@
 
 .Banner {
   background-color: var(--blue);
-  @include box($height: 38.75vh);
+  @include box($width: 100vw, $height: 38.75vh);
   @include make-flex($dir: row);
   max-height: 336px;
 

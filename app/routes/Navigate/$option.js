@@ -42,10 +42,8 @@ export default function NavOption() {
 
   React.useEffect(() => {
     let scrollToElement;
-    let container;
     if (urlParams.name) {
       scrollToElement = document.getElementById(urlParams.name);
-      container = document.getElementById("container");
       setHighlighted(true);
     } else if (!urlParams.redirect) {
       scrollToElement = document.querySelector(
