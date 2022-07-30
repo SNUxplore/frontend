@@ -1,10 +1,11 @@
 import React from "react";
 import styleSheet from "~/styles/routes/Club/EditInfo.css";
-
+import DashBoardStyle from "~/styles/routes/Club/Dashboard.css";
 import addIcon from "../Assets/Img/addIcon.svg";
 import keyIcon from "../Assets/Img/keyIcon.svg";
 import exitIcon from "../Assets/Img/logoutIcon.svg";
 import timeIcon from "../Assets/Img/timeIcon.svg";
+import snuxplorelogo from "../Assets/Img/FullLogo.svg";
 
 import { Outlet, Link } from "react-router-dom";
 import { authenticator } from "./services/auth.server";
@@ -24,30 +25,44 @@ export const loader = async ({ request }) => {
 };
 
 export function links() {
-  return [{ rel: "stylesheet", href: styleSheet }];
+  return [
+    { rel: "stylesheet", href: styleSheet },
+    { rel: "stylesheet", href: DashBoardStyle },
+  ];
 }
 
 export default function EditInfo() {
   const data = useLoaderData();
-  
+
   return (
     <div className="ClubInfoPage">
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
-          <div className="ClubInforPage__navBar__userDetails">
+          {/* <div className="ClubInforPage__navBar__userDetails">
             <p className="ClubInfoPage__navBar__userDetails--userName">
               {`Hello there 👋 ${data.name}`}
             </p>
             <p className="ClubInfoPage__navBar__userDetails--text">
               Here's how we are looking today. Start by adding an event !
-            </p>
-          </div>
+            </p> 
+          </div> */}
+          <Link className="ClubInfoPage__navBar--homeImage" to="/">
+            <img src={snuxplorelogo} alt="Home" />
+          </Link>
+          <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
+            <img
+              className="ClubInfoPage__navBar--navImg"
+              src={timeIcon}
+              alt="timeIcon"
+            />
+            <p>Dashboard</p>
+          </Link>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/edit-info">
             <img
               className="ClubInfoPage__navBar--navImg"
               src={keyIcon}
               alt="keyIcon"
-            />{" "}
+            />
             <p>Account information</p>
           </Link>
           <Link
@@ -58,38 +73,34 @@ export default function EditInfo() {
               className="ClubInfoPage__navBar--navImg"
               src={addIcon}
               alt="addIcon"
-            />{" "}
+            />
             <p>Create Event</p>
           </Link>
-          <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
-            <img
-              className="ClubInfoPage__navBar--navImg"
-              src={timeIcon}
-              alt="timeIcon"
-            />{" "}
-            <p>Event History</p>
-          </Link>
 
-          <form method="post" action="/logout" className="logoutBTNContianer">
+          <form
+            method="post"
+            action="/logout"
+            className="ClubInfoPage__navBar--form"
+          >
             <button className="ClubInfoPage__navBar--navBtn" type="submit">
               <img
                 className="ClubInfoPage__navBar--navImg"
                 src={exitIcon}
                 alt="exitIcon"
-              />{" "}
+              />
               <p className="logout">Log out</p>
             </button>
           </form>
         </nav>
         <div className="ClubInfoPage__contentContainer">
-          <div className="ClubInfoPage__contentContainer__userDetails">
+          {/* <div className="ClubInfoPage__contentContainer__userDetails">
             <p className="ClubInfoPage__contentContainer__userDetails--userName">
               {`Hello there 👋 ${data.name}`}
             </p>
             <p className="ClubInfoPage__contentContainer__userDetails--text">
               Here's how we are looking today. Start by adding an event !
             </p>
-          </div>
+          </div> */}
           <Outlet />
         </div>
       </main>
