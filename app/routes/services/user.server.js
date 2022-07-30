@@ -10,6 +10,8 @@ export const createEvent = async ({
   imageUrl,
   location,
   date,
+  startTime,
+  endTime,
   description,
   title,
 }) =>
@@ -18,7 +20,7 @@ export const createEvent = async ({
       userId,
       imageUrl,
       location,
-      date,
+      date: date + " " + startTime + " - " + endTime,
       description,
       title,
       instaUrl,
