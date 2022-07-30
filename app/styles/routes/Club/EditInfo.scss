@@ -1,31 +1,9 @@
 @import "../../root/mixins";
 
 .ClubInfoPage {
+  font-family: "poppins";
   @include box(100vw, 100vh);
   transition: background-color 0.2s ease-in-out;
-
-  header {
-    @include box(100%, 70px);
-    @include make-flex($just: space-between, $dir: row);
-    padding: 15px 25px;
-    background-color: var(--clubInfoHeaderBG);
-    img,
-    a {
-      height: 100%;
-    }
-    button {
-      height: 100%;
-      padding: 0 15px;
-      background-color: transparent;
-      color: var(--white);
-      border: 1px solid var(--blue);
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        background-color: var(--blue);
-      }
-    }
-  }
 
   &__mainContainer {
     @include box(100%, calc(100% - 70px));
@@ -37,26 +15,64 @@
   }
 
   &__navBar {
-    @include box(280px);
-    @include make-flex($just: flex-start);
+    padding-left: 1rem;
+    @include box(320px);
+    @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
-    padding: 75px 25px;
+    padding: 60px 25px;
+    height: 100vh;
     background-color: var(--white);
-    border-right: 1px solid;
-    color: var(--navbarItems);
+    border-right: 1px solid white;
 
-    a {
-      width: 100%;
-      text-align: center;
+    &__userDetails {
+      &--userName {
+        @include respondAt(800px) {
+          display: none;
+        }
+        font-size: 30px;
+        font-weight: 600;
+      }
+
+      &--text {
+        @include respondAt(800px) {
+          display: none;
+        }
+        line-height: 167.5%;
+        margin-top: 10px;
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.575);
+        margin-bottom: 20px;
+      }
+    }
+
+    &--navBtn {
+      @include make-flex($dir: row);
+      gap: 13px;
       height: 50px;
       border-radius: 7px;
-      border: 1px solid var(--blue);
       color: var(--primaryTextColor);
       text-decoration: none;
-      @include make-flex();
+      background: none;
+      border: none;
+      opacity: 80%;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        @include respondAt(800px) {
+          width: 18px;
+        }
+      }
+      p {
+        font-size: 17px;
+        @include respondAt(800px) {
+          font-size: 15px;
+        }
+      }
       &:hover {
-        background-color: var(--blue);
-        color: var(--white);
+        opacity: 100%;
+        font-weight: 600;
       }
 
       @include respondAt(805px) {
@@ -81,12 +97,33 @@
     @include box(calc(100% - 280px));
     @include make-flex($just: flex-start);
     overflow-y: auto;
-    padding: 32px 32px 0;
+    padding: 60px 32px 0;
     gap: 20px;
     overflow-y: auto;
 
+    @include respondAtAlt(800px) {
+      &__userDetails {
+        display: none;
+      }
+    }
     @include respondAt(800px) {
       width: 100%;
+
+      &__userDetails {
+        padding-left: 10px;
+        &--userName {
+          font-size: 30px;
+          font-weight: 600;
+        }
+
+        &--text {
+          line-height: 167.5%;
+          margin-top: 10px;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.575);
+          margin-bottom: 20px;
+        }
+      }
     }
 
     @include respondAt(370px) {
@@ -102,6 +139,10 @@
     span {
       color: var(--infoFormSpam);
       font-style: italic;
+    }
+
+    &--title {
+      font-weight: 600;
     }
     &--row {
       height: 61px;
@@ -120,13 +161,19 @@
         border: none;
         padding: 0 10px;
         border-radius: 5px;
-        outline-width: 1px;
         outline-color: var(--infoFormInputOutline);
         @include respondAt(505px) {
           width: 100%;
           height: 50px;
           border: 1px solid #e4e4e4;
         }
+        transition: all 0.3s ease-in-out;
+      }
+
+      input:focus {
+        outline-color: #308cf8;
+        outline-width: 1px;
+        background: #bed9f7;
       }
       textarea {
         height: 100%;
@@ -146,9 +193,15 @@
           max-width: 100%;
         }
       }
+
+      textarea:focus {
+        outline-color: #308cf8;
+        outline-width: 1px;
+        background: #bed9f7;
+      }
       label {
         width: 100%;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
         color: var(--infoFormSpam);
         text-align: left;
@@ -159,20 +212,20 @@
       }
 
       button {
-        height: 85%;
+        font-size: 15px;
         border: none;
-        padding: 0 10px;
-        border-radius: 5px;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        border-radius: 8px;
         outline-color: var(--buttonOutline);
-        background-color: var(--blue);
+        background-color: #363b53;
         color: var(--white);
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        &:hover {
-          background-color: var(--blue);
-          color: var(--white);
-        }
+        transform: all 0.3s ease-in-out;
 
         @include respondAt(505px) {
           height: 45px;
@@ -200,5 +253,17 @@
     @include respondAt(430px) {
       display: none;
     }
+  }
+}
+
+.logout {
+  color: #e12d3a;
+}
+
+.logoutBTNContianer {
+  margin-left: -5px;
+
+  @include respondAt(800px) {
+    margin-top: 10px;
   }
 }

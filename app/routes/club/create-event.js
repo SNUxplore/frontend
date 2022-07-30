@@ -47,7 +47,7 @@ export default function CreateEvent() {
         className="ClubInfoPage__InfoForm"
       >
         <div className="ClubInfoPage__InfoForm--row">
-          <h3>Create event</h3>
+          <h3 className="ClubInfoPage__InfoForm--title">Create event</h3>
         </div>
 
         {/* Cap title to max 200 character, i.e. make this a controlled component */}
@@ -86,7 +86,6 @@ export default function CreateEvent() {
             name="date"
             onChange={(e) => updateFormData(e)}
           />
-          
         </div>
         <div className="ClubInfoPage__InfoForm--row">
           <label htmlFor="time">Time</label>
@@ -105,7 +104,6 @@ export default function CreateEvent() {
             type="time"
             onChange={(e) => updateFormData(e)}
           />
-          
         </div>
         <div
           className="ClubInfoPage__InfoForm--row"
@@ -144,7 +142,7 @@ export default function CreateEvent() {
         </div>
       </Form>
       <section className="ClubInfoPage__preview">
-        <h3>Preview</h3>
+        <h3 className="ClubInfoPage__InfoForm--title">Preview</h3>
         <div className="ClubInfoPage__preview--cardHolder">
           <EventCard
             clubName={data.name}

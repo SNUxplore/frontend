@@ -1,3 +1,4 @@
+import React from "react";
 import { authenticator } from "../services/auth.server";
 import { Form, useLoaderData } from "@remix-run/react";
 import { editInfo, getSessionUserByEmail } from "../services/user.server";
@@ -37,7 +38,9 @@ export default function EditInfo() {
       action="/club/edit-info"
       method="POST"
     >
-      <h3 className="ClubInfoPage__InfoForm--row">Club Information</h3>
+      <h3 className="ClubInfoPage__InfoForm--title ClubInfoPage__InfoForm--row">
+        Club Information
+      </h3>
       <span className="ClubInfoPage__InfoForm--row">
         The information provided will reflect in your events
       </span>
