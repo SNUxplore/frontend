@@ -36,7 +36,7 @@ export default function NavigateCard({
         <h2 className="NavCardContainer__content__name">{name}</h2>
         <p className="NavCardContainer__content__desc">{desc}</p>
         <div className="NavCardContainer__content__ctas">
-          <a href={"?name=" + nameOfThePlace}>
+          <a href={"?name=button=" + nameOfThePlace}>
             <button className="location-button">Location</button>
           </a>
           {menu.length == 0 ? (

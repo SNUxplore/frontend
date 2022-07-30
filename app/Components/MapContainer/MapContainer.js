@@ -1,4 +1,9 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 import data from "~/Assets/Data/data.json";
 
 import { useParams } from "@remix-run/react";
@@ -12,7 +17,7 @@ export default function MapContainer() {
   const { option } = useParams();
 
   const url = window.location.href;
-  const word = url.split("=")[1];
+  const word = url.split("=")[2];
   const currentPlace = word ? decodeURIComponent(word) : "";
 
   function getLongLat(url) {
@@ -48,7 +53,21 @@ export default function MapContainer() {
                   lat: parseFloat(getLongLat(place.location)[1]),
                   lng: parseFloat(getLongLat(place.location)[2]),
                 }}
-              />
+              >
+                {place.name == currentPlace && (
+                  <InfoWindow
+                    position={{
+                      lat: parseFloat(getLongLat(place.location)[1]) + 0.001,
+                      lng: parseFloat(getLongLat(place.location)[2]),
+                    }}
+                  >
+                    <div>
+                      <a href={place.location}>Google Maps Link</a>
+                      <div>&rarr; {place.name}</div>
+                    </div>
+                  </InfoWindow>
+                )}
+              </Marker>
             );
           })}
         </GoogleMap>
