@@ -9,8 +9,9 @@ export const loader = async ({ request }) => {
   const email = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
-  const user = await getSessionUserByEmail(email["emailId"]);
-  return json(user);
+  console.log("------------" + email);
+  const user = await getSessionUserByEmail(email);
+  return { user };
 };
 
 export const action = async ({ request }) => {

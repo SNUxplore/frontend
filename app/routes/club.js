@@ -18,7 +18,7 @@ export const loader = async ({ request }) => {
   });
   if (emailId === null || emailId === undefined)
     return json({ success: false, error: "Didn't give valid email ID" });
-  const events = await getEventsByClub(emailId["emailId"]);
+  const events = await getEventsByClub(emailId);
 
   return events;
 };
