@@ -15,5 +15,5 @@ export let loader = async ({ request }) => {
   let headers = new Headers({ "Set-Cookie": await commitSession(session) });
 
   // and do your validation to know where to redirect the user
-  return redirect("/club/edit-info", { headers });
+  return redirect("/club/dashboard", { headers });
 };

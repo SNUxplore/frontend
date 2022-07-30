@@ -8,7 +8,7 @@ export function links() {
 
 export const loader = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request, {
-    successRedirect: "/club/create-event",
+    successRedirect: "/club/dashboard",
   });
   return null;
 };
