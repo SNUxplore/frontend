@@ -138,8 +138,9 @@
 
       @include respondAt(750px) {
         @include make-flex($dir: row, $just: space-between);
+				width: 100%;
         gap: 5px;
-        background-color: #fff;
+        background-color: transparent;
         padding: 10px;
       }
     }

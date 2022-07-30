@@ -4,7 +4,7 @@ import fireIcon from "../../Assets/Img/modalFireIcon_lightTheme.svg";
 import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
 import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
 import locationIcon from "../../Assets/Img/modalLocationIcon_lightTheme.svg";
-
+import appLogo from "../../Assets/Img/xploreLogo.svg";
 import clubInstagram from "../../Assets/Img/insta_dark.svg";
 import clubTwitter from "../../Assets/Img/twitter_dark.svg";
 import clubFacebook from "../../Assets/Img/facebook_dark.svg";
@@ -23,7 +23,7 @@ function InfoModal({ setModalOpen, data }) {
         </button>
         <div className="ModalWrapper__container__infoContainer">
           <h1 className="ModalWrapper__container__infoContainer--title">
-            <img src={logoPreview} alt="CLUB LOGO" />
+            <img src={appLogo} alt="CLUB LOGO" />
             {data[2]}
           </h1>
           <p className="ModalWrapper__container__infoContainer--details">
