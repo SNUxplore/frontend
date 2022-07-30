@@ -23,6 +23,7 @@ export const action = async ({ request }) => {
 
 export default function EditInfo() {
   const data = useLoaderData();
+  console.log(data);
   const [formData, setFormData] = React.useState(data.user);
 
   function updateFormData(e) {

@@ -16,10 +16,10 @@ export const loader = async ({ request }) => {
   const emailId = await authenticator.isAuthenticated(request, {
     failureRedirect: "/login",
   });
-  if (emailId === null || emailId === undefined)
+  if (emailId === null || emailId === undefined) {
     return json({ success: false, error: "Didn't give valid email ID" });
+  }
   const events = await getEventsByClub(emailId);
-
   return events;
 };
 
@@ -29,28 +29,14 @@ export function links() {
 
 export default function EditInfo() {
   const data = useLoaderData();
-  const [userInfo, setUserInfo] = React.useState({});
-
-  React.useEffect(() => {
-    let infoPointer = {
-      emailId: data.emailId,
-      name: data.name,
-    };
-
-    setUserInfo((userInfo) => ({
-      ...userInfo,
-      ...infoPointer,
-    }));
-  }, []);
-
-  // const pathname = useLocation().pathname.replace("/club/", "");
+  
   return (
     <div className="ClubInfoPage">
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
           <div className="ClubInforPage__navBar__userDetails">
             <p className="ClubInfoPage__navBar__userDetails--userName">
-              {`Hello there 👋 ${userInfo.name}`}
+              {`Hello there 👋 ${data.name}`}
             </p>
             <p className="ClubInfoPage__navBar__userDetails--text">
               Here's how we are looking today. Start by adding an event !
@@ -98,7 +84,7 @@ export default function EditInfo() {
         <div className="ClubInfoPage__contentContainer">
           <div className="ClubInfoPage__contentContainer__userDetails">
             <p className="ClubInfoPage__contentContainer__userDetails--userName">
-              {`Hello there 👋 ${userInfo.name}`}
+              {`Hello there 👋 ${data.name}`}
             </p>
             <p className="ClubInfoPage__contentContainer__userDetails--text">
               Here's how we are looking today. Start by adding an event !

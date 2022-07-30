@@ -6,7 +6,7 @@
   transition: background-color 0.2s ease-in-out;
 
   &__mainContainer {
-    @include box(100%, calc(100% - 70px));
+    @include box();
     @include make-flex($dir: row, $align: flex-start);
 
     @include respondAt(805px) {
@@ -97,7 +97,7 @@
     @include box(calc(100% - 280px));
     @include make-flex($just: flex-start);
     overflow-y: auto;
-    padding: 60px 32px 0;
+    padding: 32px;
     gap: 20px;
     overflow-y: auto;
 
