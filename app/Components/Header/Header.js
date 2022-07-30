@@ -19,6 +19,7 @@ import logoPink from "../../Assets/Img/logoPink.svg";
 import darkModeFillTheme from "../../Assets/Img/darkModeFillTheme.svg";
 import darkModeNotActive from "../../Assets/Img/darkModeNotActive.svg";
 import pinkModeFillTheme from "../../Assets/Img/pinkModeFillTheme.svg";
+import { NavLink } from "react-router-dom";
 
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData } from "@remix-run/react";
@@ -133,7 +134,12 @@ function Header() {
             </a>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/events">
+            <NavLink
+              to="/events"
+              className={({ isActive }) =>
+                isActive ? "activePage" : "not-active-class"
+              }
+            >
               {dropdown && (
                 <img
                   className="HeaderWrapper__middle--option fire"
@@ -142,7 +148,7 @@ function Header() {
                 />
               )}
               Happening@SNU
-            </a>
+            </NavLink>
           </li>
           {dropdown && (
             <div style={{ marginTop: "17px", width: "100%" }}>
@@ -153,7 +159,12 @@ function Header() {
             </div>
           )}
           <li className="HeaderWrapper__middle--option">
-            <a href="/admin">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                isActive ? "activePage" : "not-active-class"
+              }
+            >
               {dropdown && (
                 <img
                   className="HeaderWrapper__middle--option fire"
@@ -162,10 +173,15 @@ function Header() {
                 />
               )}
               Admins & Contact
-            </a>
+            </NavLink>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/faqs">
+            <NavLink
+              to="/faqs"
+              className={({ isActive }) =>
+                isActive ? "activePage" : "not-active-class"
+              }
+            >
               {dropdown && (
                 <img
                   className="HeaderWrapper__middle--option fire"
@@ -174,10 +190,15 @@ function Header() {
                 />
               )}
               FAQs
-            </a>
+            </NavLink>
           </li>
           <li className="HeaderWrapper__middle--option">
-            <a href="/about">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "activePage" : "not-active-class"
+              }
+            >
               {dropdown && (
                 <img
                   className="HeaderWrapper__middle--option fire"
@@ -186,7 +207,7 @@ function Header() {
                 />
               )}
               About Us
-            </a>
+            </NavLink>
           </li>
           {dropdown && (
             <div style={{ marginTop: "17px", width: "100%" }}>

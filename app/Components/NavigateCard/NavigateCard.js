@@ -8,6 +8,7 @@ export default function NavigateCard({
   src,
   highlighted,
 }) {
+  const nameOfThePlace = name;
   const location = actionLists.filter((action) => {
     return action.title == "Map";
   });
@@ -35,7 +36,7 @@ export default function NavigateCard({
         <h2 className="NavCardContainer__content__name">{name}</h2>
         <p className="NavCardContainer__content__desc">{desc}</p>
         <div className="NavCardContainer__content__ctas">
-          <a href={location[0].href}>
+          <a href={"?name=button=" + nameOfThePlace}>
             <button className="location-button">Location</button>
           </a>
           {menu.length == 0 ? (
