@@ -3,9 +3,6 @@
 .dropDown {
   p{
     color: var(--textColor);
-    &:hover{
-      color: var(--blue);
-    }
   }
   min-height: 48px;
   width: 100%;
@@ -24,13 +21,19 @@
 		
     &:hover {
       background-color: var(--white);
-			color: var(--secondaryTextColor);
+			
+			p {
+				color: var(--secondaryTextColor);
+			}
     }
 
     &--active {
       background-color: var(--white);
-			color: var(--secondaryTextColor);
       border-radius: 5px 5px 0 0;
+			
+			p {
+				color: var(--secondaryTextColor);
+			}
     }
   }
 
