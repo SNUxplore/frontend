@@ -98,7 +98,7 @@ function Calendar({ events = [], setSelectedDate }) {
             onClick={() => monthChange("left")}
             className="calendar-container__header__leftBtn"
           >
-            &larr;
+            ◀
           </button>
           <div className="calendar-container__header__monthNames">
             {currentMonth} {currentYear}
@@ -107,7 +107,7 @@ function Calendar({ events = [], setSelectedDate }) {
             onClick={() => monthChange("right")}
             className="calendar-container__header__leftBtn"
           >
-            &rarr;
+            ►
           </button>
         </div>
       </div>
