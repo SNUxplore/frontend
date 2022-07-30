@@ -24,7 +24,7 @@
     }
     border-radius: 12px;
     height: 500px;
-    color: var(--primaryTextColor);
+    color: var(--textColor);
     background: var(--pageBackground);
     border: 1px solid rgba(0, 0, 0, 0.216);
 
@@ -42,6 +42,9 @@
     }
 
     &__infoContainer {
+      img {
+        filter: var(--svgfilter);
+      }
       &--title {
         @include make-flex($dir: row, $just: flex-start);
         font-weight: 600;
@@ -58,7 +61,7 @@
         span {
           font-size: 16px;
           font-weight: 600;
-          color: var(--primaryTextColor);
+          color: var(--textColor);
         }
       }
       &--icon {
