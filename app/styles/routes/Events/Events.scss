@@ -41,7 +41,7 @@
   }
   &__left {
     @include make-flex($align: flex-start, $just: flex-start);
-    @include box(380px);
+    @include box(380px, 620px);
     font-family: "Poppins", sans-serif;
     gap: 15px;
 

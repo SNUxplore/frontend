@@ -1,7 +1,8 @@
 @import "../../styles/root/mixins";
 
 .activePage {
-  background-color: var(--blue);
+  border-radius: 5px; 
+  background-color: var(--lightBlue);
   @include respondAt(1230px) {
     background-color: var(--transparent);
     filter: var(--svgfilter);
