@@ -13,6 +13,9 @@
   --contactHover: #ffc107;
   --navMenuBorder: #a66874;
   --searchBarShadow: #cdced4;
+  --searchBarModalActiveBG: #f5f6f7;
+  --searchBarActiveBG: rgba(101, 108, 133, 0.8);
+  --searchResultHover: #f93e76;
   --faqRedirectBackground: #61abfe;
   --navigatePanelShadow: #d9d9d9;
   --navbarBackground: #ffffff;
@@ -47,8 +50,8 @@
     saturate(432%) hue-rotate(180deg) brightness(102%) contrast(98%);
   --calendarCardText: #363b53;
   --calendarSwitchButton: #f93e76;
-  --eventCardWrapperBorder:#e5c3ff;
-  --eventCardBackground: #2D2939;
-  --eventDetailsButtonBackground: #E5C3FF;
+  --eventCardWrapperBorder: #e5c3ff;
+  --eventCardBackground: #2d2939;
+  --eventDetailsButtonBackground: #e5c3ff;
   --eventCardButton: #e5c3ff;
 }
