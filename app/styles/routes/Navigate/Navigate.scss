@@ -132,7 +132,7 @@
 
       &--ac {
         @include box($height: 100%);
-        background-color: var(--pageBackground);
+        background-color: #f4f5fc;
         @include make-flex($just: flex-start);
         padding: 10px;
         border-radius: 8px;
@@ -155,8 +155,10 @@
               display: none;
             }
           }
-          div {
-            width: 70%;
+          @include respondAtAlt(585px) {
+            div {
+              width: 70%;
+            }
           }
         }
         a:hover {
@@ -179,14 +181,15 @@
 
         @include respondAt(585px) {
           background-color: transparent;
+          flex-direction: row;
+          justify-content: space-evenly;
           width: unset;
           height: unset;
-          padding: unset;
         }
       }
       button {
         @include box(auto, 41px);
-        background-color: var(--pageBackground);
+        background-color: #f4f5fc;
         padding: 10px;
         font-family: "Poppins";
         font-style: normal;
