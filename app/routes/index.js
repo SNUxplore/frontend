@@ -8,8 +8,6 @@ import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
-import darkModeArrow from "../Assets/Img/darkModeArrow.svg";
-import blueArrow from "../Assets/Img/blueArrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
 import { useMediaQuery } from "react-responsive";
 import useScrollEffect from "~/Hooks/Observer";
