@@ -53,7 +53,7 @@ export default function EditInfo() {
       <h3 className="ClubInfoPage__InfoForm--title ClubInfoPage__InfoForm--row">
         Club Information
       </h3>
-      <span className="ClubInfoPage__InfoForm--row">
+      <span className="ClubInfoPage__InfoForm--row note">
         The information provided will reflect in your events
       </span>
       <div className="ClubInfoPage__InfoForm--row">

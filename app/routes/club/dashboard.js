@@ -52,11 +52,13 @@ export default function DashBoard() {
         <p className="DashboardWrapper__ETA--timer">{`${eta[0]} days ${eta[1]} hours ${eta[2]} minutes ${eta[3]} seconds`}</p>
       </div>
       <section className="DashboardWrapper__history">
-        <header>
-          <h3 className="DashboardWrapper__history--title">Scheduled List</h3>
+        <header className="DashboardWrapper__header">
+          <h3 className="DashboardWrapper__history__header--title">
+            Scheduled List
+          </h3>
           <button
             href="/club/create-event"
-            className="DashboardWrapper__history--button"
+            className="DashboardWrapper__history__header--button"
           >
             Add Event
           </button>

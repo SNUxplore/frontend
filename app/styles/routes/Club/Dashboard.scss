@@ -45,27 +45,32 @@
     gap: 10px;
     color: #303030;
 
-    &--button {
-      background: #363b53;
-      color: white;
-      border: none;
-      font-size: 15px;
-      border: none;
-      padding-top: 0.6rem;
-      padding-bottom: 0.6rem;
-      padding-left: 0.9rem;
-      padding-right: 0.9rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
     header {
       width: 100%;
+      margin-top: 20px;
+      margin-bottom: 10px;
       @include make-flex($just: space-between, $dir: row);
     }
-    &--title {
-      font-weight: 600;
-      font-size: 18px;
+
+    &__header {
+      &--title {
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      &--button {
+        background: #363b53;
+        color: white;
+        border: none;
+        font-size: 15px;
+        border: none;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
     }
 
     &--empty {
