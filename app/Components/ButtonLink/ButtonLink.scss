@@ -29,8 +29,7 @@
     color: var(--white);
 
     &:hover {
-      background-color: var(--transparent);
-      color: var(--blue);
+      filter: brightness(95%);
     }
   }
   &--fill2 {
