@@ -3,7 +3,7 @@
 .DashboardWrapper {
   @include box();
   @include make-flex($just: flex-start, $align: flex-start);
-  gap: 24px;
+  gap: 25px;
 
   @include respondAt(720px) {
     min-height: 100%;
