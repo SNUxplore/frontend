@@ -50,7 +50,6 @@ export default function LandingPage() {
     query: "(max-width: 1095px)",
   });
 
-
   const references = React.useRef([]);
   references.current = [];
 
@@ -104,7 +103,7 @@ export default function LandingPage() {
             </div>
             <div className="heroSection__top--right">
               <div className="heroSection__funFact">
-                <span>Fun Fact:&nbsp;</span>
+                <span>Fun Fact :&nbsp; &nbsp;</span>
                 <p>Absolutely fixed relatively broken coordinates</p>
               </div>
               <SearchBar />
@@ -125,11 +124,6 @@ export default function LandingPage() {
                     />
                     @snu.xplore
                   </a>
-                  <img
-                    className="heroSection__instagramDiv--blueArrow"
-                    src={blueArrow}
-                    alt="blueArrow"
-                  />
                 </div>
               </div>
             </div>
