@@ -8,6 +8,7 @@ import { getEventsByClub } from "../services/club.server";
 import closeIcon from "../../Assets/Img/closeIcon.svg";
 import settingsIcon from "../../Assets/Img/SettingIcon.svg";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
+import { json } from "@remix-run/node";
 
 export const loader = async ({ request }) => {
   const emailId = await authenticator.isAuthenticated(request, {
@@ -46,11 +47,6 @@ export default function DashBoard() {
 
   return (
     <div className="DashboardWrapper">
-      <div className="DashboardWrapper__header">
-        <h1 className="DashboardWrapper__header--title">
-          Hello there 👋 <span>{data.name}</span>
-        </h1>
-      </div>
       <div className="DashboardWrapper__ETA">
         <h3 className="DashboardWrapper__ETA--title">Next Event in: </h3>
         <p className="DashboardWrapper__ETA--timer">{`${eta[0]} days ${eta[1]} hours ${eta[2]} minutes ${eta[3]} seconds`}</p>

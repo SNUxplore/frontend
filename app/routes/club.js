@@ -38,17 +38,14 @@ export default function EditInfo() {
     <div className="ClubInfoPage">
       <main className="ClubInfoPage__mainContainer">
         <nav className="ClubInfoPage__navBar">
-          {/* <div className="ClubInforPage__navBar__userDetails">
+          <div className="ClubInforPage__navBar__userDetails">
             <p className="ClubInfoPage__navBar__userDetails--userName">
               {`Hello there 👋 ${data.name}`}
             </p>
             <p className="ClubInfoPage__navBar__userDetails--text">
               Here's how we are looking today. Start by adding an event !
-            </p> 
-          </div> */}
-          <Link className="ClubInfoPage__navBar--homeImage" to="/">
-            <img src={snuxplorelogo} alt="Home" />
-          </Link>
+            </p>
+          </div>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
             <img
               className="ClubInfoPage__navBar--navImg"

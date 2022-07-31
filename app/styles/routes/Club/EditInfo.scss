@@ -25,7 +25,7 @@
     @include box(320px);
     @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
-    padding: 20px 25px;
+    padding: 60px 15px;
     height: 100vh;
     background-color: var(--white);
     border-right: 1px solid white;
@@ -38,10 +38,11 @@
 
     &__userDetails {
       &--userName {
+        padding-left: 1rem;
         @include respondAt(800px) {
           display: none;
         }
-        font-size: 30px;
+        font-size: 35px;
         font-weight: 600;
       }
 
@@ -49,6 +50,7 @@
         @include respondAt(800px) {
           display: none;
         }
+        padding-left: 1rem;
         line-height: 167.5%;
         margin-top: 10px;
         font-size: 15px;
@@ -129,7 +131,7 @@
     @include box(calc(100% - 280px));
     @include make-flex($just: flex-start);
     overflow-x: hidden;
-    padding: 32px;
+    padding: 60px 32px;
     gap: 20px;
 
     @include respondAt(800px) {
