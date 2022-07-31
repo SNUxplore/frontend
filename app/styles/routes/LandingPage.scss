@@ -172,7 +172,7 @@
       right: 0;
       transform: translateX(50%);
       // color: var(--blue);
-      filter: var(--svgfilter);
+      filter: var(--arrowSvgFilter);
 
       @include respondAt(1095px) {
         display: none;
