@@ -172,7 +172,6 @@
       right: 0;
       transform: translateX(50%);
       // color: var(--blue);
-      fill: var(--primaryTextColor);
       filter: var(--svgfilter);
 
       @include respondAt(1095px) {
@@ -264,12 +263,14 @@
       }
 
       &--title {
+        font-weight: 700;
         color: var(--blue);
+        font-size: 15px;
       }
 
       &--stat {
         color: var(--textColor);
-        font-size: 50px;
+        font-size: 45px;
 
         @include respondAt(935px) {
           font-size: 35px;

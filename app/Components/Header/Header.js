@@ -361,16 +361,16 @@ function Header() {
                   document
                     .getElementsByTagName("html")
                     .item(0)
-                    .classList.remove("pink");
-                  localStorage.setItem("theme", "dark");
-                  setCurrentTheme("dark");
+                    .classList.add("pink");
+                  localStorage.setItem("theme", "pink");
+                  setCurrentTheme("pink");
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "dark" ? "--active" : ""
+                  className={`HeaderWrapper__right--themeButtons--option--pink${
+                    currentTheme === "pink" ? "--active" : ""
                   }`}
-                  src={themeIconSrc[currentTheme ? currentTheme : "light"]}
+                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
                   alt="snu explore Logo"
                 />
               </button>
@@ -387,16 +387,16 @@ function Header() {
                   document
                     .getElementsByTagName("html")
                     .item(0)
-                    .classList.add("pink");
-                  localStorage.setItem("theme", "pink");
-                  setCurrentTheme("pink");
+                    .classList.remove("pink");
+                  localStorage.setItem("theme", "dark");
+                  setCurrentTheme("dark");
                 }}
               >
                 <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${
-                    currentTheme === "pink" ? "--active" : ""
+                  className={`HeaderWrapper__right--themeButtons--option${
+                    currentTheme === "dark" ? "--active" : ""
                   }`}
-                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
+                  src={themeIconSrc[currentTheme ? currentTheme : "light"]}
                   alt="snu explore Logo"
                 />
               </button>
