@@ -21,12 +21,12 @@
   }
   &:hover {
     background-color: var(--blue);
-    color: var(--white);
+    color: var(--ctaBtn);
   }
 
   &--fill {
     background-color: var(--blue);
-    color: var(--white);
+    color: var(--ctaBtn);
 
     &:hover {
       filter: brightness(95%);
