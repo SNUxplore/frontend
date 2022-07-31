@@ -5,7 +5,6 @@ import addIcon from "../Assets/Img/addIcon.svg";
 import keyIcon from "../Assets/Img/keyIcon.svg";
 import exitIcon from "../Assets/Img/logoutIcon.svg";
 import timeIcon from "../Assets/Img/timeIcon.svg";
-import snuxplorelogo from "../Assets/Img/FullLogo.svg";
 
 import { Outlet, Link } from "react-router-dom";
 import { authenticator } from "./services/auth.server";
@@ -46,6 +45,14 @@ export default function EditInfo() {
               Here's how we are looking today. Start by adding an event !
             </p>
           </div>
+          <Link className="ClubInfoPage__navBar--navBtn" to="/">
+            <img
+              className="ClubInfoPage__navBar--navImg"
+              src={timeIcon}
+              alt="timeIcon"
+            />
+            <p>Home</p>
+          </Link>
           <Link className="ClubInfoPage__navBar--navBtn" to="/club/dashboard">
             <img
               className="ClubInfoPage__navBar--navImg"

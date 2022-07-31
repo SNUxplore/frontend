@@ -54,7 +54,12 @@ export default function DashBoard() {
       <section className="DashboardWrapper__history">
         <header>
           <h3 className="DashboardWrapper__history--title">Scheduled List</h3>
-          <ButtonLink href="/club/create-event" content="Add Event" />
+          <button
+            href="/club/create-event"
+            className="DashboardWrapper__history--button"
+          >
+            Add Event
+          </button>
         </header>
         {eventsArray.length === 0 && (
           <p className="DashboardWrapper__history--empty">

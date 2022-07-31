@@ -25,7 +25,7 @@
     @include box(320px);
     @include make-flex($just: flex-start, $align: flex-start);
     gap: 15px;
-    padding: 60px 15px;
+    padding: 60px 20px;
     height: 100vh;
     background-color: var(--white);
     border-right: 1px solid white;
@@ -42,7 +42,7 @@
         @include respondAt(800px) {
           display: none;
         }
-        font-size: 35px;
+        font-size: 32px;
         font-weight: 600;
       }
 
@@ -55,7 +55,7 @@
         margin-top: 10px;
         font-size: 15px;
         color: rgba(0, 0, 0, 0.575);
-        margin-bottom: 20px;
+        margin-bottom: 8px;
       }
     }
 
@@ -172,6 +172,7 @@
     &--title {
       font-weight: 600;
     }
+
     &--subRow {
       height: 100%;
       width: 328px;

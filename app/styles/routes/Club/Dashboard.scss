@@ -45,6 +45,20 @@
     gap: 10px;
     color: #303030;
 
+    &--button {
+      background: #363b53;
+      color: white;
+      border: none;
+      font-size: 15px;
+      border: none;
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
     header {
       width: 100%;
       @include make-flex($just: space-between, $dir: row);
