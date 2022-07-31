@@ -106,7 +106,7 @@
 
         @include box(100%, auto);
         font-family: "Poppins", sans-serif;
-        font-size: 65px;
+        font-size: 60px;
         font-weight: 500;
         line-height: 82px;
         color: var(--textColor);
@@ -140,7 +140,7 @@
     }
 
     &__callToAction {
-      @include box(50%, auto);
+      @include box(55%, auto);
       @include make-flex($just: flex-start, $dir: row);
       gap: 25px;
     }
@@ -230,8 +230,8 @@
           @include respondAt(1095px) {
             padding-top: 7.5%;
           }
-          @include respondAt(520px) {
-            padding-top: 10.5%;
+          @include respondAt(1070px) {
+            padding-top: 1.5%;
           }
         }
         &--instaLogo {
