@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import InfoComponentDesktop from "~/Components/InfoComponentDesktop/InfoComponentDesktop";
 import InfoComponentMobile from "~/Components/InfoComponentMobile/InfoComponentMobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
@@ -30,7 +30,7 @@ export function links() {
 }
 
 export default function LandingPage() {
-  useEffect(() => {
+  React.useEffect(() => {
     const getClubs = async () =>
       console.log(await (await fetch("/get-clubs")).json());
     const getEventsByClub = async () =>
