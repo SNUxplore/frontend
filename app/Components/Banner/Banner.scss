@@ -14,9 +14,9 @@
     @include make-flex($dir: row);
     @include respondAt(885px) {
       flex-direction: column;
-      padding: 40px 15px;
+      padding: 50px 15px;
       height: 415px;
-      gap: 30px;
+      gap: 15px;
       width: 100vw;
       justify-content: flex-start;
     }
@@ -118,6 +118,10 @@
   }
 
   &__title {
+    @include respondAt(885px) {
+      font-size: 55px;
+      line-height: 62px;
+    }
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     color: var(--white);
