@@ -50,7 +50,6 @@ export default function LandingPage() {
     query: "(max-width: 1095px)",
   });
 
-
   const references = React.useRef([]);
   references.current = [];
 
@@ -179,7 +178,7 @@ export default function LandingPage() {
         desc='"These features are cool and all, but I have another question about campus and the credit system"
           Feels like you? Click below!'
         href="/faqs"
-        fillType="fill2"
+        fillType="bannerFill"
         redirectContent="Checkout the FAQ"
       />
       <Footer />
