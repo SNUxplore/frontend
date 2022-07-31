@@ -39,7 +39,7 @@ export default function CreateEvent() {
       if (editRes.status === 200) {
         window.alert("Data successfully updated");
       } else if (editRes.status === 500) {
-        window.alert("Error updating data." + editInfo.res + " Contact admin");
+        window.alert("Error updating data." + " Contact admin");
       }
     }
   }, [editRes]);

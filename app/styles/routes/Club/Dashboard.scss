@@ -9,6 +9,7 @@
     min-height: 100%;
     height: unset;
   }
+
   &__header {
     &--title {
       font-weight: 500;
@@ -60,7 +61,6 @@
 
       &--button {
         background: #363b53;
-        color: white;
         border: none;
         font-size: 15px;
         border: none;
@@ -70,6 +70,11 @@
         padding-right: 0.9rem;
         border-radius: 8px;
         cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
 
@@ -139,7 +144,6 @@
     &--failure {
       background-color: rgb(255, 92, 92);
     }
-
     &--actions {
       gap: 10px;
       button {

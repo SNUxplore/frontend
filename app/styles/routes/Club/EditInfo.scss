@@ -134,6 +134,12 @@
     padding: 60px 32px;
     gap: 20px;
 
+    &--outletHeader {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 30px;
+    }
+
     @include respondAt(800px) {
       width: 100%;
       padding: 16px;

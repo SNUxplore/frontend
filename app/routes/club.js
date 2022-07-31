@@ -6,7 +6,7 @@ import keyIcon from "../Assets/Img/keyIcon.svg";
 import exitIcon from "../Assets/Img/logoutIcon.svg";
 import timeIcon from "../Assets/Img/timeIcon.svg";
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { authenticator } from "./services/auth.server";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -32,6 +32,7 @@ export function links() {
 
 export default function EditInfo() {
   const data = useLoaderData();
+  const location = useLocation();
 
   return (
     <div className="ClubInfoPage">
@@ -97,6 +98,13 @@ export default function EditInfo() {
           </form>
         </nav>
         <div className="ClubInfoPage__contentContainer">
+          <h1 className="ClubInfoPage__contentContainer--outletHeader">
+            {location.pathname === "/club/dashboard"
+              ? "Dashboard"
+              : location.pathname === "/club/edit-info"
+              ? "Account information"
+              : "Create Event"}
+          </h1>
           {/* <div className="ClubInfoPage__contentContainer__userDetails">
             <p className="ClubInfoPage__contentContainer__userDetails--userName">
               {`Hello there 👋 ${data.name}`}

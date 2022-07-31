@@ -7,7 +7,6 @@ import { getEventsByClub } from "../services/club.server";
 
 import closeIcon from "../../Assets/Img/closeIcon.svg";
 import settingsIcon from "../../Assets/Img/SettingIcon.svg";
-import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import { json } from "@remix-run/node";
 
 export const loader = async ({ request }) => {
@@ -56,11 +55,8 @@ export default function DashBoard() {
           <h3 className="DashboardWrapper__history__header--title">
             Scheduled List
           </h3>
-          <button
-            href="/club/create-event"
-            className="DashboardWrapper__history__header--button"
-          >
-            Add Event
+          <button className="DashboardWrapper__history__header--button">
+            <a href="/club/create-event">Add Event</a>
           </button>
         </header>
         {eventsArray.length === 0 && (
