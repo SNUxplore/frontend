@@ -22,16 +22,15 @@
       padding: 8px;
       font-size: 65px;
       line-height: 167.5%;
-      color: var(--primaryTextColor);
+      color: var(--unhighlightTextColor);
       @include respondAt(900px) {
-        font-size: 3rem;
+        font-size: 35px;
         line-height: 40px;
-        padding: 15px;
       }
     }
 
     &--normal {
-      font-weight: 550;
+      font-weight: 500;
     }
     &--bold {
       font-weight: 700;
@@ -114,6 +113,8 @@
       }
     }
     &--panel {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
       @include box(220px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
