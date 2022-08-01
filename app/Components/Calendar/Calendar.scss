@@ -60,7 +60,7 @@
 
     &__navigator {
       display: flex;
-      gap: 30px;
+      gap: 15px;
     }
 
     button {
@@ -72,7 +72,7 @@
     }
     &__monthNames {
       color: var(--textColor);
-      font-weight: 700;
+      font-weight: 600;
       font-size: 21px;
     }
   }
