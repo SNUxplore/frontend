@@ -54,7 +54,6 @@ const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 function Calendar({ events = [], setSelectedDate }) {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const [date, setDate] = React.useState(null);
-  const [toggleState, setToggleState] = React.useState(false);
 
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
