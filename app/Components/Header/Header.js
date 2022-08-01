@@ -47,7 +47,9 @@ function Header() {
   }, []);
 
   React.useEffect(() => {
-    setCurrentTheme(localStorage.getItem("theme"));
+    if (localStorage.getItem("theme")) {
+      setCurrentTheme(localStorage.getItem("theme"));
+    }
   });
 
   React.useEffect(() => {
@@ -295,7 +297,7 @@ function Header() {
                     .getElementsByTagName("html")
                     .item(0)
                     .classList.add("pink");
-                  localStorage.setItem("theme", "pink");
+                  localStorage.setItem("theme", "dark");
                 }}
               >
                 <img
@@ -361,32 +363,6 @@ function Header() {
                   document
                     .getElementsByTagName("html")
                     .item(0)
-                    .classList.add("pink");
-                  localStorage.setItem("theme", "pink");
-                  setCurrentTheme("pink");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${
-                    currentTheme === "pink" ? "--active" : ""
-                  }`}
-                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
-                  alt="snu explore Logo"
-                />
-              </button>
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
                     .classList.remove("pink");
                   localStorage.setItem("theme", "dark");
                   setCurrentTheme("dark");
@@ -397,6 +373,32 @@ function Header() {
                     currentTheme === "dark" ? "--active" : ""
                   }`}
                   src={themeIconSrc[currentTheme ? currentTheme : "light"]}
+                  alt="snu explore Logo"
+                />
+              </button>
+              <button
+                onClick={() => {
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("dark");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.remove("light");
+                  document
+                    .getElementsByTagName("html")
+                    .item(0)
+                    .classList.add("pink");
+                  localStorage.setItem("theme", "pink");
+                  setCurrentTheme("pink");
+                }}
+              >
+                <img
+                  className={`HeaderWrapper__right--themeButtons--option--pink${
+                    currentTheme === "pink" ? "--active" : ""
+                  }`}
+                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
                   alt="snu explore Logo"
                 />
               </button>
