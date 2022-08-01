@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import React from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
 import Fuse from "fuse.js";
 import data from "~/Assets/Data/data.json";
@@ -35,7 +35,7 @@ function SearchBar({ style }) {
     return s;
   }
 
-  const searchData = useMemo(() => {
+  const searchData = React.useMemo(() => {
     // fuse cannot search in multiple arrays
     // So all locations are merged into one array
 
@@ -83,24 +83,24 @@ function SearchBar({ style }) {
     return t;
   }, []);
 
-  const fuseOptions = useMemo(() => {
+  const fuseOptions = React.useMemo(() => {
     return {
       shouldSort: true,
       keys: ["name", "searchString"],
       ignoreLocation: true,
     };
   }, []);
-  const fuse = useMemo(
+  const fuse = React.useMemo(
     () => new Fuse(searchData, fuseOptions),
     [searchData, fuseOptions]
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     // console.log(fuse.search(search));
     setResults(fuse.search(search, { limit: 5 }));
   }, [search, fuse]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     // toggle body scroll
     if (isFocused) {
       document.body.style.overflow = "hidden";
