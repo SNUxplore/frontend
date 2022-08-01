@@ -128,7 +128,7 @@
 
 			
       @include respondAt(590px) {
-				@include box(300px, 54px);
+				@include box(390px, 54px);
 				margin: 0 auto;
         padding: 0 10px;
         flex-direction: row;
