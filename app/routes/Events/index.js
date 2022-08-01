@@ -91,7 +91,7 @@ export default function Index() {
             lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
             metus sem."
         href="/login"
-        fillType="fill2"
+        fillType="bannerFill"
         redirectContent="Club Login"
       />
       <Footer />
