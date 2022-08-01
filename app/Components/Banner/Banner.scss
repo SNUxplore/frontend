@@ -14,9 +14,9 @@
     @include make-flex($dir: row);
     @include respondAt(885px) {
       flex-direction: column;
-      padding: 40px 15px;
+      padding: 50px 15px;
       height: 415px;
-      gap: 30px;
+      gap: 15px;
       width: 100vw;
       justify-content: flex-start;
     }
@@ -118,45 +118,45 @@
   }
 
   &__title {
-    &--white,
-    &--primaryTextColor {
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
-      line-height: 72px;
-      font-size: 65px;
-      // width: 77%;
-
-      @include respondAt(1060px) {
-        width: 90%;
-      }
-      @include respondAt(885px) {
-        width: 100%;
-      }
-      @include respondAt(525px) {
-        font-size: 50px;
-      }
-      @include respondAt(421px) {
-        font-size: 42px;
-        line-height: 52px;
-      }
-
-      @include respondAt(370px) {
-        font-size: 38px;
-        line-height: 40px;
-      }
-      @include respondAt(335px) {
-        font-size: 15vw;
-      }
-      @include respondAt(315px) {
-        line-height: 50px;
-        font-size: 12vw;
-      }
+    @include respondAt(885px) {
+      font-size: 55px;
+      line-height: 62px;
     }
-    &--white {
-      color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 72px;
+    font-size: 65px;
+    // width: 77%;
+
+    span {
+      color: var(--secondaryTextColor);
     }
-    &--primaryTextColor {
-      color: var(--questions);
+
+    @include respondAt(1060px) {
+      width: 90%;
+    }
+    @include respondAt(885px) {
+      width: 100%;
+    }
+    @include respondAt(525px) {
+      font-size: 50px;
+    }
+    @include respondAt(421px) {
+      font-size: 42px;
+      line-height: 52px;
+    }
+
+    @include respondAt(370px) {
+      font-size: 38px;
+      line-height: 40px;
+    }
+    @include respondAt(335px) {
+      font-size: 15vw;
+    }
+    @include respondAt(315px) {
+      line-height: 50px;
+      font-size: 12vw;
     }
   }
 
@@ -172,8 +172,5 @@
     @include respondAt(370px) {
       line-height: 128.5%;
     }
-  }
-  &--button {
-    color: var(--white);
   }
 }
