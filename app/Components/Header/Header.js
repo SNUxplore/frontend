@@ -297,7 +297,7 @@ function Header() {
                     .getElementsByTagName("html")
                     .item(0)
                     .classList.add("pink");
-                  localStorage.setItem("theme", "dark");
+                  localStorage.setItem("theme", "pink");
                 }}
               >
                 <img
@@ -381,7 +381,7 @@ function Header() {
                   document
                     .getElementsByTagName("html")
                     .item(0)
-                    .classList.add("dark");
+                    .classList.remove("dark");
                   document
                     .getElementsByTagName("html")
                     .item(0)

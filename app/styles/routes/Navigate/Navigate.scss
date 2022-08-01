@@ -25,7 +25,11 @@
       @include make-flex($dir: row, $just: space-between);
 
       &--logo {
+        @include box(85%, auto);
         filter: var(--svgfilter);
+        @include respondAt(585px) {
+          width: 100%;
+        }
       }
 
       &--back {
@@ -33,10 +37,16 @@
         white-space: nowrap;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1rem;
         text-decoration: none;
         text-align: end;
         color: var(--primaryTextColor);
+        @include respondAt(775px) {
+          font-size: 0.8rem;
+        }
+        @include respondAt(585px) {
+          font-size: 18px;
+        }
       }
     }
 
@@ -63,33 +73,20 @@
 
       &--title {
         @include box();
-        font-size: 2.4rem;
+        font-size: 2.7vw;
         color: var(--primaryTextColor);
         font-weight: 500;
         margin-bottom: 1vh;
-        @include respondAt(1170px) {
-          font-size: 2.2rem;
-        }
-        @include respondAt(1080px) {
-          font-size: 2.1rem;
-        }
-        @include respondAt(970px) {
-          font-size: 1.9rem;
-        }
+
         @include respondAt(890px) {
-          font-size: 1.7rem;
+          font-size: 2.5vw;
         }
-        @include respondAt(800px) {
-          font-size: 1.4rem;
-        }
-        @include respondAt(670px) {
-          font-size: 1.2rem;
-        }
+
         @include respondAt(585px) {
-          font-size: 2.4rem;
+          font-size: 2.5rem;
         }
         @include respondAt(420px) {
-          font-size: 2.1rem;
+          font-size: 2.2rem;
         }
         @include respondAt(360px) {
           font-size: 1.9rem;
@@ -116,8 +113,8 @@
 
     &--panel {
       overflow: hidden;
-      top: 11px;
-      right: 60px;
+      top: 61px;
+      right: 11px;
 
       @include box(215px, auto);
       @include make-flex($just: flex-start);
@@ -188,7 +185,7 @@
         }
       }
       button {
-        @include box(auto, 41px);
+        @include box(100%, auto);
         background-color: #f4f5fc;
         padding: 10px;
         font-family: "Poppins";
