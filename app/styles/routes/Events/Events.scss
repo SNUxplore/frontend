@@ -43,12 +43,12 @@
     @include make-flex($align: flex-start, $just: flex-start);
     @include box(380px, 620px);
     font-family: "Poppins", sans-serif;
-    gap: 15px;
+    gap: 20px;
 
     &--title {
       color: var(--textColor);
-      font-size: 37px;
-      font-weight: 400;
+      font-size: 35px;
+      font-weight: 500;
       span {
         background-color: var(--titleHighlight);
         color: var(--highlightTextColor);
@@ -56,8 +56,8 @@
       }
     }
     &--subTitle {
-      color: var(--textColor);
-      font-size: 18px;
+      color: var(--primaryTextColor);
+      font-size: 16px;
       font-weight: 300;
     }
     &--events {
