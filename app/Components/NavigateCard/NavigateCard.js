@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import { PhoneCall, EnvelopeSimpleOpen } from "phosphor-react";
 import placeholder from "~/Assets/Img/PlaceCard.png";
 
@@ -8,9 +9,7 @@ export default function NavigateCard({
   src,
   highlighted,
 }) {
-  const location = actionLists.filter((action) => {
-    return action.title == "Map";
-  });
+  const nameOfThePlace = name;
   const call = actionLists.filter((action) => {
     return action.title == "Call";
   });
@@ -35,14 +34,18 @@ export default function NavigateCard({
         <h2 className="NavCardContainer__content__name">{name}</h2>
         <p className="NavCardContainer__content__desc">{desc}</p>
         <div className="NavCardContainer__content__ctas">
-          <a href={location[0].href}>
-            <button className="location-button">Location</button>
-          </a>
+          <Link replace to={"?name=button=" + nameOfThePlace}>
+            <button className="NavCardContainer__content__ctas--location-button">
+              Location
+            </button>
+          </Link>
           {menu.length == 0 ? (
             ""
           ) : (
-            <a href={menu[0].href}>
-              <button className="menu-button">Menu</button>
+            <a target="_blank" href={menu[0].href}>
+              <button className="NavCardContainer__content__ctas--menu-button">
+                Menu
+              </button>
             </a>
           )}
         </div>

@@ -1,9 +1,18 @@
 @import "../../styles/root/mixins";
 
+.activePage {
+  border-radius: 5px;
+  background-color: var(--titleHighlight);
+  @include respondAt(1230px) {
+    background-color: var(--transparent);
+    filter: var(--svgfilter);
+  }
+}
+
 .HeaderWrapper {
-  @include box($height: 150px);
+  @include box($height: 130px);
   position: relative;
-  max-width: 1585px;
+  max-width: 1600px;
   padding: 0 145px;
   #NavBarInput,
   .hamButton {
@@ -28,25 +37,27 @@
   &__middle {
     @include box($height: 150px, $width: fit-content);
     @include make-flex($dir: row);
-    gap: 50px;
+    gap: 45px;
     list-style: none;
 
     &--option {
       width: 100%;
+      button {
+        background-color: var(--transparent);
+      }
+
       a,
       button {
         text-decoration: none;
-        background-color: var(--transparent);
         width: 100%;
         text-align: left;
         color: var(--textColor);
-        font-size: 17px;
+        font-size: 15px;
         font-weight: normal;
         font-family: "Poppins", sans-serif;
-        padding: 7px 0;
+        padding: 7px 9px;
         border-style: none;
         cursor: pointer;
-
         white-space: nowrap;
         &:hover {
           text-decoration: underline;
@@ -113,9 +124,9 @@
       cursor: pointer;
     }
     &--themeButtons {
-      @include box($width: auto, $height: 36px);
+      @include box($width: auto, $height: 40px);
       @include make-flex($dir: row);
-      column-gap: 13px;
+      column-gap: 8px;
       border-radius: 9px;
       align-items: center;
       padding: 6px;
@@ -153,7 +164,7 @@
     }
     button {
       img {
-        @include box($height: 19px, $width: 19px);
+        @include box($height: 18px, $width: 18px);
         @include respondAt(1230px) {
           filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
             saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);

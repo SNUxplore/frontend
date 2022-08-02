@@ -1,6 +1,6 @@
 @mixin pinkMode() {
   --pageBackground: #242836;
-  --primaryTextColor: #d0d0d0;
+  --primaryTextColor: #d0d0d089;
   --blue: #f93e76;
   --white: #ffffff;
   --titleHighlight: #f93e76;
@@ -13,6 +13,9 @@
   --contactHover: #ffc107;
   --navMenuBorder: #a66874;
   --searchBarShadow: #cdced4;
+  --searchBarModalActiveBG: #f5f6f7;
+  --searchBarActiveBG: rgba(101, 108, 133, 0.8);
+  --searchResultHover: #f93e76;
   --faqRedirectBackground: #61abfe;
   --navigatePanelShadow: #d9d9d9;
   --navbarBackground: #ffffff;
@@ -23,17 +26,20 @@
   --navbarItems: #363b53;
   --boxShadow: 6px 6px 23px #d1d1d1;
   --questions: #242836;
-  --textColor: #F4F5FC;
+  --textColor: #f4f5fc;
   --highlightTextColor: #242836;
   --unhighlightTextColor: #ffffff;
-  --calenderColor:#2D2939;
-  --fadedTextColor : #f4f5fc84;
+  --calenderColor: #2d2939;
+  --fadedTextColor: #f4f5fc84;
+  --fadedDayContainer: #027278;
   --nameTitle: #ffffff;
   --teamText: #ffffff;
   --svgfilter: brightness(0) saturate(100%) invert(41%) sepia(45%)
     saturate(4918%) hue-rotate(319deg) brightness(99%) contrast(98%);
   --headerSvgFilter: brightness(0) saturate(100%) invert(20%) sepia(11%)
     saturate(1773%) hue-rotate(192deg) brightness(93%) contrast(86%);
+  --arrowSvgFilter: brightness(0) saturate(100%) invert(100%) sepia(0);
+
   --navigateCardColor: #232d3d;
   --navigateCardTitle: #ffffff;
   --navigateCardDesc: #787e96;
@@ -41,4 +47,16 @@
   --navigateCardFilter: brightness(0) saturate(100%) invert(94%) sepia(5%)
     saturate(250%) hue-rotate(230deg) brightness(113%) contrast(100%);
   --dropPlaceCardText: #ffffff;
+  --placecardHighlighted: #a9a9a9;
+  --modalSVGFilter: brightness(0) saturate(100%) invert(94%) sepia(33%)
+    saturate(432%) hue-rotate(180deg) brightness(102%) contrast(98%);
+  --calendarCardText: #363b53;
+  --calendarSwitchButton: #f93e76;
+  --eventCardWrapperBorder: #e5c3ff;
+  --eventCardBackground: #2d2939;
+  --eventDetailsButtonBackground: #e5c3ff;
+  --eventCardButton: #e5c3ff;
+  --searchColor: #f93e76;
+  --ctaBtn: #242836;
+  --calendarGrid: rgba(255, 255, 255, 0.295);
 }

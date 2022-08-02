@@ -1,0 +1,141 @@
+@import "../../root/mixins";
+
+.DashboardWrapper {
+  @include box();
+  @include make-flex($just: flex-start, $align: flex-start);
+  gap: 24px;
+
+  @include respondAt(720px) {
+    min-height: 100%;
+    height: unset;
+  }
+  &__header {
+    &--title {
+      font-weight: 500;
+      color: #303030;
+      font-size: 45px;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__ETA {
+    @include make-flex($align: flex-start);
+    gap: 10px;
+    color: #303030;
+
+    &--title {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    &--timer {
+      font-weight: 500;
+      font-size: 23px;
+      @include respondAt(450px) {
+        font-size: 16px;
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__history {
+    @include box();
+    @include make-flex($just: flex-start, $align: flex-start);
+    gap: 10px;
+    color: #303030;
+
+    header {
+      width: 100%;
+      @include make-flex($just: space-between, $dir: row);
+    }
+    &--title {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &--empty {
+      @include box();
+      @include make-flex();
+      @include respondAt(720px) {
+        margin-top: 36%;
+      }
+    }
+  }
+
+  &__EventCard {
+    @include box(100%, 60px);
+    background-color: white;
+    border-radius: 8px;
+    gap: 10px;
+    padding: 0 15px;
+    display: grid;
+    grid-template-rows: 60px;
+    grid-template-columns: 1fr 1fr 1fr 0.25fr;
+    grid-template-areas: "name date status actions";
+
+    @include respondAt(720px) {
+      height: unset;
+      grid-template-columns: 1.2fr 0.8fr 0.5fr;
+      grid-template-rows: 0.5fr 0.5fr;
+
+      grid-template-areas:
+        "name status actions"
+        "date status actions";
+    }
+
+    &--name,
+    &--Date,
+    &--status,
+    &--actions {
+      padding: 10px 0;
+      height: 100%;
+      @include make-flex($just: flex-start, $dir: row);
+    }
+
+    &--name {
+      grid-area: name;
+      gap: 10px;
+      span {
+        @include box(10px, 10px);
+        border-radius: 50%;
+      }
+    }
+
+    &--Date {
+      grid-area: date;
+    }
+
+    &--status {
+      grid-area: status;
+    }
+
+    &--actions {
+      grid-area: actions;
+    }
+
+    &--success {
+      background-color: #b3e26c;
+    }
+    &--failure {
+      background-color: rgb(255, 92, 92);
+    }
+
+    &--actions {
+      gap: 10px;
+      button {
+        @include box(40px, 40px);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 9px;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+}

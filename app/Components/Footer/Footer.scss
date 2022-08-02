@@ -9,11 +9,11 @@
   }
 
   &__container {
-    @include make-flex($dir: row, $just: space-between);
+    @include make-flex($dir: row, $just: space-between, $align: center);
     @include box();
-    max-width: 1585px;
-    padding: 0px 40px 0 125px;
-    gap: 300px;
+    max-width: 1500px;
+    padding: 30px 40px 0 40px;
+    gap: 150px;
     @include respondAt(1525px) {
       padding: 0 60px 0 100px;
       gap: 100px;
@@ -28,7 +28,7 @@
 
     @include respondAt(840px) {
       flex-direction: column;
-			gap: 20px;
+      gap: 20px;
     }
 
     @include respondAt(470px) {
@@ -48,11 +48,11 @@
     @include respondAt(610px) {
       width: 100%;
       align-items: center;
-      padding: 0 10px
+      padding: 0 10px;
     }
 
     &--logo {
-      @include box(450px, auto);
+      @include box(330px, auto);
       margin-bottom: 30px;
       padding: 0 10px;
       filter: var(--svgfilter);
@@ -70,9 +70,8 @@
       @include box(auto, auto);
       font-family: "Poppins", sans-serif;
       font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
+      font-weight: 400;
+      font-size: 13px;
       text-align: center;
       color: var(--copyrightText);
     }
@@ -91,18 +90,22 @@
     @include respondAt(840px) {
       width: 100%;
       padding: 40px 25px 55px;
-      gap: 20px;
+      gap: 50px;
       flex-wrap: wrap;
     }
     &--Service {
       font-family: "Poppins", sans-serif;
       list-style-type: none;
       @include make-flex($align: flex-start);
-      gap: 8px;
+      gap: 22px;
       a {
         font-size: 15px;
+        font-weight: 400;
+        @include respondAt(840px) {
+          font-size: 14px;
+        }
         text-decoration: none;
-        color: var(--pageBackground);
+        color: #f4f5fc;
       }
 
       .mailIcon,
@@ -121,23 +124,25 @@
         @include make-flex($dir: row, $just: flex-start);
         @include box(100%, auto);
         gap: 5px;
-        margin-top: 20px;
+        margin-top: 4px;
 
         a {
           img {
-            width: 45px;
+            width: 30px;
           }
         }
       }
     }
     &--rowHeading {
-
+      @include respondAt(840px) {
+        font-size: 22px;
+      }
       font-family: "Poppins", sans-serif;
       font-style: normal;
-      font-size: 21px;
+      font-size: 25px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--pageBackground);
+      color: rgba(255, 255, 255, 0.46);
     }
   }
 }

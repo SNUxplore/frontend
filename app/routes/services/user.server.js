@@ -1,7 +1,8 @@
 import { db } from "./db.server";
 
-export const getSessionUserByEmail = async (emailId) =>
-  db.user.findUnique({ where: { emailId } });
+export const getSessionUserByEmail = async (emailId) => {
+  return db.user.findUnique({ where: { emailId } });
+};
 
 export const createEvent = async ({
   instaUrl,
@@ -9,6 +10,8 @@ export const createEvent = async ({
   imageUrl,
   location,
   date,
+  startTime,
+  endTime,
   description,
   title,
   timeStart,
@@ -19,7 +22,7 @@ export const createEvent = async ({
       userId,
       imageUrl,
       location,
-      date,
+      date: date + " " + startTime + " - " + endTime,
       description,
       title,
       instaUrl,

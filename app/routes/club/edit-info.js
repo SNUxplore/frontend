@@ -1,5 +1,6 @@
+import React from "react";
 import { authenticator } from "../services/auth.server";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, useActionData, useLoaderData } from "@remix-run/react";
 import { editInfo, getSessionUserByEmail } from "../services/user.server";
 
 export const loader = async ({ request }) => {
@@ -14,15 +15,27 @@ export const loader = async ({ request }) => {
 
 export const action = async ({ request }) => {
   const formData = Object.fromEntries(await request.formData());
-  await editInfo(formData)
-    .then((res) => res)
-    .catch((e) => console.error("Edit info DB error" + e));
-  return null;
+  const editRes = await editInfo(formData)
+    .then((res) => ({ status: 200, res: res }))
+    .catch((e) => ({ status: 500, res: "Edit info DB error" + e }));
+  return editRes;
 };
 
 export default function EditInfo() {
   const data = useLoaderData();
+  const editRes = useActionData();
+
   const [formData, setFormData] = React.useState(data.user);
+
+  React.useEffect(() => {
+    if (editRes !== undefined) {
+      if (editRes.status === 200) {
+        window.alert("Data successfully updated");
+      } else if (editRes.status === 500) {
+        window.alert("Error updating data." + editInfo.res + " Contact admin");
+      }
+    }
+  }, [editRes]);
 
   function updateFormData(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,16 +50,18 @@ export default function EditInfo() {
       action="/club/edit-info"
       method="POST"
     >
-      <h3 className="ClubInfoPage__InfoForm--row">Club Information</h3>
+      <h3 className="ClubInfoPage__InfoForm--title ClubInfoPage__InfoForm--row">
+        Club Information
+      </h3>
       <span className="ClubInfoPage__InfoForm--row">
         The information provided will reflect in your events
       </span>
       <div className="ClubInfoPage__InfoForm--row">
         <label htmlFor="name">Club Name</label>
         <input
-          placeholder="name"
           id="name"
           name="name"
+          placeholder="name"
           defaultValue={data.user.name}
           onChange={(e) => updateFormData(e)}
         />
@@ -54,9 +69,9 @@ export default function EditInfo() {
       <div className="ClubInfoPage__InfoForm--row">
         <label htmlFor="websiteUrl">Website URL</label>
         <input
-          placeholder="websiteUrl"
           id="websiteUrl"
           name="websiteUrl"
+          placeholder="websiteUrl"
           defaultValue={data.user.websiteUrl}
           onChange={(e) => updateFormData(e)}
         />
@@ -64,9 +79,9 @@ export default function EditInfo() {
       <div className="ClubInfoPage__InfoForm--row">
         <label htmlFor="instaUrl">Instagram profile URL</label>
         <input
-          placeholder="instaUrl"
           id="instaUrl"
           name="instaUrl"
+          placeholder="instaUrl"
           defaultValue={data.user.instaUrl}
           onChange={(e) => updateFormData(e)}
         />
@@ -76,12 +91,12 @@ export default function EditInfo() {
           Email ID (can't change sorry)
         </label>
         <input
-          className="ClubInfoPage__InfoForm--disabled"
-          placeholder="emailId"
           id="emailId"
           name="emailId"
-          onChange={(e) => updateFormData(e)}
+          placeholder="emailId"
           value={data.user.emailId}
+          onChange={(e) => updateFormData(e)}
+          className="ClubInfoPage__InfoForm--disabled"
         />
       </div>
       <div className="ClubInfoPage__InfoForm--row">

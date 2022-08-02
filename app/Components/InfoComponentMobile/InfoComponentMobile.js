@@ -18,7 +18,7 @@ export default function InfoComponent__Mobile() {
   React.useEffect(() => {
     setTheme(localStorage.getItem("theme"));
   });
-``
+  ``;
   const indicatorScrollRight = () => {
     infoIndex < 2 ? setInfoIndex(infoIndex + 1) : 2;
   };
@@ -40,9 +40,16 @@ export default function InfoComponent__Mobile() {
         </span>
       </h1>
       <p className="MobileContainer__desc">
-        We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. All resources to unlock everything SNU has to offer all in one place. Just a search away.
+        We get it, life is hard. Navigating through campus and keeping track of
+        events and info shouldn't be. All resources to unlock everything SNU has
+        to offer all in one place. Just a search away.
       </p>
       <ButtonLink
+        href={`
+      ${infoIndex === 0 ? "/navigate" : ""} 
+      ${infoIndex === 1 ? "/events" : ""}
+      ${infoIndex === 2 ? "/admin" : ""}
+      `}
         content={
           infoIndex === 0
             ? "Explore now"
@@ -56,10 +63,22 @@ export default function InfoComponent__Mobile() {
           className="MobileContainer__ImageContainer__image"
           src={
             infoIndex === 0
-              ? (theme == "light") ? Feature1Img : (theme == "dark") ? Feature1Blue : Feature1Pink
+              ? theme == "light"
+                ? Feature1Img
+                : theme == "dark"
+                ? Feature1Blue
+                : Feature1Pink
               : infoIndex === 1
-              ? (theme == "light") ? Feature2Img : (theme == "dark") ? Feature2Blue : Feature2Pink
-              : (theme == "light") ? Feature3Img : (theme == "dark") ? Feature3Blue : Feature3Pink
+              ? theme == "light"
+                ? Feature2Img
+                : theme == "dark"
+                ? Feature2Blue
+                : Feature2Pink
+              : theme == "light"
+              ? Feature3Img
+              : theme == "dark"
+              ? Feature3Blue
+              : Feature3Pink
           }
         ></img>
       </div>

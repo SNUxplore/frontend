@@ -8,7 +8,7 @@ export function links() {
 
 export const loader = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request, {
-    successRedirect: "/club/create-event",
+    successRedirect: "/club/dashboard",
   });
   return null;
 };
@@ -16,30 +16,26 @@ export const loader = async ({ request }) => {
 function Login() {
   return (
     <div className="LoginPage">
-      <div className="LoginPage__content">
-        <div className="LoginPage__content__left">
-          <h1 className="LoginPage__content__left--title">
-            Welcome to, <span>SNUxplore</span>
+      <div className="LoginPage__container">
+        <div className="LoginPage__container--left">
+          <h1>
+            Welcome to <span>SNUxplore</span>
           </h1>
-          <p className="LoginPage__content__left--para">
+          <p>
             One of the core features of snuXplore is to allow all clubs to
             schedule their event when they want it. Need to change an event
-            timing and date last minute ? dont worry we got you covered
+            timing and date last minute ? don't worry we got you covered
           </p>
         </div>
-        <div className="LoginPage__content__right">
+        <div className="LoginPage__container--right">
+          <h1>Club Login</h1>
+          <p>
+            Before we begin sign in to the dashboard using the clubs google
+            account below.
+          </p>
           <Form action="/auth/google" method="POST">
-            <h1 className="LoginPage__content__right--title">Club Login</h1>
-            <p className="LoginPage__content__right--para">
-              Before we begin sign in to the dashboard using the clubs google
-              account below
-            </p>
-            <button type="submit" className="LoginPage__content__right--btn">
-              <img
-                className="LoginPage__content__right--btnIcon"
-                src={Google}
-                alt="Google Logo"
-              />
+            <button type="submit" className="LoginPage__container--button">
+              <img src={Google} alt="Google Logo" />
               Sign in with google
             </button>
           </Form>

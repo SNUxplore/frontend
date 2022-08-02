@@ -29,7 +29,7 @@
         height: 11px;
         border-radius: 50%;
         border: 2px solid var(--blue);
-        opacity: 25%;
+        opacity: 35%;
         transition: all 0.3s ease-in-out;
       }
 
@@ -58,10 +58,11 @@
       }
 
       &__para {
+        font-family: "Poppins", sans-serif;
         max-width: 500px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 167.5%;
-        color: var(--textColor);
+        color: var(--primaryTextColor);
         font-weight: 400;
         margin-bottom: 12px;
       }

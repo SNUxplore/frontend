@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import InfoComponent__Desktop from "~/Components/InfoComponent__Desktop/InfoComponent__Desktop";
-import InfoComponent__Mobile from "~/Components/InfoComponent__Mobile/InfoComponent__Mobile";
+import React from "react";
+import InfoComponentDesktop from "~/Components/InfoComponentDesktop/InfoComponentDesktop";
+import InfoComponentMobile from "~/Components/InfoComponentMobile/InfoComponentMobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
@@ -8,8 +8,6 @@ import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
-import darkModeArrow from "../Assets/Img/darkModeArrow.svg";
-import blueArrow from "../Assets/Img/blueArrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
 import { useMediaQuery } from "react-responsive";
 import useScrollEffect from "~/Hooks/Observer";
@@ -32,7 +30,7 @@ export function links() {
 }
 
 export default function LandingPage() {
-  useEffect(() => {
+  React.useEffect(() => {
     const getClubs = async () =>
       console.log(await (await fetch("/get-clubs")).json());
     const getEventsByClub = async () =>
@@ -49,7 +47,6 @@ export default function LandingPage() {
   const callToAction = useMediaQuery({
     query: "(max-width: 1095px)",
   });
-
 
   const references = React.useRef([]);
   references.current = [];
@@ -104,7 +101,7 @@ export default function LandingPage() {
             </div>
             <div className="heroSection__top--right">
               <div className="heroSection__funFact">
-                <span>Fun Fact:&nbsp;</span>
+                <span>Fun Fact :&nbsp; &nbsp;</span>
                 <p>Absolutely fixed relatively broken coordinates</p>
               </div>
               <SearchBar />
@@ -125,11 +122,6 @@ export default function LandingPage() {
                     />
                     @snu.xplore
                   </a>
-                  <img
-                    className="heroSection__instagramDiv--blueArrow"
-                    src={blueArrow}
-                    alt="blueArrow"
-                  />
                 </div>
               </div>
             </div>
@@ -152,7 +144,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="aboutSection">
-          <InfoComponent__Desktop
+          <InfoComponentDesktop
             indicatorState={
               view === Sections[0].className
                 ? 1
@@ -161,7 +153,7 @@ export default function LandingPage() {
                 : 3
             }
           />
-          <InfoComponent__Mobile />
+          <InfoComponentMobile />
           {Sections.map((section, index) => {
             return (
               <section
@@ -179,7 +171,7 @@ export default function LandingPage() {
         desc='"These features are cool and all, but I have another question about campus and the credit system"
           Feels like you? Click below!'
         href="/faqs"
-        fillType="fill2"
+        fillType="bannerFill"
         redirectContent="Checkout the FAQ"
       />
       <Footer />

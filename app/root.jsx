@@ -34,17 +34,35 @@ export const meta = () => ({
 
 export const ThemeScript = () => {
   const clientCode = `
-  const theme = localStorage.getItem("theme");
-  if (theme) {
-    document.getElementsByTagName("html").item(0).classList.add(theme);
-  } else {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.getElementsByTagName("html").item(0).classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }else{
-      document.getElementsByTagName("html").item(0).classList.add("light");
+  if (
+    !location.pathname.includes("club") &&
+    !location.pathname.includes("login")
+  ) {
+    if (localStorage.getItem("clubTempTheme")) {
+      localStorage.setItem("theme", localStorage.getItem("clubTempTheme"));
+      localStorage.removeItem("clubTempTheme");
     }
-  }`;
+    const theme = localStorage.getItem("theme");
+
+    if (theme) {
+      document.getElementsByTagName("html").item(0).classList.add(theme);
+    } else {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.getElementsByTagName("html").item(0).classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.getElementsByTagName("html").item(0).classList.add("light");
+      }
+    }
+  } else {
+    document.getElementsByTagName("html").item(0).classList.add("light");
+    document.getElementsByTagName("html").item(0).classList.remove("dark");
+    document.getElementsByTagName("html").item(0).classList.remove("pink");
+
+    localStorage.setItem("clubTempTheme", localStorage.getItem("theme"));
+    localStorage.setItem("theme", "light");
+  }
+  `;
   return <script dangerouslySetInnerHTML={{ __html: clientCode }} />;
 };
 

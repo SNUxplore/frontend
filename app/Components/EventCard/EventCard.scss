@@ -2,7 +2,7 @@
 
 .EventCardWrapper {
   font-family: "Poppins", sans-serif;
-  background-color: var(--white);
+  background-color: var(--eventCardBackground);
   @include make-flex($dir: row);
   @include box(100%, 110px);
   min-height: 110px;
@@ -24,7 +24,7 @@
     @include box(50%);
     @include make-flex($just: space-between, $align: flex-start);
     &--title {
-      color: var(--primaryTextColor);
+      color: var(--textColor);
       font-weight: 500;
       font-size: 23px;
     }
@@ -35,12 +35,15 @@
       h4 {
         font-weight: 400;
         font-size: 13px;
+        color: var(--textColor);
       }
       img {
         height: 15px;
+        filter: var(--svgfilter);
       }
     }
     &--location {
+      color: var(--textColor);
       font-size: 12px;
       font-weight: 300;
       text-overflow: ellipsis;
@@ -52,7 +55,11 @@
   &__right {
     @include box(50%);
     @include make-flex($just: space-between, $align: flex-end);
-
+    p {
+      color: var(--textColor);
+      font-size: 12px;
+      white-space: nowrap;
+    }
     &--date {
       font-size: 12px;
     }
@@ -60,16 +67,18 @@
     &--button {
       border: 1px solid var(--eventCardButton);
       // color: var(--eventCardButton);
+      border:1.5px solid var(--eventDetailsButtonBackground);
       border-radius: 5px;
       padding: 4px 6px;
       background-color: var(--transparent);
       cursor: pointer;
-      color: #9938E7;
+      color: var(--eventDetailsButtonBackground);
       transition: background-color 0.25s ease-in-out;
       font-size: 13px;
       font-weight: 400;
       &:hover {
         background-color: var(--eventCardButton);
+        color: var(--textColor);
       }
     }
     font-weight: 300;

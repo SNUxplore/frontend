@@ -1,6 +1,7 @@
 import React from "react";
 import logoPreview from "../../Assets/Img/twitterLogo.svg";
 import InfoModal from "../infoModal/InfoModal";
+import appLogo from "../../Assets/Img/xploreLogo.svg";
 
 function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -12,7 +13,7 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
       )}
       <div className="EventCardWrapper__left">
         <div className="EventCardWrapper__left--top">
-          <img src={logoPreview} alt="logo" />
+          <img src={appLogo} alt="logo" />
           <h4>{clubName}</h4>
         </div>
         <h2 className="EventCardWrapper__left--title">{eventName}</h2>
@@ -20,7 +21,6 @@ function EventCard({ eventName, logo, clubName, date, location, more, desc }) {
       </div>
       <div className="EventCardWrapper__right">
         <p>{date}</p>
-        <p>{location}</p>
         <button
           onClick={() => {
             setEventData([

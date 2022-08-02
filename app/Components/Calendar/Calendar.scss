@@ -60,19 +60,19 @@
 
     &__navigator {
       display: flex;
-      gap: 30px;
+      gap: 15px;
     }
 
     button {
       cursor: pointer;
       border: none;
       border-radius: 20%;
-      background: var(--primaryTextColor);
-      color: var(--white);
+      background: transparent;
+      color: var(--calendarSwitchButton);
     }
     &__monthNames {
       color: var(--textColor);
-      font-weight: 700;
+      font-weight: 600;
       font-size: 21px;
     }
   }
@@ -104,8 +104,8 @@
   &__day-container {
     position: relative;
     background: var(--calenderColor);
-    border-top: rgba(164, 160, 160, 0.178) 1px solid;
-    border-left: rgba(164, 160, 160, 0.178) 1px solid;
+    border-top: var(--calendarGrid) 1px solid;
+    border-right: var(--calendarGrid) 1px solid;
     width: 114.5px;
     height: 88px;
     color: var(--textColor);
@@ -128,15 +128,15 @@
   &__day-container-faded {
     position: relative;
     background: white;
-    border-top: rgba(164, 160, 160, 0.178) 1px solid;
-    border-left: rgba(164, 160, 160, 0.178) 1px solid;
+    border-top: var(--calendarGrid) 1px solid;
+    border-right: var(--calendarGrid) 1px solid;
     width: 114.5px;
     height: 88px;
     padding: 7px;
     background-color: var(--calenderColor);
     @include make-flex($just: flex-start, $align: flex-end); // padding: 2rem;
     color: var(--fadedDayContainer);
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     &:first-child {
       border-left: unset;
@@ -162,7 +162,7 @@
     right: -15%;
     bottom: -5%;
     background: var(--contactHover);
-    color: var(--textColor);
+    color: var(--calendarCardText);
     &--eventName {
       font-size: 13px;
       @include respondAt(685px) {

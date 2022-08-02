@@ -54,7 +54,6 @@ const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 function Calendar({ events = [], setSelectedDate }) {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const [date, setDate] = React.useState(null);
-  const [toggleState, setToggleState] = React.useState(false);
 
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
@@ -98,16 +97,16 @@ function Calendar({ events = [], setSelectedDate }) {
             onClick={() => monthChange("left")}
             className="calendar-container__header__leftBtn"
           >
-            &larr;
+            ◀
           </button>
           <div className="calendar-container__header__monthNames">
-            {currentMonth} {currentYear}
+            {currentMonth}, {currentYear}
           </div>
           <button
             onClick={() => monthChange("right")}
             className="calendar-container__header__leftBtn"
           >
-            &rarr;
+            ▶
           </button>
         </div>
       </div>
