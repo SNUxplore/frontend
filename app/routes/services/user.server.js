@@ -11,6 +11,8 @@ export const createEvent = async ({
   date,
   description,
   title,
+  timeStart,
+  timeEnd,
 }) =>
   db.post.create({
     data: {
@@ -21,6 +23,8 @@ export const createEvent = async ({
       description,
       title,
       instaUrl,
+      timeStart,
+      timeEnd,
     },
   });
 
