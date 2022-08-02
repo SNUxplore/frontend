@@ -1,3 +1,4 @@
+import React from "react";
 import { useLoaderData } from "@remix-run/react";
 import Banner from "~/Components/Banner/Banner";
 import Calendar from "~/Components/Calendar/Calendar";
@@ -90,7 +91,7 @@ export default function Index() {
             lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
             metus sem."
         href="/login"
-        fillType="fill2"
+        fillType="bannerFill"
         redirectContent="Club Login"
       />
       <Footer />
