@@ -1,7 +1,5 @@
 import React from "react";
 import moment from "moment";
-import arrowLeft from "../../Assets/Img/calendarLeft.svg";
-import arrowRight from "../../Assets/Img/calendarRight.svg";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
 
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -99,11 +97,7 @@ function Calendar({ events = [], setSelectedDate }) {
             onClick={() => monthChange("left")}
             className="calendar-container__header__leftBtn"
           >
-            <img
-              className="calendar-container__header--arrow"
-              src={arrowLeft}
-              alt="leftBtn"
-            />
+            ◀
           </button>
           <div className="calendar-container__header__monthNames">
             {currentMonth}, {currentYear}
@@ -112,11 +106,7 @@ function Calendar({ events = [], setSelectedDate }) {
             onClick={() => monthChange("right")}
             className="calendar-container__header__leftBtn"
           >
-            <img
-              className="calendar-container__header--arrow"
-              src={arrowRight}
-              alt="rightBtn"
-            />
+            ▶
           </button>
         </div>
       </div>
