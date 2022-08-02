@@ -91,7 +91,7 @@ export default function Navigate() {
           transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           transitionProperty: "height",
           overflow: "hidden",
-          height: `${scrollHeight + 10}px`,
+          height: `${scrollHeight}px`,
         });
       }, 50);
     } else {
@@ -139,13 +139,12 @@ export default function Navigate() {
             </p>
           </div>
           <SearchBar style={{ width: "100%", marginBottom: "20px" }} />
-          <div className="NavigatePage__right--panel">
-            <button
-              className={`NavigatePage__right--panel ${
-                isOpen ? "NavigatePage__right--panel--active" : ""
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
+          <div
+            className={`NavigatePage__right--panel ${
+              isOpen ? "NavigatePage__right--panel--active" : ""
+            }`}
+          >
+            <button onClick={() => setIsOpen(!isOpen)}>
               <img src={isOpen ? upDropDown : downDropDown} /> Filter your
               search
             </button>
