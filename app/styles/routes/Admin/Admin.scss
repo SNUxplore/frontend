@@ -20,18 +20,17 @@
     &--bold {
       font-family: Poppins, sans-serif;
       padding: 8px;
-      font-size: 5.2rem;
-      line-height: 109px;
-      color: var(--primaryTextColor);
+      font-size: 65px;
+      line-height: 167.5%;
+      color: var(--unhighlightTextColor);
       @include respondAt(900px) {
-        font-size: 3rem;
+        font-size: 35px;
         line-height: 40px;
-        padding: 15px;
       }
     }
 
     &--normal {
-      font-weight: 550;
+      font-weight: 500;
     }
     &--bold {
       font-weight: 700;
@@ -40,16 +39,13 @@
 
   &__description {
     font-family: Poppins, sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-		color: var(--primaryTextColor);
-    width: 880px;
+    font-size: 16px;
+    line-height: 167.5%;
+    color: var(--primaryTextColor);
+    max-width: 600px;
 
     text-align: center;
-    padding: 10px;
-    line-height: 25px;
-    margin-top: 25px;
-    margin-bottom: 70px;
+    line-height: 167.5%;
     @include respondAt(900px) {
       width: 90%;
       margin-top: 17px;
@@ -61,18 +57,18 @@
     }
   }
   &__main {
-		gap: 50px;
+    gap: 50px;
     width: 100%;
     max-width: 1585px;
     padding: 0px 40px;
     min-height: calc(100% - 110px);
     transition: padding 0.5s ease-in-out;
     @include make-flex($just: flex-start);
-		
-		@include respondAt(590px) {
-			padding: 0 10px;
-		}
-		
+
+    @include respondAt(590px) {
+      padding: 0 10px;
+    }
+
     &--searchContainer {
       margin-top: 35px;
       @include make-flex();
@@ -91,17 +87,17 @@
       @include make-flex($dir: row);
       margin-top: 100px;
       margin-bottom: 50px;
-			
+
       @include respondAt(590px) {
         gap: 20px;
         margin-top: 50px;
         flex-direction: column;
         position: relative;
       }
-			
-			// @include respondAt(1150px) {
-			// 	align-content: flex-start;
-			// }
+
+      // @include respondAt(1150px) {
+      // 	align-content: flex-start;
+      // }
     }
   }
 
@@ -117,6 +113,8 @@
       }
     }
     &--panel {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
       @include box(220px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
@@ -126,13 +124,12 @@
       gap: 15px;
       position: sticky;
 
-			
       @include respondAt(590px) {
-				@include box(390px, 54px);
-				margin: 0 auto;
+        @include box(390px, 54px);
+        margin: 0 auto;
         padding: 0 10px;
         flex-direction: row;
-				justify-content: space-evenly;
+        justify-content: space-evenly;
         scrollbar-width: none;
         overflow-x: auto;
         z-index: 2;
@@ -163,8 +160,8 @@
         padding: 7px 8px;
         color: var(--secondaryTextColor);
         border-radius: 5px;
-				font-weight: 700;
-				
+        font-weight: 700;
+
         @include respondAt(590px) {
           @include box(auto, auto);
         }
@@ -180,17 +177,17 @@
 
     &--right {
       @include box(calc(100% - 220px), 1100px);
-			max-width: 900px;
+      max-width: 900px;
       @include make-flex($dir: column, $just: flex-start, $align: center);
       flex-wrap: wrap;
       gap: 25px;
       padding: 0 25px;
-			
-			@include respondAt(1150px) {
-				height: fit-content;
-				align-content: flex-start;
-			}			
-			
+
+      @include respondAt(1150px) {
+        height: fit-content;
+        align-content: flex-start;
+      }
+
       @include respondAt(680px) {
         padding: 0 0 0 25px;
       }
@@ -199,7 +196,7 @@
         @include box(100%, auto);
         margin-top: 70px;
         z-index: 1;
-				align-content: center;
+        align-content: center;
       }
     }
   }

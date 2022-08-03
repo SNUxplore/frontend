@@ -12,8 +12,8 @@
   }
 
   &__head {
-		margin: 0 6px 10px 6px;
-		
+    margin: 0 6px 10px 6px;
+
     &__header {
       padding: 10px 10px 10px 10px;
       &--block,
@@ -30,18 +30,18 @@
       }
     }
   }
-	
-	hr {
-		border-top: 0.5px var(--blue);
-		border-style: inset;
-		margin-block-start: 0;
-		margin-block-end: 0;
-		margin-inline-start: 0;
-		margin-inline-end: 0;
-	}
-	
+
+  hr {
+    border-top: 0.5px var(--blue);
+    border-style: inset;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+
   &__body {
-		margin: 5px 6px 0 6px;
+    margin: 5px 6px 0 6px;
     &__header {
       padding: 3px 3px 3px 13px;
 

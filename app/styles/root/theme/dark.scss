@@ -1,6 +1,6 @@
 @mixin darkMode() {
   --pageBackground: #242836;
-  --primaryTextColor: #d0d0d0;
+  --primaryTextColor: #d0d0d089;
   --blue: #00badd;
   --white: #ffffff;
   --titleHighlight: #00badd;
@@ -57,4 +57,5 @@
   --eventCardButton: #e5c3ff;
   --searchColor: #00badd;
   --ctaBtn: #242836;
+  --calendarGrid: rgba(255, 255, 255, 0.295);
 }
