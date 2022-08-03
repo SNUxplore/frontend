@@ -1,5 +1,3 @@
-import logoPreview from "../../Assets/Img/twitterLogo.svg";
-import React from "react";
 import fireIcon from "../../Assets/Img/modalFireIcon_lightTheme.svg";
 import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
 import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
@@ -13,6 +11,7 @@ import modalCloseIcon from "../../Assets/Img/modalClose__LightTheme.svg";
 function InfoModal({ setModalOpen, data }) {
   return (
     <div className="ModalWrapper">
+      {console.log(data)}
       <div className="ModalWrapper__container">
         <button
           className="ModalWrapper__container--closebtn"
@@ -39,8 +38,7 @@ function InfoModal({ setModalOpen, data }) {
               src={timeIcon}
               alt="time icon"
             />
-            <span>Timings :</span> 
-            {data[3].split(" ")[1]} - {data[3].split(" ")[3]}
+            <span>Timings :</span> --
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -49,7 +47,7 @@ function InfoModal({ setModalOpen, data }) {
               alt="date icon"
             />
             <span>Date :</span>
-            {data[3].split(" ")[0]}
+            {data[3]}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
