@@ -124,37 +124,43 @@
       cursor: pointer;
     }
     &--themeButtons {
-      @include box($width: auto, $height: 40px);
-      @include make-flex($dir: row);
-      column-gap: 8px;
-      border-radius: 9px;
-      align-items: center;
-      padding: 6px;
-      // @include respondAt(1530px) {
+      @include respondAtAlt(1230px) {
+        @include box($width: auto, $height: 40px);
+        @include make-flex($dir: row);
+        column-gap: 8px;
+        border-radius: 9px;
+        align-items: center;
+        padding: 6px;
+        // @include respondAt(1530px) {
 
-      button {
-        @include make-flex();
-      }
+        button {
+          @include make-flex();
+        }
 
-      &--option {
-        @include box(25px, 25px);
-        display: inline;
+        &--option {
+          @include box(25px, 25px);
+          display: inline;
 
-        &--pink {
+          &--pink {
+            &--active {
+              filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
+                saturate(6336%) hue-rotate(321deg) brightness(103%)
+                contrast(95%);
+            }
+          }
+
           &--active {
-            filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
-              saturate(6336%) hue-rotate(321deg) brightness(103%) contrast(95%);
+            filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
+              saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
           }
         }
-
-        &--active {
-          filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
-            saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
-        }
       }
-      // }
       @include respondAt(1230px) {
         width: 100%;
+        background: var(--navbarBackground) !important;
+      }
+      &--socialMediaIcons {
+        filter: var(--headerSvgFilter);
       }
     }
     gap: 30px;
