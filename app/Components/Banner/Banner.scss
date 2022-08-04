@@ -1,7 +1,7 @@
 @import "../../styles/root/mixins";
 
 .Banner {
-  background-color: var(--blue);
+  background-color: var(--bannerFill);
   @include box($height: 38.75vh);
   @include make-flex($dir: row);
   max-height: 336px;
