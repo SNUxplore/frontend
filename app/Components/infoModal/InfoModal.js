@@ -1,5 +1,3 @@
-import logoPreview from "../../Assets/Img/twitterLogo.svg";
-import React from "react";
 import fireIcon from "../../Assets/Img/modalFireIcon_lightTheme.svg";
 import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
 import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
@@ -23,7 +21,7 @@ function InfoModal({ setModalOpen, data }) {
         <div className="ModalWrapper__container__infoContainer">
           <h1 className="ModalWrapper__container__infoContainer--title">
             <img src={appLogo} alt="CLUB LOGO" />
-            {data[2]}
+            {data.logo}
           </h1>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -31,7 +29,7 @@ function InfoModal({ setModalOpen, data }) {
               src={fireIcon}
               alt="fire icon"
             />
-            <span>Event :</span> {data[0]}
+            <span>Event :</span> {data.eventName}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -39,8 +37,7 @@ function InfoModal({ setModalOpen, data }) {
               src={timeIcon}
               alt="time icon"
             />
-            <span>Timings :</span> 
-            {data[3].split(" ")[1]} - {data[3].split(" ")[3]}
+            <span>Timings :</span> {data.startTime} - {data.endTime}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -49,7 +46,7 @@ function InfoModal({ setModalOpen, data }) {
               alt="date icon"
             />
             <span>Date :</span>
-            {data[3].split(" ")[0]}
+            {data.date}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -57,13 +54,13 @@ function InfoModal({ setModalOpen, data }) {
               src={locationIcon}
               alt="Location icon"
             />
-            <span>Location :</span> {data[4]}
+            <span>Location :</span> {data.location}
           </p>
           <h3 className="ModalWrapper__container__infoContainer--titleSecondary">
             Description
           </h3>
           <p className="ModalWrapper__container__infoContainer--eventDesc">
-            {data[6]}
+            {data.desc}
           </p>
           <p className="ModalWrapper__container__infoContainer--titleSecondary">
             Club socials

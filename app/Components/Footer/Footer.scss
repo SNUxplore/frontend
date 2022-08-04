@@ -43,7 +43,6 @@
 
     @include respondAt(1095px) {
       width: 250px;
-      margin-top: 30px;
     }
     @include respondAt(610px) {
       width: 100%;

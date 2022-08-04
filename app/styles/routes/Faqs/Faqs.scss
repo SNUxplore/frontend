@@ -135,6 +135,7 @@
       @include make-flex($dir: column, $align: stretch);
       gap: 32.5px;
       width: 192px;
+      overflow-x: auto;
 
       @include respondAt(750px) {
         @include make-flex($dir: row, $just: space-between);
@@ -146,12 +147,12 @@
     }
 
     &__categoryBox {
-      @include make-flex($dir: row);
+      @include make-flex($dir: row,$just:flex-start);
       box-sizing: content-box;
       height: 40px;
       // width: 100%;
-      max-width: 220px;
-      padding: 0 20px;
+      min-width: 143px;
+      padding: 0 15px;
       background-color: var(--white);
       border-radius: 8px;
       background-color: transparent;

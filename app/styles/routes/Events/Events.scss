@@ -86,6 +86,7 @@
     @include box(fit-content);
     max-width: calc(100% - 365px);
     &--calender {
+      position: relative;
       background-color: var(--calenderColor);
       border-radius: 19px;
       padding: 10px;
@@ -98,6 +99,28 @@
       }
       @include respondAt(885px) {
         width: 100%;
+      }
+    }
+    &--EmptyOverLay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include box();
+      @include make-flex();
+      z-index: 1;
+      background: var(--emptyCalenderOpacity);
+      backdrop-filter: blur(14px);
+      h1 {
+        width: 60%;
+        text-align: center;
+        color: var(--textColor);
+
+        @include respondAt(625px) {
+          width: 80%;
+        }
+        @include respondAt(425px) {
+          font-size: 20px;
+        }
       }
     }
 

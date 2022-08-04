@@ -8,7 +8,7 @@
   width: 100%;
   //   margin-bottom: 100px;
   position: relative;
-  &__question {
+  &__question { 
     @include box($height: 48px);
     @include make-flex($dir: row, $just: space-between);
     padding: 0 20px;
@@ -19,6 +19,9 @@
     cursor: pointer;
 		color: var(--primaryTextColor);
 		
+    p{
+      text-align: left;
+    }
     &:hover {
       background-color: var(--white);
 			
