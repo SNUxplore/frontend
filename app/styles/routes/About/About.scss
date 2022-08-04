@@ -38,12 +38,14 @@
       font-family: "Poppins", sans-serif;
       font-size: 80px;
       font-weight: 500;
-      color: var(--primaryTextColor);
+      color: var(--unhighlightTextColor);
 
       span {
         font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 15px;
+        margin-left: 10px;
+        color: var(--highlightTextColor);
       }
 
       @include respondAt(730px) {
@@ -278,14 +280,13 @@
 
       @include respondAt(780px) {
         overflow-x: scroll;
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
-          width: 0; 
-          background: transparent; 
+          width: 0;
+          background: transparent;
           height: 0;
         }
-        
       }
     }
     &--link {

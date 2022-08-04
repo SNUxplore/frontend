@@ -175,7 +175,8 @@ export default function About() {
       <main className="AboutUsPage__mainContainer">
         <section className="AboutUsPage__hero">
           <h1 className="AboutUsPage__hero--title">
-            Meet the <span>Team</span>
+            Meet the
+            <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
             Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
