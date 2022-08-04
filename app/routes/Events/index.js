@@ -90,7 +90,7 @@ export default function Index() {
                   startTime={event.timeStart}
                   endTime={event.timeEnd}
                   date={event.date}
-                  clubName="ECell"
+                  clubName={event.User.name}
                   desc={event.description}
                 />
               ))}
