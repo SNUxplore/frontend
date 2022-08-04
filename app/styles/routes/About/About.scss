@@ -22,9 +22,11 @@
     @include respondAt(1135px) {
       padding: 0 40px;
     }
+    @include respondAt(905px) {
+      gap: 50px;
+    }
     @include respondAt(470px) {
       padding: 0 20px;
-      gap: 70px;
     }
   }
   &__hero {
@@ -60,8 +62,13 @@
       color: var(--primaryTextColor);
       font-family: "Poppins";
 
+      @include respondAt(650px) {
+        width: 80%;
+      }
+
       @include respondAt(430px) {
         width: 100%;
+        text-align: left;
       }
     }
   }
