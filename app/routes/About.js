@@ -226,7 +226,10 @@ export default function About() {
         <section className="AboutUsPage__team">
           <div className="AboutUsPage__team--top">
             <h2 className="AboutUsPage__team--title">
-              Who <b>are we?</b>
+              Who{" "}
+              <span>
+                <b>are we?</b>
+              </span>
             </h2>
             <p className="AboutUsPage__team--subTitle">
               These are the people that make the magic happen. <br /> (hover
@@ -234,16 +237,29 @@ export default function About() {
             </p>
           </div>
           <div className="AboutUsPage__team--middle">
-            {teams.map((item, index) => (
-              <button
-                onClick={() => setSelectedValue(item)}
-                // id={item}
-                key={index}
-                className="AboutUsPage__team--link"
-              >
-                {item}
-              </button>
-            ))}
+            {teams.map((item, index) =>
+              item === selectedValue ? (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={
+                    "AboutUsPage__team--link AboutUsPage__team--active"
+                  }
+                >
+                  {item}
+                </button>
+              ) : (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={"AboutUsPage__team--link"}
+                >
+                  {item}
+                </button>
+              )
+            )}
           </div>
           <div className={`AboutUsPage__team--members`}>
             <div className={`AboutUsPage__team--members`}>
