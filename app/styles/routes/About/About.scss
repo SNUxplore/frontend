@@ -7,7 +7,7 @@
   &__mainContainer {
     @include make-flex($just: flex-start);
     width: 100%;
-    gap: 135px;
+    gap: 115px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
     padding: 0px 170px 0px;
@@ -32,18 +32,25 @@
   &__hero {
     @include box($height: 250px);
     @include make-flex();
-    gap: 35px;
+    gap: 30px;
+
+    @include respondAt(905px) {
+      gap: 20px;
+    }
 
     &--title {
+      padding-top: 30px;
       font-family: "Poppins", sans-serif;
       font-size: 80px;
       font-weight: 500;
-      color: var(--primaryTextColor);
+      color: var(--unhighlightTextColor);
 
       span {
         font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 15px;
+        margin-left: 10px;
+        color: var(--highlightTextColor);
       }
 
       @include respondAt(730px) {
@@ -56,11 +63,16 @@
     }
     &--desc {
       width: 60%;
+      font-size: 16px;
       @include make-flex();
-      line-height: 1.4;
+      line-height: 167.5%;
       text-align: center;
       color: var(--primaryTextColor);
       font-family: "Poppins";
+
+      @include respondAt(905px) {
+        font-size: 14px;
+      }
 
       @include respondAt(650px) {
         width: 80%;
@@ -100,9 +112,10 @@
     &--right {
       @include box(45%);
       @include make-flex($align: flex-start);
-      gap: 30px;
+      gap: 20px;
 
       @include respondAt(905px) {
+        margin-top: 15px;
         width: 50%;
         gap: 20px;
       }
@@ -125,20 +138,21 @@
       }
 
       span {
-        font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 10px;
+        color: var(--highlightTextColor);
       }
     }
     &--desc {
       width: 80%;
-      line-height: 2;
+      line-height: 167.5%;
+      font-size: 15px;
       font-family: "Poppins", sans-serif;
       font-weight: 400;
-      color: var(--textColor);
+      color: var(--primaryTextColor);
 
       @include respondAt(560px) {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include respondAt(1020px) {
@@ -185,7 +199,7 @@
     &--left {
       @include box(45%);
       @include make-flex($align: flex-start);
-      gap: 30px;
+      gap: 20px;
       padding-left: 65px;
 
       @include respondAt(1050px) {
@@ -207,27 +221,28 @@
       font-family: "Poppins", sans-serif;
       font-size: 45px;
       font-weight: 500;
-      color: var(--primaryTextColor);
+      color: var(--textColor);
 
       @include respondAt(560px) {
         font-size: 35px;
       }
 
       span {
-        font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 10px;
+        color: var(--highlightTextColor);
       }
     }
     &--desc {
-      width: 90%;
-      line-height: 2;
+      width: 80%;
+      line-height: 167.5%;
+      font-size: 15px;
       font-family: "Poppins", sans-serif;
       font-weight: 400;
       color: var(--primaryTextColor);
 
       @include respondAt(560px) {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include respondAt(1020px) {
@@ -251,7 +266,7 @@
       font-family: "Poppins", sans-serif;
       font-size: 52px;
       font-weight: 500;
-      color: var(--primaryTextColor);
+      color: var(--unhighlightTextColor);
       width: 100%;
       text-align: center;
 
@@ -261,13 +276,15 @@
     }
     &--subTitle {
       font-family: "Poppins", sans-serif;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 400;
       color: var(--primaryTextColor);
       width: 100%;
       text-align: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
       @include respondAt(560px) {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
     &--middle {
@@ -278,33 +295,41 @@
 
       @include respondAt(780px) {
         overflow-x: scroll;
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
-          width: 0; 
-          background: transparent; 
+          width: 0;
+          background: transparent;
           height: 0;
         }
-        
       }
     }
     &--link {
+      opacity: 60%;
       font-family: "Poppins", sans-serif;
       @include make-flex();
-      font-size: 20px;
-      padding: 0 15px;
+      font-size: 16px;
+      padding: 0 10px;
       white-space: nowrap;
-      font-weight: 400;
-      color: var(--white);
-      width: 100%;
+      font-weight: 500;
+      color: var(--ctaBtn);
       height: 45px;
       border-style: none;
-      border-radius: 7px;
+      border-radius: 20px;
       background-color: var(--blue);
       text-decoration: none;
-      max-width: 235px;
+      width: 190px;
       text-align: center;
       cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        opacity: 100%;
+      }
+    }
+
+    &--active {
+      opacity: 100;
     }
 
     &--members {
@@ -312,8 +337,8 @@
       height: auto;
       @include make-flex($dir: row, $just: space-evenly);
       flex-wrap: wrap;
-      column-gap: 20px;
-      row-gap: 35px;
+      column-gap: 30px;
+      row-gap: 45px;
       margin-top: 20px;
       margin-bottom: 60px;
     }
@@ -323,7 +348,7 @@
       width: 270px;
       height: 434px;
       @include make-flex();
-      gap: 15px;
+      gap: 5px;
       &__imageBox {
         height: 350px;
         width: 100%;
@@ -337,19 +362,20 @@
       }
 
       &__name {
+        margin-top: 10px;
         width: 100%;
         text-align: center;
         font-size: 20px;
-        font-weight: 500;
-        color: var(--primaryTextColor);
+        font-weight: 600;
+        color: var(--unhighlightTextColor);
       }
       &__title {
         width: 100%;
         text-align: center;
         font-size: 17px;
-        font-weight: 400;
+        font-weight: 500;
         opacity: 0.8;
-        color: var(--primaryTextColor);
+        color: var(--blue);
       }
     }
   }

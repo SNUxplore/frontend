@@ -1,7 +1,7 @@
 @mixin lightMode() {
   --pageBackground: #f4f5fc;
   --primaryTextColor: #363b53;
-  --blue: #53a3ff;
+  --blue:  #308CF8;
   --white: #ffffff;
   --black: #000000;
   --titleHighlight: #d0eeff;
@@ -13,7 +13,7 @@
   --contactHover: #ffc107;
   --navMenuBorder: #a66874;
   --searchBarShadow: #cdced4;
-  --faqRedirectBackground: #61abfe;
+  --faqRedirectBackground: #308CF8;
   --navigatePanelShadow: #d9d9d9;
   --navbarBackground: #242836;
   --navbarOption: #ffffff;
@@ -42,7 +42,7 @@
   --placecardHighlighted: #a9a9a9;
   --searchBarActiveBG: rgba(101, 108, 133, 0.8);
   --searchBarModalActiveBG: #f5f6f7;
-  --searchResultHover: #3884ff;
+  --searchResultHover: #308CF8;
   --clubInfoHeaderBG: #36344d;
   --infoFormBorder: #dad9da;
   --infoFormSpam: #727586;
@@ -68,5 +68,5 @@
   --ctaBtn: #fff;
   --calendarGrid: #00000024;
   --emptyCalenderOpacity: rgba(255, 255, 255, 0.363);
-
+  --bannerFill: #61abfe;
 }

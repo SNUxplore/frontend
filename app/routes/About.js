@@ -17,6 +17,7 @@ import Pratham from "../Assets/Img/Pratham.png";
 import RishiB from "../Assets/Img/RishiB.png";
 import Riya from "../Assets/Img/Riya.jpg";
 import Yathansh from "../Assets/Img/Yathansh.jpg";
+import aboutIllustration from "../Assets/Img/xplorAboutusImage.svg";
 import { useNavigate } from "@remix-run/react";
 
 export function links() {
@@ -174,7 +175,8 @@ export default function About() {
       <main className="AboutUsPage__mainContainer">
         <section className="AboutUsPage__hero">
           <h1 className="AboutUsPage__hero--title">
-            Meet the <span>Team</span>
+            Meet the
+            <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
             Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
@@ -184,11 +186,14 @@ export default function About() {
         </section>
         <section className="AboutUsPage__mission">
           <div className="AboutUsPage__mission--left">
-            <img src={KeshavAndPP} alt="Keshav and Prabhav" />
+            <img src={aboutIllustration} alt="Xplore logo" />
           </div>
           <div className="AboutUsPage__mission--right">
             <h2 className="AboutUsPage__mission--title">
-              Our <span>Mission</span>
+              Our{" "}
+              <span>
+                <b>mission</b>
+              </span>
             </h2>
             <p className="AboutUsPage__mission--desc">
               We at team SNUXplore are a group of passionate and driven
@@ -201,8 +206,11 @@ export default function About() {
         <section className="AboutUsPage__story">
           <div className="AboutUsPage__story--left">
             <h2 className="AboutUsPage__story--title">
-              Our Story
-              <br /> has <b>been</b> <span>crazy</span>
+              Our <b>story,</b>
+              <br /> has <b>been</b>{" "}
+              <span>
+                <b>crazy</b>
+              </span>
             </h2>
             <p className="AboutUsPage__story--desc">
               What started as an idea in the library, is now finally a reality.
@@ -218,7 +226,10 @@ export default function About() {
         <section className="AboutUsPage__team">
           <div className="AboutUsPage__team--top">
             <h2 className="AboutUsPage__team--title">
-              Who <b>are we?</b>
+              Who{" "}
+              <span>
+                <b>are we?</b>
+              </span>
             </h2>
             <p className="AboutUsPage__team--subTitle">
               These are the people that make the magic happen. <br /> (hover
@@ -226,16 +237,29 @@ export default function About() {
             </p>
           </div>
           <div className="AboutUsPage__team--middle">
-            {teams.map((item, index) => (
-              <button
-                onClick={() => setSelectedValue(item)}
-                // id={item}
-                key={index}
-                className="AboutUsPage__team--link"
-              >
-                {item}
-              </button>
-            ))}
+            {teams.map((item, index) =>
+              item === selectedValue ? (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={
+                    "AboutUsPage__team--link AboutUsPage__team--active"
+                  }
+                >
+                  {item}
+                </button>
+              ) : (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={"AboutUsPage__team--link"}
+                >
+                  {item}
+                </button>
+              )
+            )}
           </div>
           <div className={`AboutUsPage__team--members`}>
             <div className={`AboutUsPage__team--members`}>
