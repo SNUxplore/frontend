@@ -5,7 +5,7 @@
   background-color: var(--eventCardBackground);
   @include make-flex($dir: row);
   @include box(100%, 110px);
-  min-height: 110px;
+  min-height: 120px;
   border-radius: 8px;
   padding: 13px;
 
@@ -71,7 +71,7 @@
     &--button {
       border: 1px solid var(--eventCardButton);
       // color: var(--eventCardButton);
-      border:1.5px solid var(--eventDetailsButtonBackground);
+      border: 1.5px solid var(--eventDetailsButtonBackground);
       border-radius: 5px;
       padding: 4px 6px;
       background-color: var(--transparent);

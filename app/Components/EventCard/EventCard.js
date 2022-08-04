@@ -44,7 +44,7 @@ function EventCard({
       </div>
       <div className="EventCardWrapper__right">
         <p>
-          {date} {startTime} - {endTime}
+          {date}, {startTime} - {endTime}
         </p>
         <button
           onClick={() => {
