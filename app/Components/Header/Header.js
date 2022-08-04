@@ -1,8 +1,7 @@
 import React from "react";
 import appLogo from "../../Assets/Img/xploreLogo.svg";
 import instagramLogo from "../../Assets/Img/instagramLogo.svg";
-import facebookLogo from "../../Assets/Img/facebookLogo.svg";
-import twitterLogo from "../../Assets/Img/twitterLogo.svg";
+import linkedInLogo from "../../Assets/Img/linkedInLogo.svg";
 import locationIcon from "../../Assets/Img/locationIcon.svg";
 import fireIcon from "../../Assets/Img/fireIcon.svg";
 import infoIcon from "../../Assets/Img/infoIcon.svg";
@@ -405,36 +404,34 @@ function Header() {
             </div>
           )}
           {dropdown && (
-            <div className="HeaderWrapper__right--themeButtons">
+            <div
+              className="HeaderWrapper__right--themeButtons"
+              style={{
+                background: "inherit",
+              }}
+            >
               <p className="HeaderWrapper__right--paragraph">Social Medias</p>
               <div className="HeaderWrapper__right--lineSep"></div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  columnGap: "35px",
+                  columnGap: "20px",
                   paddingBottom: "50px",
                 }}
               >
-                <a href="https://www.instagram.com/snu.xplore/">
+                <a target="_blank" href="https://www.linkedin.com/snu.xplore/">
                   <img
-                    className="HeaderWrapper__right--logo"
+                    className="HeaderWrapper__right--themeButtons--socialMediaIcons"
+                    src={linkedInLogo}
+                    alt="LinkedIn logo"
+                  />
+                </a>
+                <a target="_blank" href="https://www.instagram.com/snu.xplore/">
+                  <img
+                    className="HeaderWrapper__right--themeButtons--socialMediaIcons"
                     src={instagramLogo}
-                    alt="snu explore Logo"
-                  />
-                </a>
-                <a href="https://www.facebook.com/snu.explore/">
-                  <img
-                    className="HeaderWrapper__right--logo"
-                    src={facebookLogo}
-                    alt="snu explore Logo"
-                  />
-                </a>
-                <a href="https://twitter.com/snu_explore">
-                  <img
-                    className="HeaderWrapper__right--logo"
-                    src={twitterLogo}
-                    alt="snu explore Logo"
+                    alt="Instagram logo"
                   />
                 </a>
               </div>
