@@ -1,7 +1,7 @@
 @mixin lightMode() {
   --pageBackground: #f4f5fc;
   --primaryTextColor: #363b53;
-  --blue: #308CF8;
+  --blue: #53a3ff;
   --white: #ffffff;
   --black: #000000;
   --titleHighlight: #d0eeff;
@@ -67,4 +67,6 @@
   --searchColor: #363b53;
   --ctaBtn: #fff;
   --calendarGrid: #00000024;
+  --emptyCalenderOpacity: rgba(255, 255, 255, 0.363);
+
 }

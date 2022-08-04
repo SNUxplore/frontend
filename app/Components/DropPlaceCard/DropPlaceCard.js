@@ -22,7 +22,7 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
     if (dropDownRef.current.scrollHeight != 0) {
       setScrollHeight(dropDownRef.current.scrollHeight);
     }
-  });
+  },[]);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -80,6 +80,7 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
           className="DropPlaceCardWrapper__face--image"
           src={src != "" ? src : placeholder}
           alt="Placeholder"
+          loading="lazy"
         />
         <div className="DropPlaceCardWrapper__face--text">
           <h3>{name}</h3>
@@ -95,9 +96,9 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
         <div className="DropPlaceCardWrapper__content--top">
           <p>{desc}</p>
 
-          <p className="PlaceCardWrapper__content--poc">
+          {/* <p className="PlaceCardWrapper__content--poc">
             <span>Receptionist: </span>Gravida Mouna
-          </p>
+          </p> */}
         </div>
         <div className="DropPlaceCardWrapper__actions">
           {actionLists.map((action, index) => (

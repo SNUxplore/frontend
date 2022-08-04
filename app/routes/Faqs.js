@@ -52,7 +52,7 @@ export default function Index() {
     },
     {
       id: 2,
-      name: "Miscellaneous",
+      name: "Misc",
       questions: [
         {
           id: 1,

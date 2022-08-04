@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import DropPlaceCard from "~/Components/DropPlaceCard/DropPlaceCard";
 import PlaceCard from "~/Components/PlaceCard/PlaceCard";
 import NavigateCard from "~/Components/NavigateCard/NavigateCard";
+import Footer from "~/Components/Footer/Footer";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);

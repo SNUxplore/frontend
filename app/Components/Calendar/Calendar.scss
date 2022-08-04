@@ -99,6 +99,10 @@
     background: var(--calenderColor);
 
     display: flex;
+
+    // &:last-child {
+    //   border-bottom: var(--calendarGrid) 1px solid;
+    // }
   }
 
   &__day-container {
@@ -114,7 +118,11 @@
     @include make-flex($just: flex-start, $align: flex-end);
     cursor: pointer;
     &:first-child {
+      // border-left: var(--calendarGrid) 1px solid;
       border-left: unset;
+    }
+    &:last-child {
+      border-right: unset;
     }
 
     @include respondAt(685px) {
@@ -141,6 +149,9 @@
     &:first-child {
       border-left: unset;
     }
+    &:last-child {
+      border-right: unset;
+    }
     @include respondAt(685px) {
       height: 70px;
     }
@@ -159,8 +170,8 @@
     z-index: 1;
     margin: 2px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-    right: -15%;
-    bottom: -5%;
+    right: -20%;
+    bottom: -15%;
     background: var(--contactHover);
     color: var(--calendarCardText);
     &--eventName {

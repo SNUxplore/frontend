@@ -122,6 +122,7 @@
       font-size: 55px;
       line-height: 62px;
     }
+    white-space: nowrap;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     color: var(--white);
@@ -133,7 +134,7 @@
       color: var(--secondaryTextColor);
     }
 
-    @include respondAt(1060px) {
+    @include respondAt(1080px) {
       width: 90%;
     }
     @include respondAt(885px) {
