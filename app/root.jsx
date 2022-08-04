@@ -39,7 +39,7 @@ export const ThemeScript = () => {
     !location.pathname.includes("login")
   ) {
     if (localStorage.getItem("clubTempTheme")) {
-      localStorage.setItem("theme", localStorage.getItem("clubTempTheme"));
+      localStorage.setItem("theme", localStorage.getItem("clubTempTheme")?localStorage.getItem("clubTempTheme") : "light");
       localStorage.removeItem("clubTempTheme");
     }
     const theme = localStorage.getItem("theme");
