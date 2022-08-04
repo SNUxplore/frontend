@@ -72,6 +72,8 @@ function Calendar({ events = [], setSelectedDate }) {
   const eventCheck = (date) => {
     let classToggle;
     let eventTimings;
+    let eventTimeStart;
+    let eventTimeEnd;
     let eventName = [];
     events.forEach((event) => {
       if (event.eventDate === date) {
@@ -81,12 +83,19 @@ function Calendar({ events = [], setSelectedDate }) {
           : (classToggle = "calendar-container__eventHide");
 
         event.eventDate === date ? eventName.push(event.eventName) : "";
-        eventTimings = event.eventTimings; // stores the event timings
+        eventTimeStart = event.eventStart;
+        eventTimeEnd = event.eventEnd; // stores the event timings
         return;
       }
     });
 
-    return { classToggle, eventName, eventTimings };
+    return {
+      classToggle,
+      eventName,
+      eventTimings,
+      eventTimeStart,
+      eventTimeEnd,
+    };
   };
 
   return (
@@ -122,9 +131,8 @@ function Calendar({ events = [], setSelectedDate }) {
       {calendarData.map((week, index) => (
         <div key={index} className="calendar-container__week-container">
           {week.map((day, index) => {
-            const { classToggle, eventName, eventTimings } = eventCheck(
-              day.format("YYYY-MM-DD").toString()
-            );
+            const { classToggle, eventName, eventTimeStart, eventTimeEnd } =
+              eventCheck(day.format("YYYY-MM-DD").toString());
             return (
               <div
                 onClick={(e) => {
@@ -150,7 +158,12 @@ function Calendar({ events = [], setSelectedDate }) {
                         : eventName[0]}
                     </p>
                     <p className="calendar-container__eventShow--eventTime">
-                      {eventName.length > 1 ? "Click to view " : eventTimings}
+                      {eventName.length > 1
+                        ? "Click to view "
+                        : eventTimeStart === undefined ||
+                          eventTimeEnd === undefined
+                        ? ""
+                        : `${eventTimeStart} - ${eventTimeEnd}`}
                     </p>
                   </div>
                 )}

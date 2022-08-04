@@ -123,6 +123,8 @@ export default function Index() {
               events={data.map((item) => ({
                 eventName: item.title,
                 eventDate: item.date,
+                eventStart: item.timeStart,
+                eventEnd: item.timeEnd,
               }))}
               setSelectedDate={setSelectedDate}
             />
