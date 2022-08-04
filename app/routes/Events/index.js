@@ -7,6 +7,7 @@ import Footer from "~/Components/Footer/Footer";
 import Header from "~/Components/Header/Header";
 import styleSheet from "~/styles/routes/Events/Events.css";
 import { getEvents } from "../services/club.server";
+import NoEventsImg from "../../Assets/Img/NoEvents.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -39,41 +40,81 @@ export default function Index() {
   React.useEffect(() => {
     window.addEventListener("load", () => {
       const height = document.querySelector(".EventsPage__right").clientHeight;
-      document.querySelector(".EventsPage__left").style.height = `${height}px`;
+      if (data.length > 0) {
+        document.querySelector(
+          ".EventsPage__left"
+        ).style.height = `${height}px`;
+      } else {
+        document.querySelector(".EventsPage__left").style.height = "unset";
+      }
     });
     window.addEventListener("resize", () => {
       const height = document.querySelector(".EventsPage__right").clientHeight;
-      document.querySelector(".EventsPage__left").style.height = `${height}px`;
+      if (data.length > 0) {
+        document.querySelector(
+          ".EventsPage__left"
+        ).style.height = `${height}px`;
+      } else {
+        document.querySelector(".EventsPage__left").style.height = "unset";
+      }
     });
   }, []);
   return (
     <div className="EventsPage">
       <Header />
-      <main className="EventsPage__mainContainer">
-        {/* <div className="EventsPage__top">
-        </div> */}
-        <div className="EventsPage__left">
+      <main className="EventsPage__mainContainer" 
+        style={{
+          flexDirection: data.length <= 0 ? "column" : "",
+        }}
+      >
+        <div
+          className="EventsPage__left"
+          style={{
+            height: data.length <= 0 ? "unset" : "",
+          }}
+        >
           <h2 className="EventsPage__left--title">
             Happening <span>@SNU</span>
           </h2>
           <p className="EventsPage__left--subTitle">
             Don’t miss out on any scheduled events
           </p>
-          <div className="EventsPage__left--events">
-            {data.map((event, index) => (
-              <EventCard
-                key={index}
-                eventName={event.title}
-                location={event.location}
-                date={event.date}
-                clubName="ECell"
-                desc={event.description}
-              />
-            ))}
-          </div>
+          {data.length > 0 && (
+            <div className="EventsPage__left--events">
+              {data.map((event, index) => (
+                <EventCard
+                  key={index}
+                  eventName={event.title}
+                  location={event.location}
+                  date={event.date}
+                  clubName="ECell"
+                  desc={event.description}
+                />
+              ))}
+            </div>
+          )}
         </div>
-        <div className="EventsPage__right">
-          <div className="EventsPage__right--calender">
+        <div className="EventsPage__right"
+          style={{
+            width: data.length <= 0 ? "100%" : "",
+            maxWidth: data.length <= 0 ? "unset" : "",
+
+          }}
+        >
+          <div className="EventsPage__right--calender"
+            style={{
+              maxWidth: data.length <= 0 ? "calc(100% - 365px)" : "",
+            }}
+          >
+            {data.length <= 0 && (
+              <div className="EventsPage__right--EmptyOverLay">
+                <img src={NoEventsImg} />
+                <h1>
+                  No Events planned for the month, in the meanwhile check the
+                  other months !
+                </h1>
+              </div>
+            )}
             <Calendar
               events={data.map((item) => ({
                 eventName: item.title,

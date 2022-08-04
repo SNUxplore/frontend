@@ -99,6 +99,10 @@
     background: var(--calenderColor);
 
     display: flex;
+
+    // &:last-child {
+    //   border-bottom: var(--calendarGrid) 1px solid;
+    // }
   }
 
   &__day-container {
@@ -114,7 +118,11 @@
     @include make-flex($just: flex-start, $align: flex-end);
     cursor: pointer;
     &:first-child {
+      // border-left: var(--calendarGrid) 1px solid;
       border-left: unset;
+    }
+    &:last-child {
+      border-right: unset;
     }
 
     @include respondAt(685px) {
@@ -140,6 +148,9 @@
     cursor: pointer;
     &:first-child {
       border-left: unset;
+    }
+    &:last-child {
+      border-right: unset;
     }
     @include respondAt(685px) {
       height: 70px;
