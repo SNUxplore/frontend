@@ -22,7 +22,6 @@
       font-family: Poppins, sans-serif;
       padding: 8px;
       font-size: 65px;
-      line-height: 167.5%;
       color: var(--unhighlightTextColor);
       @include respondAt(900px) {
         font-size: 35px;
@@ -35,13 +34,14 @@
     }
     &--bold {
       font-weight: 700;
+      background: var(--titleHighlight);
     }
   }
 
   &__description {
     font-family: Poppins, sans-serif;
     font-size: 16px;
-    line-height: 167.5%;
+
     color: var(--primaryTextColor);
     max-width: 600px;
 
@@ -117,13 +117,13 @@
         height: auto !important;
         position: sticky;
         top: 0;
-        padding: 0 20px 20px;
+        padding: 0 20px;
         // left: 0;
       }
     }
     &--panel {
       font-family: "Poppins", sans-serif;
-      font-weight: 500;
+      font-weight: 300;
       @include box(220px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
@@ -132,9 +132,9 @@
       padding: 15px;
       gap: 15px;
       position: sticky;
-      box-shadow: 0px 5px 3px 0px var(--navigatePanelShadow),
-        0px 1px 3px 0px var(--navigatePanelShadow),
-        0px 3px 5px -1px var(--navigatePanelShadow);
+      box-shadow: 0px 33px 13px rgba(19, 25, 69, 0.01),
+        0px 18px 11px rgba(19, 25, 69, 0.05), 0px 8px 8px rgba(19, 25, 69, 0.09),
+        0px 2px 5px rgba(19, 25, 69, 0.1), 0px 0px 0px rgba(19, 25, 69, 0.1);
 
       @include respondAt(590px) {
         @include box(390px, 54px);
@@ -208,7 +208,7 @@
         padding: 0 0 0 25px;
       }
       @include respondAt(590px) {
-        padding: 0;
+        padding: 0 20px 20px;
         @include box(100%, auto);
         align-content: center;
       }
