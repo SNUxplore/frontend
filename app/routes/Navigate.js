@@ -16,6 +16,7 @@ import xploreLogo from "../Assets/Img/xploreLogo.svg";
 import downDropDown from "../Assets/Img/downDropDown.svg";
 import basketBallIcon from "../Assets/Img/basketBallIcon.svg";
 import residentialIcons from "../Assets/Img/residentialsIcon.svg";
+import Footer from "~/Components/Footer/Footer";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -171,6 +172,7 @@ export default function Navigate() {
 
           <Outlet context={data} />
         </div>
+        {!mobile && <Footer />}
       </div>
 
       <div className="NavigatePage__right" id="map">
