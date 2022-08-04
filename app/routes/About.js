@@ -17,6 +17,7 @@ import Pratham from "../Assets/Img/Pratham.png";
 import RishiB from "../Assets/Img/RishiB.png";
 import Riya from "../Assets/Img/Riya.jpg";
 import Yathansh from "../Assets/Img/Yathansh.jpg";
+import aboutIllustration from "../Assets/Img/xplorAboutusImage.svg";
 import { useNavigate } from "@remix-run/react";
 
 export function links() {
@@ -186,7 +187,7 @@ export default function About() {
         </section>
         <section className="AboutUsPage__mission">
           <div className="AboutUsPage__mission--left">
-            <img src={KeshavAndPP} alt="Keshav and Prabhav" />
+            <img src={aboutIllustration} alt="Xplore logo" />
           </div>
           <div className="AboutUsPage__mission--right">
             <h2 className="AboutUsPage__mission--title">

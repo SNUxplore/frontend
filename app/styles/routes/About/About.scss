@@ -7,7 +7,7 @@
   &__mainContainer {
     @include make-flex($just: flex-start);
     width: 100%;
-    gap: 125px;
+    gap: 115px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
     padding: 0px 170px 0px;
@@ -32,9 +32,14 @@
   &__hero {
     @include box($height: 250px);
     @include make-flex();
-    gap: 35px;
+    gap: 30px;
+
+    @include respondAt(905px) {
+      gap: 20px;
+    }
 
     &--title {
+      padding-top: 30px;
       font-family: "Poppins", sans-serif;
       font-size: 80px;
       font-weight: 500;
@@ -58,11 +63,16 @@
     }
     &--desc {
       width: 60%;
+      font-size: 16px;
       @include make-flex();
       line-height: 167.5%;
       text-align: center;
       color: var(--primaryTextColor);
       font-family: "Poppins";
+
+      @include respondAt(905px) {
+        font-size: 14px;
+      }
 
       @include respondAt(650px) {
         width: 80%;
