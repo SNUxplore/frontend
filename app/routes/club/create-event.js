@@ -81,7 +81,7 @@ export default function CreateEvent() {
             onChange={(e) => updateFormData(e)}
           />
         </div>
-        <div className="ClubInfoPage__InfoForm--row">
+        {/* <div className="ClubInfoPage__InfoForm--row">
           <label htmlFor="imageUrl">image</label>
           <input
             id="imageUrl"
@@ -89,7 +89,7 @@ export default function CreateEvent() {
             placeholder="imageUrl"
             onChange={(e) => updateFormData(e)}
           />
-        </div>
+        </div> */}
         <div className="ClubInfoPage__InfoForm--row">
           <label htmlFor="date">Date</label>
           <input
