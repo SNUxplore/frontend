@@ -27,6 +27,7 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+    max-width: 60%;
 
     @include respondAt(590px) {
       padding-bottom: 5px;
@@ -38,7 +39,7 @@
     &__text {
       &--dept {
         font-family: "Poppins", sans-serif;
-        word-break: break-all;
+        word-break: break-word;
         font-size: 13px;
         font-weight: 600;
       }
@@ -48,10 +49,13 @@
         font-weight: 400;
       }
     }
+    img {
+      max-width: fit-content;
+    }
   }
   &__action {
     // @include box(fit-content);
-    max-width: calc(100% - 40px);
+
     @include make-flex($dir: row, $just: space-between);
     gap: 10px;
     padding: 10px;
@@ -59,20 +63,19 @@
 
     // @include respondAt(590px) {
     // }
-    margin-left: 30px;
 
     #openLink {
       width: 150px;
     }
 
     &__link {
-      @include box(80px, 30px);
+      @include box($height: 30px);
       @include make-flex();
       font-size: 10px;
       border-radius: 17px;
       white-space: nowrap;
       overflow: hidden;
-
+      min-width: 70px;
       cursor: pointer;
       color: white;
       background-color: #363b53;
@@ -90,6 +93,13 @@
         background-color: var(--blue);
         color: var(--white);
       }
+    }
+  }
+  &--admin > &__action {
+    padding: 0 10px 10px 40px;
+    @include respondAt(345px) {
+      gap: 6px;
+      padding-left: 21px;
     }
   }
 }
