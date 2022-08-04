@@ -106,16 +106,16 @@ export default function CreateEvent() {
             <input
               required
               type="time"
-              id="startTime"
-              name="startTime"
+              id="timeStart"
+              name="timeStart"
               onChange={(e) => updateFormData(e)}
             />
             <p>to</p>
             <input
               required
               type="time"
-              id="endTime"
-              name="endTime"
+              id="timeEnd"
+              name="timeEnd"
               onChange={(e) => updateFormData(e)}
             />
           </div>
@@ -157,7 +157,9 @@ export default function CreateEvent() {
           <EventCard
             clubName={data.name}
             desc={formData.description}
-            date={`${formData.date} ${formData.startTime} - ${formData.endTime}`}
+            startTime={formData.timeStart}
+            endTime={formData.timeEnd}
+            date={`${formData.date}`}
             eventName={formData.title}
             location={formData.location}
           />

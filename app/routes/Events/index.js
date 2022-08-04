@@ -62,7 +62,8 @@ export default function Index() {
   return (
     <div className="EventsPage">
       <Header />
-      <main className="EventsPage__mainContainer" 
+      <main
+        className="EventsPage__mainContainer"
         style={{
           flexDirection: data.length <= 0 ? "column" : "",
         }}
@@ -86,6 +87,8 @@ export default function Index() {
                   key={index}
                   eventName={event.title}
                   location={event.location}
+                  startTime={event.timeStart}
+                  endTime={event.timeEnd}
                   date={event.date}
                   clubName="ECell"
                   desc={event.description}
@@ -94,14 +97,15 @@ export default function Index() {
             </div>
           )}
         </div>
-        <div className="EventsPage__right"
+        <div
+          className="EventsPage__right"
           style={{
             width: data.length <= 0 ? "100%" : "",
             maxWidth: data.length <= 0 ? "unset" : "",
-
           }}
         >
-          <div className="EventsPage__right--calender"
+          <div
+            className="EventsPage__right--calender"
             style={{
               maxWidth: data.length <= 0 ? "calc(100% - 365px)" : "",
             }}

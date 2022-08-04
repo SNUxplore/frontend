@@ -123,13 +123,13 @@ function Calendar({ events = [], setSelectedDate }) {
         <div key={index} className="calendar-container__week-container">
           {week.map((day, index) => {
             const { classToggle, eventName, eventTimings } = eventCheck(
-              day.format("DD/MM/YY").toString()
+              day.format("YYYY-MM-DD").toString()
             );
             return (
               <div
                 onClick={(e) => {
-                  setDate(day.format("DD/MM/YY").toString());
-                  setSelectedDate(day.format("DD/MM/YY").toString());
+                  setDate(day.format("YYYY-MM-DD").toString());
+                  setSelectedDate(day.format("YYYY-MM-DD").toString());
                 }}
                 key={index}
                 className={

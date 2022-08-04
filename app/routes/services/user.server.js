@@ -10,24 +10,22 @@ export const createEvent = async ({
   imageUrl,
   location,
   date,
-  startTime,
-  endTime,
-  description,
-  title,
   timeStart,
   timeEnd,
+  description,
+  title,
 }) =>
   db.post.create({
     data: {
       userId,
       imageUrl,
       location,
-      date: date + " " + startTime + " - " + endTime,
+      date,
+      timeStart,
+      timeEnd,
       description,
       title,
       instaUrl,
-      timeStart,
-      timeEnd,
     },
   });
 
