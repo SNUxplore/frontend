@@ -6,7 +6,6 @@ import { authenticator } from "../services/auth.server";
 import { getEventsByClub } from "../services/club.server";
 
 import closeIcon from "../../Assets/Img/closeIcon.svg";
-import settingsIcon from "../../Assets/Img/SettingIcon.svg";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 
 export const loader = async ({ request }) => {
@@ -76,10 +75,29 @@ export default function DashBoard() {
             </div>
             <div className="DashboardWrapper__EventCard--status">onTrack</div>
             <div className="DashboardWrapper__EventCard--actions">
-              <button className="DashboardWrapper__EventCard--Edit">
+              {/* <button className="DashboardWrapper__EventCard--Edit">
                 <img src={settingsIcon} alt="edit" />
-              </button>
-              <button className="DashboardWrapper__EventCard--delete">
+              </button> */}
+              <button
+                className="DashboardWrapper__EventCard--delete"
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this event?"
+                    )
+                  ) {
+                    fetch(`/delete-event/?id=${event.id}`)
+                      .then((res) => {
+                        if (res.status === 200) {
+                          window.location.reload();
+                        }
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }
+                }}
+              >
                 <img src={closeIcon} alt="delete" />
               </button>
             </div>

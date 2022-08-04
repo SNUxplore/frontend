@@ -86,8 +86,7 @@
 
     &--name,
     &--Date,
-    &--status,
-    &--actions {
+    &--status {
       padding: 10px 0;
       height: 100%;
       @include make-flex($just: flex-start, $dir: row);
@@ -123,6 +122,9 @@
 
     &--actions {
       gap: 10px;
+      padding: 10px 0;
+      height: 100%;
+      @include make-flex($just: flex-end, $dir: row);
       button {
         @include box(40px, 40px);
         background-color: transparent;
