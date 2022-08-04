@@ -159,7 +159,6 @@ export default function About() {
   const navigate = useNavigate();
   const filteredCards = [];
   const handleSelect = (event) => {
-    console.log(event);
     setSelectedValue(event.target.value);
   };
 

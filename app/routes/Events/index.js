@@ -16,7 +16,7 @@ export function links() {
 export const loader = async ({ request }) => {
   const data = getEvents()
     .then((data) => data)
-    .catch((err) => console.log(err));
+    // .catch((err) => console.log(err));
   return data;
 };
 

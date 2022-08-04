@@ -92,9 +92,6 @@ export default function DashBoard() {
                           window.location.reload();
                         }
                       })
-                      .catch((err) => {
-                        console.log(err);
-                      });
                   }
                 }}
               >

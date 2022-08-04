@@ -40,8 +40,8 @@ export default function LandingPage() {
         ).json()
       );
 
-    getClubs();
-    getEventsByClub();
+    // getClubs();
+    // getEventsByClub();
   }, []);
 
   const callToAction = useMediaQuery({
