@@ -190,7 +190,10 @@ export default function About() {
           </div>
           <div className="AboutUsPage__mission--right">
             <h2 className="AboutUsPage__mission--title">
-              Our <span>Mission</span>
+              Our{" "}
+              <span>
+                <b>mission</b>
+              </span>
             </h2>
             <p className="AboutUsPage__mission--desc">
               We at team SNUXplore are a group of passionate and driven
@@ -203,8 +206,11 @@ export default function About() {
         <section className="AboutUsPage__story">
           <div className="AboutUsPage__story--left">
             <h2 className="AboutUsPage__story--title">
-              Our Story
-              <br /> has <b>been</b> <span>crazy</span>
+              Our <b>story,</b>
+              <br /> has <b>been</b>{" "}
+              <span>
+                <b>crazy</b>
+              </span>
             </h2>
             <p className="AboutUsPage__story--desc">
               What started as an idea in the library, is now finally a reality.

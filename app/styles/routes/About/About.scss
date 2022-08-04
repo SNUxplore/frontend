@@ -7,7 +7,7 @@
   &__mainContainer {
     @include make-flex($just: flex-start);
     width: 100%;
-    gap: 135px;
+    gap: 125px;
     max-width: 1585px;
     min-height: calc(100% - 110px);
     padding: 0px 170px 0px;
@@ -59,7 +59,7 @@
     &--desc {
       width: 60%;
       @include make-flex();
-      line-height: 1.4;
+      line-height: 167.5%;
       text-align: center;
       color: var(--primaryTextColor);
       font-family: "Poppins";
@@ -102,9 +102,10 @@
     &--right {
       @include box(45%);
       @include make-flex($align: flex-start);
-      gap: 30px;
+      gap: 20px;
 
       @include respondAt(905px) {
+        margin-top: 15px;
         width: 50%;
         gap: 20px;
       }
@@ -127,20 +128,21 @@
       }
 
       span {
-        font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 10px;
+        color: var(--highlightTextColor);
       }
     }
     &--desc {
       width: 80%;
-      line-height: 2;
+      line-height: 167.5%;
+      font-size: 15px;
       font-family: "Poppins", sans-serif;
       font-weight: 400;
-      color: var(--textColor);
+      color: var(--primaryTextColor);
 
       @include respondAt(560px) {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include respondAt(1020px) {
@@ -187,7 +189,7 @@
     &--left {
       @include box(45%);
       @include make-flex($align: flex-start);
-      gap: 30px;
+      gap: 20px;
       padding-left: 65px;
 
       @include respondAt(1050px) {
@@ -209,27 +211,28 @@
       font-family: "Poppins", sans-serif;
       font-size: 45px;
       font-weight: 500;
-      color: var(--primaryTextColor);
+      color: var(--textColor);
 
       @include respondAt(560px) {
         font-size: 35px;
       }
 
       span {
-        font-weight: 600;
-        background-color: var(--lightBlue);
-        padding: 0 15px;
+        background: var(--titleHighlight);
+        padding: 0px 10px;
+        color: var(--highlightTextColor);
       }
     }
     &--desc {
-      width: 90%;
-      line-height: 2;
+      width: 80%;
+      line-height: 167.5%;
+      font-size: 15px;
       font-family: "Poppins", sans-serif;
       font-weight: 400;
       color: var(--primaryTextColor);
 
       @include respondAt(560px) {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include respondAt(1020px) {
