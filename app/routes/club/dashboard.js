@@ -51,13 +51,14 @@ export default function DashBoard() {
         {eventsArray.map((event, index) => (
           <div key={index} className="DashboardWrapper__EventCard">
             <div className="DashboardWrapper__EventCard--name">
-              <span className="DashboardWrapper__EventCard--success" />
-              <p>{event.title}</p>
+              <p>
+                {index + 1}&nbsp;.&nbsp;{event.title}
+              </p>
             </div>
             <div className="DashboardWrapper__EventCard--Date">
               {event.date}
             </div>
-            <div className="DashboardWrapper__EventCard--status">onTrack</div>
+            <div className="DashboardWrapper__EventCard--status">{`${event.timeStart} - ${event.timeEnd}`}</div>
             <div className="DashboardWrapper__EventCard--actions">
               {/* <button className="DashboardWrapper__EventCard--Edit">
                 <img src={settingsIcon} alt="edit" />
@@ -78,7 +79,7 @@ export default function DashBoard() {
                   }
                 }}
               >
-                <img src={closeIcon} alt="delete" />
+                Delete Event
               </button>
             </div>
           </div>
