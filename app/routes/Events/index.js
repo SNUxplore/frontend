@@ -14,9 +14,8 @@ export function links() {
 }
 
 export const loader = async ({ request }) => {
-  const data = getEvents()
-    .then((data) => data)
-    // .catch((err) => console.log(err));
+  const data = getEvents().then((data) => data);
+  // .catch((err) => console.log(err));
   return data;
 };
 
@@ -24,6 +23,8 @@ export default function Index() {
   const originalData = useLoaderData();
   const [data, setData] = React.useState(useLoaderData());
   const [selectedDate, setSelectedDate] = React.useState(null);
+
+  console.log(data[0].User);
 
   React.useEffect(() => {
     if (

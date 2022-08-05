@@ -66,28 +66,23 @@ function InfoModal({ setModalOpen, data }) {
             Club socials
           </p>
           <div className="ModalWrapper__container__infoContainer--socialsWrapper">
-            <img
-              src={clubInstagram}
-              alt="clubInsta"
-              className="ModalWrapper__container__infoContainer--Socialsicon"
-            />
-            <img
-              src={clubTwitter}
-              alt="clubTwitter"
-              className="ModalWrapper__container__infoContainer--SocialsiconTW"
-            />
-            <img
-              className="ModalWrapper__container__infoContainer--Socialsicon"
-              src={clubFacebook}
-              alt="clubFacebook"
-            />
+            <p>Webpage link :</p>
+            <a
+              className="ModalWrapper__container__infoContainer--linkHighlight"
+              href="https://ecellsnu.com/home"
+            >
+              https://ecellsnu.com/home
+            </a>
           </div>
-          <a
-            className="ModalWrapper__container__infoContainer--linkHighlight"
-            href="https://ecellsnu.com/home"
-          >
-            https://ecellsnu.com/home
-          </a>
+          <div className="ModalWrapper__container__infoContainer--socialsWrapper">
+            <p>Instagram Link :</p>
+            <a
+              className="ModalWrapper__container__infoContainer--linkHighlight"
+              href="https://ecellsnu.com/home"
+            >
+              https://ecellsnu.com/home
+            </a>
+          </div>
         </div>
       </div>
     </div>
