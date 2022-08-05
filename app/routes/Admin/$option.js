@@ -65,8 +65,6 @@ export default function AdminDetails() {
     }
   });
 
-  console.log(adminData);
-
   return (
     <div className="AdminPage__content--right">
       {option === "Academics" &&
