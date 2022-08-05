@@ -25,6 +25,7 @@ function SearchBar({ style }) {
           ...obj,
           category: key,
           href: `/navigate/${key}/?name=${obj.name}`,
+          optionalSearchKey: obj.name.replaceAll("-", ""),
         };
       });
       t = t.concat(temp);
@@ -75,10 +76,9 @@ function SearchBar({ style }) {
 
   const fuseOptions = {
     shouldSort: true,
-    keys: ["name"],
+    keys: ["name", "optionalSearchKey"],
   };
   const fuse = new Fuse(testData, fuseOptions);
-
 
   useEffect(() => {
     setResults(fuse.search(search, { limit: 5 }));
