@@ -122,109 +122,100 @@
   ],
   "Admin Info": [
     {
-      "Administration": [
-        {
-          "Function": "Admin Helpdesk",
-          "SPOC": "Admin Helpdesk",
-          "Office": "D032",
-          "Email": "adminhelpdesk@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 104"
-        },
-        {
-          "Function": "Security",
-          "SPOC": "Anil Kumar Yadav",
-          "Office": "D036",
-          "Email": "anil.kumar@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 197"
-        },
-        {
-          "Function": "Transport & ID card related",
-          "SPOC": "Gaurav Paliwal",
-          "Office": "D032",
-          "Email": "gp887@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 872"
-        },
-        {
-          "Function": "Event management",
-          "SPOC": "Admin Helpdesk",
-          "Office": "D032",
-          "Email": "adminhelpdesk@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 104"
-        }
-      ]
-    },
-
-    {
-      "DSA": [
-        {
-          "Function": "Hostels",
-          "SPOC": "Respective wardens",
-          "Office": "",
-          "Email": "",
-          "Ext": ""
-        },
-        {
-          "Function": "Sports",
-          "SPOC": "Kanduri Veda Samhitha",
-          "Office": "Indoor Sports Centre",
-          "Email": "kanduri.samhitha@snu.edu.in",
-          "Ext": ""
-        },
-        {
-          "Function": "Clubs & Societies",
-          "SPOC": "Dr Sandeep Kumar Gupta",
-          "Office": "B122",
-          "Email": "sandeep.gupta@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 413"
-        },
-        {
-          "Function": "Mentoring/ Mental Health",
-          "SPOC": "Dr Jitendra Prajapati",
-          "Office": "C216",
-          "Email": "jitentra.prajapati@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 663"
-        },
-        {
-          "Function": "OCJ",
-          "SPOC": "Sudhir Kumar",
-          "Office": "D010",
-          "Email": "sudhir.kumar@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 837"
-        }
-      ]
+      "Function": "Admin Helpdesk",
+      "SPOC": "Admin Helpdesk",
+      "Office": "D032",
+      "Email": "adminhelpdesk@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 104",
+      "type": "Administration"
     },
     {
-      "CDC": [
-        {
-          "Function": "Placements/ Trainings/ Internships",
-          "SPOC": "Kamal Arora",
-          "Office": "E334",
-          "Email": "kamal.arora@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 761"
-        }
-      ]
+      "Function": "Security",
+      "SPOC": "Anil Kumar Yadav",
+      "Office": "D036",
+      "Email": "anil.kumar@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 197",
+      "type": "Administration"
     },
     {
-      "IT": [
-        {
-          "Function": "IT Helpdesk",
-          "SPOC": "IT Helpdesk",
-          "Office": "E Block, 2nd floor, IT bay",
-          "Email": "ithelpdesk@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 105"
-        }
-      ]
+      "Function": "Transport & ID card related",
+      "SPOC": "Gaurav Paliwal",
+      "Office": "D032",
+      "Email": "gp887@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 872",
+      "type": "Administration"
     },
     {
-      "Library": [
-        {
-          "Function": "Newspaper/magazine subscription",
-          "SPOC": "Library Helpdesk",
-          "Office": "E Block",
-          "Email": "libraryhelpdesk@snu.edu.in",
-          "Ext": "91-120-7170100 Extn. 889"
-        }
-      ]
+      "Function": "Event management",
+      "SPOC": "Admin Helpdesk",
+      "Office": "D032",
+      "Email": "adminhelpdesk@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 104",
+      "type": "Administration"
+    },
+    {
+      "Function": "Hostels",
+      "SPOC": "Respective wardens",
+      "Office": "",
+      "Email": "",
+      "Ext": "",
+      "type": "DSA"
+    },
+    {
+      "Function": "Sports",
+      "SPOC": "Kanduri Veda Samhitha",
+      "Office": "Indoor Sports Centre",
+      "Email": "kanduri.samhitha@snu.edu.in",
+      "Ext": "",
+      "type": "DSA"
+    },
+    {
+      "Function": "Clubs & Societies",
+      "SPOC": "Dr Sandeep Kumar Gupta",
+      "Office": "B122",
+      "Email": "sandeep.gupta@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 413",
+      "type": "DSA"
+    },
+    {
+      "Function": "Mentoring/ Mental Health",
+      "SPOC": "Dr Jitendra Prajapati",
+      "Office": "C216",
+      "Email": "jitentra.prajapati@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 663",
+      "type": "DSA"
+    },
+    {
+      "Function": "OCJ",
+      "SPOC": "Sudhir Kumar",
+      "Office": "D010",
+      "Email": "sudhir.kumar@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 837",
+      "type": "DSA"
+    },
+    {
+      "Function": "Placements/ Trainings/ Internships",
+      "SPOC": "Kamal Arora",
+      "Office": "E334",
+      "Email": "kamal.arora@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 761",
+      "type": "CDC"
+    },
+    {
+      "Function": "IT Helpdesk",
+      "SPOC": "IT Helpdesk",
+      "Office": "E Block, 2nd floor, IT bay",
+      "Email": "ithelpdesk@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 105",
+      "type": "IT"
+    },
+    {
+      "Function": "Newspaper/magazine subscription",
+      "SPOC": "Library Helpdesk",
+      "Office": "E Block",
+      "Email": "libraryhelpdesk@snu.edu.in",
+      "Ext": "91-120-7170100 Extn. 889",
+      "type": "Library"
     }
   ]
 }

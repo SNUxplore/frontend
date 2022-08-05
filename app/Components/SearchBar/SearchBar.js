@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
 import Fuse from "fuse.js";
 import data from "~/Assets/Data/data.json";
+import admin from "~/Assets/Data/admin.json";
 
 function activeClassName(className, isActive) {
   return `${className} ${isActive ? className + "--active" : ""}`;
@@ -18,15 +19,57 @@ function SearchBar({ style }) {
     // The key is put in the category key of each element
 
     let t = [];
-    Object.keys(data).forEach((key) => {
-      const temp = data[key].map((obj) => {
-        return {
-          ...obj,
-          category: key,
-        };
+    // Object.keys(data).forEach((key) => {
+    //   const temp = data[key].map((obj) => {
+    //     return {
+    //       ...obj,
+    //       category: key,
+    //       href: `/navigate/${key}/?name=${obj.name}`,
+    //     };
+    //   });
+    //   t = t.concat(temp);
+    // });
+
+    Object.keys(admin).forEach((key) => {
+      const temp = admin[key].map((obj) => {
+        let name1 = "";
+        let name2 = "";
+        let name3 = "";
+
+        if (key.includes("Academics")) {
+          name1 = "Block " + obj.Block;
+          name2 = "School " + obj.School;
+          name3 = "Dean " + obj.Dean;
+        } else if (key.includes("Admin Info")) {
+          name1 = obj.Function;
+          name2 = obj.SPOC;
+          name3 = obj.Office;
+        }
+
+        return (
+          {
+            ...obj,
+            category: key,
+            href: `/admin/${key}`,
+            name: name1,
+          },
+          {
+            ...obj,
+            category: key,
+            href: `/admin/${key}`,
+            name: name2,
+          },
+          {
+            ...obj,
+            category: key,
+            href: `/admin/${key}`,
+            name: name3,
+          }
+        );
       });
       t = t.concat(temp);
     });
+
     return t;
   }, []);
 
@@ -35,6 +78,7 @@ function SearchBar({ style }) {
     keys: ["name"],
   };
   const fuse = new Fuse(testData, fuseOptions);
+
 
   useEffect(() => {
     setResults(fuse.search(search, { limit: 5 }));
@@ -93,12 +137,7 @@ function SearchBar({ style }) {
               return (
                 <a
                   className="SearchBarWrapper__searchResult"
-                  href={
-                    "/navigate/" +
-                    result.item.category +
-                    "?name=" +
-                    result.item.name
-                  }
+                  href={result.item.href}
                   key={result.refIndex}
                 >
                   <div className="SearchBarWrapper__resultCategory">
