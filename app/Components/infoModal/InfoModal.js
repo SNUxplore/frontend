@@ -3,9 +3,6 @@ import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
 import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
 import locationIcon from "../../Assets/Img/modalLocationIcon_lightTheme.svg";
 import appLogo from "../../Assets/Img/xploreLogo.svg";
-import clubInstagram from "../../Assets/Img/insta_dark.svg";
-import clubTwitter from "../../Assets/Img/twitter_dark.svg";
-import clubFacebook from "../../Assets/Img/facebook_dark.svg";
 import modalCloseIcon from "../../Assets/Img/modalClose__LightTheme.svg";
 
 function InfoModal({ setModalOpen, data }) {
