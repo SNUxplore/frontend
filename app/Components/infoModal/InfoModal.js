@@ -17,8 +17,7 @@ function InfoModal({ setModalOpen, data }) {
         </button>
         <div className="ModalWrapper__container__infoContainer">
           <h1 className="ModalWrapper__container__infoContainer--title">
-            <img src={appLogo} alt="CLUB LOGO" />
-            {data.logo}
+            {data.eventName}
           </h1>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -26,7 +25,7 @@ function InfoModal({ setModalOpen, data }) {
               src={fireIcon}
               alt="fire icon"
             />
-            <span>Event :</span> {data.eventName}
+            <span>Organizer :</span> {data.clubName}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -83,6 +82,19 @@ function InfoModal({ setModalOpen, data }) {
                 href={data.instagramUrl}
               >
                 {data.instagramUrl}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
+          {data.emailId ? (
+            <div className="ModalWrapper__container__infoContainer--socialsWrapper">
+              <p>Instagram Link :</p>
+              <a
+                className="ModalWrapper__container__infoContainer--linkHighlight"
+                href={data.emailId}
+              >
+                {data.emailId}
               </a>
             </div>
           ) : (

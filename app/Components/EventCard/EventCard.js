@@ -4,6 +4,7 @@ import InfoModal from "../infoModal/InfoModal";
 import appLogo from "../../Assets/Img/xploreLogo.svg";
 
 function EventCard({
+  emailId,
   websiteUrl,
   instagramUrl,
   eventName,
@@ -34,6 +35,7 @@ function EventCard({
             desc,
             websiteUrl,
             instagramUrl,
+            emailId,
           }}
           setModalOpen={setModalOpen}
         />

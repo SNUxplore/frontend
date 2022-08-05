@@ -24,8 +24,6 @@ export default function Index() {
   const [data, setData] = React.useState(useLoaderData());
   const [selectedDate, setSelectedDate] = React.useState(null);
 
-  console.log(data[0].User);
-
   React.useEffect(() => {
     if (
       selectedDate !== null &&
@@ -86,6 +84,7 @@ export default function Index() {
               {data.map((event, index) => (
                 <EventCard
                   key={index}
+                  emailId={event.User.emailId}
                   websiteUrl={event.User.websiteUrl}
                   instagramUrl={event.User.instaUrl}
                   eventName={event.title}
