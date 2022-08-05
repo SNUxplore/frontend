@@ -14,9 +14,8 @@ export function links() {
 }
 
 export const loader = async ({ request }) => {
-  const data = getEvents()
-    .then((data) => data)
-    // .catch((err) => console.log(err));
+  const data = getEvents().then((data) => data);
+  // .catch((err) => console.log(err));
   return data;
 };
 
@@ -85,6 +84,9 @@ export default function Index() {
               {data.map((event, index) => (
                 <EventCard
                   key={index}
+                  emailId={event.User.emailId}
+                  websiteUrl={event.User.websiteUrl}
+                  instagramUrl={event.User.instaUrl}
                   eventName={event.title}
                   location={event.location}
                   startTime={event.timeStart}
