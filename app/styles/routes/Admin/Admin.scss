@@ -48,6 +48,8 @@
 
     text-align: center;
     line-height: 167.5%;
+    margin-top: 15px;
+
     @include respondAt(900px) {
       width: 90%;
       margin-top: 17px;
