@@ -193,7 +193,7 @@
     &--right {
       @include box(calc(100% - 220px), 1100px);
       max-width: 900px;
-      @include make-flex($dir: column, $just: flex-start, $align: center);
+      @include make-flex($dir: row, $just: flex-start, $align: flex-start);
       flex-wrap: wrap;
       gap: 25px;
       padding: 0 25px;
