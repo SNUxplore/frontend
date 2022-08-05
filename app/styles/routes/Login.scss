@@ -34,6 +34,7 @@
         height: 100%;
       }
       h1 {
+        font-weight: 600;
         width: 75%;
         @include make-flex($align: flex-start);
         font-size: 45px;
@@ -47,8 +48,10 @@
       }
       p {
         width: 75%;
-        color: whitesmoke;
-        font-size: 14px;
+        color: rgba(255, 255, 255, 0.726);
+        font-size: 12px;
+        line-height: 167.5%;
+        font-weight: 400;
         @include respondAt(400px) {
           width: 90%;
         }
@@ -74,6 +77,7 @@
       }
       h1 {
         width: 75%;
+        font-weight: 600;
         font-size: 45px;
         color: rgb(43, 43, 43);
         @include respondAt(400px) {
@@ -82,7 +86,8 @@
       }
       p {
         width: 75%;
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 167.5%;
         color: rgb(43, 43, 43);
         @include respondAt(400px) {
           width: 90%;
@@ -91,21 +96,26 @@
 
       form {
         @include box(75%, 23%);
-        @include make-flex();
+        @include make-flex($align: flex-start);
       }
     }
     &--button {
-      @include box(100%, 50px);
+      @include box(70%, 45px);
       transition: all 0.3s;
       @include make-flex($dir: row, $align: center);
       border-radius: 6px;
       background-color: #ffffff;
-      border: 1.5px solid #e6e6e6;
+      border: 2px solid #e6e6e6;
       padding: 10px;
       gap: 10px;
       font-weight: 600;
       font-size: 12px;
       cursor: pointer;
+
+      &:hover {
+        background: #2e2c37;
+        color: #ffffff;
+      }
 
       img {
         height: 100%;

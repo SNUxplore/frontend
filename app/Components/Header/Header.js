@@ -420,14 +420,14 @@ function Header() {
                   paddingBottom: "50px",
                 }}
               >
-                <a target="_blank" href="https://www.linkedin.com/snu.xplore/">
+                <a target="_blank" href="www.linkedin.com/company/snuxplore">
                   <img
                     className="HeaderWrapper__right--themeButtons--socialMediaIcons"
                     src={linkedInLogo}
                     alt="LinkedIn logo"
                   />
                 </a>
-                <a target="_blank" href="https://www.instagram.com/snu.xplore/">
+                <a target="_blank" href="https://www.instagram.com/snu.xplore/" rel="noreferrer">
                   <img
                     className="HeaderWrapper__right--themeButtons--socialMediaIcons"
                     src={instagramLogo}

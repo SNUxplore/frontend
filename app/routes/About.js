@@ -17,8 +17,8 @@ import Pratham from "../Assets/Img/Pratham.png";
 import RishiB from "../Assets/Img/RishiB.png";
 import Riya from "../Assets/Img/Riya.jpg";
 import Yathansh from "../Assets/Img/Yathansh.jpg";
-import aboutIllustration from "../Assets/Img/xplorAboutusImage.svg";
 import { useNavigate } from "@remix-run/react";
+import aboutIllustration from "../Assets/Img/xplorAboutusImage.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -160,6 +160,7 @@ export default function About() {
   const navigate = useNavigate();
   const filteredCards = [];
   const handleSelect = (event) => {
+    console.log(event);
     setSelectedValue(event.target.value);
   };
 
@@ -175,25 +176,20 @@ export default function About() {
       <main className="AboutUsPage__mainContainer">
         <section className="AboutUsPage__hero">
           <h1 className="AboutUsPage__hero--title">
-            Meet the
-            <span>Team</span>
+            Meet the <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
-            Nibh turpis porta integer diam. Quis id adipiscing aliquam ut
-            pretium suspendisse eget.it, navigating the university can be
-            challenging!
+          Here you'll see the knights who sit at the round table.
+Talented, resourceful and willing to give their all to make your experience the best possible.
           </p>
         </section>
         <section className="AboutUsPage__mission">
           <div className="AboutUsPage__mission--left">
-            <img src={aboutIllustration} alt="Xplore logo" />
+            <img src={aboutIllustration} alt="about" />
           </div>
           <div className="AboutUsPage__mission--right">
             <h2 className="AboutUsPage__mission--title">
-              Our{" "}
-              <span>
-                <b>mission</b>
-              </span>
+              Our <span>Mission</span>
             </h2>
             <p className="AboutUsPage__mission--desc">
               We at team SNUXplore are a group of passionate and driven
@@ -206,11 +202,8 @@ export default function About() {
         <section className="AboutUsPage__story">
           <div className="AboutUsPage__story--left">
             <h2 className="AboutUsPage__story--title">
-              Our <b>story,</b>
-              <br /> has <b>been</b>{" "}
-              <span>
-                <b>crazy</b>
-              </span>
+              Our Story
+              <br /> has <b>been</b> <span>crazy</span>
             </h2>
             <p className="AboutUsPage__story--desc">
               What started as an idea in the library, is now finally a reality.
@@ -226,10 +219,7 @@ export default function About() {
         <section className="AboutUsPage__team">
           <div className="AboutUsPage__team--top">
             <h2 className="AboutUsPage__team--title">
-              Who{" "}
-              <span>
-                <b>are we?</b>
-              </span>
+              Who <b>are we?</b>
             </h2>
             <p className="AboutUsPage__team--subTitle">
               These are the people that make the magic happen. <br /> (hover
@@ -237,29 +227,16 @@ export default function About() {
             </p>
           </div>
           <div className="AboutUsPage__team--middle">
-            {teams.map((item, index) =>
-              item === selectedValue ? (
-                <button
-                  onClick={() => setSelectedValue(item)}
-                  // id={item}
-                  key={index}
-                  className={
-                    "AboutUsPage__team--link AboutUsPage__team--active"
-                  }
-                >
-                  {item}
-                </button>
-              ) : (
-                <button
-                  onClick={() => setSelectedValue(item)}
-                  // id={item}
-                  key={index}
-                  className={"AboutUsPage__team--link"}
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {teams.map((item, index) => (
+              <button
+                onClick={() => setSelectedValue(item)}
+                // id={item}
+                key={index}
+                className="AboutUsPage__team--link"
+              >
+                {item}
+              </button>
+            ))}
           </div>
           <div className={`AboutUsPage__team--members`}>
             <div className={`AboutUsPage__team--members`}>

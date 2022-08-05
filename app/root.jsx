@@ -28,7 +28,7 @@ export function links() {
 
 export const meta = () => ({
   charset: "utf-8",
-  title: "SnuXplore",
+  title: "SNUxplore",
   viewport: "width=device-width,initial-scale=1",
 });
 
