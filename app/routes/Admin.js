@@ -52,9 +52,7 @@ export default function Admin() {
         <h1 className="AdminPage__title--bold">Contacts</h1>
       </div>
 			<p className="AdminPage__description">
-        We get it, navigating the university can be challenging! But have no
-        worries, We can connect you to resourses that will unlock all that Shiv
-        Nadar University has to offer.
+        This page contains all the information that bridges you to the Administration and DSA.
       </p>
 
       <div className="AdminPage__main--searchContainer">

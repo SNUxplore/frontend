@@ -6,6 +6,7 @@ import { Link, Outlet } from "@remix-run/react";
 import questionIcon from "~/Assets/Img/questionIcon.svg";
 import { useMediaQuery } from "react-responsive";
 import { useLocation, useNavigate } from "react-router-dom";
+import Banner from "~/Components/Banner/Banner";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -121,6 +122,14 @@ export default function Index() {
           </div>
         </section>
       </div>
+      <Banner
+        title1="Don't see your"
+        title2="question?"
+        desc="We've created a form just for you. If you feel like we should add a question that's on a lot of your friends' and your mind, click on the button below."
+        href="https://forms.gle/7PEmBiXit7ToEyhG6"
+        fillType="bannerFill"
+        redirectContent="Ask away"
+      />
       <Footer />
     </div>
   );

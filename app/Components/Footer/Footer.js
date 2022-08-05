@@ -55,14 +55,14 @@ function Footer() {
               <a href="tel:">+91 9838834210</a>
             </li>
             <li className="SocialMediaHandles">
-              <a href="https://www.linkedin.com/snu.xplore/">
+              <a target="_blank" href="https://www.linkedin.com/company/snuxplore" rel="noreferrer">
                 <img
                   src={linkedInLogo}
                   alt="LinkedIn logo"
                   className="SocialMediaIcons LinkedIn"
                 />
               </a>
-              <a target="_blank" href="https://www.instagram.com/snu.xplore/">
+              <a target="_blank" href="https://www.instagram.com/snu.xplore/" rel="noreferrer">
                 <img
                   src={instagramLogoWhite}
                   alt="Instagram logo"
