@@ -69,18 +69,18 @@ function InfoModal({ setModalOpen, data }) {
             <p>Webpage link :</p>
             <a
               className="ModalWrapper__container__infoContainer--linkHighlight"
-              href="https://ecellsnu.com/home"
+              href={data.websiteUrl}
             >
-              https://ecellsnu.com/home
+              {data.websiteUrl}
             </a>
           </div>
           <div className="ModalWrapper__container__infoContainer--socialsWrapper">
             <p>Instagram Link :</p>
             <a
               className="ModalWrapper__container__infoContainer--linkHighlight"
-              href="https://ecellsnu.com/home"
+              href={data.instagramUrl}
             >
-              https://ecellsnu.com/home
+              {data.instagramUrl}
             </a>
           </div>
         </div>

@@ -86,6 +86,8 @@ export default function Index() {
               {data.map((event, index) => (
                 <EventCard
                   key={index}
+                  websiteUrl={event.User.websiteUrl}
+                  instagramUrl={event.User.instaUrl}
                   eventName={event.title}
                   location={event.location}
                   startTime={event.timeStart}

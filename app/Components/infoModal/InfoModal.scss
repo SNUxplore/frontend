@@ -55,7 +55,7 @@
 
       &--details {
         @include make-flex($dir: row, $just: flex-start, $align: center);
-        gap: 15px;
+        gap: 10px;
         margin-bottom: 15px;
 
         span {
@@ -82,9 +82,9 @@
 
       &--socialsWrapper {
         @include make-flex($dir: row, $just: flex-start, $align: center);
-        gap: 20px;
+        gap: 10px;
         margin-top: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       &--Socialsicon {
