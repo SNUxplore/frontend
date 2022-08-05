@@ -19,16 +19,16 @@ function SearchBar({ style }) {
     // The key is put in the category key of each element
 
     let t = [];
-    // Object.keys(data).forEach((key) => {
-    //   const temp = data[key].map((obj) => {
-    //     return {
-    //       ...obj,
-    //       category: key,
-    //       href: `/navigate/${key}/?name=${obj.name}`,
-    //     };
-    //   });
-    //   t = t.concat(temp);
-    // });
+    Object.keys(data).forEach((key) => {
+      const temp = data[key].map((obj) => {
+        return {
+          ...obj,
+          category: key,
+          href: `/navigate/${key}/?name=${obj.name}`,
+        };
+      });
+      t = t.concat(temp);
+    });
 
     Object.keys(admin).forEach((key) => {
       const temp = admin[key].map((obj) => {

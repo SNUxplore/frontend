@@ -56,17 +56,40 @@ export default function AdminDetails() {
       }
     }
   }, [option, urlParams]);
+  const adminData = {};
+  admin[option].forEach((item) => {
+    if (adminData[item.type] instanceof Array) {
+      adminData[item.type].push({ ...item });
+    } else {
+      adminData[item.type] = [{ ...item }];
+    }
+  });
+
+  console.log(adminData);
 
   return (
     <div className="AdminPage__content--right">
-      {admin[option].map((entry, index) => (
-				<InfoContainer
-					key={index}
-					data={entry}
-					isAdmin={option === "Admin Info"}
-        />
-				// <pre>{JSON.stringify(entry, null, 2)}</pre>
-      ))}
+      {option === "Academics" &&
+        admin[option].map((entry, index) => {
+          return (
+            <InfoContainer
+              key={index}
+              data={entry}
+              isAdmin={false}
+            />
+          );
+        })}
+        {option === "Admin Info" &&
+        Object.keys(adminData).map((entry, index) => {
+          return (
+            <InfoContainer
+              key={index}
+              data={adminData[entry]}
+              type={entry}
+              isAdmin={true}
+            />
+          );
+        })}
     </div>
   );
 }
