@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 
 import { useLoaderData } from "@remix-run/react";
 import { authenticator } from "../services/auth.server";
@@ -7,6 +6,7 @@ import { getEventsByClub } from "../services/club.server";
 
 import closeIcon from "../../Assets/Img/closeIcon.svg";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
+import { json } from "@remix-run/node";
 
 export const loader = async ({ request }) => {
   const emailId = await authenticator.isAuthenticated(request, {
@@ -22,18 +22,6 @@ export const loader = async ({ request }) => {
 export default function DashBoard() {
   const data = useLoaderData();
   const [eventsArray, setEventsArray] = React.useState([]);
-  const [eta, setEta] = React.useState([]);
-
-  setInterval(() => {
-    const now = moment();
-    const ETA = [
-      now.format("d"),
-      now.format("hh"),
-      now.format("mm"),
-      now.format("ss"),
-    ];
-    setEta(ETA);
-  }, 1000);
 
   React.useEffect(() => {
     const postsArray = [];
@@ -49,10 +37,6 @@ export default function DashBoard() {
         <h1 className="DashboardWrapper__header--title">
           Hello there 👋 <span>{data.name}</span>
         </h1>
-      </div>
-      <div className="DashboardWrapper__ETA">
-        <h3 className="DashboardWrapper__ETA--title">Next Event in: </h3>
-        <p className="DashboardWrapper__ETA--timer">{`${eta[0]} days ${eta[1]} hours ${eta[2]} minutes ${eta[3]} seconds`}</p>
       </div>
       <section className="DashboardWrapper__history">
         <header>
@@ -86,12 +70,11 @@ export default function DashBoard() {
                       "Are you sure you want to delete this event?"
                     )
                   ) {
-                    fetch(`/delete-event/?id=${event.id}`)
-                      .then((res) => {
-                        if (res.status === 200) {
-                          window.location.reload();
-                        }
-                      })
+                    fetch(`/delete-event/?id=${event.id}`).then((res) => {
+                      if (res.status === 200) {
+                        window.location.reload();
+                      }
+                    });
                   }
                 }}
               >
