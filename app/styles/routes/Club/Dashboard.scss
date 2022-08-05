@@ -121,21 +121,23 @@
     }
 
     &--actions {
-      gap: 10px;
-      padding: 10px 0;
       height: 100%;
       @include make-flex($just: flex-end, $dir: row);
       button {
-        @include box(40px, 40px);
+        opacity: 60%;
+        @include box(150px, 45px);
         background-color: transparent;
         border: none;
+        color: #e12d3a;
+        font-weight: 600;
         outline: none;
         cursor: pointer;
         border-radius: 6px;
         padding: 9px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-          background-color: #f5f5f5;
+          opacity: 100%;
         }
       }
     }

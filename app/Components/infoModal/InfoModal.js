@@ -3,9 +3,6 @@ import dateIcon from "../../Assets/Img/modaldateIcon_lightTheme.svg";
 import timeIcon from "../../Assets/Img/modalTimeIcon_lightTheme.svg";
 import locationIcon from "../../Assets/Img/modalLocationIcon_lightTheme.svg";
 import appLogo from "../../Assets/Img/xploreLogo.svg";
-import clubInstagram from "../../Assets/Img/insta_dark.svg";
-import clubTwitter from "../../Assets/Img/twitter_dark.svg";
-import clubFacebook from "../../Assets/Img/facebook_dark.svg";
 import modalCloseIcon from "../../Assets/Img/modalClose__LightTheme.svg";
 
 function InfoModal({ setModalOpen, data }) {
@@ -20,8 +17,7 @@ function InfoModal({ setModalOpen, data }) {
         </button>
         <div className="ModalWrapper__container__infoContainer">
           <h1 className="ModalWrapper__container__infoContainer--title">
-            <img src={appLogo} alt="CLUB LOGO" />
-            {data.logo}
+            {data.eventName}
           </h1>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -29,7 +25,7 @@ function InfoModal({ setModalOpen, data }) {
               src={fireIcon}
               alt="fire icon"
             />
-            <span>Event :</span> {data.eventName}
+            <span>Organizer :</span> {data.clubName}
           </p>
           <p className="ModalWrapper__container__infoContainer--details">
             <img
@@ -65,29 +61,45 @@ function InfoModal({ setModalOpen, data }) {
           <p className="ModalWrapper__container__infoContainer--titleSecondary">
             Club socials
           </p>
-          <div className="ModalWrapper__container__infoContainer--socialsWrapper">
-            <img
-              src={clubInstagram}
-              alt="clubInsta"
-              className="ModalWrapper__container__infoContainer--Socialsicon"
-            />
-            <img
-              src={clubTwitter}
-              alt="clubTwitter"
-              className="ModalWrapper__container__infoContainer--SocialsiconTW"
-            />
-            <img
-              className="ModalWrapper__container__infoContainer--Socialsicon"
-              src={clubFacebook}
-              alt="clubFacebook"
-            />
-          </div>
-          <a
-            className="ModalWrapper__container__infoContainer--linkHighlight"
-            href="https://ecellsnu.com/home"
-          >
-            https://ecellsnu.com/home
-          </a>
+          {data.websiteUrl ? (
+            <div className="ModalWrapper__container__infoContainer--socialsWrapper">
+              <p>Webpage link :</p>
+              <a
+                className="ModalWrapper__container__infoContainer--linkHighlight"
+                href={data.websiteUrl}
+              >
+                {data.websiteUrl}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
+          {data.instagramUrl ? (
+            <div className="ModalWrapper__container__infoContainer--socialsWrapper">
+              <p>Instagram Link :</p>
+              <a
+                className="ModalWrapper__container__infoContainer--linkHighlight"
+                href={data.instagramUrl}
+              >
+                {data.instagramUrl}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
+          {data.emailId ? (
+            <div className="ModalWrapper__container__infoContainer--socialsWrapper">
+              <p>Instagram Link :</p>
+              <a
+                className="ModalWrapper__container__infoContainer--linkHighlight"
+                href={data.emailId}
+              >
+                {data.emailId}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
