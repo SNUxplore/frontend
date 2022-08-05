@@ -23,7 +23,7 @@
       width: 400px;
     }
     border-radius: 12px;
-    height: 500px;
+    height: 550px;
     color: var(--textColor);
     background: var(--pageBackground);
     border: 1px solid rgba(0, 0, 0, 0.216);
@@ -42,6 +42,7 @@
     }
 
     &__infoContainer {
+      padding-bottom: 3rem;
       img {
         filter: var(--svgfilter);
       }
@@ -85,6 +86,16 @@
         gap: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
+
+        a {
+          color: var(--blue);
+          text-decoration: none;
+          transition: all 0.3s;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
 
       &--Socialsicon {
