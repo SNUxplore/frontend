@@ -156,13 +156,7 @@ const teamData = [
 
 export default function About() {
   const [selectedValue, setSelectedValue] = React.useState("Core");
-
-  const navigate = useNavigate();
   const filteredCards = [];
-  const handleSelect = (event) => {
-    console.log(event);
-    setSelectedValue(event.target.value);
-  };
 
   teamData.map((item) => {
     if (item.team === selectedValue) {
@@ -179,8 +173,9 @@ export default function About() {
             Meet the <span>Team</span>
           </h1>
           <p className="AboutUsPage__hero--desc">
-          Here you'll see the knights who sit at the round table.
-Talented, resourceful and willing to give their all to make your experience the best possible.
+            Here you'll see the knights who sit at the round table. Talented,
+            resourceful and willing to give their all to make your experience
+            the best possible.
           </p>
         </section>
         <section className="AboutUsPage__mission">
@@ -189,7 +184,10 @@ Talented, resourceful and willing to give their all to make your experience the 
           </div>
           <div className="AboutUsPage__mission--right">
             <h2 className="AboutUsPage__mission--title">
-              Our <span>Mission</span>
+              Our{" "}
+              <span>
+                <b>Mission</b>
+              </span>
             </h2>
             <p className="AboutUsPage__mission--desc">
               We at team SNUXplore are a group of passionate and driven
@@ -203,7 +201,10 @@ Talented, resourceful and willing to give their all to make your experience the 
           <div className="AboutUsPage__story--left">
             <h2 className="AboutUsPage__story--title">
               Our Story
-              <br /> has <b>been</b> <span>crazy</span>
+              <br /> has <b>been</b>{" "}
+              <span>
+                <b>crazy</b>
+              </span>
             </h2>
             <p className="AboutUsPage__story--desc">
               What started as an idea in the library, is now finally a reality.
@@ -227,16 +228,29 @@ Talented, resourceful and willing to give their all to make your experience the 
             </p>
           </div>
           <div className="AboutUsPage__team--middle">
-            {teams.map((item, index) => (
-              <button
-                onClick={() => setSelectedValue(item)}
-                // id={item}
-                key={index}
-                className="AboutUsPage__team--link"
-              >
-                {item}
-              </button>
-            ))}
+            {teams.map((item, index) =>
+              item === selectedValue ? (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={
+                    "AboutUsPage__team--link AboutUsPage__team--active"
+                  }
+                >
+                  {item}
+                </button>
+              ) : (
+                <button
+                  onClick={() => setSelectedValue(item)}
+                  // id={item}
+                  key={index}
+                  className={"AboutUsPage__team--link"}
+                >
+                  {item}
+                </button>
+              )
+            )}
           </div>
           <div className={`AboutUsPage__team--members`}>
             <div className={`AboutUsPage__team--members`}>
