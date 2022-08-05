@@ -34,6 +34,7 @@
         height: 100%;
       }
       h1 {
+        font-weight: 600;
         width: 75%;
         @include make-flex($align: flex-start);
         font-size: 45px;
@@ -47,8 +48,10 @@
       }
       p {
         width: 75%;
-        color: whitesmoke;
-        font-size: 14px;
+        color: rgba(255, 255, 255, 0.726);
+        font-size: 12px;
+        line-height: 167.5%;
+        font-weight: 400;
         @include respondAt(400px) {
           width: 90%;
         }
