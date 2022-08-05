@@ -71,9 +71,12 @@
       }
 
       padding: 0 20px 20px;
-      // @include respondAt(585px) {
-      //   padding: 0;
-      // }
+      @include respondAt(585px) {
+        padding: 0 40px 40px;
+      }
+      @include respondAt(470px) {
+        padding: 0 30px 30px;
+      }
       margin: 0 auto;
     }
 
@@ -102,10 +105,10 @@
           font-size: 2.5rem;
         }
         @include respondAt(420px) {
-          font-size: 2.2rem;
+          font-size: 2.1rem;
         }
         @include respondAt(360px) {
-          font-size: 1.9rem;
+          font-size: 1.65rem;
         }
       }
       span {
