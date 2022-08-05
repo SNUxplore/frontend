@@ -122,7 +122,7 @@
 
     &--actions {
       height: 100%;
-      @include make-flex($align: center, $dir: row);
+      @include make-flex($just: flex-end, $dir: row);
       button {
         opacity: 60%;
         @include box(150px, 45px);
