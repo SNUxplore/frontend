@@ -136,9 +136,7 @@ export default function Index() {
       <Banner
         title1="Wish to add"
         title2="club events?"
-        desc="Dignissim morbi scelerisque a mauris nec tellus orci, fringilla. Leo
-            lorem arcu donec lectus netus eros. Massa sit magna lacus lorem eu
-            metus sem."
+        desc="Market your events on our platform, reach more people and save them the hassle of stalking your insta pages for event related information."
         href="/login"
         fillType="bannerFill"
         redirectContent="Club Login"
