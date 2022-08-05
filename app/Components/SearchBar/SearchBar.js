@@ -39,6 +39,17 @@ function SearchBar({ style }) {
       t = t.concat(temp);
     });
 
+    admin["Academics"].map((obj) => {
+      obj.Departments.forEach((dept) => {
+        t = t.concat({
+          ...obj,
+          category: dept.Department,
+          href: `/admin/Academics`,
+          name: dept.Hod,
+        });
+      });
+    });
+
     Object.keys(admin).forEach((key) => {
       const temp = admin[key].map((obj) => {
         let name1 = "";
@@ -54,7 +65,6 @@ function SearchBar({ style }) {
           name2 = obj.SPOC;
           name3 = obj.Office;
         }
-
         return (
           {
             ...obj,
@@ -81,7 +91,7 @@ function SearchBar({ style }) {
 
     return t;
   }, []);
-
+  // console.log(testData);
   const fuseOptions = {
     shouldSort: true,
     keys: ["name", "optionalSearchKey"],
