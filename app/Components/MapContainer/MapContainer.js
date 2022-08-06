@@ -35,6 +35,8 @@ export default function MapContainer() {
         <GoogleMap
           zoom={zoom}
           center={center}
+          mapTypeId={"satellite"}
+          labels={true}
           gestureHandling={"cooperative"}
           mapContainerStyle={{
             height: "100%",
