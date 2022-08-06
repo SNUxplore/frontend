@@ -3,6 +3,7 @@ import { useLoaderData, useOutletContext, useParams } from "@remix-run/react";
 import PlaceCard from "~/Components/PlaceCard/PlaceCard";
 import InfoContainer from "~/Components/InfoContainer/InfoContainer";
 import AcademicInfo from "~/Components/AcademicInfo/AcademicInfo";
+import React from "react";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
@@ -69,15 +70,9 @@ export default function AdminDetails() {
     <div className="AdminPage__content--right">
       {option === "Academics" &&
         admin[option].map((entry, index) => {
-          return (
-            <InfoContainer
-              key={index}
-              data={entry}
-              isAdmin={false}
-            />
-          );
+          return <InfoContainer key={index} data={entry} isAdmin={false} />;
         })}
-        {option === "Admin Info" &&
+      {option === "Admin Info" &&
         Object.keys(adminData).map((entry, index) => {
           return (
             <InfoContainer
