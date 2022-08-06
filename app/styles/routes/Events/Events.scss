@@ -8,7 +8,7 @@
     // gap: 50px;
     width: 100%;
     max-width: 1585px;
-    padding: 0px 170px 60px;
+    padding: 0px 170px 60px; 
     min-height: calc(100% - 150px);
     // max-height: 775px;
     @include make-flex($just: flex-start, $dir: row, $align: stretch);
@@ -103,9 +103,9 @@
     }
     &--EmptyOverLay {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
-      @include box();
+      @include box($height:87%);
       @include make-flex();
       z-index: 1;
       background: var(--emptyCalenderOpacity);

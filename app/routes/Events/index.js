@@ -7,7 +7,6 @@ import Footer from "~/Components/Footer/Footer";
 import Header from "~/Components/Header/Header";
 import styleSheet from "~/styles/routes/Events/Events.css";
 import { getEvents } from "../services/club.server";
-import NoEventsImg from "../../Assets/Img/NoEvents.svg";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
@@ -65,12 +64,14 @@ export default function Index() {
         className="EventsPage__mainContainer"
         style={{
           flexDirection: data.length <= 0 ? "column" : "",
+          alignItems: data.length <= 0 ? "center" : "",
         }}
       >
         <div
           className="EventsPage__left"
           style={{
             height: data.length <= 0 ? "unset" : "",
+            width: data.length <= 0 ? "100%" : "",
           }}
         >
           <h2 className="EventsPage__left--title">
@@ -99,28 +100,8 @@ export default function Index() {
             </div>
           )}
         </div>
-        <div
-          className="EventsPage__right"
-          style={{
-            width: data.length <= 0 ? "100%" : "",
-            maxWidth: data.length <= 0 ? "unset" : "",
-          }}
-        >
-          <div
-            className="EventsPage__right--calender"
-            style={{
-              maxWidth: data.length <= 0 ? "calc(100% - 365px)" : "",
-            }}
-          >
-            {data.length <= 0 && (
-              <div className="EventsPage__right--EmptyOverLay">
-                <img src={NoEventsImg} />
-                <h1>
-                  No Events planned for the month, in the meanwhile check the
-                  other months !
-                </h1>
-              </div>
-            )}
+        <div className="EventsPage__right">
+          <div className="EventsPage__right--calender">
             <Calendar
               events={data.map((item) => ({
                 eventName: item.title,

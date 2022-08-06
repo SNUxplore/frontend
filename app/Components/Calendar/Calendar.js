@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
+import NoEventsImg from "../../Assets/Img/NoEvents.svg";
 
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 // const events = [
@@ -54,6 +55,7 @@ const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 function Calendar({ events = [], setSelectedDate }) {
   const [value, setValue] = React.useState(moment()); //gets the local machine date
   const [date, setDate] = React.useState(null);
+  const [eventInCurrentMonth, setEventInCurrentMonth] = React.useState(false);
 
   const { calendarData } = useCalendarGrid(value);
   const monthFirstDay = value.clone().startOf("month");
@@ -62,6 +64,7 @@ function Calendar({ events = [], setSelectedDate }) {
   const currentYear = value.format("YYYY");
 
   const monthChange = (dir) => {
+    // setEventInCurrentMonth(false);
     dir === "left"
       ? setValue(value.clone().subtract(1, "month"))
       : dir === "right"
@@ -120,6 +123,15 @@ function Calendar({ events = [], setSelectedDate }) {
         </div>
       </div>
       <div className="calendar-container__daynames">
+        {(events.length <= 0 || eventInCurrentMonth) && (
+          <div className="EventsPage__right--EmptyOverLay">
+            <img src={NoEventsImg} />
+            <h1>
+              No Events planned for the month, in the meanwhile check the other
+              months !
+            </h1>
+          </div>
+        )}
         {weekDays.map((day, index) => {
           return (
             <p key={index} className="calendar-container__daynames__day">
@@ -133,6 +145,19 @@ function Calendar({ events = [], setSelectedDate }) {
           {week.map((day, index) => {
             const { classToggle, eventName, eventTimeStart, eventTimeEnd } =
               eventCheck(day.format("YYYY-MM-DD").toString());
+            // if (
+            //   !(
+            //     day.isBefore(monthFirstDay, "day") ||
+            //     day.isAfter(monthLastDay, "day")
+            //   ) &&
+            //   !eventInCurrentMonth
+            // ) {
+            //   setEventInCurrentMonth(true);
+            // } else {
+            //   if (eventInCurrentMonth) {
+            //     setEventInCurrentMonth(false);
+            //   }
+            // }
             return (
               <div
                 onClick={(e) => {
