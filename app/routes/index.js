@@ -102,7 +102,7 @@ export default function LandingPage() {
             <div className="heroSection__top--right">
               <div className="heroSection__funFact">
                 <span>Fun Fact :&nbsp; &nbsp;</span>
-                <p>Absolutely fixed relatively broken coordinates</p>
+                <p>Nilgais will chase you if you make eye contact</p>
               </div>
               <SearchBar />
               <div className="heroSection__instagramDiv">
