@@ -162,10 +162,12 @@
         border-radius: 8px;
         a {
           text-decoration: none;
-          height: 35px;
+          height: 60px;
           width: 100%;
-          @include make-flex();
+          @include make-flex($align: center);
           padding: 7px 8px;
+          padding-top: 15px;
+          padding-bottom: 15px;
           color: #343a4e;
           border-radius: 5px;
           @include respondAt(585px) {
@@ -173,7 +175,8 @@
             color: var(--black);
           }
           img {
-            @include box(12px, 12px);
+            margin-right: 0.7rem;
+            @include box(15px, 15px);
             display: inline;
             @include respondAt(585px) {
               display: none;
