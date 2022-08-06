@@ -48,6 +48,8 @@
 
     text-align: center;
     line-height: 167.5%;
+    margin-top: 15px;
+
     @include respondAt(900px) {
       width: 90%;
       margin-top: 17px;
@@ -122,11 +124,10 @@
     }
     &--panel {
       font-family: "Poppins", sans-serif;
-      font-weight: 300;
-      @include box(220px, auto);
+      @include box(210px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
-      border-radius: 7px;
+      border-radius: 15px;
       top: 26%;
       padding: 15px;
       gap: 15px;
@@ -136,7 +137,7 @@
         0px 2px 5px rgba(19, 25, 69, 0.1), 0px 0px 0px rgba(19, 25, 69, 0.1);
 
       @include respondAt(590px) {
-        @include box(390px, 54px);
+        @include box(300px, 54px);
         margin: 0 auto;
         padding: 0 10px;
         flex-direction: row;
@@ -169,22 +170,26 @@
       }
 
       a {
+        font-family: "Poppins", sans-serif;
         text-decoration: none;
-        @include box(100%, 40px);
+        @include box(100%, 45px);
         @include make-flex();
-        padding: 7px 8px;
+        padding: 10px 7px;
         color: var(--secondaryTextColor);
-        border-radius: 5px;
-        font-weight: 700;
+        border-radius: 20px;
+        font-weight: 600;
+        opacity: 70%;
+        transition: all 0.2s ease-in-out;
 
         @include respondAt(590px) {
           @include box(auto, auto);
         }
       }
       a:hover {
-        border: 1px solid var(--blue);
+        opacity: 100%;
       }
       .activeTab {
+        opacity: 100%;
         color: var(--white);
         background-color: var(--blue);
       }
