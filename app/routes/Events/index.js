@@ -74,7 +74,7 @@ export default function Index() {
           }}
         >
           <h2 className="EventsPage__left--title">
-            Happening <span>@SNU</span>
+            Happenings <span>@SNU</span>
           </h2>
           <p className="EventsPage__left--subTitle">
             Don’t miss out on any scheduled events
