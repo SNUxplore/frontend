@@ -148,7 +148,7 @@ function Header() {
                   alt="snu explore Logo"
                 />
               )}
-              Happening@SNU
+              Happenings@SNU
             </NavLink>
           </li>
           {dropdown && (
