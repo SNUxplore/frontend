@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import useCalendarGrid from "~/Hooks/useCalendarGrid";
-import NoEventsImg from "../../Assets/Img/NoEvents.svg";
+import NoEventsImg from "../../Assets/Img/empty.gif";
 
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 // const events = [
@@ -125,11 +125,10 @@ function Calendar({ events = [], setSelectedDate }) {
       <div className="calendar-container__daynames">
         {(events.length <= 0 || eventInCurrentMonth) && (
           <div className="EventsPage__right--EmptyOverLay">
-            <img src={NoEventsImg} />
-            <h1>
-              No Events planned for the month, in the meanwhile check the other
-              months !
-            </h1>
+            <img src={NoEventsImg} height="140px"/>
+            <h3>
+              Uh oh! No events are planned at the moment. <br /> Checkout our other features in the meantime.
+            </h3>
           </div>
         )}
         {weekDays.map((day, index) => {
