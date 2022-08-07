@@ -131,10 +131,10 @@ export default function Navigate() {
             </a>
           </div>
           <div className="NavigatePage__left__content">
-            <p className="NavigatePage__left__content--title">
+            <h1 className="NavigatePage__left__content--title">
               Navigate<span>Campus</span>
-            </p>
-            <p>
+            </h1>
+            <p className="NavigatePage__left__content--desc">
               Having an issue finding your way around campus? Don't worry we got
               you covered!
             </p>
