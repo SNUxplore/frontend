@@ -78,40 +78,40 @@ export default function Navigate() {
 
   React.useEffect(() => {
     if (isOpen) {
-      setStyle({
-        transitionDuration: "300ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        height: "0",
-      });
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
 
-      setTimeout(() => {
-        setStyle({
-          transitionDuration: "500ms",
-          transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          transitionProperty: "height",
-          overflow: "hidden",
-          height: `${scrollHeight}px`,
-        });
-      }, 50);
-    } else {
+      // setTimeout(() => {
       setStyle({
-        transitionDuration: "300ms",
+        transitionDuration: "500ms",
         transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         transitionProperty: "height",
         overflow: "hidden",
-        height: "0",
+        height: ``,
       });
-      setTimeout(() => {
-        setStyle({
-          transitionDuration: "500ms",
-          transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          transitionProperty: "height",
-          overflow: "hidden",
-          display: "none",
-        });
-      }, 290);
+      // }, 50);
+    } else {
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
+      // setTimeout(() => {
+      setStyle({
+        transitionDuration: "500ms",
+        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        transitionProperty: "height",
+        overflow: "hidden",
+        display: "none",
+      });
+      // }, 290);
     }
   }, [isOpen]);
 

@@ -1,14 +1,14 @@
 @import "../../styles/root/mixins";
 
 .dropDown {
-  p{
+  p {
     color: var(--textColor);
   }
   min-height: 48px;
   width: 100%;
   //   margin-bottom: 100px;
   position: relative;
-  &__question { 
+  &__question {
     @include box($height: 48px);
     @include make-flex($dir: row, $just: space-between);
     padding: 0 20px;
@@ -17,36 +17,36 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-		color: var(--primaryTextColor);
-		
-    p{
+    color: var(--primaryTextColor);
+
+    p {
       text-align: left;
     }
     &:hover {
       background-color: var(--white);
-			
-			p {
-				color: var(--secondaryTextColor);
-			}
+
+      p {
+        color: var(--secondaryTextColor);
+      }
     }
 
     &--active {
       background-color: var(--white);
       border-radius: 5px 5px 0 0;
-			
-			p {
-				color: var(--secondaryTextColor);
-			}
+
+      p {
+        color: var(--secondaryTextColor);
+      }
     }
   }
 
   &__answer {
     @include box($height: 100%);
-    @include make-flex($align: flex-start);
+    @include make-flex($align: flex-start, $just: flex-start);
     gap: 20px;
     border-radius: 0 0 5px 5px;
-		color: var(--secondaryTextColor);
-		
+    color: var(--secondaryTextColor);
+
     p {
       padding: 20px;
     }
