@@ -84,7 +84,7 @@ export default function Index() {
             </p>
           </div>
           <div className="mainSection__bottom">
-            <div className="mainSection__categories">
+            <div className="mainSection__categories--desktop">
               {testFAQs.map((category) => (
                 <div
                   key={category.id}
@@ -112,6 +112,20 @@ export default function Index() {
                 </div>
               ))}
             </div>
+            <select className="mainSection__categories--mobile"
+              onChange={(e) => {
+                navigate(`/faqs/${e.target.value}`);
+              }}
+            >
+              {testFAQs.map((category) => (
+                <option
+                  key={category.id}
+                  value={category.id} 
+                >
+                  {category.name}
+                </option>
+              ))}
+            </select>
             <Outlet context={[testFAQs]} />
           </div>
         </section>
