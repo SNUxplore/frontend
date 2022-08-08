@@ -40,7 +40,7 @@
       @include make-flex($dir: row, $just: space-between);
 
       &--logo {
-        @include box(85%, auto);
+        @include box(47px, 47px);
         filter: var(--svgfilter);
         @include respondAt(585px) {
           width: 100%;
@@ -55,7 +55,7 @@
         font-size: 1rem;
         text-decoration: none;
         text-align: end;
-        color: var(--primaryTextColor);
+        color: var(--unhighlightTextColor);
         @include respondAt(775px) {
           font-size: 0.8rem;
         }
@@ -95,7 +95,7 @@
       &--title {
         @include box();
         font-size: 35px;
-        color: var(--primaryTextColor);
+        color: var(--unhighlightTextColor);
         font-weight: 500;
         margin-bottom: 1vh;
 
@@ -173,6 +173,8 @@
           @include respondAt(585px) {
             @include box(auto, auto);
             color: var(--black);
+            padding-top: 10px;
+            padding-bottom: 10px;
           }
           img {
             margin-right: 0.7rem;
