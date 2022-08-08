@@ -12,7 +12,7 @@ import penIcon from "../Assets/Img/penIcon.svg";
 import cartIcon from "../Assets/Img/cartIcon.svg";
 import foodIcon from "../Assets/Img/foodIcon.svg";
 import upDropDown from "../Assets/Img/upDropDown.svg";
-import xploreLogo from "../Assets/Img/xploreLogo.svg";
+import xploreLogo from "../Assets/Img/newLogo.svg";
 import downDropDown from "../Assets/Img/downDropDown.svg";
 import basketBallIcon from "../Assets/Img/basketBallIcon.svg";
 import residentialIcons from "../Assets/Img/residentialsIcon.svg";
@@ -78,40 +78,40 @@ export default function Navigate() {
 
   React.useEffect(() => {
     if (isOpen) {
-      setStyle({
-        transitionDuration: "300ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        height: "0",
-      });
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
 
-      setTimeout(() => {
-        setStyle({
-          transitionDuration: "500ms",
-          transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          transitionProperty: "height",
-          overflow: "hidden",
-          height: `${scrollHeight}px`,
-        });
-      }, 50);
-    } else {
+      // setTimeout(() => {
       setStyle({
-        transitionDuration: "300ms",
+        transitionDuration: "500ms",
         transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         transitionProperty: "height",
         overflow: "hidden",
-        height: "0",
+        height: ``,
       });
-      setTimeout(() => {
-        setStyle({
-          transitionDuration: "500ms",
-          transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          transitionProperty: "height",
-          overflow: "hidden",
-          display: "none",
-        });
-      }, 290);
+      // }, 50);
+    } else {
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
+      // setTimeout(() => {
+      setStyle({
+        transitionDuration: "500ms",
+        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        transitionProperty: "height",
+        overflow: "hidden",
+        display: "none",
+      });
+      // }, 290);
     }
   }, [isOpen]);
 
@@ -123,6 +123,7 @@ export default function Navigate() {
             <a href="/">
               <img
                 src={xploreLogo}
+                alt="xploreLogo"
                 className="NavigatePage__left--header--logo"
               />
             </a>
@@ -131,10 +132,10 @@ export default function Navigate() {
             </a>
           </div>
           <div className="NavigatePage__left__content">
-            <p className="NavigatePage__left__content--title">
+            <h1 className="NavigatePage__left__content--title">
               Navigate<span>Campus</span>
-            </p>
-            <p>
+            </h1>
+            <p className="NavigatePage__left__content--desc">
               Having an issue finding your way around campus? Don't worry we got
               you covered!
             </p>
@@ -146,8 +147,8 @@ export default function Navigate() {
             }`}
           >
             <button onClick={() => setIsOpen(!isOpen)}>
-              <img src={isOpen ? upDropDown : downDropDown} /> Filter your
-              search
+              <img alt="dropDown" src={isOpen ? upDropDown : downDropDown} />{" "}
+              Filter your search
             </button>
             <div
               className="NavigatePage__right--panel--ac"

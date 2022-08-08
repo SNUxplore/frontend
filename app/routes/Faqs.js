@@ -3,7 +3,6 @@ import Header from "~/Components/Header/Header";
 import Footer from "~/Components/Footer/Footer";
 import styleSheet from "~/styles/routes/Faqs/Faqs.css";
 import { Link, Outlet } from "@remix-run/react";
-import questionIcon from "~/Assets/Img/questionIcon.svg";
 import { useMediaQuery } from "react-responsive";
 import { useLocation, useNavigate } from "react-router-dom";
 import Banner from "~/Components/Banner/Banner";
@@ -58,12 +57,14 @@ export default function Index() {
         {
           id: 1,
           question: "What do our ID cards help us do?",
-          answer: "Our college ID cards are our proof of identity during entry in the main gate and can help us issue sports equipment from the ISC (Indoor Sports Complex) and books from the library.",
+          answer:
+            "Our college ID cards are our proof of identity during entry in the main gate and can help us issue sports equipment from the ISC (Indoor Sports Complex) and books from the library.",
         },
         {
           id: 2,
           question: "What is the purpose of clubs?",
-          answer: "Clubs are student run student led organizations that venture and explore their interests in different fields like entrepreneurship, music, debating and pretty much everything under the sun. They help you network, gain experience, work in a team and conduct large scale events. For example, the E-Summit, TEDx Conference and so on.",
+          answer:
+            "Clubs are student run student led organizations that venture and explore their interests in different fields like entrepreneurship, music, debating and pretty much everything under the sun. They help you network, gain experience, work in a team and conduct large scale events. For example, the E-Summit, TEDx Conference and so on.",
         },
       ],
     },
@@ -83,7 +84,7 @@ export default function Index() {
             </p>
           </div>
           <div className="mainSection__bottom">
-            <div className="mainSection__categories">
+            <div className="mainSection__categories--desktop">
               {testFAQs.map((category) => (
                 <div
                   key={category.id}
@@ -94,13 +95,6 @@ export default function Index() {
                       : "")
                   }
                 >
-                  <img
-                    className="mainSection__categoryIcon"
-                    src={
-                      category.id == categoryId ? questionIcon : questionIcon //change to inactive icon asset
-                    }
-                    alt="snu explore Logo"
-                  />
                   <Link
                     to={`/faqs/${category.id}`}
                     className={
@@ -118,6 +112,20 @@ export default function Index() {
                 </div>
               ))}
             </div>
+            <select className="mainSection__categories--mobile"
+              onChange={(e) => {
+                navigate(`/faqs/${e.target.value}`);
+              }}
+            >
+              {testFAQs.map((category) => (
+                <option
+                  key={category.id}
+                  value={category.id} 
+                >
+                  {category.name}
+                </option>
+              ))}
+            </select>
             <Outlet context={[testFAQs]} />
           </div>
         </section>

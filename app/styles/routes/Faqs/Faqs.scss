@@ -132,34 +132,61 @@
     // }
 
     &__categories {
-      @include make-flex($dir: column, $align: stretch);
-      gap: 32.5px;
-      width: 192px;
-      overflow-x: auto;
+      &--desktop {
+        @include make-flex($dir: column, $align: stretch);
+        gap: 32.5px;
+        width: 192px;
+        overflow-x: auto;
 
-      @include respondAt(750px) {
-        @include make-flex($dir: row, $just: space-between);
-				width: 100%;
-        gap: 5px;
+        @include respondAt(750px) {
+          @include make-flex($dir: row, $just: space-between);
+          width: 100%;
+          gap: 5px;
+          background-color: transparent;
+          padding: 10px;
+        }
+
+        @include respondAt(500px) {
+          display: none;
+        }
+      }
+      &--mobile {
+        display: none;
+        height: 40px;
+        width: 100%;
+        padding: 0 5px;
+        border-radius: 8px;
+        opacity: 70%;
         background-color: transparent;
-        padding: 10px;
+        transition: all 0.3s ease-in-out;
+        color: var(--white);
+        background-color: var(--blue);
+        border: none;
+        option {
+          background-color: var(--white);
+          color: var(--blue);
+        }
+        @include respondAt(500px) {
+          display: block;
+        }
       }
     }
 
     &__categoryBox {
-      @include make-flex($dir: row,$just:flex-start);
-      box-sizing: content-box;
+      @include make-flex($dir: row, $just: flex-start);
       height: 40px;
       // width: 100%;
-      min-width: 143px;
+      width: 123px;
       padding: 0 15px;
       background-color: var(--white);
       border-radius: 8px;
+      opacity: 70%;
       background-color: transparent;
+      transition: all 0.3s ease-in-out;
 
-      // @include respondAt(750px) {
-      // 	border-radius: 0px;
-      // }
+      @include respondAt(750px) {
+        @include make-flex($dir: row, $just: center);
+      }
 
       &:hover {
         opacity: 100%;
@@ -167,6 +194,7 @@
 
       &--active {
         background-color: var(--blue);
+        opacity: 100%;
       }
     }
 

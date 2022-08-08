@@ -8,7 +8,7 @@
   @include make-flex($dir: row);
   @include box(100%, auto);
 
-  gap: 1.4rem;
+  gap: 2.4rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: background-color 1000ms linear;
 
@@ -57,11 +57,11 @@
       font-weight: 500;
 
       &--location-button {
-        font-size: 15px;
+        font-size: 14px;
         border-radius: 0.4rem;
         border: 1.4px #363b5300 solid;
         background-color: var(--navigateCardButton);
-        padding: 11% 17%;
+        padding: 9% 16%;
         color: var(--navigateCardColor);
       }
 
@@ -74,8 +74,8 @@
       }
 
       &--menu-button {
-        font-size: 15px;
-        padding: 18% 48%;
+        font-size: 14px;
+        padding: 16% 48%;
         border-radius: 0.4rem;
         border: 1px var(--navigateCardButton) solid;
         background-color: transparent;

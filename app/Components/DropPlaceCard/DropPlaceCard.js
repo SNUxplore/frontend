@@ -26,32 +26,32 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
 
   React.useEffect(() => {
     if (isOpen) {
-      setStyle({
-        transitionDuration: "300ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        height: "0",
-      });
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
 
-      setTimeout(() => {
+      // setTimeout(() => {
         setStyle({
           transitionDuration: "500ms",
           transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           transitionProperty: "height",
           overflow: "hidden",
-          height: `${scrollHeight}px`,
+          height: ``,
         });
-      }, 50);
+      // }, 50);
     } else {
-      setStyle({
-        transitionDuration: "300ms",
-        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        transitionProperty: "height",
-        overflow: "hidden",
-        height: "0",
-      });
-      setTimeout(() => {
+      // setStyle({
+      //   transitionDuration: "300ms",
+      //   transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      //   transitionProperty: "height",
+      //   overflow: "hidden",
+      //   height: "0",
+      // });
+      // setTimeout(() => {
         setStyle({
           transitionDuration: "500ms",
           transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
@@ -59,7 +59,7 @@ function DropPlaceCard({ name, actionLists, desc, src, highlighted }) {
           overflow: "hidden",
           display: "none",
         });
-      }, 290);
+      // }, 290);
     }
   }, [isOpen]);
 
