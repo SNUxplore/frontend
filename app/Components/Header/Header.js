@@ -1,5 +1,5 @@
 import React from "react";
-import appLogo from "../../Assets/Img/xploreLogo.svg";
+import appLogo from "../../Assets/Img/newLogo.svg";
 import instagramLogo from "../../Assets/Img/instagramLogo.svg";
 import linkedInLogo from "../../Assets/Img/linkedInLogo.svg";
 import locationIcon from "../../Assets/Img/locationIcon.svg";
@@ -427,7 +427,11 @@ function Header() {
                     alt="LinkedIn logo"
                   />
                 </a>
-                <a target="_blank" href="https://www.instagram.com/snu.xplore/" rel="noreferrer">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/snu.xplore/"
+                  rel="noreferrer"
+                >
                   <img
                     className="HeaderWrapper__right--themeButtons--socialMediaIcons"
                     src={instagramLogo}

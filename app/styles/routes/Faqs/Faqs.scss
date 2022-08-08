@@ -139,7 +139,7 @@
 
       @include respondAt(750px) {
         @include make-flex($dir: row, $just: space-between);
-				width: 100%;
+        width: 100%;
         gap: 5px;
         background-color: transparent;
         padding: 10px;
@@ -147,19 +147,20 @@
     }
 
     &__categoryBox {
-      @include make-flex($dir: row,$just:flex-start);
-      box-sizing: content-box;
+      @include make-flex($dir: row, $just: flex-start);
       height: 40px;
       // width: 100%;
-      min-width: 143px;
+      width: 123px;
       padding: 0 15px;
       background-color: var(--white);
       border-radius: 8px;
+      opacity: 70%;
       background-color: transparent;
+      transition: all 0.3s ease-in-out;
 
-      // @include respondAt(750px) {
-      // 	border-radius: 0px;
-      // }
+      @include respondAt(750px) {
+        @include make-flex($dir: row, $just: center);
+      }
 
       &:hover {
         opacity: 100%;
@@ -167,6 +168,7 @@
 
       &--active {
         background-color: var(--blue);
+        opacity: 100%;
       }
     }
 
