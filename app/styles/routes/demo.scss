@@ -1,7 +1,0 @@
-@import "../root/mixins";
-
-.DemoPage {
-  background-color: #F4F5FC;
-  @include box();
-  @include make-flex($just: flex-start);
-}

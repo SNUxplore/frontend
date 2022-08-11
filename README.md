@@ -1,4 +1,4 @@
-# Welcome to Remix!
+# SNUxplore - Official Repository
 
 - [Remix Docs](https://remix.run/docs)
 
