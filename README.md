@@ -4,13 +4,7 @@
 
 ## Hosting
 
-The dev site is hosted at https://snuxplore.netlify.app/
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9b59cef4-1394-4e52-817c-afe7cb24582b/deploy-status)](https://app.netlify.com/sites/snuxplore/deploys)
-
-## Development
-
-The Netlify CLI starts your app in development mode, rebuilding assets on file changes.
+The dev site is hosted at https://snuxplore.com/ using [Vercel](https://vercel.com/).
 
 ```sh
 npm run dev # or yarn dev
