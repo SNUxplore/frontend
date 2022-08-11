@@ -3,7 +3,7 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:sass && remix build",
+    "build": "npm run build:sass && remix build && prisma generate",
     "sass": "sass --watch app/:app/",
     "build:sass": "sass app/:app/",
     "dev": "concurrently \"npm run sass\" \"remix dev\"",
