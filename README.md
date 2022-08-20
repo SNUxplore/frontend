@@ -9,7 +9,7 @@ The dev site is hosted at https://snuxplore.com/ using [Vercel](https://vercel.c
 ```sh
 npm run dev # or yarn dev
 ```
-
+   
 Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
 
 It is suggested to use VS Code for this project. Remix does not support css pre-processors out of the box so we are using [Sass](https://sass-lang.com/) to compile our SCSS files into CSS.
