@@ -76,7 +76,7 @@ function InfoModal({ setModalOpen, data }) {
           )}
           {data.instagramUrl ? (
             <div className="ModalWrapper__container__infoContainer--socialsWrapper">
-              <p>Instagram Link :</p>
+              <p>Instagram:</p>
               <a
                 className="ModalWrapper__container__infoContainer--linkHighlight"
                 href={data.instagramUrl}
@@ -87,9 +87,10 @@ function InfoModal({ setModalOpen, data }) {
           ) : (
             <></>
           )}
-          {data.emailId ? (
+
+          {/* {data.emailId ? (
             <div className="ModalWrapper__container__infoContainer--socialsWrapper">
-              <p>Instagram Link :</p>
+              <p>Posted By:</p>
               <a
                 className="ModalWrapper__container__infoContainer--linkHighlight"
                 href={data.emailId}
@@ -99,7 +100,8 @@ function InfoModal({ setModalOpen, data }) {
             </div>
           ) : (
             <></>
-          )}
+          )} */}
+
         </div>
       </div>
     </div>
