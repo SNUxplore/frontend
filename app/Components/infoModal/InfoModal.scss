@@ -20,10 +20,9 @@
     background-color: var(--white);
     width: 800px;
     @include respondAt(800px) {
-      width: 400px;
+      width: 380px;
     }
     border-radius: 12px;
-    height: 550px;
     color: var(--textColor);
     background: var(--pageBackground);
     border: 1px solid rgba(0, 0, 0, 0.216);
@@ -112,6 +111,11 @@
         font-weight: 400;
         font-size: 15px;
         color: var(--pink);
+        width : 200px;
+        overflow:hidden;
+        display:inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
