@@ -432,6 +432,12 @@
   ],
   "Sports": [
     {
+      "name": "Registration Desk - Surge",
+      "location": "https://www.google.com/maps/dir/28.5255304,77.5757287/28.526054,77.570702/@28.5259279,77.5712875,19.25z/data=!4m5!4m4!1m1!4e1!1m0!3e2",
+      "description": "The registration desk for Surge '23",
+      "image": "https://picsum.photos/id/1/200/300"
+    },
+    {
       "name": "Badminton Court (Outdoor)",
       "location": "https://www.google.com/maps/place/SNU+Badminton+Court/@28.5249742,77.5718354,19.12z/data=!4m5!3m4!1s0x390c94d0b0dcecb5:0x8817703b05e2769b!8m2!3d28.5251713!4d77.5722183",
       "description": "",
