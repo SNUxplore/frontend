@@ -176,7 +176,7 @@ function Header() {
               Admins & Contact
             </NavLink>
           </li>
-          <li className="HeaderWrapper__middle--option">
+          {/* <li className="HeaderWrapper__middle--option">
             <NavLink
               to="/faqs"
               className={({ isActive }) =>
@@ -192,7 +192,7 @@ function Header() {
               )}
               FAQs
             </NavLink>
-          </li>
+          </li> */}
           <li className="HeaderWrapper__middle--option">
             <NavLink
               to="/about"
