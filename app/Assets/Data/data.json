@@ -293,12 +293,7 @@
     }
   ],
   "POI": [
-    {
-      "name": "SARC",
-      "location": "https://www.google.com/maps/place/28%C2%B031'25.4%22N+77%C2%B034'31.2%22E/@28.5237344,77.5742457,18z/data=!3m1!4b1!4m6!3m5!1s0x0:0xf7e11b9c6faeb5c0!7e2!8m2!3d28.5237315!4d77.5753397",
-      "description": "",
-      "image": "https://media.giphy.com/media/xUA7b56lPon8J46Y8M/giphy.gif"
-    },
+    
     {
       "name": "Horse Stables",
       "location": "https://www.google.com/maps/place/Greater+Noida,+Uttar+Pradesh+203207/@28.518782,77.57357,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x390ceb4eaaaaaaab:0x321412756718874c!2sShiv+Nadar+University!8m2!3d28.5267298!4d77.575363!3m4!1s0x390c94d8756793eb:0xc605950461bcc5ed!8m2!3d28.5192457!4d77.574931",
