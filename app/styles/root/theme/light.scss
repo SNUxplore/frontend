@@ -1,5 +1,5 @@
 @mixin lightMode() {
-  --pageBackground: #f4f5fc;
+  --pageBackground: #ffffff;
   --primaryTextColor: #363b53;
   --blue:  #308CF8;
   --white: #ffffff;
@@ -13,7 +13,7 @@
   --contactHover: #ffc107;
   --navMenuBorder: #a66874;
   --searchBarShadow: #cdced4;
-  --faqRedirectBackground: #308CF8;
+  --faqRedirectBackground: #21252a;
   --navigatePanelShadow: #d9d9d9;
   --navbarBackground: #242836;
   --navbarOption: #ffffff;
@@ -23,7 +23,8 @@
   --navbarItems: #ffffff;
   --boxShadow: 7px 7px 14px #cdced4, -7px -7px 14px #ffffff;
   --questions: #363b53;
-  --textColor: #363B53;
+  // --textColor: #363B53;
+  --textColor: #00000;
   --highlightTextColor: #363B53;
   --unhighlightTextColor: #363B53;
   --calenderColor : #ffffff;

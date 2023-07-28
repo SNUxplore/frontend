@@ -12,14 +12,16 @@
 .HeaderWrapper {
   @include box($height: 130px);
   position: relative;
-  max-width: 1600px;
-  padding: 0 145px;
+  // max-width: 1600px;
+  padding: 0 60px 0 130px;
   #NavBarInput,
   .hamButton {
     display: none;
   }
 
   &__left {
+    @include make-flex(row, $just: left);
+    width: 100%;
     &--logo {
       @include box(47px, 47px);
       transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -29,16 +31,47 @@
       }
     }
 
+    &--searchBar {
+      @include make-flex(row, center, center);
+      margin-left: 40px;
+      width: 30%;
+    }
+
+    &--searchBarInput::placeholder {
+      font-family: PowerGroteskTrial;
+      font-style: normal;
+      color: #4d4d4d;
+      line-height: normal;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &--searchBarInput {
+      padding: 14px 75px 14px 50px;
+      align-items: center;
+      width: 100%;
+      gap: 11px;
+      border-radius: 9px;
+      border: none;
+      background: #F1F1F1;
+      background-image: url('app/Assets/Img/search.svg');
+      background-position: 14px 14px;
+      background-repeat: no-repeat;
+    }
+
+
+
     @include respondAt(1230px) {
       display: none;
     }
   }
 
   &__middle {
-    @include box($height: 150px, $width: fit-content);
+    @include box($height: 50px, $width: fit-content);
     @include make-flex($dir: row);
     gap: 45px;
     list-style: none;
+
 
     &--option {
       width: 100%;
@@ -116,13 +149,41 @@
       width: 100%;
       padding-bottom: 50px;
     }
-    button {
-      @include box(36px, 36px);
-      border: none;
-      border-style: none;
-      background-color: transparent;
-      cursor: pointer;
+    // button {
+    //   @include box(36px, 36px);
+    //   border: none;
+    //   border-style: none;
+    //   background-color: transparent;
+    //   cursor: pointer;
+    // }
+
+    // button {
+    //   display: flex;
+    //   padding: 11px 31px;
+    //   align-items: flex-start;
+    //   gap: 12px;
+    //   border-radius: 9px;
+    //   background: none;
+    //   border: 1.5px solid var(--light-smoke, #3E3E3E);
+    //   text-align: center;
+    //   font-size: 14.818px;
+    //   font-style: normal;
+    //   font-weight: 500;
+    //   line-height: normal;
+    // }
+
+    &--contactButton {
+      @include make-flex(column, center);
+      padding: 11px 31px;
+      gap: 12px;
+      border-radius: 9px;
+      background: none;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
     }
+
     &--themeButtons {
       @include respondAtAlt(1230px) {
         @include box($width: auto, $height: 40px);
@@ -281,7 +342,7 @@
   &__menu {
     @include box();
     @include make-flex($dir: row, $just: space-between);
-    padding: 0 25px;
+    // padding: 0 25px;
     z-index: 3;
     gap: 10px;
 

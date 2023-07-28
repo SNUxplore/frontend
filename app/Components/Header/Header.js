@@ -1,5 +1,6 @@
 import React from "react";
-import appLogo from "../../Assets/Img/newLogo.svg";
+// import appLogo from "../../Assets/Img/newLogo.svg";
+import appLogo from "../../Assets/Img/logo.svg";
 import instagramLogo from "../../Assets/Img/instagramLogo.svg";
 import linkedInLogo from "../../Assets/Img/linkedInLogo.svg";
 import locationIcon from "../../Assets/Img/locationIcon.svg";
@@ -48,6 +49,7 @@ function Header() {
   React.useEffect(() => {
     if (localStorage.getItem("theme")) {
       setCurrentTheme(localStorage.getItem("theme"));
+      // setCurrentTheme('light');
     }
   });
 
@@ -86,7 +88,7 @@ function Header() {
 
   return (
     <nav ref={node} className="HeaderWrapper">
-      {dropdown && (
+      {/* {dropdown && (
         <a href="/">
           <img
             className={`
@@ -96,7 +98,7 @@ function Header() {
             alt="snu explore Logo"
           />
         </a>
-      )}
+      )} */}
       <div
         className={`HeaderWrapper__menu ${
           navState ? "HeaderWrapper__menu--open" : ""
@@ -104,16 +106,26 @@ function Header() {
       >
         <div className="HeaderWrapper__left">
           {!dropdown && (
+            <>
             <a href="/">
               <img
-                className="HeaderWrapper__left--logo"
                 src={appLogo}
                 alt="snu explore Logo"
               />
             </a>
+            <div className="HeaderWrapper__left--searchBar">
+              <input type="input" className="HeaderWrapper__left--searchBarInput" placeholder="Search for location, admin info, academics, food or anything"/>
+            </div>
+            </>
           )}
         </div>
-        <ul className="HeaderWrapper__middle">
+
+        {/* <div className="HeaderWrapper__middle">
+          {!dropdown && (
+          )}
+        </div> */}
+
+        {/* <ul className="HeaderWrapper__middle">
           {dropdown && (
             <div style={{ width: "100%" }}>
               <li className="HeaderWrapper__middle--option">
@@ -314,94 +326,20 @@ function Header() {
               </button>
             </li>
           )}
-        </ul>
+        </ul> */}
+
         <div className="HeaderWrapper__right">
           {!dropdown && (
-            <div
-              className="HeaderWrapper__right--themeButtons"
-              style={{
-                background: themeStyle[currentTheme ? currentTheme : "light"],
-              }}
-            >
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("pink");
-                  localStorage.setItem("theme", "light");
-                  setCurrentTheme("light");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "light" ? "--active" : ""
-                  }`}
-                  src={lightModeDesktop}
-                  alt="snu explore Logo"
-                />
-              </button>
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("pink");
-                  localStorage.setItem("theme", "dark");
-                  setCurrentTheme("dark");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "dark" ? "--active" : ""
-                  }`}
-                  src={themeIconSrc[currentTheme ? currentTheme : "light"]}
-                  alt="snu explore Logo"
-                />
-              </button>
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("pink");
-                  localStorage.setItem("theme", "pink");
-                  setCurrentTheme("pink");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${
-                    currentTheme === "pink" ? "--active" : ""
-                  }`}
-                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
-                  alt="snu explore Logo"
-                />
-              </button>
-            </div>
+            // <div
+            //   className="HeaderWrapper__right--themeButtons"
+            //   style={{
+            //     background: themeStyle[currentTheme ? currentTheme : "light"],
+            //   }}
+            // >
+            // </div>
+            <button className="HeaderWrapper__right--contactButton">
+              Contact
+            </button>
           )}
           {dropdown && (
             <div
@@ -454,6 +392,7 @@ function Header() {
           </div>
         )}
       </div>
+
       <div
         className="HeaderWrapper__Hamburger"
         style={{
