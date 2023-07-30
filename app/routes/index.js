@@ -11,6 +11,7 @@ import arrow from "../Assets/Img/Arrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
 import HeroImage from "../Assets/Img/heroImage.svg";
 import UsersImage from "../Assets/Img/userPhotos.svg";
+import InquiryFeedbackAvatar from "../Assets/Img/inquiryFeedbackAvatar.svg";
 import UsersImageArrow from "../Assets/Img/userPhotosArrow.svg";
 import { useMediaQuery } from "react-responsive";
 import useScrollEffect from "~/Hooks/Observer";
@@ -179,6 +180,28 @@ export default function LandingPage() {
               <p className="heroSection__stats--stat">14</p>
             </div>
           </div> */}
+        </section>
+        <section className="inquiryFeedbackSection">
+            <div class="inquiryFeedbackSection__left">
+              <ButtonLink
+                content="Get in touch 🥰"
+                className="inquiryFeedbackSection__buttons--getInTouchWithEmojiButton"
+              />
+              <h1 className="inquiryFeedbackSection__left--heading">Have an inquiry or<br/>some feedback for us?</h1>
+              <div class="inquiryFeedbackSection__buttons">
+                <ButtonLink
+                  content="Get in Touch"
+                  className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--getInTouchButton"
+                />
+                <ButtonLink
+                  content="Instagram"
+                  className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--instagramButton"
+                />
+              </div>
+            </div>
+            <div class="inquiryFeedbackSection__right">
+              <img src={InquiryFeedbackAvatar} className="inquiryFeedbackSection__right--img" />
+            </div>
         </section>
         {/* <section className="aboutSection">
           <InfoComponentDesktop

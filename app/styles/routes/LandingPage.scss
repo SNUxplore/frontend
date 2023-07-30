@@ -8,29 +8,33 @@
     // @include box();
     // height: auto;
     width: 100%;
-    @include make-flex($just: flex-start, $align: flex-start);
+    // @include make-flex($just: flex-start, $align: flex-start);
+    @include make-flex($just: flex-start);
+    padding: 0px !important;
     gap: 50px;
     // max-width: 1585px;
+
     min-height: calc(100% - 110px);
+
     // background-color: aqua;
 
     // padding: 0px 170px 0px;
-    padding: 0px 0px 0px 130px;
+    // padding: 0px 0px 0px 130px;
 
     transition: padding 0.5s ease-in-out, filter 0.5s;
 
-    @include respondAt(1525px) {
-      padding: 0 130px 0px;
-    }
-    @include respondAt(1335px) {
-      padding: 0 90px 0px;
-    }
-    @include respondAt(1135px) {
-      padding: 0 40px;
-    }
-    @include respondAt(470px) {
-      padding: 0 0;
-    }
+    // @include respondAt(1525px) {
+    //   padding: 0 130px 0px;
+    // }
+    // @include respondAt(1335px) {
+    //   padding: 0 90px 0px;
+    // }
+    // @include respondAt(1135px) {
+    //   padding: 0 40px;
+    // }
+    // @include respondAt(470px) {
+    //   padding: 0 0;
+    // }
   }
 
   .heroSection {
@@ -39,6 +43,7 @@
     // max-height: 720px;
 
     gap: 65px;
+    padding: 0px 0px 0px 130px;
 
     &__top {
       // @include box($height: 75%);
@@ -190,6 +195,7 @@
       &--snugpt {
           background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
           font-size: 15.638px;
+          border: none;
       }
     }
 
@@ -400,6 +406,85 @@
     }
     @include respondAt(335px) {
       gap: 115px;
+    }
+  }
+
+  .inquiryFeedbackSection {
+    padding-block: 150px !important;
+    background: #000000;
+    position: relative;
+    width: 100%;
+    @include make-flex($dir: row, $just: flex-start);
+
+    &__left, &__right {
+      @include box(50%)
+    }
+
+    &__left {
+      @include make-flex($align: flex-start);
+      padding-left: 130px;
+      gap: 30px;
+      &--heading {
+        color: var(--light-grey, #D2D2D2);
+        font-family: AcidGroteskRegular;
+        font-size: 3.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 116.45%; /* 92.733px */
+      }
+    }
+
+    &__right {
+      @include make-flex($dir: row, $just: flex-end);
+      position: absolute;
+      right: 0px;
+      overflow-x: hidden;
+      &--img {
+        height: 100%;
+      }
+    }
+
+    &__buttons {
+      @include make-flex($dir: row, $align: flex-start);
+      gap: 15.951px;
+
+      &--button {
+        padding: 27.914px 11.206px !important;
+        width: 170px;
+        border-radius: 11.963px;
+        color: var(--white);
+        text-align: center;
+        font-family: PowerGroteskTrial;
+        font-size: 17.5px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &--getInTouchButton {
+        color: var(--white, #FFF);
+        border-radius: 11.963px;
+        border: 1.994px solid var(--light-smoke, #3E3E3E);
+        background: var(--dark-smoke, #181818);
+      }
+
+      &--getInTouchWithEmojiButton {
+        border-radius: 14px;
+        border: none;
+        background: rgba(255, 255, 255, 0.60);
+        color: var(--black, #000);
+        font-family: AcidGroteskRegular;
+        font-size: 17.421px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 146.95%; /* 40.295px */
+      }
+
+      &--instagramButton {
+        border: none;
+        border-radius: 11.491px;
+        background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+      }
     }
   }
 
