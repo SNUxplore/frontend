@@ -9,31 +9,35 @@
   }
 
   &__container {
-    @include make-flex($dir: row, $just: space-between, $align: center);
+    // @include make-flex($dir: row, $just: space-between, $align: center);
+    @include make-flex($dir: column, $just: space-between, $align: normal);
     @include box();
-    max-width: 1500px;
-    padding: 30px 40px 0 40px;
-    gap: 150px;
-    @include respondAt(1525px) {
-      padding: 0 60px 0 100px;
-      gap: 100px;
-    }
-    @include respondAt(1335px) {
-      padding: 0 90px;
-      gap: 150px;
-    }
-    @include respondAt(1135px) {
-      padding: 0 40px;
-    }
+    padding-bottom: 40px;
 
-    @include respondAt(840px) {
-      flex-direction: column;
-      gap: 20px;
-    }
+    // max-width: 1500px;
+    // padding: 30px 40px 30px 40px;
+    // gap: 150px;
 
-    @include respondAt(470px) {
-      padding: 0 0;
-    }
+    // @include respondAt(1525px) {
+    //   padding: 0 60px 0 100px;
+    //   gap: 100px;
+    // }
+    // @include respondAt(1335px) {
+    //   padding: 0 90px;
+    //   gap: 150px;
+    // }
+    // @include respondAt(1135px) {
+    //   padding: 0 40px;
+    // }
+
+    // @include respondAt(840px) {
+    //   flex-direction: column;
+    //   gap: 20px;
+    // }
+
+    // @include respondAt(470px) {
+    //   padding: 0 0;
+    // }
   }
 
   &__left {
@@ -54,7 +58,7 @@
       @include box(330px, auto);
       margin-bottom: 30px;
       padding: 0 10px;
-      filter: var(--svgfilter);
+      // filter: var(--svgfilter);
       @include respondAt(1095px) {
         width: 250px;
         margin-top: 30px;
@@ -65,15 +69,6 @@
       }
     }
 
-    &--Copyright {
-      @include box(auto, auto);
-      font-family: "Poppins", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 13px;
-      text-align: center;
-      color: var(--copyrightText);
-    }
   }
 
   &__right {
@@ -142,6 +137,23 @@
       font-weight: 500;
       letter-spacing: 0.02em;
       color: rgba(255, 255, 255, 0.46);
+    }
+  }
+
+  &__top {
+    @include make-flex($dir: row);
+  }
+
+  &__bottom {
+    @include make-flex($dir: row, $just: center);
+    &--Copyright {
+      @include box(auto, auto);
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      text-align: center;
+      color: var(--copyrightText);
     }
   }
 }
