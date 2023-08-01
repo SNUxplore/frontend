@@ -1,0 +1,51 @@
+.NavbarWrapper {
+    @include box($width: fit-content);
+    @include make-flex($dir: row, $just: center);
+    border-radius: 12px;
+    background: var(--thin-smoke, #4D4D4D);
+    padding: 6px 8px;
+    box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.25);
+    // width: 100%;
+    gap: 10px;
+    // @include box(100%);
+    &__left {
+        @include box($width: fit-content);
+        border-radius: 12px;
+        background: var(--dark-smoke, #181818);
+        padding: 22px 25px;
+        gap: 10px;
+    }
+
+    &__right {
+        @include box($width: fit-content);
+    }
+
+    &__items {
+        @include make-flex($dir: row);
+        border-radius: 12px;
+        background: var(--light-smoke, #3E3E3E);
+        padding: 7px 6px;
+        gap: 10px;
+        &--item {
+            padding: 15px 27px;
+            text-decoration: none;
+            gap: 10px;
+            color: var(--off-white, #E3E3E3);
+            font-family: PowerGroteskTrial;
+            font-size: 12.5px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 12px;
+            border: 1px solid var(--white-opacity-10, rgba(255, 255, 255, 0.10));
+        }
+    }
+
+    &__dropdown {
+        // @include make-flex($dir: row);
+        &--logo {
+            min-width: 80px;
+        }
+    }
+    // width: 100%;
+}

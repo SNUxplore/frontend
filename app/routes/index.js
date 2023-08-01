@@ -4,6 +4,7 @@ import InfoComponentMobile from "~/Components/InfoComponentMobile/InfoComponentM
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
 import FeatureCard from "~/Components/FeatureCard/FeatureCard";
 import Header from "~/Components/Header/Header";
+import Navbar from "~/Components/Navbar/Navbar";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import Banner from "~/Components/Banner/Banner";
 import styleSheet from "~/styles/routes/LandingPage.css";
@@ -187,6 +188,7 @@ export default function LandingPage() {
             </div>
           </div> */}
         </section>
+        <Navbar />
         <section className="featureSection">
             <div className="featureSection__top">
               <ButtonLink 
