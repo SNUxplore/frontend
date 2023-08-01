@@ -41,7 +41,7 @@
 
       &--logo {
         @include box(47px, 47px);
-        filter: var(--svgfilter);
+        // filter: var(--svgfilter);
         @include respondAt(585px) {
           width: 100%;
         }
@@ -120,6 +120,8 @@
         margin-top: 20px;
       }
       span {
+        // color: var(--highlightTextColor);
+        // background: var(--titleHighlight);
         color: var(--highlightTextColor);
         background: var(--titleHighlight);
         padding-left: 0.45rem;
@@ -195,7 +197,8 @@
             border: 1px solid #898989;
           }
           @include respondAt(585px) {
-            border: 1px solid var(--blue);
+            // border: 1px solid var(--blue);
+            border: 1px solid var(--primaryColor);
           }
         }
         .activeTab {
@@ -204,7 +207,8 @@
           }
           @include respondAt(585px) {
             color: var(--white);
-            background-color: var(--blue);
+            // background-color: var(--blue);
+            background-color: var(--primaryColor);
           }
         }
 

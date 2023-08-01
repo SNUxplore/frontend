@@ -12,7 +12,9 @@ import penIcon from "../Assets/Img/penIcon.svg";
 import cartIcon from "../Assets/Img/cartIcon.svg";
 import foodIcon from "../Assets/Img/foodIcon.svg";
 import upDropDown from "../Assets/Img/upDropDown.svg";
-import xploreLogo from "../Assets/Img/newLogo.svg";
+// import xploreLogo from "../Assets/Img/newLogo.svg";
+import appLogo from "../Assets/Img/logo.svg";
+// import xploreLogo from "../Assets/Img/newLogo.svg";
 import downDropDown from "../Assets/Img/downDropDown.svg";
 import basketBallIcon from "../Assets/Img/basketBallIcon.svg";
 import residentialIcons from "../Assets/Img/residentialsIcon.svg";
@@ -122,7 +124,7 @@ export default function Navigate() {
           <div className="NavigatePage__left--header">
             <a href="/">
               <img
-                src={xploreLogo}
+                src={appLogo}
                 alt="xploreLogo"
                 className="NavigatePage__left--header--logo"
               />
