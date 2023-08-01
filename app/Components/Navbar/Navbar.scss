@@ -8,6 +8,7 @@
     // width: 100%;
     gap: 10px;
     // @include box(100%);
+
     &__left {
         @include box($width: fit-content);
         border-radius: 12px;
@@ -47,5 +48,34 @@
             min-width: 80px;
         }
     }
+    
+    @include respondAt(575px) {
+        width: 100%;
+        padding: 5px;
+        gap: 10px;
+        &__items {
+            padding: 5px;
+            font-size: 10px;
+            gap: 5px;
+            &--item {
+                font-size: 10px;
+                padding: 12px 20px;
+            }
+            &--GPT, &--Contact {
+                display: none;
+            }
+        }
+        &__left {
+            padding: 17px 20px;
+        }
+        &__dropdown {
+            &--logo {
+                width: 70px;
+                min-width: 70px;
+            }
+        }
+
+    }
+
     // width: 100%;
 }
