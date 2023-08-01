@@ -44,6 +44,9 @@
 
     gap: 65px;
     padding: 0px 0px 0px 130px;
+    @include respondAt(505px) {
+      padding: 0px 0px 0px 4.5px;
+    }
 
     &__top {
       // @include box($height: 75%);
@@ -102,6 +105,9 @@
         @include respondAt(1095px) {
           padding-top: 0;
         }
+        @include respondAt(935px) {
+          display: none;
+        }
       }
     }
 
@@ -121,6 +127,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: 116.45%;
+        @include respondAt(505px) {
+          font-size: 9vw;
+          line-height: 50px;
+        }
       }
 
       &--unhighlight {
@@ -149,7 +159,7 @@
 
         @include respondAt(505px) {
           font-size: 9vw;
-          line-height: 60px;
+          line-height: 50px;
         }
       }
     }
@@ -173,6 +183,9 @@
     &__buttons {
       @include make-flex($dir: row, $align: flex-start);
       gap: 30px;
+      @include respondAt(505px){
+        gap: 20px;
+      }
 
       &--button {
         padding: 27.914px 11.206px !important;
@@ -185,6 +198,10 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        @include respondAt(505px){
+          width: 120px;
+          font-size: 17.5px;
+        }
       }
 
       &--navigateButton {
@@ -203,6 +220,9 @@
       @include make-flex($dir: row, $just: flex-start);
       width: 100%;
       gap: 70px;
+      @include respondAt(505px){
+        gap:50px;
+      }
       &--left {
         @include box($width: fit-content);
         @include make-flex($dir: column);
@@ -216,16 +236,28 @@
         // height: 100px;
         padding: 7px 10px 6px 10px;
         // @include box($width: fit-content);
+        @include respondAt(505px){
+          width: 100%;
+          box-sizing: content-box;
+        }
         border-radius: 65px;
         background: linear-gradient(135deg, rgba(111, 0, 255, 0.20) 0%, rgba(73, 44, 255, 0.20) 47.81%, rgba(0, 163, 255, 0.20) 100%);
       }
 
       &--userImageArrowImg {
         max-width: 60px;
+        @include respondAt(505px){
+          max-width: 45px;
+        }
       }
 
       &--userImage {
         max-width: 60%;
+        /*@include respondAt(505px)
+        {
+          width: 100%;
+          box-sizing: content-box; 
+        }*/
       }
     }
 
@@ -235,6 +267,9 @@
         font-family: NohemiBold;
         // font-size: 62.5px;
         font-size: 3rem;
+        @include respondAt(505px){
+          font-size: 2.5rem;;
+        }
         // font-style: normal;
         // font-weight: 700;
         // line-height: normal;
@@ -242,7 +277,7 @@
 
       &--text {
         max-width: 120px;
-        margin-top: -15px;
+        margin-top: -12px;
         color: var(--light-smoke, #3E3E3E);
         // font-family: AcidGroteskRegular;
         // font-size: 17.829px;
@@ -250,6 +285,9 @@
         font-style: normal;
         font-weight: 500;
         line-height: 122.45%; /* 24.28px */
+        @include respondAt(505px){
+          font-size: 0.8rem;
+        }
       }
     }
 
