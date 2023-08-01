@@ -21,6 +21,22 @@ function Footer() {
 
           <div className="FooterWrapper__right">
             <ul className="FooterWrapper__right--Service">
+              <li className="SocialMediaHandles" id="SocialMediaMobile">
+                <a target="_blank" href="https://www.linkedin.com/company/snuxplore" rel="noreferrer">
+                  <img
+                    src={linkedInLogo}
+                    alt="LinkedIn logo"
+                    className="SocialMediaIcons LinkedIn"
+                  />
+                </a>
+                <a target="_blank" href="https://www.instagram.com/snu.xplore/" rel="noreferrer">
+                  <img
+                    src={instagramLogoWhite}
+                    alt="Instagram logo"
+                    className="SocialMediaIcons"
+                  />
+                </a>
+              </li>
               <li className="FooterWrapper__right--rowHeading">Services</li>
               <li>
                 <a href="/about">About us</a>

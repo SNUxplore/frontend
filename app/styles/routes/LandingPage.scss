@@ -541,8 +541,37 @@
 
     &__bottom {
       @include make-flex($dir: row, $align: flex-start);
-      overflow-x: scroll;
+      // overflow-x: scroll;
       gap: 20px;
+    }
+
+    @include respondAt(575px) {
+      padding: 0px 30px;
+      &__top {
+        width: 100%;
+          &--button {
+              border-radius: 8px;
+              height: 30px;
+              width: 140px;
+              padding: 0px !important;
+          }
+      }
+
+      &--desc {
+        font-size: 0.9rem;
+      }
+
+      &__bottom {
+        gap: 0px;
+        display: inline;
+      }
+
+      &__title {
+        &--highlight, h1 {
+            font-size: 2.1rem;
+            line-height: 116%;
+        } 
+      }
     }
 
   }

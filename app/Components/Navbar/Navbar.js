@@ -15,10 +15,10 @@ function Navbar() {
         <div className="NavbarWrapper__right">
             <div className="NavbarWrapper__items">
                 <a href="" className="NavbarWrapper__items--item">Home</a>
-                <a href="" className="NavbarWrapper__items--item">SNU-GPT</a>
+                <a href="" className="NavbarWrapper__items--item NavbarWrapper__items--GPT">SNU-GPT</a>
                 <a href="" className="NavbarWrapper__items--item">Features</a>
                 <a href="" className="NavbarWrapper__items--item">About</a>
-                <a href="" className="NavbarWrapper__items--item">Contact</a>
+                <a href="" className="NavbarWrapper__items--item NavbarWrapper__items--Contact">Contact</a>
             </div>
         </div>
     </div> 

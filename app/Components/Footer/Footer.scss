@@ -57,7 +57,7 @@
     &--logo {
       @include box(330px, auto);
       margin-bottom: 30px;
-      padding: 0 10px;
+      // padding: 0 10px;
       // filter: var(--svgfilter);
       @include respondAt(1095px) {
         width: 250px;
@@ -114,6 +114,10 @@
         }
       }
 
+      #SocialMediaMobile {
+        display: none;
+      }
+
       .SocialMediaHandles {
         @include make-flex($dir: row, $just: flex-start);
         @include box(100%, auto);
@@ -154,6 +158,25 @@
       font-size: 13px;
       text-align: center;
       color: var(--copyrightText);
+    }
+  }
+
+  @include respondAt(575px) {
+    padding-left: 5px;
+    &__left {
+      width: auto;
+      padding: 0px 25px;
+    }
+    &__top, &__right {
+      @include make-flex($dir: column, $align: flex-start);
+    }
+    .SocialMediaHandles {
+      display: none;
+    }
+    #SocialMediaMobile {
+      margin-top: -30px;
+      margin-bottom: 10px;
+      display: flex;
     }
   }
 }
