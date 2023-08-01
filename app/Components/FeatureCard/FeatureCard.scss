@@ -47,6 +47,10 @@
             font-size: 1rem;
         }
     }
+
+    @include respondAt(575px) {
+        width: 100%;
+    }
 //   font-family: "Poppins", sans-serif;
 //   background-color: var(--eventCardBackground);
 //   @include make-flex($dir: row);
