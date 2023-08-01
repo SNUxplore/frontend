@@ -155,7 +155,8 @@
     }
 
     &__desc {
-      font-family: "Poppins", sans-serif;
+      // font-family: "Poppins", sans-serif;
+      font-family: AcidGroteskRegular;
       color: var(--primaryTextColor);
       color: #000;
       font-weight: 400;
@@ -401,12 +402,96 @@
       width: 100%;
     }
     @include respondAtAlt(780px) {
+      // padding-bottom: 40px;
+      // margin-bottom: 350px;
       padding-bottom: 40px;
-      margin-bottom: 350px;
+      margin-bottom: 20px;
     }
     @include respondAt(335px) {
       gap: 115px;
     }
+  }
+
+  .featureSection {
+    padding: 0px 0px 0px 130px;
+    @include make-flex($dir: column, $align: flex-start);
+    // flex-wrap: nowrap;
+    // overflow-x: auto;
+    // width: 100%;
+
+    &__bottom {
+      @include box(100%);
+      height: 100%;
+    }
+
+    // &__top, &__bottom {
+    //   @include box(100%);
+    //   height: 100%;
+    // }
+
+    &__top {
+      @include box(50%);
+      &--button {
+        border-radius: 14px;
+        background: rgba(206, 233, 255, 0.60);
+        border: none;
+        color: var(--black, #000);
+        font-family: AcidGroteskRegular;
+        font-style: normal;
+        line-height: 146.95%; /* 40.295px */
+        margin-bottom: 20px;
+        // padding: 18px 26px;
+      }
+    }
+
+    &--desc {
+      // font-family: "Poppins", sans-serif;
+      font-family: AcidGroteskRegular;
+      color: #000;
+      font-weight: 400;
+      line-height: 167.5%;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      // font-size: 20px;
+
+      // color: var(--black, #000);
+      // font-family: AcidGroteskRegular;
+      // font-size: 1.3rem;
+      // font-style: normal;
+      // font-weight: 400;
+      // line-height: 146.95%; /* 40.295px */
+      // margin-bottom: 30px;
+    }
+
+    &__title {
+      font-style: normal;
+      margin-bottom: 40px;
+      &--highlight {
+        background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+        font-weight: 400;
+        font-size: 3.5rem;
+        font-family: AcidGroteskRegular;
+        line-height: 116.45%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &--unhighlight {
+        line-height: 116.45%;
+        font-size: 3.5rem;
+        font-family: AcidGroteskRegular;
+        font-weight: 400;
+        color: var(--black);
+      }
+    }
+
+    &__bottom {
+      @include make-flex($dir: row, $align: flex-start);
+      overflow-x: scroll;
+      gap: 20px;
+    }
+
   }
 
   .inquiryFeedbackSection {

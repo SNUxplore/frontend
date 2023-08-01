@@ -2,6 +2,7 @@ import React from "react";
 import InfoComponentDesktop from "~/Components/InfoComponentDesktop/InfoComponentDesktop";
 import InfoComponentMobile from "~/Components/InfoComponentMobile/InfoComponentMobile";
 import ButtonLink from "~/Components/ButtonLink/ButtonLink";
+import FeatureCard from "~/Components/FeatureCard/FeatureCard";
 import Header from "~/Components/Header/Header";
 import SearchBar from "~/Components/SearchBar/SearchBar";
 import Banner from "~/Components/Banner/Banner";
@@ -11,6 +12,11 @@ import arrow from "../Assets/Img/Arrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
 import HeroImage from "../Assets/Img/heroImage.svg";
 import UsersImage from "../Assets/Img/userPhotos.svg";
+import NavigationMadeEasyCardImg from "../Assets/Img/NavigationMadeEasyCardImg.svg";
+import SNUGPTGuideCardImg from "../Assets/Img/SNUGPTGuideCardImg.svg";
+import AdminInfoCardImg from "../Assets/Img/AdminInfoCardImg.svg";
+// import UsersImage from "../Assets/Img/userPhotos.svg";
+// import UsersImage from "../Assets/Img/userPhotos.svg";
 import InquiryFeedbackAvatar from "../Assets/Img/inquiryFeedbackAvatar.svg";
 import UsersImageArrow from "../Assets/Img/userPhotosArrow.svg";
 import { useMediaQuery } from "react-responsive";
@@ -181,6 +187,26 @@ export default function LandingPage() {
             </div>
           </div> */}
         </section>
+        <section className="featureSection">
+            <div className="featureSection__top">
+              <ButtonLink 
+                content="Our Features 🔥"
+                className="featureSection__top--button"/>
+              <div className="featureSection__title">
+                <h1 className="featureSection__title--unhighlight">Your Gateway to our<br/><b className="featureSection__title--highlight">Unique Features!</b></h1>
+              </div>
+              <p className="featureSection--desc">
+                We get it, life is hard. Navigating through campus and keeping track of events and info shouldn't be. Unlock everything SNU has to offer. All just a search away!
+              </p>
+            </div>
+            <div className="featureSection__bottom">
+              <FeatureCard img={NavigationMadeEasyCardImg} title="Navigation Made Easy" /> 
+              <FeatureCard img={SNUGPTGuideCardImg} title="SNU GPT: Your AI Guide" /> 
+              <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Safety Toolkit" /> 
+              <FeatureCard img={AdminInfoCardImg} title="Admin Info" /> 
+              {/* <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Navigation Made Easy" />  */}
+            </div>
+        </section>
         <section className="inquiryFeedbackSection">
             <div class="inquiryFeedbackSection__left">
               <ButtonLink
@@ -203,6 +229,7 @@ export default function LandingPage() {
               <img src={InquiryFeedbackAvatar} className="inquiryFeedbackSection__right--img" />
             </div>
         </section>
+        
         {/* <section className="aboutSection">
           <InfoComponentDesktop
             indicatorState={
