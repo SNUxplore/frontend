@@ -27,24 +27,25 @@ import { useLoaderData } from "@remix-run/react";
 function Header() {
   const node = React.useRef();
   const url = useLoaderData();
-  const [navState, setNavState] = React.useState(false);
+  // const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
-  const handleClickOutside = (e) => {
-    const hamButton = document.getElementById("NavBarInput");
-    if (node.current.contains(e.target)) {
-      return;
-    }
 
-    hamButton.click();
-  };
+  // const handleClickOutside = (e) => {
+  //   const hamButton = document.getElementById("NavBarInput");
+  //   if (node.current.contains(e.target)) {
+  //     return;
+  //   }
 
-  React.useEffect(() => {
-    const hamButton = document.getElementById("NavBarInput");
+  //   hamButton.click();
+  // };
 
-    if (hamButton.checked && !navState) {
-      hamButton.click();
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   const hamButton = document.getElementById("NavBarInput");
+
+  //   if (hamButton.checked && !navState) {
+  //     hamButton.click();
+  //   }
+  // }, []);
 
   React.useEffect(() => {
     if (localStorage.getItem("theme")) {
@@ -53,16 +54,16 @@ function Header() {
     }
   });
 
-  React.useEffect(() => {
-    if (navState) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [navState]);
+  // React.useEffect(() => {
+  //   if (navState) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   }
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [navState]);
 
   const dropdown = useMediaQuery({
     query: "(max-width: 1230px)",
@@ -99,13 +100,15 @@ function Header() {
           />
         </a>
       )} */}
-      <div
+
+      {/* <div
         className={`HeaderWrapper__menu ${
           navState ? "HeaderWrapper__menu--open" : ""
         }`}
-      >
+      > */}
+      <div className="HeaderWrapper__menu">
         <div className="HeaderWrapper__left">
-          {!dropdown && (
+          {/* {!dropdown && ( */}
             <>
             <a href="/">
               <img
@@ -117,7 +120,7 @@ function Header() {
               <input type="input" className="HeaderWrapper__left--searchBarInput" placeholder="Search for location, admin info, academics, food or anything"/>
             </div>
             </>
-          )}
+          {/* )} */}
         </div>
 
         {/* <div className="HeaderWrapper__middle">
@@ -329,19 +332,19 @@ function Header() {
         </ul> */}
 
         <div className="HeaderWrapper__right">
-          {!dropdown && (
-            // <div
-            //   className="HeaderWrapper__right--themeButtons"
-            //   style={{
-            //     background: themeStyle[currentTheme ? currentTheme : "light"],
-            //   }}
-            // >
-            // </div>
+          {/* {!dropdown && (
+            <div
+              className="HeaderWrapper__right--themeButtons"
+              style={{
+                background: themeStyle[currentTheme ? currentTheme : "light"],
+              }}
+            >
+            </div> */}
             <button className="HeaderWrapper__right--contactButton">
               Contact
             </button>
-          )}
-          {dropdown && (
+          {/* )} */}
+          {/* {dropdown && (
             <div
               className="HeaderWrapper__right--themeButtons"
               style={{
@@ -378,9 +381,9 @@ function Header() {
                 </a>
               </div>
             </div>
-          )}
+          )} */}
         </div>
-        {dropdown && (
+        {/* {dropdown && (
           <div
             style={{ position: "relative", width: "100%", height: "1000px" }}
           >
@@ -390,10 +393,10 @@ function Header() {
               <span className="HeaderWrapper__dots--dot"></span>
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
-      <div
+      {/* <div
         className="HeaderWrapper__Hamburger"
         style={{
           position: navState ? "fixed" : "",
@@ -425,7 +428,7 @@ function Header() {
             <span className="span HL3" />
           </label>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

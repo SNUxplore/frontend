@@ -19,9 +19,16 @@
     display: none;
   }
 
+  @include respondAt(1230px) {
+    height: 100px;
+    padding-inline: 30px;
+    margin-block: 20px;
+  }
+
   &__left {
     @include make-flex(row, $just: left);
     width: 100%;
+    gap: 50px;
     &--logo {
       @include box(47px, 47px);
       transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -31,9 +38,10 @@
       }
     }
 
+
     &--searchBar {
       @include make-flex(row, center, center);
-      margin-left: 40px;
+      // margin-left: 40px;
       width: 30%;
     }
 
@@ -59,96 +67,41 @@
       background-repeat: no-repeat;
     }
 
-
-
-    @include respondAt(1230px) {
-      display: none;
-    }
-  }
-
-  &__middle {
-    @include box($height: 50px, $width: fit-content);
-    @include make-flex($dir: row);
-    gap: 45px;
-    list-style: none;
-
-
-    &--option {
-      width: 100%;
-      button {
-        background-color: var(--transparent);
-      }
-
-      a,
-      button {
-        text-decoration: none;
+    @include respondAt(575px) {
+      &--searchBar {
         width: 100%;
-        text-align: left;
-        color: var(--textColor);
-        font-size: 15px;
-        font-weight: normal;
-        font-family: "Poppins", sans-serif;
-        padding: 7px 9px;
-        border-style: none;
-        cursor: pointer;
-        white-space: nowrap;
-        &:hover {
-          text-decoration: underline;
-        }
-        @include respondAt(1230px) {
-          color: var(--navbarItems);
-          text-decoration: none;
-          font-size: 15px;
-          font-weight: 500;
-        }
-      }
-      p {
-        // margin-top: 15%;
-        font-size: 10px;
-        font-weight: 100;
-        font-family: "Poppins", sans-serif;
-        color: var(--navbarOption);
-        padding-bottom: 1.75%;
       }
 
-      img {
-        @include respondAt(1230px) {
-          filter: var(--headerSvgFilter);
-        }
+      &--searchBarInput::placeholder {
+        font-size: 12px;
       }
-      @include respondAt(1230px) {
-        &:hover {
-          img {
-            filter: var(--svgfilter);
-          }
 
-          a {
-            color: var(--navbarHover);
-            text-decoration: none;
-          }
-        }
+      &--searchBarInput {
+        padding: 10px 10px 10px 50px;
+        background-position: 14px 10px;
       }
-      img {
-        display: inline;
-        margin-right: 15px;
-        vertical-align: middle;
-        @include box($height: 15px, $width: 15px);
-      }
+
+      gap: 15px;
     }
-    &--lineSep {
-      @include box(100%, 0.25px);
-      background-color: var(--navbarLineSep);
-    }
+
+    // @include respondAt(1230px) {
+    //   display: none;
+    // }
   }
 
   &__right {
     @include make-flex($dir: row);
+    @include respondAt(575px) {
+      display: none;
+    }
+
     @include respondAt(1230px) {
       justify-content: space-evenly;
       column-gap: 29px;
       width: 100%;
       padding-bottom: 50px;
     }
+
     // button {
     //   @include box(36px, 36px);
     //   border: none;
@@ -184,216 +137,99 @@
       line-height: normal;
     }
 
-    &--themeButtons {
-      @include respondAtAlt(1230px) {
-        @include box($width: auto, $height: 40px);
-        @include make-flex($dir: row);
-        column-gap: 8px;
-        border-radius: 9px;
-        align-items: center;
-        padding: 6px;
-        // @include respondAt(1530px) {
+  // @include respondAt(1230px) {
+  //   z-index: 5;
+  //   @include box($height: 110px);
 
-        button {
-          @include make-flex();
-        }
+  //   @include make-flex($dir: row, $just: space-between);
+  //   padding: 0 130px;
+  //   &__middle {
+  //     @include make-flex($dir: column, $align: flex-start, $just: center);
+  //     height: fit-content;
+  //     width: 100%;
+  //     gap: 17px;
+  //   }
+  //   #NavBarInput {
+  //     position: absolute;
+  //     opacity: 0;
+  //     top: 0;
+  //     left: 0;
+  //     height: 28px;
+  //     margin: 0;
+  //     width: 28px;
+  //   }
+  //   .hamButton {
+  //     z-index: 1;
+  //     // position: absolute;
+  //     height: 28px;
+  //     // top: 20%;
+  //     // right: 3%;
+  //     width: auto;
+  //     @include make-flex();
+  //     label {
+  //       @include make-flex($just: space-around);
+  //       height: 100%;
+  //       margin: unset;
+  //       cursor: pointer;
+  //       span {
+  //         display: block;
+  //         width: 28px;
+  //         // border-top: 1.3px solid rgb(124, 34, 34);
+  //         height: 3.3px;
+  //         background-color: var(--blue);
+  //         border-radius: 2px;
+  //         transform-origin: 4px 0px;
+  //         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  //         &:first-child {
+  //           transform-origin: 0% 0%;
+  //         }
+  //         &:nth-last-child(2) {
+  //           transform-origin: 0% 100%;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-        &--option {
-          @include box(25px, 25px);
-          display: inline;
+  // @include respondAt(1335px) {
+  //   padding: 0 65px;
+  // }
 
-          &--pink {
-            &--active {
-              filter: brightness(0) saturate(100%) invert(48%) sepia(61%)
-                saturate(6336%) hue-rotate(321deg) brightness(103%)
-                contrast(95%);
-            }
-          }
+  // @include respondAt(1135px) {
+  //   padding: 0 40px;
+  // }
 
-          &--active {
-            filter: brightness(0) saturate(100%) invert(41%) sepia(76%)
-              saturate(1385%) hue-rotate(195deg) brightness(98%) contrast(98%);
-          }
-        }
-      }
-      @include respondAt(1230px) {
-        width: 100%;
-        background: var(--navbarBackground) !important;
-      }
-      &--socialMediaIcons {
-        filter: var(--headerSvgFilter);
-      }
-    }
-    gap: 30px;
-    flex-wrap: wrap;
-    &--not {
-      background-color: var(--antiqueWhite);
-    }
-    button {
-      img {
-        @include box($height: 18px, $width: 18px);
-        @include respondAt(1230px) {
-          filter: brightness(0) saturate(100%) invert(93%) sepia(0%)
-            saturate(39%) hue-rotate(306deg) brightness(123%) contrast(100%);
-          &:hover {
-            filter: none;
-          }
-        }
-      }
-    }
-    &--paragraph {
-      font-size: 10px;
-      font-weight: 100;
-      font-family: "Poppins", sans-serif;
-      color: var(--navbarOption);
-      padding-bottom: 1.75%;
-      width: 100%;
-    }
-    &--lineSep {
-      align-items: center;
-      width: 100%;
-      height: 0.5px;
-      margin-bottom: 15px;
-      background-color: var(--navbarLineSep);
-    }
-  }
+  // @include respondAt(470px) {
+  //   padding: 0 30px;
+  // }
 
-  @include respondAt(1230px) {
-    z-index: 5;
-    @include box($height: 110px);
-
-    @include make-flex($dir: row, $just: space-between);
-    padding: 0 130px;
-    &__middle {
-      @include make-flex($dir: column, $align: flex-start, $just: center);
-      height: fit-content;
-      width: 100%;
-      gap: 17px;
-    }
-    #NavBarInput {
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      left: 0;
-      height: 28px;
-      margin: 0;
-      width: 28px;
-    }
-    .hamButton {
-      z-index: 1;
-      // position: absolute;
-      height: 28px;
-      // top: 20%;
-      // right: 3%;
-      width: auto;
-      @include make-flex();
-      label {
-        @include make-flex($just: space-around);
-        height: 100%;
-        margin: unset;
-        cursor: pointer;
-        span {
-          display: block;
-          width: 28px;
-          // border-top: 1.3px solid rgb(124, 34, 34);
-          height: 3.3px;
-          background-color: var(--blue);
-          border-radius: 2px;
-          transform-origin: 4px 0px;
-          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-          &:first-child {
-            transform-origin: 0% 0%;
-          }
-          &:nth-last-child(2) {
-            transform-origin: 0% 100%;
-          }
-        }
-      }
-    }
-
-    #NavBarInput:checked ~ .hamButton > label > .span.HL1 {
-      opacity: 1;
-      transform: rotate(45deg) translate(3px, -5px);
-      background-color: var(--navBarCross);
-    }
-    #NavBarInput:checked ~ .hamButton > label > .span.HL2 {
-      opacity: 0;
-      transform: rotate(0deg) scale(0.2, 0.2);
-      background-color: var(--navBarCross);
-    }
-    #NavBarInput:checked ~ .hamButton > label > .span.HL3 {
-      transform: rotate(-45deg) translate(3px, -1px);
-      background-color: var(--navBarCross);
-    }
-  }
-
-  @include respondAt(1335px) {
-    padding: 0 65px;
-  }
-
-  @include respondAt(1135px) {
-    padding: 0 40px;
-  }
-
-  @include respondAt(470px) {
-    padding: 0 30px;
   }
 
   &__menu {
     @include box();
     @include make-flex($dir: row, $just: space-between);
-    // padding: 0 25px;
     z-index: 3;
     gap: 10px;
 
     @include respondAt(1230px) {
+      // display: inline;
+      @include make-flex($dir: row);
+      // position: fixed;
       top: 0;
-      position: fixed;
-      @include make-flex($just: flex-start);
-      padding-top: 125px;
-      gap: 15px;
-      right: 0;
-      top: 0;
-      width: 100%;
-      max-width: 290px;
-      height: 100vh;
-      background-color: var(--navbarBackground);
-      transform: translateX(100%);
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-      &--open {
-        transform: translateX(0%);
-        overflow-y: auto;
-      }
-
-      &__Hamburger {
-        position: absolute;
-        height: 28px;
-        width: 28px;
-        top: 55%;
-        z-index: 3;
-        left: 90%;
-
-        transform: translate(-50%, -50%);
-      }
-    }
-  }
-
-  &__Hamburger {
-    z-index: 3;
-  }
-  &__dots {
-    position: absolute;
-    bottom: 28px;
-    left: 0;
-    @include make-flex($dir: row, $just: space-evenly);
-    gap: 20px;
-    width: 100%;
-
-    &--dot {
-      @include box(15px, 15px);
-      background-color: var(--navbarItems);
-      border-radius: 50%;
-      display: inline-block;
+      left: 0;
+      // top: 0;
+      // position: fixed;
+      // @include make-flex($just: flex-start);
+      // padding-top: 125px;
+      // gap: 15px;
+      // right: 0;
+      // top: 0;
+      // width: 100%;
+      // max-width: 290px;
+      // // height: 100vh;
+      // background-color: var(--navbarBackground);
+      // transform: translateX(100%);
+      // transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     }
   }
 }
