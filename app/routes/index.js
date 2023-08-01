@@ -16,6 +16,7 @@ import UsersImage from "../Assets/Img/userPhotos.svg";
 import NavigationMadeEasyCardImg from "../Assets/Img/NavigationMadeEasyCardImg.svg";
 import SNUGPTGuideCardImg from "../Assets/Img/SNUGPTGuideCardImg.svg";
 import AdminInfoCardImg from "../Assets/Img/AdminInfoCardImg.svg";
+import AvatarMobile from "../Assets/Img/avatarmobile.png";
 // import UsersImage from "../Assets/Img/userPhotos.svg";
 // import UsersImage from "../Assets/Img/userPhotos.svg";
 import InquiryFeedbackAvatar from "../Assets/Img/inquiryFeedbackAvatar.svg";
@@ -230,6 +231,9 @@ export default function LandingPage() {
             <div class="inquiryFeedbackSection__right">
               <img src={InquiryFeedbackAvatar} className="inquiryFeedbackSection__right--img" />
             </div>
+            <div class="inquiryFeedbackSection__bottom">
+              <img src={AvatarMobile} className="inquiryFeedbackSection__bottom--img" />
+            </div> 
         </section>
         
         {/* <section className="aboutSection">
