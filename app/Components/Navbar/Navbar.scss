@@ -1,12 +1,18 @@
 .NavbarWrapper {
-    @include box($width: fit-content);
+    position: fixed;
+    @include box($width: fit-content,$height: absolute);
     @include make-flex($dir: row, $just: center);
     border-radius: 12px;
     background: var(--thin-smoke, #4D4D4D);
     padding: 6px 8px;
     box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.25);
     // width: 100%;
+    bottom: 20px;
+    z-index: 100;
     gap: 10px;
+    //margin-left: 20px;
+    //left:10px;
+    //right:20px;
     // @include box(100%);
 
     &__left {
@@ -53,6 +59,7 @@
         width: 100%;
         padding: 5px;
         gap: 10px;
+        //margin-left: 10px;
         &__items {
             padding: 5px;
             font-size: 10px;

@@ -11,7 +11,7 @@ import styleSheet from "~/styles/routes/LandingPage.css";
 import "~/styles/root/global.css";
 import arrow from "../Assets/Img/Arrow.svg";
 import instagramLogo from "../Assets/Img/instagramLogo.svg";
-import HeroImage from "../Assets/Img/heroImage.svg";
+import HeroImage from "../Assets/Img/heroImage.png";
 import UsersImage from "../Assets/Img/userPhotos.svg";
 import NavigationMadeEasyCardImg from "../Assets/Img/NavigationMadeEasyCardImg.svg";
 import SNUGPTGuideCardImg from "../Assets/Img/SNUGPTGuideCardImg.svg";
@@ -81,7 +81,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main> */}
-
+<Navbar />
       <main className="LandingPage__mainContainer">
         <section className="heroSection">
           <div className="heroSection__top">
@@ -189,7 +189,7 @@ export default function LandingPage() {
             </div>
           </div> */}
         </section>
-        <Navbar />
+        
         <section className="featureSection">
             <div className="featureSection__top">
               <ButtonLink 
