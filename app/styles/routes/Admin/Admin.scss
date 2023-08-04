@@ -34,8 +34,10 @@
     }
     &--bold {
       font-weight: 700;
-      color: var(--highlightTextColor);
-      background: var(--titleHighlight);
+      color: var(--unhighlightTextColor);
+      // color: var(--highlightTextColor);
+      background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%); //new colour :p
+      // background: var(--titleHighlight);
     }
   }
 
@@ -60,6 +62,7 @@
     }
   }
   &__main {
+    margin-top: 35px;//new margin, no search bar :p
     gap: 50px;
     width: 100%;
     max-width: 1585px;
@@ -72,8 +75,8 @@
       padding: 0 10px;
     }
 
-    &--searchContainer {
-      margin-top: 35px;
+    &--searchContainer {//useless css :p
+      margin-top: 35px;//removing search bar and copying it to AdminPage__main :p
       @include make-flex();
       width: 50%;
 
@@ -111,9 +114,11 @@
 
   &__content {
     &--left {
+      // @include box(220px, auto);
       @include box(220px, auto);
 
       @include respondAt(590px) {
+        justify-content: space-evenly;
         width: 100%;
         height: auto !important;
         position: sticky;
@@ -190,8 +195,10 @@
       }
       .activeTab {
         opacity: 100%;
+        // color: black;
+        background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%);     //new colour :p   
         color: var(--white);
-        background-color: var(--blue);
+        // background-color: var(--blue);
       }
     }
 
@@ -200,6 +207,7 @@
       max-width: 900px;
       @include make-flex($dir: row, $just: flex-start, $align: flex-start);
       flex-wrap: wrap;
+      justify-content: center; //centering the contacts when window gets narrower :p
       gap: 25px;
       padding: 0 25px;
 
