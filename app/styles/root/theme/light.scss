@@ -1,4 +1,6 @@
 @mixin lightMode() {
+  --primaryTextColorMain: #363B53;
+  //  for use in admin tab, navigate tab etc. :p
   --contactButton: #181818;
   --pageBackground: #ffffff;
   --primaryTextColor: #363b53;

@@ -95,8 +95,9 @@
       &--title {
         @include box();
         font-size: 35px;
-        color: var(--unhighlightTextColor);
-        font-weight: 500;
+        // color: var(--unhighlightTextColor);
+        color: var(--primaryTextColorMain); //for the new light mode :p
+        font-weight: 400; //new weight 500 -> 400:p
         margin-bottom: 1vh;
 
         @include respondAt(890px) {
@@ -118,15 +119,19 @@
         font-size: 16px;
         line-height: 167.5%;
         margin-top: 20px;
+        color: black;//given in design :p
       }
       span {
         // color: var(--highlightTextColor);
         // background: var(--titleHighlight);
-        color: var(--highlightTextColor);
-        background: var(--titleHighlight);
+        // color: var(--highlightTextColor);
+        color: white;  //new color :p
+        // color: yellow;
+        // background: var(--titleHighlight);
+        background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%);     //new colour :p 
         padding-left: 0.45rem;
         padding-right: 0.45rem;
-        font-weight: 700;
+        font-weight: 400;//new weight in design :p
         margin-left: 5px;
       }
     }
@@ -208,7 +213,10 @@
           @include respondAt(585px) {
             color: var(--white);
             // background-color: var(--blue);
-            background-color: var(--primaryColor);
+            padding: 9px 11px;
+            background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%);     //new colour :p
+            border-radius: 20px;
+            // background-color: var(--primaryColor);
           }
         }
 

@@ -142,7 +142,8 @@ export default function Navigate() {
               you covered!
             </p>
           </div>
-          <SearchBar style={{ width: "100%", marginBottom: "20px" }} />
+          {/* <SearchBar style={{ width: "100%", marginBottom: "20px" }} /> */}
+          {/* not needed anymore :p */}
           <div
             className={`NavigatePage__right--panel ${
               isOpen ? "NavigatePage__right--panel--active" : ""
