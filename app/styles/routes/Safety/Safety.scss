@@ -1,0 +1,146 @@
+@import "../../root/mixins";
+
+.SafetyToolkitPage {
+  @include make-flex($just: flex-start);
+  overflow-x: hidden;
+
+  min-height: 100vh;
+  &--effect {
+    position: absolute;
+    border-radius: 547px;
+    opacity: 0.8;
+    z-index: -1;
+  }
+  &--effectLeft {
+    // top: 400px;
+    top: 60vh;
+    left: 0;
+    background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+    width: 300px;
+    height: 300px;
+    filter: blur(130px);
+  }
+
+  &--effectRight {
+    top: 125px;
+    right: -75px;
+    width: 350px;
+    height: 500px;
+    background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+    filter: blur(180px);
+  }
+
+  &__mainContainer {
+    @include make-flex($just: flex-start);
+    gap: 50px;
+    width: 100%;
+    min-height: calc(100% - 110px);
+    padding: 0px;
+    transition: padding 0.5s ease-in-out, filter 0.5s;
+    margin-top: 90px;
+  }
+
+  &__cards {
+    @include make-flex($dir: row);
+    flex-wrap: wrap;
+    padding-inline: 30px;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__mainSection {
+    @include make-flex();
+    gap: 80px;
+    
+    &--highlightText {
+      background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // font-family: ;
+      // font-size: 79.633px;
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 116.45%;
+      @include respondAt(575px) {
+        // font-size: 9vw;
+        font-size: 2.1rem;
+        line-height: 116%;
+      }
+    }
+
+    &--top {
+      @include make-flex($align: center, $just: center);
+      gap: 30px;
+      text-align: center;
+    }
+
+    &--title {
+      font-family: AcidGroteskRegular;
+      font-size: 3.5rem;
+      font-weight: 500;
+      line-height: 116.45%;
+      color: var(--textColor);
+
+      @include respondAt(560px) {
+        font-size: 35px;
+      }
+    }
+
+    &--desc {
+      color: var(--black, #000);
+      font-family: AcidGroteskRegular;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 146.95%; /* 39.88px */
+      width: 50%;
+    }
+
+    &--accessEmergencyButton {
+      @include make-flex();
+      border-radius: 11.963px;
+      border: 1.994px solid var(--light-smoke, #3E3E3E);
+      background: var(--dark-smoke, #181818);
+      padding: 22px 41.206px;
+      gap: 15.951px;
+      width: 270px;
+      color: var(--white, #FFF);
+      text-align: center;
+      font-family: PowerGroteskTrial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    
+    @include respondAt(575px) {
+      gap: 80px;
+      padding: 10px;
+    }
+  } 
+
+  @include respondAt(575px) {
+    &--effectLeft, &--effectRight {
+      display: none;
+    }
+    &__mainContainer {
+      margin-top: 0px;
+    }
+    &__mainSection {
+      &--title {
+        font-size: 2.1rem;
+        line-height: 116%;
+      }
+      &--desc {
+        width: 100%;
+        font-size: 0.9rem;
+      }
+      &--accessEmergencyButton {
+        width: 250px;
+        font-size: .8rem;
+      }
+    }
+  }
+}
