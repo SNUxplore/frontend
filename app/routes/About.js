@@ -19,38 +19,41 @@ import Riya from "../Assets/Img/Riya.jpg";
 import Yathansh from "../Assets/Img/Yathansh.jpg";
 import { useNavigate } from "@remix-run/react";
 import aboutIllustration from "../Assets/Img/xplorAboutusImage.svg";
+import ButtonLink from "~/Components/ButtonLink/ButtonLink";
+import Navbar from "~/Components/Navbar/Navbar";
 
 export function links() {
   return [{ rel: "stylesheet", href: styleSheet }];
 }
 
-const teams = ["Core", "Web Dev", "Design", "Content"];
+// const teams = ["Core", "Web Dev", "Design", "Content"];
+const teams = ["Development Team", "Design", "Content", "Marketing"];
 const teamData = [
-  {
-    id: "1",
-    name: "Prabhav Pandey",
-    title: "Lead",
-    gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
-    pic: PrabhavPandey,
-    team: "Core",
-    direction: "center",
-  },
-  {
-    id: "2",
-    name: "Keshav Dubey",
-    title: "Deputy Lead",
-    gif: "https://media.giphy.com/media/Dk57URqjqjHjNGHeMV/giphy.gif",
-    pic: KeshavDubey,
-    team: "Core",
-    direction: "center",
-  },
+  // {
+  //   id: "1",
+  //   name: "Prabhav Pandey",
+  //   title: "Lead",
+  //   gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
+  //   pic: PrabhavPandey,
+  //   team: "Core",
+  //   direction: "center",
+  // },
+  // {
+  //   id: "2",
+  //   name: "Keshav Dubey",
+  //   title: "Deputy Lead",
+  //   gif: "https://media.giphy.com/media/Dk57URqjqjHjNGHeMV/giphy.gif",
+  //   pic: KeshavDubey,
+  //   team: "Core",
+  //   direction: "center",
+  // },
   {
     id: "3",
     name: "AB Santosh",
     title: "Dev Lead",
     gif: "https://media3.giphy.com/media/Y34mR8Pr58um3A7RR6/giphy.gif?",
     pic: ABSantosh,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "right",
   },
   {
@@ -59,7 +62,7 @@ const teamData = [
     title: "Developer",
     gif: "https://cdn.discordapp.com/attachments/846575266545664014/998296836936826880/me.gif",
     pic: Yathansh,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -68,7 +71,7 @@ const teamData = [
     title: "Developer & Designer",
     gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
     pic: AkshatSabavat,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -77,7 +80,7 @@ const teamData = [
     title: "Developer",
     gif: "https://media.giphy.com/media/pCJcExvbKdSeyyv8zP/giphy.gif",
     pic: Aryan,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -86,7 +89,7 @@ const teamData = [
     title: "Developer",
     gif: "https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif",
     pic: Riya,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -95,7 +98,7 @@ const teamData = [
     title: "Developer",
     gif: "https://media.giphy.com/media/qbsXf9HsBk1RFXuoxi/giphy.gif",
     pic: RishiB,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -104,7 +107,7 @@ const teamData = [
     title: "Dev Advisor",
     gif: "https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif",
     pic: Pratham,
-    team: "Web Dev",
+    team: "Development Team",
     direction: "center",
   },
   {
@@ -155,7 +158,7 @@ const teamData = [
 ];
 
 export default function About() {
-  const [selectedValue, setSelectedValue] = React.useState("Core");
+  const [selectedValue, setSelectedValue] = React.useState("Development Team");
   const filteredCards = [];
 
   teamData.map((item) => {
@@ -167,8 +170,9 @@ export default function About() {
   return (
     <div className="AboutUsPage">
       <Header />
+      <Navbar />
       <main className="AboutUsPage__mainContainer">
-        <section className="AboutUsPage__hero">
+        {/* <section className="AboutUsPage__hero">
           <h1 className="AboutUsPage__hero--title">
             Meet the <span>Team</span>
           </h1>
@@ -177,8 +181,8 @@ export default function About() {
             resourceful and willing to give their all to make your experience
             the best possible.
           </p>
-        </section>
-        <section className="AboutUsPage__mission">
+        </section> */}
+        {/* <section className="AboutUsPage__mission">
           <div className="AboutUsPage__mission--left">
             <img src={aboutIllustration} alt="about" />
           </div>
@@ -196,15 +200,16 @@ export default function About() {
               available anytime, anywhere.
             </p>
           </div>
-        </section>
+        </section> */}
         <section className="AboutUsPage__story">
           <div className="AboutUsPage__story--left">
             <h2 className="AboutUsPage__story--title">
-              Our Story
+              {/* Our Story
               <br /> has <b>been</b>{" "}
               <span>
                 <b>crazy</b>
-              </span>
+              </span> */}
+              Meet the <span className="AboutUsPage--highlightText">Co-Founders</span>
             </h2>
             <p className="AboutUsPage__story--desc">
               What started as an idea in the library, is now finally a reality.
@@ -212,20 +217,29 @@ export default function About() {
               their support, have reached here, serving to you the features, we
               feel, make your campus life better.
             </p>
+            <div class="AboutUsPage__story--cofounderProfiles">
+                <ButtonLink
+                  content="Keshav Dubey"
+                  className="AboutUsPage__story--button"
+                />
+                <ButtonLink
+                  content="Prabhav Pandey"
+                  className="AboutUsPage__story--button"
+                />
+            </div>
           </div>
           <div className="AboutUsPage__story--right">
             <img src={KeshavAndPP} alt="Keshav and Prabhav" />
           </div>
         </section>
+
         <section className="AboutUsPage__team">
           <div className="AboutUsPage__team--top">
             <h2 className="AboutUsPage__team--title">
-              Who <b>are we?</b>
+              {/* Who <b>are we?</b> */}
+              Meet the <span className="AboutUsPage--highlightText">Team</span><br/> Behind the <span className="AboutUsPage--highlightText">magic</span>
             </h2>
-            <p className="AboutUsPage__team--subTitle">
-              These are the people that make the magic happen. <br /> (hover
-              over our pictures to see our true personalities xD)
-            </p>
+            <p className="AboutUsPage__team--subTitle">We at team SNUXplore are a group of passionate and driven individuals, who have come together for the sole purpose of making a comprehensive repository of all student related information available anytime, anywhere.</p>
           </div>
           <div className="AboutUsPage__team--middle">
             {teams.map((item, index) =>
@@ -235,7 +249,7 @@ export default function About() {
                   // id={item}
                   key={index}
                   className={
-                    "AboutUsPage__team--link AboutUsPage__team--active"
+                    "AboutUsPage__team--link AboutUsPage__team--active " + (item.length >= 13 ? "AboutUsPage__team--longButton" : "")
                   }
                 >
                   {item}
@@ -245,7 +259,7 @@ export default function About() {
                   onClick={() => setSelectedValue(item)}
                   // id={item}
                   key={index}
-                  className={"AboutUsPage__team--link"}
+                  className={"AboutUsPage__team--link " + (item.length >= 13 ? "AboutUsPage__team--longButton" : "")}
                 >
                   {item}
                 </button>
