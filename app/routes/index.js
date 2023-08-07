@@ -16,14 +16,13 @@ import UsersImage from "../Assets/Img/userPhotos.svg";
 import NavigationMadeEasyCardImg from "../Assets/Img/NavigationMadeEasyCardImg.svg";
 import SNUGPTGuideCardImg from "../Assets/Img/SNUGPTGuideCardImg.svg";
 import AdminInfoCardImg from "../Assets/Img/AdminInfoCardImg.svg";
-import AvatarMobile from "../Assets/Img/avatarmobile.png";
 // import UsersImage from "../Assets/Img/userPhotos.svg";
 // import UsersImage from "../Assets/Img/userPhotos.svg";
-import InquiryFeedbackAvatar from "../Assets/Img/inquiryFeedbackAvatar.svg";
 import UsersImageArrow from "../Assets/Img/userPhotosArrow.svg";
 import { useMediaQuery } from "react-responsive";
 import useScrollEffect from "~/Hooks/Observer";
 import Footer from "~/Components/Footer/Footer";
+import InquiryFeedbackSection from "~/Components/InquiryFeedbackSection/InquiryFeedbackSection";
 
 const Sections = [
   {
@@ -210,31 +209,7 @@ export default function LandingPage() {
               {/* <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Navigation Made Easy" />  */}
             </div>
         </section>
-        <section className="inquiryFeedbackSection">
-            <div class="inquiryFeedbackSection__left">
-              <ButtonLink
-                content="Get in touch 🥰"
-                className="inquiryFeedbackSection__buttons--getInTouchWithEmojiButton"
-              />
-              <h1 className="inquiryFeedbackSection__left--heading">Have an inquiry or<br/>some feedback for us?</h1>
-              <div class="inquiryFeedbackSection__buttons">
-                <ButtonLink
-                  content="Get in Touch"
-                  className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--getInTouchButton"
-                />
-                <ButtonLink
-                  content="Instagram"
-                  className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--instagramButton"
-                />
-              </div>
-            </div>
-            <div class="inquiryFeedbackSection__right">
-              <img src={InquiryFeedbackAvatar} className="inquiryFeedbackSection__right--img" />
-            </div>
-            <div class="inquiryFeedbackSection__bottom">
-              <img src={AvatarMobile} className="inquiryFeedbackSection__bottom--img" />
-            </div> 
-        </section>
+        <InquiryFeedbackSection />
         
         {/* <section className="aboutSection">
           <InfoComponentDesktop
