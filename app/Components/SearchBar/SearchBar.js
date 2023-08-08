@@ -10,6 +10,14 @@ function activeClassName(className, isActive) {
 }
 
 function SearchBar({ style }) {
+  const trending = [
+    'DH1',
+    'Library',
+    'IT Helpdesk Office',
+    'D Block',
+    'Arcade',
+    'Horse Stables'
+  ];
   const [search, setSearch] = React.useState("");
   const [isFocused, setIsFocused] = React.useState(false);
   const [results, setResults] = React.useState([]);
@@ -149,15 +157,9 @@ function SearchBar({ style }) {
           <div className="SearchBarWrapper__trending">
             <span className="SearchBarWrapper__trending--text">Trending</span>
             <div className="SearchBarWrapper__trending__items">
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
-                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                {trending.map(trendingItem => {
+                  return <a href="" className="SearchBarWrapper__trending__items--item">{trendingItem}</a>
+                })}
             </div> 
           </div>
         {results.length > 0 && (
