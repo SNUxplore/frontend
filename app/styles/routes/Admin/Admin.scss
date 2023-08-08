@@ -35,8 +35,8 @@
     }
     &--bold {
       font-weight: 400; //700 -> 400
-      color: var(--unhighlightTextColor);
-      // color: var(--highlightTextColor);
+      // color: var(--unhighlightTextColor);
+      color: var(--highlightTextColor);
       background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%); //new colour :p
       // background: var(--titleHighlight);
     }
