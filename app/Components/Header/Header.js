@@ -23,6 +23,7 @@ import { NavLink } from "react-router-dom";
 
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData } from "@remix-run/react";
+import SearchBar from "../SearchBar/SearchBar";
 
 function Header() {
   const node = React.useRef();
@@ -117,8 +118,11 @@ function Header() {
               />
             </a>
             <div className="HeaderWrapper__left--searchBar">
-              <input type="input" className="HeaderWrapper__left--searchBarInput" placeholder="Search for location, admin info, academics, food or anything"/>
+              <SearchBar />
             </div>
+            {/* <div className="HeaderWrapper__left--searchBar">
+              <input type="input" className="HeaderWrapper__left--searchBarInput" placeholder="Search for location, admin info, academics, food or anything"/>
+            </div> */}
             </>
           {/* )} */}
         </div>

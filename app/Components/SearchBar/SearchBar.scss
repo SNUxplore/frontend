@@ -1,9 +1,10 @@
 @import "../../styles/root/mixins";
 
 .SearchBarWrapper {
-  @include box(80%, 50px);
+  // @include box(80%, 50px);
+  @include box(100%, 50px);
   position: relative;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   @include respondAt(1095px) {
     @include box(100%, 50px);
@@ -48,14 +49,28 @@
   &__input {
     @include box();
     border-radius: 7px;
-    background-color: var(--white);
+    // background-color: var(--white);
+    background-color: #f1f1f1;
     color: var(--primaryTextColor);
     border: none;
-    padding: 6px 70px 6px 20px;
+    background-image: url('app/Assets/Img/search.svg');
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    // padding: 6px 70px 6px 20px;
+    padding: 6px 20px 6px 50px;
 
     &:focus-visible {
       outline: none;
     }
+  }
+
+  &__input::placeholder {
+    color: var(--thin-smoke, #4D4D4D);
+    font-family: PowerGroteskTrial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   &__submit {

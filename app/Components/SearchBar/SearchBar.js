@@ -126,7 +126,7 @@ function SearchBar({ style }) {
           <input
             className="SearchBarWrapper__input"
             type="text"
-            placeholder={"Search"}
+            placeholder={"Search for location, admin info or anything"}
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -137,12 +137,12 @@ function SearchBar({ style }) {
               setIsFocused(true);
             }}
           />
-          <button
+          {/* <button
             type="button"
             className={activeClassName("SearchBarWrapper__submit", isFocused)}
           >
             <img src={SearchIcon} alt="Search Icon" />
-          </button>
+          </button> */}
         </div>
         {results.length > 0 && (
           <div

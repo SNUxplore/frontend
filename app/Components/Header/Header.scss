@@ -40,9 +40,9 @@
 
 
     &--searchBar {
-      @include make-flex(row, center, center);
+      @include make-flex(row, center, flex-start);
       // margin-left: 40px;
-      width: 30%;
+      width: 40%;
     }
 
     &--searchBarInput::placeholder {
