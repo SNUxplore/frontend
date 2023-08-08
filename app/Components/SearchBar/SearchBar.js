@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
+import GptSearchBox from "app/Assets/Img/tryGptSearchBox.svg";
 import Fuse from "fuse.js";
 import data from "~/Assets/Data/data.json";
 import admin from "~/Assets/Data/admin.json";
@@ -144,6 +145,21 @@ function SearchBar({ style }) {
             <img src={SearchIcon} alt="Search Icon" />
           </button> */}
         </div>
+        <div className={activeClassName('SearchBarWrapper__searchBox--contents', isFocused)}>
+          <div className="SearchBarWrapper__trending">
+            <span className="SearchBarWrapper__trending--text">Trending</span>
+            <div className="SearchBarWrapper__trending__items">
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+                <a href="" className="SearchBarWrapper__trending__items--item">Test button</a>
+            </div> 
+          </div>
         {results.length > 0 && (
           <div
             className={activeClassName(
@@ -169,6 +185,10 @@ function SearchBar({ style }) {
             })}
           </div>
         )}
+        <a href="#snugpt">
+          <div className={activeClassName("SearchBarWrapper__modal--snugptImage", isFocused)}></div>
+        </a>
+        </div>
       </div>
     </div>
   );
