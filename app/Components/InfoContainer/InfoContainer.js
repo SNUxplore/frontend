@@ -60,7 +60,7 @@ function InfoContainer({ data, isAdmin, type = "" }) {
           />
         )}
       </div>
-      <hr />
+      {/* <hr /> */}
       <div className="InfoContainer__body">
         <div className="InfoContainer__body__header">
           <p className="InfoContainer__body__header--title">
