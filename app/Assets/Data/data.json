@@ -80,6 +80,51 @@
     },
 
     {
+      "name": "Hostel 4-A (Manas)",
+      "location": "https://maps.app.goo.gl/as8oqCGK5MFWkYqY8?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "",
+      "image": ""
+    },
+
+    {
+      "name": "Hostel 4-B (Marine)",
+      "location": "https://maps.app.goo.gl/zaCGMUcujNsMuBo18?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "",
+      "image": ""
+    },
+
+    {
+      "name": "Hostel 4-C (Mudumalai)",
+      "location": "https://maps.app.goo.gl/efrdCA6ELTywzPPM6?g_st=ic",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "",
+      "image": ""
+    },
+
+    {
+      "name": "Hostel 5-A (Belta)",
+      "location": "https://maps.app.goo.gl/dzUvDhW3Nj6CXsY26?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "",
+      "image": ""
+    },
+
+    {
+      "name": "Hostel 5-B (Bandhavgarh)",
+      "location": "https://maps.app.goo.gl/fx9kYsq2fouf6bvB7?g_st=ic",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "",
+      "image": ""
+    },
+
+    {
       "name": "Tower 1",
       "location": "https://www.google.co.uk/maps/place/28%C2%B031'42.4%22N+77%C2%B034'39.3%22E/@28.528446,77.575398,964m/data=!3m2!1e3!4b1!4m6!3m5!1s0x0:0x71207da3ce6e22bf!7e2!8m2!3d28.5284459!4d77.5775925",
       "description": "Known as Tower 1.",
@@ -237,6 +282,15 @@
       "description": "This Dining hall is the most peaceful and calm place to have food but it's located in a totally different corner of SNU.",
       "image": "https://media.giphy.com/media/tbaeNq5yi9UvMWTk4l/giphy.gif"
     },
+    
+    {
+      "name": "Dining Hall 4",
+      "location": "https://maps.app.goo.gl/NHdMNTRcgFGQjcgc9?g_st=ic",
+      "contact": "messcommittee@snu.edu.in",
+      "menu": "https://messmenu.snu.in/",
+      "description": "NEW DH!",
+      "image": "https://media.giphy.com/media/tbaeNq5yi9UvMWTk4l/giphy.gif"
+    },
 
     {
       "name": "Nescafe",
@@ -285,6 +339,21 @@
       "description": "",
       "image": "https://media.giphy.com/media/DYzRk8slHzD2PWdGD5/giphy.gif"
     },
+
+    {
+      "name": "Mahesh Chinese Fast Food",
+      "location": "https://maps.app.goo.gl/WbsRL6bAiJXzQfqs7?g_st=ic",
+      "description": "",
+      "image": ""
+    },
+
+    {
+      "name": "Adarsh Dhaba",
+      "location": "https://maps.app.goo.gl/MZi8LZkYMA5c4QeTA?g_st=ic",
+      "description": "",
+      "image": ""
+    },
+
     {
       "name": "19th Hole",
       "location": "https://www.google.co.in/maps/place/Temporary+Helipad/@28.5298671,77.5740388,208m/data=!3m2!1e3!4b1!4m8!1m2!2m1!1s19th+hole+snu+!3m4!1s0x390c94dab9c0d8b1:0xdf6c67cc91dbab15!8m2!3d28.5298659!4d77.5745873",
@@ -517,7 +586,7 @@
     },
     {
       "name": "Indoor Sports Complex",
-      "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
+      "location": "https://maps.app.goo.gl/hcwzxee4sAR7teYR6?g_st=ic",
       "description": "",
       "image": "https://media.giphy.com/media/NigtAENyEYguafPXJX/giphy.gif"
     }
