@@ -23,7 +23,8 @@
 
   &--effectRight {
     top: 125px;
-    right: -75px;
+    // right: -75px;
+    right: 0px;
     width: 350px;
     height: 500px;
     background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
