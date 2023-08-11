@@ -7,7 +7,7 @@ function FeatureCard({
     img: imgSrc,
     title = 'Navigation Made Easy',
     desc = 'Find detailed information on all buildings and locations on campus. Locate the Dargaah, call your warden. All of it is here, just for you.',
-    link = { to: 'something', text: 'Navigate' }
+    link = { to: 'something', text: 'Learn More' }
 }) {
   return (
     <div className="FeatureCardWrapper">

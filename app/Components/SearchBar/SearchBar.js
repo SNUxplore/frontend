@@ -158,7 +158,23 @@ function SearchBar({ style }) {
             <span className="SearchBarWrapper__trending--text">Trending</span>
             <div className="SearchBarWrapper__trending__items">
                 {trending.map(trendingItem => {
-                  return <a href="" className="SearchBarWrapper__trending__items--item">{trendingItem}</a>
+                  //return <a href="" className="SearchBarWrapper__trending__items--item">{trendingItem}</a>
+                  return (
+                    <a
+                      href={isFocused ? "" : `/navigate/${trendingItem}`}
+                      onClick={(e) => {
+                        if (!isFocused) {
+                          e.preventDefault();
+                          window.location.href = `/navigate/${trendingItem}`;
+                        }
+                      }}
+                      className="SearchBarWrapper__trending__items--item"
+                      key={trendingItem}
+                    >
+                      {trendingItem}
+                    </a>
+                  );
+  
                 })}
             </div> 
           </div>

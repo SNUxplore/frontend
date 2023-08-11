@@ -206,7 +206,6 @@ export default function LandingPage() {
             <div className="featureSection__bottom">
               <FeatureCard img={NavigationMadeEasyCardImg} title="Navigation Made Easy" /> 
               <FeatureCard img={SNUGPTGuideCardImg} title="SNU GPT: Your AI Guide" /> 
-              <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Safety Toolkit" /> 
               <FeatureCard img={AdminInfoCardImg} title="Admin Info" /> 
               {/* <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Navigation Made Easy" />  */}
             </div>
