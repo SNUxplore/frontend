@@ -1,4 +1,5 @@
 # SNUxplore - Official Repository
+trigger
 
 - [Remix Docs](https://remix.run/docs)
 
