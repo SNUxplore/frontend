@@ -104,10 +104,12 @@ export default function LandingPage() {
               <div className="heroSection__buttons">
                 <ButtonLink
                   content="Navigate"
+                  href="/navigate"
                   className="heroSection__buttons--button heroSection__buttons--navigateButton"
                 />
                 <ButtonLink
                   content="SNU-GPT"
+                  href="/snugpt"
                   className="heroSection__buttons--button heroSection__buttons--snugpt"
                 />
               </div>
