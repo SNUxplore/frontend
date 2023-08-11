@@ -22,7 +22,7 @@
       font-family: Poppins, sans-serif;
       padding: 8px;
       font-size: 65px;
-      color: var(--unhighlightTextColor);
+      // color: var(--unhighlightTextColor);
       @include respondAt(900px) {
         font-size: 35px;
         line-height: 40px;
@@ -30,12 +30,15 @@
     }
 
     &--normal {
-      font-weight: 500;
+      font-weight: 400; //changed from 500 to 400 :p
+      color: var(--primaryTextColor); //new colour :p
     }
     &--bold {
-      font-weight: 700;
+      font-weight: 400; //700 -> 400
+      // color: var(--unhighlightTextColor);
       color: var(--highlightTextColor);
-      background: var(--titleHighlight);
+      background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%); //new colour :p
+      // background: var(--titleHighlight);
     }
   }
 
@@ -43,7 +46,8 @@
     font-family: Poppins, sans-serif;
     font-size: 16px;
 
-    color: var(--primaryTextColor);
+    // color: var(--primaryTextColor);
+    color: black; //as given in design, dont like it :p
     max-width: 600px;
 
     text-align: center;
@@ -60,6 +64,7 @@
     }
   }
   &__main {
+    margin-top: 35px;//new margin, no search bar :p
     gap: 50px;
     width: 100%;
     max-width: 1585px;
@@ -72,8 +77,8 @@
       padding: 0 10px;
     }
 
-    &--searchContainer {
-      margin-top: 35px;
+    &--searchContainer {//useless css :p
+      margin-top: 35px;//removing search bar and copying it to AdminPage__main :p
       @include make-flex();
       width: 50%;
 
@@ -111,9 +116,11 @@
 
   &__content {
     &--left {
+      // @include box(220px, auto);
       @include box(220px, auto);
 
       @include respondAt(590px) {
+        justify-content: space-evenly;
         width: 100%;
         height: auto !important;
         position: sticky;
@@ -127,7 +134,7 @@
       @include box(210px, auto);
       @include make-flex($just: flex-start);
       background-color: var(--white);
-      border-radius: 15px;
+      border-radius: 25px;
       top: 26%;
       padding: 15px;
       gap: 15px;
@@ -175,7 +182,8 @@
         @include box(100%, 45px);
         @include make-flex();
         padding: 10px 7px;
-        color: var(--secondaryTextColor);
+        // color: var(--secondaryTextColor);
+        color: black; //as in the design :p
         border-radius: 20px;
         font-weight: 600;
         opacity: 70%;
@@ -189,9 +197,16 @@
         opacity: 100%;
       }
       .activeTab {
+        font-weight: 400; //new weight :p
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         opacity: 100%;
+        // color: black;
+        background: linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%);     //new colour :p   
         color: var(--white);
-        background-color: var(--blue);
+        // background-color: var(--blue);
       }
     }
 
@@ -200,6 +215,7 @@
       max-width: 900px;
       @include make-flex($dir: row, $just: flex-start, $align: flex-start);
       flex-wrap: wrap;
+      justify-content: center; //centering the contacts when window gets narrower :p
       gap: 25px;
       padding: 0 25px;
 

@@ -72,13 +72,13 @@
       @include box($height: 30px);
       @include make-flex();
       font-size: 10px;
-      border-radius: 17px;
+      border-radius: 5px;
       white-space: nowrap;
       overflow: hidden;
       min-width: 70px;
       cursor: pointer;
       color: white;
-      background-color: #363b53;
+      background-color: var(--contactButton);
       text-decoration: none;
       padding: 10px 12px;
       font-family: "Poppins", sans-serif;

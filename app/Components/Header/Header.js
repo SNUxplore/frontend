@@ -1,5 +1,6 @@
 import React from "react";
-import appLogo from "../../Assets/Img/newLogo.svg";
+// import appLogo from "../../Assets/Img/newLogo.svg";
+import appLogo from "../../Assets/Img/logo.svg";
 import instagramLogo from "../../Assets/Img/instagramLogo.svg";
 import linkedInLogo from "../../Assets/Img/linkedInLogo.svg";
 import locationIcon from "../../Assets/Img/locationIcon.svg";
@@ -22,45 +23,48 @@ import { NavLink } from "react-router-dom";
 
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData } from "@remix-run/react";
+import SearchBar from "../SearchBar/SearchBar";
 
 function Header() {
   const node = React.useRef();
   const url = useLoaderData();
-  const [navState, setNavState] = React.useState(false);
+  // const [navState, setNavState] = React.useState(false);
   const [currentTheme, setCurrentTheme] = React.useState("light");
-  const handleClickOutside = (e) => {
-    const hamButton = document.getElementById("NavBarInput");
-    if (node.current.contains(e.target)) {
-      return;
-    }
 
-    hamButton.click();
-  };
+  // const handleClickOutside = (e) => {
+  //   const hamButton = document.getElementById("NavBarInput");
+  //   if (node.current.contains(e.target)) {
+  //     return;
+  //   }
 
-  React.useEffect(() => {
-    const hamButton = document.getElementById("NavBarInput");
+  //   hamButton.click();
+  // };
 
-    if (hamButton.checked && !navState) {
-      hamButton.click();
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   const hamButton = document.getElementById("NavBarInput");
+
+  //   if (hamButton.checked && !navState) {
+  //     hamButton.click();
+  //   }
+  // }, []);
 
   React.useEffect(() => {
     if (localStorage.getItem("theme")) {
       setCurrentTheme(localStorage.getItem("theme"));
+      // setCurrentTheme('light');
     }
   });
 
-  React.useEffect(() => {
-    if (navState) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [navState]);
+  // React.useEffect(() => {
+  //   if (navState) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   }
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [navState]);
 
   const dropdown = useMediaQuery({
     query: "(max-width: 1230px)",
@@ -86,7 +90,7 @@ function Header() {
 
   return (
     <nav ref={node} className="HeaderWrapper">
-      {dropdown && (
+      {/* {dropdown && (
         <a href="/">
           <img
             className={`
@@ -96,24 +100,39 @@ function Header() {
             alt="snu explore Logo"
           />
         </a>
-      )}
-      <div
+      )} */}
+
+      {/* <div
         className={`HeaderWrapper__menu ${
           navState ? "HeaderWrapper__menu--open" : ""
         }`}
-      >
+      > */}
+      <div className="HeaderWrapper__menu">
         <div className="HeaderWrapper__left">
-          {!dropdown && (
+          {/* {!dropdown && ( */}
+            <>
             <a href="/">
               <img
-                className="HeaderWrapper__left--logo"
                 src={appLogo}
                 alt="snu explore Logo"
               />
             </a>
-          )}
+            <div className="HeaderWrapper__left--searchBar">
+              <SearchBar />
+            </div>
+            {/* <div className="HeaderWrapper__left--searchBar">
+              <input type="input" className="HeaderWrapper__left--searchBarInput" placeholder="Search for location, admin info, academics, food or anything"/>
+            </div> */}
+            </>
+          {/* )} */}
         </div>
-        <ul className="HeaderWrapper__middle">
+
+        {/* <div className="HeaderWrapper__middle">
+          {!dropdown && (
+          )}
+        </div> */}
+
+        {/* <ul className="HeaderWrapper__middle">
           {dropdown && (
             <div style={{ width: "100%" }}>
               <li className="HeaderWrapper__middle--option">
@@ -314,96 +333,22 @@ function Header() {
               </button>
             </li>
           )}
-        </ul>
+        </ul> */}
+
         <div className="HeaderWrapper__right">
-          {!dropdown && (
+          {/* {!dropdown && (
             <div
               className="HeaderWrapper__right--themeButtons"
               style={{
                 background: themeStyle[currentTheme ? currentTheme : "light"],
               }}
             >
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("pink");
-                  localStorage.setItem("theme", "light");
-                  setCurrentTheme("light");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "light" ? "--active" : ""
-                  }`}
-                  src={lightModeDesktop}
-                  alt="snu explore Logo"
-                />
-              </button>
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("pink");
-                  localStorage.setItem("theme", "dark");
-                  setCurrentTheme("dark");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option${
-                    currentTheme === "dark" ? "--active" : ""
-                  }`}
-                  src={themeIconSrc[currentTheme ? currentTheme : "light"]}
-                  alt="snu explore Logo"
-                />
-              </button>
-              <button
-                onClick={() => {
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("dark");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.remove("light");
-                  document
-                    .getElementsByTagName("html")
-                    .item(0)
-                    .classList.add("pink");
-                  localStorage.setItem("theme", "pink");
-                  setCurrentTheme("pink");
-                }}
-              >
-                <img
-                  className={`HeaderWrapper__right--themeButtons--option--pink${
-                    currentTheme === "pink" ? "--active" : ""
-                  }`}
-                  src={pinkThemeIconSrc[currentTheme ? currentTheme : "light"]}
-                  alt="snu explore Logo"
-                />
-              </button>
-            </div>
-          )}
-          {dropdown && (
+            </div> */}
+            <button className="HeaderWrapper__right--contactButton">
+              Contact
+            </button>
+          {/* )} */}
+          {/* {dropdown && (
             <div
               className="HeaderWrapper__right--themeButtons"
               style={{
@@ -440,9 +385,9 @@ function Header() {
                 </a>
               </div>
             </div>
-          )}
+          )} */}
         </div>
-        {dropdown && (
+        {/* {dropdown && (
           <div
             style={{ position: "relative", width: "100%", height: "1000px" }}
           >
@@ -452,9 +397,10 @@ function Header() {
               <span className="HeaderWrapper__dots--dot"></span>
             </div>
           </div>
-        )}
+        )} */}
       </div>
-      <div
+
+      {/* <div
         className="HeaderWrapper__Hamburger"
         style={{
           position: navState ? "fixed" : "",
@@ -486,7 +432,7 @@ function Header() {
             <span className="span HL3" />
           </label>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

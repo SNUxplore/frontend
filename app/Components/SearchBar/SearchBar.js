@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import SearchIcon from "app/Assets/Img/SearchIcon.svg";
+import GptSearchBox from "app/Assets/Img/tryGptSearchBox.svg";
 import Fuse from "fuse.js";
 import data from "~/Assets/Data/data.json";
 import admin from "~/Assets/Data/admin.json";
@@ -9,6 +10,14 @@ function activeClassName(className, isActive) {
 }
 
 function SearchBar({ style }) {
+  const trending = [
+    'DH1',
+    'Library',
+    'IT Helpdesk Office',
+    'D Block',
+    'Arcade',
+    'Horse Stables'
+  ];
   const [search, setSearch] = React.useState("");
   const [isFocused, setIsFocused] = React.useState(false);
   const [results, setResults] = React.useState([]);
@@ -126,7 +135,7 @@ function SearchBar({ style }) {
           <input
             className="SearchBarWrapper__input"
             type="text"
-            placeholder={"Search"}
+            placeholder={"Search for location, admin info or anything"}
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -137,13 +146,22 @@ function SearchBar({ style }) {
               setIsFocused(true);
             }}
           />
-          <button
+          {/* <button
             type="button"
             className={activeClassName("SearchBarWrapper__submit", isFocused)}
           >
             <img src={SearchIcon} alt="Search Icon" />
-          </button>
+          </button> */}
         </div>
+        <div className={activeClassName('SearchBarWrapper__searchBox--contents', isFocused)}>
+          <div className="SearchBarWrapper__trending">
+            <span className="SearchBarWrapper__trending--text">Trending</span>
+            <div className="SearchBarWrapper__trending__items">
+                {trending.map(trendingItem => {
+                  return <a href="" className="SearchBarWrapper__trending__items--item">{trendingItem}</a>
+                })}
+            </div> 
+          </div>
         {results.length > 0 && (
           <div
             className={activeClassName(
@@ -169,6 +187,10 @@ function SearchBar({ style }) {
             })}
           </div>
         )}
+        <a href="#snugpt">
+          <div className={activeClassName("SearchBarWrapper__modal--snugptImage", isFocused)}></div>
+        </a>
+        </div>
       </div>
     </div>
   );

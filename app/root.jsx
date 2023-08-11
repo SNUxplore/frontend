@@ -39,29 +39,32 @@ export const ThemeScript = () => {
     !location.pathname.includes("club") &&
     !location.pathname.includes("login")
   ) {
-    if (localStorage.getItem("clubTempTheme")) {
-      localStorage.setItem("theme", localStorage.getItem("clubTempTheme")?localStorage.getItem("clubTempTheme") : "light");
-      localStorage.removeItem("clubTempTheme");
-    }
-    const theme = localStorage.getItem("theme");
+    // if (localStorage.getItem("clubTempTheme")) {
+    //   localStorage.setItem("theme", localStorage.getItem("clubTempTheme")?localStorage.getItem("clubTempTheme") : "light");
+    //   localStorage.removeItem("clubTempTheme");
+    // }
+    // const theme = localStorage.getItem("theme");
 
-    if (theme) {
-      document.getElementsByTagName("html").item(0).classList.add(theme);
-    } else {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.getElementsByTagName("html").item(0).classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.getElementsByTagName("html").item(0).classList.add("light");
-      }
-    }
+    // if (theme) {
+    //   document.getElementsByTagName("html").item(0).classList.add(theme);
+    // } else {
+    //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    //     document.getElementsByTagName("html").item(0).classList.add("dark");
+    //     localStorage.setItem("theme", "dark");
+    //   } else {
+    //     document.getElementsByTagName("html").item(0).classList.add("light");
+    //   }
+    // }
+    document.getElementsByTagName('html').item(0).classList.add('light');
+    localStorage.setItem('theme', 'light');
   } else {
     document.getElementsByTagName("html").item(0).classList.add("light");
-    document.getElementsByTagName("html").item(0).classList.remove("dark");
-    document.getElementsByTagName("html").item(0).classList.remove("pink");
+    localStorage.setItem('theme', 'light');
+    // document.getElementsByTagName("html").item(0).classList.remove("dark");
+    // document.getElementsByTagName("html").item(0).classList.remove("pink");
 
-    localStorage.setItem("clubTempTheme", localStorage.getItem("theme"));
-    localStorage.setItem("theme", "light");
+    // localStorage.setItem("clubTempTheme", localStorage.getItem("theme"));
+    // localStorage.setItem("theme", "light");
   }
 
   window.dataLayer = window.dataLayer || [];

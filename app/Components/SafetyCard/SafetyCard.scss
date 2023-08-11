@@ -1,0 +1,88 @@
+@import "../../styles/root/mixins";
+
+.SafetyCardWrapper {
+    @include box($height: 100%);
+    flex: 30%;
+    border-radius: 6px;
+    border: 0.355px solid rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.04), 0px 4.431818008422852px 9.75px 0px rgba(0, 0, 0, 0.04), 0px 18.613636016845703px 18.613636016845703px 0px rgba(0, 0, 0, 0.03), 0px 40.772727966308594px 24.81818199157715px 0px rgba(0, 0, 0, 0.02), 0px 72.68181610107422px 29.25px 0px rgba(0, 0, 0, 0.01), 0px 113.45454406738281px 31.909090042114258px 0px rgba(0, 0, 0, 0.00);
+    padding: 20px 25px;
+
+    &__links {
+        @include make-flex($dir: row, $just: center);
+        width: 100%;
+        background: var(--white-opacity-70, rgba(255, 255, 255, 0.70));
+        font-size: 12px;
+        &--link {
+            @include make-flex($dir: row);
+            padding: 5px 20px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            width: 100%;
+        }
+
+        &--icon {
+            width: 15px;
+        }
+        &--navigate {
+            border-top: 1.038px solid rgba(0, 0, 0, 0.20);
+            border-bottom: 1.038px solid rgba(0, 0, 0, 0.20);
+            border-left: 1.038px solid rgba(0, 0, 0, 0.20);
+        }
+        &--contact {
+            border: 1.012px solid rgba(0, 0, 0, 0.20);
+        }
+        &--mail {
+            border-top: 1.012px solid rgba(0, 0, 0, 0.20);
+            border-right: 1.012px solid rgba(0, 0, 0, 0.20);
+            border-bottom: 1.012px solid rgba(0, 0, 0, 0.20);
+        }
+    }
+
+    &__content {
+        @include make-flex($align: flex-start);
+        gap: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 146.95%; /* 37.132px */
+        font-family: AcidGroteskRegular;
+        text-align: center;
+
+        &--service {
+            background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 16px;
+            line-height: 146.95%; /* 42.15px */
+        }
+
+        &--name {
+            color: #000;
+            font-size: 14px;
+        }
+
+        &--desc {
+            color: #64646B;
+            font-size: 12px;
+            margin-top: -15px;
+        }
+
+        &--link {
+            background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-family: PowerGroteskTrial;
+            font-size: 1rem;
+        }
+    }
+
+    @include respondAt(575px) {
+        width: 100%;
+        border: none;
+    }
+}

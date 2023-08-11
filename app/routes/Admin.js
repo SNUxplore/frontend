@@ -55,9 +55,9 @@ export default function Admin() {
         This page contains all the information that bridges you to the Administration and DSA.
       </p>
 
-      <div className="AdminPage__main--searchContainer">
+      {/* <div className="AdminPage__main--searchContainer">
         <SearchBar />
-      </div>
+      </div> */}
 
       <main className="AdminPage__main">
 				<section className="AdminPage__main--content">

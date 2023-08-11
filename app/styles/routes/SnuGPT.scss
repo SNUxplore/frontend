@@ -1,0 +1,258 @@
+@import "../../styles/root/mixins";
+
+.SnuGPTPage{
+    @include make-flex($just: flex-start);
+    min-height: 100vh;
+  
+    &__mainContainer {
+      // @include box();
+      // height: auto;
+      width: 100%;
+      height: 650px;
+      // @include make-flex($just: flex-start, $align: flex-start);
+      @include make-flex($just: flex-start);
+      padding: 0px !important;
+      gap: 50px;
+      // max-width: 1585px;
+  
+      min-height: calc(100% - 110px);
+
+      @include respondAt(575px){
+        height:680px;
+      }
+  
+      // background-color: aqua;
+  
+      // padding: 0px 170px 0px;
+      // padding: 0px 0px 0px 130px;
+  
+      //transition: padding 0.5s ease-in-out, filter 0.5s;
+  
+      // @include respondAt(1525px) {
+      //   padding: 0 130px 0px;
+      // }
+      // @include respondAt(1335px) {
+      //   padding: 0 90px 0px;
+      // }
+      // @include respondAt(1135px) {
+      //   padding: 0 40px;
+      // }
+      // @include respondAt(470px) {
+      //   padding: 0 0;
+      // }
+    }
+    .heroGPT {
+      @include make-flex($dir: row, $just: space-between);
+      @include box($height: 315px);
+
+      gap: 65px;
+      padding: 0px 65px 0px 130px;
+      @include respondAt(575px) {
+        @include make-flex($dir: column, $just: space-between);
+        //padding: 0px 0px 0px 4.5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 60px !important;
+      }
+  
+      &__right {
+        img {
+          //transition: transform 0.4s ease-in-out;
+        }
+  
+
+        @include box(50%);
+        @include make-flex($align: flex-end, $just: flex-start);
+        img {
+          height: 700px;
+          width: 700px;
+          border-radius: 4px;
+          @include respondAt(575px){
+            height: 73%;
+            //height: 315px;
+            //width: 315px;
+            //top: 10px;
+            //margin-bottom: 50px;
+
+          }
+        }
+  
+        @include respondAt(1000px) {
+          height: auto;
+          min-width: 315px;
+        }
+        @include respondAt(575px){
+          align-items: center;
+          margin-bottom: -10px;
+          //bottom: 40px;
+        }
+      }
+      &__left {
+        @include box(45%);
+        @include make-flex($align: flex-start, $just: flex-start);
+        gap: 20px;
+        padding-top: 50px;
+        @include respondAt(575px){
+          @include make-flex($dir: column, $just:left);
+          padding-top: 0px;
+          padding-left: 10px;
+          //padding-left: 20px;
+          //padding-right: 20px;
+          gap: 3px;
+          align-items: left;
+        }
+
+        img{
+          height: 1200px;
+          width: 1200px;
+          bottom: 120px;
+          position: relative;
+          @include respondAt(575px){
+            display: none;
+          }
+        }
+        @include respondAt(905px) {
+          margin-top: 15px;
+          width: 50%;
+          gap: 20px;
+        }
+        @include respondAt(700px) {
+          width: 80%;
+        }
+        @include respondAt(500px) {
+          width: 100%;
+        }
+      }
+  
+      &__title {
+        &--highlight {
+          // padding: 0px 5px 0px 5px;
+          // color: var(--highlightTextColor);
+          // background-color: var(--titleHighlight);
+  
+          background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // font-family: ;
+          // font-size: 79.633px;
+          font-size: 3.5rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 116.45%;
+          @include respondAt(575px) {
+            // font-size: 9vw;
+            font-size: 2rem;
+            line-height: 106%;
+          }
+        }
+  
+        &--unhighlight {
+          color: var(--unhighlightTextColor);
+        }
+  
+        h1 {
+          margin: 5px 0 0px 0;
+  
+          @include box(100%, auto);
+          font-family: "Poppins", sans-serif;
+          // font-size: 72px;
+          font-size: 3.5rem;
+          font-weight: 400;
+          line-height: 116.45%;
+          // line-height: 75px;
+          color: #000; //new :p
+          font-weight: 400;//also new :p
+          // color: var(--textColor);
+          //white-space: nowrap;
+          transition: font-size 0.5s ease-in-out;
+  
+          @include respondAt(1400px) {
+            font-size: 60px;
+          }
+          @include respondAt(1200px) {
+            font-size: 50px;
+          }
+  
+          @include respondAt(575px) {
+            // font-size: 9vw;
+            margin: 0px;
+            font-size: 2.1rem;
+            //font-weight: 350;
+            line-height: 116%;
+          }
+  
+          // @include respondAt(505px) {
+          //   font-size: 9vw;
+          //   line-height: 50px;
+          // }
+        }
+      }
+      &__desc {
+        // font-family: "Poppins", sans-serif;
+        font-family: AcidGroteskRegular;
+        color: var(--primaryTextColor);
+        color: #000;
+        font-weight: 400;
+        line-height: 167.5%;
+        //justify-content: left;
+        margin-bottom: 15px;
+        // font-size: 20px;
+        font-size: 1.1rem;
+        @include box(90%, auto);
+  
+        @include respondAt(575px) {
+          @include box(100%, auto);
+          font-size: .8rem;
+          line-height: 150%;
+          margin-bottom: 0px;
+        }
+  
+        // @include respondAt(670px) {
+        // }
+      }
+  
+      @include respondAt(905px) {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+      }
+
+      &__buttons {
+        @include make-flex($dir: row, $align: flex-start);
+        gap: 30px;
+        @include respondAt(575px){
+          gap: 20px;
+          position: relative;
+          //left:10px;
+          left:-105px
+        }
+  
+        
+        &--snugpt {
+            background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+            font-size: 15.638px;
+            border: none;
+        }
+  
+        &--button {
+          padding: 27.914px 11.206px !important;
+          width: 170px;
+          border-radius: 11.963px;
+          color: var(--white);
+          text-align: center;
+          font-family: PowerGroteskTrial;
+          font-size: 19.5px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          @include respondAt(575px){
+            width: 120px;
+            padding: 20px 11.206px !important;
+            border-radius: 5px;
+            font-size: 13.5px;
+          }
+        }
+      }  
+    }
+}

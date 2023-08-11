@@ -1,7 +1,8 @@
 @import "../../styles/root/mixins";
 
 .ButtonLinkWrapper {
-  @include box(200px, 40px);
+  // @include box(200px, 40px);
+  @include box(170px, 40px);
   @include make-flex();
 
   border-radius: 7px;
