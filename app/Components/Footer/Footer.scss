@@ -72,7 +72,8 @@
   }
 
   &__right {
-    @include make-flex($dir: row, $just: space-between, $align: flex-start);
+    // @include make-flex($dir: row, $just: space-between, $align: flex-start);
+    @include make-flex($dir: row, $just: space-around, $align: flex-start);
     gap: 30px;
     @include box(50%);
     padding: 70px 0;
