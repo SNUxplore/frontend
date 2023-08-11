@@ -1,7 +1,7 @@
 {
   "Residential": [
     {
-      "name": "Hostel 1-A",
+      "name": "Hostel 1-A (Sundarbans)",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+1A/@28.5244496,77.573215,19.42z/data=!4m5!3m4!1s0x390c94d7553aabc9:0xd09ad60822f3d32e!8m2!3d28.5249758!4d77.5730025",
       "mailWarden": "ameetava.mukherjee@snu.edu.in",
       "callWarden": "+918017979461",
@@ -10,7 +10,7 @@
     },
 
     {
-      "name": "Hostel 1-B",
+      "name": "Hostel 1-B (Chilika)",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+1B/@28.5244561,77.5732564,19.27z/data=!4m5!3m4!1s0x390c94d7510ccbdd:0xb8501af71093e4e9!8m2!3d28.5241895!4d77.573125",
       "mailWarden": "ASHOK.BHARADWAJ@snu.edu.in",
       "callWarden": "+918130282925",
@@ -19,14 +19,14 @@
     },
 
     {
-      "name": "Hostel 1-C",
+      "name": "Hostel 1-C (Eagle Nest)",
       "location": "https://www.google.co.uk/maps/place/Hostel-1c,+NH+91,+Greater+Noida,+Uttar+Pradesh+203207/@28.5244585,77.5732597,19.26z/data=!4m5!3m4!1s0x390c94d74c29a3db:0xf9b01ab14fada71d!8m2!3d28.5242294!4d77.5724645",
       "description": "Known as Eagles Nest .",
       "image": "https://media.giphy.com/media/3otPoBnTKMSXegX2fK/giphy.gif"
     },
 
     {
-      "name": "Hostel 2-A",
+      "name": "Hostel 2-A (Hemis)",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+2A/@28.5229857,77.573385,19.92z/data=!4m5!3m4!1s0x390c94d76091882f:0x2d3451c0025004f8!8m2!3d28.5232855!4d77.5731731",
       "mailWarden": "neelam.chaudhary@snu.edu.in",
       "callWarden": "+919811322767",
@@ -35,7 +35,7 @@
     },
 
     {
-      "name": "Hostel 2-B",
+      "name": "Hostel 2-B (Kaziranga)",
       "location": "https://www.google.co.uk/maps/place/Hostel+2B,+SHIV+NADAR+UNIVERSITY,+Greater+Noida,+Uttar+Pradesh+203207/@28.5229857,77.573385,19.92z/data=!4m5!3m4!1s0x390c94d9d9ca2edf:0xa70cb6b29bf4b59a!8m2!3d28.5228032!4d77.5735391",
       "mailWarden": "preeti.jain@snu.edu.in",
       "callWarden": "+917665690118",
@@ -44,7 +44,7 @@
     },
 
     {
-      "name": "Hostel 2-C",
+      "name": "Hostel 2-C (Periyar)",
       "location": "https://www.google.co.uk/maps/place/Hostel+2C,+SHIV+NADAR+UNIVERSITY,+Greater+Noida,+Uttar+Pradesh+203207/@28.5228782,77.5731148,19.92z/data=!4m5!3m4!1s0x390c94d76f41d0ff:0x35d6c2f2e72e5873!8m2!3d28.5227347!4d77.5727335",
       "mailWarden": "balbeer.singh@snu.edu.in",
       "callWarden": "+919454825920",
@@ -53,7 +53,7 @@
     },
 
     {
-      "name": "Hostel 3-A",
+      "name": "Hostel 3-A (Gir)",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+3A/@28.5249242,77.5711652,19.47z/data=!4m5!3m4!1s0x390c94d0d0db9ac9:0x49344fa730ed5728!8m2!3d28.5252778!4d77.5711111",
       "mailWarden": "vishveer.signh@snu.edu.in",
       "callWarden": "+917042469292",
@@ -62,7 +62,7 @@
     },
 
     {
-      "name": "Hostel 3-B",
+      "name": "Hostel 3-B (Dibang)",
       "location": "https://www.google.co.uk/maps/place/SNU+Hostel+3B/@28.5249242,77.5711652,19.47z/data=!4m5!3m4!1s0x390c94d0d48a020b:0x3c320d6380dd4ae3!8m2!3d28.5247002!4d77.5707631",
       "mailWarden": "vishveer.signh@snu.edu.in",
       "callWarden": "+917042469292",
@@ -71,12 +71,57 @@
     },
 
     {
-      "name": "Hostel 3-C",
+      "name": "Hostel 3-C (Kanha)",
       "location": "https://www.google.co.uk/maps/place/Hostel+3C/@28.5249242,77.5711652,19.47z/data=!4m5!3m4!1s0x390c94d0cc8985a1:0xe865a4f5fe19f188!8m2!3d28.524809!4d77.5715487",
       "mailWarden": "balbeer.singh@snu.edu.in",
       "callWarden": "+919454825920",
       "description": "Known as Kanha.",
       "image": "https://media.giphy.com/media/d3MEQYJQpJSKs/giphy.gif"
+    },
+
+    {
+      "name": "Hostel 4-A (Manas)",
+      "location": "https://maps.app.goo.gl/as8oqCGK5MFWkYqY8?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "Known as Manas .",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139492774949945384/4A_HOSTEL.jpeg?width=503&height=671"
+    },
+
+    {
+      "name": "Hostel 4-B (Marine)",
+      "location": "https://maps.app.goo.gl/zaCGMUcujNsMuBo18?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "Known as Marine .",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139492934392234054/4B_HOSTEL.jpeg?width=503&height=671"
+    },
+
+    {
+      "name": "Hostel 4-C (Mudumalai)",
+      "location": "https://maps.app.goo.gl/efrdCA6ELTywzPPM6?g_st=ic",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "Known as Mudumalai .",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139493151585869864/4C_HOSTEL.jpeg?width=503&height=671"
+    },
+
+    {
+      "name": "Hostel 5-A (Belta)",
+      "location": "https://maps.app.goo.gl/dzUvDhW3Nj6CXsY26?g_st=iw",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "Known as Belta .",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139493301171531887/5A.jpeg?width=1193&height=671"
+    },
+
+    {
+      "name": "Hostel 5-B (Bandhavgarh)",
+      "location": "https://maps.app.goo.gl/fx9kYsq2fouf6bvB7?g_st=ic",
+      "mailWarden": "",
+      "callWarden": "",
+      "description": "Known as Bandhavgarh .",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139493329336283206/5B.jpeg?width=1193&height=671"
     },
 
     {
@@ -237,6 +282,15 @@
       "description": "This Dining hall is the most peaceful and calm place to have food but it's located in a totally different corner of SNU.",
       "image": "https://media.giphy.com/media/tbaeNq5yi9UvMWTk4l/giphy.gif"
     },
+    
+    {
+      "name": "Dining Hall 4",
+      "location": "https://maps.app.goo.gl/NHdMNTRcgFGQjcgc9?g_st=ic",
+      "contact": "messcommittee@snu.edu.in",
+      "menu": "https://messmenu.snu.in/",
+      "description": "NEW DH!",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139494758176264282/DH4.jpeg?width=377&height=670"
+    },
 
     {
       "name": "Nescafe",
@@ -285,6 +339,21 @@
       "description": "",
       "image": "https://media.giphy.com/media/DYzRk8slHzD2PWdGD5/giphy.gif"
     },
+
+    {
+      "name": "Mahesh Chinese Fast Food",
+      "location": "https://maps.app.goo.gl/WbsRL6bAiJXzQfqs7?g_st=ic",
+      "description": "",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139496872487174154/AADARSH.jpeg"
+    },
+
+    {
+      "name": "Adarsh Dhaba",
+      "location": "https://maps.app.goo.gl/MZi8LZkYMA5c4QeTA?g_st=ic",
+      "description": "",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139496872487174154/AADARSH.jpeg"
+    },
+
     {
       "name": "19th Hole",
       "location": "https://www.google.co.in/maps/place/Temporary+Helipad/@28.5298671,77.5740388,208m/data=!3m2!1e3!4b1!4m8!1m2!2m1!1s19th+hole+snu+!3m4!1s0x390c94dab9c0d8b1:0xdf6c67cc91dbab15!8m2!3d28.5298659!4d77.5745873",
@@ -305,6 +374,14 @@
       "description": "There are horse crazy people and then there are crazy people with horses. Know the difference!",
       "image": "https://media.giphy.com/media/d86gU07IU6IEg/giphy.gif"
     },
+
+    {
+      "name": "Atal Incubation Centre",
+      "location": "https://maps.app.goo.gl/WTTrJK5ECR9uCurR6?g_st=ic",
+      "description": "",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139495833776164985/AIC.jpeg?width=895&height=671"
+    },
+
     {
       "name": "Dargah",
       "location": "https://www.google.com/maps/place/28%C2%B031'14.8%22N+77%C2%B034'22.8%22E/@28.5207852,77.5724398,19z/data=!3m1!4b1!4m6!3m5!1s0x0:0xc04f34ec3b287c1d!7e2!8m2!3d28.5207835!4d77.572987",
@@ -352,7 +429,7 @@
       "name": "Chess Garden",
       "location": "https://www.google.com/maps/place/Chess+Garden/@28.5238702,77.5710467,216m/data=!3m2!1e3!4b1!4m12!1m6!3m5!1s0x390ceb4eaaaaaaab:0x321412756718874c!2sShiv+Nadar+University!8m2!3d28.5267298!4d77.575363!3m4!1s0x390c94d745d9c23f:0xc75002c8ac2cb152!8m2!3d28.523869!4d77.5721022",
       "description": "Literal heaven for a chess fanatic with life size board and pieces ,with a view of the isc.",
-      "image": "https://media.giphy.com/media/6XlOzOgC5FTsk/giphy.gif"
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139495627856814241/CHESS_GARDEN.jpeg?width=895&height=671"
     }
   ],
   "Essentials": [
@@ -517,9 +594,9 @@
     },
     {
       "name": "Indoor Sports Complex",
-      "location": "https://www.google.co.in/maps/place/SNU+Indoor+Sports+Complex/@28.5255896,77.5759983,16.02z/data=!4m5!3m4!1s0x390c94d7a94b99e3:0x43336882518f9b3c!8m2!3d28.5214868!4d77.5710233",
+      "location": "https://maps.app.goo.gl/hcwzxee4sAR7teYR6?g_st=ic",
       "description": "",
-      "image": "https://media.giphy.com/media/NigtAENyEYguafPXJX/giphy.gif"
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139497148854063154/ISC.jpeg?width=895&height=671"
     }
   ]
 }

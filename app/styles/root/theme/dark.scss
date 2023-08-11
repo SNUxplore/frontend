@@ -1,4 +1,7 @@
 @mixin darkMode() {
+  --primaryTextColorMain: #363B53;
+  //  for use in admin tab, navigate tab etc. :p
+  --contactButton: #181818;
   --pageBackground: #242836;
   --primaryTextColor: #d0d0d089;
   --blue: #00badd;

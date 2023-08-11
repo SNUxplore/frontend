@@ -8,26 +8,33 @@
     // @include box();
     // height: auto;
     width: 100%;
+    // @include make-flex($just: flex-start, $align: flex-start);
     @include make-flex($just: flex-start);
+    padding: 0px !important;
     gap: 50px;
-    max-width: 1585px;
+    // max-width: 1585px;
+
     min-height: calc(100% - 110px);
+
     // background-color: aqua;
-    padding: 0px 170px 0px;
+
+    // padding: 0px 170px 0px;
+    // padding: 0px 0px 0px 130px;
+
     transition: padding 0.5s ease-in-out, filter 0.5s;
 
-    @include respondAt(1525px) {
-      padding: 0 130px 0px;
-    }
-    @include respondAt(1335px) {
-      padding: 0 90px 0px;
-    }
-    @include respondAt(1135px) {
-      padding: 0 40px;
-    }
-    @include respondAt(470px) {
-      padding: 0 0;
-    }
+    // @include respondAt(1525px) {
+    //   padding: 0 130px 0px;
+    // }
+    // @include respondAt(1335px) {
+    //   padding: 0 90px 0px;
+    // }
+    // @include respondAt(1135px) {
+    //   padding: 0 40px;
+    // }
+    // @include respondAt(470px) {
+    //   padding: 0 0;
+    // }
   }
 
   .heroSection {
@@ -36,11 +43,17 @@
     // max-height: 720px;
 
     gap: 65px;
+    padding: 0px 0px 0px 130px;
+    @include respondAt(575px) {
+      padding: 0px 0px 0px 4.5px;
+      gap: 60px !important;
+    }
 
     &__top {
-      @include box($height: 75%);
-      @include make-flex($dir: row);
-      padding: 50px 0;
+      // @include box($height: 75%);
+      @include box($height: 100%);
+      @include make-flex($dir: row, $align: flex-start, $just: flex-start);
+      // padding: 50px 0;
 
       @include respondAt(1135px) {
         padding: 0 0;
@@ -77,39 +90,68 @@
       }
 
       &--left {
-        @include make-flex($align: flex-start);
+        @include make-flex($align: flex-start, $just: flex-start);
         gap: 20px;
+        // margin-top: -30px;
         position: relative;
       }
       &--right {
         @include make-flex($align: flex-end, $just: flex-start);
         // padding-top: 115px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         gap: 15px;
 
         @include respondAt(1095px) {
           padding-top: 0;
+        }
+        @include respondAt(935px) {
+          display: none;
         }
       }
     }
 
     &__title {
       &--highlight {
-        padding: 0px 5px 0px 5px;
-        color: var(--highlightTextColor);
-        background-color: var(--titleHighlight);
+        // padding: 0px 5px 0px 5px;
+        // color: var(--highlightTextColor);
+        // background-color: var(--titleHighlight);
+
+        background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // font-family: ;
+        // font-size: 79.633px;
+        font-size: 3.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 116.45%;
+        @include respondAt(575px) {
+          // font-size: 9vw;
+          font-size: 2.1rem;
+          line-height: 116%;
+        }
       }
+
       &--unhighlight {
         color: var(--unhighlightTextColor);
       }
+
       h1 {
         margin: 5px 0 0px 0;
 
         @include box(100%, auto);
         font-family: "Poppins", sans-serif;
-        font-size: 60px;
-        font-weight: 500;
-        line-height: 82px;
-        color: var(--textColor);
+        // font-size: 72px;
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 116.45%;
+        // line-height: 75px;
+        color: #000; //new :p
+        font-weight: 400;//also new :p
+        // color: var(--textColor);
         transition: font-size 0.5s ease-in-out;
 
         @include respondAt(1400px) {
@@ -119,31 +161,159 @@
           font-size: 50px;
         }
 
-        @include respondAt(505px) {
-          font-size: 9vw;
-          line-height: 60px;
+        @include respondAt(575px) {
+          // font-size: 9vw;
+          font-size: 2.1rem;
+          line-height: 116%;
         }
+
+        // @include respondAt(505px) {
+        //   font-size: 9vw;
+        //   line-height: 50px;
+        // }
       }
     }
 
     &__desc {
-      font-family: "Poppins", sans-serif;
+      // font-family: "Poppins", sans-serif;
+      font-family: AcidGroteskRegular;
       color: var(--primaryTextColor);
+      color: #000;
+      font-weight: 400;
       line-height: 167.5%;
       margin-bottom: 15px;
-      font-size: 16px;
+      // font-size: 20px;
+      font-size: 1.1rem;
       @include box(90%, auto);
 
-      @include respondAt(670px) {
+      @include respondAt(575px) {
         @include box(100%, auto);
+        font-size: .9rem;
+      }
+
+      // @include respondAt(670px) {
+      // }
+    }
+
+    &__buttons {
+      @include make-flex($dir: row, $align: flex-start);
+      gap: 30px;
+      @include respondAt(575px){
+        gap: 20px;
+      }
+
+      &--navigateButton {
+        border: 1.994px solid var(--light-smoke, #3E3E3E);
+        background: var(--dark-smoke, #181818);
+      }
+
+      &--snugpt {
+          background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+          font-size: 15.638px;
+          border: none;
+      }
+
+      &--button {
+        padding: 27.914px 11.206px !important;
+        width: 170px;
+        border-radius: 11.963px;
+        color: var(--white);
+        text-align: center;
+        font-family: PowerGroteskTrial;
+        font-size: 19.5px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @include respondAt(575px){
+          width: 120px;
+          padding: 20px 11.206px !important;
+          border-radius: 5px;
+          font-size: 13.5px;
+        }
       }
     }
 
-    &__callToAction {
-      @include box(55%, auto);
-      @include make-flex($just: flex-start, $dir: row);
-      gap: 25px;
+    &__users {
+      @include make-flex($dir: row, $just: flex-start);
+      width: 100%;
+      gap: 70px;
+      @include respondAt(575px){
+        gap: 20px;
+      }
+      &--left {
+        @include box($width: fit-content);
+        @include make-flex($dir: column);
+      }
+
+      &--right {
+        // @include box(75%);
+        @include make-flex($dir: row, $align: flex-start, $just: space-between);
+        gap: -20px;
+        // width: 435px;
+        // height: 100px;
+        padding: 7px 10px 6px 10px;
+        // @include box($width: fit-content);
+        @include respondAt(575px){
+          width: 100%;
+          padding: 5px 7px 4px 7px;
+          box-sizing: content-box;
+        }
+        border-radius: 65px;
+        background: linear-gradient(135deg, rgba(111, 0, 255, 0.20) 0%, rgba(73, 44, 255, 0.20) 47.81%, rgba(0, 163, 255, 0.20) 100%);
+      }
+
+      &--userImageArrowImg {
+        max-width: 60px;
+        @include respondAt(575px){
+          max-width: 35px;
+        }
+      }
+
+      &--userImage {
+        max-width: 60%;
+        /*@include respondAt(505px)
+        {
+          width: 100%;
+          box-sizing: content-box; 
+        }*/
+      }
     }
+
+    &__usersData {
+      &--count {
+        color: #000;
+        font-family: NohemiBold;
+        // font-size: 62.5px;
+        font-size: 3rem;
+        @include respondAt(575px){
+          font-size: 2.3rem;;
+        }
+        // font-style: normal;
+        // font-weight: 700;
+        // line-height: normal;
+      }
+
+      &--text {
+        max-width: 120px;
+        margin-top: -12px;
+        color: var(--light-smoke, #3E3E3E);
+        // font-family: AcidGroteskRegular;
+        // font-size: 17.829px;
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 122.45%; /* 24.28px */
+        @include respondAt(575px){
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    // &__callToAction {
+    //   @include box(55%, auto);
+    //   @include make-flex($just: flex-start, $dir: row);
+    //   gap: 25px;
+    // }
 
     &__bottom {
       @include box($height: 25%);
@@ -287,12 +457,125 @@
       width: 100%;
     }
     @include respondAtAlt(780px) {
+      // padding-bottom: 40px;
+      // margin-bottom: 350px;
       padding-bottom: 40px;
-      margin-bottom: 350px;
+      margin-bottom: 20px;
     }
     @include respondAt(335px) {
       gap: 115px;
     }
+  }
+
+  .featureSection {
+    padding: 0px 0px 0px 130px;
+    @include make-flex($dir: column, $align: flex-start);
+    // flex-wrap: nowrap;
+    // overflow-x: auto;
+    // width: 100%;
+
+    &__bottom {
+      @include box(100%);
+      height: 100%;
+    }
+
+    // &__top, &__bottom {
+    //   @include box(100%);
+    //   height: 100%;
+    // }
+
+    &__top {
+      @include box(50%);
+      &--button {
+        border-radius: 14px;
+        background: rgba(206, 233, 255, 0.60);
+        border: none;
+        color: var(--black, #000);
+        font-family: AcidGroteskRegular;
+        font-style: normal;
+        line-height: 146.95%; /* 40.295px */
+        margin-bottom: 20px;
+        // padding: 18px 26px;
+      }
+    }
+
+    &--desc {
+      // font-family: "Poppins", sans-serif;
+      font-family: AcidGroteskRegular;
+      color: #000;
+      font-weight: 400;
+      line-height: 167.5%;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      // font-size: 20px;
+
+      // color: var(--black, #000);
+      // font-family: AcidGroteskRegular;
+      // font-size: 1.3rem;
+      // font-style: normal;
+      // font-weight: 400;
+      // line-height: 146.95%; /* 40.295px */
+      // margin-bottom: 30px;
+    }
+
+    &__title {
+      font-style: normal;
+      margin-bottom: 20px;
+      &--highlight {
+        background: var(--gradient, linear-gradient(135deg, #6F00FF 0%, #492CFF 47.81%, #00A3FF 100%));
+        font-weight: 400;
+        font-size: 3.5rem;
+        font-family: AcidGroteskRegular;
+        line-height: 116.45%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &--unhighlight {
+        line-height: 116.45%;
+        font-size: 3.5rem;
+        font-family: AcidGroteskRegular;
+        font-weight: 400;
+        color: var(--black);
+      }
+    }
+
+    &__bottom {
+      @include make-flex($dir: row, $align: flex-start);
+      // overflow-x: scroll;
+      gap: 20px;
+    }
+
+    @include respondAt(575px) {
+      padding: 0px 30px;
+      &__top {
+        width: 100%;
+          &--button {
+              border-radius: 8px;
+              height: 30px;
+              width: 140px;
+              padding: 0px !important;
+          }
+      }
+
+      &--desc {
+        font-size: 0.9rem;
+      }
+
+      &__bottom {
+        gap: 0px;
+        display: inline;
+      }
+
+      &__title {
+        &--highlight, h1 {
+            font-size: 2.1rem;
+            line-height: 116%;
+        } 
+      }
+    }
+
   }
 
   .aboutSection {
