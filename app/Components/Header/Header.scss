@@ -129,7 +129,13 @@
       @include make-flex(column, center);
       padding: 11px 31px;
       gap: 12px;
-      border-width: 3px;
+      border: 1px solid #3e3e3e;
+      color: var(--light-smoke, #3E3E3E);
+      text-align: center;
+      font-family: PowerGroteskTrial;
+      text-decoration: none;
+      font-size: 14px;
+      // border-width: 3px;
       border-radius: 9px;
       background: white;
       text-align: center;
@@ -137,7 +143,7 @@
       font-weight: 500;
       line-height: normal;
       z-index: 100;
-      font-family: "Poppins", sans-serif;
+      // font-family: "Poppins", sans-serif;
     }
 
   // @include respondAt(1230px) {

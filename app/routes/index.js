@@ -191,7 +191,7 @@ export default function LandingPage() {
           </div> */}
         </section>
         
-        <section className="featureSection">
+        <section className="featureSection" id="features">
             <div className="featureSection__top">
               <ButtonLink 
                 content="Our Features 🔥"

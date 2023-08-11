@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData } from "@remix-run/react";
 import SearchBar from "../SearchBar/SearchBar";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 function Header() {
   const node = React.useRef();
@@ -59,9 +60,14 @@ function Header() {
         </div>
 
         <div className="HeaderWrapper__right">
-          <button className="HeaderWrapper__right--contactButton">
+          {/* <ButtonLink href="https://www.instagram.com/snu.xplore/"
+            className="HeaderWrapper__right--contactButton"
+            content="Contact"
+          /> */}
+          {/* <button>
             Contact
-          </button>
+          </button> */}
+          <a href="https://www.instagram.com/snu.xplore/" target="_blank" className="HeaderWrapper__right--contactButton">Contact</a>
         </div>
       </div>
     </nav>

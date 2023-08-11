@@ -53,22 +53,50 @@
     &__dropdown {
         // @include make-flex($dir: row);
         &--logo {
-            min-width: 80px;
+            min-width: 55px;
+            max-width: 55px;
         }
     }
     
     @include respondAt(575px) {
-        width: 100%;
+        // width: 100%;
         padding: 5px;
         gap: 10px;
+        justify-content: flex-start;
+        // width: 100%;
+        width: 98%;
         //margin-left: 10px;
+
+        &__right {
+            // width: 80%; 
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+
+        }
+
         &__items {
+            // width: 100%;
+            width: fit-content;
+            justify-content: flex-start;
+            // overflow-x: scroll;
+
             padding: 5px;
             font-size: 10px;
             gap: 5px;
+            // overflow-x: scroll;
             &--item {
                 font-size: 10px;
                 padding: 12px 20px;
+
+                text-align: center;
+                width: 100px;
+                padding: 13px 5px;
             }
             &--GPT, &--Contact {
                 display: none;
@@ -79,8 +107,10 @@
         }
         &__dropdown {
             &--logo {
-                width: 70px;
-                min-width: 70px;
+                width: 50px;
+                // width: 70px;
+                // min-width: 70px;
+                min-width: 50px;
             }
         }
 
