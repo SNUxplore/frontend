@@ -45,7 +45,7 @@ function Footer() {
                 <a href="/navigate">Navigate Campus</a>
               </li>
               <li>
-                <a href="/events">Happenings@SNU</a>
+                <a href="/snugpt">SNU-GPT</a>
               </li>
             </ul>
             <ul className="FooterWrapper__right--Service">
