@@ -129,12 +129,15 @@
       @include make-flex(column, center);
       padding: 11px 31px;
       gap: 12px;
+      border-width: 3px;
       border-radius: 9px;
-      background: none;
+      background: white;
       text-align: center;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+      z-index: 100;
+      font-family: "Poppins", sans-serif;
     }
 
   // @include respondAt(1230px) {
