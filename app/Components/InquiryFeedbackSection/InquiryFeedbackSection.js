@@ -13,8 +13,9 @@ function InquiryFeedbackSection() {
                 <h1 className="inquiryFeedbackSection__left--heading">Have an inquiry or<br/>some feedback for us?</h1>
                 <div class="inquiryFeedbackSection__buttons">
                 <ButtonLink
-                    content="Feedback"
-                    className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--getInTouchButton"
+                href="https://forms.gle/1yQoc2vJcQ8M6EgA7"
+                content="Feedback"
+                className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--getInTouchButton"
                 />
                 <ButtonLink
                     content="Instagram"
