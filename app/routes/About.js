@@ -220,10 +220,12 @@ export default function About() {
             <div class="AboutUsPage__story--cofounderProfiles">
                 <ButtonLink
                   content="Keshav Dubey"
+                  href="https://www.linkedin.com/in/keshavdubey2025/"
                   className="AboutUsPage__story--button"
                 />
                 <ButtonLink
                   content="Prabhav Pandey"
+                  href="https://www.linkedin.com/in/prabhav-pandey/"
                   className="AboutUsPage__story--button"
                 />
             </div>

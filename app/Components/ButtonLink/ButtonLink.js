@@ -13,7 +13,7 @@ function ButtonLink({
     <a
       href={href}
       onClick={onClick}
-      target="_blank"
+      //target="_blank"
       className={`ButtonLinkWrapper 
         ${className}
         ${fill ? "ButtonLinkWrapper--fill" : ""} 
