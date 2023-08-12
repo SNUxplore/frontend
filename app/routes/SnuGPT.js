@@ -35,21 +35,36 @@ export default function SnuGPT() {
                 <p>
                 Empowering Your Journey with SNUxplore's AI-Powered Chatbot. Instant answers to all your SNU questions. AI chatbot trained on Student Handbook. Streamline support, save time, excel at SNU life. Embrace the future now!
                 </p>
-              </div><div className="heroGPT__buttons">
+              </div>
+              {/* <div className="heroGPT__buttons">
                 <ButtonLink
                   content="Try SNU-GPT"
                   className="heroGPT__buttons--button heroGPT__buttons--snugpt"
                 />
-              </div>
-              {<img className="heroGPT__left" src={Gradientgpt} />}
+              </div> */}
+              {/* {<img className="heroGPT__left" src={Gradientgpt} />} */}
               </div>
               <div className="heroGPT__right">
                 {<img className="heroGPT__right" src={HerogptImage} />}
                 </div>
               
-              </div>
-              </section>
+          </div>
+        </section>
+              <section className="chatbotGPTSection">
+                <div className="chatbotGPTSection__chatbotGPT">
+                  <div className="chatbotGPTSection__chatbotGPT__chatbox">
+                <iframe
+                src="https://www.chatbase.co/chatbot-iframe/ZCA-Dkgh07PmpsbVhGweb"
+                width="100%"
+                className="chatbotGPTSection__chatbotGPT--iframe"
+                //style="height: 100%; min-height: 700px"
+                frameborder="0"
+                ></iframe>  
+  </div></div>
+</section>
+
               </main>
+              
               <InquiryFeedbackSection />
               <Footer />
               </div> 
