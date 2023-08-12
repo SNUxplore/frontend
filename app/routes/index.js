@@ -104,10 +104,12 @@ export default function LandingPage() {
               <div className="heroSection__buttons">
                 <ButtonLink
                   content="Navigate"
+                  href="/navigate"
                   className="heroSection__buttons--button heroSection__buttons--navigateButton"
                 />
                 <ButtonLink
                   content="SNU-GPT"
+                  href="/snugpt"
                   className="heroSection__buttons--button heroSection__buttons--snugpt"
                 />
               </div>
@@ -189,7 +191,7 @@ export default function LandingPage() {
           </div> */}
         </section>
         
-        <section className="featureSection">
+        <section className="featureSection" id="features">
             <div className="featureSection__top">
               <ButtonLink 
                 content="Our Features 🔥"
@@ -202,10 +204,9 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="featureSection__bottom">
-              <FeatureCard img={NavigationMadeEasyCardImg} title="Navigation Made Easy" /> 
-              <FeatureCard img={SNUGPTGuideCardImg} title="SNU GPT: Your AI Guide" /> 
-              <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Safety Toolkit" /> 
-              <FeatureCard img={AdminInfoCardImg} title="Admin Info" /> 
+              <FeatureCard img={NavigationMadeEasyCardImg} title="Navigation Made Easy" link="/navigate" /> 
+              <FeatureCard img={SNUGPTGuideCardImg} title="SNU GPT: Your AI Guide" link="/snugpt" /> 
+              <FeatureCard img={AdminInfoCardImg} title="Admin Info" link="/admin" /> 
               {/* <FeatureCard img={NavigationMadeEasyCardImg} ttitle="Navigation Made Easy" />  */}
             </div>
         </section>
