@@ -11,12 +11,11 @@ function activeClassName(className, isActive) {
 
 function SearchBar({ style }) {
   const trending = [
-    'DH1',
-    'Library',
-    'IT Helpdesk Office',
-    'D Block',
-    'Arcade',
-    'Horse Stables'
+    {name: 'DH1', category: 'Food', link: 'Dining Hall 1'},
+    {name: 'D Block', category: 'Academics', link: 'D Block'},
+    {name: 'Horse Stables', category: 'POI', link: 'Horse Stables'},
+    {name: 'Library', category: 'Academics', link: 'Library'},
+    {name: 'Arcade', category: 'Essentials', link: 'Supermarket'},
   ];
   const [search, setSearch] = React.useState("");
   const [isFocused, setIsFocused] = React.useState(false);
@@ -158,23 +157,23 @@ function SearchBar({ style }) {
             <span className="SearchBarWrapper__trending--text">Trending</span>
             <div className="SearchBarWrapper__trending__items">
                 {trending.map(trendingItem => {
+                  console.log(trendingItem);
                   //return <a href="" className="SearchBarWrapper__trending__items--item">{trendingItem}</a>
                   return (
                     <a
-                      href={isFocused ? "" : `/navigate/${trendingItem}`}
+                      href={isFocused ? "" : `/navigate/${trendingItem.category}?name=${trendingItem.link}`}
                       onClick={(e) => {
                         if (!isFocused) {
                           e.preventDefault();
-                          window.location.href = `/navigate/${trendingItem}`;
+                          window.location.href = `/navigate/${trendingItem.category}?name=${trendingItem.link}`;
                         }
                       }}
                       className="SearchBarWrapper__trending__items--item"
-                      key={trendingItem}
+                      key={trendingItem.name}
                     >
-                      {trendingItem}
+                      {trendingItem.name}
                     </a>
                   );
-  
                 })}
             </div> 
           </div>

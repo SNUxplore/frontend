@@ -80,7 +80,7 @@
 
     {
       "name": "Hostel 4-A (Manas)",
-      "location": "https://maps.app.goo.gl/as8oqCGK5MFWkYqY8?g_st=iw",
+      "location": "https://www.google.com/maps/place/28°31'26.1\"N+77°34'13.5\"E/@28.523926,77.5678291,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.523926!4d77.570404?hl=en-IN&entry=ttu",
       "mailWarden": "",
       "callWarden": "",
       "description": "Known as Manas .",
@@ -89,7 +89,7 @@
 
     {
       "name": "Hostel 4-B (Marine)",
-      "location": "https://maps.app.goo.gl/zaCGMUcujNsMuBo18?g_st=iw",
+      "location": "https://www.google.com/maps/place/28°31'26.1\"N+77°34'13.5\"E/@28.523926,77.5678291,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.523926!4d77.570404?hl=en-IN&entry=ttu",
       "mailWarden": "",
       "callWarden": "",
       "description": "Known as Marine .",
@@ -98,7 +98,7 @@
 
     {
       "name": "Hostel 4-C (Mudumalai)",
-      "location": "https://maps.app.goo.gl/efrdCA6ELTywzPPM6?g_st=ic",
+      "location": "https://www.google.com/maps/place/28°31'24.4\"N+77°34'15.6\"E/@28.5234525,77.5684313,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.5234525!4d77.5710062?hl=en-IN&entry=ttu",
       "mailWarden": "",
       "callWarden": "",
       "description": "Known as Mudumalai .",
@@ -107,7 +107,7 @@
 
     {
       "name": "Hostel 5-A (Belta)",
-      "location": "https://maps.app.goo.gl/dzUvDhW3Nj6CXsY26?g_st=iw",
+      "location": "https://www.google.com/maps/place/28°31'22.4\"N+77°34'13.0\"E/@28.5228916,77.567691,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.5228916!4d77.5702659?hl=en-IN&entry=ttu",
       "mailWarden": "",
       "callWarden": "",
       "description": "Known as Belta .",
@@ -115,8 +115,8 @@
     },
 
     {
-      "name": "Hostel 5-B (Bandhavgarh)",
-      "location": "https://maps.app.goo.gl/fx9kYsq2fouf6bvB7?g_st=ic",
+      "name": "Hostel 5-C (Bandhavgarh)",
+      "location": "https://www.google.com/maps/place/28°31'20.7\"N+77°34'12.0\"E/@28.5224079,77.5674194,17z/data=!4m4!3m3!8m2!3d28.5224079!4d77.5699943?hl=en-IN&entry=ttu",
       "mailWarden": "",
       "callWarden": "",
       "description": "Known as Bandhavgarh .",
@@ -281,10 +281,10 @@
       "description": "This Dining hall is the most peaceful and calm place to have food but it's located in a totally different corner of SNU.",
       "image": "https://media.giphy.com/media/tbaeNq5yi9UvMWTk4l/giphy.gif"
     },
-    
+
     {
       "name": "Dining Hall 4",
-      "location": "https://maps.app.goo.gl/NHdMNTRcgFGQjcgc9?g_st=ic",
+      "location": "https://www.google.com/maps/place/SNU+Dining+Hall+4/@28.5232448,77.569707,17z/data=!3m1!4b1!4m6!3m5!1s0x390c955a74c08901:0x4a8a4ecc7fe3cbe1!8m2!3d28.5232448!4d77.569707!16s%2Fg%2F11tx8ydf88?hl=en-IN&entry=ttu",
       "contact": "messcommittee@snu.edu.in",
       "menu": "https://messmenu.snu.in/",
       "description": "NEW DH!",
@@ -341,14 +341,14 @@
 
     {
       "name": "Mahesh Chinese Fast Food",
-      "location": "https://maps.app.goo.gl/WbsRL6bAiJXzQfqs7?g_st=ic",
+      "location": "https://www.google.com/maps/place/Mahesh+Chinese+Fast+Food/@28.5347241,77.5750717,17z/data=!3m1!4b1!4m6!3m5!1s0x390c955f607289b7:0xd42340d8ebe5c6cd!8m2!3d28.5347241!4d77.5750717!16s%2Fg%2F11j2xr8s26?hl=en-IN&entry=ttu",
       "description": "",
       "image": "https://media.discordapp.net/attachments/1057249773754785803/1139496872487174154/AADARSH.jpeg"
     },
 
     {
       "name": "Adarsh Dhaba",
-      "location": "https://maps.app.goo.gl/MZi8LZkYMA5c4QeTA?g_st=ic",
+      "location": "https://www.google.com/maps/place/Adarsh+Dhaba/@28.534833,77.5741563,17z/data=!3m1!4b1!4m6!3m5!1s0x390c94c5929c6f79:0x30bcbc5d015cda5d!8m2!3d28.534833!4d77.5741563!16s%2Fg%2F11d_w744l8?hl=en-IN&entry=ttu",
       "description": "",
       "image": "https://media.discordapp.net/attachments/1057249773754785803/1139496872487174154/AADARSH.jpeg"
     },
@@ -361,19 +361,25 @@
     }
   ],
   "POI": [
-    
+    {
+      "name": "SARC",
+      "location": "https://www.google.com/maps/place/28%C2%B031'25.4%22N+77%C2%B034'31.2%22E/@28.5237344,77.5742457,18z/data=!3m1!4b1!4m6!3m5!1s0x0:0xf7e11b9c6faeb5c0!7e2!8m2!3d28.5237315!4d77.5753397",
+      "description": "",
+      "image": "https://media.giphy.com/media/xUA7b56lPon8J46Y8M/giphy.gif"
+    },
+
+    {
+      "name": "Atal Incubation Centre",
+      "location": "https://www.google.com/maps/place/Adarsh+Dhaba/@28.534833,77.5741563,17z/data=!3m1!4b1!4m6!3m5!1s0x390c94c5929c6f79:0x30bcbc5d015cda5d!8m2!3d28.534833!4d77.5741563!16s%2Fg%2F11d_w744l8?hl=en-IN&entry=ttu",
+      "description": "",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139495833776164985/AIC.jpeg?width=895&height=671"
+    },
+
     {
       "name": "Horse Stables",
       "location": "https://www.google.com/maps/place/Greater+Noida,+Uttar+Pradesh+203207/@28.518782,77.57357,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x390ceb4eaaaaaaab:0x321412756718874c!2sShiv+Nadar+University!8m2!3d28.5267298!4d77.575363!3m4!1s0x390c94d8756793eb:0xc605950461bcc5ed!8m2!3d28.5192457!4d77.574931",
       "description": "There are horse crazy people and then there are crazy people with horses. Know the difference!",
       "image": "https://media.giphy.com/media/d86gU07IU6IEg/giphy.gif"
-    },
-
-    {
-      "name": "Atal Incubation Centre",
-      "location": "https://maps.app.goo.gl/WTTrJK5ECR9uCurR6?g_st=ic",
-      "description": "",
-      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139495833776164985/AIC.jpeg?width=895&height=671"
     },
 
     {
@@ -514,6 +520,14 @@
       "description": "The registration desk for Surge '23",
       "image": "https://picsum.photos/id/1/200/300"
     },
+
+    {
+      "name": "Indoor Sports Complex",
+      "location": "https://www.google.com/maps/place/MESS,+SHIV+NADAR+UNIVERSITY,+Greater+Noida,+Uttar+Pradesh+203207/@28.5212659,77.5709869,17z/data=!3m1!4b1!4m6!3m5!1s0x390c94d7aebad7e7:0x2ff00a3708565d0c!8m2!3d28.5212659!4d77.5709869!16s%2Fg%2F11f4qlbdy2?hl=en-IN&entry=ttu",
+      "description": "",
+      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139497148854063154/ISC.jpeg?width=895&height=671"
+    },
+
     {
       "name": "Badminton Court (Outdoor)",
       "location": "https://www.google.com/maps/place/SNU+Badminton+Court/@28.5249742,77.5718354,19.12z/data=!4m5!3m4!1s0x390c94d0b0dcecb5:0x8817703b05e2769b!8m2!3d28.5251713!4d77.5722183",
@@ -585,12 +599,6 @@
       "location": "https://www.google.co.in/maps/@28.5282225,77.572396,18.02z",
       "description": "Hit ‘Em Long And Straight.",
       "image": "https://media.giphy.com/media/2t8jyWKydrHcQ/giphy.gif"
-    },
-    {
-      "name": "Indoor Sports Complex",
-      "location": "https://maps.app.goo.gl/hcwzxee4sAR7teYR6?g_st=ic",
-      "description": "",
-      "image": "https://media.discordapp.net/attachments/1057249773754785803/1139497148854063154/ISC.jpeg?width=895&height=671"
     }
   ]
 }
