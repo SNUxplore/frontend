@@ -45,10 +45,10 @@ function Footer() {
                 <a href="/navigate">Navigate Campus</a>
               </li>
               <li>
-                <a href="/events">Happenings@SNU</a>
+                <a href="/snugpt">SNU-GPT</a>
               </li>
             </ul>
-            <ul className="FooterWrapper__right--Service">
+            {/* <ul className="FooterWrapper__right--Service">
               <li className="FooterWrapper__right--rowHeading">Resources</li>
               <li>
                 <a href="/faqs">FAQ</a>
@@ -59,7 +59,7 @@ function Footer() {
               <li>
                 <a href="/club">Club login</a>
               </li>
-            </ul>
+            </ul> */}
             <ul className="FooterWrapper__right--Service">
               <li className="FooterWrapper__right--rowHeading">Contacts</li>
               <li className="mailIcon">

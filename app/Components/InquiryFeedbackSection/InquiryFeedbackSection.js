@@ -19,6 +19,7 @@ function InquiryFeedbackSection() {
                 />
                 <ButtonLink
                     content="Instagram"
+                    href="https://www.instagram.com/snu.xplore/"
                     className="inquiryFeedbackSection__buttons--button inquiryFeedbackSection__buttons--instagramButton"
                 />
                 </div>
