@@ -355,11 +355,12 @@
 
     {
       "name": "19th Hole",
-      "location": "https://www.google.co.in/maps/place/Temporary+Helipad/@28.5298671,77.5740388,208m/data=!3m2!1e3!4b1!4m8!1m2!2m1!1s19th+hole+snu+!3m4!1s0x390c94dab9c0d8b1:0xdf6c67cc91dbab15!8m2!3d28.5298659!4d77.5745873",
+      "location": "https://www.google.com/maps/place/28°31'46.9\"N+77°34'28.4\"E/@28.529698,77.574557,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.529698!4d77.574557?entry=ttu",
       "description": "Love chaat? Then this is the place for you. With its pleasant    ambience and “delicious” food it is a must visit for SNU students.",
       "image": "https://media.giphy.com/media/TGcD6N8uzJ9FXuDV3a/giphy.gif"
     }
   ],
+
   "POI": [
     {
       "name": "SARC",
